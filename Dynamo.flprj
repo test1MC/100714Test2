@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CatapultProject Version="1" xml:lang="en-us" IncludePattern="*worldshipodbcconversion*.htm;*worldshipodbcconversion*.html" AutoExcludeNonTaggedFiles="false" IncludeLinkedFiles="true" DeleteStale="false" AutoSync="true" LastImport="2015-07-14T11:52:08.6557883-04:00" MasterToc="/Project/TOCs/dynamo.fltoc" DeleteUnreferenced="false" SourceControlBound="true" SourceControlDatabase="C:\Users\jlourash\Documents\My Projects\100714\.git" SourceControlProviderType="Git" ProjectGuid="0e85ad36-f72c-4a41-89fa-a7c4314b1592" SourceControlDatabaseRoot="C:\Users\jlourash\Documents\My Projects\100714">
+<CatapultProject Version="1" xml:lang="en-us" IncludePattern="*worldshipodbcconversion*.htm;*worldshipodbcconversion*.html" AutoExcludeNonTaggedFiles="false" IncludeLinkedFiles="true" DeleteStale="false" AutoSync="true" LastImport="2015-07-14T11:52:08.6557883-04:00" MasterToc="/Project/TOCs/dynamo.fltoc" DeleteUnreferenced="false" SourceControlBound="true" SourceControlDatabase="E:\Documents\My Projects\Dynamo\.git" SourceControlProviderType="Git" ProjectGuid="0e85ad36-f72c-4a41-89fa-a7c4314b1592" SourceControlDatabaseRoot="E:\Documents\My Projects\Dynamo">
     <Files>
         <Url Source="file:///F:/Flare/policies/policies.flprj" AbsoluteSource="file:///F:/Flare/policies/policies.flprj" />
     </Files>
