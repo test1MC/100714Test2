@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="809" MadCap:lastWidth="1199">
+    <head><title>Transfer Order Generation</title>
+    </head>
+    <body>
+        <p class="SectionName">transfer order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Transfer Order Generation</p>
+                </td>
+                <td align="right">Last Revised: 01/08/14</td>
+            </tr>
+        </table>
+        <p>This application is used to create transfer orders based on inventory levels; if some warehouses are overstocked and some are understocked, Transfer Order Generation will recommend transfer orders between the warehouses. The application compares the Stock Status Quantity to a level in between the maximum and minimum amount of inventory for a particular item. The application will fill the first listed warehouse first and continue in order. It will also round to the nearest case size and the nearest package size. </p>
+        <p>
+            <img src="to170-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <ol>
+            <li>Choose the shipping warehouse.</li>
+            <li>Choose the receiving warehouse.</li>
+            <li>Specify the sequence.</li>
+            <li>Specify the range.</li>
+            <li>Indicate what should be done with the insufficient stock.<ol style="list-style-type: lower-alpha;"><li>Exclude item from order</li><li>Backorder item</li></ol></li>
+            <li>Specify the minimum and maximum percentage.</li>
+            <li>Indicate if the listing should be printed or not.</li>
+        </ol>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Format Options</th>
+                </tr>
+                <tr>
+                    <td>(N) Do not generate TO</td>
+                    <td>
+                        <p style="font-weight: normal;">Use this option to cancel generation of the transfer order and just view a listing. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(G) Generate TO</td>
+                    <td>Use this option to generate your transfer orders without printed copies.</td>
+                </tr>
+                <tr>
+                    <td>(P) Generate and Print&#160;TOs</td>
+                    <td>Use this option to generate your transfer orders and receive printed copies of them. </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol>
+            <p>&#160;</p>
+        </ol>
+    </body>
+</html>

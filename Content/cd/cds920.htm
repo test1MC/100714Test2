@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="727" MadCap:lastWidth="1225">
+    <head><title>Display Added Programs</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Display Added Programs</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS920">Last Revised: 05/23/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program will display or drop those programs that occupy memory.&#160; It may be run from the menu or called.&#160; When called with no arguments, all programs that occupy memory space outside of the program workspace are displayed along with the size of the program in characters and pages (one page equals 256 characters) and an indication if the program has been added permanently using the ADDR command. Totals are displayed.</p>
+        <p>
+            <img src="cds920-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The Display Added Programs Screen</h6>
+        <h5>Technical Notes</h5>
+        <p>When called with a parameter, the valid parameters are:</p>
+        <ul>
+            <li>"D" to drop all programs, <i>or</i></li>
+            <li>"d" to drop all programs that do not begin with CD.</li>
+        </ul>
+        <h6>Note:</h6>
+        <p>This program is called with the "d" option by the selector whenever the operator changes to a new company. This is done to insure that a called program will be found in the directory as specified by the prefix and not one that remained in memory from a different directory from another company.</p>
+    </body>
+</html>

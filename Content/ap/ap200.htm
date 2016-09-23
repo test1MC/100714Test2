@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="1144" MadCap:lastWidth="1199">
+    <head><title>Payment Selection Register</title>
+    </head>
+    <body>
+        <p class="SectionName">accounts payable payment Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Payment Selection Register</p>
+                </td>
+                <td align="right">Last Revised: 01/10/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Payment Selection Register is a list summarizing all invoices that have been selected for payment.</p>
+        <p class="SectionDesc">The invoices are listed alphabetically by the vendor's alphasort name. (Vendors with a credit balance will not appear on this Register. A listing of these vendors can be found on the A/P Ageing Report on the APR menu.)</p>
+        <p>Normally this document is not retained as an accounting document but is used as a worksheet from which to make any necessary adjustments before the checks are printed.</p>
+        <p>Usually a register is printed for only one batch at a time. However, for those customers who have several operators processing a large volume of payables, Dynamo supports multiple simultaneous payment selection batches.</p>
+        <p>
+            <img src="ap200-1.png" style="width: 1077px;height: 384px;" />
+        </p>
+        <h6>The Payment Selection Register Screen</h6>
+        <p>The Payment Selection Register prints the Payment Batch Number at the top. The following columns are displayed:</p>
+        <table>
+            <tr>
+                <th colspan="2">Payment Selection Register</th>
+            </tr>
+            <tr>
+                <td><a name="Vendor Number"></a>Vendor Number</td>
+                <td>One-time vendors will show a single character vendor number and Payee name.</td>
+            </tr>
+            <tr>
+                <td><a name="Vendor Name"></a>Vendor Name</td>
+                <td>One-time vendors will show a single character vendor number and Payee name.</td>
+            </tr>
+            <tr>
+                <td><a name="P"></a>P</td>
+                <td>
+        The Payment Method Code<br />        &#160;
+
+        <table><tr><td>blank</td><td>Normal</td></tr><tr><td>S</td><td>Separate Check</td></tr><tr><td>T</td><td>Electronic Funds Transfer</td></tr><tr><td>W</td><td>Automatic Withdrawal</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>OrigVend</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td><a name="Invoice Number"></a>Invoice Number</td>
+                <td>Number of the invoice referenced.</td>
+            </tr>
+            <tr>
+                <td><a name="Invoice Date"></a>Invoice Date</td>
+                <td>Date invoice issued.</td>
+            </tr>
+            <tr>
+                <td><a name="Invoice Due Date"></a>Invoice Due Date</td>
+                <td>Date payment is due.</td>
+            </tr>
+            <tr>
+                <td><a name="Discount Date"></a>Discount Date</td>
+                <td>Date payment must be received to qualify for discount (if applicable).</td>
+            </tr>
+            <tr>
+                <td><a name="Amount"></a>Amount</td>
+                <td>Invoice amount prior to discount; less any prior payments.</td>
+            </tr>
+            <tr>
+                <td><a name="Discount"></a>Discount</td>
+                <td>Discount taken, if applicable.</td>
+            </tr>
+            <tr>
+                <td><a name="Net"></a>Net</td>
+                <td>Amount that will be paid now.</td>
+            </tr>
+            <tr>
+                <td><a name="Note"></a>Note</td>
+                <td>Comment entered during Invoice Data Entry and will appear on the check stub. This column can accommodate only the first 13 characters of the note.</td>
+            </tr>
+        </table>
+        <p>After reviewing the Register, you may return to <a href="ap190.htm">Payment Selection Maintenance</a> to make adjustments OR return to Payment Selection, clear this payment batch and enter different selection criteria. &#160; Reprint the Payment Selection Register and review a final time.</p>
+        <p>Sample <a href="../examples/PaymentSelectionRegister.pdf">Payment Selection Register</a>.</p>
+        <p>If you are satisfied with the invoices selected for payment, proceed to <a href="ap210.htm">Check Printing</a>.</p>
+    </body>
+</html>

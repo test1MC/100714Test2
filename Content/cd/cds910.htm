@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="2903" MadCap:lastWidth="1012">
+    <head>
+        <title>Project Deployment</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Project Deployment</p>
+                </td>
+                <td align="right">Last Revised: 01/04/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used for software project deployment and activation. It enables transfer of data dictionary information, BBx and BBj programs, data files, template files, BBj webstart applications, BBj triggers, BBj stored procedures, configuration files, and Dynaweb components including html, style sheet, and javascript files, from one system to another.</p>
+        <p>The process typically starts on a development server where the project resources are exported. The exported resources are bundled into a single export file which can be uploaded to another server.</p>
+        <p>The export file can be imported to another server such as a Quality Assurance (QA) server, Staging server, or Production server.</p>
+        <p>The software project can be tested by a limited number of users by using the Dynamo Tools menu J option to select the job for testing.</p>
+        <p>The software project can be activated which will archive most resources being replaced during the activation process, and move the files from the job folder to the final destination folder.</p>
+        <p>Projects can be imported and activated multiple times as corrections are made, and roll back of selected files or an entire project can be done very easily.</p>
+        <p>Companies that use strict change control procedures can limit activation to IT&#160;Operations personnel and set file permissions accordingly to prevent changes by unauthorized personnel. This applies even to BBj installations where the user running BBj services is not the 'root' user.</p>
+        <p>Note that this application is not available when Dynamo Tools is accessed across a pro5 or BBj data server. The authorized user can use a terminal emulator such as Putty or FacetWin or ssh, to login to the server to perform these functions.</p>
+        <table>
+            <tr>
+                <th colspan="2">Operator Entry</th>
+            </tr>
+            <tr>
+                <td>Mode</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">O</td>
+                            <td>One Step Download/Import/Activate</td>
+                        </tr>
+                        <tr>
+                            <td align="center">E</td>
+                            <td>Export &amp;&#160;Upload - Export resources and optionally upload to another location</td>
+                        </tr>
+                        <tr>
+                            <td align="center">I</td>
+                            <td>Download &amp;&#160;Import - Download resource bundle and optionally import</td>
+                        </tr>
+                        <tr>
+                            <td align="center">M</td>
+                            <td>Maintenance - Maintain ftp/sftp locations, local export files, and Dynastore files</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Job#</td>
+                <td>Optional entry during Export process that identifies the Job#. When used, the Job# must have been previously defined using Project Maintenance (FMS). Best practice is to set the active Job# using the J menu option prior to starting the export process, which will set the default Job#.</td>
+            </tr>
+            <tr>
+                <td>Transfer File Name</td>
+                <td>Exported data is stored in a single file in the <code>TEMP/xfr</code> directory with a <code>.xfr</code> extension. If a job# is specified, then the exported file name will be <code>CC-Jnnnn.xfr</code> where <code>CC</code> is the current company code, and <code>nnnn</code> is the job#. A prior export for the same job# will be replaced during the export process.</td>
+            </tr>
+            <tr>
+                <td>Exported</td>
+                <td>Shows the user that exported the file as well as the date and time of the export.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p>
+            <b>One Step Download/Import/Activate</b>
+        </p>
+        <p>This option can be used to Download, Import, and Activate a project with minimal operator entries. The operator is prompted for the job number. The transfer file will be downloaded from the company-specific Dynastore, imported, and activated, as long as no problems are encountered along the way. The job folder will be cleared if not empty at the start of the process.</p>
+        <p>&#160;</p>
+        <p>
+            <b>Export &amp;&#160;Upload</b>
+        </p>
+        <p>The Best Practice is that all resources to be exported are contained within the job folder. This insures that any original file is archived during the activation process and can be rolled back if necessary. Files and programs can however, be exported that do not originate in the job folder, which will be imported into the same location from which they were exported.</p>
+        <p>The user can select from the following export types.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">D</td>
+                    <td>Data Dictionary</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">P</td>
+                    <td>Individual Program or Data File</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">F</td>
+                    <td>Filelist - used to export all, or most files, in a folder, or to search for selected files without needing to enter each file name individually</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">S</td>
+                    <td>BBj Stored Procedure</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">T</td>
+                    <td>BBj Trigger</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">W</td>
+                    <td>Web start (jnlp) application</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <u>Data Dictionary</u>
+        </p>
+        <p>When exporting a data dictionary. the complete data dictionary, views, and file maintenance configuration records are all exported for the data dictionary file name entered.&#160; There is not a way to export a sub-set of this information, such as a view only.&#160; If the data dictionary has any external programs linked to it, then the operator will be prompted to include the linked programs in the export file, to exclude all linked programs, or to prompt the operator for each program.</p>
+        <p>
+            <u>Data Files</u>
+        </p>
+        <p>For new empty data files where the Data Dictionary has been exported, you only need to export the data file itself. The import process will prompt the user to define the data file.</p>
+        <p>When exporting new or existing data files that are not empty, the data file can either be located in the job folder itself, or one of the folders where data files are located.</p>
+        <p>The Best Practice is to store the data file in the job folder and export that data file so that the original file is archived for possible rollback.</p>
+        <p>
+            <u>Template Files</u>
+        </p>
+        <p>When exporting a data file, the template (.tpl) file will be automatically exported with the data file to insure the template file always matches the data. You do not need to manually add template files to the export list.</p>
+        <p>It is permitted to export a template file without exporting the data file itself. This is typically done when a field name is being changed, but no other changes are being made that would require a file conversion. Template files can exist either in the job folder, in a tpl sub-folder below the job folder, or in a tpl sub-folder below the data file itself. The Best Practice is to copy the template file to the job folder, or tpl sub-folder below the job folder so that the automated rollback process can restore the original template file if necessary.</p>
+        <p style="text-decoration: none;">
+            <u>Program Files</u>
+        </p>
+        <p>BBx and BBj tokenized program files and BBj text program files can be exported. BBj text programs are converted to BBj tokenized format during the Job Activation process. BBj program files can either be in the same folder as BBx programs, or when it is necessary to have both BBx and BBj versions of the same program, the BBj programs are stored in a folder named BBj below the base program folder. For example the BBx version of Dynamo Tools programs are stored in the <code>/u/CDI/CD</code> folder, and the BBj versions are stored in <code>/u/CDI/CD/BBj</code>.</p>
+        <p>
+            <u>BBj Stored Procedures</u>
+        </p>
+        <p>BBj Stored Procedures can also be exported. The Best Practice is to place the stored procedure program in the job folder, and to define the stored procedure using the Basis Enterprise Manager or admin api pointing to the program in the job folder. During the activation process the stored procedure program will be copied to the default program folder and the stored procedure configuration will be updated to reference this new location</p>
+        <p>
+            <u>BBj Triggers</u>
+        </p>
+        <p>BBj Triggers that are linked to a particular data file can also be exported. The trigger must be originally defined using either the Basis Enterprise Manager, or using the BBj admin api. The associated data file can be located either in the job folder or in one of the folders where data files are stored.</p>
+        <p>Note that it is not necessary to list each trigger program during the export process. Any trigger program located within the job folder will be included automatically when the Trigger is exported.</p>
+        <p>
+            <u>BBj&#160;Web Start Applications</u>
+        </p>
+        <p>BBj applications are frequently deployed and launched using the Java Network Launch Protocol or jnlp. These applications are also originally defined using the Basis Enterprise Manager or the BBj admin api. They can be exported and imported without requiring additional manual operations using the Enterprise Manager.</p>
+        <p>
+            <u>Re-exporting</u>
+        </p>
+        <p>When re-exporting a job or package previously exported, and the .xfr file has not been erased, then the list of previously exported objects will appear in the list of files to export so that the operator will not need to re-enter this list.&#160; They can, however, add and delete entries from the list. The Best Practice is not to Activate a project on the development server until the project has been successfully deployed on all other servers. The activation process removes the .xfr file and the job folder, making it more difficult to re-deploy a project after it has been activated on the development server.</p>
+        <p style="text-decoration: underline;">Uploading</p>
+        <p>Upon completion of the export process, the export file can be optionally uploaded to another server using ftp/sftp or uploaded to a secure Dynastore location. It the destination servers have ftp/sftp access to the development server, then uploading is not required. However, when the development and target servers do not share network connectivity, a drop or depot server, or the internet based Dynastore secure server can be used as a shared intermediary to house the exported project file.</p>
+        <p>
+            <b>Download &amp;&#160;Import</b>
+        </p>
+        <p>The download and import process is typically done on a QA, stage, production or customer's server.</p>
+        <p>The first step is to download the export file to the target server. You download from an ftp/sftp server or from the secure Dynastore server.</p>
+        <p>When using ftp/sftp, the ftp/sftp server needs to be running on the server where the export files are located.&#160; The home directory for the ftp process should be the directory below the xfr directory where the exported data is stored, i.e., <code>TEMP</code>.&#160; When transferring export files from another server, the operator will be prompted to erase the export file on the original server.&#160; This is useful so that one time exports can be erased promptly after being transferred.</p>
+        <p>
+            <u>Importing</u>
+        </p>
+        <p>Files to import are stored in the <code>/u/CDI/tmp</code> directory and have a <code>.xfr</code> extension.&#160; The operator can select the file to be imported from a list of eligible files which will appear at the top of the options list.</p>
+        <p>After a file is selected to be imported, the export file is scanned and the contents of the file are displayed.&#160; The operator can navigate up and down to view all of the exported resources, then should touch F4 to continue with the next step.</p>
+        <p>After reviewing the contents of the exported file, the operator has the option to import.&#160; All files and programs are imported.&#160; There is not an option to import a sub-set of items included in the exported file.</p>
+        <p>
+            <u>Activating</u>
+        </p>
+        <p>If the export was made using a job folder, then the operator will be prompted to Activate the job. Answer N to perform any project testing prior to activation for all users. In this case the J menu option is used to enable execution of programs located in the job folder. Answer Y&#160;to activate immediately. The activation process archives files and moves files located in the job folder to the default destination folders. Note that you can override the default destination folders using Company&#160;Information Maintenance (SMC), Development Project View.</p>
+        <p>See the Limited Access section below when activating projects in a secured environment where program folders have write access by a special group of users.</p>
+        <p>You can use Project Maintenance (FMS) to view each resource that was activated and roll back activated projects.</p>
+        <p>If the project does not involve a job folder, then the operator typically would respond to the prompt to erase the export file.</p>
+        <p>
+            <u>Compatibility</u>
+        </p>
+        <p>Note that the versions of the Dynamo Tools Data Dictionaries on the source and target systems must be the same.&#160; The operator will be advised that a data dictionary file is incompatible. Should you encounter this message, the version of Dynamo Tools on the source server where the export file was created, is probably different than the version on the target server. Updating Dynamo Tools is often the only option when a change in the structure of the Dynamo Tools Data Dictionary files occurs.</p>
+        <p>
+            <b>Maintain</b>
+        </p>
+        <ul>
+            <li> ftp/sftp Locations - This option is used to maintain location connection and credentials</li>
+            <li>Local Export Files - This option is used to view and delete previously exported resource bundles on the local server.</li>
+            <li>Dynastore - This option is used to view and delete resource bundles that have been sent to the Dynastore secure storage.</li>
+        </ul>
+        <p style="font-weight: bold;">sftp/ftp Locations</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="nowrap">ID</td>
+                    <td>The Location ID is a 3 character code used to identify a Location.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Location</td>
+                    <td>A description of the Location, such as QA Server, Staging Server, Production Server, etc.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">URL</td>
+                    <td>The server name such as <code>staging.mydomain.com, drop.mydomain.com,</code> etc. &#160;May optionally include <code>ftp://</code> prefix when ftp is to be used. Must include <code>sftp://</code> when sftp protocol is to be used.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Path to xfr directory</td>
+                    <td>Option absolute path name used to define path to the directory where resource bundle files should be placed.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Login ID</td>
+                    <td>The ftp or sftp login ID for the remote server</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Password/Private Key</td>
+                    <td>For ftp connections, enter the password for the above Login ID. &#160;For sftp connections, enter the full path to the private key to be used, i.e., <code>/home/sftpuser/.ssh/rsa_id</code>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>
+            <b>Restricting changes to programs and other non-data files</b>
+        </p>
+        <p>Some companies employ strict change control where all changes that take place on a server are made by a limited number of users, original versions are archived, and all changes made are logged. This Dynamo Tools application supports this concept by following the steps outlined below.</p>
+        <ol>
+            <li>Create a linux/unix group that will be entitled to activate projects, i.e., itops</li>
+            <li>Create a linux/unix user that will own the bbx programs and other non-data file resources, i.e., itops</li>
+            <li>Add the itops group to the appropriate linux/unix users who are authorized to activate projects</li>
+            <li>Change the owner:group to the restricted owner &amp;&#160;group, i.e., itops:itops, for all program and non-data file folders and contents.</li>
+            <li>Change permissions of the program folder and other non-data file folders to 775 and the contents of these folders to 664 (775 for scripts that can be executed by all users).</li>
+            <li>Copy the standard bash shell script from <code>/u/CDI/bin/dtchownmod</code> to a folder not below <code>/u</code> such as <code>/usr/local/bin</code>. Set owner:group to root:itops with permissions 754.</li>
+            <li>Add to <code>/usr/cdi/.config</code> the line:&#160;<code>export DTCHOWNMOD=/usr/local/bin/dtchownmod</code></li>
+            <li>Effective with the next login, or for the next restart of BBj Services, users in the itops group will be able to activate projects and set file ownership and permissions to limit program changes to members of the itops group.</li>
+        </ol>
+        <p>Note that this functionality is also supported when using BBj where the user running BBj services does not have write permission to the program folder.</p>
+    </body>
+</html>

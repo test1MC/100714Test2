@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="9" MadCap:lastHeight="3197" MadCap:lastWidth="1335">
+    <head><title>Branch Information Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Company Wide&#160;Parameters</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Branch Information Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/23/15</td>
+            </tr>
+        </table>
+        <p>Use this program to edit and create new branches to be used in Dynamo. </p>
+        <p>
+            <img src="xxcw11-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Branch Information Maintenance Primary View</th>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>Enter an existing code to maintain information for an existing branch or type a new code to enter information about a new branch.</td>
+                </tr>
+                <tr>
+                    <td>Local Description</td>
+                    <td>Give a description for the branch (location, for example).</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Provide the company name at this branch. </td>
+                </tr>
+                <tr>
+                    <td>Address, City, State/Country,&#160;Zip Code</td>
+                    <td>Provide the address of this branch of your company. Type the zip code in order to populate the city and state fields. </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Provide the phone number for this branch of your company.</td>
+                </tr>
+                <tr>
+                    <td>Fax</td>
+                    <td>Provide the fax number for this branch of your company.</td>
+                </tr>
+                <tr>
+                    <td>Region</td>
+                    <td>Provide the state/province for this branch of your company.</td>
+                </tr>
+                <tr>
+                    <td>G/L&#160;Location</td>
+                    <td>Specify which general ledger account funds for this branch are sent.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>Standard Branch (where sales orders are created)</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>Point of Sales Branch (retail)</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>Internet/website Branch</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td>A branch can be active or inactive. If it is inactive, it may be because it is not yet in operation or it is no longer in operation. The branch is not deleted, but it will not display on reports printed with branch information or be a choice for sales orders. </td>
+                </tr>
+                <tr>
+                    <td>Re-print Charge Invoices to Mail</td>
+                    <td>Specifying "Y" here will print another charge invoice that can be mailed to the customer. The reprinted invoice is in addition to the invoice already handed to the customer. </td>
+                </tr>
+                <tr>
+                    <td>Sales&#160;Order# - lowest</td>
+                    <td>Specify the lowest number to be used on a sales order for this branch. </td>
+                </tr>
+                <tr>
+                    <td>Sales&#160;Order# - highest</td>
+                    <td>Specify the highest number to be used on a sales order for this branch.</td>
+                </tr>
+                <tr>
+                    <td>Sales&#160;Order# - Next to be used</td>
+                    <td>Specify the sales order number that will be used next for this branch. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxcw11-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Dynamo supports integrated credit card processing with card processors First Data and authorize.net. Although the First Data Legacy Global Gateway is still supported, First Data is phasing out this gateway. Contact Excellware to make the switch to the First Data e4 Gateway, and save some credit card processing fees.</p>
+        <p>The parameters shown below are obtained from the card processors merchant web site as indicated below. You will need the web site login and password to obtain these parameters.</p>
+        <p>Note that you specify which card processor you use in <a href="xxso55.htm">Payment Method Maintenance</a> located on the ARU&#160;menu. Although typically companies will use the same processor for each card type, Dynamo does allow the card processor to vary by card type, i.e., MasterCard, Visa, American Express, Discover, etc. </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Integrated Credit Card&#160;Processing View</th>
+                </tr>
+                <tr>
+                    <td>Default Origin</td>
+                    <td>Specify the default origin of transactions for this branch, e.g., retail, mail order/telephone, email/Internet, test, etc. The rate charged depends on this origin.</td>
+                </tr>
+                <tr>
+                    <td>Processing Mode</td>
+                    <td>Select from Production or Test Mode Only. Use Test Mode Only to test credit card transactions in Dynamo. For customer credit card transactions, use Production.</td>
+                </tr>
+                <tr>
+                    <td>Logging</td>
+                    <td>
+                        <p>Select from the following:</p>
+                        <p>&#160;</p>
+                        <p><b>0 No logging</b>
+(credit card transactions will not be emailed or displayed on-screen)</p>
+                        <p><b>1 Email failed transactions</b>
+(credit card transactions that failed will result in an email notification)</p>
+                        <p><b>2 Email &amp; Display to operator</b> (credit card transactions that failed will result in an email notification and will display on-screen in Dynamo) </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">First Data e4 Gateway - <a href="https://globalgatewaye4.firstdata.com/" target="_blank">https://globalgatewaye4.firstdata.com/</a></th>
+                </tr>
+                <tr>
+                    <td>Gateway ID</td>
+                    <td>First Data e4 gateway ID</td>
+                </tr>
+                <tr>
+                    <td>Gateway Password</td>
+                    <td>First Data e4 gateway password - To view the password, click on the <u>Generate</u> Link on the e4 gateway page shown below, then copy and paste into Dynamo. &#160;Don't forget to click the Update button at the bottom of the gateway page which will save the newly generated password. If you encounter the error message  "Invalid Signature received"., then the Gateway Password and/or the HMAC Key are incorrect. Regenerate and copy and past into Dynamo.<br /><img src="xxcw11-3.png" /></td>
+                </tr>
+                <tr>
+                    <td>Key ID</td>
+                    <td>Numeric Key ID</td>
+                </tr>
+                <tr>
+                    <td>HMAC&#160;Key</td>
+                    <td>Encryption Key - To view, click on the <u>Generate New Key</u> link on the e4 gateway page displayed below, then copy and paste into Dynamo. Don't forget to click the Update button at the bottom of the page which will save the newly generated HMAC Key.<br /><img src="xxcw11-4.png" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Authorize.net - <a href="https://account.authorize.net/" target="_blank">https://account.authorize.net/</a></th>
+                </tr>
+                <tr>
+                    <td>Authorize.net Login</td>
+                    <td>Authorize.net login for this branch.</td>
+                </tr>
+                <tr>
+                    <td>Authorize.net Password</td>
+                    <td>Authorize.net password for this branch. </td>
+                </tr>
+                <tr>
+                    <th colspan="2">First Data Legacy Global Gateway - <a href="https://www.linkpointcentral.com/" target="_blank">https://www.linkpointcentral.com/</a></th>
+                </tr>
+                <tr>
+                    <td>First Data Store#</td>
+                    <td>Store number as assigned by First Data.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

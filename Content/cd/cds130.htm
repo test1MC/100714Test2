@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="5529" MadCap:lastWidth="1239">
+    <head><title>File Utility</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">File Utility</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS130">Last Revised: 07/27/16</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program can be used to perform a variety of different functions  on existing files or create (define) new ones.&#160;However, it is limited to accessing files within the Dynamo installation directory, which is typically U/CDI. 
+	Since this program can erase or initialize data files, access should be 
+	restricted.</p>
+        <p><b>Entering File Name</b>
+        </p>
+        <p>In addition to entering a file name, on systems such as Linux that include the 'locate' 
+	function, you can type "L" (capitalized followed by a space), and then the file 
+	name to quickly display all occurrences of the file on the disc. You can then 
+	select the desired file from the list to perform a variety of operations on that file.&#160;On UNIX systems, you can enter "F" (capitalized followed by a space) and the file 
+	name to use the 'find' function that will search for various copies of the file. Searching for files by file type is also supported (e.g. "L .txt" will return a list of all TEXT files). Note that this option is based on the directory 
+	database that is typically updated once each night.&#160;Therefore, this list will 
+	exclude files created since the last database update.</p>
+        <p>You can enter a folder name, or a folder name plus starting characters of 
+	a file name, followed by <i>F2</i> to explore the files in the folder specified.&#160; 
+	The operator can select the desired file by highlighting the desired file name 
+	in an alphabetical list of files in the folder.&#160; Select the ".." file 
+	to select the parent directory of your current directory .&#160; Select the "." file to select the 
+	directory itself.</p>
+        <p>When a job folder is active, <i>F5</i> will display files in the active job folder.</p>
+        <p><b>Defining new files</b>
+        </p>
+        <p>If the file name entered does not exist, you can use the File Utility to create, or
+	define, the file.&#160; If the file can be found in the data dictionary, then 
+	it will be defined based on the data dictionary information, otherwise the 
+	operator will be prompted to enter the file characteristics needed to define 
+	the file.</p>
+        <p>If you have job/project folders, with the format J/[Project#], then you 
+	will have the option to define the new file or program in the active job 
+	folder.&#160; The J menu option is used to activate a particular job.</p>
+        <p><b>Options for Existing Files</b>
+        </p>
+        <p>The options available vary by file type and operating system.</p>
+        <p><a href="#Display_File_Information">Display File Information</a>
+        </p>
+        <p><a href="#Display%20Template%20Information">Display Template Information</a>
+        </p>
+        <p><a href="#Display_Key_Structure">Display_Key_Structure</a>
+        </p>
+        <p><a href="#Display%20Keys">Display Keys</a>
+        </p>
+        <p><a href="#Display/Maintain/Print_Data">Display/Maintain/Print Data</a>
+        </p>
+        <p><a href="#Display_Sessions_using_File">Display Sessions using File</a>
+        </p>
+        <p><a href="#Maintain">Maintain</a>
+        </p>
+        <p><a href="#Move">Move</a>
+        </p>
+        <p><a href="#Copy">Copy</a>
+        </p>
+        <p><a href="#Rename">Rename</a>
+        </p>
+        <p><a href="#Initialize">Initialize (Clear All Records)</a>
+        </p>
+        <p><a href="#Erase">Erase</a>
+        </p>
+        <p><a href="#File%20Integrity%20Test%20&amp;%20Record%20Length%20Analysis">File Integrity Test &amp; Record Length Analysis</a>
+        </p>
+        <p><a href="#Clear%20Unused%20Records">Clear Unused Records</a>
+        </p>
+        <p><a href="#Rebuild%20File%20From%20First%20Field%20in%20Data%20Area">Rebuild File from First Field in Data Area</a>
+        </p>
+        <p><a href="#Verify%20Data%20to%20Template">Verify Data to Template</a>
+        </p>
+        <p><a href="#Compute_Field_Sizes">Compute Field Sizes</a>
+        </p>
+        <p><a href="#Email_attachment">Email File as Attachment</a>
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">File Utility Options</th>
+            </tr>
+            <tr>
+                <td><a name="Display_File_Information"></a>Display File Information</td>
+                <td>
+                    <p>Displays information about the file.&#160; The contents of 
+		the view will vary by file type and operating system.</p>
+                    <p>
+                        <img src="cds130-1.png" style="width: 725px;height: 424px;" />
+                    </p>
+                    <p>
+                        <img src="cds130-2.png" style="width: 725px;height: 424px;" />
+                    </p>
+                    <p>
+		&#160;</p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Display Template Information"></a>Display Template Information</td>
+                <td>
+                    <p>The template will be displayed, with the source of the template 
+		information displayed in the window border.&#160; Templates retrieved 
+		from a template file will indicate the template file name.&#160; 
+		Templates retrieved from the Data Dictionary will indicate the company 
+		code and Data Dictionary file (DD11) where the template information was 
+		obtained.</p>
+                    <p>
+                        <img src="cds130-3.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Display_Key_Structure"></a>Display Key Structure</td>
+                <td>
+                    <p>For multi-keyed file types, the key structure will be 
+		displayed.&#160; For traditional files with field separators, the field, 
+		offset, and length can be used.&#160; For template based files, whether 
+		field separators are used or not, the field name will be displayed.&#160; 
+		The KeySubst column indicates the position of the segment within the 
+		key.</p>
+                    <p>
+                        <img src="cds130-4.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Display Keys"></a>Display Keys</td>
+                <td>
+                    <p>This option can be used to display the keys to a file.&#160; 
+		The operator can choose which KNUM for files with multiple KNUMs.&#160; 
+		The operator can indicate the starting key.&#160; Use the Display 
+		Records option when the key contains binary data, and this option is not 
+		very useful in that situation, although the key will be displayed in 
+		hexadecimal format.&#160; In the example below, the ??? represent the 
+		binary date, and the hexadecimal value of the key is displayed to the 
+		right of the actual key.</p>
+                    <p>
+                        <img src="cds130-5.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Display/Maintain/Print_Data"></a>Display/Maintain/Print Data</td>
+                <td>
+                    <p>This option can be used to display data for files with a 
+		template.&#160; You can display the records, print them to a printer, or 
+		save the selected records in a data file.&#160; You can select the 
+		fields to be included, and the order that the fields will appear.&#160; 
+		You can scroll to the right to view additional columns that do not fit 
+		on the initial display.&#160; You can highlight a record to view a 
+		record, change fields within a record, or delete a record.&#160; You can 
+		'clone' a record in the multi-keyed file by changing a segment in the 
+		primary key.&#160; You will be given the option to delete the original 
+		record.</p>
+                    <p>
+                        <img border="0" src="cds1306.jpg" />
+                    </p>
+                    <p>
+                        <img border="0" src="cds1307.jpg" />
+                    </p>
+                    <p>
+		In addition to choosing an existing KNUM, this option also allows you to 
+		create a WHERE clause to select the records desired.&#160; Note that you 
+		can enter field names without the string variable, i.e., <code>STATUS$</code> 
+		not <code>REC.STATUS$</code>.&#160; You can also use the F2 option to 
+		paste the field names into the WHERE clause.</p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Display_Sessions_using_File"></a>Display Sessions using File</td>
+                <td>
+                    <p>On selected systems, this option can be used to display what 
+		sessions have the file open.</p>
+                    <p>
+                        <img border="0" src="cds1308.jpg" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Maintain"></a>Maintain</td>
+                <td>This option enables adding records, deleting records, or modifying existing records in a file.</td>
+            </tr>
+            <tr>
+                <td><a name="Move"></a>Move</td>
+                <td>This option is used to move a file to another directory, and optionally, change the characteristics of the file, such as key size and structure, maximum number of records, and number of characters per record. The file name may be changed or left the same. This option performs a record-by-record copy and will erase the original file after the copy is completed.</td>
+            </tr>
+            <tr>
+                <td><a name="Copy"></a>Copy</td>
+                <td>
+        This function is similar to the Move option, except the original file is not erased.
+
+        <h6>Note that for certain file types, the new file type may be specified as STR in which case IOLIST based files will be converted to comma separated value (CSV) flat files to export to another system.</h6></td>
+            </tr>
+            <tr>
+                <td><a name="Initialize"></a>Initialize (Clear all records)</td>
+                <td>This function removes all records in the file. The file remains on the disc.</td>
+            </tr>
+            <tr>
+                <td><a name="Rename"></a>Rename</td>
+                <td>Rename allows the operator to change the name of a file.&#160; The new file name must be located on the same file system as the original file. In some cases it is necessary to provide the complete path for the new name.</td>
+            </tr>
+            <tr>
+                <td><a name="Erase"></a>Erase</td>
+                <td>This function erases the entire file from the disc.</td>
+            </tr>
+            <tr>
+                <td><a name="File Integrity Test &amp; Record Length Analysis"></a>File Integrity Test &amp; Record Length Analysis</td>
+                <td>
+        This option will verify that when reading through the file sequentially, each record is encountered only once, and that each key is larger than the previous key. This is normally true on direct access files, but in the case of a hardware malfunction, power failure, etc., the file may become damaged.
+
+        <p>Since some keyed files traditionally have the first field of the data the same as the key, this option also checks to see if the first field matches the key.</p><p>For IOLIST based files that have numeric or variable length string fields, the number of characters required per record may be less than the number defined. This option also computes the required number of characters per record.</p></td>
+            </tr>
+            <tr>
+                <td><a name="Clear Unused Records"></a>Clear Unused Records</td>
+                <td>For Direct (DIR) files, the data area of a file is not initialized when the file is defined. This option will clear the data area of a DIR file so that when processing files in indexed order, only active records with a key will be processed.</td>
+            </tr>
+            <tr>
+                <td><a name="Rebuild File From First Field in Data Area"></a>Rebuild File From First Field in Data Area</td>
+                <td>If the key area of a DIR file becomes corrupted and the first field is the same as the key, this option will copy the file using only the data area to rebuild the file.&#160; This would only be required if the file was corrupted due to hardware, power, or other system failure.</td>
+            </tr>
+            <tr>
+                <td><a name="Verify Data to Template"></a>Verify Data to Template</td>
+                <td>This option is used for files that have a template in order to confirm that each record of the file meets the definition criteria of the template.</td>
+            </tr>
+            <tr>
+                <td><a name="Compute_Field_Sizes"></a>Compute Field Sizes</td>
+                <td>
+                    <p>This option is used for data files with templates to compute the average and maximum number of characters used for each field in the file. It also computes the maximum number of fractional positions for numeric fields.</p>
+                    <p>
+                        <img src="../xx/cds130-27.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Email_attachment"></a>Email file as attachment</td>
+                <td>This option will attach the file to an email.</td>
+            </tr>
+        </table>
+    </body>
+</html>

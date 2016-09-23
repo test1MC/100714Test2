@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="13441" MadCap:lastWidth="999">
+    <head><title>Supported Workstations</title>
+    </head>
+    <body>
+        <p class="SectionName">Dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Supported Workstations</p>
+                </td>
+                <td align="right">Last Revised 08/24/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo can be run from a variety of workstations 
+including personal computers running Microsoft Windows, Axel thin client workstations, Apple 
+Mac computers, and legacy Wyse and IBM terminals.</p>
+        <h5>Personal Computers</h5>
+        <ul>
+            <li>Microsoft Windows XP Professional, XP Home, Vista, Windows 7, or newer.</li>
+            <li><a href="#Dynastart">Dynastart</a> - Launch Dynamo from web browser.&#160; No terminal emulator 
+ software needed on PC.&#160; Requires free Java download from Oracle/Sun.</li>
+            <li>Recommended terminal emulator, supports all features: <a href="#FacetWin">
+  FacetWin</a></li>
+            <li>Alternate terminal emulator, supports limited features: <a href="#putty">
+  putty</a></li>
+        </ul>
+        <h5>Axel thin client workstations</h5>
+        <ul>
+            <li>Supports both character mode and graphical (GUI) mode</li>
+            <li>Character mode requires no additional software</li>
+            <li>GUI mode - <a href="#Dynastart">Dynastart</a> - Launch Dynamo from web browser.&#160; No terminal 
+ emulator software needed.</li>
+            <li>GUI mode - limited features using Linux xterm program</li>
+            <li>GUI mode - all features using PowerTerm Interconnect for Linux</li>
+        </ul>
+        <h5>Apple Mac computers</h5>
+        <ul>
+            <li>GUI mode - <a href="#Dynastart">Dynastart</a> - Launch Dynamo from web browser.&#160; No terminal 
+ emulator software needed.</li>
+            <li>Character mode - limited features using <a href="#Apple">Apple Terminal</a> 
+  program</li>
+            <li>Character mode - supports all features using PowerTerm Interconnect for 
+ Mac OS-X</li>
+        </ul>
+        <h5>Apple iOS devices</h5>
+        <ul>
+            <li>Apple iPhone or iPad</li>
+            <li>Recommended terminal emulator, supports limited features: 
+	<a href="#TinyTERM">Century 
+	Software TinyTERM ITX2 for iPad</a></li>
+        </ul>
+        <h5>Serial Terminals (supported, but not recommended)</h5>
+        <ul>
+            <li>Wyse 60 and 160 terminals</li>
+            <li>IBM 3151 and 3153 terminals</li>
+        </ul>
+        <h5>Support Matrix</h5>
+        <table>
+            <tr>
+                <th>Configuration</th>
+                <th>Color</th>
+                <th>wide screen<br />    (132 column) mode</th>
+                <th>Print to local printer</th>
+                <th>Display PDF,<br />    Open spreadsheet</th>
+            </tr>
+            <tr>
+                <td><a href="#Dynastart">Dynastart</a> (all platforms)</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td>Windows PC running Facetwin</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td>Windows PC running putty</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td>Axel running PowerTerm</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td>Axel in character mode</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td>Mac running PowerTerm</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td>Mac running Terminal</td>
+                <td align="center">Y</td>
+                <td align="center">N</td>
+                <td align="center">N</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td>Wyse/IBM Serial Terminal</td>
+                <td align="center">N</td>
+                <td align="center">Y</td>
+                <td align="center">Y</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td>Apple iOS </td>
+                <td align="center">Y</td>
+                <td align="center">N</td>
+                <td align="center">N</td>
+                <td align="center">N</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2"><a name="Dynastart"></a>Dynastart</th>
+            </tr>
+            <tr>
+                <td>concept</td>
+                <td>Dynastart is the newest (and perhaps easiest) way to launch Dynamo.&#160; 
+ This is because the only software needed is Java, which is typically already 
+ installed on PCs and Apple Macs.&#160; No terminal emulation software such 
+ as FacetWin, PowerTerm, or Apple's terminal program is required.</td>
+            </tr>
+            <tr>
+                <td>requirements</td>
+                <td>
+                    <ul>
+                        <li>Java runtime environment (jre) version 1.7.0_51 or higher installed on 
+ workstation.&#160; On a PC you can check (and upgrade) the version of Java 
+ installed using the Windows Control Panel, Add/Remove Programs option. Click <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">here</a> for the Java download page. For Windows PC's download the link that reads: jre-7u51-windows-x64.exe.</li>
+                        <li>BBj version 13.13 or higher installed on the server.&#160; You can 
+ check the version of BBj installed using the I (Information) option at any 
+ Dynamo menu.&#160; Contact Excellware to upgrade BBj.</li>
+                        <li>Dynamo Tools - Developer Components dated 02/15/14 or later installed on 
+ the server.&#160; You can check the version of the System Management 
+ Software installed using the V (Versions) option at any Dynamo menu.</li>
+                        <li>Dynastart configured on server.&#160; Excellware will do this.</li>
+                        <li>Each operator name and password must be defined.&#160; Excellware will do 
+ this, but end operators can change their password at any time after logging 
+ in.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Installation</td>
+                <td>Open a browser such as Chrome, Firefox, or Internet Explorer and enter the address provided by Excellware, i.e.., <code>http://dynamo.excellware.com:8888/jnlp/dynamo.jnlp</code></td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>You may get a small box as shown, that requires you to click the Keep button.</p>
+                    <p>
+                        <img src="../cd/dynastart1.png" />
+                    </p>
+                    <p>This example is when using the Chrome browser. You can close the browser once this small file in downloaded.</p>
+                    <p>Please see below for how to download using the newest version of Safari.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>Over the next few minutes, the programs will be downloaded, verified, and installed on your workstation.</p>
+                    <p>
+                        <img src="../cd/dynastart2.png" />
+                    </p>
+                    <p>
+                        <img src="../cd/dynastart3.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>When the download and verification process completes, check the 'Do not show' box, then click Run.</p>
+                    <p>
+                        <img src="../cd/dynastart4.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>Click the Yes button to Install the Certificate Authority.</p>
+                    <p>
+                        <img src="../cd/dynastart5.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>Check the 'I accept the risk' box, then click Run.</p>
+                    <p>
+                        <img src="../cd/dynastart6.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>
+                    <p>Dynamo is now installed and will launch. A shortcut will be installed on your desktop. You can click that icon to launch Dynamo after the current session is closed.</p>
+                    <p>
+                        <img src="../cd/dynastart7.png" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p><b>Download Dynastart Using the Safari Browser (based on version 6.1.3; future versions may be similar)</b>
+        </p>
+        <ol>
+            <li>
+                <p>If running Dynamo in the cloud, go to the following link: http://dynamo.excellware.com:8888/jnlp/dynamo.jnlp</p>
+                <ol>
+                    <li>
+                        <p>If running Dynamo on your own server, contact us for the path valid for you.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>If your file does not download, you must go to your Safari Preferences.</p>
+            </li>
+            <li>Go to the General Tab.<br /><img src="../safari.tif" /></li>
+            <li>Check the box that says Open&#160;"safe" files after downloading</li>
+            <li>Revisit the link and download the file. </li>
+            <li>
+                <p>Select “Run” when the following dialog box opens.</p>
+                <p>
+                    <img src="../dynastartapplication.tiff" />
+                </p>
+            </li>
+            <li>
+                <p>Go to your downloads folder in the dock or search for the file in Spotlight to install it (dynamo.jnlp).</p>
+                <p>
+                    <img src="../dynastartdownloads.tiff" style="width: 661px;height: 412px;" />
+                </p>
+            </li>
+            <li>
+                <p>The file can be placed on the dock for easy access to Dynastart later.</p>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th colspan="3"><a name="FacetWin"></a>FacetWin Terminal Emulator 
+ Configuration Settings</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" colspan="3">Click on FacetWin File, then Properties to 
+ change the settings from the default values</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Connection</td>
+                <td nowrap="nowrap">Server</td>
+                <td>hostname of server (typically just 'server'), IP address of server can 
+ be used when workstation is connected over a VPN.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">operator Name</td>
+                <td>Dynamo login ID can be entered to eliminate the need to enter with each 
+ login</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Password</td>
+                <td>Dynamo password can be entered to eliminate the need to enter with each 
+ login.&#160;&#160;Note that the ability to save the password is disabled at the 
+ request of some customers.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Save Password</td>
+                <td>Check to save password for subsequent logins without manual entry</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Start Me Up!</td>
+                <td nowrap="nowrap">Application Title</td>
+                <td>Dynamo</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Icon</td>
+                <td>operator preference</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Put Application on Start Menu</td>
+                <td>operator preference - typically checked</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Put Shortcut in Startup Group</td>
+                <td>operator preference - typically checked</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Put Shortcut on Desktop</td>
+                <td>operator preference - typically checked</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Emulation</td>
+                <td nowrap="nowrap">Emulation</td>
+                <td>SCOANSI</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Options</td>
+                <td nowrap="nowrap">Optional Sequence Support</td>
+                <td>Check box labeled: Enable Run Program Escape Sequences</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Appearance</td>
+                <td nowrap="nowrap">Maximized Options</td>
+                <td>Uncheck all boxes except Stretch Font</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Advanced</td>
+                <td nowrap="nowrap">VTP Port Number</td>
+                <td>Typically set to 1390, but some installations use 7013</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Enable FacetPhone Features</td>
+                <td>Check this box if using FacetPhone to enable telephone dialing from 
+ Dynamo by clicking on telephone numbers</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Keep-alive to server</td>
+                <td>Check this box especially if workstation is not located on same local 
+ network as server, such as from home or when using a laptop computer.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" colspan="3">Click on FacetWin File, then View to change 
+ the settings from the default values</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Status Bar</td>
+                <td>operator preference - typically unchecked</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Tool Bar</td>
+                <td>operator preference - typically unchecked</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3"><a name="putty"></a>putty terminal emulation settings</th>
+            </tr>
+            <tr>
+                <td align="right">1</td>
+                <td>Download </td>
+                <td>If not already installed on the PC, download the putty installer from the 
+ <a href="http://www.excellware.com/index.php/services/downloads/">Downloads page</a> of www.excellware.com 
+    and install on a Windows PC.</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Configure</td>
+                <td>You can either follow the steps outlined below to configure putty for use with Dynamo and Dynamo Tools, or you can <a href="http://www.excellware.com/dnl/ExcellwarePuttyDefaults.zip">download</a> the ExcellwarePuttyDefault zipped configuration file, then click on the .reg file to import the recommended settings.</td>
+            </tr>
+            <tr>
+                <td align="right">2</td>
+                <td>Launch</td>
+                <td>Click on the Windows Start button, then enter putty.exe in the 'Search programs and files' field.</td>
+            </tr>
+            <tr>
+                <td align="right">3</td>
+                <td>Version</td>
+                <td>Click 'About'.&#160; These instructions assume that you are running 
+ 'Release 0.63'.</td>
+            </tr>
+            <tr>
+                <td align="right">4</td>
+                <td>Host Name</td>
+                <td>Enter Host Name (typically 'server') or IP Address of Server.</td>
+            </tr>
+            <tr>
+                <td align="right">5</td>
+                <td>Connection Type</td>
+                <td>SSH is recommended.</td>
+            </tr>
+            <tr>
+                <td align="right">6</td>
+                <td>Terminal</td>
+                <td>Check 'Enable blinking text'</td>
+            </tr>
+            <tr>
+                <td align="right">7</td>
+                <td>Remote-controlled printing</td>
+                <td>Highlight printer desired from list of printers installed on PC</td>
+            </tr>
+            <tr>
+                <td align="right">8</td>
+                <td>Keyboard</td>
+                <td>Backspace key -&gt; Control-H<br />   Function keys -&gt; SCO</td>
+            </tr>
+            <tr>
+                <td align="right">9</td>
+                <td>Window</td>
+                <td>Rows -&gt; 25<br />   When window is resized -&gt; Change the size of the font<br />   Uncheck 'Display Scrollbar'</td>
+            </tr>
+            <tr>
+                <td align="right">10</td>
+                <td>Appearance</td>
+                <td>Change font to Lucida Console 14 point (or other font of your 
+ preference)</td>
+            </tr>
+            <tr>
+                <td align="right">11</td>
+                <td>Behaviour</td>
+                <td>Window Title -&gt; Specify Company Name and server name (if desired)</td>
+            </tr>
+            <tr>
+                <td align="right">12</td>
+                <td>Translation</td>
+                <td>Character set translation -&gt; CP437</td>
+            </tr>
+            <tr>
+                <td align="right">13</td>
+                <td>Data</td>
+                <td>Auto-login user name -&gt; enter if desired<br /> Terminal-type string -&gt; scoansi</td>
+            </tr>
+            <tr>
+                <td align="right">14</td>
+                <td>Session</td>
+                <td>Saved Sessions -&gt; enter session name such as Dynamo<br />   Click Save button to save session parameters<br />   Click Open to test.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3"><a name="Apple"></a>Apple Mac OS-X Terminal Settings</th>
+            </tr>
+            <tr>
+                <td colspan="3">Tested with Version 2.0.1 (240) - ships with Leopard
+    <p>Launch Terminal Application from Finder -&gt; Go -&gt; Utilities -&gt; Terminal</p><p>Terminal -&gt; Preferences</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Settings</td>
+                <td nowrap="nowrap">Text</td>
+                <td>Font: Change<br />    Click 'Fixed Width' in the Collections Column.<br />    Select a Font in the 'Family' column that looks good to you, such as 'Andale 
+ Mono', 'Lucida Sans Typewriter', or 'Monaco'.<br />    Typeface: Regular<br />    Size: 20 pt or your preference</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Check: Use bold fonts, Allow blinking text, Display ANSI colors, Blink 
+ cursor</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Cursor: Block</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Window</td>
+                <td>Title: Dynamo</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>All boxes unchecked</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Window Size: 80 columns 25 rows</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Scrollback: Limit number of rows to: 0</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Shell</td>
+                <td>Check Run command: unset DISPLAY; TERM=macterm; telnet -K <code>
+    192.168.XX.2</code>; exit<br />    Note: replace <code>192.168.XX.2</code> with the IP address of your Dynamo 
+ server.&#160; Contact Excellware for assistance.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Check: Run inside shell</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>When the shell exits: Close the window</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Prompt before closing: Never</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">Advanced</td>
+                <td>Declare terminal as: xterm</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap">&#160;</td>
+                <td>Check boxes: Delete sends Ctrl-H, Audible bell, Set LANG environment 
+ variable on startup</td>
+            </tr>
+            <tr>
+                <td colspan="3">MAC OS defaults to having function keys F1, F2, F3, and F4 
+ have special purpose such as lowering/raising the brightness, tiling the 
+ windows, or displaying the gadgets.&#160; If you prefer that configuration 
+ you will need to touch the fn key when using function keys F1, F2, F3, and 
+ F4 with Dynamo.&#160; Follow the steps below if you want to reverse this so 
+ that you would need to hold the Fn key down to adjust the brightness, and 
+ not when using Dynamo.<p>Click Apple -&gt; System Preferences -&gt; Keyboard and 
+ Mouse</p><p>Then check the box that reads: Use all F1, F2, etc. keys as standard 
+ function keys.&#160; See screen shot below.</p></td>
+            </tr>
+        </table>
+        <p>
+            <img border="0" src="workstationMac1.png" width="670" height="535" />
+            <img border="0" src="workstationMac2.png" width="670" height="535" />
+        </p>
+        <p>
+            <img border="0" src="workstationMac3.png" width="670" height="535" />
+        </p>
+        <p>
+            <img border="0" src="workstationMac4.png" width="670" height="535" />
+        </p>
+        <p>
+            <img border="0" src="workstationsMacKeyboard.png" width="748" height="682" />
+        </p>
+        <p>Using PowerTerm on an Apple Mac, you can also print from Dynamo to a printer 
+attached to the Mac.&#160; This is sometimes referred to as slave printing.&#160; 
+You can also print to a printer attached to the same subnet as the Mac.&#160; 
+For example, the printer could be wireless or connected to a router or another 
+workstation.&#160; Most laser and inkjet printers are supported.&#160; This 
+configuration is often used when printing from home.</p>
+        <table>
+            <tr>
+                <th colspan="2">Configuring Dynamo printing using PowerTerm on an Apple Mac</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Install and configure the printer and confirm that the Mac can print to 
+ it using any Mac application</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Start PowerTerm on the Mac, and click Terminal Setup, then the Printer 
+ Tab.&#160; Verify that all setting match those shown in the screen shot 
+ below.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Click the Advanced Printing button, and confirm that all settings match 
+ those shown in the screen shot below.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Close the Advanced Printing and Terminal Setup windows.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Click File, then Print from the PowerTerm menu.&#160; You should be able 
+ to select the desired printer from the printer drop down box.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Test printing from Dynamo.&#160; The printer is typically described as 
+ Slave or Local printer.&#160; See the screen shot below for an example of 
+ adding a Dynamo Printer using Printer Control Maintenance (PFM) or <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> for assistance adding your particular printer to the Dynamo 
+ printer list.&#160; </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Save the PowerTerm configuration settings.</td>
+            </tr>
+        </table>
+        <p>
+            <img border="0" src="PowerTermMac2.png" width="680" height="542" />
+        </p>
+        <p>
+            <img border="0" src="PowerTermMac3.png" width="580" height="627" />
+        </p>
+        <p>
+            <img border="0" src="PowerTermMac1.png" width="663" height="555" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Configuring a Dynamo Local Printer, i.e., printer 
+	attached to workstation</th>
+            </tr>
+            <tr>
+                <td>Printer ID</td>
+                <td>Any 4 character Printer ID that starts with a letter can be used.&#160;&#160; 
+ Note that the printers are displayed in the selection list in Printer ID 
+ sequence.</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>"Local Printer" or "Slave Printer" or "Mike's Printer", or other 
+ appropriate description.&#160; Note that multiple operators can share a common 
+ Local Printer, as it is local to the Workstation being used</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>H2100 is often a good choice for a black laser printer that prints on 
+ one side of the paper (simplex).&#160; H210D is the printer type that 
+ support two sided printing (duplex)</td>
+            </tr>
+            <tr>
+                <td>Print Queue</td>
+                <td>Not used for local/slave printing</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>Not used for local/slave printing</td>
+            </tr>
+            <tr>
+                <td>Device</td>
+                <td>Always use /dev/tty for local/slave printing</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>Set to E to Enable this printer, i.e., allow operators to select and print 
+ to if.&#160; Set to D to Disable the printer which might be needed if the 
+ printer is temporarily not available.&#160; Note that you can use Printer 
+ Preference Maintenance (PFM) to limit the printers that appear on the list, 
+ and to specify the default printer.</td>
+            </tr>
+            <tr>
+                <td>Default Method</td>
+                <td>Set to D 'Direct to Device' for local/slave printing</td>
+            </tr>
+            <tr>
+                <td>Timeout Seconds</td>
+                <td>Can often be left at zero.&#160; If you encounter printer busy messages 
+ including error zero's, then increase this parameter.</td>
+            </tr>
+        </table>
+        <p>
+            <img border="0" src="workst1.jpg" width="648" height="374" />
+        </p>
+        <p>TinyTERM ITX 2 for iOS can be purchased from the 
+	iTunes App Store.&#160; Specify the target iOS device (iPad or iPhone) and 
+purchase the appropriate version.</p>
+        <p>To create a new connection, launch the application 
+	and tap Add New Connection.&#160; Enter the following information and 
+	press the Connect button to save settings and launch app.</p>
+        <table>
+            <tr>
+                <th colspan="3"><a name="TinyTERM"></a>Century Software TinyTERM Terminal 
+	Settings</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Configuration Name</td>
+                <td nowrap="nowrap">Name</td>
+                <td>Enter name for connection (operator preference) - typically "Dynamo".</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Connection</td>
+                <td nowrap="nowrap">Hostname</td>
+                <td>hostname of server - can be a name such as 'server' or an IP address.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>operatorname</td>
+                <td>Dynamo login ID.&#160; Leave blank to be prompted for operatorname at 
+		each login attempt.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Port</td>
+                <td>The default Port is determined by the Protocol: 22 for SSH, 23 for telnet</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Protocol</td>
+                <td>If you use accept credit cards, use SSH protocol</td>
+            </tr>
+            <tr>
+                <td>Terminal Emulator Settings</td>
+                <td>Emulation</td>
+                <td>Select SCOANSI.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Portrait/Landscape Settings</td>
+                <td>Use default settings of 80 columns, 25 rows</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Backspace/Delete</td>
+                <td>OFF</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Host UTF-8 Support</td>
+                <td>OFF</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Hostcode Page</td>
+                <td>STD 437 MS-DOS Latin US</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>External Keyboard Map</td>
+                <td>US English</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Ignore Graphics Parity</td>
+                <td>ON</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Colors</td>
+                <td>Use Default.</td>
+            </tr>
+            <tr>
+                <td>Keyboard</td>
+                <td>Transparency</td>
+                <td>OFF</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Style</td>
+                <td>PC English w/ Fn Keys</td>
+            </tr>
+        </table>
+        <p>To set the primary on-display keyboard, tap the keyboard icon on the main 
+ribbon bar.&#160; If the on-screen keyboard disappears, double tap the screen to 
+display it again.</p>
+        <p>To prevent the terminal display from changing between portrait and landscape 
+modes, activate the iPad's orientation lock.&#160; The orientation lock may be a hardware switch 
+(original iPad), or can be activated on later models by double-clicking the home 
+button and then swiping-left to expose the software button (located to the far 
+left).</p>
+        <p>Additional configuration details are available at
+<a href="http://www.censoft.com/help/ios/itx2/ipad/index.php">Century Software's 
+TinyTERM ITX2 support page</a>.</p>
+        <p>
+            <img border="0" src="add_new_button.png" width="415" height="169" align="top" />&#160;&#160;&#160;
+<img border="0" src="configuration_screen.png" width="318" height="800" align="top" />&#160;&#160;&#160;
+<img border="0" src="English_keyboard.png" width="745" height="264" align="top" /></p>
+    </body>
+</html>

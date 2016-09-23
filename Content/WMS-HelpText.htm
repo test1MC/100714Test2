@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="578" MadCap:lastWidth="748">
+    <head><title>Help Text</title></head>
+    <body>
+        <p class="SectionName">Help Text</p>
+        <p class="SectionTitle">Web Management Software</p>
+        <p class="SectionDesc">It is often desirable to have help text that describes, in more detail, the elements on a page, or the steps to be followed. The Excellware Web Management Software includes standards for:</p>
+        <ul>
+            <li>where the help text should be located,</li>
+            <li>what the help text should be named,</li>
+            <li>the method of linking the help text to a style sheet, and</li>
+            <li>the method of displaying the help text.</li>
+        </ul>
+        <h5>Location</h5>
+        <p>The help text should be located in the XX/help/ folder. &#160; Refer to the topic on <a href="WMS-FolderLocations.htm">folder locations</a> for additional details.</p>
+        <h5>Name</h5>
+        <p>Text that applies to the entire page, should be named using the same name as the BBx program,&#160; but all lower case. &#160; For example, if the main program is named WA010, then the help text for the main program would be named XX/help/wa010.htm.</p>
+        <h5>Linking Method</h5>
+        <p>Help text that pertains to the entire page can be displayed by the operator by clicking on the "Help" link on the row with other links, typically near the bottom of the page. &#160; This Help link, and the necessary javascript, can be added to your HTML by calling the CDW001 program.</p>
+        <p>Should you need help text that is field specific, and does not apply to the entire page, you can add the HTML and javascript manually. &#160;</p>
+        <p><code>&lt;a href="javascript:cdw001('/xx/help/HelpDocumentTitle.htm')"&gt;Field Name&lt;/a&gt;</code></p>
+        <p>You must also include the CD/web/cdw001 javascript in the HTML. &#160; This can be done by using a bbweb utility.</p>
+        <p><code>CALL "uthtmout.wbb","","{include CD/web/cdw001}"+HTML$,HTML$,""</code></p>
+        <h5>Display Method</h5>
+        <p>The display of the help text is done in a smaller, separate window, that has many controls omitted. &#160; The tool bar control is left visible so the help text can be printed using the printer icon.</p>
+    </body>
+</html>

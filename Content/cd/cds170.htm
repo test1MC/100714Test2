@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="820" MadCap:lastWidth="762">
+    <head><title>Printer Test Utility</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Printer Test Utility</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS170">Last Revised: 06/22/15</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to send data to a printer to confirm that the printer, Dynamo Printer Type, and Dynamo Printer Type parameters are correct.&#160; It can also be used to confirm that the flow control for printers connected to a server serial port is configured properly.</p>
+        <p>The following tests are available.</p>
+        <table>
+            <tr>
+                <th>Test</th>
+                <th>Printer types</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Printer Attributes Test</td>
+                <td align="center">All</td>
+                <td>This test sends text in various fonts and spacings to the printer based on the Dynamo Printer Type.&#160; Careful observation of the output can detect situations where the Dynamo Printer Type is not correct for the particular printer, or the configuration data maintained in Printer Type Maintenance (SMC) is not correct.</td>
+            </tr>
+            <tr>
+                <td>Margin Test</td>
+                <td align="center">All</td>
+                <td>This test will print a single 'box' of 'X' characters near the margin of the page.&#160; If the X's are not visible or are cut off on any edge of the page, then changes are required to either the Dynamo Printer Type or the Printer Type configuration data.</td>
+            </tr>
+            <tr>
+                <td>PCL Grid Test</td>
+                <td align="center">Laser &amp; Ink jet</td>
+                <td>
+                    <p>This test sends a grid of lines to a PCL capable printer.&#160; The result should be that the grid is closed on all four edges of the page with approximately an equal blank margin on each edge.</p>
+                    <p>&#160;</p>
+                    <p>Selecting "Yes" for this option also brings up another option for printing an <b>overlay file</b> over the grid. This is used if you have configured Dynamo to overlay an image, such as a company logo, on certain print types. In conjunction with the grid that is printed on the test page, you will be able to see where your image is located and make adjustments accordingly.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Character Test</td>
+                <td align="center">All</td>
+                <td>By comparing the hexadecimal code (e.g. $70$) with its corresponding ASCII character (e.g. h) printed next to each other, you can check the codes the printer is receiving, and ensure no data has been lost in transmission. This can be useful for serially connected printers which may be prone to data loss during data transmission relay. Most end-users will not need to run this test.</td>
+            </tr>
+            <tr>
+                <td>Tray Selection Test</td>
+                <td align="center">
+                    <p align="center">All</p>
+                </td>
+                <td>
+                    <p>This test is used to determine what printer command  selects paper from the various paper trays that exist on laser printers and copiers. The printer tray selection command will be printed on the ouput page (see example below). 
+Note that several pages will print, and some will print from the same tray (e.g if using a tray for standard printing as well as envelopes).  By using different colored paper, or handwriting some identifying text (such as "middle tray")on a few blank pages in each tray, you can determine which printer command pulls paper from which tray.
+
+</p>
+                    <p>&#160;</p>
+                    <p>This information is used in Printer Type Maintenance (PFM) to create a custom printer type for printers or copiers that are not included in the default list of printer types included with Dynamo Tools.  <a href="http://www.excellware.com/index.php/about/contact-us/" target="_blank">Contact Excellwar</a>e for assistance customizing a printer type for your particular make and model printer or copier.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Buffer Overflow Test - Portrait</td>
+                <td align="center">Serially Connected</td>
+                <td rowspan="2">Prints an operator-specified number of pages to confirm that when the printer's buffer is full that the server stops sending data to the printer until the printer's buffer has capacity to accept more data.&#160; This process is known as flow control, and requires proper configuration of the printer's internal settings, the server's serial port configuration, and the serial cable used.&#160; Excellware discourages use of serially connected printers due to the wide variety of methods used to configure the printer, server, and cable.&#160; The page and line number being printed displays on the workstation during this test.&#160; You should request enough pages to fill the printers buffer and observe a visible pause of the display of the page and line# on the workstation when the printer has advised the server to temporarily stop sending data.&#160; Carefully observe the printed page to insure that no lines are missing which would indicate a configuration problem.</td>
+            </tr>
+            <tr>
+                <td>Buffer Overflow Test - Landscape</td>
+                <td align="center">Serially Connected printers with 8.5" depth paper setting in Printer Type.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>Example output from Printer Tray Selection Test. "Middle Tray" was hand-written on the page before printing. It is now known that command pulls paper from the middle tray of the particular printer that was used.</p>
+        <p>
+            <img src="../Resources/Images/PrintTraySelComm.jpg" style="max-width: auto;max-height: auto;width: 539px;height: 697px;border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;" />
+        </p>
+    </body>
+</html>

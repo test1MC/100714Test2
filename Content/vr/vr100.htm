@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="4851" MadCap:lastWidth="1186">
+    <head><title>Vendor Returns Processing</title>
+    </head>
+    <body>
+        <p class="SectionName">Vendor Returns Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Vendor Returns Processing</p>
+                </td>
+                <td align="right">Last Revised: 01/15/15</td>
+            </tr>
+        </table>
+        <p>Vendor Returns Processing is used to return items for credit or replacement. When the vendor return is processed, the inventory value is credited and the account specified in the GLU&#160;interface is debited. If the return item is replaced, it can be added into inventory using inventory adjustment type VRR. If a credit memo is issued, it can be entered through the <a href="../ap/ap100.htm">A/P Invoice Data Entry</a>. </p>
+        <p>
+            <img src="vr100-1.gif" />
+        </p>
+        <h5>Vendor Info</h5>
+        <p>
+            <img src="vr100-2.gif" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Vendor Info View</th>
+                </tr>
+                <tr>
+                    <td>Vendor#, Name</td>
+                    <td>Input the vendor number or a few letters of the vendor name to populate these fields. </td>
+                </tr>
+                <tr>
+                    <td>Address Line 1 &amp; 2, City, State/Country, Zip Code</td>
+                    <td>These fields will automatically populate with the address on file in Vendor&#160;Maintenance, but they can be changed if necessary.</td>
+                </tr>
+                <tr>
+                    <td>Alpha Sort Name</td>
+                    <td>The alphabetization code will automatically populate as specified in Vendor&#160;Maintenance for this vendor. </td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>Enter a vendor contact name here, if applicable. </td>
+                </tr>
+                <tr>
+                    <td>Telephone#</td>
+                    <td>This field will automatically populate with the telephone number on file in Vendor Maintenance, but it can be changed if necessary. </td>
+                </tr>
+                <tr>
+                    <td>Fax#</td>
+                    <td>This field will automatically populate with the fax number on file in&#160;Vendor&#160;Maintenance, but it can be changed if necessary.</td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td>If applicable, supply an email address for the vendor contact. </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Shipping Info</h5>
+        <p>
+            <img src="vr100-3.gif" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Shipping&#160;Info View</th>
+                </tr>
+                <tr>
+                    <td>Warehouse</td>
+                    <td>Indicate which warehouse from which you are issuing a return.</td>
+                </tr>
+                <tr>
+                    <td>Preferred Carrier</td>
+                    <td>If a particular carrier is preferred, it can be specified here.</td>
+                </tr>
+                <tr>
+                    <td>Service</td>
+                    <td>If a particular service is preferred, it can be specified here.</td>
+                </tr>
+                <tr>
+                    <td>Billing Method</td>
+                    <td>
+                        <p>Select the billing method for this return:</p>
+                        <ul>
+                            <li>Prepay &amp; Add</li>
+                            <li>Prepay (Paid by Vendor)</li>
+                            <li>No Charge</li>
+                            <li>Freight Collect</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bill Shipping to Acct#</td>
+                    <td>If an account is to be billed for shipping, indicate that number here.</td>
+                </tr>
+                <tr>
+                    <td>FOB&#160;Point</td>
+                    <td>
+                        <p>You can select Shipping Point or Destination.</p>
+                        <p>Shipping Point indicates the buyer pays shipping cost and takes responsibility for the goods when they leave the seller’s premises. Destination indicates that the seller will pay shipping costs and remain responsible for the goods until the buyer takes possession.
+</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Heading Info</h5>
+        <p>
+            <img src="vr100-4.gif" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Heading&#160;Info</th>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>Enter a reference for what was included on the return.</td>
+                </tr>
+                <tr>
+                    <td>Date New</td>
+                    <td>This field is populated automatically and indicates when this vendor return was created.</td>
+                </tr>
+                <tr>
+                    <td>Date Returned</td>
+                    <td>Indicate the date on which the items were returned. </td>
+                </tr>
+                <tr>
+                    <td>RMA#</td>
+                    <td>If you have been given a return merchandise authorization number, input that number in this field.</td>
+                </tr>
+                <tr>
+                    <td>Internal&#160;Notepad</td>
+                    <td>If desired, a note that can only be seen in Vendor Returns Processing can be typed here.</td>
+                </tr>
+                <tr>
+                    <td>External Notepad</td>
+                    <td>If desired, a note that will display on the printed vendor return can be typed here.</td>
+                </tr>
+                <tr>
+                    <td>Total Weight, Total Cube</td>
+                    <td>Based on weights and volumes specified in Item&#160;Maintenance, these fields will automatically populate with the sum of the weights and volumes of the items on the return.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Detail</h5>
+        <p>
+            <img src="vr100-5.gif" />
+        </p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Detail</th>
+                </tr>
+                <tr>
+                    <td>Item#</td>
+                    <td>Enter the item number or part of the description to add an item to this view. </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>This field will automatically populate based on the item#. However, it can be edited in the VR&#160;Detail Properties View accessed in column P. </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>Indicate the quantity of the item to be returned.</td>
+                </tr>
+                <tr>
+                    <td>Cost</td>
+                    <td>Indicate the cost of the item to be returned.</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>Indicate the unit of the item. The default is "Each." </td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>If you need to view Item Inquiry, type "I" in this column. If you would like to view the VR&#160;Item Detail properties, type P in this column. </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Print/Fax/Email</h5>
+        <p>
+            <img src="vr100-6.gif" />
+        </p>
+        <p>Use this option to print, fax, or email the vendor return. </p>
+        <p>Sample <a href="vendoreturnslip.pdf">Vendor Return Slip</a>. </p>
+        <h5>Timestamps</h5>
+        <p>
+            <img src="vr100-7.gif" />
+        </p>
+        <p style="font-weight: normal;">View when the purchase order was changed, who changed it, and what was changed. </p>
+        <h5>Vendor Inquiry</h5>
+        <p>Selecting this option launches the Vendor Inquiry application to search for a vendor. </p>
+        <h5>Delete/Update</h5>
+        <p>
+            <img src="vr100-8.gif" />
+        </p>
+        <p>This option allows you to  Delete the return (D) or Update it (U). After updating, this option will no longer be available. </p>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="666" MadCap:lastWidth="1262">
+    <head><title>Menu Processor Overview</title>
+    </head>
+    <body>
+        <p class="SectionName">Menu Processors</p>
+        <p class="SectionTitle">Overview</p>
+        <p class="SectionDesc">A menu is a file driven multi-level list of options that can be selected by an operator. Dynamo Tools includes four types of menus that can be easily customized</p>
+        <ul>
+            <li>Character based</li>
+            <li>Dynaweb based (HTML)</li>
+            <li>Dynascan based (for hand-held computers)</li>
+            <li>Application Menus - used within an application to select a specific option.</li>
+        </ul>
+        <p><b>Character Based</b>
+        </p>
+        <p>The menu processor includes a series of programs that display a menu of choices for the operator.&#160; It also provides automated functions to simplify application programs.&#160; The menu processor also provides security, restricting access to menus and selections on a menu based on login id.</p>
+        <p>
+            <MadCap:keyword term="Main Menu" />
+            <MadCap:keyword term="System Selector" />Each menu has a three character menu code that allows the operator to display any menu by entering the three letter menu code.&#160; A menu can contain up to 16 selections.&#160; Menus are often arranged in a hierarchy or multi-level outline format.&#160; Menu's normally have a parent menu, which is displayed when an operator exits the menu.&#160; The highest level menu is called the Main Menu, formerly System Selector, and is assigned the menu code SYS.&#160; Each menu option may be a program, a script, a command, or another menu.</p>
+        <p>
+            <MadCap:keyword term="Menu Maintenance" />Menus are maintained using Menu Maintenance (SMU).&#160; The following menu codes should not be used, since they are reserved for use by the module listed.  &#160;</p>
+        <table>
+            <tr>
+                <th align="center">Reserved menu code</th>
+                <th>Menu name</th>
+                <th align="center">Module a part of</th>
+            </tr>
+            <tr>
+                <td align="center">SMS</td>
+                <td>
+                    <MadCap:keyword term="System Management Software" />System Management Software</td>
+                <td align="center">SMS</td>
+            </tr>
+            <tr>
+                <td align="center">SMU</td>
+                <td>
+                    <MadCap:keyword term="System Management Utilities" />System Management Utilities</td>
+                <td align="center">SMS</td>
+            </tr>
+            <tr>
+                <td align="center">SMC</td>
+                <td>
+                    <MadCap:keyword term="System Management Configuration" />System Management Configuration</td>
+                <td align="center">SMS</td>
+            </tr>
+            <tr>
+                <td align="center">PFM</td>
+                <td>
+                    <MadCap:keyword term="Fax Management" />Printer and Fax Management</td>
+                <td align="center">SMS</td>
+            </tr>
+            <tr>
+                <td align="center">FMS</td>
+                <td>File Management Software</td>
+                <td align="center">FMS</td>
+            </tr>
+            <tr>
+                <td align="center">WMS</td>
+                <td>
+                    <MadCap:keyword term="Web Management Software" />Web Management Software</td>
+                <td align="center">SMS</td>
+            </tr>
+            <tr>
+                <td align="center">PMS</td>
+                <td>Project Management Software</td>
+                <td align="center">FMS</td>
+            </tr>
+        </table>
+        <p style="font-weight: bold;">Dynaweb Menus</p>
+        <p style="font-weight: normal;">Dynaweb Menus are html based for use with web applications. &#160;They are maintained on the&#160;WMS menu. &#160;The HTML is generated with called program <a target="_blank">CDW100</a>.</p>
+        <p style="font-weight: normal;"><b>Dynascan Menus</b>
+        </p>
+        <p>Dynascan Menus are character based, but designed for the smaller display of a hand held computer such as a Motorola MC9090 or a tablet. They are maintained on the SMU menu. The menu is displayed using the same character based menu program <a target="_blank">CDS001</a>.</p>
+        <p><b>Application Menus</b>
+        </p>
+        <p>Application Menus are also character based, and are designed to present a list of options within a single application. Each option is invoked with a CALL. Application Menus are maintained on the SMU&#160;menu. Applications call program SW101 to display the application menu. Note the original Application Menu was maintained on the CWP&#160;menu and used program <a target="_blank">SW100</a> to display the menu.</p>
+        <p style="font-weight: normal;">&#160;</p>
+    </body>
+</html>

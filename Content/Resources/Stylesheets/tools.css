@@ -1,0 +1,517 @@
+/*<meta />*/
+
+/* Dynamo Tools Style Sheet
+   Revision History
+   04/18/07 - Added table.plain to be used for html page examples
+   09/26/07 - Changed font family sequence for program code
+              so that Lucida Console has priority over Courier fonts.
+   02/10/09 - Removed ol padding-left causes problems with Firefox & Chrome
+   02/10/09 - Increased li margin-bottom from 1 to 5.
+   02/25/09 - Decreased li margin-bottom from 5 to 2.  Need for Firefox.
+   02/25/09 - Reduced td padding top and bottom from 4 to 3.
+   05/14/09 - Eliminated all padding on a:hover.  Don't want row height or text height to change during hover.
+   12/17/09 - Added table table entries so that levX is not required
+   01/21/10 - Increased line spacing for example code
+   04/08/10 - Set color for Code inside of TH
+   07/15/10 - Revised lists, table cells, and paragraph margins & padding
+   02/16/13 - Added table.example table
+   08/04/16 - Added img section to keep images from expanding past window width
+*/
+
+body
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 10pt;
+	margin-top: 0px;
+}
+
+p
+{
+	margin: 5px 0px 5px 0px;
+	padding: 0;
+}
+
+td p
+{
+	margin: 2px 0px 3px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+p.SectionName
+{
+	border-bottom: 1px solid #006699;
+	letter-spacing: 6px;
+	color: #006699;
+	font-size: 10pt;
+	font-weight: bold;
+	font-family: Arial;
+	text-transform: uppercase;
+	text-indent: 0;
+	margin-top: 0;
+	margin-right: 0;
+	padding-right: 0;
+	padding-top: 0px;
+	padding-bottom: 4px;
+	text-align: right;
+}
+
+p.SectionTitle
+{
+	color: #006699;
+	font-size: 10pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+p.SectionDesc
+{
+	color: #666666;
+	margin: 5px 25px 10px 25px;
+}
+
+p.SectionDesc code
+{
+	color: #666666;
+}
+
+code,
+code a:link,
+code a:visited,
+td.nowrapcode,
+td.nowrapcode a,
+code a:active
+{
+	color: #000080;
+	font-family: "Lucida Console", "Courier New", Courier;
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+code a:hover
+{
+	background-color: #FFFF99;
+}
+
+table.example a:hover
+{
+	background-color: #FFFF99;
+	color: #000000;
+}
+
+a:hover
+{
+	background-color: #ffffbb;
+}
+
+table
+{
+	font-family: Verdana, Tahoma, sans-serif;
+	background-color: #F5FFFA;
+	color: #333333;
+	font-size: 10pt;
+	border-left: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	border-top: 8px solid #006699;
+	border-collapse: collapse;
+	margin: 6px 0 10px 0;
+}
+
+th
+{
+	border: 1px solid #c0c0c0;
+	text-align: left;
+	font-size: 8pt;
+	color: #006699;
+	font-weight: bold;
+	margin: 0;
+	padding: 3px;
+}
+
+th code
+{
+	color: #006699;
+}
+
+td
+{
+	border: 1px solid #C0C0C0;
+	vertical-align: top;
+	padding: 3px 5px 3px 5px;
+	margin: 0;
+	line-height: 115%;
+}
+
+table table
+{
+	border-top: 6px solid #B22222;
+	background-color: #FFF5EE;
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+table table th
+{
+	font-size: 8pt;
+	font-weight: bold;
+	color: #8B0000;
+}
+
+table table th code
+{
+	color: #8B0000;
+}
+
+table table table
+{
+	border-top: 4px solid #808080;
+	background-color: #F3F3F3;
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+table table table th
+{
+	font-size: 8pt;
+	font-weight: bold;
+	color: #555555;
+}
+
+table table table th code
+{
+	color: #555555;
+}
+
+table table table table
+{
+	border-top: 3px solid #A0522D;
+	background-color: #FFFFDE;
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+table table table table th
+{
+	font-size: 8pt;
+	font-weight: bold;
+	color: #A0522D;
+}
+
+table table table table th code
+{
+	color: #A0522D;
+}
+
+table.example
+{
+	border-top: 8px solid #7b9ae7;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 12;
+	border-collapse: collapse;
+	border-left-width: 0px;
+	border-right-width: 0px;
+}
+
+table.example,
+table.example a:link,
+table.example a:active,
+table.example a:visited
+{
+	font-family: Verdana, Tahoma, Arial;
+	color: #ffffff;
+	background-color: #000080;
+	font-weight: normal;
+	font-size: 11pt;
+}
+
+table.example th
+{
+	font-family: Verdana, Tahoma, Arial;
+	color: #ffff99;
+	background-color: #000080;
+	border: 1px solid #7b9ae7;
+	padding: 5;
+	font-size: 11pt;
+	font-weight: normal;
+}
+
+table.example td
+{
+	vertical-align: top;
+	border-top: 1px solid #7b9ae7;
+	border-left: 0px none;
+	border-right: 0px none;
+	border-bottom: 0px none;
+	padding: 5px;
+}
+
+table.example td.code,
+table.example code,
+table.example code a:visited,
+table.example code a:active,
+table.example code a:link
+{
+	color: #ffffff;
+	font-family: "Lucida Console", "Courier New", Courier;
+	font-weight: normal;
+	font-size: 14pt;
+}
+
+table.example table
+{
+	background-color: #ffffff;
+	border: 1px solid #000080;
+	width: auto;
+}
+
+table.example table td
+{
+	border: 1px solid #000080;
+}
+
+table.revision
+{
+	width: 100%;
+}
+
+table.revision,
+table.revision tr,
+table.revision td
+{
+	font-family: Verdana, Tahoma, Arial;
+	background-color: white;
+	color: #b22222;
+	border: 0px;
+	margin: 0;
+	padding: 0;
+	font-size: 10pt;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+table.plain
+{
+	border-collapse: collapse;
+	border: 1px solid #c0c0c0;
+	margin-bottom: 10px;
+}
+
+table.plain table
+{
+	border-collapse: collapse;
+	border: 1px solid #c0c0c0;
+	margin: 0px;
+}
+
+table.plain tr.rowodd
+{
+	background-color: #eeeeee;
+}
+
+table.plain tr.roweven
+{
+	background-color: #ffffff;
+}
+
+table.plain th
+{
+	background-color: #ffff99;
+	font-weight: normal;
+	text-align: left;
+}
+
+table.plain td,
+table.plain th
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 10pt;
+	font-weight: normal;
+	color: black;
+	border: 1px solid #c0c0c0;
+	padding: 1px 3px 1px 3px;
+	vertical-align: top;
+}
+
+table.plain select
+{
+	font-family: "Lucida Console", "Courier New", Courier, monospace;
+}
+
+h5
+{
+	color: #B22222;
+	font-weight: bold;
+	margin-top: 15px;
+	font-size: 10pt;
+	margin-bottom: 10px;
+}
+
+h6
+{
+	font-style: italic;
+	font-weight: bold;
+	font-size: 9pt;
+	margin-top: 14px;
+	margin-bottom: 10px;
+}
+
+p > img
+{
+	display: block;
+}
+
+img
+{
+	display: inline-block;
+	max-width: 99%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:link,
+a:active,
+a:visited
+{
+	color: #000000;
+}
+
+ol
+{
+	list-style-type: decimal;
+	margin-left: 2em;
+	padding-left: 5px;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 3px;
+	padding-bottom: 0;
+}
+
+ol ol
+{
+	list-style-type: lower-alpha;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul
+{
+	list-style-type: disc;
+	margin-left: 1em;
+	padding-left: 1em;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 3px;
+	padding-bottom: 0;
+}
+
+ul ul
+{
+	list-style-type: circle;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul.SectionDesc
+{
+	color: #666666;
+}
+
+li p.SectionDesc
+{
+	margin: 0;
+	padding: 0;
+}
+
+ol.pad li
+{
+	padding-bottom: 10px;
+}
+
+span.Code
+{
+	font-family: "Lucida Console", Courier New, Courier;
+	color: #000080;
+	font-size: 10pt;
+}
+
+table.example span.Code
+{
+	font-weight: normal;
+	font-size: 14pt;
+	font-family: "Lucida Console", "Courier New", Courier;
+	color: #ffffff;
+}
+
+span.IndentedCode
+{
+	color: #000080;
+	font-family: "Lucida Console", Courier New, Courier;
+	margin-left: 15pt;
+	font-size: 10pt;
+}
+
+td.nowrap,
+td.nowrapcode
+{
+	white-space: nowrap;
+}
+
+td.pre
+{
+	white-space: pre;
+}
+
+MadCap|breadcrumbsProxy
+{
+	border-bottom-style: none;
+	border-bottom-width: 0px;
+	margin-bottom: 0px;
+}
+
+MadCap|slideshowCaption
+{
+	font-family: Verdana;
+	font-size: 1.2em;
+	background-color: #dbd3b6;
+	color: #000000;
+}
+
+MadCap|slideshow
+{
+	margin-left: inherit;
+	margin-right: inherit;
+	background-color: #f8f7e0;
+}
+
+@media hover
+{
+	
+}
+
+span.MCBreadcrumbsPrefix
+{
+	font-style: italic;
+}
+
+html.plain
+{
+	mc-master-page: url('../../../../tools/Content/Resources/MasterPages/plain.flmsp');
+}
+
+/* Disable default yellow background on link hover */
+
+a.dtlogo:hover
+{
+	background-color: #ffffff;
+	border: 0;
+	/*
+	border-bottom: solid 1px;
+	border-bottom-color: #0a7bb7;
+	border-bottom-width: 2px;
+*/
+}
+

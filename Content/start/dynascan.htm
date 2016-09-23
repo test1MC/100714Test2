@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="4845" MadCap:lastWidth="1293">
+    <head><title>Getting started with Dynascan</title>
+    </head>
+    <body>
+        <p class="SectionName">dynascan</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Getting Started</p>
+                </td>
+                <td align="right">Last Revised: 12/20/10</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynascan applications are designed to run on small computers that can be held in your hand, or even worn on your arm.&#160; These computers have the same type of wireless network connectivity as a laptop computer.&#160; Dynamo includes Dynascan applications for Purchase Order Receiving, Transfer Order Shipping &amp; Receiving, Order Picking, Order Packing, Item Put-Away, and Physical Inventory.&#160; The programs work much like the ones run on a full size workstation such as a PC, Mac, or thin-client, but the display dimensions are 24 columns by 16 rows, instead of 80/132 columns by 25 rows.&#160; Excellware is an authorized reseller of Motorola products including mobile computers, accessories, and wireless communication devices.</p>
+        <p>This document is based on using the Wavelink terminal emulator that is included with the Motorola MC9000 series computers.&#160; Although tested on a Motorola MC9090 running Windows CE and Wavelink TelnetCE version 7.0.37, other versions of Windows and other terminal emulators can also be used.</p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Basic Concepts</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Handheld Operating System</td>
+                <td>We have used Windows CE, Windows Mobile, and linux.&#160; Doesn't really matter.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Terminal Emulator</td>
+                <td>We have used the Wavelink terminal emulator that is included with Motorola mobile computers.&#160; For Windows CE we have used TelnetCE version 7.0.37, although any version should work.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Terminal Emulation</td>
+                <td>Dynascan applications use the VT220 emulation which provides color and is widely available.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">TERM environment variable</td>
+                <td>The TERM environment variable is used to select the proper emulation within the Dynamo Tools termcap file.&#160; This value should be 'dynascan' for displays with 24 columns and 16 rows.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Setting TERM</td>
+                <td>If using Dynamo Tools login profile files on most Linux or Unix servers, and using Motorola mobile computers with a wireless ethernet mac address that begins with 00:15:70, then TERM will be set to dynascan in the termset script, which is executed during the login process.
+<p>&#160;</p><p>All handhelds regardless of server operating system, that use the Wavelink terminal emulator, can be used by setting the 'Telnet Negotiation String' to 'dynascan'.&#160; This setting is located in the Host Profile configuration of the handheld computer.&#160; It is typically maintained using the PC based Wavelink Host Profile Editor, although it can be set from the mobile computer itself following the steps below.</p><table><tr><td align="center">1</td><td>Start the Wavelink Terminal Emulator on the mobile computer (if not configured to launch automatically)</td></tr><tr><td align="center">2</td><td>Enable the Options menu if hidden.&#160; The keystroke used to display the Options menu can vary.&#160; Excellware uses the F10 key by default.&#160; On a Motorola computer, touch the Blue key followed by zero for the F10 key.</td></tr><tr><td align="center">3</td><td>Click on the Options button</td></tr><tr><td align="center">4</td><td>Click on Configure</td></tr><tr><td align="center">5</td><td>Click on Host Profiles</td></tr><tr><td align="center">6</td><td>Enter the Host Config Password (SYSTEM is the default)</td></tr><tr><td align="center">7</td><td>Highlight the desired profile and click Edit.</td></tr><tr><td align="center">8</td><td>Be sure the Emulation is set to VT220.</td></tr><tr><td align="center">9</td><td>Click the Config Button</td></tr><tr><td align="center">10</td><td>Click on the VT Settings tab</td></tr><tr><td align="center">11</td><td>Enter dynascan in the Telnet Negotiation String box.&#160; This value is assigned to the TERM environment variable during login.</td></tr><tr><td align="center">12</td><td>Click OK, then Save, then Done</td></tr><tr><td align="center">13</td><td>Hide the Options menu by touching F10 to insure the entire display is available for the application</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Creating a Menu</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <p align="left">From the Dynamo Tools System Management Utilities (SMU) menu, select Dynascan Menu Maintenance</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Specify Menu code SYS which is the default main menu</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Enter a title for the menu such as Dynascan Main Menu.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>In the Menu Detail, add a Program.&#160; Specify the bbx program name.&#160; It must be accessible using the current bbx PREFIX.&#160; Enter the application Description.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Limit the number of selections per menu to 10 so that the entire menu of applications can be displayed on the mobile computer without scrolling.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>You can create sub-menus with unlimited nesting, just like Dynamo Menus.</td>
+                        </tr>
+                    </table>
+                    <p>&#160;</p>
+                    <p>
+                        <img border="0" src="../images/dynasc1.jpg" alt="" width="648" height="399" />
+                    </p>
+                    <p>&#160;</p>
+                    <p>The Dynamo Tools Dynascan Menu Simulator (SMC) can be used to display what the mobile operator will see, and to test the menu and applications.</p>
+                    <p>&#160;</p>
+                    <p>
+                        <img border="0" src="../images/dynasc2.jpg" alt="" width="200" height="212" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Logging in</td>
+                <td>The standard Dynamo Tools profile file, located at <code>CDI/bin/profile</code> can be used to launch either Dynascan Menu or the Dynamo Menu.&#160; Copy into the operators home directory and name <code>.profile</code> 
+and/or <code>.bash_profile</code> if using the bash shell.&#160; These two files are placed in the operators home directory automatically if the operator is created using Operator Info Maintenance (Add/Maintain) on the SMC menu.&#160; 
+Set the operator as the owner for these files.&#160; Set the group to 'cdi' or other 
+appropriate group.&#160; Set the file permissions to rwxr-xr-x.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Line Drawing Characters</td>
+                <td>If the Line Drawing Characters used to outline the menu as shown above, do 
+not display like this example, then the mobile computer needs to have a font 
+installed that includes the Line Drawing Characters.&#160; Click
+<a target="_blank" href="MotorolaLineDraw.htm">here</a> for instructions.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Function Keys</td>
+                <td>The Dynascan terminal configuration includes support for F1 through F12.&#160; On Motorola mobile computers, touch the Blue key followed by the number, i.e., Blue Key then 4, to send the F4 key to the server.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">* key</td>
+                <td>Dynamo Tools including keyboard entry (CDS039, CDS069) and record selection (CDS037) enable Dynascan operators to touch the * key to simulate F4.&#160; The * key was selected as this key is often large, is located near the Enter key, and is not typically used for most scanning or mobile computer applications.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Arrow Keys</td>
+                <td>The Dynascan terminal configuration includes support for the 4 directional arrows found on most mobile computer keyboards.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Wavelink Configuration</td>
+                <td>Wavelink includes a PC based configuration application where you can configure all settings, save on the PC drive, and upload to the mobile computers.&#160; The Wavelink Configuration Manager can be downloaded from the downloads page of
+<a target="_blank" href="http://www.wavelink.com">www.wavelink.com</a>.&#160; The screen shots below were taken using the Wavelink Configuration Manager Version 1.65 although the settings would probably be similar for any version.&#160; The small black dots on the Emulation, Common, Display, and Keyboard sections indicate where changes have been made to the default configuration.
+<p>&#160;</p><p><img border="0" src="../images/dynasc3.jpg" alt="" width="683" height="342" /></p><p>&#160;</p><p>We prefer the emulator to exit the telnet application when the operator exits the Dynascan menu, or otherwise is disconnected.</p><p>&#160;</p><p><img border="0" src="../images/dynasc4.jpg" alt="" width="683" height="674" /></p><p>&#160;</p><p>In order to maximize the space on the display, we recommend hiding all scroll bars and menus.&#160; We set the Menu Toggle Key to the F10 key as shown in the screen shot below.</p><p>&#160;</p><p><img border="0" src="../images/dynasc5.jpg" alt="" width="683" height="771" /></p><p>&#160;</p><p>We also hide the Windows Start Menu and set the Keyboard Toggle Key to Alt+F10.</p><p>&#160;</p><p><img border="0" src="../images/dynasc6.jpg" alt="" width="683" height="711" /></p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Top display line</td>
+                <td>Applications launched from the Dynascan Menu will have the Application Title displayed in white letters on a red background on the top line.&#160; The application can use the top line if desired, but it is useful to know what application is currently running.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Bottom display lines</td>
+                <td>The bottom two display lines are used by the Dynamo Tools Data Entry programs CDS039 and CDS069.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Background text</td>
+                <td>We typically used CDS276 to display the screen background in yellow on a black background.&#160; We have found using a black background with various colored foreground text provides good contrast even in low light levels.
+<p>&#160;</p><p><img border="0" src="../images/dynasc7.jpg" alt="" width="193" height="213" /></p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Programming</td>
+                <td>You can program Dynascan applications much like any bbx program.&#160; Just keep the prompts short and consider using colors to increase readability.&#160; Use the Dynamo Tools error routine, and use the Display Terminal Status option to remotely control a Dynascan session.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Ending the Application</td>
+                <td>At the end of the application, run the Dynamo Tools menu <code>"CDS001"</code> to return to the Dynascan menu.</td>
+            </tr>
+        </table>
+    </body>
+</html>

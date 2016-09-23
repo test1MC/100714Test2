@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2419" MadCap:lastWidth="1479">
+    <head><title>Disc Utility</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Disc Utility</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS160">Last Revised: 09/03/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Disc Utility performs disc oriented functions such 
+	as:&#160; printing a disc directory;&#160; printing a disc analysis;&#160; 
+	printing a disc analysis summary; comparing files, etc.</p>
+        <p>The operator is prompted for the file names to be included. Normal wild card options are permitted. Refer to Filelist Maintenance (SMU) for details on entering file names.</p>
+        <p>
+            <img src="cds160-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <ol>
+            <li>Print Disc Directory</li>
+            <li>Convert SKY &amp; MKY Files to Highly Recoverable</li>
+            <li>File Integrity Test</li>
+            <li>Move &amp; Archive Files</li>
+            <li>Copy &amp; Replace Files</li>
+            <li>File Compare</li>
+            <li>Capitalize File Names</li>
+            <li>Erase Files</li>
+            <li>Erase Un-needed Template Files</li>
+            <li>Convert DIR &amp; SRT Files to SKY</li>
+            <li>Export Templated Data Files</li>
+            <li>Compare 2 Directories</li>
+        </ol>
+        <table>
+            <tr>
+                <th colspan="2">Disc Utilty</th>
+            </tr>
+            <tr>
+                <td>Print Disc Directory</td>
+                <td>
+                    <p>This option will print a disc directory. The disc directory includes the file name, the file type, a file description if the file is included in a file data dictionary, and for some files, the keysize or key structure, the number of characters per record, the maximum number of records the file may include if limited, the number of records in use, and if the file is has a limited size, the percentage full.</p>
+                    <p>The operator can limit the output to large files based on size or 
+		number of records.&#160; The MKY key structure can be optionally 
+		included.</p>
+                    <p>
+                        <img border="0" src="cds16010.jpg" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Convert SKY &amp; MKY Files to Highly Recoverable</td>
+                <td>
+                    <p>Files that are defined as highly recoverable, can be more easily 
+		repaired should there be a hardware failure or loss of power during a 
+		disc write operation.&#160; This option will convert files to the highly 
+		recoverable format.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>File Integrity Test</td>
+                <td>
+                    <p>This option will scan all keyed files in a directory, checking for possible file corruption caused 
+		by hardware failure or loss of power during a disc write operation.&#160; 
+		For MKY files, each KNUM is processed to insure that the correct number 
+		of records can be read.</p>
+                    <p>Run time options include the ability to process sub-directories, skip 
+		file names that contain a period, skip files that have not been changed 
+		since an entered date and time, and to abort testing a file after a 
+		problem is encountered.</p>
+                    <p>
+                        <img border="0" src="cds16011.jpg" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Move &amp; Archive Files</td>
+                <td>
+        This option is typically used to move files from a project directory to 
+		the live directory.&#160; If the file already exists in the target 
+		directory, it will be archived by renaming it with an extension of 
+		today's date in YYMMDD format.&#160; If the default archive file name 
+		also exists, then an alpha suffix will be appended to the file 
+		extension.</td>
+            </tr>
+            <tr>
+                <td>Copy &amp; Replace Files</td>
+                <td>This option is similar to the Move &amp; Archive option, but the file is 
+		copied and not moved, so the original file being copied remains in 
+		place.&#160; The target file is archived in the same manner if it 
+		exists.</td>
+            </tr>
+            <tr>
+                <td>File Compare</td>
+                <td>This option is used to compare data files in one directory to the file 
+		with the same name in another directory.<p>Run time options include the 
+		option to compare 1) Template only, 2) Template and keys, 3) Template, 
+		keys, and data.</p></td>
+            </tr>
+            <tr>
+                <td>Capitalize File Names</td>
+                <td>This option is used to rename a file with a lower case letter in its 
+		name to uppercase.</td>
+            </tr>
+            <tr>
+                <td>Erase Files</td>
+                <td>This option is used to erase files in a directory.&#160; The operator 
+		can select the files to be erased using wild cards, and elect to erase 
+		or not erase each matching file.</td>
+            </tr>
+            <tr>
+                <td>Erase Un-needed Template Files</td>
+                <td>This option is used to scan tpl folders and offer to delete a template 
+		file that refers to a data file that no longer exists or one that refers 
+		to a program file where template files are not used.</td>
+            </tr>
+            <tr>
+                <td height="43">Convert DIR and SRT Files to SKY</td>
+                <td height="43">Traditional DIR and SRT files cannot be dynamic.&#160; 
+		This option converts DIR and SRT files to SKY files that can grow 
+		without any artificial limit.</td>
+            </tr>
+            <tr>
+                <td>Export Templated Data Files</td>
+                <td>This option is used to export all fields in templated data files to 
+		the export directory.&#160; Use the Export Data option on the FMS menu 
+		to export selected fields on a one-time or scheduled basis in a variety 
+		of formats.</td>
+            </tr>
+            <tr>
+                <td>Compare 2 Directories</td>
+                <td>This option is used to compare programs and/or files located in two 
+		directories.&#160; Options are available to limit the output to files 
+		found in one directory but not the other, files newer in one directory 
+		or the other, exclude from the list those that are identical, and limit 
+		comparison to programs or data files.<p><img border="0" src="cds16012.jpg" /></p></td>
+            </tr>
+        </table>
+    </body>
+</html>

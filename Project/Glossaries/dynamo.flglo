@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlossary>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ABC values</Term>
+    </Terms>
+    <Definition
+      Link="">alphabetic codes assigned to active items to indicate frequency of sales; sometimes called movement or velocity codes. A codes are sold most frequently and C items are sold least frequently. Items with quantity on hand (QOH) but with no activity in prior 12 months are assigned code D. Items with no activity or stock will be assigned a blank code.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>accounts payable</Term>
+    </Terms>
+    <Definition
+      Link="">money a company owes to its suppliers</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>accounts receivable</Term>
+    </Terms>
+    <Definition
+      Link="">money owed to a company/business by its customers</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>active item</Term>
+    </Terms>
+    <Definition
+      Link="">an item that currently has any of the following attributes: QOH, SSQ, MIN, MAX or Sale in prior 12 months</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>alternate item</Term>
+    </Terms>
+    <Definition
+      Link="">an item that can be substituted for another</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>A/R control totals</Term>
+    </Terms>
+    <Definition
+      Link="">the sum of all charges (credits and debits)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>assets</Term>
+    </Terms>
+    <Definition
+      Link="">resources owned by the company including Cash, Accounts Receivable (what customers owe you), Inventory (goods held for sale)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>assortment</Term>
+    </Terms>
+    <Definition
+      Link="">a group of related products or services keyed to a single Parent Item</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>average cost</Term>
+    </Terms>
+    <Definition
+      Link="">optional inventory valuation method in which each item's inventory receipt layers are added together and then divided by the QOH; may be by warehouse or overall company value</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>AVL (available)</Term>
+    </Terms>
+    <Definition
+      Link="">quantity of an item in stock and available for sale</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>backorder</Term>
+    </Terms>
+    <Definition
+      Link="">an order that cannot be filled or shipped due to insufficient inventory; requested for when it is available again</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>bank code</Term>
+    </Terms>
+    <Definition
+      Link="">bank accounts are defined in Dynamo's APU menu and assigned bank codes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>barcode</Term>
+    </Terms>
+    <Definition
+      Link="">Dynamo supports commonly used barcode standards, such as UPC and EAN and can also create its own internally used barcodes. Numbers can be scanned at point of sale or searched for using their barcode number.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>batch</Term>
+    </Terms>
+    <Definition
+      Link="">a collection of postings (general ledger, inventory, etc.) that are grouped and processed together; typically updated as a post-process</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>billing copy</Term>
+    </Terms>
+    <Definition
+      Link="">a document retained by the shipper used to identify items being shipped to a customer; used for billing purposes and customer receipt signatures</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>bill of lading</Term>
+    </Terms>
+    <Definition
+      Link="">a legal document between the shipper of an item and the carrier detailing the type, quantity, and destination of the item being carried</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>branch</Term>
+    </Terms>
+    <Definition
+      Link="">a satellite office location/building of a business</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>booking month</Term>
+    </Terms>
+    <Definition
+      Link="">the period in which orders are registered or recorded; change the booking month on the Month End Procedures menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>booking report</Term>
+    </Terms>
+    <Definition
+      Link="">a report to summarize sales orders booked in a specified month; can be sorted by sales ID, login ID, or name</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>buyer</Term>
+    </Terms>
+    <Definition
+      Link="">a person whose role is to purchase products for organizations to use or resell; buyers can be defined and listed in the Vendor Maintenance &amp;  Listings menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>carrier</Term>
+    </Terms>
+    <Definition
+      Link="">the company who delivers the shipment; details can be specified under the CWP menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>cash drawer</Term>
+    </Terms>
+    <Definition
+      Link="">a compartment underneath a cash register that stores cash from all transactions</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>cash requirements</Term>
+    </Terms>
+    <Definition
+      Link="">the outstanding invoices; cash requirements report is found on the APR menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>chart of accounts</Term>
+    </Terms>
+    <Definition
+      Link="">list of general ledger accounts used to define and segregate assets, cost of sales, expense, liability, equity, revenue, taxes, or other income/expense; defined on GLU menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>commission</Term>
+    </Terms>
+    <Definition
+      Link="">a form of monetary incentive for salespersons</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>commission code</Term>
+    </Terms>
+    <Definition
+      Link="">commission rate and associated general ledger account are defined in SOU menu and applied in Salesman Maintenance on the CML menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>company wide parameters</Term>
+    </Terms>
+    <Definition
+      Link="">Dynamo menu option used to define or exclude settings that apply to a company's business requirements</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>component item</Term>
+    </Terms>
+    <Definition
+      Link="">an item that is one of the elements of an assortment (never a parent item)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>cost of sales</Term>
+    </Terms>
+    <Definition
+      Link="">cash or cash equivalent sacrificed for goods or services that are expected to provide benefits to your company</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>credit</Term>
+    </Terms>
+    <Definition
+      Link="">a dollar amount that a customer is owed</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>credit balance</Term>
+    </Terms>
+    <Definition
+      Link="">an indicator that a person/company is owed funds</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>customer number</Term>
+    </Terms>
+    <Definition
+      Link="">a number assigned by Dynamo to a customer</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>customer part number</Term>
+    </Terms>
+    <Definition
+      Link="">a number used by a customer to reference an item; can be specified in Customer Maintenance on the CML menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>customer type</Term>
+    </Terms>
+    <Definition
+      Link="">an optional feature used to categorize customers by similar business types; often referred to as a “vertical.” Often used for marketing</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>debit</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting term used to signify a debt; opposite of a credit</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>deposit ticket</Term>
+    </Terms>
+    <Definition
+      Link="">a document that accompanies a bank deposit; used to convey the value of the deposit. May be printed in magnetic ink in order to be read by a machine</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>depreciation</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting term that indicates a reduction in a fixed asset's value; Dynamo supports many commonly used depreciation methods</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>discount</Term>
+    </Terms>
+    <Definition
+      Link="">an amount deducted from the usual sales price of an item</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Dynascan</Term>
+    </Terms>
+    <Definition
+      Link="">a collection of Dynamo applications that run in a hand-held computer with an integrated barcode scanner. Dynascan applications can be used to receive product, put away product, pick products, pack products, record physical inventory, etc.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Dynastore</Term>
+    </Terms>
+    <Definition
+      Link="">a report archiving server where documents printed using PDF or files created in spreadsheet format by printing are archived in the “cloud.” Reports can be retrieved or deleted using the DynaStore Reports option on the SMS menu.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Dynaweb</Term>
+    </Terms>
+    <Definition
+      Link="">an optional feature that provides 24x7 internet access capabilities for customers to view and track order shipments, print copies of invoices, check stock, display order history, and display A/R statements of account</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Eltron printer</Term>
+      <Term>Zebra printer</Term>
+    </Terms>
+    <Definition
+      Link="">a label printer used to print UPC codes, warehouse shelf location labels, shipping labels, and descriptive product labels</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>equity</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting term that indicates the monetary value of a property/business beyond any amounts owed on it in mortgages, claims, liens, etc.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>expense</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting term indicating the cost or charge of an expenditure</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FIFO</Term>
+    </Terms>
+    <Definition
+      Link="">a term that stands for first-in, first-out, meaning that the oldest inventory items are consumed first for accounting purposes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>finance charge</Term>
+    </Terms>
+    <Definition
+      Link="">a fee levied on past-due accounts; generated and maintained from the ARR menu in A/R Parameter Maintenance</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>financial statement</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting document indicating the financial position of the company; may include the income statement or balance sheet; found on the GLR menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>fiscal year</Term>
+    </Terms>
+    <Definition
+      Link="">a financial period representing one year of a company's business; used in accounting for annual reporting</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>fixed asset</Term>
+    </Terms>
+    <Definition
+      Link="">an accounting term for property, plant, &amp;amp; equipment that cannot be easily converted into cash</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>formula</Term>
+    </Terms>
+    <Definition
+      Link="">mathematical calculation applied to pricing to determine cost or selling price; may include rounding rules; maintained on the CPM menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FPO (future purchase order)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item on order expected to be received beyond 30 days</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>freight</Term>
+    </Terms>
+    <Definition
+      Link="">the amount charged for any handling, shipping, or duty</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>general ledger</Term>
+    </Terms>
+    <Definition
+      Link="">where all accounts for transactions relating to a company's assets are contained</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>general ledger accounts</Term>
+    </Terms>
+    <Definition
+      Link="">user-definable accounts in which a business's transactions are applied and recorded</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>G/L posting date</Term>
+    </Terms>
+    <Definition
+      Link="">the accounting time period in which a transaction is recorded</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>gross margin</Term>
+      <Term>margin</Term>
+    </Terms>
+    <Definition
+      Link="">representation of a transaction's profitability expressed as a percentage</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory</Term>
+    </Terms>
+    <Definition
+      Link="">stock; raw materials or finished goods stored for the purpose of sale or repair</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory control</Term>
+    </Terms>
+    <Definition
+      Link="">the supervision of storage and accessibility of items to ensure an adequate but not excessive supply</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory in transit</Term>
+    </Terms>
+    <Definition
+      Link="">goods that have been shipped from one warehouse that have not yet been received by another</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory requirements report</Term>
+    </Terms>
+    <Definition
+      Link="">a listing of all customer backorders; used by buyers to ensure customer needs are met</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory shrinkage</Term>
+    </Terms>
+    <Definition
+      Link="">a loss of inventory due to theft, obsolescence, or other causes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory transaction</Term>
+    </Terms>
+    <Definition
+      Link="">any action resulting in the movement or transfer of goods</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>inventory used in house</Term>
+    </Terms>
+    <Definition
+      Link="">internal company use of goods warehoused for sale; usage tax is typically paid on these goods</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>invoice</Term>
+    </Terms>
+    <Definition
+      Link="">a bill or list of goods/services provided to a customer in which the amount due is stated</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>item number</Term>
+    </Terms>
+    <Definition
+      Link="">a unique identifier assigned to each item</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>lead time</Term>
+    </Terms>
+    <Definition
+      Link="">the duration between when an item is ordered and received</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>liability</Term>
+    </Terms>
+    <Definition
+      Link="">a debt or obligation to pay others including Accounts Payable (amounts owed to vendors), Notes Payable (amounts owed to banks), and Mortgage Payable (amount owed for purchased property)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>LIFO</Term>
+    </Terms>
+    <Definition
+      Link="">a term that stands for last-in, first-out, meaning that the newest inventory items are consumed first for accounting purposes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>manual payment entry</Term>
+    </Terms>
+    <Definition
+      Link="">used to print a single check, record a payment that does not require a check, reverse a previously updated payment, void an unused check, transfer funds between bank accounts, or import an automated payment</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MAX (maximum)</Term>
+    </Terms>
+    <Definition
+      Link="">the inventory level which quantity available should not exceed</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MIN (minimum)</Term>
+    </Terms>
+    <Definition
+      Link="">the inventory level which quantity available should not fall beneath; the point at which inventory should be replenished</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>month end procedures</Term>
+    </Terms>
+    <Definition
+      Link="">actions required to close an accounting period</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>net amount</Term>
+    </Terms>
+    <Definition
+      Link="">the amount which is eligible for discount; total amount minus any freight charges, sales tax, or duty</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>notification of shipment</Term>
+    </Terms>
+    <Definition
+      Link="">a document to inform the customer that an order has been sent for delivery; can be accessed from Sales Order Processing or Sales Order Inquiry</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>order booking month</Term>
+    </Terms>
+    <Definition
+      Link="">the period in which orders are entered; change the booking month on the Month End Procedures menu</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>order acknowledgment</Term>
+    </Terms>
+    <Definition
+      Link="">a document to confirm an order has been received and processed; can be printed from Sales Order Processing/Inquiry or set for automation by customer in Customer Maintenance/Accounts Receivable Options; delivery options are manual, fax, or email</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>order value</Term>
+    </Terms>
+    <Definition
+      Link="">the monetary value of the items or services delivered or provided</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>packing list</Term>
+    </Terms>
+    <Definition
+      Link="">a document that accompanies a shipment to indicate items being shipped and also references customer order details such as PO number</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>parent item</Term>
+    </Terms>
+    <Definition
+      Link="">an identifier for an assortment of items; cannot be a standalone number or a component of another assortment</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>product category</Term>
+    </Terms>
+    <Definition
+      Link="">a broad classification of similar items; for instance, for a clothing retailer, one product category might be “apparel”</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>product class</Term>
+    </Terms>
+    <Definition
+      Link="">a specific classification of similar items; for instance, for a clothing retailer, product classes might include “shirts” and “pants”</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>proforma invoice</Term>
+    </Terms>
+    <Definition
+      Link="">a document provided by a supplier in advance of providing goods and services used to estimate the cost and terms of sale</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>prospect</Term>
+    </Terms>
+    <Definition
+      Link="">a potential customer</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>PRO</Term>
+      <Term>tracking number</Term>
+    </Terms>
+    <Definition
+      Link="">an identifier assigned to shipments used for tracking; acronym for progressive rotating order</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>purchase order</Term>
+    </Terms>
+    <Definition
+      Link="">a document issued by a customer to a vendor that indicates the quantity and price for item(s) or service(s)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>QBO (quantity on backorder)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item committed to an order but not yet shipped</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>QOH (quantity on hand)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item physically located in a warehouse at any given time</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>QOO (quantity on order)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item expected to be received within 30 days</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>QSH (quantity to ship)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item committed to ship on an open order (sales, transfer, return, etc.)</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>quotation</Term>
+    </Terms>
+    <Definition
+      Link="">a contract that stipulates pricing and terms by which goods or services will be provided</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>rebate</Term>
+    </Terms>
+    <Definition
+      Link="">a reduction in price usually applied after payment has been made</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>recurring invoice</Term>
+    </Terms>
+    <Definition
+      Link="">a regularly occurring expense not normally invoiced by the supplier; examples include monthly rent or lease payments</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>receiving document</Term>
+    </Terms>
+    <Definition
+      Link="">a form used to record goods a company has received from a vendor; corresponds to contents of a purchase order</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>region</Term>
+    </Terms>
+    <Definition
+      Link="">a geographical area usually larger than a territory</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>register</Term>
+    </Terms>
+    <Definition
+      Link="">an official listing of recorded information</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>rental code</Term>
+    </Terms>
+    <Definition
+      Link="">a pricing identifier assigned to leased goods for the purpose of billing</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>rental invoice</Term>
+    </Terms>
+    <Definition
+      Link="">a bill indicating the amount due for leased goods</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>rental item</Term>
+    </Terms>
+    <Definition
+      Link="">a product available for lease</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>reorder point</Term>
+    </Terms>
+    <Definition
+      Link="">an inventory level below which products should be procured</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>revenue</Term>
+    </Terms>
+    <Definition
+      Link="">income from the sales of goods or services</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>sales order</Term>
+    </Terms>
+    <Definition
+      Link="">a document issued by a seller to record products requested by a customer; usually includes customer PO number, delivery address, and terms of sale</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>salesperson</Term>
+    </Terms>
+    <Definition
+      Link="">a person who sells goods or services</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>security level</Term>
+    </Terms>
+    <Definition
+      Link="">used to define access criteria for certain applications and menus in Dynamo</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>selection code</Term>
+    </Terms>
+    <Definition
+      Link="">an identifier used to group customers for marketing purposes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>serialized item</Term>
+    </Terms>
+    <Definition
+      Link="">an item that has a unique serial number used to track specific details such as warranty status, purchase cost, repair or rental history, etc.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>serialized item number</Term>
+    </Terms>
+    <Definition
+      Link="">a unique identifier assigned to items for tracking purposes</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>shipping service</Term>
+    </Terms>
+    <Definition
+      Link="">a freight classification; used in Sales Order Processing/Shipping Info view</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>source code</Term>
+    </Terms>
+    <Definition
+      Link="">a transaction type identifier for G/L batches or postings</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>special order</Term>
+    </Terms>
+    <Definition
+      Link="">inventory for not-on-file items; specified in GLU Interface Maintenance/Inventory Accounts</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>tax</Term>
+    </Terms>
+    <Definition
+      Link="">a fee charged by government on a product, income, or activity</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>TDQ (thirty day quantity)</Term>
+    </Terms>
+    <Definition
+      Link="">the amount of an item's inventory expected to be available for sale within 30 days</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>terms</Term>
+    </Terms>
+    <Definition
+      Link="">the conditions that apply to a sale</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>terms code</Term>
+    </Terms>
+    <Definition
+      Link="">an identifier used to specify payment agreement details</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>transaction</Term>
+    </Terms>
+    <Definition
+      Link="">an exchange of goods or services between a buyer and a seller</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>transfer order</Term>
+    </Terms>
+    <Definition
+      Link="">an internal company order used to move inventory from one warehouse/store to another</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>trial balance</Term>
+    </Terms>
+    <Definition
+      Link="">a listing of credits and debits of all general ledger accounts</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>unvouchered receipts</Term>
+    </Terms>
+    <Definition
+      Link="">purchase order receipts for which a vendor's invoice has not yet been received</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor</Term>
+    </Terms>
+    <Definition
+      Link="">a supplier</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor number</Term>
+    </Terms>
+    <Definition
+      Link="">a unique numerical identifier assigned by Dynamo to a vendor</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor price protection</Term>
+    </Terms>
+    <Definition
+      Link="">an application (not available on all installations) used to adjust inventory value based on a change in a vendor's retail price</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor return</Term>
+    </Terms>
+    <Definition
+      Link="">inventory sent back to a supplier for a credit or offsetting value in goods</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor return slip</Term>
+    </Terms>
+    <Definition
+      Link="">a document that accompanies products returned to a vendor</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>vendor type</Term>
+    </Terms>
+    <Definition
+      Link="">an optional feature used to categorize vendors by similar business types; often referred to as a “vertical”</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>warehouse</Term>
+    </Terms>
+    <Definition
+      Link="">any location from which products are received, housed, or shipped</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>warehouse location</Term>
+    </Terms>
+    <Definition
+      Link="">a unique identifier specifying where inventory is stored</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>workstation</Term>
+    </Terms>
+    <Definition
+      Link="">any device used to access Dynamo; computer, tablet, etc.</Definition>
+  </GlossaryEntry>
+</CatapultGlossary>

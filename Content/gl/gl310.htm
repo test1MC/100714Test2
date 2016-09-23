@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="gl310.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="1003" MadCap:lastWidth="1535">
+    <head><title>G/L Posting Report</title>
+    </head>
+    <body>
+        <p class="SectionName">General Ledger</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">G/L Posting Report</p>
+                </td>
+                <td align="right">Last Revised: 02/05/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The G/L Posting Report functions like a daily transaction register.&#160; It details all Accounts Payable transactions that have taken place since the last G/L Posting Report Update.&#160;It also can be printed for a specific batch that was previously updated.</p>
+        <p>Typically, this report would be printed after you have completed Accounts Payable processing for the day. &#160; Do not update this report until after printing and reviewing it for accuracy. &#160;Prior to updating, you may modify or delete an existing posting using <a href="gl320.htm">G/L Posting Entry and Maintenance</a> found on the G/L menu. &#160;Once the report is updated, this option is not available; however, you may use G/L Posting Entry and Maintenance to create a new posting, duplicate an existing posting, or reverse an existing posting.</p>
+        <p>
+            <img src="gl310-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This report details all transactions posted through the following:</p>
+        <table>
+            <tr>
+                <th width="100%" colspan="2">G/L Posting Report</th>
+            </tr>
+            <tr>
+                <td width="50%">Postdate</td>
+                <td width="50%">Transactions are listed in order of posting date</td>
+            </tr>
+            <tr>
+                <td>SC</td>
+                <td>
+        Source Code<br />        &#160;
+
+        <table><tr><td>AP</td><td>Accounts Payable</td></tr><tr><td>CD</td><td>Cash Disbursements</td></tr><tr><td>MP</td><td>Manual Payments</td></tr><tr><td>CR</td><td>Cash Receipts</td></tr><tr><td>SO</td><td>Sales Order Processing</td></tr><tr><td>JE</td><td>Journal Entries</td></tr></table></td>
+            </tr>
+        </table>
+        <p>Transactions are listed in order of Posting Date, along with source code, batch number, G/L account number and description, type of transactions, invoice number (if applicable), and corresponding debit and credit amounts.</p>
+        <p>After the G/L Posting Report is printed, you will be given the opportunity to update.&#160;&#160;If you have MAS90 installed, then this update will post to the MAS90 Daily Transaction Register, which can then be printed and updated to post to MAS90.&#160;&#160;</p>
+        <p>In effect, we are posting to both the Dynamo and MAS90 General Ledgers.&#160;</p>
+        <h6>Note that you must print this G/L Posting Report and update it before the transactions will appear on the MAS90 Daily Transaction Register.&#160;&#160;</h6>
+        <p>Remember to make the change in both Dynamo and MAS90 when adding or changing General Ledger accounts.</p>
+        <p>Sample <a href="../examples/GLPostingReport.pdf">G/L Posting Report</a>.</p>
+    </body>
+</html>

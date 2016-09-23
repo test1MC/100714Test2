@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="5560" MadCap:lastWidth="1462">
+    <head><title>PO Receiving Enhancement Project: Summer 2008</title>
+    </head>
+    <body>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">PO Receiving Enhancement Project: Summer 2008</p>
+                </td>
+                <td align="right">Last Revised: 02/19/09</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Objectives</th>
+            </tr>
+            <tr>
+                <td align="right">1</td>
+                <td>Enable a single vendor invoice to link to multiple PO Receipts</td>
+            </tr>
+            <tr>
+                <td align="right">2</td>
+                <td>Enable an operator receiving a purchase order using a workstation, to exit the receipt, and continue later without having to re-enter all quantities received</td>
+            </tr>
+            <tr>
+                <td align="right">3</td>
+                <td>Provide PO receipt timestamps</td>
+            </tr>
+            <tr>
+                <td align="right">4</td>
+                <td>Provide ability to access PO receipts that have been updated to view heading, detail, timestamp, re-print any of the PO Receipt Listings.</td>
+            </tr>
+            <tr>
+                <td align="right">5</td>
+                <td>Provide ability to re-open a receipt, change the date received, change or add new line items received, and update changes.</td>
+            </tr>
+            <tr>
+                <td align="right">6</td>
+                <td>Display value of receipt on Receipt Heading display</td>
+            </tr>
+            <tr>
+                <td align="right">7</td>
+                <td>Provide option to display value of receipt by PO</td>
+            </tr>
+            <tr>
+                <td align="right">8</td>
+                <td>Provide a PO Receipt Listing that included value received by PO# and line item</td>
+            </tr>
+            <tr>
+                <td align="right">9</td>
+                <td>Provide a display of Invoices linked to a PO Receipt including balance to be reconciled.</td>
+            </tr>
+            <tr>
+                <td align="right">10</td>
+                <td>Provide a display of PO Receipts linked to a vendor invoice</td>
+            </tr>
+            <tr>
+                <td align="right">11</td>
+                <td>Provide a method to maintain the vendor invoices linked to a PO receipt even when the invoice was entered and paid prior to the receipt</td>
+            </tr>
+            <tr>
+                <td align="right">12</td>
+                <td>Provide a PO Receipt listing by Skid#, including the ability for the 
+		same item to appear on multiple skids.</td>
+            </tr>
+            <tr>
+                <td align="right">13</td>
+                <td>Provide a method of entering PO receipts using a bar code scanner attached to a workstation, either by wire or wireless.</td>
+            </tr>
+            <tr>
+                <td align="right">14</td>
+                <td>Eliminate the need to enter the Vendor# during PO receipt entry</td>
+            </tr>
+            <tr>
+                <td align="right">15</td>
+                <td>Include a 'cartons' quantity on the PO Receipt Listing by Skid#</td>
+            </tr>
+            <tr>
+                <td align="right">16</td>
+                <td>Provide a way to display the value of a PO receipt line item, even when this value differs from the value of the inventory received due to rounding issues created either by a PO discount% or multiplier.</td>
+            </tr>
+            <tr>
+                <td align="right">17</td>
+                <td>Provide a way to permit to the cost on a PO, after a receipt has been started, but before it has been updated, and for these changes to be immediately reflected in the value of the received line item.</td>
+            </tr>
+            <tr>
+                <td align="right">18</td>
+                <td>Provide a way to add line items to a PO, after a receipt has been started, and be able to receive these items on the existing PO receipt.</td>
+            </tr>
+            <tr>
+                <td align="right">19</td>
+                <td>Provide a method to add a PO to an existing PO receipt, after receiving has been started.</td>
+            </tr>
+            <tr>
+                <td align="right">20</td>
+                <td>Provide a menu selection that allows printing of all PO Receipt Listing options for operators not authorized to use the PO Receiving application.</td>
+            </tr>
+            <tr>
+                <td align="right">21</td>
+                <td>Provide a place to store the ASN Quantity shipped as reported by vendor and include on variance listing when used.</td>
+            </tr>
+            <tr>
+                <td align="right">22</td>
+                <td>Provide an automated method to install this enhancement and perform data conversion, with minimal manual tasks.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th align="left" colspan="5">PO Receipt Screen</th>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Receipt#</td>
+                <td>########</td>
+                <td>&#160;</td>
+                <td rowspan="13">
+                    <img border="0" src="PORece1.jpg" alt="" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">1</td>
+                <td>Date Received</td>
+                <td>Wed MM/DD/YY</td>
+                <td>Date Received must be open for GL posting before updating</td>
+            </tr>
+            <tr>
+                <td align="right">2</td>
+                <td>Receiving Method</td>
+                <td>W Workstation<br />      S Workstation Scanner<br />      H Hand Held Scanner</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="right">3</td>
+                <td>Receive by Skid#</td>
+                <td>N</td>
+                <td>Only if PO parameter is enabled</td>
+            </tr>
+            <tr>
+                <td align="right">4</td>
+                <td>Vendor Packing Slip#</td>
+                <td>XXXXXXXXXX</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="right">5</td>
+                <td>Purchase Order(s)</td>
+                <td>3: 12345 23456 34567</td>
+                <td>T Type routine PO310</td>
+            </tr>
+            <tr>
+                <td align="right">6</td>
+                <td>Receiving Warehouse</td>
+                <td>X XXXXXXXXXXXXXXXXXXXXXXX</td>
+                <td>T Type routine PO310</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Vendor(s)</td>
+                <td>1234 Vendor Name</td>
+                <td>T Type routine PO310</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Received Value</td>
+                <td>displayed</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Total Line Items</td>
+                <td>displayed</td>
+                <td>number of open line items on PO's specified</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Line Items Received</td>
+                <td>12 (8 in full, 3 in part, 1 over)</td>
+                <td>number of line items on receipt with a qty received (PO310)</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td># of Pieces Received</td>
+                <td>123</td>
+                <td>total of qty received</td>
+            </tr>
+            <tr>
+                <td align="right">&#160;</td>
+                <td>Status</td>
+                <td>Open<br />      Closed</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Purchase Order Receiving</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Receipt Heading</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Receipt Detail</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Print Options</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Timestamps</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Received Value by PO</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Vendor Invoices</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Update/Delete/Re-Open Receipt</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Receipt Listing sequence options</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Item# (all items on PO)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Item# (received items)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Item# (variance items)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>PO# with costs</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Skid#</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="4">Data Dictionary&#160; &amp; File Changes</th>
+            </tr>
+            <tr>
+                <th>Co</th>
+                <th>DD Name</th>
+                <th>View</th>
+                <th>Change</th>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>AP12</td>
+                <td align="center">&#160;</td>
+                <td>Deleted RCPTNO, now stored in AP13.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>AP13</td>
+                <td align="center">&#160;</td>
+                <td>Added RCPTNO.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC020</td>
+                <td align="center">&#160;</td>
+                <td>Added GLDATE, PO51ID, UVRCHG, and NOF.&#160; Deleted RCPTNO and SEQ.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC03</td>
+                <td align="center">&#160;</td>
+                <td>Added PO51ID.&#160; Deleted RCPTNO and SEQ.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC030</td>
+                <td align="center">&#160;</td>
+                <td>Added PO51ID.&#160; Deleted RCPTNO and SEQ.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC035</td>
+                <td align="center">&#160;</td>
+                <td>Moved from company DY.&#160; Added FSO, FPO and NET.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC04</td>
+                <td align="center">&#160;</td>
+                <td>Added GLDATE.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC10</td>
+                <td align="center">&#160;</td>
+                <td>Added PO51ID, OPERID.&#160; Deleted RCPTNO.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC100A.</td>
+                <td align="center">&#160;</td>
+                <td>Added COST, CU, ACTDATECLOSED.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC110.</td>
+                <td align="center">&#160;</td>
+                <td>Added PO51ID.&#160; Deleted RCPTNO.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>IC250.</td>
+                <td align="center">&#160;</td>
+                <td>Renamed UNITS_PKG_SELL and _BUY to PKG and CAS.&#160; Renamed MINQTY 
+		and MAXQTY to MIN and MAX.&#160; Renamed LTMU to TMU.&#160; Added MBQ, 
+		MLT, FSO, FPO, NET.&#160; Deleted RBQ.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>GL280.</td>
+                <td align="center">&#160;</td>
+                <td>Unvouchered Receipts Work File (PO)</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>GL281.</td>
+                <td align="center">&#160;</td>
+                <td>Unvouchered Receipts Work File (AP)</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO00</td>
+                <td align="center">&#160;</td>
+                <td>Change RDSKID$ to SKID$ - Receive by Skid#<br />      Add RDOPEN:C(1) - Show open sales &amp; transfer orders on PO Receipt Listing</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">A</td>
+                <td>View used for PO Parameter Maintenance includes SKID instead of RDSKID.</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO180.</td>
+                <td align="center">&#160;</td>
+                <td>Vendor Invoice Reconciliation Work File - *** Changes not yet finalized ***</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO220.</td>
+                <td align="center">&#160;</td>
+                <td>PO Receiving detail work file eliminated</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO222</td>
+                <td align="center">&#160;</td>
+                <td>Added several fields from PO41</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO230</td>
+                <td align="center">&#160;</td>
+                <td>PO Receipt Adjustment file eliminated</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO232.</td>
+                <td align="center">&#160;</td>
+                <td>PO Receipt Adjustment Work File eliminated</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO311</td>
+                <td align="center">&#160;</td>
+                <td>Return Receipt Invoiced Amounts - new program, successor to AP106</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO50</td>
+                <td align="center">&#160;</td>
+                <td>Added METHOD, SKID, POS, PO51RECS, VALUE, FULL, PART, OVER.<br />      Changed CLOSED to RECONCILED.<br />      Deleted BY, AT, HISEQ.<br />      KNUM 1 changed to OPEN+DATERCVD\D+RCPTNO\D to provide access to all receipts not updated.<br />      KNUM 2 added VENDOR+OPEN+RCPTNO\D to provide access to PO Receipts by vendor when linking a PO receipt to a vendors invoice.<br />      KNUM 3 added WHS+OPEN+DATERCVD\D+RCPTNO\D to provide access to receipts by warehouse.<br />      KNUM 4 added RECONCILED\D+RCPTNO\D to for use by Unvouchered Receipts Listing</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">A</td>
+                <td>New view used during PO Receipt Entry</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO51</td>
+                <td align="center">&#160;</td>
+                <td>Added PO51ID, ITEMNO, PONO, ASNQTY, CARTONS, VALUE.<br />      Deleted SEQ.<br />      KNUM 0 changed from RCPTNO+SEQ to PO51ID.<br />      KNUM 1 changed to RCPTNO+ITEMNO+PO51ID used during scanned receipt entry.<br />      KNUM 2 added PO41ID+PO51ID.&#160; Used to link receipts to a specific PO line item.<br />      KNUM 3 added PONO+RCPTNO+PO51ID used by PO Processing and Inquiry to display items received for selected PO</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO52</td>
+                <td align="center">&#160;</td>
+                <td>Added Value</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO53</td>
+                <td align="center">&#160;</td>
+                <td>New File: POP Receipt Timestamps</td>
+            </tr>
+            <tr>
+                <td>XX</td>
+                <td>PO54</td>
+                <td align="center">&#160;</td>
+                <td>New File: POP Receipt Detail by Skid#.&#160; Only used on receipts with PO50.SKID$="Y".</td>
+            </tr>
+            <tr>
+                <td>DY</td>
+                <td>AP103</td>
+                <td align="center">&#160;</td>
+                <td>New program template</td>
+            </tr>
+            <tr>
+                <td>DY</td>
+                <td>GL280.</td>
+                <td align="center">&#160;</td>
+                <td>Unvouchered Receipts Listing - deleted.&#160; Now in company XX.</td>
+            </tr>
+            <tr>
+                <td>DY</td>
+                <td>AP281</td>
+                <td align="center">&#160;</td>
+                <td>A/P Invoice Maintenance - PO Receipts</td>
+            </tr>
+            <tr>
+                <td>DY</td>
+                <td>PO301</td>
+                <td align="center">&#160;</td>
+                <td>POP Select Receipt (New)</td>
+            </tr>
+            <tr>
+                <td>DY</td>
+                <td>PO303</td>
+                <td align="center">&#160;</td>
+                <td>PO Receiving - return list of PO's (New)</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>APSK53</td>
+                <td align="center">&#160;</td>
+                <td>VDT formats for Accounts Payable applications.<br />      Changed AP100 VDT A &amp; B, AP153 VDT A &amp; B to include heading for Receipt#.<br />      AP280-A, no longer used, but left on file for now.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Program Changes</th>
+            </tr>
+            <tr>
+                <td>POP Receiving - General</td>
+                <td>1. Use a CDS550 view, instead of manually coded.<br />      2. Permit display of prior receipts</td>
+            </tr>
+            <tr>
+                <td>PO Receiving - Heading</td>
+                <td>1. Show receipt#<br />      2. Add method (Workstation, Workstation Scanner, Hand Held Scanner)<br />      3. Add receive by Skid# when parameter is enabled&#160;<br />      4. Change Vendor# field to be displayed instead of entered<br />      5. Show received value</td>
+            </tr>
+            <tr>
+                <td>POP Receipt Listing</td>
+                <td>
+        1. Expand format options<br />        2. Provide
+
+        <p>1. By Item#<br />        2. By PO#<br />        3. By Skid# (if Skid# option is set for receipt)</p><p>Print receipt# on Receipt Listing.&#160; Include Bar Code for scanning.</p></td>
+            </tr>
+            <tr>
+                <td>PO Receiving Document</td>
+                <td>1. Show open sales and transfer order line items when parameter is enabled.<br />      2. Show receipt#<br />      3. Print receipt# bar code<br />      4. Exclude item detail when using hand held scanner</td>
+            </tr>
+            <tr>
+                <td>PO Receiving - Detail</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO Receiving - Scanner</td>
+                <td>1. Allow scanning/entry of receipt# to start<br />      2. Require scanning/entry of skid# when receiving by skid# is enabled.<br />      3. Change logic related when entering an Item# to require I entry prior to quantity.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="5">Programs</th>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <th>RH</th>
+                <th>Pgm</th>
+                <th>Description</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP001</td>
+                <td>A/P Setup</td>
+                <td>Eliminated AP15 file. RCPTNO now stored in AP13.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP100</td>
+                <td>A/P Invoice Data Entry</td>
+                <td>Modification to store the PO RCPTNO in the AP13 file instead of AP12.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP103</td>
+                <td>A/P Invoice Data Entry</td>
+                <td>Added display and entry of PO RCPTNO.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP106</td>
+                <td>A/P Compute invoiced amounts for PO Receipt</td>
+                <td>Program replaced with PO311</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP110</td>
+                <td>A/P Recurring Invoice Maintenance</td>
+                <td>Modified to use DD to retreive AP103 template</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP140</td>
+                <td>A/P Invoice Update</td>
+                <td>Revised logic used to indicate that at PO RCPTNO is closed due to RCPTNO field now in AP13 instead of AP12</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP153</td>
+                <td>Manual Payment Entry</td>
+                <td>Modified to support AP13.RCPTNO</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>AP280<br />      AP281</td>
+                <td>A/P Invoice Maintenance</td>
+                <td>Modified to display and maintain PO Receipt# linked to Invoice G/L detail.&#160; Allow splitting of existing AP13 record into multiple records with different PO receipts as long as AP13 total amount does not change.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>GL280</td>
+                <td>Unvouchered Receipts Listing</td>
+                <td>Added section to list invoices with Unvouchered Receipts G/L account not linked to a PO receipt.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>IC020</td>
+                <td>Change Qty on Hand</td>
+                <td>Add PO51ID, delete RCPTNO and SEQ.&#160; Support for PO Receipt adjustments where cost changes but not quantity.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>IC030</td>
+                <td>Process Inventory Transaction</td>
+                <td>Add PO51ID, delete RCPTNO and SEQ.&#160; Modifications to support passing previous IC03ID to IC030 when adjusting a prior receipt.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>IC130</td>
+                <td>Inventory Transaction Inquiry</td>
+                <td>Modifications to support changes to IC03 file</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>IM126</td>
+                <td>Item Inquiry - Display PO Receipts</td>
+                <td>Modifications to support changes to PO51 file</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO108</td>
+                <td>PO Inquiry - Receipts</td>
+                <td>Eliminated references to deleted fields PO50.BY and AT</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO118</td>
+                <td>PO Inquiry - Display Receipt Detail</td>
+                <td>Modified to display PO51.VALUE for stock and non-stock line items, and not inventory value as computed using IC03 records.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO131</td>
+                <td>POP Return PO41 Line Item Info</td>
+                <td>Modifications required due to KNUM change in PO51</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO132</td>
+                <td>POP Return PO Detail Received Info</td>
+                <td>Modifications required due to record and KNUM changes in PO51</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO133</td>
+                <td>Compute PO51 value received</td>
+                <td>Corrected problem when cost multiplier was used on PO line item</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO134</td>
+                <td>POP Compute Receipt Value</td>
+                <td>Modifications required due to KNUM change in PO51</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO137</td>
+                <td>Compute PO40 value received</td>
+                <td>Modified to use PO52.VALUE instead of passing each line item on PO to 
+		compute received value.&#160; Significantly improves display time in PO 
+		Inquiry when looking at orders for specific vendor.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>PO140</td>
+                <td>Create PO Receipt</td>
+                <td>Replace PO50.BY and .AT with timestamp</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>PO161</td>
+                <td>WM file conversion</td>
+                <td>Modifications to support revised PO5X files</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO163</td>
+                <td>Set PO50.RECONCILED</td>
+                <td>Conversion program to set PO50.RECONCILED on older receipts that will not be reconciled.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO168</td>
+                <td>Define/Archive/Convert files for this project</td>
+                <td>Conversion program to archive and convert all files modified by this 
+		project: PO50, PO51, PO52, PO53, IC03, AP13.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>PO169</td>
+                <td>POP - Audit PO50 totals</td>
+                <td>New non-menu program to check PO50 control totals</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>PO180</td>
+                <td>Vendor Invoice Reconciliation</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>PO190</td>
+                <td>PO Receiving Document Printing</td>
+                <td>Modified to be based on PO Receipt# instead of PO#.&#160; Consider eliminating and using PO Receipt Print Options.</td>
+            </tr>
+            <tr>
+                <td>N/A</td>
+                <td>&#160;</td>
+                <td>PO220</td>
+                <td>Original version of PO Receiving</td>
+                <td>Eliminated</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO221</td>
+                <td>POP Receiving - Enter Quantity Received</td>
+                <td>Modified to prevent adjusting prior Qty Rec'd to be less than qty already used on receipt.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO222</td>
+                <td>Return PO51 Info</td>
+                <td>Expand to include more PO41 data.&#160; EXTCOST based on PO41 data</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO223</td>
+                <td>PO# Entry (CDS352)</td>
+                <td>Added logic to create or delete PO51 records for PO</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO224</td>
+                <td>PO# Entry (T)</td>
+                <td>Modified to set PO50.VENDNO and WHS for first PO on receipt</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO225</td>
+                <td>Compute PO50 totals</td>
+                <td>Use PO51.VALUE not inventory value as computed using IC03</td>
+            </tr>
+            <tr>
+                <td>N/A</td>
+                <td>&#160;</td>
+                <td>PO230</td>
+                <td>PO Receipt Adjustment</td>
+                <td>Eliminated</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO300</td>
+                <td>PO Receiving - Main</td>
+                <td>New (replaces PO220)</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>Done</td>
+                <td>PO301</td>
+                <td>POP Select PO Receipt</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO302</td>
+                <td>PO Receiving - Display Received Value by PO</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO303</td>
+                <td>PO Receiving - Return List of PO's on Receipt</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO304</td>
+                <td>PO Receiving - Heading</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO305</td>
+                <td>PO Receiving - Detail</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO306</td>
+                <td>PO Receiving - Print Options</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO307</td>
+                <td>PO Receiving - Display Timestamps</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO308</td>
+                <td>PO Receiving - Display Invoices</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO309</td>
+                <td>Update/Delete/Re-Open Receipt</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO310</td>
+                <td>Receipt Heading - T type fields</td>
+                <td>New routine for POS, VENDNO, WHS, and ITEMS in PO50 record</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO311</td>
+                <td>POP Compute invoiced amounts for PO Receipt</td>
+                <td>New.&#160; Replaces AP106.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>PO312</td>
+                <td>PO Receiving - Add/Delete PO</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>Done</td>
+                <td>PO530</td>
+                <td>Create PO Receipt Timestamp</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>VM104</td>
+                <td>Vendor Inquiry - AP Invoices</td>
+                <td>Removed display of Received, Billed, and Balance amounts no longer associated with AP12.RCPTNO.</td>
+            </tr>
+            <tr>
+                <td>Done</td>
+                <td>&#160;</td>
+                <td>VM106</td>
+                <td>Vendor Inquiry - A/P Invoice - G/L Distribution</td>
+                <td>Add display of RCPTNO, and reconciled balance.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Installation Procedure</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Install SMS update dated 7/31/08 or later if required</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Copy from DS, Data Dictionary PO53 &amp; PO54 files.</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Delete &amp; Copy from DS, Data Dictionaries for: PO50, PO51, PO52, AP13, IC03, IC10, IC020, IC030, and PO00.&#160; Do not convert files to match dictionary.</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Run Program PO168 and enter the company code to be converted.</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Either copy menu POP from DS to XX, or use Menu Maintenance to copy PO Receiving from menu DS to XX.</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Use Application Menu Maintenance (CWP) to copy PO300 menu from DS.</td>
+            </tr>
+            <tr>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>Export DY/PO</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3">Issues</th>
+            </tr>
+            <tr>
+                <th>Opened</th>
+                <th>Closed</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">08/07/08</td>
+                <td align="center">&#160;</td>
+                <td>PO Receiving by Workstation needs to update PO54 Skid file when PO50.SKID$ is Y</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Vendor Invoice Reconciliation: need ability to include both allocated and un-allocated shipping &amp; duty.&#160; Allocated amounts get distributed to inventory.</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Vendor Invoice Reconciliation: need ability to allocate multiple discount amounts to ranges of line items on a invoice (A1-Cardone)</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Prevent IC10 records with all zero values when re-updating</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Are there problems with PO placed with original cost, partial shipment at original cost, backorder at newer cost?</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Scan receipts should show total for item on skid, not total for PO51 record</td>
+            </tr>
+            <tr>
+                <td align="center">08/21/08</td>
+                <td align="center">&#160;</td>
+                <td>Can we revise PO51.VALUE on open receipts when PO41 record is revised in PO Processing?&#160; Currently this requires calling up the receipt in PO Receiving.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3">Test Cases</th>
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Tested</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, no qty or cost change</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, qty changes from something to zero</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, qty changes from something to a smaller qty</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, qty changes from something to a larger qty</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, qty changes from zero to something</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, no qty or cost change, but date received changes</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td align="center">&#160;</td>
+                <td>Re-update, NOF item</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">10</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+    </body>
+</html>

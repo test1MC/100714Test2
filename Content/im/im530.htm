@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="270" MadCap:lastWidth="1225">
+    <head><title>ABC Value Generation</title>
+    </head>
+    <body>
+        <p class="SectionName">Inventory Control</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Generate ABC&#160;Values</p>
+                </td>
+                <td align="right">Last Revised: 12/10/13</td>
+            </tr>
+        </table>
+        <p>Generate ABC&#160;Values is used to create letter codes that represent frequency of sale for items. These frequency values are based on times sold within the past 12 months. The available codes are A,&#160;B, C, D, and blank. Each symbol represents a different percentage of the company's item sales.</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">ABC Code Values</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Top 20% (most frequently sold items)</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Next 60% </td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Last 20% (least frequently sold items)</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Items with a QOH but no sales</td>
+                </tr>
+                <tr>
+                    <td>Blank</td>
+                    <td>Items with no QOH&#160;or sales</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>ABC classifications are calculated automatically at the end of each month, but the operator can also manually run Generate ABC Values at any time.</p>
+    </body>
+</html>

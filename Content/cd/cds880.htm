@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="2924" MadCap:lastWidth="1306">
+    <head><title>Menu Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Menu maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS880">Last Revised: 02/11/06</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">&#160;Menu Maintenance is the program used to maintain the menus, sometimes called selectors.</p>
+        <p>
+            <img border="0" src="cds880-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <h6>The Menu Maintenance Screen</h6>
+        <p><a href="#Menu%20Code">Menu Code:</a>
+            <br />  1. <a href="#Menu%20Title">&#160;Menu Title:</a><br />  2.&#160; <a href="#Date%20Index/Force%20Entry">Date Index/Force Entry:</a><br />  3.&#160; <a href="#Return%20to%20Menu%20Code">Return to Menu Code:</a><br />  4.&#160; <a href="#Company%20Code%20for%20Text">Company Code for Text:</a><br />  5.&#160; <a href="#Menu%20Prefix">Menu Prefix:</a><br />  &#160;</p>
+        <p>
+            <img border="0" src="cds880-2.jpg" width="568" height="329" alt="" />
+        </p>
+        <p>
+            <img border="0" src="cds880-3.jpg" width="568" height="329" alt="" />
+        </p>
+        <p>
+            <img border="0" src="cds880-4.jpg" width="568" height="329" alt="" />
+        </p>
+        <h6>Detail Screen</h6>
+        <p><a href="#Line">Line:</a>
+            <br />  1.&#160; <a href="#Description">Description:</a><br />  2.&#160; <a href="#Omit">Omit:</a><br />  3.&#160; <a href="#Type">Type/Hotkey:</a></p>
+        <table>
+            <tr>
+                <th colspan="2">CDS880</th>
+            </tr>
+            <tr>
+                <td><a name="Menu Code"></a>Menu Code</td>
+                <td>This is a 3 character code assigned to each menu or selector. There should be some correlation between the code and the selector title so that the code will be remembered and direct access to a particular selector may be made quickly, i.e. A/R Accounts Receivable, INQ Inquiry Functions, SIS Serialized Inventory Subsystems, etc. Earlier versions of the System Management Software referred to the menu code as system code.</td>
+            </tr>
+            <tr>
+                <td><a name="Menu Title"></a>Menu Title</td>
+                <td>This may be up to 40 characters in length. It is printed at the top of the menu screen and is used to describe the specific section of a system from where all related programs will be processed.</td>
+            </tr>
+            <tr>
+                <td><a name="Date Index/Force Entry"></a>Date Index/Force Entry</td>
+                <td>
+        This index determines which date will appear on the selected menu.&#160; The system or calendar date will be desired on most menus. A date index of zero implies today's actual date. You may use a date index of 0 thru 9. For example, you may use date index 1 for the Accounts Receivable Date, date index 2 for the Accounts Payable Date, etc.
+
+        <p>For the date indexes of 1 or higher, there are three methods of changing the date:</p><table><tr><td>1</td><td>You may add an entry to the selector to run the program CDC900. This program requires channel 1 opened to the selector file XXSI50.</td></tr><tr><td>2&#160;</td><td>The application software may call CDS900. The calling arguments are Y$ and an optional window title.</td></tr><tr><td>3</td><td>You may set the force date entry parameter to Y which will prompt the operator for the date when first selecting this menu.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td><a name="Return to Menu Code"></a>Return to Menu Code</td>
+                <td>This code represents the menu to return to when the operator touches the F4 key.</td>
+            </tr>
+            <tr>
+                <td><a name="Company Code for Text"></a>Company Code for Text</td>
+                <td>Enter the 2 character company code that contains the text which explains this selector. The text should be named "blank" plus the three character menu code, and be maintained using Documentation Text Maintenance on the FMS menu for the company code specified.</td>
+            </tr>
+            <tr>
+                <td><a name="Menu Prefix"></a>Menu Prefix</td>
+                <td>If present, this field is included in the prefix when this menu is active. It may contain references to global strings by using parenthesis, i.e., (BBXDIR)std/ will replace (BBXDIR) with the STBL("BBXDIR") resulting in a prefix including /u/basis/pro5/std/.</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Detail</b>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="Line"></a>Line</td>
+                <td>Each line represents a task and is assigned a sequence number which determines the order the tasks will be displayed on the menu. There is a maximum of 16 lines per menu.</td>
+            </tr>
+            <tr>
+                <td><a name="Description"></a>Description</td>
+                <td>The description identifies the task. The program name itself is often used for this description. Note that when adding a new selection to a menu, entering a sequence number for the Description will copy that selection to the new selection being added. This option is useful when re-ordering selections within a menu without re-entering all selection details.</td>
+            </tr>
+            <tr>
+                <td><a name="Omit"></a>Omit</td>
+                <td>This option allows a program or task to be put on a selector without having to actually have it appear on the menu. Omitting instead of deleting avoids reentering the line when the customer purchases a particular module or decides to use a certain report which was previously not used.</td>
+            </tr>
+            <tr>
+                <td><a name="Type"></a>Type</td>
+                <td>
+        This field indicates the type of selection. Valid types include:<br />        &#160;
+
+        <table><tr><td>'R'</td><td>Run program</td></tr><tr><td>'S'</td><td>Selector</td></tr><tr><td>'M'</td><td>File maintenance</td></tr><tr><td>'D'&#160;&#160;</td><td>Driver</td></tr><tr><td>'O'</td><td>Other BBx program</td></tr><tr><td>'!'</td><td>O/S Call</td></tr><tr><td>'C'</td><td>Called program</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Program/File &amp; VDT Suffix</td>
+                <td>A program, file name, or selector code may be entered. A program or file beginning with the company code is usually entered with XX for the company code, i.e. XXU040 Sales Order Printing. The 'XX' is replaced with the company code when selected. If there is a screen background to be invoked through the selector, it is entered after the program/file, i.e. XXUM10 A Customer Maintenance.</td>
+            </tr>
+            <tr>
+                <td>Multi-Task Type/Position</td>
+                <td>
+        These two fields are used to prevent two or more operators from executing conflicting programs at the same time. They are often used to prevent someone from executing the same program from two different terminals at the same time.
+
+        <p>The Type field can be P for Process, or R for Restrict. Multiple P type jobs may be run at the same time, but an R type job may only be run if there are no other jobs running with the same multi-tasking position. The Position field may be any number from 1 to 99. Only jobs with the same Position field conflict with each other.</p><p><i><b>For example</b></i>, an update program that should not be run from two terminals at the same time is coded R-10. The data entry program would be coded P-10. This will allow multiple data entry programs to execute at the same time, but prohibit the update if there is any other P-10 (or R-10) jobs running.</p><h6>Note that multi-tasking restrictions are company specific. There is no global system-wide multi-tasking.</h6></td>
+            </tr>
+            <tr>
+                <td>Ghost Task Option</td>
+                <td>If set to 'Y," the operator will have the option of running the job using a ghost task. This option is used mostly for printing listings or reports where no operator intervention is necessary to complete the job successfully once the printer has been selected and initial questions answered. It is not recommended for updates since unexpected errors may be encountered. This option is available only on selected MAI Basic Four computers.</td>
+            </tr>
+            <tr>
+                <td>Report Paper Width</td>
+                <td>
+        This field indicates the maximum number of print positions that this report requires. N is used for narrow reports requiring 80 print positions or less. W is used for wide reports requiring up to 132 print positions. E is used for extra-wide reports requiring up to 255 print positions. Blank is the same as W.
+
+        <p>This field is used by the printer selection routine to insure printing to a compatible printer at the correct horizontal characters per inch.</p></td>
+            </tr>
+            <tr>
+                <td>Pass Parameter</td>
+                <td>
+        If a single program can be executed in different ways, the pass parameter may be set to any operator-defined values and tested within&#160; the application program using Y.PASSPARM$.
+
+        <p>For type M (file maintenance) selections, setting the Pass Parameter to Q will invoke an inquiry-only version of file maintenance, which permits display but no modification, deletion, or addition of records.</p></td>
+            </tr>
+            <tr>
+                <td>Escapes Allowed</td>
+                <td>This field is used to enable or disable the A to abort option in the error/escape routine should the operator interrupt the execution of the program. If escapes (interrupts) are allowed, then selecting the A to abort option will return directly to the selector.</td>
+            </tr>
+            <tr>
+                <td>Pages</td>
+                <td>This field has significance primarily on Basic Four computer systems.&#160; On BBx systems, the Base Memory pages (System Control Maintenance) is used to determine the number of memory pages to use for all jobs. On older systems, the memory pages could vary from selection to selection and be specified in this field.</td>
+            </tr>
+            <tr>
+                <td>Escapes Allowed</td>
+                <td>This field is used to enable or disable the A to abort option in the error/escape routine should the operator interrupt the execution of the program. If escapes (interrupts) are allowed, then selecting the A to abort option will return directly to the selector.</td>
+            </tr>
+            <tr>
+                <td>Pages</td>
+                <td>This field has significance primarily on Basic Four computer systems.&#160; On BBx systems, the Base Memory pages (System Control Maintenance) is used to determine the number of memory pages to use for all jobs. On older systems, the memory pages could vary from selection to selection and be specified in this field.</td>
+            </tr>
+            <tr>
+                <td>File Names</td>
+                <td>
+        The menu processor will open data files and a printer if specified in the file name fields. If the first two characters of the file name is XX then the XX will be replaced with the company code.
+
+        <p>The menu processor will open each data file to the channel indicated but will also set a numeric variable to the channel number as well. This numeric variable is the last four characters of the file name. For example if the first file to open is XXSO40 then a numeric variable named SO40 will be set to 1.&#160; It is the desired practice within the application to use SO40 as the channel number instead of 1.</p><p>The Block option applies only to certain MAI Basic Four systems that permit opening data files with a BLK=1024 option which improved sequential file performance.</p><p>The Lock option will lock the file if required.</p><p>If any data file has a string template associated with it, then a string variable will be dimensioned to this template with a name of the last four characters of the file name. For example S040$ will be dimensioned to the template for file XXS040.</p></td>
+            </tr>
+        </table>
+    </body>
+</html>

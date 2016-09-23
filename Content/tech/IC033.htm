@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>IC033 - Return QOH, Inventory Value, Average Cost</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">IC033</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Return Qty on Hand, Inventory Value &amp; Average 
+		Inventory Cost</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IC033">Last Revised: 
+ 01/05/12</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine return the quantity on hand, inventory value, and average cost for a specific item on any date.&#160; It can return this information for a specified warehouse, 
+ all warehouses, or warehouses of specified types.</p>
+        <p>IC033 uses the Inventory Receipt file IC03 and Inventory Usage file IC04 to determine the quantity on hand, value, and average cost for an item.</p>
+        <p><code>CALL "IC033", Y$, REC$, IC033$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IC033 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>REC$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <p>Must be templated field and contain field <code>ITEMNO</code>.<br />
+&#160;</p>
+                    <p>If 
+		<code>REC$</code> contains optional field <code>WHS</code> or <code>
+		SHIPWHS</code>, then IC033 will limit results to specified warehouse code, otherwise company-wide results are returned.<br />
+&#160;</p>
+                    <p><code>If REC$</code> contains optional field <code>WHSTYPES</code>, 
+ then IC033 will limit results to warehouses of the specified types.&#160; 
+ This is useful when necessary to exclude rental warehouses from total 
+ company quantity on hand.</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.QOH</code>
+                </td>
+                <td align="center">From</td>
+                <td>Total Quantity on Hand</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.VALUE</code>
+                </td>
+                <td align="center">From</td>
+                <td>Inventory Value based on the actual cost of each receipt</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.COREVALUE</code>
+                </td>
+                <td align="center">From</td>
+                <td>Core value for systems that track cores</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.TOTAL</code>
+                </td>
+                <td align="center">From</td>
+                <td>Sum of Inventory and Core values</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.AVGCOST</code>
+                </td>
+                <td align="center">From</td>
+                <td>Computed average cost</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.AVGCU</code>
+                </td>
+                <td align="center">From</td>
+                <td>Costing Unit for computed average cost</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.HIGHDATE</code>
+                </td>
+                <td align="center">From</td>
+                <td>The latest date where the Qty on Hand changed</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IC033.WHSQOH$</code>
+                </td>
+                <td align="center">From</td>
+                <td>String of warehouse codes and quantities on hand at each warehouse.&#160; 
+ The slot length is the length of the warehouse code (typically 1), plus 9 
+ characters for the quantity on hand.&#160; Only returned when a warehouse 
+ code was not specified in <code>REC$</code>.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>STBL("IC033_DATE")</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional julian date used to determine the date that the information is based on.&#160; If not set, then the information will be based on today's system date.</td>
+            </tr>
+        </table>
+    </body>
+</html>

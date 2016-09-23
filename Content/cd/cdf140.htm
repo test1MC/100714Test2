@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>Data Dictionary Printing</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Data Dictionary Printing</p>
+                </td>
+                <td align="right">Last Revised: 05/03/07</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Prints contents of Data Dictionary for operator specified criteria.</p>
+        <table>
+            <tr>
+                <th colspan="2">Operator Entries</th>
+            </tr>
+            <tr>
+                <td>Detail/Summary/Programs</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>D</td>
+                            <td>Detail - Report includes key structure, field information, and file conversion details.</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td>Summary - Report includes File Name, Description, File Type, Menu, and File Conversion Summary.</td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td>Programs - Report lists all external programs with a cross reference of what data dictionary entries refer to an external program</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Sequence</td>
+                <td>The report can be printed in either File Name or Menu Code sequence.</td>
+            </tr>
+            <tr>
+                <td>Range</td>
+                <td>Operator may specify range of File Names or Menu Codes depending on Sequence selected</td>
+            </tr>
+            <tr>
+                <td>File Selection Option</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>1</td>
+                            <td>Includes all files</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Includes only files where the data dictionary differs from the current data file structure.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Includes data dictionary entries for data files, excluding entries for temporary work files and programs.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Include File and Field Notes</td>
+                <td>Option to include any file and field notes on the report.</td>
+            </tr>
+        </table>
+        <p>Examples:</p>
+        <p><a href="../examples/DataDictionarySummary.pdf">Summary</a>
+        </p>
+        <p><a href="../examples/DataDictionaryDetail.pdf">Detail</a>
+        </p>
+        <p><a href="../examples/DataDictionaryPrograms.pdf">External Programs</a>
+        </p>
+    </body>
+</html>

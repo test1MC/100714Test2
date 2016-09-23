@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="585" MadCap:lastWidth="1332">
+    <head><title>Character Set</title>
+    </head>
+    <body>
+        <p class="SectionName">DYNAMO</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Character Set</p>
+                </td>
+                <td align="right">Last Revised 06/09/11</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The character set, also called a code page, determines what symbols can be displayed on your monitor.&#160; The symbols that vary by code page are typically the special characters including the line-drawing characters that are used to create window borders and boxes, foreign language characters, and many special symbols.&#160; Dynamo displays properly when the character set for your workstation is set to the character set named Cp850.</p>
+        <p>If the character set is not Cp850, then Dynamo will either make this change for you automatically, or display this page for detailed instructions how you can set the character set.</p>
+        <h5><a name="Windows" id="Windows"></a>Windows</h5>
+        <p>The following notes apply to Windows XP, although the steps should be similar for other versions of Microsoft Windows.</p>
+        <ol>
+            <li>Click Start, then Control Panel</li>
+            <li>Click 'System' if shown in the list of options, otherwise click 'Performance and Maintenance' then 'System'.</li>
+            <li>Click the 'Advanced' tab on the System Properties application.</li>
+            <li>Click the 'Environment Variables' tab.</li>
+            <li>Click the 'New' button in the upper section used for operator variables.</li>
+            <li>In the Variable name box, enter: _java_options <i>(Note that the first character as well as the character before 'options' is the underscore which is typically located on the keyboard as the shifted hyphen key.&#160; You can copy and paste these values from this document if desired.)</i></li>
+            <li>In the Variable value box, enter: -Dfile.encoding=Cp850 <i>(Note that here the first character is really a hyphen, and not an underscore)</i></li>
+            <li>Click OK until you return to the Control Panel, then reboot your PC.</li>
+            <li>If you still get a message upon login to Dynamo to set the Windows character set, then double check the fields above to verify that they were entered properly, or call Excellware for assistance.</li>
+        </ol>
+        <h5>Apple Max OS X</h5>
+        <p>Dynamo typically can set the character set automatically, however, you will need to logout of Mac OS X by clicking on the apple icon in the upper left of the display, and choose the Log Out option.&#160; You can log back in, start Dynamo, and should not receive any messages related to the character set.</p>
+        <h5>All Worktations</h5>
+        <p>Note that on all platforms the current character set code is displayed in the Information option of the Dynamo menu which can be accessed by entering "I" at any Dynamo menu.</p>
+        <p>If the character set is not Cp850 then certain displays including selecting one or more branch or warehouse codes will display the capital letter A with a small circle above instead of the horizontal line character.</p>
+        <p>Contact Excellware for assistance setting the character set for any other system.</p>
+    </body>
+</html>

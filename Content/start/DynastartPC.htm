@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:lastBlockDepth="5" MadCap:lastHeight="1095" MadCap:lastWidth="1282">
+    <head><title>Dynastart Setup - Windows PC</title>
+    </head>
+    <body>
+        <p class="SectionName">Dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Dynastart Setup - Windows PC</p>
+                </td>
+                <td align="right">Last Revised 11/01/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Excellware recommends using Dynastart to launch Dynamo.</p>
+        <p>Dynastart is a version of Dynamo that does not require the use of a terminal emulator—and the associated licensing fees—to run. Instead, Dynastart uses Java, which is a free download and already present on millions of devices. Follow these steps to setup Dynastart on a Windows PC. For best results, the PC should be running Microsoft Windows Professional Edition version 7 or higher. Home Editions and older versions of Windows such as XP or Vista   are not recommended.</p>
+        <ol>
+            <li>Uninstall all versions of Java that may have been previously installed<br /><MadCap:expanding><MadCap:expandingHead>more </MadCap:expandingHead><MadCap:expandingBody>Open Windows Control Panel<br />Select Programs and Features<br />For each entry in the list that does not begin with Java 8, click on the Program, then click uninstall.<br />Close Programs and Features, and Control Panel<br />Open Windows Explorer (not Internet Explorer)<br />Delete folders <span class="Code">C:\Program Files\Java</span> and <span class="Code">C:\Program Files (x86)\Java</span> if present</MadCap:expandingBody></MadCap:expanding></li>
+            <li>Download and install Java<br /><MadCap:expanding><MadCap:expandingHead>more </MadCap:expandingHead><MadCap:expandingBody><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Click here</a> to open a browser to the Java download page<br />Click the JRE Download Button (Software Developers should click the JDK&#160;Download Button)<br />Click to Accept the Java License Agreement<br />Click the link next to Windows x64 to download the 64-bit version. Older PC's that do not have a 64-bit processors can use the Windows x86 Offline option. You can view Computer System Properties to determine if your System Type is a 64-bit Operating System.</MadCap:expandingBody></MadCap:expanding></li>
+            <li>Set the Java Security Level &amp;&#160;Add Exception<br /><MadCap:expanding><MadCap:expandingHead>more </MadCap:expandingHead><MadCap:expandingBody>Open Windows Control Panel<br />Select Java<br />Click on the Security tab<br />Select the High security option<br />Add the URL&#160;used to launch Dynamo in the Exception Site List<br />Note:&#160;the following screen shot is based on Java version 1.8.0_25.<br /><img src="DynastartPC-1.png" /><br />Close Java and Windows Control Panel</MadCap:expandingBody></MadCap:expanding></li>
+            <li>Open a browser such as Chrome, Firefox, or Internet Explorer and click link or enter address<br /><MadCap:expanding><MadCap:expandingHead>more </MadCap:expandingHead><MadCap:expandingBody>If using the Excellware Cloud server, click <a href="http://dynamo.excellware.com:8888/jnlp/dynamo.jnlp" target="_blank">here</a><br></br>If using your own in-house server named 'server', click <a href="http://server:8888/jnlp/dynamo.jnlp" target="_blank">here</a><br></br>If using an IP&#160;Address, enter into Browser's address:&#160;<code>http://192.168.xxx.2:8888/jnlp/dynamo.jnlp</code> replacing <code>xxx</code> with correct number for your server's IP&#160;Address.</MadCap:expandingBody></MadCap:expanding></li>
+        </ol>
+    </body>
+</html>

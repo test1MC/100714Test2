@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="9591" MadCap:lastWidth="1236">
+    <head>
+    </head>
+    <body>
+        <p class="SectionName">Item Maintenance &amp; Listings</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Item Maintenance</p>
+                </td>
+                <td align="right">
+                    <p align="right">Last Revised: 03/15/15</p>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Item Maintenance is used to describe products and services that you buy, make, or sell.&#160; Items are uniquely identified by an Item#.&#160; This application is used to describe all properties of an item. Dynamo can be configured to enable or disable certain options depending on the needs of your business.&#160; The documentation below describes all fields that are available, however each may not appear on your screen depending on current configuration.</p>
+        <p class="SectionDesc">&#160;</p>
+        <table>
+            <tr>
+                <th colspan="3">Item Maintenance Views</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td nowrap="nowrap">Primary View</td>
+                <td>The primary view used to specify the Item#, description, product class, vendor, packaging, etc.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td nowrap="nowrap">Pricing</td>
+                <td>The Pricing view is used to maintain purchase cost, list price, and formula codes for an item.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td nowrap="nowrap">Price Exceptions</td>
+                <td>Used to enter or maintain exceptions to standard selling prices, or when you want to maintain a list price separate from your selling price, or when the price varies with the quantity ordered.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td nowrap="nowrap">Vendor Part Numbers</td>
+                <td>This view is used to maintain any vendor part numbers, when the vendor part number is different than the Dynamo Item#.&#160; You may store a vendor part number for each vendor that you purchase this item from.&#160; The Vendor Part Number typically prints on purchase orders.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td nowrap="nowrap">Item Notepad</td>
+                <td>A place to record any additional information about an item.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td nowrap="nowrap">Bar Codes</td>
+                <td>Used to store one or more UPC bar code numbers, shipping container symbols, and Dynamo assigned bar code numbers.&#160; Bar code scanners can be used during Point of Sale processing to speed up checkout and reduce risk of item# entry errors.&#160; Bar codes are also used in DynaScan applications including Order Picking, Order Packing, Purchase &amp; Transfer Order Receiving, Item Put-away, and Physical Inventory.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td nowrap="nowrap">Secondary View</td>
+                <td>This view includes less frequently used fields including Alternate Item information.&#160; Alternate items are only used when there are two or more item numbers referring to the same physical product.&#160; This might be needed to reference different product classes or different pricing for the same physical item.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td nowrap="nowrap">Equivalent Items</td>
+                <td>An equivalent item is one that is similar to, or could be used instead of, the Dynamo Item#.&#160; Equivalent items are used during the Item search process and can help someone searching for an item locate the item that you sell.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td nowrap="nowrap">Warehouse Information</td>
+                <td>Contains warehouse specific information including ABC value, minimum and maximum stocking levels, and locations.</td>
+            </tr>
+        </table>
+        <h5>Primary View</h5>
+        <p>
+            <img src="xxim01-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Primary View Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="ITEMNO" id="ITEMNO">Item#</a>
+                </td>
+                <td>The Dynamo Item# uniquely defines a product or service.&#160;You may use the manufacturers item# or assign your own.&#160;You may include a vendor or manufacturer prefix of 2 or 3 characters if desired.
+								<p>The number of characters in the Item# is specified during initial Dynamo setup.&#160; Item #s of 5, 10, 15, or even 20 characters long can be used.&#160;Typically, the item# is 8 to 12 characters long, but longer item numbers are used in certain industries.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="DESC1" id="DESC1">Description Line 1 &amp; 2</a>
+                </td>
+                <td><a name="DESC2" id="DESC2"></a>Dynamo provides 2 lines of description for each item.&#160;Both description lines appear on the display, documents, and reports.&#160;Use the Item Notepad to store additional information about an item that will not print on documents and reports.
+								<p>Typically the number of characters in each line of the description is 45 less the number of characters in the item#.&#160;So if the Item# is 15 characters long, each description line would contain 30 characters.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="VENDNO" id="VENDNO">Primary Vendor</a>
+                </td>
+                <td>Specify the vendor where you purchase this product.&#160;If you purchase this product from multiple vendors, specify the primary vendor.&#160;If you make this Item or it is a service that you provide, create a vendor with your name and link this item to that vendor.&#160;The vendor# is used for various reports and listings to show all products purchased from a vendor. It is also used during <a href="../po/po170.htm">Purchase Order Generation</a>.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="VPNPH" id="VPNPH">Primary Vendor Part#</a>
+                </td>
+                <td>If the primary vendor has a Part# that is different than the Dynamo Item#, you can specify it here.&#160;Users can enter a Vendor Part# when searching for items and Dynamo will cross reference to the Dynamo Item#. The Vendor Part# is typically shown on purchase orders.&#160;Note this is the same as entering the Primary Vendor Part# using the Vendor Part# View, but repeated here to make it quicker when adding new items.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="PCL" id="PCL">Product Class</a>
+                </td>
+                <td>The product class is a three character code assigned to each item, used to group similar items for inventory and sales analysis purposes. The Product Class must be previously defined using <a href="xxim27.htm">Product Class Maintenance</a> (IML).&#160;The Product Class description will be displayed.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="RSN" id="RSN">Report Sequence#</a>
+                </td>
+                <td>The Report Sequence Number (RSN) is an optional 5 digit number used to control the sequence that items appear within each Product Class for most Dynamo reports.&#160; An RSN is only required when the Item# does not provide the sequence desired. The RSN does not need to be unique.&#160;Best Practice is to initially assign the RSN every 10 numbers so that in the future, new items can be inserted in the proper place without needing to change any existing RSN's.
+								<table><tr><th colspan="3">Items in Item# Sequence</th><th>&#160;</th><th>&#160;</th><th colspan="3">Items in RSN Sequence</th></tr><tr><th>Item#</th><th>Description</th><th align="right">RSN</th><th align="right">&#160;</th><th align="right">&#160;</th><th align="right">RSN</th><th align="right">Item#</th><th align="right">Description</th></tr><tr><td>CDB12</td><td>Carbide Drill Bit 1/2"</td><td align="right">40</td><td align="right">&#160;</td><td align="right">&#160;</td><td align="right">10</td><td>CDB18</td><td>Carbide Drill Bit 1/8"</td></tr><tr><td>CDB14</td><td>Carbide Drill Bit 1/4"</td><td align="right">20</td><td align="right">&#160;</td><td align="right">&#160;</td><td align="right">20</td><td>CDB14</td><td>Carbide Drill Bit 1/4"</td></tr><tr><td>CDB18</td><td>Carbide Drill Bit 1/8"</td><td align="right">10</td><td align="right">&#160;</td><td align="right">&#160;</td><td align="right">30</td><td>CDB38</td><td>Carbide Drill Bit 3/8"</td></tr><tr><td>CDB38</td><td>Carbide Drill Bit 3/8"</td><td align="right">30</td><td align="right">&#160;</td><td align="right">&#160;</td><td align="right">40</td><td>CDB12</td><td>Carbide Drill Bit 1/2"</td></tr></table><p>If reports were printed in Item# sequence, these would appear as shown, which are not in size order.&#160;If printed in RSN sequence, they would appear in size order.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="PKGQTY" id="PKGQTY">Package Quantities</a>
+                </td>
+                <td>You can specify up to 4 package quantities, in ascending size, that this item comes in.&#160;You can also specify the minimum package quantity to sell, purchase, or transfer using the letters S, P, and T after the desired quantity.&#160;In the above example screenshot, the items comes in a box of 100, and the minimum quantity to sell or transfer is 100.&#160; The next largest size is 1,200 and that is the minimum quantity that should be purchased.&#160;This item also comes in a larger container of 8,400.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="INV" id="INV">Track Inventory</a>
+                </td>
+                <td>This is a Y/N field used to indicate if inventory should be tracked for this item.&#160;Items such as labor, services, coupons, instant rebates, training classes, etc. should be coded as "N".&#160; The question to ask, is "Will you count this item during physical inventory?".&#160;If the answer is no, then set 'Track Inventory' to "N".
+								<p>In earlier versions of Dynamo, you could disable inventory tracking by setting the Item Status Code to "L" (Labor).</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="SERIALIZEDCODE" id="SERIALIZEDCODE">Serialized Item</a>
+                </td>
+                <td>Dynamo can track serial numbers.&#160;Select the option from the drop down list.
+								<table><tr><td>N</td><td>The item does not have a serial number</td></tr><tr><td>P</td><td>Partially serialized (upon sale), the serial numbers are entered when the item is sold</td></tr><tr><td>2</td><td>Same as "P" but used when there are 2 serial numbers per Dynamo Item#.</td></tr><tr><td>3</td><td>Same as "P" but used when there are 3 serial numbers per Dynamo Item#.</td></tr><tr><td>F</td><td>Fully serialized (upon purchase), the serial numbers are entered into Purchase Order Receiving when the items are received and tracked by serial number throughout the life of the item.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="TAXABLEYN" id="TAXABLEYN">Taxable</a>
+                </td>
+                <td>Specify "Y" or "N" indicating if this item is subject to Sales Tax.&#160;Items that are not subject to Sales Tax, even when the customer is taxable, should be coded as "N."</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="COMMISSIONYN" id="COMMISSIONYN">Commission</a>
+                </td>
+                <td>Specify "Y" or "N" indicating if this item is eligible for a salesman to receive a commission. Set this field to "N" when no salesperson should receive a commission for the item.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="WEIGHT" id="WEIGHT">Weight</a>
+                </td>
+                <td>This is the weight of one item (in a package) when purchased and it is used during Purchase Order Entry and Generation to determine the total weight of the order. The weight can contain up to 6 digits and have up to 4 decimal places. There is no assumed scale; the numbers can represent any weight such as pounds, kilos, ounces, etc. This field can be disabled using <a href="xxcw00.htm">Dynamo&#160;Parameter Maintenance</a> (CWP) when you do not need this field.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="CUBE" id="CUBE">Cube</a>
+                </td>
+                <td>This is the volume of one item when purchased and it is used during Purchase Order Entry and Generation to determine the total volume of the order.&#160;The cube can contain up to 4 digits and have up to 3 decimal places.&#160; There is no assumed scale; the numbers can represent any measure of volume such as cubic feet or cubic meters.&#160; This field can be disabled using <a href="xxcw00.htm">Dynamo Parameter&#160;Maintenance</a> (CWP) when you do not need this field.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="REBATE" id="REBATE">Rebate</a>
+                </td>
+                <td>If a vendor offers a 'trailing rebate' to you at then end of some period of time, typically once per quarter or year, then you can specify up to 3 amounts or percentages.&#160;These fields become the default values when entering a purchase order for this item.&#160;They are used to estimate the rebate to be received when you want to assume that you will receive the rebate, and record the cost of the item in inventory as the purchase cost less anticipated rebate.&#160;This field can be disabled using <a href="xxpo00.htm">Purchase Order Parameter Maintenance</a> (POP) when not applicable for your business.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="TPREBATE" id="TPREBATE">3rd Party Rebate</a>
+                </td>
+                <td>This is similar to the Rebate fields above, except the rebate is paid by a third party, such as a Buying Group.&#160;One amount or percentage can be entered. This field can also be disabled using <a href="xxpo00.htm">Purchase Order Parameter Maintenance</a> (POP).</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="DISCONTINUED" id="DISCONTINUED">Discontinued on</a>
+                </td>
+                <td>This is the date that the item was or will be discontinued.&#160;Items that are discontinued and have no quantity on hand anywhere in the company, are excluded from the list of items.&#160;These items also cannot be entered on a Sales, Purchase, or Transfer order.&#160;You may enter the date discontinued in advance, as might be desirable with a coupon or instant rebate.</td>
+            </tr>
+        </table>
+        <h5>Pricing</h5>
+        <p>The Pricing view is used to maintain the default purchase cost, list or selling price, formula code, and other fields related to price and cost.&#160; Dynamo pricing is date sensitive so you can enter price changes in advance of their effective or Pricing Start Date.</p>
+        <p>
+            <img src="xxim01-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Note: Options 8 and 9 are initially blocked from view by the  option to choose between "Standard File Maintenance" and "Select existing record from list". Once a choice is made, these fields will become visible.</p>
+        <table>
+            <tr>
+                <th nowrap="nowrap" colspan="2">Pricing View Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Pricing Start Date</td>
+                <td>This date is required and is used to indicate when this price is effective.&#160;Dynamo will select the price based on the Customer Order Date.&#160;You may enter prices well in advance of the Pricing Start Date as they will not be used until the Customer Order Date reaches the Pricing Start Date.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Promo Pricing Ends</td>
+                <td>This date is optional and should only be used when the price is temporary for a promotion or sale.&#160;Orders dated after the Promo Pricing Ends date will revert to the pre-promo price.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Formula Code</td>
+                <td>Dynamo wants to let the computer do as much of your pricing as possible.&#160;To that end, you can define formulas that are used to compute the selling price or cost.&#160;For example, if you define a formula code that indicates you desire a 50% Gross Margin on this product, then Dynamo will compute the selling price based on the cost.&#160;When the cost changes, you do not need to do anything as the formula will compute the new selling price automatically.&#160;When using a formula code to compute the selling price, leave the List Price zero.&#160;Before using a Formula Code here, define it using <a href="xxim62.htm">Formula Maintenance</a> located on the CPM menu.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Cost</td>
+                <td>This is the cost that should appear on a purchase order when buying this item. It is the cost the seller paid for it. It can be computed by formula based on the List Price</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Costing Unit</td>
+                <td>This optional field is used when the Cost is for more than one unit.&#160;The table below lists all supported Costing &amp; Pricing Units.&#160; The Costing unit can be omitted if none of your items require it.
+									<table><tr><th align="center">Unit</th><th>Description</th><th style="text-align: center">Quantity</th></tr><tr><td align="center">blank</td><td>Each</td><td align="center">1</td></tr><tr><td align="center">P</td><td>Pair</td><td align="center">2</td></tr><tr><td align="center">T</td><td>Ten</td><td align="center">10</td></tr><tr><td align="center">D</td><td>Dozen</td><td align="center">12</td></tr><tr><td align="center">C</td><td>Hundred</td><td align="center">100</td></tr><tr><td align="center">G</td><td>Gross</td><td align="center">144</td></tr><tr><td align="center">M</td><td>Thousand</td><td align="center">1000</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">List Price</td>
+                <td>This field can be used for either a Published List Price, or your Selling Price. If you don't need to show a List Price, then it is easiest to consider this field your Selling Price. If you need to keep both a List Price and a different Selling Price for this item, then store the List Price here, and use the Pricing Exception view to record your Selling Price.
+									<p>The fields below List Price provide additional information as to how the List Price or Cost is calculated when using a Formula Code, as well as gross margin percentage, and whether or not a Pricing Exception was used during the calculations.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Pricing Unit</td>
+                <td>Same as Costing Unit described above, except that it applies to the List Price/Selling Price field.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Minimum Advertised Price</td>
+                <td>Some manufacturers have a Minimum Advertised Pricing Policy (MAPP) which stipulates the lowest price at which an item can be advertised. In such cases, this price can be entered here and Dynamo will make sure prices openly displayed in online stores will not fall below this minimum.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Instant Rebate</td>
+                <td>Instant rebates are reductions in selling price at the point of sale. This amount is what will be deducted from the Sell Price to get a new, reduced selling price on the sales order. Sales tax is based on this new selling price and so will be less than if sold at regular price.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Instant Rebate Cost</td>
+                <td>The amount the seller will receive as reimbursement from the manufacturer for a sale that qualifies for an instant rebate.</td>
+            </tr>
+        </table>
+        <h6>&#160;</h6>
+        <h5>Price Exceptions</h5>
+        <p>The Price Exceptions view is only required if:</p>
+        <ol>
+            <li>You need to maintain a List Price as well as a Selling Price</li>
+            <li>The Selling Price varies with the Quantity Ordered</li>
+            <li>You have special prices for a customer or group of customers</li>
+        </ol>
+        <p>Note that in order to have the Selling Price vary with the Quantity Ordered as shown in the example below, you will first need to define a Formula Code which lists the quantities.</p>
+        <p>Note also that the Cost used for Gross Margin and Selling Price computations is shown below for your convenience. The Effective Date shown in this section, is the Pricing Start Date of the Pricing record being used.</p>
+        <p>
+            <img src="xxim01-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <th colspan="2" nowrap="nowrap">Price Exception View Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Customer#</td>
+                <td>Leave blank for company wide pricing.&#160;Specify a customer when these prices apply only to this customer or to all customers that have this Customer# as one of their Pricing Customer numbers as specified in Customer Maintenance (CML).</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Pricing Start Date</td>
+                <td>Required field indicating when these prices are effective. You may enter the prices in advance as Dynamo will select the price based on the Customer Order Date.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Promo Pricing Ends</td>
+                <td>Optional field only used when the price is temporary for a promotion or sale.&#160;Pricing will revert automatically to pre-promo price after the Promo Pricing Ends date.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Pricing Method</td>
+                <td>Dynamo wants to let the computer do the pricing, not you.&#160;So whenever possible, specify a Pricing Method and Factor and leave the Sell Price zero so that Dynamo can calculate the Sell Price.
+									<table><tr><td>G</td><td>Gross Margin%</td></tr><tr><td>C</td><td>Multiplier times Cost</td></tr><tr><td>N</td><td>Manually entered Net Price</td></tr><tr><td>D</td><td>Discount% off List Price</td></tr><tr><td>M</td><td>Multiplier times List Price</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Factor</td>
+                <td>Depending on the Pricing Method, the factor will be the target Gross Margin%, Multiplier, or Discount%.</td>
+            </tr>
+        </table>
+        <h5>&#160;</h5>
+        <h5>Vendor Part Numbers</h5>
+        <p>This view is used to record any Vendor Part Numbers that differ from the Dynamo Item#.&#160;You may store a Vendor Part Number for each vendor that you purchase this item from.&#160;</p>
+        <p>
+            <img src="xxim01-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Vendor Part Number Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Vend#</td>
+                <td>Specify the vendor using their Vendor# or search by name, phone, email, etc.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Alpha</td>
+                <td>The Vendor's Alpha field is displayed for convenience as there is not enough room to show the entire Vendor Name</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Vendor Part#</td>
+                <td>Enter the Part# that the vendor uses to identify this item.&#160;The Vendor Part# can be used whenever searching for an Item.&#160;It it also typically shown on Purchase Orders.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Date</td>
+                <td>When purchasing an item from multiple vendors, you can record the effective date of the cost here.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">PO Cost</td>
+                <td>Not needed for the Primary Vendor as the PO Cost for the Primary Vendor is stored using the Pricing View described above.&#160;But for secondary vendors, it may be convenient to record the PO Cost.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">C</td>
+                <td>This optional field is for the Costing Unit when the Cost is per some quantity greater than one.</td>
+            </tr>
+        </table>
+        <h6>&#160;</h6>
+        <h5>Item Notepad</h5>
+        <p>This view can be used to record any free form text about the item.&#160;You can use display attributes including bold, underlined, reverse video, and even blinking text to bring attention to special instructions using Function Keys F5-F8.&#160;The creative user can also create boxes around text using the F9 Graphics key.</p>
+        <p>
+            <img src="xxim01-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <h5>Bar Codes</h5>
+        <p>This view is used to record all bar codes used by this item.&#160;Dynamo supports multiple bar codes per item, with a quantity associated with each bar code.&#160;This enables you to record bar codes that might appear on an individual box or package, as well as each package that contains a larger quantity.&#160;When the manufacturer does not include a bar code on the package, Dynamo can assign a 6 digit number to be used when printing item labels with a bar code to speed up customer check out.</p>
+        <p>Dynamo supports all popular bar codes shown below.&#160;You may scan the bar code, or enter it manually with or without the hyphens.&#160;The bar codes are displayed with hyphens for improved readability.</p>
+        <table>
+            <tr>
+                <th>Bar Code</th>
+                <th style="text-align: right">Format</th>
+            </tr>
+            <tr>
+                <td>UPC also called UPC-A (Universal Product Code)</td>
+                <td align="right">N-NNNNN-NNNNN-N</td>
+            </tr>
+            <tr>
+                <td>UPC-E (UPC for smaller packages)</td>
+                <td align="right">N-NNNNNN-N</td>
+            </tr>
+            <tr>
+                <td>EAN (European Article Number)</td>
+                <td align="right">N-NNNNNN-NNNNNN</td>
+            </tr>
+            <tr>
+                <td>ISBN (International Standard Book Number)</td>
+                <td align="right">NNN-N-NNNNNN-NN-N</td>
+            </tr>
+            <tr>
+                <td>GTIN14 (Global Trade Item Number used for inner and outer containers</td>
+                <td align="right">N-NN-NNNNN-NNNNN-N</td>
+            </tr>
+            <tr>
+                <td>Dynamo Bar Code (used when package does not include a bar code)</td>
+                <td align="right">NNNNNN</td>
+            </tr>
+        </table>
+        <p>
+            <img src="xxim01-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <h5>Secondary View</h5>
+        <p>The Secondary View is used for fields that aren't used as frequently as those on the Primary View.</p>
+        <p>
+            <img src="xxim01-7.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Secondary View Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Sell if no price</td>
+                <td>Dynamo pricing is date sensitive.&#160;You must specify a Pricing Start Date, but the Promo Pricing Ends date is optional.&#160;When using a Promo Pricing Ends date, the price is only in effect between the starting and ending date.&#160; Set this field to "N" to prevent selling the item outside the date range.&#160;This is useful for coupons, instant rebates, etc., when the item is only valid for some period of time. Set this field to "Y" for any item where the price varies each time it is sold. This would include items for certain services, such as installation, setup, etc.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Label Quantity to print</td>
+                <td>Dynamo can print small labels containing a bar code, item#, and optional prices which can be used when the manufacturer's packaging does not include a bar code, or when it is desirable to have prices shown on a product.&#160;Set the Label Quantity to print to be zero if&#160; no label is required for this item, or 1 to print one label per item, or a larger number when you need more than one label per item.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Label Prices</td>
+                <td>Used to indicate what prices should appear on label
+									<table><tr><td>S</td><td>Selling Price Only</td></tr><tr><td>B</td><td>Sell and List Price</td></tr><tr><td>N</td><td>Show no prices on label</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Catalog Page#</td>
+                <td>If you print a product catalog, then you can store the Catalog Page# here which will print on the Catalog Price List to make it easier for a customer to find the product in your catalog when looking at a price list.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Catalog Sequence#</td>
+                <td>Used with Catalog Page# and is a sequential number that controls the order that items appear on the Catalog Price List.&#160; This field is optional and not required when you want the items on the Catalog Price List to appear in Item# sequence.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Special Item Code</td>
+                <td>This field is used to designate the item as one of the special types of items shown in the table below.
+									<table><tr><th style="text-align: center">blank</th><th nowrap="nowrap">Regular Item</th><th>Usage</th></tr><tr><td align="center">G</td><td nowrap="nowrap">Gift Card</td><td>Item is a Gift Card that you are selling to a customer.</td></tr><tr><td align="center">E</td><td nowrap="nowrap">Repair Evaluation</td><td>Item is a Repair Evaluation charge which is used to trigger special Repair Processing logic in Dynamo.</td></tr><tr><td align="center">R</td><td nowrap="nowrap">Repair Service</td><td>Item is for a Repair Service charge also used to trigger special Repair Processing logic.</td></tr><tr><td align="center">D</td><td nowrap="nowrap">Repair Declined</td><td>Item is used when a customer declines a Repair after receiving the repair cost estimate.&#160;It is typically used on the sales order that returns the un-repaired product to the customer.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Rental Code</td>
+                <td>This field is omitted if your company does not rent products.&#160;But if you do rent, then the Rental Code is used to determine rental rates.&#160;Use <a href="xxim12.htm">Rental Rate Maintenance</a> (RML) to define these codes.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Fuel Capacity &amp; Type</td>
+                <td>Only applicable when renting items that have a fuel tank.&#160;If present the Fuel Capacity and Type is used upon rental return to add a fuel charge to the rental when the product is returned with less than a full tank.&#160;The Types of fuel are Regular and Diesel and the prices for these fuels are maintained using <a href="xxso00.htm">SOP Parameter Maintenance</a> (SOU).</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Alternate Item#</td>
+                <td>First of all, let's define what Dynamo means by Alternate Item#. It is not an equivalent or substitute item#. An Alternate Item# is used in the following situations:
+									<ol><li>You have two item numbers that may have different descriptions or pricing, but refer to the same physical product. In this case, set the Alternate Item# to that Item# which has the physical product.&#160;Another example would be if you purchase a product from multiple vendors and want to have different descriptions, yet the products are homogenous, meaning that once they are placed on the shelf together, you can't tell them apart.&#160;Certain generic pipe and fittings might fall into this category.</li><li>You sell an item in different package quantities and want to use different item numbers for each package quantity. For example, lets say you typically sell Item# PROD4 by the carton and each carton contains 4 one-gallon bottles.&#160;You prefer to sell unbroken cartons, but will sell an individual bottle when requested.&#160;The individual bottle is item# PROD1. You always purchase cartons and your vendor considers quantity 1 to mean 1 carton of 4 bottles. If the vendor sold these by the gallon, then an alternate item would not be needed.&#160;So the quantity on hand for item# PROD4 is the number of cartons, and the quantity on hand for item# PROD1 is the number of loose bottles from broken cartons.&#160;In this example, Item# PROD1 should have an Alternate Item# of PROD4, with an Alternate Item Transfer Qty of 4, because there are 4 PROD1's in each PROD4. If a sales order is entered for item# PROD1, and you do not have enough of Item# PROD1 to fill the order, Dynamo will automatically remove one PROD4 item from inventory, and add quantity 4 of item PROD1 to inventory so the order may be filled.&#160;This eliminates the need for the warehouse staff to record the fact that they broke a carton to sell less than a carton quantity.&#160; We call that an Automated Transfer from Alternate. At physical inventory time you will count the number of full cartons (item# PROD4), and the number of loose gallons (item# PROD1).&#160;</li></ol></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Alternate Item Usage Code</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Standard Alternate Item, as in Example#1 above where there is really only one item with physical product.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">U</td>
+                            <td>Automated Transfer from Alternate Item with Units Sold being updated during the transfer</td>
+                        </tr>
+                        <tr>
+                            <td align="center">T</td>
+                            <td>Automated Transfer from Alternate Item.&#160; Units Sold are only reflected by the actual sale of each item.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Alternate Item Transfer Qty</td>
+                <td>Only used when the Alternate Item Usage Code is U or T and indicates the number of pieces that the Alternate Item contains. In example 2 above, the Alternate Item Transfer Qty should be set to a 4, as there are 4 gallons of item PROD1 in each case of item PROD4.</td>
+            </tr>
+        </table>
+        <p>&#160;&#160;</p>
+        <h5>Equivalent Items</h5>
+        <p>This view is used to list items that are similar or equivalent to the item being maintained.&#160;You can also use the Equivalent Item# to for cross referencing items from product lines you do not stock.&#160;If a user enters one of the item numbers that you do not stock in Item Inquiry or while entering a Sales Order, Dynamo will guide them to the item that you do stock.</p>
+        <p>Note that the Equivalent item# does not have to be setup itself using Item Maintenance. In the example below, we stock the Fram Oil Filter Item# PH8170.&#160;But this is equivalent to the NAPA FIL7035 or the John Deere GY20577 neither of which we stock (Description field is blank).&#160;When a user enters GY20577 during the Item Selection process, Dynamo will guide them to the Fram item# that you do sell.</p>
+        <p>
+            <img border="0" src="xxim018.gif" />
+        </p>
+        <p>
+            <img border="0" src="xxim019.gif" />
+        </p>
+        <p>&#160;</p>
+        <h5>Warehouse Information</h5>
+        <p>The Warehouse Information view is used to maintain the ABC Value, Minimum and Maximum Stocking Quantities, and Locations.</p>
+        <p>
+            <img src="xxim01-10.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Warehouse Information Fields</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Warehouse</td>
+                <td>The fields on this view vary by warehouse. Select the one whose information you'd like to modify. </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">ABC Value</td>
+                <td>Normally set automatically when you run <a href="../im/im530.htm">Generate ABC Values</a> (I/C).&#160;It can be set manually if you don't use the Generate application, or you can manually set a lower case ABC Value so that the Generate ABC Value application does not change it.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Minimum Stocking Quantity</td>
+                <td>Also called the Reorder Point, this field can be set automatically using <a href="../ic/ic280.htm">Reorder Point Generation</a> (I/C), or manually if you do not use that application. You will want to replenish your inventory when the quantity on hand drops below the Minimum Stocking&#160;Quantity.&#160;You can use the <a href="../ic/ic250.htm">Stock Status Reports</a> (I/C) and the <a href="../po/po170.htm">Purchase Order Generation</a> (POP) application to list the items that are need to be ordered.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Maximum Stocking Quantity</td>
+                <td>An optional field used to indicate the highest quantity that you would stock.&#160;Applications such as <a href="../po/po170.htm">Purchase Order Generation</a> will recommend purchasing enough to reach this Maximum Stocking Quantity.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Locations</td>
+                <td>Sometimes called bin locations, you can store up to 10 location codes.&#160;The location code can be used to indicate a building, section, aisle, and shelf position of product to facilitate item put-away, order picking, and physical inventory.&#160;The structure of your location code is defined using the Location Mask field in Warehouse Information Maintenance (CWP).&#160;Locations can also be maintained using <a href="xxum21.htm">Warehouse Location Maintenance by Item</a> (IML) which would be used by personnel that do not have access to Item Maintenance.&#160;You can also maintain a list of all valid locations for a warehouse using <a href="../im/im260.htm">Warehouse Location Maintenance</a> (IML). If you do that, then only valid Locations may be entered here.</td>
+            </tr>
+        </table>
+    </body>
+</html>

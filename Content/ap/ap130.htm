@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="ap130.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1547" MadCap:lastWidth="1440">
+    <head><title>A/P Invoice Register</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts Payable</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">A/P Invoice Register</p>
+                </td>
+                <td align="right">Last Revised: 01/10/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The A/P Invoice Register is an audit report summarizing the invoice detail entered during <a href="ap100.htm">Invoice Data Entry</a>, including those Recurring Invoices Generated.&#160;&#160;</p>
+        <p>Printing and reviewing this report provides an opportunity to check invoice data for accuracy before posting the information to the permanent files.</p>
+        <p>Batches that have not been updated will be displayed, including the date on which it was opened, the corresponding operator, and current status of the batch.  To print an Invoice Register for a particular batch, use the arrow keys to highlight your selection and press Enter.</p>
+        <p>&#160;</p>
+        <p>Note that the operator can choose the order in which the invoice entries will be listed on the Register.  The invoices can be printed in the order in which they were entered or in alphabetical order by vendor. This option is helpful if the actual invoices are being compared to the register for accuracy.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="ap130-1.png" style="width: 1169px;height: 417px;" />
+        </p>
+        <p>Once the Register is printed, checking the accuracy of the data entered can also be done simply by running an adding machine tape of all invoice totals (taken from the hard copies) and comparing it to the batch totals on the Invoice Register. &#160;&#160;&#160;</p>
+        <p>
+            <img src="ap130-2.png" style="width: 1169px;height: 417px;" />
+        </p>
+        <p>If a review of the Register reveals a data entry error, do not initiate Invoice Update. &#160; Return to the <a href="ap100.htm">Invoice Data Entry</a> program to make corrections, then reprint the Invoice Register.</p>
+        <p>If the Invoice Register is accurate, proceed to <a href="ap140.htm">Invoice Update</a>.</p>
+        <p>The Batch Number and General Ledger Posting Date will print at the top of the Register.</p>
+        <p>Column Headings are as follows:</p>
+        <ul>
+            <li>Vendor Number and Name<br />    (One-time vendors will show a single character vendor number such as 'M' and Payee name.)</li>
+            <li>Invoice Number</li>
+            <li>Invoice Date, Due Date, Discount Date</li>
+            <li>HPFBx: Four special circumstances have been combined into this single column:
+
+      <ul><li>H = Hold (coded Y or N);</li><li>P = Payment Method
+
+          <ul><li>Blank for normal check,</li><li>S for separate check,</li><li>W for automated withdrawal,</li><li>T for electronic transfer of funds</li></ul></li><li>If applicable, F and Bx will be coded with corresponding codes to indicate the <a href="ap100.htm#16 1099 Form Box">1099 Format Type and Box</a>.</li></ul></li>
+            <li>G/L Account Number</li>
+            <li>Invoice Amount</li>
+            <li>Discount Amount (if applicable)</li>
+            <li>Total Amount</li>
+            <li>Column Totals</li>
+        </ul>
+        <p>The General Ledger Distribution is printed on the lower portion of the Register and shows how the invoice amounts were distributed in the General Ledger. &#160; It is broken down by: &#160;</p>
+        <ul>
+            <li>General Ledger Account Number and Description</li>
+            <li>Debit Amounts</li>
+            <li>Credit Amounts</li>
+        </ul>
+        <h6>Note: If an invoice was entered using a Terms Code that splits the invoice into multiple payments (e.g. 3 monthly payments), the "split" will not be reflected on the Invoice Register, however, once Invoice Update is run, you will see the invoice split into multiple invoices in 
+	<a href="../vm/vm100.htm">Vendor Inquiry - A/P Invoices</a>.</h6>
+    </body>
+</html>

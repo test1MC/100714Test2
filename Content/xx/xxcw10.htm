@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="2740" MadCap:lastWidth="1199">
+    <head><title>Workstation Information Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Company Wide Parameters</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Workstation Information Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/23/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to specify certain default values and to limit branch and warehouse codes by workstation.&#160;A workstation could be a personal computer running Microsoft Windows and a terminal emulation product such as FacetWin or telnet, a thin client device such as an Axel terminal, an Apple Mac computer running 'terminal' or PowerTerm, a mobile laptop PC or MacBook, a 'dumb' serial terminal such as a Wyse 160 or IBM 3153, etc.</p>
+        <p>
+            <img src="xxcw10-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <td>Workstation ID</td>
+                <td>
+        Set the Workstation ID based on the location of and type of Workstation
+
+        <table><tr><th class="lev2">Workstation ID</th><th>Usage</th></tr><tr><td>*</td><td>Default entry, used for all workstations that do not have a specific workstation entry.&#160; In many cases, this is the only entry required.&#160; For example, if there are no branch offices, only one cash drawer, and all operators print immediate documents to the same printers, then this should be the only entry.</td></tr><tr><td>Network IP Address</td><td>A network IP address defines a branch location and typically ends with a zero.&#160; For example 192.168.55.0 is a Network IP Address.&#160; This Workstation ID applies to all workstations at that branch office.&#160; There is no need to create a workstation record for each workstation at the location unless a particular workstation uses a different immediate printer, cash drawer, or other workstation specific parameter.</td></tr><tr><td>Workstation IP Address</td><td>Since Workstation IP Addresses are typically assigned dynamically by the DHCP server, use of the Workstation IP Address is not recommended.&#160; Use the Machine (MAC) address instead which does not vary unless the workstation is replaced.</td></tr><tr><td>PC Name</td><td>Use the PC Name when the PC is running the FacetWin terminal emulation client and the PC requires different workstation parameters than the other devices at its location.</td></tr><tr><td>Machine (MAC) Address</td><td>The Machine Address is a hardware address permanently assigned to the workstation.&#160; Some workstations such as wireless laptops have a Machine Address for the wired connection, and a different Machine Address for the wireless connection.&#160; Use the Machine Address to identify PC's and Apple Macintosh computers when the workstation requires different workstation parameters than all other devices at the branch or main office.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>This is a descriptive field used to describe the workstation (person's computer, company, etc.).</td>
+            </tr>
+            <tr>
+                <td>Branch Codes at this workstation</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Default Branch</td>
+                            <td>The Default Branch is used for new sales orders and invoices started from this workstation.&#160; It is also used as the default branch for certain displays and reports.</td>
+                        </tr>
+                        <tr>
+                            <td>Multiple Branches</td>
+                            <td>Set to Y if this workstation is permitted to create transactions from other branches.</td>
+                        </tr>
+                        <tr>
+                            <td>Other Branches</td>
+                            <td>This field only applies when the Multiple Branches indicator is Y.&#160; If left empty, then the workstation will be permitted to create transactions for any branch.&#160; If one or more branch codes are specified, then this workstation will be limited to using the Default Branch and any other branch code in this field.&#160; It is not necessary to include the Default Branch code in this field.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Warehouse Codes at this workstation</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Default Warehouse</td>
+                            <td>The Default Warehouse is used for new sales orders, invoices, purchase orders, and ship from transfer orders, started from this workstation.&#160; It is also used as the default warehouse for certain displays and reports.</td>
+                        </tr>
+                        <tr>
+                            <td>Rental Warehouse</td>
+                            <td>When Dynamo is used for rental transactions, specify the Rental Warehouse code to be used for new rental transactions.&#160; Leave blank to disable rental transactions from this workstation.</td>
+                        </tr>
+                        <tr>
+                            <td>Multiple Warehouses</td>
+                            <td>Set to Y if this workstation is permitted to create transactions for other warehouses or to view other warehouse transactions.</td>
+                        </tr>
+                        <tr>
+                            <td>Other Warehouses</td>
+                            <td>This field only applies when the Multiple Warehouses indicator is Y.&#160; If left empty, then the workstation will be permitted to create transactions for any warehouse.&#160; If one or more warehouse codes are specified, then this workstation will be limited to using the Default Warehouse and any other warehouse code in this field.&#160; It is not necessary to include the Default Warehouse code in this field.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <img src="xxcw10-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Several Dynamo applications use the Direct Printer setting to bypass the printer selection routine and speed up the printing of documents.&#160; Specifying a Direct Printer will enable the Direct Printing option within the application.
+</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Direct Printers</th>
+                </tr>
+                <tr>
+                    <td>Sales Orders</td>
+                    <td>Sales Order Processing Orders and Backorders</td>
+                </tr>
+                <tr>
+                    <td>Invoices</td>
+                    <td>Sales Order Processing and Point of Sale Invoices</td>
+                </tr>
+                <tr>
+                    <td>Purchase Orders</td>
+                    <td>Purchase Order Processing</td>
+                </tr>
+                <tr>
+                    <td>Transfer Orders</td>
+                    <td>Transfer Order Processing (used to move merchandise from one warehouse to another)</td>
+                </tr>
+                <tr>
+                    <td>Vendor Returns</td>
+                    <td>Vendor Returns Processing</td>
+                </tr>
+                <tr>
+                    <td>Product Labels</td>
+                    <td>Used for printing Product and Pricing Labels on dedicated label printers such as Eltron and Zebra.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>
+            <img src="xxcw10-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table style="width: 100%;">
+            <col style="width: 119px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Point of Sales</th>
+                </tr>
+                <tr>
+                    <td>Cash Drawer</td>
+                    <td>Used during Sales Order Processing and Point of Sale to record the cash drawer where any cash, coin, checks, traveler's checks, etc. are placed.&#160;Cash Drawers are defined using <a href="xxso53.htm">Cash Drawer Maintenance</a> on A/R menu. There may be one or more cash drawers per location.</td>
+                </tr>
+                <tr>
+                    <td>Display Cost</td>
+                    <td>In some Point of Sale situations, it is preferred not to display the cost during Point of Sale processing.&#160;Set to N to avoid showing costs.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

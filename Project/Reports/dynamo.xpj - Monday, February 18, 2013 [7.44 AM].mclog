@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MadCapLog Date="2013-02-18T07:44:27.7877595-05:00" Description="Import C:\Users\Administrator\Documents\RoboHelp\dynamo\dynamo.xpj">
+    <Messages>Creating new project...
+Copying Baggage files...
+Converting topics...
+Building list of topics to convert...
+Converting: vm/vm100.htm
+Converting: vm/vm160.htm
+Converting: vm/vm150.htm
+Converting: vm/vm200.htm
+Converting: gl/gl100.htm
+Converting: gl/gl310.htm
+Converting: gl/gl320.htm
+Converting: gl/gl130.htm
+Converting: gl/gl200.htm
+Converting: gl/GLPostings.htm
+Converting: gl/gl190.htm
+Converting: gl/gl230.htm
+Converting: gl/gl290.htm
+Converting: gl/gl080.htm
+Converting: gl/gl070.htm
+Converting: gl/gl090.htm
+Converting: gl/gl180.htm
+Converting: gl/gl240.htm
+Converting: gl/gl330.htm
+Converting: gl/gl340.htm
+Converting: cd/cds130.htm
+Converting: cd/cds160.htm
+Converting: cd/cds150.htm
+Converting: cd/cds065.htm
+Converting: cd/cds880.htm
+Converting: cd/cds970.htm
+Converting: cd/cds990.htm
+Converting: cd/cds930.htm
+Converting: cd/cds270.htm
+Converting: cd/cds380.htm
+Converting: cd/cds100.htm
+Converting: cd/cds170.htm
+Converting: cd/cdf100.htm
+Converting: cd/cds040.htm
+Converting: cd/cds500.htm
+Converting: cd/cdf120.htm
+Converting: cd/cdf130.htm
+Converting: cd/cdf140.htm
+Converting: cd/cdf150.htm
+Converting: cd/cdf160.htm
+Converting: cd/cdf200.htm
+Converting: cd/cds120.htm
+Converting: cd/cds910.htm
+Converting: cd/cds940.htm
+Converting: cd/cdfaxl.htm
+Converting: cd/cdfaxs.htm
+Converting: cd/cds220.htm
+Converting: cd/cds310.htm
+Converting: cd/cds360.htm
+Converting: cd/cds370.htm
+Converting: cd/cds460.htm
+Converting: cd/cds061.htm
+Converting: cd/cds111.htm
+Converting: cd/cds260.htm
+Converting: cd/cds283.htm
+Converting: cd/cds320.htm
+Converting: cd/cds780.htm
+Converting: cd/cds790.htm
+Converting: cd/cds960.htm
+Converting: cd/cds980.htm
+Converting: cd/cdsd02.htm
+Converting: cd/cdsm01.htm
+Converting: cd/cds071.htm
+Converting: cd/cds210.htm
+Converting: cd/cds230.htm
+Converting: cd/cds290.htm
+Converting: cd/cds330.htm
+Converting: cd/cds240.htm
+Converting: cd/cds420.htm
+Converting: cd/cds630.htm
+Converting: cd/cdsm00.htm
+Converting: cd/cdsm30.htm
+Converting: cd/cds950.htm
+Converting: cd/cds490.htm
+Converting: cd/cdsd02t.htm
+Converting: cd/cds920.htm
+Converting: cd/cds892.htm
+Converting: cd/cdsm14.htm
+Converting: cd/cdf030.htm
+Converting: cd/cdf040.htm
+Converting: cd/cds478.htm
+Converting: ap/order_checks.htm
+Converting: ap/ap140.htm
+Converting: ap/ap100.htm
+Converting: ap/ap110.htm
+Converting: ap/ap120.htm
+Converting: ap/ap280.htm
+Converting: ap/ap410.htm
+Converting: ap/ap440.htm
+Converting: ap/ap130.htm
+Converting: ap/ap150.htm
+Converting: ap/ap160.htm
+Converting: ap/ap170.htm
+Converting: ap/ap180.htm
+Converting: ap/ap190.htm
+Converting: ap/ap200.htm
+Converting: ap/ap210.htm
+Converting: ap/ap220.htm
+Converting: ap/ap230.htm
+Converting: ap/ap320.htm
+Converting: ap/ap240.htm
+Converting: ap/ap250.htm
+Converting: ap/ap260.htm
+Converting: ap/ap270.htm
+Converting: ap/ap290.htm
+Converting: ap/ap300.htm
+Converting: ap/ap310.htm
+Converting: ap/ap340.htm
+Converting: ap/ap350.htm
+Converting: ap/ap380.htm
+Converting: ap/ap400.htm
+Converting: ap/ap370.htm
+Converting: ap/ap430.htm
+Converting: tech/IC010.htm
+Converting: tech/POP_Technical_Overview.htm
+Converting: tech/POReceiving.htm
+Converting: tech/CM040.htm
+Converting: tech/GL013.htm
+Converting: tech/PO122.htm
+Converting: tech/CW018.htm
+Converting: tech/POProcessingFlow.htm
+Converting: tech/IM028.htm
+Converting: tech/POReceivingFlow.htm
+Converting: tech/SOP_Rental_Technical_Overview.htm
+Converting: tech/IM040.htm
+Converting: tech/PO303.htm
+Converting: tech/PO530.htm
+Converting: tech/PO420.htm
+Converting: tech/PO301.htm
+Converting: tech/AP101.htm
+Converting: tech/PO138.htm
+Converting: tech/PO121.htm
+Converting: tech/IC034.htm
+Converting: tech/VRP_Technical_Overview.htm
+Converting: tech/EDI.htm
+Converting: tech/CW430.htm
+Converting: tech/IM600.htm
+Converting: tech/PO139.htm
+Converting: tech/PO123.htm
+Converting: tech/LP500.htm
+Converting: tech/AP106.htm
+Converting: tech/IC033.htm
+Converting: tech/AP181.htm
+Converting: tech/StoredProcedures.htm
+Converting: cw/cw130.htm
+Converting: start/DataEntryDates.htm
+Converting: start/DataEntry.htm
+Converting: start/DataEntryLists.htm
+Converting: start/MenuOptions.htm
+Converting: start/serverbackup.htm
+Converting: start/vpn.htm
+Converting: start/workstations.htm
+Converting: start/java.htm
+Converting: start/UPSWorldShip.htm
+Converting: start/BBj.htm
+Converting: start/DataEntryGrid.htm
+Converting: start/ItemSearch.htm
+Converting: start/CustSearch.htm
+Converting: start/codepage.htm
+Converting: menu/app.htm
+Converting: menu/smu.htm
+Converting: menu/sms.htm
+Converting: menu/a_r.htm
+Converting: menu/aml.htm
+Converting: menu/a_p.htm
+Converting: menu/apr.htm
+Converting: menu/apu.htm
+Converting: menu/cwp.htm
+Converting: menu/cml.htm
+Converting: menu/cmu.htm
+Converting: menu/cpm.htm
+Converting: menu/f_a.htm
+Converting: menu/fm0.htm
+Converting: menu/fml.htm
+Converting: menu/fms.htm
+Converting: menu/g_l.htm
+Converting: menu/glr.htm
+Converting: menu/glu.htm
+Converting: menu/i_c.htm
+Converting: menu/ilf.htm
+Converting: menu/iml.htm
+Converting: menu/imu.htm
+Converting: menu/inq.htm
+Converting: menu/lab.htm
+Converting: menu/m_e.htm
+Converting: menu/pfm.htm
+Converting: menu/pml.htm
+Converting: menu/pop.htm
+Converting: menu/rml.htm
+Converting: menu/smc.htm
+Converting: menu/sop.htm
+Converting: menu/sou.htm
+Converting: menu/sor.htm
+Converting: menu/sys.htm
+Converting: menu/top.htm
+Converting: menu/vml.htm
+Converting: menu/wms.htm
+Converting: menu/vrp.htm
+Converting: menu/pos.htm
+Converting: xx/xxcw10.htm
+Converting: xx/xxdd20.htm
+Converting: xx/xxdd22.htm
+Converting: xx/xxu010.htm
+Converting: xx/xxum27.htm
+Converting: xx/xxw010.htm
+Converting: xx/xxpo00.htm
+Converting: xx/xxdd00.htm
+Converting: xx/xxvm01.htm
+Converting: xx/xxvm04.htm
+Converting: xx/xxwm30.htm
+Converting: xx/xxdd30.htm
+Converting: xx/xxwa00.htm
+Converting: xx/xxwa01.htm
+Converting: xx/xxdd40.htm
+Converting: xx/xxdd51.htm
+Converting: xx/xxso55.htm
+Converting: xx/xxdd60.htm
+Converting: xx/xxso14.htm
+Converting: ds/dsap00.htm
+Converting: ds/dsap01.htm
+Converting: ds/dsgl00.htm
+Converting: cc/cc110.htm
+Converting: cm/cm100.htm
+Converting: cm/cm300.htm
+Converting: im/im100.htm
+Converting: im/im672.htm
+Converting: si/si100.htm
+Converting: sw/sw470.htm
+Converting: to/to150.htm
+Converting: ic/ic130.htm
+Converting: oth/sms-10.htm
+Converting: oth/sms-13.htm
+Converting: oth/pfm-6.htm
+Converting: oth/smu-15.htm
+Converting: oth/smu-16.htm
+Converting: releasenotes.htm
+Converting: dynamo_overview.htm
+Converting: SalesTaxRateChange.htm
+Converting: serverraid.htm
+Converting: top10.htm
+Converting: basis.htm
+Converting stylesheets...
+CSS Parser: file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 87. Char: 20. Missing right brace (})
+CSS Parser: file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 89. Char: 1. Invalid token (})
+Converting Glossary...
+Converting Browse Sequences...
+Converting Aliases...
+Converting Windows...
+Converting Table of Contents...
+Loading TOC file: dynamo.hhc
+Converting TOC file: dynamo.hhc
+Converting Index Keywords...
+Loading Index file: dynamo.hhk
+Converting Index file: dynamo.hhk
+Consolidating keyword tags in topics...
+Converting Build Tags -&gt; Condition Tags...
+Converting Global Variables...
+Converting Snippets...
+Converting Publishing Destinations...
+Converting Single Source Layouts -&gt; Targets...
+Copying Map files...
+Converting dictionaries...
+Writing File Tags...
+Writing converted topics...
+Clean up intermediate files...
+Adding project defaults...
+</Messages>
+    <LogEntries>
+        <LogEntry File="../../Content/dynamo.css" Message="file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 87. Char: 20. Missing right brace (})&#xA;" LineIndex="86" CharIndex="20" Subsystem="CSS Parser">CSS Parser: file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 87. Char: 20. Missing right brace (})</LogEntry>
+        <LogEntry File="../../Content/dynamo.css" Message="file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 89. Char: 1. Invalid token (})&#xA;" LineIndex="88" CharIndex="1" Subsystem="CSS Parser">CSS Parser: file:///C:/Users/Administrator/Documents/Flare/dynamo/Dynamo/Content/dynamo.css Line: 89. Char: 1. Invalid token (})</LogEntry>
+    </LogEntries>
+</MadCapLog>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="4492" MadCap:lastWidth="1250">
+    <head><title>Printer Status</title>
+    </head>
+    <body>
+        <p class="SectionName">Printer &amp; Fax Management</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Printer Status</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS220">Last Revised: 07/15/10</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to display and change printer status 
+	information.&#160; It is available on 
+	servers that use the Common Unix Printing System (CUPS) including servers 
+	running RedHat Linux.</p>
+        <p>The initial display shows the version of the cups software installed, the 
+	status of the print scheduler that runs in the background, and provides a 
+	list of options.</p>
+        <p>
+            <img border="0" src="cds2201.jpg" />
+        </p>
+        <p>Select option number 1 through 3 to select from a list of all configured 
+	printers.&#160; Select option 4 to list the printers with print jobs 
+	pending.&#160; The following screen shows the printers in ID sequence.</p>
+        <p>
+            <img border="0" src="cds2202.jpg" />
+        </p>
+        <p>The following screen shows printers with pending print jobs.</p>
+        <p>
+            <img border="0" src="cds2203.jpg" />
+        </p>
+        <p>From any of these lists of printers, you can highlight the printer 
+	desired and touch enter for printer specific options.</p>
+        <p>
+            <img border="0" src="cds2204.jpg" />
+        </p>
+        <p><b>Queue</b>: The Queue (pronounced like the letter Q), is the cups 
+	printer destination.&#160; Dynamo sends print jobs to the cups print 
+	scheduler, who then sends the print jobs to the printer, as each printer 
+	becomes available.&#160; When the print scheduler cannot send a print job to 
+	a printer, an error message such as the one shown in the example above might 
+	be displayed.</p>
+        <p><b>Connection</b>: This describes how the printer is physically attached 
+	and how the server communicates with the printer.&#160; Some options 
+	include:</p>
+        <table>
+            <tr>
+                <th>Connection Type</th>
+                <th>Format</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>socket</td>
+                <td>socket://HOST:PORT<p>HOST can be a hostname or an IP address</p><p>PORT is typically 9100 but could also be 9101 or 9102 for a print 
+			server that has multiple printer connections.</p></td>
+                <td>Also known as HP Jet Direct printing, this printing method 
+			communicates with the printer using a TCP socket, typically using 
+			port 9100.&#160; The printer is attached to an ethernet switch using 
+			an 8-wire ethernet patch cable that looks like a large telephone 
+			connector.&#160; The ethernet cable may be either connected directly 
+			to the printer (for those printers equipped with an ethernet port), 
+			or to what is called an external print server.&#160; An external 
+			print server is a small device that has one ethernet jack which 
+			connects to the network switch, and one or more ports that are 
+			connected to the printers.&#160; These ports are typically parallel, 
+			but can also be USB or serial.</td>
+            </tr>
+            <tr>
+                <td>lpd</td>
+                <td>If using an internal or external print server, the format is<br />			lpd://HOST/QUEUE<br />			where HOST is either the Linux/Unix hostname or IP Address of the 
+			print server, and QUEUE is the queue name used when configuring the 
+			print server (not the spooler queue name).<p>If the printer is 
+			attached to a PC, then the format is<br />			lpd://HOST/SHARE<br />			where HOST is either the Linux/Unix hostname or IP Address of the 
+			PC, and SHARE is the Windows SHARE name given to the </p></td>
+                <td>Printers that support lpd printing can be a) directly connected 
+			to the network using an ethernet cable, b) connected to an external 
+			print server device, such as an HP JetDirect or DLink, c) connected to the parallel 
+			port of an ethernet based terminal such as an Axel, Spotline, or Net 
+			Terminal, or d) connected to a PC running lpd software.</td>
+            </tr>
+            <tr>
+                <td>smb</td>
+                <td>smb://WORKGROUP/PCNAME/SHARE<p>or<br />			smb://PCNAME/SHARE</p><p>The PCNAME is what appears in the Windows 'My Computer' 
+			properties.&#160; Always use all CAPS and no spaces when assigning 
+			the WORKGROUP, PCNAME and SHARE names.</p></td>
+                <td>Printers connected to a PC using a USB or parallel cable use 
+			this method of printing.&#160; Printing using smb is dependent on 
+			the PC Name and the Share name assigned to the printer on the PC.&#160; 
+			Changing either of these values on the PC, and not making the 
+			corresponding changes on the server, will cause printing from the 
+			server to fail.</td>
+            </tr>
+            <tr>
+                <td>parallel</td>
+                <td>parallel:/dev/lp0</td>
+                <td>Servers typically only have one parallel port that supports a 
+			printer within 15 feet of the server.</td>
+            </tr>
+            <tr>
+                <td>serial</td>
+                <td>serial:/dev/ttyS0?baud=9600+size=8+parity=none+flow=soft</td>
+                <td>Servers may have one, two, or more serial ports that can also be 
+			used for printing.&#160; Due to the special cabling requirements, 
+			that vary from printer to printer, and additional configuration 
+			needed on both the server and the printer, printing using serial 
+			ports is not recommended. </td>
+            </tr>
+        </table>
+        <p><b>Accepting</b>: A print queue normally will accept new print jobs.&#160; 
+	You can change the printer to 'Reject' new print job requests if the printer 
+	is in for repair, and you do not want anyone to send print jobs to the 
+	printer.</p>
+        <p><b>Enabed</b>: A print queue is normally enabled.&#160; You can disable 
+	the print queue to prevent the print scheduler from sending any more jobs to 
+	the printer.&#160; When a printer is disabled, it will still accept print 
+	jobs from applications, but will not send the print job to the printer until 
+	it is enabled.&#160; A printer might be disabled for a brief time when the 
+	ribbon or toner is being changed, or for other short term maintenance.</p>
+        <p><b>Jobs Waiting</b>: The number of print jobs waiting to be printed is 
+	shown.</p>
+        <p><b>Status Lines</b>: Printer status information from the scheduler 
+	displays here.&#160; When a printer is not printing, this status information 
+	might help to resolve the problem.&#160; In the example shown, the server is 
+	unable to locate the PC that the printer is attached to.&#160; The PC could 
+	be powered off or disconnected from the network, or the PC might have been 
+	configured to require an operator name and password to print.&#160; Powering off, 
+	waiting 15 seconds, and powering back on the printer, and/or external print 
+	server, or rebooting the PC can sometimes resolve this problem if the 
+	printer was printing previously with the same configuration.&#160; Most 
+	external print servers do not have an on/off switch, so they must be 
+	unplugged in order to power cycle them.&#160; This is sometimes required 
+	after a power failure.</p>
+        <p>The following options may be available depending on how the printer is 
+	connected and if any print jobs are waiting.</p>
+        <p><b>Show/Cancel/Move Print Jobs</b>:&#160; Select this option to display 
+	the list of print jobs pending for the printer.&#160; Highlight and select a 
+	print job to cancel it or to move it to another printer.&#160; Note that 
+	the Move option does not function in all versions of cups even though 
+	Dynamo provides the option to do so.&#160; The following screen shows a 
+	typical listing.</p>
+        <p>
+            <img border="0" src="cds2205.jpg" />
+        </p>
+        <p><b>Cancel All Print Jobs</b>: Select this option to cancel all print jobs 
+	scheduled for the selected printer.&#160; It has no effect on other 
+	printers.</p>
+        <p><b>Ping Test</b>: The communication link with printers connected using 
+	socket, lpd, and smb using an IP address, can be tested using this option.&#160; 
+	The server will send a packet out to the printer, which will respond if the 
+	communication link is operational.&#160; If communication cannot be 
+	established with the printer, then the printer and/or external print server, 
+	may be powered off, or not connected to the network, or the IP address of 
+	the printer or external print server might differ with that in the server's 
+	configuration for the printer.&#160; When using smb printing, this option is 
+	only available when the PC is using a fixed (static) IP address.</p>
+        <p><b>Enable or Disable</b>: A print queue must be enabled to send print 
+	jobs to the printer.&#160; If the display indicates the printer is Disabled, 
+	try using the Enable option.&#160; If the printer returns to the disabled 
+	state, then the print scheduler is unable to communicate with the printer, 
+	external print server, PC, network terminal, etc.</p>
+        <p><b>Accept or Reject</b>: The scheduler will refuse to accept new print 
+	jobs if this status is Reject.&#160; You would typically configure the print 
+	queue to Reject requests when the printer is being repaired or otherwise 
+	unavailable.</p>
+        <p><b>Display Printer or Cancelled Jobs</b>: This option will display the 
+	most recent jobs sent to the printer that were either printed or cancelled.&#160; 
+	This list is purged automatically and may not include any print jobs 
+	depending on when the printer was last used.</p>
+        <p>
+            <img border="0" src="cds2206.jpg" />
+        </p>
+    </body>
+</html>

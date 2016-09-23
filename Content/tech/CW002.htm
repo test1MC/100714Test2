@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1219" MadCap:lastWidth="621">
+    <head>
+        <meta http_equiv="Content-Language" content="en-us" /><title>CW002 - Format Name &amp; Address</title>
+            </head>
+    <body>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">CW002 - Format Name &amp; Address</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=CW002">Last Revised: 01/03/11</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is used to format a name and address when printing.</p>
+        <p>This routine:</p>
+        <ol>
+            <li>Supports name and address fields that begin with a common prefix such as <code>SHIP2</code>, <code>CHK</code>, etc.</li>
+            <li>Supports one or two address lines which can be named <code>ADDRESS</code>, <code>ADDR1</code>, or <code>ADDR2</code>.</li>
+            <li>Looks up the 2 character state or country code to obtain the company name.</li>
+            <li>Returns the formatted address in repeating field format, html format, and single string with line feed separators.</li>
+        </ol>
+        <p><code>CALL "CW002", Y$, REC$, CW002$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3" nowrap="nowrap">CW002 Arguments</th>
+            </tr>
+            <tr>
+                <th nowrap="nowrap">Argument</th>
+                <th style="text-align: center;" nowrap="nowrap">Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center" nowrap="nowrap">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code>REC$</code>
+                </td>
+                <td align="center" nowrap="nowrap">To</td>
+                <td>Should contain field names of <code>NAME</code>, <code>ADDR1</code> or <code>ADDRESS</code>, <code>ADDR2</code> (optional), <code>CITY</code>, <code>STATE</code>, <code>ZIP</code> and <code>COUNTRY</code> (optional).&#160; Each field name can have a common prefix such as <code>SHIP2</code> as in <code>SHIP2NAME</code>, <code>SHIP2ADDR1</code>, etc.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code>CW002$</code>
+                </td>
+                <td align="center" nowrap="nowrap">To/From</td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Template Field</th>
+                            <th style="text-align: center;">To/From</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.PRF$</code>
+                            </td>
+                            <td align="center">To</td>
+                            <td>Optional Prefix that precedes every field name, i.e., <code>"SHIP2"</code></td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.UC$</code>
+                            </td>
+                            <td align="center">To</td>
+                            <td>Pass as <code>"Y"</code> to format the address in all upper case letters.</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.BOLD$</code>
+                            </td>
+                            <td align="center">To</td>
+                            <td>Pass as <code>"Y"</code> to render the <code>NAME</code> in the <code>HTML$</code> output in bold typeface.</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.LINES</code>
+                            </td>
+                            <td align="center">From</td>
+                            <td>Set by CW002 as the number of lines contained in the formatted name and address.</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.ADR$[5]</code>
+                            </td>
+                            <td align="center">From</td>
+                            <td>Set by CW002 as the formatted name and address.</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.HTML$</code>
+                            </td>
+                            <td align="center">From</td>
+                            <td>Set by CW002 when a single formatted string is needed.&#160; The <code>NAME</code> field will be bold if <code>CW002.BOLD$="Y"</code>.&#160; Each line will be separated with line break tags <code>&lt;br&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap"><code>CW002.TXT$</code>
+                            </td>
+                            <td align="center">From</td>
+                            <td>Set by CW002 when a single formatted string separated by line feeds is needed.&#160; This format is often used when printing PCL documents using Dynamo Tools such as CDS354, CDS454, and CDS554.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table class="example">
+            <tr>
+                <td>Example using CDS254 for printing</td>
+            </tr>
+            <tr>
+                <td><code>0210 CALL "CDS041","CW002",CW002$,"YY"; REM "Obtain the program template<br />1400 LET ADDRCOL=270,ROW1=650</code>
+                    <p><code>1470 CALL "CW002",Y$,SO40$,CW002$; REM "Convert the Bill To Address<br />1480 FOR I=1 TO CW002.LINES<br />1490 CALL "CDS254",Y6$,"T"+STR(ADDRCOL)+","+STR(ROW1)+",3,,12,,4148",CW002.ADR$[I]<br />1500 LET ROW1=ROW1+50<br />1510 NEXT I</code>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Example using CDS354 for printing</td>
+            </tr>
+            <tr>
+                <td><code>4000 SHIPTO:<br />4010 LET CW002.PRF$="SHIP2"<br />4020 CALL "CW002",Y$,SO40$,CW002$<br />4040 CALL "CDS354","Shipped to",CW002.TXT$<br />4050 RETURN</code>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

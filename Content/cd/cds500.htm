@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="629" MadCap:lastWidth="1479">
+    <head>
+        <title>Generate Auxiliary Sort Files</title>
+        
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Generate Auxiliary Sort Files</p>
+                </td>
+                <td align="right">Last Revised: 02/11/06</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to build records for one or more sort files for a given master file.&#160; 
+	It is only required for very old file structures where a master file has one 
+	or more associated sort files to provide alternative sequences to the master 
+	file.</p>
+        <p>Specific data fields have been coded in a certain manner in the File Data Dictionary to indicate that they are an element in a sort file key for this master file. The operator enters the file to be processed followed by the VDT suffix. The file name is entered without the company code prefix, for example, 'UD10,' to process the customer master file. The file description is displayed which identifies the file more clearly to the operator. The first sort file and description is displayed. The operator has the option to generate for this file or pass to the next. If generation is selected, the file is cleared and the next sort file is displayed.</p>
+        <p>This procedure continues until all sort files have been displayed and the decision to generate the sort file has been made. If the sort file currently has an incorrect keysize or number of records, the program will relay this to the operator, who may elect to have the file automatically re-defined with the correct keysize and/or number of records.</p>
+        <p>
+            <img border="0" src="cds500-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <p class="SectionDesc">&#160;</p>
+        <p class="SectionDesc">&#160;</p>
+        <p class="SectionDesc">
+            <br />  &#160;</p>
+    </body>
+</html>

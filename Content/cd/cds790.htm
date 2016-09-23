@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1305" MadCap:lastWidth="1479">
+    <head>
+        
+        <title>System Activity Log</title>
+        
+    </head>
+    <body>
+        <p class="SectionName">System Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">System Activity Log</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS790">Last Revised: 02/11/06</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The purpose of the system activity log is to give an account of who, when, and how long each program has been run since the last time the report was printed.&#160; 
+	The System Activity Log is enabled using System Control Maintenance (SMC).&#160; 
+	If you enable the System Activity Log, be sure to print and clear the data 
+	periodically, as it can consume quite a bit of disc space.</p>
+        <p>If this program is to be printed by an operator who does not have supervisor status, then a supervisor will be required to enter their operator ID and password after this report is selected from the menu.</p>
+        <p>
+            <img border="0" src="cds790-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <h6>The System Activity Log Screen</h6>
+        <p>The operator has the option to print the report or to simply clear all system activity. The data should be cleared only if you do not require any of the reports. Once cleared, the report cannot be printed.</p>
+        <p><a href="#Print/Clear%20Activity%20Log">PRINT/CLEAR ACTIVITY LOG:</a>
+            <br /><a href="#Detail%20by%20Terminal%20ID">DETAIL BY TERMINAL ID:</a>
+            <br /><a href="#Detail%20by%20Operator%20ID">DETAIL BY OPERATOR ID:</a>
+            <br /><a href="#Summary%20by%20Terminal%20and%20Program">SUMMARY BY TERMINAL ID &amp; PROGRAM:</a>
+            <br /><a href="#Summary%20by%20Operator%20ID%20and%20Program">SUMMARY BY OPERATOR ID &amp; PROGRAM:</a>
+            <br /><a href="#Summary%20by%20Program">SUMMARY BY PROGRAM:</a>
+        </p>
+        <table>
+            <tr>
+                <th width="100%" colspan="2">Optional Formats</th>
+            </tr>
+            <tr>
+                <td><a name="Print/Clear Activity Log"></a>Print/Clear Activity Log</td>
+                <td>The operator has the option to print the report or to simply clear all system activity. The data should be cleared only if you do not require any of the reports. Once cleared, the report cannot be printed.</td>
+            </tr>
+            <tr>
+                <td><a name="Detail by Terminal ID"></a>Detail by Terminal ID</td>
+                <td>If requested, each program selected from the menu will be shown on the report in chronological sequence for each terminal. The date, operator ID, terminal ID, company code, program description, start time, stop time, and elapsed time will be printed.</td>
+            </tr>
+            <tr>
+                <td><a name="Detail by Operator ID"></a>Detail by Operator ID</td>
+                <td>If requested, the same information listed above will be printed by operator ID, regardless of which terminal was used.</td>
+            </tr>
+            <tr>
+                <td><a name="Summary by Terminal and Program"></a>Summary by Terminal and Program</td>
+                <td>If requested, every program run from each terminal will be summarized. For example, if the Sales Order Entry program was run for 15 minutes, 20 minutes, and 5 minutes, this report shows the total of 40 minutes for Sales Order Entry. The Terminal ID, program name and description, total elapsed time, and percentage of total system time is shown.</td>
+            </tr>
+            <tr>
+                <td><a name="Summary by Operator ID and Program"></a>Summary by Operator ID and Program</td>
+                <td>If requested, the same information listed above will be printed by operator ID, regardless of which terminal was used.</td>
+            </tr>
+            <tr>
+                <td><a name="Summary by Program"></a>Summary by Program</td>
+                <td>If requested, the same information listed above will be printed without any breakdown by terminal or operator. This option would tell you the combined time spent in each program by all operators on all terminals.</td>
+            </tr>
+        </table>
+        <h6>In addition to these optional formats listed above, the following sections are always printed.</h6>
+        <table>
+            <tr>
+                <th width="100%" colspan="2">Special events</th>
+            </tr>
+            <tr>
+                <td colspan="2">This section of the system activity log shows any security oriented problems or programs not run to completion. This format includes the date, operator ID (if any), company code (if any), time, and comment. Some of the comments are described below.</td>
+            </tr>
+            <tr>
+                <td>ABNORMAL COMPLETION</td>
+                <td>This means that the program shown did not finish properly. It may be due to some type of system failure or halt condition.</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h6>The following special events do not apply when using UNIX Operating Systems when there is a login at operating system level.</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>INVALID OPERATOR ID</td>
+                <td>This indicates that a valid operator ID was not entered properly in the three tries given during the operator sign on procedure.</td>
+            </tr>
+            <tr>
+                <td>SECURITY VIOLATION</td>
+                <td>This indicates that a valid operator ID was entered, but the password was not entered correctly after three attempts. The operator ID that was used is also printed.</td>
+            </tr>
+            <tr>
+                <td>SECURITY VIOLATION - SPV ID</td>
+                <td>This indicates that after the operator ID was not entered properly after three tries, the supervisor ID was also not entered correctly after three tries.</td>
+            </tr>
+        </table>
+        <p>Following any summary options selected, the total time used by terminal ID, operator ID, and company code is printed. This information should be useful in determining where workload is lightest and heaviest to aid in relocating or obtaining additional terminals.</p>
+        <p>If any of the two detail options were selected, the normal wide paper is required. The summary pages require only the narrow 8.5 inch wide paper.</p>
+        
+        
+        
+        <p>
+            <br />  &#160;</p>
+        
+        
+    </body>
+</html>

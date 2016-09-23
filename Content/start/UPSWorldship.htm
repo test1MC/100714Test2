@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1338" MadCap:lastWidth="1183">
+    <head><title>Using UPS Worldship</title>
+    </head>
+    <body>
+        <p class="SectionName">DYNAMO</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">UPS WorldShip</p>
+                </td>
+                <td align="right">Last Revised: 04/01/10</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo can interface with UPS WorldShip.&#160; UPS WorldShip is a program provided by UPS that runs on a PC and is used to compute shipping charges, assign UPS tracking numbers, and print shipping labels.&#160; UPS can obtain the<i>ship to</i> address, service (Ground, Next Day Air, Three Day Select, etc.), billing method (Shipper, Receiver, Third Party), and other information from Dynamo.&#160; UPS can also send to Dynamo package weights, tracking numbers, and shipping costs. </p>
+        <p>This document describes what the shipping clerk needs to do to enable UPS WorldShip to communicate with Dynamo.&#160; It is assumed that UPS WorldShip and Dynamo have already been configured. If not, see the UPS <a href="../configuration/upsworldship/worldshipodbcconversion.htm">WorldShip ODBC Conversion</a> documentation for help.</p>
+        <p>If you are replacing a PC that runs UPS WorldShip, you can follow the
+<a href="http://www.ups.com/media/en/worldshiposupgrade.pdf" target="_blank">instructions</a> 
+provided by UPS to transfer the configuration and integration information from 
+one PC to the other without having to manually repeat the configuration process.</p>
+        <p>Start UPS WorldShip and click on <b>Import/Export Data</b>.&#160; Then click on <b>Keyed Import</b> and choose Dynamo from the list.&#160; If Dynamo is not in the list, click <b>More</b>, and then Dynamo.&#160; If Dynamo is still not in the list, <a href="http://www.excellware.com/index.php/about/contact-us/"><a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a></a>.&#160; Repeat this process each time UPS WorldShip is started.</p>
+        <img border="0" width="650" height="570" src="UPSWorldship1.jpg" alt="" />
+        <p>After clicking on Dynamo, the following window will appear.&#160; You can move this window by dragging the title bar of the window to the desired position.</p>
+        <img border="0" width="306" height="79" src="UPSWorldship2.jpg" alt="" />
+        <p>To start a shipment, if the window shown above does not have the yellow entry 
+box, then click on the window to make it the active window.&#160;(If it is not visible because it might be behind another window, hold <b>Alt</b> and press <b>Tab</b> until it is selected). Next scan the bar code on the Dynamo Packing List.&#160; Dynamo Sales Order Packing Lists, Transfer Order Packing Lists, and Vendor Return Packing Lists all have a bar code that can be used.&#160; If you do not have a bar code scanner, you can manually enter the number that prints immediately below the bar code, then touch the Tab key.&#160; Contact Excellware if you would like to purchase a bar code reader that can be used for this purpose.&#160; They cost approximately $167.</p>
+        <p>If UPS cannot obtain the shipping address from Dynamo, a message box such as the one below will appear.&#160; Contact Excellware for assistance.</p>
+        <img border="0" width="263" height="126" src="UPSWorldship3.jpg" alt="" />
+        <p>Once the bar code is scanned or the number entered manually, the ship to name and address, and service, and shipment billing information should be displayed.&#160; If this information does not display, then <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> for assistance.</p>
+        <p>If using a scale, then place the package on the scale, and the weight will display, otherwise manually enter the weight.&#160; Contact Excellware to purchase a scale that is compatible with UPS WorldShip.</p>
+        <p>UPSWorldShip also needs to be configured to send shipment information back to Dynamo.&#160; Click Import/Export Data.&#160; Then click Automatic Export after processing Shipment.&#160; Then click "To Dynamo" from the list.&#160; If "To Dynamo" is not in the list, then click "more".&#160; If "To Dynamo" is not listed, <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> for assistance.</p>
+        <p>The Automatic Export remains in effect, so you do not have to repeat this process each time UPS WorldShipis started.</p>
+        <p>Approximately every 10 minutes during business hours, Dynamo checks to see if any shipment information is available from UPS WorldShip.&#160; The package weight, tracking number, and charges can be displayed in the various Dynamo applications including Sales Order Inquiry, Sales Order Processing, Transfer Order Inquiry, Transfer Order Processing, and Vendor Return Processing.&#160; Contact Excellware if the package shipment information is not available for display in Dynamo 10 minutes after the shipment has been processed on the PC.</p>
+    </body>
+</html>

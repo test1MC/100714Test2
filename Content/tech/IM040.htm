@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1420" MadCap:lastWidth="1306">
+    <head><title>IM040 - Enter Item Number</title>
+    </head>
+    <body>
+        <p class="CalledName">IM040</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Enter Item Number</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IM040">Last Revised: 
+		12/18/10</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">All applications should call IM040 when necessary for the operator to enter an Item Number.&#160; It will allow operator to enter an item#, vendor part number, equivalent item#, one or more words contained in the two item description lines, UPC 
+	bar code number, or Dynamo bar code number.&#160; When multiple items match search criteria, the operator can select the item desired from a list.</p>
+        <p>The operator can touch F5 to change the default search parameters.</p>
+        <p>If more than 50 items meet the search criteria, the operator can touch F4 to 
+	stop the search process.</p>
+        <p>IM040 verifies that the item selected has a Product Class (<code>IM01.PCL$</code>) which found on the Product Class File (IM27).&#160; If the Product Class is not on file, then the operator is prompted to enter the product class or they may select a different item.</p>
+        <p>There is a test option imbedded within IM040.&#160; To learn more about how IM040 works:</p>
+        <p><code>LOAD "IM040"<br />  GOTO TEST<br />  RUN</code>
+        </p>
+        <p>See also IM042 when an external T type entry routine is needed.</p>
+        <p>Calling format:</p>
+        <p><code>CALL "IM040", Y$, IM040$, IM01$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IM040 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.COL</code>
+                </td>
+                <td align="center">To</td>
+                <td>Column number on display for entry of item# or search words</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.ROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>Row number on display for entry of item# or search words.&#160; If IM040.COL and ROW are passed as zero, then the prompt will occur at the bottom of the screen.&#160; This is not recommended as the prompt for entering the item# will be truncated.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.DISPDESC$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or R</td>
+                            <td>Display Item description line 1 to the right of the item#, and description line 2 below description line 1</td>
+                        </tr>
+                        <tr>
+                            <td align="center">r</td>
+                            <td>Display Item description line 1 and line 2 to the right of the item#</td>
+                        </tr>
+                        <tr>
+                            <td align="center">B</td>
+                            <td>Display Item description line 1 below Item#, and description line 2 below description line 1</td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>Do not display Item description lines</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.DESCCOL</code>
+                </td>
+                <td align="center">To</td>
+                <td>If passed as non-zero, description line 1 will be displayed at this column and the <code>DISPDESC$</code> parameter is ignored.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.DESCROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>If passed as non-zero, description line 1 will be displayed at this row and the <code>DISPDESC$</code> parameter is ignored.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.ALLOWCTL4$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or Y or +</td>
+                            <td>Include F4=End option on entry prompt</td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>Exclude F4=End on entry prompt</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.CRMODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or N</td>
+                            <td>Do not accept blank entry.&#160; In this mode if <code>IM01.ITEMNO$</code> is blank then IM040 will prompt the operator with the next item# on file following KNUM 0.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Allow the operator to bypass the entry of the Item#.&#160; <code>IM01$</code> will be returned as an empty templated variable and <code>IM040.EXITCODE$</code> will be set to <code>STR(CTL)</code> so that the calling program can test for F2 or other function key.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.NOFMODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or N</td>
+                            <td>Do not accept item number that is not on item file.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Allow the operator to enter an Item# that is not on the Item file XXIM01.&#160; <code>IM01$</code> will be returned as a templated variable containing only the Item# entered, and <code>IM01.DESC1$="*** Not on Item File ***".</code></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.MSGMODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or N</td>
+                            <td>Exclude F6=Message in prompt line</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Include F6=Message in prompt line.&#160; <code>IM040.EXITMODE$</code> will be set to "M" if operator touches F6 key.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.EQUIV$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or Y</td>
+                            <td>Search Equivalent Item file</td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>Do not search for Equivalent Items</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.EXTRACT$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank or N</td>
+                            <td>Do not extract IM01 record</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Extract Item File IM01 record</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.CLEARVDT$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Do not clear display where description lines display before prompting operator for Item#</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Clear display where description lines display before prompting operator for Item#</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.PWIN$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Do not use CDS069 Prompt Window</td>
+                        </tr>
+                        <tr>
+                            <td align="center">P</td>
+                            <td>Pass 'P' to CDS069 to cause the data entry prompt to take place in its own window.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.DISP$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Normal entry of Item#</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Q</td>
+                            <td>Display Item# and Description Lines with no operator entries</td>
+                        </tr>
+                        <tr>
+                            <td align="center">q</td>
+                            <td>Return Item# and Description Lines in global variable "SMS_CDS069_DIS" including screen positioning expressions, used when IM040 is called by a T Type external routine such as IM042.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.EXITCODE$</code>
+                </td>
+                <td align="center">From</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Item entered or selected and return in <code>IM01$</code></td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td><code>NOFMODE$</code> was passed as Y and operator entered an 
+			item# not on the item file.&#160; <code>IM01$</code> will be 
+			returned with <code>IM01.ITEMNO$</code> set to entered Item#, and
+			<code>IM01.DESC1$</code> set to <code>"*** Not on Item File ***"</code>.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">M</td>
+                            <td><code>MSGMODE$</code> was passed as Y and operator touched F6 key for Message</td>
+                        </tr>
+                        <tr>
+                            <td align="center">4</td>
+                            <td><code>ALLOWCTL4$</code> was passed as Y and operator touched F4 key</td>
+                        </tr>
+                        <tr>
+                            <td align="center">0</td>
+                            <td><code>CRMODE$</code> was passed as Y and operator did not enter an item# and used the Enter key</td>
+                        </tr>
+                        <tr>
+                            <td align="center">2</td>
+                            <td><code>CRMODE$</code> was passed as Y and operator did not enter an item# and used the F2 key</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.IM04QTY</code>
+                </td>
+                <td align="center">From</td>
+                <td>When the operator scanned a bar code, this field indicates the quantity 
+		associated with the bar code.&#160; When the operator did not scan a bar 
+		code, this field is 1.&#160; This field can be zero when the bar code 
+		has a variable quantity and the quantity must be entered manually.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM040.F6F7$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">blank or N</td>
+                            <td>F6/F7 prompt not used</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Prompt includes: <code>F6=Enter Qty, F7=Zero Qty</code> used 
+				with Workstation Scanner applications such as Physical 
+				Inventory, PO Receiving, TO Shipping &amp; Receiving, etc.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM01$</code>
+                </td>
+                <td align="center">To/From</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">To</td>
+                            <td>Pass either a non-templated item#, or templated Item File 
+				record.&#160; This Item# will be the default Item#.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">From</td>
+                            <td>Templated Item File record is always returned to calling 
+				program.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

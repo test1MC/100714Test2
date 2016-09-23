@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1390" MadCap:lastWidth="999">
+    <head><title>Program Utility</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Program Utility</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS150">Last Revised: 09/03/15</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">&#160;The Program Utility is a tool typically used only by software developers.&#160; It performs a variety of functions, listed below.</p>
+        <p>Due to limitation of the Windows operating system, some of these options cannot be run in Windows.</p>
+        <h6>
+            <img src="../xx/cdf150-1.png" alt="" title="" />
+        </h6>
+        <table>
+            <tr>
+                <th colspan="2">Program Utility Options</th>
+            </tr>
+            <tr>
+                <td><a name="List"></a>List</td>
+                <td>This option prints program listings.</td>
+            </tr>
+            <tr>
+                <td><a name="Search"></a>Search</td>
+                <td>
+        This option searches for operator entered text strings in a program.&#160; You can scan the entire program statement, or exclude the code that is between quotation marks. This option also provides a built in search argument list for code that typically must be manually revised when upgrading from a Basic Four version of Business Basic.
+
+        <p>When entering the search argument, you may specify a backslash (\) followed by additional text multiple times. When searching, only lines of code that have all of the text segments entered will be printed. For example specifying WRITE\ERR= means that only lines of code with WRITE and ERR= somewhere in the statement will be printed.</p><p>You can also search for \ by entering \\ within the search argument.</p></td>
+            </tr>
+            <tr>
+                <td><a name="Compare"></a>Compare</td>
+                <td>This compares one program to another and prints the lines that are not identical or missing.</td>
+            </tr>
+            <tr>
+                <td><a name="Renumbe"></a>Renumber</td>
+                <td>This option renumbers the program. The program will begin at line 0100.&#160; Lines 8000 and above will not be renumbered. Each REM statement that does not follow another REM statement will begin at the next multiple of 100 beginning at line 1000. Statement increment will be 10.&#160;</td>
+            </tr>
+            <tr>
+                <td><a name="Template Variable Cross Reference"></a>Template Variable Cross Reference</td>
+                <td>This option will print all template variables found in the programs specified and reference the program name and line number where the variable is used.</td>
+            </tr>
+            <tr>
+                <td><a name="Print Program Revision Notes"></a>Print Program Revision Notes</td>
+                <td>This option prints the program revision notes that are created when using the Dynamo Tools Program Editor. The operator has options to exclude older revision notes.</td>
+            </tr>
+            <tr>
+                <td><a name="Copy &amp; Change Company Code"></a>Copy &amp; Change Company Code</td>
+                <td>In some cases, the two letter Dynamo Company Code has been used as the first two characters of the program name. This option will copy programs, replacing the first two letters of the program name with the company code specified.</td>
+            </tr>
+            <tr>
+                <td><a name="Replace Error/Escape Routine"></a>Replace Error/Escape Routine</td>
+                <td>When converting programs written for an earlier version of the Dynamo Tools error routine CDS063, this option will replace the lines of code in the 8000 section to be compatible with the current error routine.&#160; If the previous error routine logic was customized, then this option will print the lines to the printer for manual conversion.</td>
+            </tr>
+            <tr>
+                <td><a name="Convert to Progression 4"></a>Convert to BBj</td>
+                <td>This option will convert BBx programs to BBj format. The BBj versions will be defined in the directory specified by the user. This is done when moving to BBj exclusively, or in a hybrid to improve BBj program execution performance.</td>
+            </tr>
+            <tr>
+                <td><a name="Update Called Program Dictionary"></a>Update Called Program Dictionary</td>
+                <td>The called program dictionary is used by the Dynamo Tools Program Editor to provide code completion for called program arguments. Normally this Dictionary is updated when saving a program within the Dynamo Tools Program Editor. This option can populate the Called Program Dictionary outside of the Program Editor.</td>
+            </tr>
+            <tr>
+                <td><a name="Search &amp; Replace"></a>Search &amp; Replace</td>
+                <td>This option permits the operator to specify search text and replacement text and the type of search required, entire line of code, or exclude code between quotes. A standard list of popular replacement strings are included as an option. This standard list should be processed against all program that do not use the template field names for the system variables <code>Y$</code> and <code>Y6$</code>. Note that the \ logic for multiple text string described in the Search option does not apply here.</td>
+            </tr>
+            <tr>
+                <td>Search for Invalid References</td>
+                <td>This option searches programs for references to missing or duplicate line labels.</td>
+            </tr>
+            <tr>
+                <td>Erase Empty Programs</td>
+                <td>This option searches for empty programs and offers the option to erase.</td>
+            </tr>
+            <tr>
+                <td>Convert Programs to Text</td>
+                <td>This option converts BBx or BBj programs with line numbers to text format. White space is added before each program section to improve readability. BBx programs will also have IF/THEN/ELSE and looping structures such as FOR/NEXT, WHILE/WEND, REPEAT/UNTIL formatted to improve readability. Although traditionally BBx programs were edited using the Dynamo Tools Program Editor, and the programs were saved in tokenized format only, modern practices store code in source (text) format which allows for greater use of comments, white space, and in the case of BBj, without line numbers. Programs stored in text format can be more readily used with source code control systems.</td>
+            </tr>
+            <tr>
+                <td>Insert Program Execution Logging Interface</td>
+                <td>
+                    <p>Over time, programs may remain in production folders that are no longer being used. A useful way to identify programs that are still being executed, is to add a line of code at the beginning of each program that calls a routine to log it's execution. The user can accept the default program statement <code>CALL&#160;"LOGIT",PGM(-2)</code>, or can provide their own code.</p>
+                    <p>This line of code will be inserted at line 0001 of each program if line 0001 does not exist. If line 0001 already exists, the logging code will be placed before the existing code. Note that for best results either the initial prefix should be specified in the config.bbx file, or use an absolute path name for the logging routine, so that all programs can call the logging routine without encountering an error.</p>
+                    <p>Although adding an ERR=0002 to the CALL would prevent an error, this option is not recommended, as it would bypass any existing line 0001 code that now follows the logging code that share line 0001.</p>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <br />  &#160;</p>
+        <p class="SectionDesc">&#160;</p>
+    </body>
+</html>

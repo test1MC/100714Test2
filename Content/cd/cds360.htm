@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2253" MadCap:lastWidth="1225">
+    <head><title>Fax Log &amp; Options</title>
+    </head>
+    <body>
+        <p class="SectionName">Printer &amp; Fax Management</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Fax log &amp; Options</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS360">Last Revised: 02/11/06</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to display outbound and inbound 
+	fax logs as well as summaries of inbound faxes by Month, Day, and Hour.</p>
+        <p>
+            <img border="0" src="cds3606.jpg" />
+        </p>
+        <p>An example of the Outbound Fax Log is shown below.</p>
+        <p>
+            <img border="0" src="cds3607.jpg" />
+        </p>
+        <p>The STS (Status) column can contain S=Successful fax, U=Unsuccessful fax, 
+	C=Cancelled, ?=fax still in progress.&#160; After displaying the outbound 
+	fax log, you have the option to filter the list to show only faxes with a 
+	particular status or those sent by a particular operator.</p>
+        <h6>Note that you can use the ArrowRt key to display additional information 
+	about each fax as shown below.</h6>
+        <p>
+            <img border="0" src="cds3608.jpg" />
+        </p>
+        <p>Highlighting an individual fax and pressing ENTER, will provide the following four options:</p>
+        <h5>Display Attempt History</h5>
+        <p>This includes the number of attempts, the date and time of the attempts, the time (in seconds) the transfer took, the number of pages, an indicator of number of Negative Acknowledgments the file received, and a final status.&#160; Normal indicates a successful fax.&#160; 
+	Faxes are normally retried 5 times in 5 minute intervals.&#160; The example 
+	below shows a fax attempt that was busy at first but was successful on the 
+	second attempt.&#160; Note that when there are many faxes queued to be sent, 
+	the interval between attempts may exceed 5 minutes.</p>
+        <p>
+            <img border="0" src="cds3609.jpg" />
+        </p>
+        <h5>Cancel Fax</h5>
+        <p>This option is used to cancel submitted faxes before they are delivered.&#160; Only faxes originated an the operator can be cancelled by that operator.</p>
+        <h5>Print Fax to A Printer</h5>
+        <p>This option is available for unsuccessful faxes only because successful faxes are immediately purged from the system.</p>
+        <h5>Re-fax to Same or New Fax Number</h5>
+        <p>This option is used to resubmit an unsuccessful fax to the same, or a different number.&#160; This option is useful if the original fax number was entered incorrectly.</p>
+        <p>Upon exiting this screen, selected faxes may be displayed based on operators or status.&#160; If an operator ID is entered, only the faxes for that operator will be displayed.&#160; If no operator ID is entered, all faxes in the selected status will be displayed.&#160;</p>
+        <p>Faxes remain in the log until the <a href="cds370.htm">Purge Fax &amp; Email Log</a>s 
+	option is selected on the PFM Menu.</p>
+    </body>
+</html>

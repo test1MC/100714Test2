@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>PO303 - Return list of PO's on receipt</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">PO303</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">PO Receiving - return list of PO's on receipt</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=PO303">Last Revised: 06/12/08</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This CDS037/38 style called routine is used to retrieve a list of purchase order numbers included on a PO Receipt.</p>
+        <p><code>CALL "PO303", Y$, PO50$, PO303$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">PO303 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO50$</code>
+                </td>
+                <td align="center">To</td>
+                <td>PO Receipt Heading</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO303.FIRSTPO$</code>
+                </td>
+                <td align="center">From</td>
+                <td>8 character field containing first PO</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO303.POS$</code>
+                </td>
+                <td align="center">From</td>
+                <td>18 character field containing first PO and the count of additional PO's on the receipt</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO303.POLIST$</code>
+                </td>
+                <td align="center">From</td>
+                <td>variable length field containing list of 8 character PO numbers included on the PO Receipt</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="440" MadCap:lastWidth="748">
+    <head><title>Web Management Software - Folder Locations</title>
+    </head>
+    <body>
+        <p class="SectionName">folder Locations</p>
+        <p class="SectionTitle">
+            <MadCap:keyword term="Web Management Software" />Web Management Software</p>
+        <p class="SectionDesc">The web server has a folder known as "server root". &#160;This is the highest level directory of the web server.&#160; Below the "server root" folder, there is a folder for documents and cgi scripts.&#160;&#160; If a browser URL is pointed to the server name, without any directory or file name, then the document named index.html is the Documents Folder is displayed.</p>
+        <table>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <tr>
+                <th>Web Server</th>
+                <th>Typical Server Root Folder</th>
+                <th>Documents Folder</th>
+                <th>cgi folder</th>
+            </tr>
+            <tr>
+                <td>
+                    <MadCap:keyword term="AIX" />Lotus Domino (AIX)</td>
+                <td>/usr/lpp/internet/server_root</td>
+                <td>pub</td>
+                <td>
+                    <MadCap:keyword term="Cgi-bin" />cgi-bin</td>
+            </tr>
+            <tr>
+                <td>
+                    <MadCap:keyword term="Apache" />Apache</td>
+                <td>/usr/local/apache</td>
+                <td>
+                    <MadCap:keyword term="htdocs" />htdocs</td>
+                <td>cgi-bin</td>
+            </tr>
+            <tr>
+                <td>Netscape (SCO OpenServer 5)</td>
+                <td>/usr/internet/ns_httpd/httpd-80</td>
+                <td>htdocs</td>
+                <td>cgi-bin</td>
+            </tr>
+        </table>
+        <p>The Web Management Software requires a folder below the Documents Folder with a folder name of the lower case version of the company code.&#160;&#160; This is represented as xx in the table below.&#160;&#160; These folders typically link to a folder below the base SMS directory (SMSDIR), typically /u/CDI.</p>
+        <table>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <tr>
+                <th>Folder Name</th>
+                <th>Contents</th>
+                <th>Links to</th>
+            </tr>
+            <tr>
+                <td>xx/help/</td>
+                <td>help text in html format</td>
+                <td>(SMSDIR)/XX/help/</td>
+            </tr>
+            <tr>
+                <td>xx/css/</td>
+                <td>
+                    <MadCap:keyword term="Cascading Style Sheets" />
+                    <MadCap:keyword term="Style Sheets" />Cascading Style Sheets</td>
+                <td>(SMSDIR)/XX/css/</td>
+            </tr>
+            <tr>
+                <td>xx/images/</td>
+                <td>images and graphics used on all pages</td>
+                <td>(SMSDIR)/XX/images/</td>
+            </tr>
+        </table>
+    </body>
+</html>

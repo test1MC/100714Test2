@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="2420" MadCap:lastWidth="1199">
+    <head><title>Company Wide Parameters</title>
+    </head>
+    <body>
+        <p class="SectionName">Company Wide Parameters</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Dynamo Parameter&#160;Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 11/12/14</td>
+            </tr>
+        </table>
+        <p>Use this program to indicate items that will remain constant for all companies entered into Dynamo. </p>
+        <p>
+            <img src="xxcw00-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Period Parameters View</th>
+                </tr>
+                <tr>
+                    <td>Last Month of the Fiscal Year</td>
+                    <td>Indicate the final month of your company's fiscal year. </td>
+                </tr>
+                <tr>
+                    <td>Current Month</td>
+                    <td>Indicate the open accounting period of the fiscal year.</td>
+                </tr>
+                <tr>
+                    <td>Current&#160;Year</td>
+                    <td>Indicate the open fiscal year. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxcw00-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Dynamo Options View</th>
+                </tr>
+                <tr>
+                    <td>Enable Item Costing Unit</td>
+                    <td>Enable to track costs. </td>
+                </tr>
+                <tr>
+                    <td>Enable Serialized Inventory</td>
+                    <td>Enable to allow use of serialized items.</td>
+                </tr>
+                <tr>
+                    <td>Enable Item Weight</td>
+                    <td>Enable to use item weights in Dynamo.</td>
+                </tr>
+                <tr>
+                    <td>Enable Item Volume (Cube)</td>
+                    <td>Enable to use item sizes in&#160;Dynamo. </td>
+                </tr>
+                <tr>
+                    <td>Enable Item Price Labels</td>
+                    <td>Enable to use item price labels. </td>
+                </tr>
+                <tr>
+                    <td>Enable Standard Cost</td>
+                    <td>Enable to use standard costs.</td>
+                </tr>
+                <tr>
+                    <td>Enable Bill of&#160;Lading Printing</td>
+                    <td>Enable to allow for the printing of bills of lading for carriers. </td>
+                </tr>
+                <tr>
+                    <td>Enable&#160;Rental Transactions</td>
+                    <td>Enable if your company handles rental transactions.</td>
+                </tr>
+                <tr>
+                    <td>Enable Rental Fuel Tanks</td>
+                    <td>Enable this option if any items rented by the company require fuel tanks.</td>
+                </tr>
+                <tr>
+                    <td>Enable Work Order Processing</td>
+                    <td>This option should be enabled if any items will need to be tracked during repairs. Items may have a work order history which can be viewed to discover maintenance information. </td>
+                </tr>
+                <tr>
+                    <td>Enable Core Charges</td>
+                    <td>Enable if your company uses cores (items like auto parts that can be returned for discount prices on new materials).</td>
+                </tr>
+                <tr>
+                    <td>Enable Federal Excise Tax</td>
+                    <td>Enable if your company sells items that require the federal excise tax (typically luxury items). </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxcw00-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Dynamo Settings View</th>
+                </tr>
+                <tr>
+                    <td>Characters in Item#</td>
+                    <td>Indicate the maximum number of characters allowed in an item number field. </td>
+                </tr>
+                <tr>
+                    <td>Inventory Costing Method</td>
+                    <td>Specify if the items sold from your company are&#160;LIFO&#160;(Last In&#160;First Out) or FIFO&#160;(First In&#160;First Out). </td>
+                </tr>
+                <tr>
+                    <td>Average Cost</td>
+                    <td>
+                        <p>Specify whether or not your warehouses use average costing on their items. Type&#160;"C" to use average costing or type "N"&#160;for "Not used." </p>
+                        <p>&#160;</p>
+                        <p>In Dynamo 11 updates after January 1, 2014:</p>
+                        <p>If the operator changes this field from 'N' - Not Used to 'C' - Company Wide: A message regarding what will happen is displayed and the user must answer 'Y' - Continue to complete the change. A new Average Cost file is built using historical information from previous transactions.</p>
+                        <p>If 'N' is answered to the 'Continue' prompt, the Average Cost parameter will remain unchanged and the original Average Cost file will be intact.</p>
+                        <p>&#160;</p>
+                        <p>If the operator changes this field from 'C' - Company Wide to 'N' - Not Used. A message regarding what will happen is displayed and the user must answer 'Y' - Continue to complete the change. The current Average Cost file will be initialized (cleared of all data).</p>
+                        <p>If 'N' is answered to the 'Continue' prompt, the Average Cost parameter will remain unchanged and the original Average Cost file will be intact.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Free Freight Order Value</td>
+                    <td>Indicate the price at which freight will no longer apply for customers, if applicable. </td>
+                </tr>
+                <tr>
+                    <td>Packaging/Handling Fee per box</td>
+                    <td> Indicate the amount of handling applied to each box of an item ordered.</td>
+                </tr>
+                <tr>
+                    <td>Packaging/Handling Fee per order</td>
+                    <td>Indicate the amount of handling applied to each order.</td>
+                </tr>
+                <tr>
+                    <td>Bar Code Digit - Master Box</td>
+                    <td style="font-style: normal;">If your company uses Master Boxes, indicate the length of the internal, Dynamo-generated bar code to be used on them by selecting a number from 3 to 9. Select<i> Master Boxes not used</i> if you do not utilize them at your company. </td>
+                </tr>
+                <tr>
+                    <td>Bar Code Digit -Shelf box</td>
+                    <td>If your company uses Shelf Boxes, indicate the length of the internal, Dynamo-generated bar code to be used on them by selecting a number from 3 to 9. Select <i>Shelf Boxes not used</i> if you do not utilize them at your company. </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="ap210.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2242" MadCap:lastWidth="1307">
+    <head><title>Check Printing</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts payable payment Processing</p>
+        <table class="revision">
+            <col />
+            <col style="width: 389px;" />
+            <tr>
+                <td>
+                    <p class="SectionTitle">Check Printing</p>
+                </td>
+                <td align="right">Last Revised: 02/21/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Check Printing program uses information you have entered in Payment Selection and Payment Selection Maintenance to process and print vendor checks. &#160;</p>
+        <p>If Dynamo Check Printing is being used for the first time:</p>
+        <ul>
+            <li>Establish your check format in <a href="../xx/xxap00.htm">A/P Parameter Maintenance</a> on the APU menu.</li>
+            <li>Establish your check stub type (also called Remittance Advice Attachment) in A/P Parameter Maintenance on the APU menu. (See "Check Stub Type" below for an explanation of types.)</li>
+            <li>Establish your Bank information in <a href="../xx/xxap01.htm">Bank Code Maintenance</a> on the APU menu.</li>
+        </ul>
+        <p>Before checks are printed each time:</p>
+        <ul>
+            <li>Review the Payment Selection Register for accuracy.</li>
+            <li>Load the printer with blank check forms, noting the next check number. Verify this check number with the system's check number during check printing. &#160;</li>
+        </ul>
+        <p><strong>To order checks, follow the </strong><strong href="order_checks.htm"><a href="order_checks.htm">Guidelines for Order Dynamo Accounts Payable Checks</a></strong><strong>.</strong>
+        </p>
+        <p>&#160;</p>
+        <p>TO PROCEED WITH CHECK PRINTING, SELECT ONE OF THE FOLLOWING OPTIONS:</p>
+        <p>1. &#160; Print <a href="#Printing%20Checks%20for%20a%20Specific%20Batch">checks for a specific batch</a></p>
+        <p>2. &#160; Re-print <a href="#Reprinting%20a%20Check%20from%20an%20Updated%20Batch%20That%20Was%20Lost%20or%20Damaged">check from updated batch that was lost or damaged</a></p>
+        <h5><a name="Printing Checks for a Specific Batch"></a>Printing Checks for a Specific Batch</h5>
+        <p>
+            <img src="ap210-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This allows you to print a SINGLE check from a batch or ALL checks in a specific batch.&#160; All open payment batches will display. Select a payment batch for check printing.</p>
+        <ul>
+            <li>Bank Code:<br />    Bank codes must have been previously set up in <a href="../xx/xxap01.htm">Bank Code Maintenance</a> on the APU menu; if not, a prompt will be displayed indicating there are no valid entries.</li>
+            <li>Starting Check #:<br />    The next unused check number will be displayed, but you can override this number if necessary. &#160; As verification that the displayed check number is correct, look at the next blank check form to see that the pre-printed check number matches the starting check number shown on the screen.</li>
+            <li>Check Date: &#160;<br />    This is the date that will print on the checks regardless of when they are actually printed. &#160; This defaults to today's date but can be overridden to any date within the next 30 days.</li>
+        </ul>
+        <p>After the entries above are completed, your options are to:</p>
+        <ol>
+            <li>Print all checks in this payment batch</li>
+            <li><a href="#How%20to%20Print%20a%20Single%20Check">Print one check</a> in this payment batch</li>
+        </ol>
+        <p>The following additional options may also display if some of the checks in the batch have already been printed:</p>
+        <ul>
+            <li>Reprint one check</li>
+            <li>Reprint from operator selected check to end of the batch</li>
+            <li>Print all Remittance Advice Attachments</li>
+            <li>Print one check scheduled to be printed</li>
+        </ul>
+        <p>Each vendor name will quickly display at the bottom of the screen as check printing instructions are being sent to the printer.</p>
+        <p>At the completion of check printing, you will be given the opportunity to reprint any checks that may have been damaged during the printing process. &#160; Your options are to:</p>
+        <ol>
+            <li>Reprint all checks (displays if batch contains multiple checks)</li>
+            <li>Reprint one check</li>
+            <li>Reprint from operator-selected check to the end of the batch</li>
+            <li>Print all Remittance Advice Attachments (displays if applicable)</li>
+        </ol>
+        <p>If a batch of checks contains any single-character vendors such as M for Miscellaneous, the Payee names will also display.</p>
+        <h5><a name="Reprinting a Check from an Updated Batch That Was Lost or Damaged"></a>Reprinting a Check from an Updated Batch That Was Lost or Damaged</h5>
+        <p>This option allows you to re-print a check that was already issued. Upon entering the vendor, checks issued to that vendor will display. Once a check is selected, the original check number and check amount will display in the respective fields.</p>
+        <ul>
+            <li>Starting Check #<br />    (automatically displays)</li>
+            <li>Check Date<br />    (defaults to current date)</li>
+            <li>Vendor<br />    Enter the vendor alpha sort name, a contact name, phone number, or zip code. Upon entering a vendor, a list of checks issued to this vendor will display. (If a single-character vendor is entered, such as M for Miscellaneous, then the Payee names will be listed from which you can choose.) Once you have selected one of these checks, the next two fields will automatically display.</li>
+            <li>Original Check #<br />    The pre-printed number of the original check.</li>
+            <li>Check Amount<br />    The dollar amount of the original check.</li>
+        </ul>
+        <h5><a name="How to Print a Single Check"></a>How to Print a Single Check</h5>
+        <p>There are several ways to Print a Single Check:</p>
+        <p>1. Manual Payment Entry on the APP menu is the easiest way to print a quick, computer-generated check or to record entries for a check that was handwritten. &#160; A single check can be issued immediately for an invoice that was already entered in the system or a new invoice. &#160; For further details, refer to <a href="ap150.htm">Manual Payment Entry</a> documentation. Manual Payment Entry is the most direct way to print a single check.&#160;&#160;</p>
+        <p>2. If the invoice has already been entered in the system but has not been selected for a payment batch, it will be listed on the <a href="ap130.htm">Invoice Register</a> but not the <a href="ap200.htm">Payment Selection Register</a>.&#160;In this case, go to Payment Selection (APP menu). Start a new payment batch and enter the selected vendor. Proceed with Check Printing.</p>
+        <p>3. If the invoice has been entered in a batch and has been selected for payment, it will be listed on the Payment Selection Register. &#160; Go to Check Printing, select the payment batch containing that invoice, and choose the option to PRINT ONE CHECK.</p>
+        <h5><a name="Check Stubs"></a>Check Stubs</h5>
+        <p>The check form required no pre-printing on the stub because both the headings and corresponding information will be printed by the computer:</p>
+        <ul>
+            <li>Customer Number (the vendor refers to you by this number)</li>
+            <li>Check Number</li>
+            <li>Date</li>
+            <li>Vendor Number</li>
+            <li>Vendor Name</li>
+            <li>Check Issued By (your company name)</li>
+            <li>Invoice Number</li>
+            <li>Invoice Date</li>
+            <li>Payment Amount</li>
+        </ul>
+        <p>The following will also display on the check stub if applicable:</p>
+        <ul>
+            <li>Note (Any comment entered during Invoice Data Entry or Invoice Maintenance)</li>
+            <li>Invoice Amount (This will display only when the invoice amount and payment amount differ.)</li>
+            <li>Discount</li>
+        </ul>
+        <p>The check stub format that will print on your check form may vary from check to check, depending on the information that is applicable to that check. &#160; The system will automatically "customize" the check stub format to include any of the three variables listed above (Note, Invoice Amount, Discount).</p>
+        <p>Invoices print on the check stub and remittance advice attachment in invoice number sequence.</p>
+        <h5>Check Stub Type</h5>
+        <p>Typically a vendor is issued one check for multiple invoices. &#160; A normal check stub can list up to 39 invoices. <h6>Note: a stub may not be able to accommodate 39 if variable information such as Note, Discount, and Invoice Amount is applicable.&#160;</h6><br /> Checks with more than 39 invoices will print an extended stub in one of two ways:</p>
+        <ul>
+            <li>Void the first check and use its stub to list the additional invoices&#160;&#160; <i>- or -</i></li>
+            <li>Print a Remittance Advice Attachment (a full-page extended stub) which eliminates the need to void any check forms.</li>
+        </ul>
+        <p>To establish your preference for accommodating a large number of invoices for a check, go to <a href="../xx/xxap00.htm">A/P Parameter Maintenance</a> on the APU menu (Check Formatting - Remittance Advice Attachment): &#160;</p>
+        <p>Enter Y (yes) to have a full-page remittance advice attachment print. &#160; After the checks print, you will be prompted to insert plain sheets of paper in the printer on which the attachment will print. Remittance advice attachments requiring multiple pages will print page numbers at the bottom.</p>
+        <p>OR</p>
+        <p>Enter N (no) to void the first check form and use its stub.</p>
+        <p>Sample <a href="../examples/AP-Check.pdf">Check</a>. </p>
+    </body>
+</html>

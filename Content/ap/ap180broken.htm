@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="989" MadCap:lastWidth="1225">
+    <head><title>Payment Selection</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts payable payment Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Payment Selection</p>
+                </td>
+                <td align="right">Last Revised: 01/31/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Payment Selection scans all unpaid invoices and automatically selects invoices for payment that meet the selection criteria you've entered in the fields listed below. &#160; <h6>Note: once an invoice has been selected for payment, its status will display as "Pending" in Vendor Inquiry - A/P Invoice option.</h6></p>
+        <p>&#160;</p>
+        <p>
+            <img src="ap180-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>The first step is to start a new payment batch or select an existing batch for payment. (This batch number refers to a payment batch and is not related to the invoice batch number.) If a new batch is started, the next unused batch number is automatically assigned.</p>
+        <p>Invoices will be selected for payment based on the following entries:</p>
+        <ul>
+            <li>Selected Vendor(s): &#160; To make a payment to a SINGLE vendor, enter the vendor number, alpha sort name, phone #, or zip. &#160; To scan unpaid invoices for ALL vendors, press the spacebar.</li>
+            <li>
+                <p>Payment Cycle Code: &#160; Payments may be scheduled using payment cycle codes. &#160; This allows you to pay a group of vendors coded by number. Vendors can be assigned a payment cycle code through 
+		<a href="../xx/xxvm01.htm">Vendor Maintenance - Accounts Payable</a>. If you do not use payment cycles, press Enter to bypass.</p>
+            </li>
+            <li>Select Invoices Due On or Before:  This defaults to today's date, but it can be overridden to any date within the next 30 days. &#160; Any invoices with a due date on or before this date will be selected for this payment batch.</li>
+            <li>Select Invoices with a Discount Due On or After:  The default date is 15 days prior to the current date but can be overridden. Any invoices with a discount due date on or after this date will be selected for this payment batch.</li>
+            <li>Select Invoices with a Discount Due On or Before:  The default date falls 10 days after the current date but can be overridden. &#160; Any discounts with a discount due on or before the default date will be selected for this payment batch.</li>
+        </ul>
+        <p>The ability to override the default discount dates gives you the option of taking those discounts whose due dates have already passed. &#160;&#160;&#160;</p>
+        <p>The invoices that meet the selection criteria are marked for payment. &#160; As invoices are being selected for payment, the screen will display a cumulative total for the following: &#160;&#160;</p>
+        <ul>
+            <li>Number of Checks:</li>
+            <li>Total Payment:</li>
+        </ul>
+        <p>If the information displayed is acceptable, return to the main menu and print the Payment Selection Register.</p>
+        <p>If the information displayed is not acceptable, you have the following options:</p>
+        <ul>
+            <li>Clear all payments selected automatically; proceed with next step.</li>
+            <li>Revise the criteria for payment you previously entered. The cumulative totals will be adjusted to reflect the number of invoices added or deleted.</li>
+        </ul>
+        <p><i>- or -</i>
+        </p>
+        <ul>
+            <li>Proceed to <a href="ap190.htm">Payment Selection Maintenance</a> to add invoices to this payment batch, delete invoices from the batch, make a partial payment on one or more invoices, or to release an invoice for payment that was put on Hold.</li>
+        </ul>
+    </body>
+</html>

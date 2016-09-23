@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>SOP Rental Technical Overview</title>
+ 
+        
+    </head>
+    <body>
+        
+        <p class="SectionName">Dynamo RENTAL processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Technical Overview</p>
+                </td>
+                <td align="right">Last Revised: 01/30/08</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo supports rental transactions, as well as sale of product.&#160; This document describes technical information related to rental transactions.</p>
+        <ol>
+            <li>Rental transactions are enabled in Dynamo by setting the Rental Indicator (CW00.RENTAL) to Y using Company Wide Parameter Maintenance (CWP).</li>
+            <li>Items are enabled for rental by assigning a Rental Code (IM01.RENTALCODE) using Item Maintenance (IML).</li>
+            <li>Items that are sold use the product class (IM01.PCL) using Item Maintenance (IML).&#160; Items that are rented must have a Rental Product Class specified in Product Class Maintenance (IML).</li>
+            <li>Rental transactions can be for serialized and non-serialized items.&#160; Serialized items to be rented are described using Serialized Item Maintenance.&#160; Non-serialized items are often called rental accessories.</li>
+            <li>Cost of sale of rental transactions is always zero.&#160; Likewise, there is no inventory value change for rental transactions.</li>
+            <li>Rental inventory is kept separate from inventory for sale.&#160; The Warehouse Type (CW12.TYPE) is set to R in Warehouse Information Maintenance (CWP).&#160; The warehouse code for a rental warehouse is often set to the lower case of the corresponding sale warehouse.</li>
+            <li>Products that are out on rent 28 days are invoiced by Generate Monthly Rental Invoice (SOP).&#160; Invoice Update will create a 'backorder' listing the items that remain out on rent that have not been returned.</li>
+        </ol>
+        <p><b>Data Files used for rental transactions</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td><code>XXCW12</code>
+                </td>
+                <td>Warehouse Information</td>
+                <td>Maintained using Warehouse Information Maintenance (CWP).&#160; Warehouses used for rental must be coded as type R.</td>
+            </tr>
+            <tr>
+                <td><code>XXIM12</code>
+                </td>
+                <td>Rental Code Descriptions</td>
+                <td>Maintained using Rental Rate Maintenance (RML)</td>
+            </tr>
+            <tr>
+                <td><code>XXIM66</code>
+                </td>
+                <td>Rental Rates</td>
+                <td>Maintained using Rental Rate Maintenance (RML).&#160; Rates can be for specific customers, pricing customer, or all customers.&#160; Rental rates are date sensitive, like all Dynamo pricing.</td>
+            </tr>
+            <tr>
+                <td><code>XXSO42</code>
+                </td>
+                <td>SOP Rental Transactions</td>
+                <td>Record for each rental line item on a sales order</td>
+            </tr>
+            <tr>
+                <td><code>XXSI01</code>
+                </td>
+                <td>Serialized Inventory</td>
+                <td>Used for rental of serialized items</td>
+            </tr>
+            <tr>
+                <td><code>XXSI02</code>
+                </td>
+                <td>Serialized Sales History</td>
+                <td>Used to identify what serial numbers are linked to a sale order line item.&#160; This applies to both rental and sales.&#160; There will be an SI01 record for all serialized rental transactions, and any serialized sale transaction where the item serialized indicator (IM01.SERIALIZED) is F.</td>
+            </tr>
+            <tr>
+                <td><code>XXSO41</code>
+                </td>
+                <td>SOP Line Items</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Usage</th>
+                        </tr>
+                        <tr>
+                            <td><code>BOMSG</code>
+                            </td>
+                            <td>BO Message/Serialized Line Type - always blank on rental line items, as there are no SI02 records for serialized rentals.</td>
+                        </tr>
+                        <tr>
+                            <td><code>QTYORD</code>
+                            </td>
+                            <td>Quantity Rented</td>
+                        </tr>
+                        <tr>
+                            <td><code>QTYSHP</code>
+                            </td>
+                            <td>Always same as Quantity Rented - so that Item Inquiry, Sales Orders option displays rental lines similar to sales line items.</td>
+                        </tr>
+                        <tr>
+                            <td><code>QTYBO</code>
+                            </td>
+                            <td>Not used</td>
+                        </tr>
+                        <tr>
+                            <td><code>QTYRETN</code>
+                            </td>
+                            <td>Quantity Returned</td>
+                        </tr>
+                        <tr>
+                            <td><code>CU</code>
+                            </td>
+                            <td>Costing Unit - always blank on rentals</td>
+                        </tr>
+                        <tr>
+                            <td><code>COST</code>
+                            </td>
+                            <td>Unit Cost - always zero on rentals</td>
+                        </tr>
+                        <tr>
+                            <td><code>EXTCOSTORD</code>
+                            </td>
+                            <td>Extended Cost Qty Ordered - always zero on rentals</td>
+                        </tr>
+                        <tr>
+                            <td><code>EXTCOSTSHP</code>
+                            </td>
+                            <td>Extended Cost Qty Shipped - always zero on rentals</td>
+                        </tr>
+                        <tr>
+                            <td><code>PU</code>
+                            </td>
+                            <td>Pricing Unit - always blank on rentals</td>
+                        </tr>
+                        <tr>
+                            <td><code>PRICE</code>
+                            </td>
+                            <td>Discounted Unit Price - Set by SO113 based on length of time of rental and quantity rented</td>
+                        </tr>
+                        <tr>
+                            <td><code>PRICEUNDISC</code>
+                            </td>
+                            <td>Set to the same as PRICE</td>
+                        </tr>
+                        <tr>
+                            <td><code>DISCPCT</code>
+                            </td>
+                            <td>Discount percentage - always zero for rentals</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p><b>Temporary Work Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>XXVR170.</td>
+                <td>Vendor Return Generation</td>
+            </tr>
+            <tr>
+                <td>DYVM040.</td>
+                <td>Select Vendor</td>
+            </tr>
+        </table>
+        <p><b>Programs attached to Menu</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Menu</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>RN120</td>
+                <td>Rental Code Listing</td>
+                <td align="center">RML</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>SO421</td>
+                <td>Generate Rental Invoice</td>
+                <td align="center">SOP</td>
+                <td>Used to invoice an open rental not yet returned that has one or more line items that have been out on rent 28 days.</td>
+            </tr>
+        </table>
+        <p><b>Called Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Data Dictionary Company</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>SO913</td>
+                <td>Rental Interface</td>
+                <td class="td_1">N/A</td>
+                <td>Called by XXU012 to process a rental transaction.&#160; Input variables are order# (X$), order detail key (X0$), and action (ACTION$).&#160; This program will be phased out once SOP uses template fields.&#160; SO913 calls template based SO113.</td>
+            </tr>
+            <tr>
+                <td>SO113</td>
+                <td>SOP Rental Line item</td>
+                <td class="td_1">N/A</td>
+                <td>Called by SO913 to Add, Modify, Display, or Delete a rental line item</td>
+            </tr>
+            <tr>
+                <td>SO144</td>
+                <td>SOP Compute Rental BILLDAYS, WEEKS, MONTHS</td>
+                <td class="td_1">N/A</td>
+                <td>Called by SO113 and SO421 to set SO42.BILLDAYS, BILLWEEKS, and 
+		BILLMONTHS based on the dates rented, returned, and lease dates.</td>
+            </tr>
+            <tr>
+                <td>SO145</td>
+                <td>SOP Compute Rental Charge</td>
+                <td class="td_1">N/A</td>
+                <td>Called by SO113 and SO421 to set SO42.AMTDAYS, AMTWEEKS, AMTMONTHS, 
+		AMTRENT, BILLUSAGE, AMTUSAGE, and AMTTOTAL.</td>
+            </tr>
+            <tr>
+                <td>SO146</td>
+                <td>SOP Build Rental Printing Strings</td>
+                <td class="td_1">DY</td>
+                <td>Called by order and invoice printing routines with SO42$ as input.&#160; SO146$ contains various output fields used when printing rental line items.</td>
+            </tr>
+            <tr>
+                <td>SO420</td>
+                <td>SOP Rental Transaction Field</td>
+                <td class="td_1">XX</td>
+                <td>Called by View Manager (CDS550) for fields named SICNO, QTYRNT, QTYRET, 
+		DATEOUT, DATEIN, BILLDAYS, AMTADJ, and AMTTOTAL.</td>
+            </tr>
+        </table>
+        <p>&#160;&#160;&#160;</p>
+        <p><b>CDS037/38 Type External Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p><b>Utility Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p><b>Open Issues</b>
+        </p>
+        <table>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+    </body>
+</html>

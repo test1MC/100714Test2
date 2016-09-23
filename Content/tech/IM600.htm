@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>IM600 - Return Cost for PO</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">IM600</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Compute Cost for PO</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IM600">Last Revised: 08/03/07</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is used by Purchase Order Processing applications to obtain the default unit cost and related fields for an item.</p>
+        <p>Additional description.</p>
+        <p><code>CALL "IM600", Y$, IM01$, VENDNO$, DATE, QTY, IM600$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IM600 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM01$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Item Record from Item File.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>VENDNO$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional.&#160; Needed by IM600 routine if cost varies by vendor.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>DATE</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional.&#160; For date sensitive costs, this date would be passed to IM600 as the order date, so that it could compute the vendor cost as of that date.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>QTY</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional.&#160; Needed by IM600 routine if cost varies by quantity ordered.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>IM600$</code>
+                </td>
+                <td align="center">From</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td><code>COST</code>
+                            </td>
+                            <td>Unit Cost</td>
+                        </tr>
+                        <tr>
+                            <td><code>CU</code>
+                            </td>
+                            <td>Costing Unit, blank, C=per hundred, M=per thousand, etc.</td>
+                        </tr>
+                        <tr>
+                            <td><code>DISCPCT</code>
+                            </td>
+                            <td>If COST is further discounted by a percentage, the discount percentage would be returned here.</td>
+                        </tr>
+                        <tr>
+                            <td><code>FETCOST</code>
+                            </td>
+                            <td>Federal Excise Tax cost when applicable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>CORECOST</code>
+                            </td>
+                            <td>Core cost when applicable.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

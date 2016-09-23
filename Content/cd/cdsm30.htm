@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="11" MadCap:lastHeight="3897" MadCap:lastWidth="1017">
+    <head><title>Printer Control Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Printer &amp; Fax&#160;Management</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Printer Control Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 03/03/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Printer Control Maintenance is used to configure each printer to be used by Dynamo.&#160; 
+	It is used to add, change, and delete printer information.&#160; For servers 
+	running the Common Unix Printing System (CUPS)—such as Linux servers—
+	Printer Control Maintenance also adds, changes, and deletes the printer 
+	queues.</p>
+        <p>For servers that do not use cups, or printer queues used by other Linux applications such as the Firefox web browser, web-based email, and 
+	openoffice.org applications, the operating system print queues should be 
+	defined using the printer configuration application included with the 
+	operating system.</p>
+        <table>
+            <col />
+            <col style="width: 912px;" />
+            <tr>
+                <td>Printer ID</td>
+                <td>
+        The Printer ID can be up to 4 characters long.&#160; It must contain one or more letters.&#160; The following Printer ID's are reserved and cannot be used for other purposes.&#160; It is common to base the Printer ID on the person's office or department where the printer is located.
+
+        <table><tr><td>APDF</td><td>Create Adobe PDF File</td></tr><tr><td>DISP</td><td>Display. Prints on the screen in Dynamo.</td></tr><tr><td>EPDF</td><td>Email PDF as attachment</td></tr><tr><td>MAIL</td><td>Email</td></tr><tr><td>PFAX</td><td>Fax Modem</td></tr><tr><td>PFIL</td><td>Create Text (.txt) File</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Provide any description for the printer that makes it easily identifiable, such as <i>Color Laser in Accounting</i> or <i>Jim's office</i>. </td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Here the operate can identify the specific printer which determines the various commands that are sent to the printer.&#160; Use F2 to display the list of printer types that are available.&#160; Printer Types are maintained using Printer Type Maintenance on SMC menu.</td>
+            </tr>
+            <tr>
+                <td>Print Queue</td>
+                <td>This is the name that will appear in your print queue as a job is printing or pending. Dynamo typically submits print jobs to a print queue that is managed by the operating system.&#160; The print queue name can be upper or lower case and can be the same as the Printer ID if desired.&#160; It should not contain any spaces.</td>
+            </tr>
+            <tr>
+                <td>Device</td>
+                <td>Used with printers connected directly to a parallel or serial port on the server.&#160; An entry is only required when it is required to print directly to the printer without going through the operating system spooler.&#160; This is supported, but not recommended.&#160; Parallel devices are typically named /dev/lp0, /dev/lp1, etc.&#160; 
+		The special device name of /dev/tty is used for a 'slave' printer 
+		attached to a workstation.&#160; In a Windows environment, the Device 
+		should indicate the Server and Printer Share Name in the format 
+		//SERVER/SHARENAME.&#160; The SERVER should match the 'Full Computer 
+		Name' shown in the PC's 'My Computer' properties.&#160; The printer must 
+		be shared on the Windows PC using the Printer Properties.&#160; The 
+		SHARENAME should be all upper case and not include any blanks.</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>
+        The Connection describes how the printer is connected to the computer.<![CDATA[
+        ]]><table><col /><col /><col style="width: 814px;" /><tr><td align="center">J</td><td>Jet Direct</td><td>Ethernet based connection, either directly to the printer or to an external device called a print server.&#160; 
+			This method is used by all Hewlett Packard and many other printers 
+			and print servers.&#160; Print servers can have one or more connections for printers.&#160; The printer connections are typically parallel or USB, but some older print servers have serial connections.<br />&#160;<table><tr><td>Hostname or IP Address</td><td>This is the Unix/Linux hostname assigned to the IP 
+					address assigned to the printer or print server.</td></tr><tr><td>Port#</td><td>For printers, and the first printer connected to a print 
+					server, the port# is typically 9100.&#160; For print servers 
+					with multiple printer ports, the port numbers increment by 
+					1.</td></tr></table><p><img border="0" src="cdsm301.jpg" /></p></td></tr><tr><td align="center">L</td><td>LPD/LPR</td><td>Ethernet based connection, either directly to the printer, to an external print server, to a thin client such as an Axel workstation, or a print queue that is managed by another server.<table><tr><td>Hostname or IP Address</td><td>This is the Unix/Linux hostname assigned to the IP 
+					address assigned to the this client or print server.</td></tr><tr><td>Queue Name on Print Server</td><td>This is the Queue name assigned to the printer within 
+					the print server or thin client.&#160; For Axel 
+					workstations, the default Queue name is PARALLEL.&#160; For 
+					other print servers the Queue name is typically LPT1.&#160; 
+					Print servers that support multiple printer typically have 
+					print servers named LPT1, LPT2, LPT3, etc.</td></tr></table><p><img border="0" src="cdsm302.jpg" /></p></td></tr><tr><td align="center">R</td><td>Remote Cups Server</td><td><p>This option allows a computer with a UNIX-based operating system, such as Linux, to act as a print server.</p><table><tr><td>Hostname or IP Address</td><td><p>This is the Unix/Linux hostname assigned to the IP 
+					address assigned to the this client or print server.</p><p>&#160;</p></td></tr><tr><td>Queue Name on Print Server</td><td>This is the Queue name assigned to the printer within 
+					the print server or thin client.&#160; For Axel 
+					workstations, the default Queue name is PARALLEL.&#160; For 
+					other print servers the Queue name is typically LPT1.&#160; 
+					Print servers that support multiple printer typically have 
+					print servers named LPT1, LPT2, LPT3, etc.</td></tr></table><p><img src="cdsm303.JPG" /></p></td></tr><tr><td align="center">W</td><td>Windows PC</td><td>The printer is connected to a PC either by a Parallel or USB cable.<table><tr><td>Workgroup</td><td>The Dynamo server and all PC's are assigned to a 
+					Workgroup.&#160; Typically a small company will have a 
+					single Workgroup.&#160; You can view the Workgroup of the 
+					server using the Dynamo I menu option.&#160; PC's are 
+					assigned to a Workgroup using My Computer Properties.</td></tr><tr><td>Windows PC Name</td><td>The Windows PC Name is assigned using the Computer Name 
+					tab within My Computer Properties.&#160; Make the PC Name 
+					all capital letters with no spaces.</td></tr><tr><td>Windows Share Name</td><td>In order for Dynamo to print to a printer attached to a 
+					Windows PC, the printer must be shared.&#160; The Share Name 
+					is specified on the Sharing tab in the Printer Properties 
+					within the Windows Printers Folder.&#160; The Share Name 
+					should be all capital letters and contain no spaces.&#160; 
+					Note that the Share Name is not the same and the Printer 
+					name that you see when viewing the Windows printers folder.operator</td></tr><tr><td> Name</td><td>Some versions of Windows can limit access to a shared 
+					printer by requiring operator Name and Password.&#160; In some 
+					situations it is necessary to specify an operator Name of 
+					'administrator' in order to print to a printer attached to a 
+					Windows PC.</td></tr><tr><td>Password</td><td>Only required when printing to the printer attached to 
+					the Windows PC requires an operator Name and Password.</td></tr></table><p><img border="0" src="cdsm305.jpg" /></p></td></tr><tr><td align="center">P</td><td>Parallel Port on Server</td><td>Servers may have one or more parallel ports.<table><tr><td>Device</td><td>The Device for a parallel printer is typically in the 
+					format of /dev/lp0, /dev/lp1, /dev/lp2.</td></tr></table><p><img border="0" src="cdsm304.jpg" /></p></td></tr><tr><td align="center">S</td><td>Serial Port</td><td>Servers may have one or more serial ports as well as external 
+			serial ports on devices such as Digiboard concentrators.&#160; Since 
+			there is no standard for serial port cabling, and configuring the 
+			port varies with serial port manufacturer, connecting printers using 
+			a serial port is discouraged.&#160; These server settings must match 
+			the same settings specified in the printer itself.<table><tr><td>Baud Rate</td><td>The speed at which the computer sends that data to the 
+					printer.&#160; 1200, 2400, 9600, 19200, and 38400 bits per 
+					second are supported.</td></tr><tr><td>Bits/Character</td><td>8 bits with no parity is the most common setting, 
+					however 7 bits and odd parity was also popular many years 
+					ago.</td></tr><tr><td>Parity</td><td>None, odd, and even parity may be specified.</td></tr><tr><td>Flow Control</td><td>Hard flow control indicates that one pin on the serial 
+					cable is used by the printer to indicate that it is busy.&#160; 
+					Soft flow control indicates that xon/xoff characters are 
+					included in the data stream to control the flow of data to 
+					the printer.</td></tr></table></td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Banner</td>
+                <td>A banner is an extra page that is printed at the beginning of a job that makes it easier to separate multiple jobs  when retrieving them from the printer in a stack.</td>
+            </tr>
+            <tr>
+                <td>Auto Enable Queue</td>
+                <td>Some operating systems disable the print queue when it is not 
+		available.&#160; Normally this option is set to Y so that Dynamo can 
+		automatically enable a down print queue when a disabled printer is 
+		selected for printing.</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">E</td>
+                            <td>Enabled - printer is active</td>
+                        </tr>
+                        <tr>
+                            <td align="center">D</td>
+                            <td>Disabled - print is not active.&#160; It could be disabled because it is being repaired or temporarily disconnected.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">P</td>
+                            <td>Enabled Program Specific - this printer will not appear on list of printers, but it can be printed to by specific applications.&#160; This is the setting used for special purpose printers such as Eltron or Zebra label printers that cannot print general purpose reports.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Default Method</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">O</td>
+                            <td>Operating System Spooler - preferred setting which routes the print job to the operating system spooler for printing.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">S</td>
+                            <td>Dynamo Spooler - similar to the operating system spooler, but does not print the job automatically.&#160; It is selected when it is desired to save the report after it has been printed.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">D</td>
+                            <td>Direct to Device - only applicable when a Device is specified.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Default Archive</td>
+                <td>
+                    <p>Currently, offers support for archiving reports to Dynastore and DocStar for later access. Dynastore is a report archiving server developed by Excellware where documents printed using PDF, or files created in spreadsheet format by printing, are archived in the "cloud" (i.e. online). Once archived, reports can be retrieved or deleted using the Dynastore Reports option on the SMS menu. DocStar is a 3rd party provider of, among other services, online document archiving.</p>
+                    <table style="width: 100%;">
+                        <col style="width: 23px;" />
+                        <col style="width: 130px;" />
+                        <col />
+                        <tbody>
+                            <tr>
+                                <td>N</td>
+                                <td>Do not archive report</td>
+                                <td>No archiving will take place during the print session.</td>
+                            </tr>
+                            <tr>
+                                <td>S</td>
+                                <td>Dynastore - Standard access</td>
+                                <td>Archives reports using Dynastore with access constrained by standard permissions set for the company</td>
+                            </tr>
+                            <tr>
+                                <td>P</td>
+                                <td>Dynastore - Personal access only</td>
+                                <td>Archives reports using Dynastore with access confined only to the creator of the archive.</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>Dynastore - All may access</td>
+                                <td>Archives reports using Dynastore with no constraints on which users can access the archive.</td>
+                            </tr>
+                            <tr>
+                                <td>U</td>
+                                <td>Archive in User's Folder</td>
+                                <td>Archives reports in a folder defined by the user.</td>
+                            </tr>
+                            <tr>
+                                <td>O</td>
+                                <td>Archive in DocStar</td>
+                                <td>Archives reports using the 3rd party company, DocStar, and their network of cloud-based servers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <img src="cdsm306.JPG" style="width: 864px;height: 172px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Default CPI</td>
+                <td>Default CPI (Characters Per Inch) sets the number of printed characters that will fit into an inch on a printed page. Unlike choosing a font size, choosing a higher CPI here will condense the type allowing more characters to fit in a given space. Conversely, selecting a lower CPI will allow spread out the printed characters, allowing less to fit in a given space. Thus, if text is printing off the page, or is simply wider than desired, choose a higher CPI.</td>
+            </tr>
+            <tr>
+                <td>Timeout Seconds</td>
+                <td>
+        When printing directly to a printer that has a large printer buffer, the 
+		application may generate an error (error zero) while printing if the printer has 
+		remained in a busy state for more than 10 seconds.&#160; Should this 
+		occur, set this Timeout Seconds value to a value higher than 10, such as 
+		20 or 30 to reduce the frequency of this error.</td>
+            </tr>
+        </table>
+    </body>
+</html>

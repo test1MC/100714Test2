@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1201" MadCap:lastWidth="1225">
+    <head><title>Export Data</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Export Data</p>
+                </td>
+                <td align="right">Last Revised: 07/07/11</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to configure Dynamo data to be 
+exported.&#160; The data can be exported to tab delimited files or to a mysql database for use with the Excellware 
+data mining/data warehousing application called DynaMine.&#160; The data can be 
+exported interactively using this menu application, or as an automated 
+background process using Dynamo Tool CDS562.</p>
+        <p>Note:&#160; This application requires that the DynaMine Database name, Login 
+ID, and Password be specified using Company Information Maintenance (SMC) in 
+order to export data into the DynaMine database.&#160; These fields are not 
+required when exporting to tab-delimited files.</p>
+        <table>
+            <tr>
+                <td>Group</td>
+                <td>The Export Data Group is a 4 character field used to define a group 
+		of data files that will be exported at the same time.</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>A brief description of the Export Data Group.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p>The Files &amp; Fields view is used to describe what files and fields in each 
+file, are a part of the Export Data Group.&#160; A Group can include one or more 
+files.</p>
+        <p>&#160;</p>
+        <p>The Define DynaMine Tables option will create a DynaMine table for each file 
+in the Group.&#160; The table will be deleted if it already exists.&#160; There 
+will be no data in the table at the conclusion of this step.</p>
+        <p>The Export Data option is used to create the text file containing the 
+exported data, or to export the data into the DynaMine database.</p>
+        <p>&#160;</p>
+        <p>Some of the options shown have not yet been implemented.&#160; Specifically 
+the two options to export in XML format instead of csv format, and the option to 
+export selected records instead of the all records, are incomplete.</p>
+        <h5>DynaMine Setup</h5>
+        <p>DynaMine is a data mining/data warehouse application based on Oracle's MySQL 
+database, and other third party reporting tools such as those provided by 
+Jaspersoft.&#160; The steps to setup and configure DynaMine on a Linux server 
+are described below.&#160; The concepts would be similar for other operating 
+systems.</p>
+        <table>
+            <tr>
+                <th colspan="3">DynaMine Setup &amp; Configuration</th>
+            </tr>
+            <tr>
+                <td colspan="3">Login as root, then run the commands show below</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Install MySQL</td>
+                <td>Check to see if the mysql packages are installed: <code>rpm -q mysql 
+		mysql-server</code><br />		If not installed, you can install on RHEL 5 or newer using: <code>yum 
+		install mysql mysql-server</code><p>or on older versions: <code>up2date 
+		mysql mysql-server</code></p></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Configure MySQL daemon to run on reboot</td>
+                <td>Check to see if myslqd is run upon reboot: <code>chkconfig --list 
+		mysqld<br /></code>Configure to run at run-levels 3, 4, and 5: <code>chkconfig 
+		--level 345 mysqld on</code></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Start mysqld</td>
+                <td>Check to see if mysqld is running: <code>service mysqld status</code><br />		Start if required: <code>service mysqld start</code></td>
+            </tr>
+            <tr>
+                <td>4 </td>
+                <td>Create a database</td>
+                <td>List existing databases:<p><code>mysql</code></p><p><code>show databases;</code></p><p><code>quit;</code></p><p>Add new database:</p><p><code>create database [db_name];</code> Recommended db_name is 
+		dynamoXX where XX is the Dynamo Company Code.</p><p><code>quit;</code></p></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Create an operator</td>
+                <td>List operators:<p><code>mysql</code></p><p><code>use mysql</code></p><p><code>select operator,host from operator;</code></p><p><code>quit;</code></p><p>Add operator:</p><p><code>mysql</code></p><p><code>use mysql</code></p><p><code>grant all on [db-name].* to [operatorname]@localhost identified by 
+		'[password]';</code></p><p><code>flush privileges;<br />		quit;</code></p><p>For convenience, you can use dynamoXX for each of [db-name], 
+		[operatorname], and [password] fields if desired.</p></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>List tables</td>
+                <td><code>mysql</code>
+                    <p><code>use dynamoXX</code>
+                    </p>
+                    <p><code>show tables;</code>
+                    </p>
+                    <p><code>quit;</code>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Configure DynaMine</td>
+                <td>Use Company Information Maintenance (SMC) to specify the DynaMine 
+		database name, login ID, and password to use when exporting data.</td>
+            </tr>
+        </table>
+        <p>There are several tools available that can browse and configure a MySQL 
+database.&#160; These can be valuable to verify tables are configured properly, 
+data is exported, etc.&#160; SQLyog Community Edition available for free 
+download at <a href="http://www.webyog.com">http://www.webyog.com</a> is an 
+example of one very capable and useful product.</p>
+        <p />
+        <p />
+    </body>
+</html>

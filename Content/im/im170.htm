@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1764" MadCap:lastWidth="1186">
+    <head><title>Item Listing</title>
+    </head>
+    <body>
+        <p class="SectionName">file maintenance and listings</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Item Listing</p>
+                </td>
+                <td align="right">Last Revised: 02/19/14</td>
+            </tr>
+        </table>
+        <p>This program lists all of the  items entered into Dynamo based on an operator-specified range, sequence, and format. The operator must also specify whether or not to include items that have no barcode. </p>
+        <p>The possible formats are as follows:&#160;</p>
+        <p>
+            <img src="im170-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Item Listing Options</th>
+                </tr>
+                <tr>
+                    <td>1. All Items</td>
+                    <td>
+                        <ul>
+                            <li> item number </li>
+                            <li>item description</li>
+                            <li>package quantities</li>
+                            <li>weight</li>
+                            <li>barcode (where applicable)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2. Vendor Part Numbers</td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">vendor number and alpha code</li>
+                            <li style="font-weight: normal;">vendor part number</li>
+                            <li style="font-weight: normal;">cost </li>
+                            <li style="font-weight: normal;">unit of measure</li>
+                            <li style="font-weight: normal;">as of date </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3. Items with an Alternate Item</td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">alternate item number</li>
+                            <li style="font-weight: normal;">Alternate Item Usage Code</li>
+                            <li style="font-weight: normal;">transfer quantity</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4. Bar Codes</td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">whether or not item is tracked in inventory</li>
+                            <li style="font-weight: normal;">quantity</li>
+                            <li style="font-weight: normal;">barcode</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: normal;">5. Items with Track Inventory=N</p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">whether or not item is tracked in inventory</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;">6. Items with Track Inventory=N&#160;and inventory</span>
+                        </p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">whether or not item is tracked in inventory</li>
+                            <li style="font-weight: normal;">quantity on hand</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7. Discounted Items with inventory</td>
+                    <td>
+                        <ul>
+                            <li style="font-weight: normal;">item number</li>
+                            <li style="font-weight: normal;">item description</li>
+                            <li style="font-weight: normal;">discount date</li>
+                            <li style="font-weight: normal;">quantity on hand of the item </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Sample <a href="../examples/ItemListing.pdf">Item Listing</a>. </p>
+        <p>&#160;</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>To view Item Search Options Invoked with F5, click here </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>
+                    <img src="im170-2.png" style="width: 725px;height: 424px;" />
+                </p>
+                <table style="width: 100%;">
+                    <col style="width: 340px;" />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <td>Exclude Discontinued Items with no QOH</td>
+                            <td>Enable to exclude items that have no Quantity on Hand.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclude&#160;Items if&#160;Warehouse Qty Avail=0</td>
+                            <td>Enable to exclude items unavailable in the warehouse.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclude Items if Company&#160;Qty Avail=0</td>
+                            <td>Enable to exclude items unavailable at the company.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

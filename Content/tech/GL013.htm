@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="662" MadCap:lastWidth="1332">
+    <head><title>GL013 - Enter G/L Account#</title>
+    </head>
+    <body>
+        <p class="CalledName">GL013</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Enter G/L Account#</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=GL013">Last Revised: 12/07/08</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">GL013 is an X type external routine that is used to enter or display a General Ledger account number.&#160; The operator can enter an account#, enter a description, or touch F2 to select from a list.</p>
+        <p>Dynamo General Ledger account numbers are left justified in a zero filled field of 9 characters.</p>
+        <p><code>CALL "GL013", ERR=XXXX, MIN, MAX, COL, ROW, PROMPT$, GLACCTLEN, GLACCTNO$, { CTLVAL, OPT$, FMT$[ALL], GLCODE$ }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">GL013 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code>ERR=XXXX</code>
+                </td>
+                <td align="center">N/A</td>
+                <td>Error branch taken if:<br />      a) G/L Parameter Maintenance not yet done, or<br />      b) Unable to open G/L Accounts File XXGL10<br />      c) <code>OPT$</code> contains <code>DIS</code> or <code>FMT</code> and no G/L accounts have been entered</td>
+            </tr>
+            <tr>
+                <td align="left"><code>MIN</code>
+                </td>
+                <td align="center">To</td>
+                <td>0 indicates entry is optional<br />      non-zero indicates entry is required</td>
+            </tr>
+            <tr>
+                <td align="left"><code>MAX</code>
+                </td>
+                <td align="center">To</td>
+                <td>not used</td>
+            </tr>
+            <tr>
+                <td align="left"><code>COL</code>
+                </td>
+                <td align="center">To</td>
+                <td>entry column</td>
+            </tr>
+            <tr>
+                <td align="left"><code>ROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>entry row</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PROMPT$</code>
+                </td>
+                <td align="center">To</td>
+                <td>null: prompt will be 'Enter G/L Account#, Description, F2=Display'<br />      not null: prompt will be <code>PROMPT$</code> plus Description, F2=Display</td>
+            </tr>
+            <tr>
+                <td align="left"><code>GLACCTLEN</code>
+                </td>
+                <td align="center">From</td>
+                <td>returned length of <code>GLACCTNO$</code>, either zero or 9</td>
+            </tr>
+            <tr>
+                <td align="left"><code>GLACCTNO$</code>
+                </td>
+                <td align="center">To/From</td>
+                <td>default and entered value of G/L Account#</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CTLVAL</code>
+                </td>
+                <td align="center">From</td>
+                <td><code>CTL</code> value of entry, can be 0 (Enter), 2 (ArrowUp), 3 (ArrowDn), 4 (F4)</td>
+            </tr>
+            <tr>
+                <td align="left"><code>OPT$</code>
+                </td>
+                <td align="center">To</td>
+                <td><code>locnN</code> - no entry of location segment of G/L Account#<br /><code>locnI</code> - location segment must contain a valid location<br /><code>locnV</code> - location may vary by location, operator may enter L's in location position to allow the G/L account# to vary by location<br /><code>NEW, CG , DRV</code> - entry<br /><code>DIS</code> - display account# and description<br /><code>FMT</code> - format account# and description, see <code>FMT$[ALL]</code> below<br /><code>cr=CCRR</code> - display G/L account description <code>@(CC,RR)</code>.&#160; Note this expression may precede any of the other 
+		<code>OPT$</code> options shown.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>FMT$[ALL]</code>
+                </td>
+                <td align="center">From</td>
+                <td><code>FMT$[0]</code> - masked G/L account#, i.e., XXXX-XX<br /><code>FMT$[1]</code> - contains <code>GL08$</code> location record - <code>(1,4)</code>=Location, <code>(5,30)</code>=Description, <code>(35,10)</code>=Short Description<br /><code>FMT$[2]</code> - "0" - no entry, "1" - G/L account# entered</td>
+            </tr>
+            <tr>
+                <td align="left"><code>GLCODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Pass <code>GLCODE$</code> to limit entries to the list of valid G/L Account Numbers used during Cash Receipt Application (CRA), Purchase Order Processing (POP), Inventory Transaction Entry (ITE), etc.&#160; The list of valid accounts is maintained using G/L Interface Maintenance (GLU).</td>
+            </tr>
+        </table>
+    </body>
+</html>

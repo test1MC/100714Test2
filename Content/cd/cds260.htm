@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="855" MadCap:lastWidth="1479">
+    <head><title>Menu Control Maintenance</title>
+    </head>
+    <body>
+  &#160;
+
+  <p class="SectionName">System Management Software</p><table class="revision"><tr><td><p class="SectionTitle">Menu Control Maintenance</p></td><td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS260">Last Revised: 07/09/14</a></td></tr></table><p class="SectionDesc">This program is used to establish the security level 
+	and hotkey selections of all Dynamo applications.</p><h5>Security Levels</h5><p>Menu Control Maintenance is used to assign security levels to menus and 
+	selections on the menu.&#160;The security level will determine which operators 
+	are entitled to use the application or access the menu.</p><p>The security level is a number from 1 to 9 assigned to a menu and 
+	selections on the menu.</p><p>Operators are also assigned security levels, which can vary by company and 
+	menu code.&#160;Each Operator is assigned a security level of 0 to 9.&#160; 
+	Operators are assigned security levels using <i>Operator Information Maintenance</i> on the SMC menu.&#160;An operator will 
+	be granted access to any menu or application when the operator's security 
+	level is equal to or greater than the application's security level.</p><p>Consider the following security levels:</p><table><tr><th>Menu Code</th><th>Menu Description</th><th>Selection#</th><th>Selection Description</th><th>Security Level</th></tr><tr><td align="center">SOP</td><td>Sales Order Processing</td><td align="center">1</td><td>Sales Order Entry</td><td align="center">5</td></tr><tr><td align="center">&#160;</td><td>&#160;</td><td align="center">2</td><td>Sales Order Inquiry</td><td align="center">1</td></tr><tr><td align="center">&#160;</td><td>&#160;</td><td align="center">3</td><td>Invoice Printing</td><td align="center">4</td></tr><tr><td align="center">&#160;</td><td>&#160;</td><td align="center">4</td><td>Invoice Update</td><td align="center">9</td></tr><tr><td align="center">A/R</td><td>Accounts Receivable</td><td align="center">1</td><td>Cash Receipts Entry</td><td align="center">6</td></tr><tr><td align="center">&#160;</td><td>&#160;</td><td align="center">2</td><td>Cash Receipts Journal</td><td align="center">6</td></tr><tr><td align="center">&#160;</td><td>&#160;</td><td align="center">3</td><td>Cash Receipts Update</td><td align="center">7</td></tr></table><p>And operator security levels, specified in <b>Operator Information Maintenance</b>:</p><table><tr><th>Operator ID</th><th nowrap="">Menu</th><th nowrap="">Security Level</th><th>Note</th></tr><tr><td>sally</td><td align="center">SOP</td><td align="center">1</td><td>permits access to Sales Order Inquiry on SOP menu, but not to any 
+		other application on the SOP menu, as they each have a security level 
+		greater than 1.</td></tr><tr><td>&#160;</td><td align="center">A/R</td><td align="center">9</td><td>permits access to all applications on A/R menu</td></tr><tr><td rowspan="2">kathy</td><td align="center">SOP</td><td align="center">8</td><td>permits access to all functions on SOP menu, except Invoice Update 
+		which requires a security level of 9.</td></tr><tr><td align="center">A/R</td><td align="center">6</td><td>permits access to Cash Receipts Entry and Journal, but not Update.</td></tr><tr><td rowspan="2">bill</td><td align="center">SOP</td><td align="center">0</td><td>the zero indicates Bill is not permitted to use any program in Sales Order Processing</td></tr><tr><td align="center">A/R</td><td align="center">7</td><td>permits access to all selections on the A/R menu with a security level 
+		of 7 or lower.</td></tr></table><p>If an operator attempts to access a menu or selection for which they are 
+	not authorized, a message will be displayed on the terminal.</p><h5>Hot Key</h5><p>The Hotkey code is used to indicate that a program is to be included on the hotkey menu. 
+	The Hotkey menu is displayed whenever an operator touches the F1 key.&#160;It allows the operator to quickly run another application and upon exiting the 
+	application, return back to the original application.</p><p>All operators share the same company-wide Hotkey menu.&#160;However, the 
+	operator will not be permitted to run the application if restricted based on 
+	their security level.</p><p>The maximum Hotkey depth is limited by operator using the setting in Operator 
+	Info Maintenance.</p><p>The Hotkey code is a single letter, number or special character such as * 
+	or !. It also controls the sequence that the program selection will appear on the Hotkey menu.</p><p>If two applications for the company are assigned the same Hotkey code, 
+	then the second one encountered will be changed.&#160; If the Hotkey code is 
+	an upper-case alpha, and the lower-case code has not yet been assigned, then 
+	the second application will be assigned the lower case letter.&#160; In 
+	other cases the Hotkey code assigned will be the next character higher than 
+	the code assigned here.&#160; For example, if three applications each 
+	specify a Hotkey code of P, then the hotkey menu will have selections for P, 
+	p, and Q.&#160; The best practice is to assign each application a unique 
+	upper-case or numeric Hotkey code.</p><p>Dynamo uses Hotkey code of Y to access the menu so that any application 
+	may be selected, and Hotkey code of Z to print a screen image.</p></body>
+</html>

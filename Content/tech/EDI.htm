@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>EDI ANSI X12 Envelope Specifications</title>
+ 
+    </head>
+    <body>
+        
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">EDI ANSI X12 Envelope Specifications</p>
+                </td>
+                <td align="right">Last Revised: 11/28/07</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo applications should use the following mapping to create the envelope records used in the creation of ANSI X12 data files.&#160; The XXED00 record is used to maintain Sender Information and counters.&#160; The XXED01 file is used to maintain information about each EDI trading partner.</p>
+        <table>
+            <tr>
+                <th colspan="3">ISA Interchange Control Header</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Authorization Info Qualifier</td>
+                <td><code>"00"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Authorization Information</td>
+                <td><code>FILL(10)</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Security Info Qualifier</td>
+                <td><code>"00"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Security Information</td>
+                <td><code>FILL(10)</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Interchange Sender ID Qualifier</td>
+                <td><code>"12"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Interchange Sender ID</td>
+                <td><code>ED00.ISA6$</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Interchange Receiver ID Qualifier</td>
+                <td><code>ED01.ISA7$</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>Interchange Receiver ID</td>
+                <td><code>ED01.ISA8$</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td>Interchange Date</td>
+                <td>Current Date in YYMMDD format, <code>DATE(0:"%Yz%Mz%Dz")</code></td>
+            </tr>
+            <tr>
+                <td align="center">10</td>
+                <td>Interchange Time</td>
+                <td>Current Time in HHMM military format, <code>DATE(0,TIM:"%Hz%mz")</code></td>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td>Interchange Standard ID</td>
+                <td><code>"U"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">12</td>
+                <td>Interchange Version ID</td>
+                <td><code>ED01.ISA12$</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">13</td>
+                <td>Interchange Control#</td>
+                <td><code>ED00.ISA13:FILL(9,"0")</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">14</td>
+                <td>Acknowledgement Requested</td>
+                <td><code>"0"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">15</td>
+                <td>Test Indicator</td>
+                <td><code>ED01.ISA15$</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">16</td>
+                <td>Sub-element Separator</td>
+                <td><code>"&gt;"</code>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">GS Functional Group Header</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Functional ID Code</td>
+                <td><code>"IN"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Application Sender's Code</td>
+                <td><code>CVS(ED00.ISA6$,2)</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Application Receiver's Code</td>
+                <td><code>CVS(ED01.ISA7$,2)</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Data Interchange Date</td>
+                <td>Current Date in CCYYMMDD format, <code>DATE(0:"%Yl%Mz%Dz")</code></td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Data Interchange Time</td>
+                <td>Current Time in HHMMSS military format, <code>DATE(0,TIM:"%Hz%mz%sz")</code></td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Data Interchange Control#</td>
+                <td>Sequential Counter of each GS record, starting with 1, unmasked</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Responsible Agency Code</td>
+                <td><code>"X"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>Version ID Code</td>
+                <td><code>CVS(ED01.GS8$,2)</code>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">ST Transaction Set Header</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Transaction Set ID Code</td>
+                <td><code>"810"</code>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Transaction Set Control#</td>
+                <td>Sequential Counter of each GS record, starting with 1, unmasked</td>
+            </tr>
+            <tr>
+                <th colspan="3">SE Transaction Set Trailer</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Number of Included Segments</td>
+                <td>Number of records written starting with the ST record and including this SE record</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Transaction Set Control#</td>
+                <td>same as ST#2</td>
+            </tr>
+            <tr>
+                <th colspan="3">GE Functional Group Trailer</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Number of Included Sets</td>
+                <td>Number of GE records written including the current GE record</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Data Interchange Control#</td>
+                <td>same as GS#6</td>
+            </tr>
+            <tr>
+                <th colspan="3">ISE Interchange Control Trailer</th>
+            </tr>
+            <tr>
+                <th>Field#</th>
+                <th>Description</th>
+                <th>Mapping</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Number of Included Functional Groups</td>
+                <td>Number of IEA records written including the current IEA record</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Interchange Control#</td>
+                <td>same as ISA#13</td>
+            </tr>
+        </table>
+    </body>
+</html>

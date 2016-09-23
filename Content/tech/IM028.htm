@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>IM028 - Update Item Activity by Whs</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">IM028</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Update Item Activity by Whs</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IM028">Last Revised: 07/08/08</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is called during SOP Invoice Update and TOP Receipts Update to record shipment data in file XXIM28.</p>
+        <p>Additional description.</p>
+        <p><code>CALL "IM028", Y$, ITEMNO$, WHS$, QTY, { SALES, COST, TYPE$, JDATE }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IM028 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>ITEMNO$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Item#</td>
+            </tr>
+            <tr>
+                <td align="left"><code>WHS$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Warehouse that shipped item</td>
+            </tr>
+            <tr>
+                <td align="left"><code>QTY</code>
+                </td>
+                <td align="center">To</td>
+                <td>Quantity Shipped</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SALES</code>
+                </td>
+                <td align="center">To</td>
+                <td>Used for SOP transactions only, indicates the sales amount for item shipped</td>
+            </tr>
+            <tr>
+                <td align="left"><code>COST</code>
+                </td>
+                <td align="center">To</td>
+                <td>Used for SOP transactions only, indicates the cost of sales amount for item shipped</td>
+            </tr>
+            <tr>
+                <td align="left"><code>TYPE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">SOP or null</td>
+                            <td>Transaction will update SOP fields in XXIM28 file</td>
+                        </tr>
+                        <tr>
+                            <td align="center">TOP</td>
+                            <td>Transaction will update TOP fields in XXIM28 file</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>JDATE</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">0 or not passed</td>
+                            <td>Transaction will use current sales month and year from XXCW00 parameter file to determine year and month that the transaction should be posted to.&#160; This may differ from the transaction date because the sales analysis month may end prior to the last calendar date of the month as is the practice in many industries including plumbing supply, auto parts, etc.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">valid julian date</td>
+                            <td>Transaction will use the year and month based on the <code>JDATE</code> passed.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

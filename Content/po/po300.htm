@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="10" MadCap:lastHeight="4714" MadCap:lastWidth="966">
+    <head><title>Purchase Order Receiving</title>
+    </head>
+    <body>
+        <p class="SectionName">purchase order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Purchase Order Receiving</p>
+                </td>
+                <td align="right">Last Revised: 07/13/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">In Purchase Order Receiving, the operator can&#160;confirm when ordered items are received. Once the receipt is updated, inventory quantities-on-hand will be adjusted accordingly and the corresponding purchase order will be closed. </p>
+        <p>&#160;</p>
+        <p>
+            <img src="po300-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <p>Once a purchase order receipt number has been selected, a list of options displays. Each of these options is marked with an asterisk '*' or a blank:</p>
+            <ul>
+                <li>An asterisk '*' indicates there is data available to display for this option. </li>
+                <li>A blank next to an option indicates there is no data to display.</li>
+            </ul>
+        </p>
+        <h5>Receipt Heading</h5>
+        <p>
+            <img src="po300-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Choosing this option will allow the operator to view the main display of this application. You can edit any of the numbered fields. The rest are populated automatically. </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td colspan="2">&#160;</td>
+                </tr>
+                <tr>
+                    <td>Receipt#</td>
+                    <td>
+                        <p>If the receipt has already been created and you want to edit it:</p>
+                        <ol>
+                            <li>Enter the receipt# or search for it using the F2 key&#160;OR<ul><li>search for it using F5 key (select by vendor)&#160;OR</li><li>search for it using F6 key (enter PO#) OR</li><li>search for it using F7 key (enter warehouse) </li></ul></li>
+                            <li>The rest of the previously entered information will automatically fill in.<br /></li>
+                        </ol>
+                        <p>&#160;</p>
+                        <p>When creating a new receipt:</p>
+                        <ol>
+                            <li>Press the space bar.</li>
+                            <li>Press "Y" to create a new receipt.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Received</td>
+                    <td>Enter the date the shipment was received and/or signed for. Purchase order receipts may not always be created on the same day the item arrives. If not, make sure to enter the correct receipt date for accurate record keeping and future reference.</td>
+                </tr>
+                <tr>
+                    <td>Warehouse</td>
+                    <td>Select the warehouse where shipment was received. The warehouse cannot be changed on an updated receipt. If the warehouse was entered incorrectly—which puts inventory in the wrong warehouse—simply re-open the receipt, change the quantities received to 0 for all affected items, and then update the receipt once again. Next, create a new receipt for the purchase order and specify the correct warehouse and quantities received. Once the new receipt is updated, inventory quantities and location should then be accurate.</td>
+                </tr>
+                <tr>
+                    <td>Receiving Method</td>
+                    <td>
+                        <p>Indicate the method used to count the received items:</p>
+                        <ul>
+                            <li>Workstation</li>
+                            <li>Workstation Scanner</li>
+                            <li>Hand Held Computer Scanner</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendor's Packing Slip#</td>
+                    <td>If a packing slip with a number on it was included with the shipment, indicate that number here.</td>
+                </tr>
+                <tr>
+                    <td>Purchase Orders</td>
+                    <td>Specify which purchase orders had items that have been received. Multiple purchase orders can be on one receipt. To delete a purchase order number from the list, press Enter on the number and then press "D." </td>
+                </tr>
+                <tr>
+                    <td>Vendor#</td>
+                    <td>(Populated automatically.) The vendor associated with the purchase order will display here.</td>
+                </tr>
+                <tr>
+                    <td>Received Value</td>
+                    <td>(Populated automatically.) The cost of all the items received will display here.</td>
+                </tr>
+                <tr>
+                    <td>Disc/Freight/Rebate</td>
+                    <td>(Populated automatically.) If a discount, freight charges, or a rebate apply to this order and were negotiated ahead of time, this field will display them. </td>
+                </tr>
+                <tr>
+                    <td>Total Line Items</td>
+                    <td>(Populated automatically.)&#160;This field indicates how many line items are on the associated purchase orders. This does not include the quantity of each line item. </td>
+                </tr>
+                <tr>
+                    <td>Line Items Received</td>
+                    <td>(Populated automatically.) This field indicates the amount of line items that have been received. This does not include the quantity of each line item.</td>
+                </tr>
+                <tr>
+                    <td>Total Quantity Received</td>
+                    <td>(Populated automatically.) This field indicates the amount of all items received. This takes into account the quantity of each line item received. </td>
+                </tr>
+                <tr>
+                    <td>Open/Closed</td>
+                    <td>(Populated automatically.) A purchase order receipt is open when it has not been updated. To update a receipt, use the "Update/Delete/Re-Open Receipt" option. Once the receipt has been updated, this field will read "Closed."&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Receipt Detail</h5>
+        <p>
+            <img src="po300-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Choosing this option allows you to specify which items were received from the purchase order(s) indicated in the receipt heading. Once you have received items here, you can not delete them from their associated purchase order. If you un-receive an item, you can delete it from the purchase order. Keep in mind also that there may be multiple receipts for a given PO. This would be the case, for example, if an item was back-ordered and the rest of the shipment what shipped separately. In this event, accurately enter what was received and update the receipt. Once the rest of the shipment arrives, a new receipt can be created to receive the rest of the items until the PO is received in full.</p>
+        <h5>Print Options</h5>
+        <p>
+            <img src="po300-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p style="font-weight: normal;">In an increasingly paperless business world, many companies may choose not to print any items here since open purchase orders can easily be viewed in Purchase Order Inquiry. However, upon selecting Print&#160;Options, you have a few choices of items to print if deemed necessary:</p>
+        <p style="font-weight: normal;">&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 253px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Item#&#160;(all items on PO)</td>
+                    <td>In addition to  all the details of the receipt heading, this option prints all items on the PO with their corresponding quantities ordered and quantities received. </td>
+                </tr>
+                <tr>
+                    <td>Item#&#160;(received items)</td>
+                    <td>In addition to  all the details of the receipt heading, this option prints only items on the PO that were actually received along with their corresponding quantities ordered and quantities received. </td>
+                </tr>
+                <tr>
+                    <td>Item# (variance items)</td>
+                    <td>In addition to  all the details of the receipt heading, this option prints only items on the PO that differ in their quantities ordered and quantities received. This variance would occur anytime a partial shipment is received or the vendor sent the wrong amount.</td>
+                </tr>
+                <tr>
+                    <td>PO# with costs</td>
+                    <td>In addition to  all the details of the receipt heading, this option prints  the PO  quantities ordered and quantities received for all PO&#160;items as well as the total cost of all received items. </td>
+                </tr>
+                <tr>
+                    <td>Receiving Document (sample <a href="../examples/POReceivingDocument.pdf">here</a>)</td>
+                    <td>Receiving documents might be useful, for example, if provided to a warehouse so that they can compare what was expected to be received to what was actually received at the time of delivery. These documents may also provide a method of maintaining accountability and internal documentation as to the details of a received delivery.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h5>Timestamps</h5>
+        <p>
+            <img src="po100-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This option allows the operator to see what changes have been made to the receipt, when they were made, and who they were made by. These records can prove useful during many situations such as tracking down misplaced deliveries to investigating shrinkage issues.</p>
+        <h5>Vendor Invoices</h5>
+        <p>
+            <img src="po300-6.png" />
+        </p>
+        <p>Choosing this option allows the operator to view any reconciled invoices for this purchase order. This information will be available once an invoice has been entered into A/P Invoice Data Entry and associated with the same purchase order number. </p>
+        <h5>Update/Delete/Re-Open Receipt</h5>
+        <p>After recording the receipt of all items, the receipt can be updated using this option. Once this has been completed, a vendor invoice can be entered into Accounts Payable with the associated purchase order and receipt number. If the receipt has been updated but has not been reconciled with an Accounts&#160;Payable invoice, this option will prompt Dynamo to ask the operator if the receipt needs to be re-opened for editing. If it has already been associated with an Accounts Payable invoice, you can no longer change anything on the receipt, but you can still view the Receipt Heading, Detail,&#160;Timestamps, and Vendor Invoices. You can also still utilize Print Options.</p>
+        <p>As mentioned previously, the warehouse cannot be changed on a receipt that has already been updated. If the warehouse was entered incorrectly—which puts inventory in the wrong warehouse—simply re-open the receipt, change the quantities received to 0 for all affected items, and then update the receipt once again. Next, create a new receipt for the purchase order and specify the correct warehouse and quantities received. Once the new receipt is updated, inventory quantities and location should then be accurate.</p>
+        <p style="font-weight: normal;">A receipt can only be deleted prior to receiving any items. </p>
+        <p style="font-weight: normal;">&#160;</p>
+        <p style="font-weight: normal;">To view a listing of these receipts, go to <a href="po250.htm">Purchase Order Receipts Listing</a>.</p>
+        <p style="font-weight: normal;">&#160;</p>
+        <h3><a href="https://www.youtube.com/watch?v=EPerl_QLJtA" target="_blank">Video Documentation</a>
+        </h3><iframe width="560" height="315" src="https://www.youtube.com/embed/EPerl_QLJtA" frameborder="0" allowfullscreen="1"></iframe>
+        <p>&#160;</p>
+        <p>
+            <br />
+        </p>
+        <p style="font-weight: normal;">&#160;</p>
+    </body>
+</html>

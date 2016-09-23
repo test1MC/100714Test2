@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>PO301 - Select PO Receipt</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">PO301</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">POP Select PO Receipt</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=PO301">Last Revised: 05/29/08</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Routine called to return PO Receipt heading record based on operator entering a receipt#, selecting from a list, or a new receipt heading record.</p>
+        <p><code>CALL "PO301", Y$, PO301$, PO50$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">PO301 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO301.TYPE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Display All Receipts</td>
+                        </tr>
+                        <tr>
+                            <td align="center">O</td>
+                            <td>Display Open Receipts only</td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>Enable option to create new PO receipts</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO301.COL</code>
+                </td>
+                <td align="center">To</td>
+                <td>Column number on display where receipt# is entered/displayed.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO301.ROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>Row number on display where receipt# is entered/displayed.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO301.VENDNO</code>
+                </td>
+                <td align="center">To</td>
+                <td>If passed as non-blank, then PO301 will restrict entry and selection to receipts linked to this vendor.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO50$</code>
+                </td>
+                <td align="center">From</td>
+                <td>Selected PO Receipt heading record.&#160; <code>PO50.RCPTNO</code> will be zero if no record is selected.</td>
+            </tr>
+        </table>
+    </body>
+</html>

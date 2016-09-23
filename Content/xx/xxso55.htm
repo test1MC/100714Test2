@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2434" MadCap:lastWidth="1186">
+    <head><title>Payment Method Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts Receivable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Payment Method Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=XXSO55">Last Revised: 08/18/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to maintain Payment Method Codes used during entry of Payments in Sales Order Processing, and Point of Sale Order Processing.&#160;Payment Method Codes are used at the point of sale to identify the payment method(s) being applied to an order. Common payment methods include check, credit card, gift card, PayPal, cash (or cash equivalent), though the list of options is user-maintained and can therefore be customized to fit each company's specific requirements.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="xxso55-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>A list of typical Payment Methods are shown below.</p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <td nowrap="nowrap"><a name="PMTMETH" id="PMTMETH"></a>Payment Method</td>
+                <td>A single letter or number used to identify the Payment Method.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="DESC" id="DESC"></a>Description</td>
+                <td>Description of the Payment Method displayed during payment selection in SOP and POS.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="SEQ" id="SEQ"></a>Display Sequence</td>
+                <td>A three digit number from 001 to 255 that controls the sequence that the payment methods are displayed during payment selection.&#160;The lowest Display Sequence numbers appear first.&#160;A best practice is to assign your most popular payment methods with the lowest Display Sequence Number.&#160;Payment Methods with a Display Sequence of 000 are excluded from the list of payment methods during payment selection.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="BLPH" id="BLPH"></a>Branches</td>
+                <td>Leave blank to allow all branches to use this payment method.&#160;If this payment method should be limited for use by selected branches, then specify the branches that may use this Payment Method.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap"><a name="TYPE" id="TYPE"></a>Payment Type</td>
+                <td>Describes the type of payment
+<table><tr><th>Type</th><th nowrap="nowrap">Description</th><th>Examples</th></tr><tr><td align="center">0</td><td nowrap="nowrap">Cash</td><td>Dollars, coins, etc. </td></tr><tr><td align="center">1</td><td nowrap="nowrap">Check</td><td>Personal and business checks</td></tr><tr><td align="center">2</td><td nowrap="nowrap">Credit Card</td><td>All credit and debit cards</td></tr><tr><td align="center">3</td><td nowrap="nowrap">Gift Card</td><td><p>Dynamo Gift Cards</p><p><img src="xxso55giftcards.png" style="width: 725px;height: 424px;" /></p><p>Gift cards are an optional payment type that must be fully or partially serialized so they can be independently tracked. An item number must be set up in Item Maintenance for selling and loading gift cards.   The associated product class for the gift card item number must be type O Other (Non Sales, Gift Cards).</p></td></tr><tr><td align="center">4</td><td nowrap="nowrap">Other - deposited in bank</td><td>Money Orders, Traveler's Check;&#160;these payment types are included when making a deposit during Cash Drawer Balancing.</td></tr><tr><td align="center">5</td><td nowrap="nowrap">Other - auto deposited in bank</td><td>PayPal, Guaranteed checks, Telechecks, 3rd party financing</td></tr><tr><td align="center">6</td><td nowrap="nowrap">Other - not deposited</td><td>Manufacturer's Coupon</td></tr><tr><td align="center">7</td><td nowrap="nowrap">From/To another Sales Order</td><td>Used when a single payment, such as a check, or even a credit card, is used to pay for multiple orders taken at the same time</td></tr><tr><td align="center">8</td><td nowrap="nowrap">Balance on account (A/R)</td><td>Use of unapplied credit balance on account</td></tr><tr><td align="center">9</td><td nowrap="nowrap">Paid out</td><td>Cash paid out at a store uses Payment Method 'p' which is reserved for this use.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Bank Code</td>
+                <td>Applies to Payment Type 2 (Credit Card) and 5 (Other - auto deposited). Specify the bank account where the credit cards or other automated deposits are deposited. Separate Credit Card accounts can be created to accommodate situations where deposits are made to more than one bank account.  Separate accounts are occasionally needed at companies who have multiple branches depositing to individual accounts, or when Visa/MasterCard/Discover/Amex are deposited into separate accounts. Bank Codes can be modified using Bank Code Maintenance (APU).</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Card&#160;Processor</td>
+                <td>
+                    <img src="xxso55-3.png" style="width: 725px;height: 424px;" />
+                    <p>For credit cards, the operator will need to specify if the processing is integrated, and if so, which gateway is being used. If you have different cards that use different gateways, you can select a different gateway for each card. For instance, in the image above, the non-integrated choice was selected for the American Express card. It was enabled for American Express by typing "Y" for that choice and "N" for Visa, MasterCard, and Discover. If you use the First Data Global Gateway e4 for your Discover card, you would select your Discover card payment method and enable it with "Y"&#160;for Discover and "N" for all other choices. </p>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">G/L Account#</td>
+                <td>Applies to Payment Type 3 (Gift Card) and 6 (Other - non deposited).&#160;For Gift Cards, specify the G/L Account used for unredeemed gift cards.&#160;This account should be a liability type account and payments made using a gift card will debit this account.&#160;For Other - non deposited, specify the G/L account# to be debited when a payment is made using this payment method.&#160;For example, a manufacturers coupon payment method might debit a manufacturers coupons accepted asset account.&#160;This account would be offset by payments received from the manufacturer during Cash Receipts Application, or possibly during A/P Invoice Entry upon receipt of a credit memo from a vendor.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

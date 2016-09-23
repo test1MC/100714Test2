@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1052" MadCap:lastWidth="1249">
+    <head><title>Export Accounts Payable Data</title>
+    </head>
+    <body>
+        <p class="SectionName">accounts payable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Export Accounts Payable Data</p>
+                </td>
+                <td align="right">Last Revised: 01/03/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo Accounts Payable provides an export tool to export data into a Tab Delimited file that can be used in a spreadsheet program — Microsoft Excel, for example.</p>
+        <p>
+            <img src="ap430-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The Export Accounts Payable Data Screen</h6>
+        <p><a href="#1%20Invoices">1 Invoices</a>
+            <br /><a href="#2%20Invoice%20Detail">2 Invoice Detail</a>
+            <br /><a href="#3%20Payments">3 Payments</a>
+            <br /><a href="#4%20Payment%20Detail">4 Payment Detail</a>
+        </p>
+        <p>Invoices, Invoice Detail, Payments and Payment detail can be exported directly from Dynamo.&#160;</p>
+        <p>When the export is complete, Export Accounts Payable Data screen reports the name and location of the exported file so that it can be opened in a spreadsheet.&#160; Normally, the file is named export/your company codeap12.tab.&#160;</p>
+        <h6>Note: .tab is the extension for a Tab Delimited file, which is the type of file this utility creates.</h6>
+        <table>
+            <tr>
+                <th colspan="2">Export Accounts Payable Data</th>
+            </tr>
+            <tr>
+                <td><a name="1 Invoices"></a>1 Invoices</td>
+                <td>
+        This option exports every invoice in the system, whether paid or not. The exported file includes a sequential voucher number, a PO number, a receipt sequence number (indicating this is the first, second, etc. receipt against this PO), a Vendor Number, the alpha sort for the Vendor, the Terms Code, Invoice Number, Invoice Date, Invoice Amount, Due Date, Discount Amount, Discount Date, the Note or Reference, and On-Hold Indicator, a Payment Method, 1099 information, the Batch type and Number, Date Paid, and Location Number if you are in a multi-location environment.
+
+        <p>Refer to Accounts Payable Invoice Data Entry on the A/P Menu for definitions of these fields.</p></td>
+            </tr>
+            <tr>
+                <td><a name="2 Invoice Detail"></a>2 Invoice Detail</td>
+                <td>
+        The exported file includes the sequential voucher number; a sequence number; a nine digit, left justified General Ledger Account number; and the amount.&#160;
+
+        <h6>Note: an invoice distributed to multiple General Ledger Accounts will have multiple listings in this file.</h6></td>
+            </tr>
+            <tr>
+                <td><a name="3 Payments"></a>3 Payments</td>
+                <td>
+        All payments on file will be exported to a file named xxap22.tab in the export directory.&#160;
+
+        <p>This file includes a sequential payment number, the Vendor Number, and the Vendor's Alpha Sort code. The Sequence Number (what sequence the payment is on the Payment Registry), the Payment Method, the Check Date or Payment Date, the Check Number (if paid by check), the gross amount of the check, Cash Discount taken, the Net Amount of the check, Status Code, Bank Code, Batch Type, the four digit sequential Batch Number, and an Indicator of whether the check has cleared or not.</p></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a name="4 Payment Detail"></a>4 Payment Detail</p>
+                </td>
+                <td>For each payment, this option lists the Sequence Number with a reference to the vouchers that were paid and the Gross, Discount, and Net amounts.&#160; For every payment, there will always be at least one payment detail record. With the Voucher Number, you can reference the Invoice file for the Invoice Number and Date, etc.</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">&#160;</p>
+        <p class="SectionDesc">&#160;</p>
+    </body>
+</html>

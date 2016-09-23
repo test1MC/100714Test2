@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3067" MadCap:lastWidth="913">
+    <head><title>Import Pricing</title>
+    </head>
+    <body>
+        <p class="SectionName">Cost &amp; Price Maintenance &amp; Listings</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Import (Vendor) Pricing</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=IM672">Last Revised: 01/22/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to automatically and quickly import price information into Dynamo using a file—as opposed to manually entering price changes—using either Item Maintenance or Batch Pricing Entry.&#160; This application only adds pricing records for existing items; it does not add new items to Dynamo.&#160; This application is very flexible and can be used with most data files provided by vendors or by creating a compatible file using a spreadsheet application.</p>
+        <p class="SectionDesc">Import Pricing will also schedule price labels to print when an item's selling price changes provided that the Item Price Labels option is set to Y. You can enable this setting by typing CWP at a Dynamo prompt to reach Company Wide Parameters and then follow Dynamo Parameter Maintenance/Dynamo Options/Enable Item Price Labels. When the item's price changes, Dynamo will schedule new price labels to print for each item, at each warehouse. The number of labels printed is based on the quantity of the item in inventory.</p>
+        <p>Outline of steps</p>
+        <ol>
+            <li>Obtain a data file from vendor.&#160; The ideal data file is a native spreadsheet file such as a file in Microsoft Excel format, or a tab or comma delimited file.&#160; Any file that can be opened by your spreadsheet application can be used.&#160; Spreadsheet programs such as Microsoft Excel, Google Sheet, OpenOffice Calc, LibreOffice Calc, and others can be used.</li>
+            <li>Open the data file using your spreadsheet application.&#160; The best files have a single row with column headings, followed by additional rows for each item.&#160; Delete any other heading rows and all rows that do not contain item information such as notes or comments.</li>
+            <li>The Dynamo Import Pricing application looks up the Dynamo Item# using either the Vendor Part Number, the UPC Bar Code Number, or a manufacturer's number.&#160; The file must have a column for one or more of these three numbers.&#160; In some cases, the Vendor Part Number on the file may differ slightly from the Vendor Part# stored in Dynamo.&#160; For example, there could be a prefix or suffix or hyphens or other characters contained on one but not the other.&#160; The best practice would be to first modify the Dynamo Vendor Part# to match exactly the Vendor Part# field in the import file.</li>
+            <li>If the spreadsheet file has a column with the UPC bar code number, then the UPC column should either contain all 12 digits in the bar code number, or the first 11 digits, leaving off the check digit.&#160; If the UPC bar code number does not include the first 6 digits which represent the manufacturer, then create a new column appending the manufacturers digits to the bar code so that it contains 11 or 12 digits.</li>
+            <li>In some cases there is no pricing or costing unit field.&#160; A Pricing and Costing field is not required unless the prices or costs are per hundred or per thousand.&#160; If all costs are per hundred or per thousand, and there is no costing unit column, then add a column and copy a "C" or "M" to each row in the spreadsheet.</li>
+            <li>Remove all formatting for the cost and list price columns so that there is no comma or dollar sign.</li>
+            <li>Although the file from the vendor will never contain the Dynamo Formula Code, you may add a column to the spreadsheet if you would like to import a Formula Code.&#160; Note that you do have the option to retain any existing Formula Code, so you only need to add the column when you want to set or change any existing Formula Code for the item.&#160;</li>
+            <li>Next, identify the column letters from the spreadsheet, used to store the various fields that can be used.&#160; Dynamo Import Pricing can use the following fields, although all fields are optional, except at least one of the first 3 fields are required in order to lookup the Dynamo Item#.
+<table><tr><td>UPC</td><td>UPC bar code number</td></tr><tr><td>Vendor Part Number</td><td>Can be the same or different from the Dynamo Item#</td></tr><tr><td>Manufacturer's Part Number</td><td>Only needed when different from vendor's part#</td></tr><tr><td>List/Sell Price</td><td>The list/sell price for the item.</td></tr><tr><td>Pricing Unit</td><td>C=per hundred, M=per thousand, etc.</td></tr><tr><td>Cost</td><td>PO Cost</td></tr><tr><td>Costing Unit</td><td>C=per hundred, M=per thousand, etc.&#160; Can differ from Pricing Unit</td></tr><tr><td>Formula Code</td><td>Code that calculates the selling price of the item. </td></tr></table></li>
+            <li>Once the spreadsheet file has been edited (if necessary), then save the spreadsheet file in tab delimited format on the Dynamo server.&#160; Use the Save As spreadsheet option, then select the Tab Delimited (txt) format, and save the file in the folder on the server where the pricing files are stored.&#160; If your Dynamo server name is simply 'server', and your company code is DS, and the pricing is for Dynamo vendor# 123456, then the pricing file would be saved as \\server\DS-shared\pricing\123456.txt.&#160; Note that the Dynamo Import Pricing application will display this file name for your convenience, once you have entered the Dynamo Vendor#.</li>
+            <li>Next start the Dynamo Import Pricing application, and enter the Vendor#.</li>
+            <li>Indicate the column letters to tell Dynamo where each field can be located.&#160; Touch Enter or SpaceBar to skip any field not contained in the file.<br /><img src="im672-1.png" style="width: 725px;height: 424px;" /></li>
+            <li>Enter the Pricing Start Date as the date that these prices will take effect.&#160; You may enter a past, current, or future date.&#160; Dynamo pricing is date-specific, so the price will be determined based on the order date.&#160; Note that specifying the same Pricing Start Date as existing pricing records will cause the existing record to be overwritten during the import process.</li>
+            <li>The Promo Pricing Date should only be entered if the prices are temporary as for a sale or promotion, after which the previous price should go back into effect.</li>
+            <li>There are three options with regard to the Formula Code.
+<table><tr><th>Code</th><th>Description</th><th>Notes</th></tr><tr><td align="center">R</td><td>Retain any existing Formula Code for each item</td><td>The Formula Code in the most recent pricing record will be used for the imported record.</td></tr><tr><td align="center">S</td><td>Set Formula Code on each item to value below</td><td>The Formula Code is specified once, and will be used for all items imported.</td></tr><tr><td align="center">B</td><td>Set Formula Code to blank on each item</td><td>The new price records will not have a Formula Code, even if the previous pricing record for the item did have a Formula Code.</td></tr><tr><td align="center">M</td><td>Map Formula Code from import file</td><td>The Formula Code is in a column on the spreadsheet.</td></tr></table></li>
+            <li>The Import File Name is the name of the file from the Windows perspective.</li>
+            <li>The File Date &amp; Time displayed is the date and time the import file was last saved.</li>
+            <li>The Columns (Fields) number represents the number of columns Dynamo could locate in the import file.</li>
+            <li>The Rows (Records) number represents the number of item records located in the import file.<br /><img src="im672-2.png" style="width: 725px;height: 424px;" /></li>
+            <li>The Matched by UPC number indicates the number of items in the import file that were matched to the Dynamo Item# using the UPC bar code number.</li>
+            <li>The Matched by Vendor Part# shows how many items were matched by Vendor Part#.</li>
+            <li>The Matched by Mfg# shows how many items were matched by Manufacturer#.</li>
+            <li>The Unmatched Items indicate the number of Dynamo Items for this vendor that were not found in the spreadsheet.&#160; Note that the Dynamo Import Pricing will only import pricing for items where the Vendor# specified in Dynamo Item Maintenance matches the Vendor being imported.</li>
+            <li>Unmatched Import Records indicates the number of rows in the spreadsheet that were not identified using the UPC, Vendor Part#, nor Manufacturer#.&#160; Review the Unmatched Item Listing to see which items were not matched.&#160; Perhaps there is no Vendor Part# on file in Dynamo, or there are hyphens or other characters in the Vendor Part# not included in Dynamo.<br /><img src="im672-3.png" style="width: 725px;height: 424px;" /></li>
+        </ol>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Import Pricing Options</th>
+                </tr>
+                <tr>
+                    <td>Maintain import parameters </td>
+                    <td>
+                        <li>Used to specify the Field Mapping, Pricing Dates, and Formula Code option.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Open Unmatched Import Record Spreadsheet</td>
+                    <td>
+                        <li>This option can be used to create a spreadsheet that contains the Unmatched items.&#160; It can be saved so that after some research into determining why the items were not matched to a Dynamo Item#, it could be imported without delaying the import of the matching items.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Print Unmatched Item Listing</td>
+                    <td>
+                        <li>Lists items not matched</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Print Matched Item Listing</td>
+                    <td>
+                        <li> It is a best practice to review this report carefully before importing.&#160; Look for zero costs and prices and review the gross margin before for both the old and new price.&#160; Do not proceed with the import if this report looks incorrect.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Import Pricing</td>
+                    <td> This option creates the pricing record.&#160; You can confirm that the pricing record were added using Item Maintenance, Pricing View, as well as using Item Inquiry.&#160; Use the Price Lookup option and change the Pricing Date to display prices and costs in effect for that date.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

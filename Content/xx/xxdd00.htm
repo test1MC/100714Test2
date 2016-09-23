@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="4584" MadCap:lastWidth="1131">
+    <head><title>Company Information Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Company Information Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 04/21/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to maintain company specific data.&#160; The company name, address, and phone numbers are printed on certain Dynamo documents and can be modified as required.&#160; operators should log out and back in to obtain any changes made using Company Information Maintenance.</p>
+        <p>
+            <p>
+                <img src="xxdd00-1.png" />
+            </p>
+        </p>
+        <table>
+            <tr>
+                <th>Field Name</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td class="nowrap">Name</td>
+                <td>Company or Organization Name which displays on the top line of all Dynamo applications.&#160;Also prints on the top line of all Dynamo reports.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Address</td>
+                <td>Used when the company address and not the branch or warehouse address needs to appear on certain reports and documents.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Telephone#</td>
+                <td>Primary company telephone# used on certain Dynamo documents when not using the branch or warehouse telephone#.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Fax#</td>
+                <td>Primary company fax# used on certain Dynamo documents when not using the branch or warehouse 
+		fax#.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Web Address</td>
+                <td>URL for website.&#160;Prints on Dynamo invoices when a logo is not printed.&#160;Required when using Dynafax.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Style Sheet</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Federal Employer ID#</td>
+                <td>Prints on Dynamo invoices.&#160;Leave blank to disable printing.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Mailer ID</td>
+                <td>The Mailer ID is required when printing Intelligent Mail Barcodes.&#160;
+		The Intelligent Mail Barcode is the successor to the Postnet Barcode 
+		used by the US Post Office to route mail.&#160;You can request an 
+		Mailer ID online at <a href="https://mailtracking.usps.com">
+		https://mailtracking.usps.com</a>.&#160;Dynamo will print an 
+		Intelligent Mail Barcode in the address block on invoices and statements 
+		of account in order to qualify for lower postage rates and improve mail 
+		delivery and tracking.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Default Colors</td>
+                <td>This option is used to maintain various colors used when running 
+		Dynamo. These colors are only used when the operator has not specified 
+		their color preference using My Profile &amp; Preferences (SMS). See 
+		screen shot below.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Contact Info Called Rtn</td>
+                <td>
+                    <p>This routine is used in conjunction with the Dynamo Tools printer 
+		selection routine, message and memo sending programs, to enable 
+		selection of a customer, vendor, salesman, name, address, email address, 
+		phone numbers, etc. without having to enter this information manually 
+		nor use copy and paste.&#160;The routine is called when the operator 
+		touches F2 at the Contact Name entry.</p>
+                    <p>In most cases this routine name should be left at the default value 
+		of SW110.&#160;If, however, your system uses Dynamo Tools but not 
+		Dynamo, then you may want to create a Contact Info Called Routine to 
+		work with your application's customer, vendor, salesman, etc., files.&#160;For more information, refer to the Dynamo Tools documentation for SW110.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="nowrap">Log System Activity</td>
+                <td>Set to Y to enable logging of each menu selection made for printing 
+		the System Activity Log (SMC).&#160;If enabled, be sure to print or 
+		purge the log periodically as it can become quite long.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Licensed BB operators</td>
+                <td>Only used when multiple companies are running on the same server, and there is a need to limit the number of 
+		Business Basic licenses by this company that can be used at any time.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Licensed DT operators</td>
+                <td>Only used when multiple companies are running on the same server, and there is a need to limit the number of Dynamo licenses by 
+		this company that can be used at any time.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Dynafax Default Notify</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p>
+            <h5>Default Colors</h5>
+            <p>For a more detailed set of instructions on setting a color scheme for Dynamo, please refer to the documentation for <a href="../cd/cds478.htm" target="_blank">My Profile and Preferences</a> in the SMS menu.</p>
+            <p>
+                <img src="xxdd00-2.png" style="width: 725px;height: 424px;" />
+            </p>
+            <h5>Prefix</h5>
+        </p>
+        <p>
+            <img src="xxdd00-10.png" />
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>BBj Prefix</td>
+                    <td>Programs can be stored in 3 formats, bbx tokenized, text only, and BBj 
+		tokenized.&#160;When running BBj applications, if the program is not in 
+		BBj tokenized format, then BBj will convert the program to BBj tokenized 
+		prior to execution.&#160;Although BBj uses a program cache where 
+		converted programs are retained for future use, you can eliminate the 
+		time required for program conversion by saving programs in BBj tokenized 
+		format in a special directory.&#160;For example, Dynamo stores programs 
+		in bbx format in the DY/ folder, and the same program is saved in BBj 
+		format in the DY/BBj/ folder. If an entry is made in this BBj 
+		Prefix field, and you are running BBj, either by menu, stored procedure, 
+		trigger, etc., then Dynamo Tools will include this BBj Prefix entry in 
+		the front of the prefix so that BBj will find the BBj tokenized version 
+		of the program first, eliminating the conversion time.</td>
+                </tr>
+                <tr>
+                    <td>Prefix</td>
+                    <td>
+                        <p>The company specific prefix is used as a search path for programs and data files.&#160;It does not need to include company CD/, nor the current company XX/, nor any folders that contain templates.&#160;In most cases, each entry in the prefix should end with a forward slash (/).&#160;The order that the entries appear in the list is the order that bbx will search for files and programs.&#160;The company specific prefix is typically not changed by end operators.</p>
+                        <p>The prefix consists of the following segments:</p>
+                        <ol>
+                            <li>Any prefix entry as entered in the Dynamo Tools menu using the "P" 
+		(Prefix) or "J" (Job/Project) menu option.</li>
+                            <li>If the Dynamo Tools install directory is across a data server, then 
+		the Dynamo Tools install directory (SMSDIR) is included next in the 
+		prefix.</li>
+                            <li>When using another menu application and not directly logging in to 
+		the Dynamo Tools menu, the prefix at the time CDS000 is called by the 
+		other menu application is included next in the prefix.</li>
+                            <li>If a system specific folder based on the Excellware License 
+		Control#, <code>"L"+STR(LCN:"00000")</code> exists, then this is 
+		included next in the prefix.</li>
+                            <li>The active company code XX/ is next.&#160; This entry will include 
+		the data server prefix when the Dynamo Tools install directory is across 
+		the data server.</li>
+                            <li>If running BBj, then CD/BBj/ is next (plus data server prefix when 
+		applicable)</li>
+                            <li>If the active company code is not CD, then CD/ is next (plus data 
+		server prefix when applicable)</li>
+                            <li>Any prefix specified using Menu Maintenance for the active menu is 
+		next.</li>
+                            <li>If the BBj Prefix described above is non-blank, it is next.</li>
+                            <li>Finally the company specific Prefix specified here is next.</li>
+                        </ol>
+                        <p>Note that after the prefix is built, any parenthetic reference, i.e., 
+		(MYGLOBAL) is replaced with the value of the global variable name 
+		specified between the parentheses.</p>
+                        <p>Note that the above prefix sequence is applicable when running the 
+		Dynamo Tools menu.&#160;Applications that do not use the Dynamo Tools 
+		menu, but use CDS011, including background tasks, Dynaweb, BBj stored 
+		procedures, triggers, etc. only use prefix segment numbers 5, 6, 7, 9, and 10 
+		as listed above.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Report Archive Options</h5>
+        <p>
+            <img src="xxdd00-11.PNG" />
+        </p>
+        <p>&#160;</p>
+        <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-left-color: #c0c0c0;border-right-style: solid;border-right-width: 1px;border-right-color: #c0c0c0;border-top-style: solid;border-top-width: 8px;border-top-color: #006699;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #c0c0c0;">
+            <col style="width: 250px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Archive Option</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Dynastore ID</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Dynastore Key</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Development&#160;Projects</h5>
+        <p>
+            <p>&#160;</p>
+        </p>
+        <p>
+            <p>Dynamo Tools provides a mechanism to manage and install programs and other file types. New projects are defined using Project Maintenance (FMS). Projects can be activated, i.e., by moving program files and other files into the Default Directories that are maintained here. The activation process can be completed immediately after importing a project, or at a later time using Project Maintenance.</p>
+            <p>The Next Job# field is updated automatically as jobs are created using Project Maintenance (FMS), but can also be set manually to specify the starting Job#.</p>
+            <table>
+                <col />
+                <col style="width: 170px;" />
+                <col />
+                <tbody>
+                    <tr>
+                        <th>Category</th>
+                        <th>Default value when blank<br />(XX=Company Code)</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Archive</td>
+                        <td class="nowrapcode">/u/CDI/archive/</td>
+                        <td>Base directory where original copies are archived during project activation for use during rollback.</td>
+                    </tr>
+                    <tr>
+                        <td>Data&#160;Files</td>
+                        <td class="nowrapcode">/u/CDI/XX/</td>
+                        <td>Default folder for data files if the file path is not specified in Data Dictionary Maintenance.</td>
+                    </tr>
+                    <tr>
+                        <td>Programs</td>
+                        <td class="nowrapcode">/u/CDI/XX/</td>
+                        <td>All bbx &amp; BBj program files including Dynaweb programs</td>
+                    </tr>
+                    <tr>
+                        <td>Web</td>
+                        <td class="nowrapcode">/u/CDI/XX/web/</td>
+                        <td>Dynaweb files including html, style sheets, and javascript files. This folder is typically a symbolic link from the apache web server Document Root, <code>/var/www/html</code>.</td>
+                    </tr>
+                    <tr>
+                        <td>Images</td>
+                        <td class="nowrapcode">/u/CDI/XX/images/</td>
+                        <td>All image files</td>
+                    </tr>
+                    <tr>
+                        <td>Jars</td>
+                        <td class="nowrapcode">/u/CDI/XX/jars/</td>
+                        <td>Java archives</td>
+                    </tr>
+                    <tr>
+                        <td>Scripts</td>
+                        <td class="nowrapcode">/u/CDI/bin/</td>
+                        <td>Operating System script files, i.e., bash, bsh, ksh, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Configuration</td>
+                        <td class="nowrapcode">/u/CDI/XX/config</td>
+                        <td>Configuration files including config.bbx files</td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <h5>Dynafax</h5>
+        <p>Dynafax is an option to send faxes without a fax modem, special fax 
+ software, or a telephone line.&#160; Dynafax delivers the fax using internet 
+ email to a third party, who transmits the document to the recipient's fax 
+ machine. Dynamo Tools supports both fax87.com and Esker as the service provider.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="nowrap">Dynafax Default Notification</td>
+                    <td>Only applies when using Dynafax via Esker on Demand. Sets the Company default value used to notify the sender that a Dynafax was delivered or not. Can be overridden by operator on the Printer Options View when sending a Dynafax.<br /><table><col /><col /><tbody><tr><td style="text-align: center;">F</td><td>Email sender only if fax fails</td></tr><tr><td style="text-align: center;">A</td><td>Email sender always (whether fax succeeds or fails)</td></tr><tr><td style="text-align: center;">S</td><td>Email sender only if fax succeeds</td></tr></tbody></table></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxdd00-7.png" style="width: auto;height: auto;" />
+        </p>
+        <h5>Dynamine</h5>
+        <p>Dynamine is a Data Mining/Data Warehousing application that can be used 
+	for historical reporting of Dynamo transactions.</p>
+        <p>
+            <img src="xxdd00-3.png" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Dynamine View</th>
+            </tr>
+            <tr>
+                <td class="nowrap">Database Name</td>
+                <td>Specify the Dynamine database name used with the Export Data 
+			(FMS) application.&#160; The suggested database name is dynamo 
+			followed by the two character company code.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Dynamine Login ID</td>
+                <td>The Login ID used for the Dynamine database.&#160; This login is 
+			used by the Export Data (FMS) application to populate the Dynamine 
+			database.</td>
+            </tr>
+            <tr>
+                <td class="nowrap">Dynamine Password</td>
+                <td>The password associated with the Dynamine Login ID</td>
+            </tr>
+        </table>
+        <h5>Dynastore</h5>
+        <p>Dynastore is a report archiving server where documents printed using PDF, 
+ or files created in spreadsheet format by printing, are archived in the 
+ "cloud."&#160; Reports can be retrieved or deleted using the Dynastore Reports 
+ option on the SMS menu.</p>
+        <p>
+            <img src="xxdd00-4.png" style="width: auto;height: auto;" />
+        </p>
+        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#111111">
+            <tr>
+                <td>Dynastore Option</td>
+                <td>This parameter sets the default Dynastore option when printing.<table border="1" cellpadding="0" cellspacing="0" bordercolor="#111111"><tr><td>N</td><td>Do not archive report</td></tr><tr><td>S</td><td>Archive with Standard Access, meaning that anyone with security 
+ permissions to run the report, can also view archived reports</td></tr><tr><td>P</td><td>Archive with Personal Access only, meaning that only the operator that 
+ printed the report can view the archived copy.</td></tr><tr><td>A</td><td>Archive with no access restrictions.&#160; Anyone may view the 
+ archived report.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Dynastore ID</td>
+                <td>This ID uniquely identifies this Dynamo company.&#160; Contact 
+ Excellware to obtain a Dynastore ID and Key.</td>
+            </tr>
+            <tr>
+                <td>Dynastore Key</td>
+                <td>This is like a password for the Dynastore ID.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <h5>Development Projects</h5>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>
+            <img src="xxdd00-8.PNG" />
+        </p>
+    </body>
+</html>

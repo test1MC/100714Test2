@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="5967" MadCap:lastWidth="1275">
+    <head><title>Vendor Inquiry</title>
+    </head>
+    <body>
+        <p class="SectionName">Vendor Maintenance &amp; Inquiry Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Vendor Inquiry</p>
+                </td>
+                <td align="right">Last Revised: 01/30/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Vendor Inquiry program is used to access vendor information quickly and easily. You can retrieve invoice detail including general ledger distribution, find out when you last paid a vendor, see how much business you've done with this vendor on a monthly or yearly basis, and look up vendor addresses and phone numbers.&#160;The Notepad feature allows you to enter free-form notes. &#160;Any of this information can be viewed on the screen or printed.</p>
+        <p>Vendor Inquiry is accessed from the VML menu, but is also available on the 
+	INQ menu.</p>
+        <p>Select the vendor by entering:</p>
+        <ul>
+            <li>Vendor Number</li>
+            <li>A few characters of the Alpha Sort Name</li>
+            <li>First or Last Name of a Vendor Contact</li>
+            <li>Email address of a Vendor Contact</li>
+            <li>Vendor's Phone Number</li>
+            <li>Vendor's Zip Code</li>
+        </ul>
+        <p>If more than one vendor meets the selection criteria entered, then the operator 
+	will be able to select the vendor from the list.</p>
+        <p>
+            <img src="vm100-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <p>Once a vendor has been selected, the vendor#, name, address, and 2 phone numbers 
+	are displayed as well as a list of options.&#160; Each of these options is marked with an asterisk '*', the letter 'A', 'D', 'S', or a blank:</p>
+        <ul>
+            <li>An asterisk '*' indicates there is data available to display for this option.</li>
+            <li>The letter 'A' indicates that no data is available, but you may select this option and enter information.</li>
+            <li>The letter 'D' indicates this option is disabled.</li>
+            <li>The letter 'S' indicates you do not have sufficient security clearance for this option.</li>
+            <li>A blank next to an option indicates there is no data to display.</li>
+        </ul>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <th colspan="2"><span class="span_1">Vendor Inquiry</span>
+                </th>
+            </tr>
+            <tr>
+                <td>Contact Names</td>
+                <td>
+                    <p>Dynamo supports up to 255 contacts per vendor.&#160;You can store 
+		the contact name, department, location or title, up to 4 telephone 
+		numbers, email address, Salutation, and a selection code. The 
+		selection code can be used to select contacts for listings, mailings, 
+		labels, etc.&#160;A contact may also be used for a role or department 
+		such as Accounts Payable, or Technical Support.</p>
+                    <p>
+                        <img src="vm100-2.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Vendor Information</td>
+                <td>
+                    <p>This option displays various information about the vendor.&#160; 
+		Refer to Vendor Maintenance for the description of the various fields.</p>
+                    <p>
+                        <img src="vm100-3.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Vendor Notepad</td>
+                <td>A place to type in your comments/notes/reminders regarding this vendor.</td>
+            </tr>
+            <tr>
+                <td>Purchase Orders</td>
+                <td>
+                    <p>Lists all purchase orders placed with this vendor with the most recent 
+		first.&#160;The Opn column will show C when the order is closed, 
+		indicating all items ordered have been received, or the balance 
+		cancelled. The Open Value represents the value of the order not 
+		yet received.</p>
+                    <table>
+                        <tr>
+                            <th align="center">Sts</th>
+                            <th>Status Column Description</th>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>New order - not yet sent to vendor</td>
+                        </tr>
+                        <tr>
+                            <td align="center">S</td>
+                            <td>Sent to vendor, not yet received</td>
+                        </tr>
+                        <tr>
+                            <td align="center">P</td>
+                            <td>Partially received</td>
+                        </tr>
+                        <tr>
+                            <td align="center">B</td>
+                            <td>Partially received, balance cancelled</td>
+                        </tr>
+                        <tr>
+                            <td align="center">R</td>
+                            <td>Received in Full</td>
+                        </tr>
+                        <tr>
+                            <td align="center">C</td>
+                            <td>Cancelled prior to first receipt</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <img src="vm100-4.png" style="width: 1169px;height: 417px;" />
+                        <br />
+                    </p>
+                    <p>
+		Highlight a purchase order and touch Enter to launch Purchase Order 
+		Inquiry for the highlighted PO.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Returns</td>
+                <td>
+                    <p>This option lists all returns to vendors processed on the VRP 
+		menu.&#160;Highlight a return and touch Enter to launch <a href="../vr/vr150.htm">Vendor Returns 
+		Inquiry</a> for the selected return.</p>
+                    <p>
+                        <img src="vm100-5.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Accounts Payable Ageing</td>
+                <td>
+                    <p>Displays ageing of open vendor invoices.&#160;The On Hold row 
+		includes any invoices marked to Hold for Payment in Dynamo Accounts 
+		Payable.&#160;The Pending row refers to invoices that are in the 
+		process of being selected for payment.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Accounts Payable Invoices</td>
+                <td>
+                    <p>The operator may enter a specific invoice number, or select from a list 
+		of all invoices, open before paid, most recent first.&#160;
+		Miscellaneous Vendors, i.e., vendors with a single character vendor 
+		number will include a column listing the Payee name.</p>
+                    <table>
+                        <tr>
+                            <th>Stat</th>
+                            <th>Status Column</th>
+                        </tr>
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>normal invoice</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Hold</td>
+                            <td>Invoice is on Hold</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Pend</td>
+                            <td>Invoice is in the process of being selected for payment</td>
+                        </tr>
+                        <tr>
+                            <td align="center">New</td>
+                            <td>Invoice is in a new batch of invoices being entered</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <img src="vm100-6.png" style="width: 725px;height: 424px;" />
+                    </p>
+                    <p>Select an invoice (by highlighting and pressing Enter) to see: &#160;</p>
+                    <ul>
+                        <li>
+                            <p>Invoice detail including purchase order number, batch number and G/L posting date.</p>
+                        </li>
+                        <li>
+                            <p>General ledger distribution of the invoice amount, including the account number and description.</p>
+                        </li>
+                        <li>
+                            <p>Payment detail for those invoices that have one or more payments.</p>
+                        </li>
+                    </ul>
+                    <p>To print A/P Invoice option:</p>
+                    <ul>
+                        <li>
+                            <p>Select the types of invoices to print:</p>
+                        </li>
+                        <li>
+                            <p>Open Invoices: Those invoices with an outstanding balance</p>
+                        </li>
+                        <li>
+                            <p>Closed Invoices: Those invoices that have been paid</p>
+                        </li>
+                        <li>
+                            <p>Both Open and Closed Invoices</p>
+                        </li>
+                        <li>
+                            <p>Selecting 'Closed Invoices' or 'Both Open and Closed Invoices' 
+			will display a date prompt so that you can limit printing 
+			transaction history to more recent transactions.</p>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Accounts Payable Payments</td>
+                <td>
+                    <p>This option displays all payments made to the vendor, with the most 
+		recent payments first.&#160; Highlight a payment and touch Enter to 
+		display additional information about a payment.</p>
+                    <p>
+                        <img src="vm100-7.png" style="width: 725px;height: 424px;" />
+                    </p>
+                    <ul>
+                        <li>
+                            <p>Payment Date</p>
+                        </li>
+                        <li>
+                            <p>Batch Type and Number: CD=Cash Disbursements (Payment was made 
+			through A/P Check Printing), MP=Manual Payment (Payment was made 
+			through Manual Payment Entry)</p>
+                        </li>
+                        <li>
+                            <p>Payment Method: blank = Normal check, T = Electronic Transfer of Funds, W = Automated Withdrawal, S = Separate Check, V = Voided check, R = Reversed 
+			Payment</p>
+                        </li>
+                        <li>
+                            <p>Bnk - Bank Code (as defined in APU - Bank Code Maintenance)</p>
+                        </li>
+                        <li>
+                            <p>Check# (when applicable)</p>
+                        </li>
+                        <li>
+                            <p>Gross - Payment amount before Cash Discount</p>
+                        </li>
+                        <li>
+                            <p>Discount - Discount Amount Taken</p>
+                        </li>
+                        <li>
+                            <p>Net - Payment Amount</p>
+                        </li>
+                        <li>
+                            <p>Upd - Updated status of batch containing payment</p>
+                        </li>
+                        <li>
+                            <p>Clr - Cleared: Y = Payment has been cleared through Bank Reconciliation, blank = Payment has not cleared bank,&#160; V = Payment has been voided, R = Payment was reversed</p>
+                        </li>
+                    </ul>
+                    <p>When printing Vendor Inquiry Payments, the operator can enter a date 
+		to exclude older payments from the listing.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Vendor Monthly History</td>
+                <td>
+                    <p>The initial display shows for each year, the value of PO Receipts, 
+		value of product returned to vendor, value of invoices updated, and 
+		payment amounts.</p>
+                    <p>
+                        <img src="vm100-8.png" style="width: 725px;height: 424px;" />
+                    </p>
+                    <p>Highlight a year and touch Enter to display month-by-month details.</p>
+                    <p>
+                        <img src="vm100-9.png" style="width: 725px;height: 424px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Vendor's Items</td>
+                <td>
+                    <p>If you purchase products from this vendor, this option will display a 
+		list of items where this vendor is specified as the primary vendor in 
+		Item Maintenance (IML). The items are listed in sequence by product class, 
+		report sequence number (RSN) and Item#.&#160; The D column indicates if 
+		the item has been discontinued.</p>
+                    <p>
+                        <img src="vm100-10.png" style="width: 1169px;height: 417px;" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Display Web Site</td>
+                <td>
+        If the vendor's web address has been specified using Vendor Maintenance, 
+		then this option will display the vendor's web site in a browser.&#160;The automatic launching of the browser requires use of FacetWin or 
+		PowerTerm terminal emulators.</td>
+            </tr>
+            <tr>
+                <td>Display Map</td>
+                <td>
+        This option will display the Google Map showing the Vendor's primary 
+		address.&#160;The automatic launching of the browser requires use of 
+		FacetWin or PowerTerm terminal emulators.</td>
+            </tr>
+            <tr>
+                <td>Print Envelope</td>
+                <td>
+        This option can be used to print an envelope to a laser or ink jet 
+		printer with the vendor's name and address.&#160;A vendor contact name 
+		may also be selected or entered manually.</td>
+            </tr>
+        </table>
+    </body>
+</html>

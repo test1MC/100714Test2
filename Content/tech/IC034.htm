@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>IC034 - Return Item Cost for Sales Order Line Item</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">IC034</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Return Item Cost for Sales Order Line Item</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IC034">Last Revised: 04/19/08</a>
+                </td>
+            </tr>
+        </table>
+        
+        <p>Sales Order Processing calls IC034 as line items are added to a sales order, to determine the quantity that can be shipped, and the cost of the cost of that inventory.</p>
+        <p>The Preliminary Invoice Register calls IC034 to revise the cost for the 
+	sales order line item.&#160; This is required as shipments may not occur in 
+	the same sequence as orders are entered, and other inventory transactions 
+	may have occurred after the order was entered.</p>
+        <p>IC034 exits without any action for line items with a negative <code>
+	SO41.QTYORD</code> and all rental line items.</p>
+        <p><code>CALL "IC034", Y$, SO41$, PRIORQTY</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IC034 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41$</code>
+                </td>
+                <td align="center">To &amp; From</td>
+                <td>Sales Order Line Item</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.QTYORD</code>
+                </td>
+                <td align="center">To</td>
+                <td>Used when called by SOP</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.QTYSHP</code>
+                </td>
+                <td align="center">&#160;To &amp; From</td>
+                <td>Set by IC034 when called during SOP to indicate the quantity that can 
+		be shipped based on inventory at that warehouse and other orders that 
+		preceded the current order.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.EXTCOSTORD</code>
+                </td>
+                <td align="center">From</td>
+                <td>Set by IC034</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.EXTCOSTSHP</code>
+                </td>
+                <td align="center">From</td>
+                <td>Set by IC034</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.GMPCT</code>
+                </td>
+                <td align="center">From</td>
+                <td>Set by IC034</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.COST</code>
+                </td>
+                <td align="center">From</td>
+                <td>Set by IC034 to be an approximate cost.&#160; The EXTCOST fields are 
+		accurate, but since the extended cost fields may be the sum of multiple 
+		inventory costing layers, the unit cost may not be exact due to 
+		rounding.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>SO41.CU$</code>
+                </td>
+                <td align="center">From</td>
+                <td>Set by IC034 based on the inventory costing layers used</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PRIORQTY</code>
+                </td>
+                <td align="center">To &amp; From</td>
+                <td>Pass as -1 to have IC034 compute <code>PRIORQTY</code> as the sum of 
+		all sales orders for this line item and warehouse ordered before the
+		<code>SO41.ORDERNO.</code></td>
+            </tr>
+        </table>
+    </body>
+</html>

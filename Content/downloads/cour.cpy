@@ -1,0 +1,1 @@
+\Application\cour.ttf  >  \Windows\cour.ttf

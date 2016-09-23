@@ -1,0 +1,1118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="8342" MadCap:lastWidth="728">
+    <head><title>Dynamo General Ledger Postings</title>
+    </head>
+    <body>
+        <p class="SectionName">dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">General Ledger Postings</p>
+                </td>
+                <td align="right">Last Revised: 09/01/10</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo is an integrated application.&#160; This means that a transaction such as a sale, purchase, cash receipt, etc. makes a posting to the General Ledger.&#160; The General Ledger account numbers used for these postings are specified and maintained in various places.</p>
+        <table>
+            <tr>
+                <th>Transaction</th>
+                <th>Program that posts to G/L</th>
+                <th>Menu</th>
+                <th>Batch Code</th>
+                <th>Typical G/L Account Description</th>
+                <th>DR Amount</th>
+                <th>CR Amount</th>
+            </tr>
+            <tr>
+                <td>Sale</td>
+                <td>Invoice Update</td>
+                <td align="center">SOP</td>
+                <td align="center">SO</td>
+                <td align="left">Sales<br />(Account# from GL Interface: Sales + G/L Location based on Branch Code)<br />(Account can vary by Product Category or Class)</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Shipping/Handling<br />(Account# from GL Interface: Shipping Charges)<br />(Single company wide account)</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Sales Tax<p>(Account# from Sales Tax Region &amp; Rate Maintenance)<br />(can vary by Sales Tax Code)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Payments on Sales Orders<br />(Account# from GL Interface: Payments on Sales Orders)<br />(only for payments entered with order)</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accounts Receivable<p>(Account# from GL Interface: Accounts 
+Receivable)<br />(Single company wide account)</p></td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Inventory (Sale of new non-fully-serialized products on item file)<p>
+(Account# from GL Interface: Inventory + G/L Location based on Warehouse Code)<br />(Account can vary by Product Category or Class)</p><p>Amount is determined from cost of inventory receipt layer(s) used</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Inventory (Sale of rental non-serialized accessory)<p>(Account# 
+from GL Interface: Rental Accounts - Rental Expense: Accessory)<br />(Amount is zero since these items are expensed when purchased, if purchase price 
+is less than asset minimum to depreciate)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Inventory (Sale of rental fully serialized, non-depreciated 
+product)<br />(Account# from GL Interface: Rental Accounts - Rental Expense: Serialized)<br />(Amount is zero since these items are expensed when purchased, if purchase price 
+is less than asset minimum to depreciate)</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Inventory (Sale of rental fully serialized depreciated product)<br />In this case, the inventory G/L account, as specified for the product class used 
+for rental equipment sale in GL Interface, should instead refer to the Gain/Loss 
+on sale of fixed asset.<p>Cost is set to the asset book value (acquisition cost 
+less prior year and YTD depreciation)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Special Order Inventory (sale of items not on item file)<p>
+(Account# from GL Interface: Not on File Inventory Transactions)<br />(Account can vary by Product Category or Class)</p><p>Amount is determined from cost entered by operator in SO Processing</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cost of Sales<br />(Account# from GL Interface: Cost of Sales + G/L Location based on Branch Code)<br />(Account can vary by Product Category or Class and shipping warehouse)</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Unredeemed Gift Cards<br />(Account# from Payment Method Maintenance)</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Return of Sale of Rental Equipment</td>
+                <td>Invoice Update</td>
+                <td align="center">SOP</td>
+                <td align="center">SO</td>
+                <td align="left">Asset Account<br />(Account# from FA Category Maintenance)<p>(original acquisition cost)</p></td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accumulated Depreciation</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Disposition Gain/Loss<br />(Account# from FA Parameter Maintenance)<p>(Amount is Original Acquisition Cost 
+less Accumulated Depreciation)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td><a href="#DR">POS End of Day Processing</a>
+                </td>
+                <td>Cash Drawer Balancing</td>
+                <td align="center">POS</td>
+                <td align="center">DR</td>
+                <td align="left">Cash in Drawer</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash in Bank</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash Over/Short</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td><a href="#CR">Cash Receipts</a>
+                </td>
+                <td>Cash Receipts Update</td>
+                <td align="center">A/R</td>
+                <td align="center">CR</td>
+                <td align="left">Cash in Bank</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash Discount Allowed</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accounts Receivable</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Purchase Order Receiving</td>
+                <td>Nightly Inventory Process</td>
+                <td align="center">n/a</td>
+                <td align="center">IC</td>
+                <td align="left">Inventory or Expense<br />(See Chart Below)</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Unvouchered Receipts</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Inventory Adjustments</td>
+                <td>Nightly Inventory Process</td>
+                <td align="center">n/a</td>
+                <td align="center">IC</td>
+                <td align="left">Inventory</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Inventory Shrinkage or other Acct</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Vendor Invoice</td>
+                <td>A/P Invoice Update</td>
+                <td align="center">A/P</td>
+                <td align="center">AP</td>
+                <td align="left">Unvouchered Receipts or other Acct</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accounts Payable</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Vendor Batch Payment</td>
+                <td>Check Update</td>
+                <td align="center">APP</td>
+                <td align="center">CD</td>
+                <td align="left">Accounts Payable</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash Discount Earned</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash in Bank</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Manual Payment</td>
+                <td>Manual Payment Update</td>
+                <td align="center">APP</td>
+                <td align="center">MP</td>
+                <td align="left">Unvouchered Receipts or other Acct</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash Discount Taken</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Cash in Bank</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>A/R Finance Charge</td>
+                <td>Finance Charge Update</td>
+                <td align="center">ARR</td>
+                <td align="center">FC</td>
+                <td align="left">Accounts Receivable</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Finance Charges Billed</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Bank Reconciliation</td>
+                <td>Bank Reconciliation</td>
+                <td align="center">APU</td>
+                <td align="center">BR</td>
+                <td align="left">Cash in Bank</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Bank Fee</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Interest Income</td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Depreciation</td>
+                <td>Fixed Asset Depreciation Update</td>
+                <td align="center">F/A</td>
+                <td align="center">FA</td>
+                <td align="left">Depreciation Expense<p>(Account# from FA Category Maintenance)</p></td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accumulated Depreciation<p>(Account# from FA Category 
+Maintenance)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>Sale/Disposition of Asset</td>
+                <td>Fixed Asset Depreciation Update</td>
+                <td align="center">F/A</td>
+                <td align="center">FA</td>
+                <td align="left">Asset Account<br />(Account# from FA Category Maintenance)<p>(original acquisition cost)</p></td>
+                <td align="right">&#160;</td>
+                <td align="right">xxx</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Accumulated Depreciation</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="center">&#160;</td>
+                <td align="left">Disposition Gain/Loss<br />(Account# from FA Parameter Maintenance)</td>
+                <td align="right">xxx</td>
+                <td align="right">&#160;</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Examples of General Ledger Postings</th>
+                <th>Typical G/L Account Description</th>
+                <th align="right">DR Amount</th>
+                <th align="right">CR Amount</th>
+            </tr>
+            <tr>
+                <th colspan="5">SOP/POS Invoice Update examples</th>
+            </tr>
+            <tr>
+                <th rowspan="29">&#160;</th>
+                <td valign="top" rowspan="4">Typical SOP sale, where the product is shipped to the customer, who will mail in a check for payment</td>
+                <td>Sales</td>
+                <td align="right">&#160;</td>
+                <td align="right">500</td>
+            </tr>
+            <tr>
+                <td>Shipping Charges Billed</td>
+                <td align="right">&#160;</td>
+                <td align="right">20</td>
+            </tr>
+            <tr>
+                <td>Sales Tax</td>
+                <td align="right">&#160;</td>
+                <td align="right">30</td>
+            </tr>
+            <tr>
+                <td>Accounts Receivable</td>
+                <td align="right">550</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="3">POS sale, where the customer takes the goods with them, and pays with cash</td>
+                <td>Sales</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>Sales Tax</td>
+                <td align="right">&#160;</td>
+                <td align="right">5</td>
+            </tr>
+            <tr>
+                <td>Payments on Sales Orders</td>
+                <td align="right">105</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="3">POS sale, where the customer takes the goods with them, and pays using a credit card</td>
+                <td>Sales</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>Sales Tax</td>
+                <td align="right">&#160;</td>
+                <td align="right">5</td>
+            </tr>
+            <tr>
+                <td>Cash in Bank or<br />Credit Card Receivable</td>
+                <td align="right">105</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th>&#160;</th>
+                <th>&#160;</th>
+                <th>&#160;</th>
+                <th>&#160;</th>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="3">POS sale, where the customer takes the goods with them, and pays using a gift certificate</td>
+                <td>Sales</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>Sales Tax</td>
+                <td align="right">&#160;</td>
+                <td align="right">5</td>
+            </tr>
+            <tr>
+                <td>Gift Cards Outstanding</td>
+                <td align="right">105</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="2">POS sale of a gift certificate, paid using a credit card</td>
+                <td>Gift Cards Outstanding</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>Cash in Bank</td>
+                <td align="right">100</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="8">Complete example</td>
+                <td>Sales</td>
+                <td align="right">&#160;</td>
+                <td align="right">800</td>
+            </tr>
+            <tr>
+                <td>Gift Cards Outstanding</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>Shipping Charges Billed</td>
+                <td align="right">&#160;</td>
+                <td align="right">20</td>
+            </tr>
+            <tr>
+                <td>Sales Tax</td>
+                <td align="right">&#160;</td>
+                <td align="right">45</td>
+            </tr>
+            <tr>
+                <td>Accounts Receivable</td>
+                <td align="right">550</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Payments on Sales Orders</td>
+                <td align="right">105</td>
+                <th align="right">&#160;</th>
+            </tr>
+            <tr>
+                <td>Gift Cards Outstanding</td>
+                <td align="right">105</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Cash in Bank</td>
+                <td align="right">205</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <th colspan="5"><a name="DR" id="DR"></a>POS End of Day Processing - Cash Drawer Balancing</th>
+            </tr>
+            <tr>
+                <th rowspan="4">&#160;</th>
+                <td rowspan="3">Cash Drawer Balancing</td>
+                <td>Payments on Sales Orders</td>
+                <td align="right">&#160;</td>
+                <td align="right">105</td>
+            </tr>
+            <tr>
+                <td>Cash in Drawer</td>
+                <td align="right">102</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Cash Over/Short</td>
+                <td align="right">3</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <th rowspan="3">&#160;</th>
+                <td rowspan="2">Deposit to Bank</td>
+                <td>Cash in Bank</td>
+                <td align="right">102</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>Cash in Drawer</td>
+                <td align="right">&#160;</td>
+                <td align="right">102</td>
+            </tr>
+            <tr>
+                <th colspan="4">&#160;</th>
+            </tr>
+            <tr>
+                <th colspan="5"><a name="CR" id="CR"></a>Cash Receipts - Cash Receipts Update</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Complete example</td>
+                <td>Accounts Receivable</td>
+                <td align="right">&#160;</td>
+                <td align="right">600</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>Cash</td>
+                <td align="right">540</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>Discount Allowed</td>
+                <td align="right">50</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>Operator Entered Account</td>
+                <td align="right">10</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <th colspan="5">&#160;Purchase Order Receiving</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Example including rebates, cash discount reducing inventory cost, and freight/duty increasing inventory cost.&#160; Assumes a 
+PO with PO Cost of $100.&#160;</td>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>Inventory</td>
+                <td align="right">104</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>Inventory</td>
+                <td align="right">&#160;</td>
+                <td align="right">5</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">4%</td>
+                <td>Freight/Duty&#160;</td>
+                <td align="right">&#160;</td>
+                <td align="right">4</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">3%</td>
+                <td>Vendor Rebate Receivable</td>
+                <td align="right">3</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">2%</td>
+                <td>Discounts Earned</td>
+                <td align="right">2</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Unvouchered Receipts</td>
+                <td align="right">&#160;</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">Total</td>
+                <td>&#160;</td>
+                <td align="right">109</td>
+                <td align="right">109</td>
+            </tr>
+            <tr>
+                <th colspan="5">Accounts Payable Invoice Update</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Unvouchered Receipts</td>
+                <td align="right">100</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Freight/Duty</td>
+                <td align="right">5</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Accounts Payable</td>
+                <td align="right">&#160;</td>
+                <td align="right">105</td>
+            </tr>
+            <tr>
+                <th colspan="5">Accounts Payable Check Update or Manual Payment Update</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Accounts Payable</td>
+                <td align="right">105</td>
+                <td align="right">&#160;</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+                <td>Cash in Bank</td>
+                <td align="right">&#160;</td>
+                <td align="right">103</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">2%</td>
+                <td>Discounts Earned</td>
+                <td align="right">&#160;</td>
+                <td align="right">2</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Type of Item</th>
+                <th>Sales &amp; Cost of Sales G/L Accounts are based on</th>
+                <th>Inventory/Expense G/L Account when purchased is based on</th>
+                <th>Inventory/Expense G/L Account when sold is based on</th>
+            </tr>
+            <tr>
+                <td>On-Item-File into standard warehouse type, non-serialized and fully 
+		serialized</td>
+                <td>Product Class on Item File</td>
+                <td>Product Class on Item File</td>
+                <td>Product Class on Item File</td>
+            </tr>
+            <tr>
+                <td>Not-on-Item-File into any warehouse type</td>
+                <td>Product Class entered on Sales Order</td>
+                <td>G/L Interface: Inventory<br />		Not on Item File Transactions</td>
+                <td>G/L Interface: Inventory<br />		Not on Item File Transactions</td>
+            </tr>
+            <tr>
+                <td>On-Item-File, rental warehouse type, non-serialized with line item 
+		value less than 'Minimum Purchase to Depreciate' (as specified in A/P 
+		Parameter Maintenance)</td>
+                <td>Sale of Used Product Class from Product Class Maintenance from 
+		Product Class specified on Item File</td>
+                <td>G/L Interface: Rental Accounts<br />		Rental Expense - Accessory</td>
+                <td>These items are 'expensed' when purchased, so the inventory and cost 
+		of sales is zero when sold</td>
+            </tr>
+            <tr>
+                <td>On-Item-File, rental warehouse type, serialized with line item value 
+		less than 'Minimum Purchase to Depreciate' (as specified in A/P 
+		Parameter Maintenance)</td>
+                <td>Sale of Used Product Class from Product Class Maintenance from 
+		Product Class specified on Item File</td>
+                <td>G/L Interface: Rental Accounts<br />		Rental Expense - Serialized</td>
+                <td>These items are 'expensed' when purchased, so the inventory and cost 
+		of sales is zero when sold</td>
+            </tr>
+            <tr>
+                <td>On-Item-File, rental warehouse type, serialized &amp; non-serialized 
+		with line item value not less than 'Minimum Purchase to Depreciate' (as 
+		specified in A/P Parameter Maintenance)</td>
+                <td>Sale of Used Product Class from Product Class Maintenance from 
+		Product Class specified on Item File<p>Cost &amp; Inventory amount is Book Value if item is fully serialized and 
+		depreciated otherwise it is based on LIFO/FIFO inventory receipt cost</p></td>
+                <td>Rental Product Class from<br />		Product Class Maintenance<p>from Product Class specified on Item File</p></td>
+                <td>Sale of Used Product Class from<br />		Product Class Maintenance<p>from Product Class specified on Item File</p></td>
+            </tr>
+            <tr>
+                <td>On-Item-File or Non-On-Item-File item entered on purchase order with 
+		operator entered G/L Account#</td>
+                <td>&#160;</td>
+                <td>PO Receipt is posted to expense or asset account specified on PO 
+		Line Item Properties</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p>The following table lists a alphabetical listing of G/L codes, a typical account description, and the menu and application where the account numbers are maintained.</p>
+        <table>
+            <tr>
+                <th>G/L Code</th>
+                <th>G/L Account Description</th>
+                <th>Menu</th>
+                <th>Application</th>
+                <th>Account Type</th>
+                <th>Varies by</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td align="center">A/P</td>
+                <td>Accounts Payable</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Liability</td>
+                <td align="center">&#160;</td>
+                <td>Credited during A/P Vendor Invoice Update.</td>
+            </tr>
+            <tr>
+                <td align="center">A/R</td>
+                <td>Accounts Receivable</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">&#160;</td>
+                <td>Debited during SOP Invoice Update, Credited during Cash Receipts Update</td>
+            </tr>
+            <tr>
+                <td align="center">CDA</td>
+                <td>Cash Discount Allowed</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Expense, Revenue, or Other Income/Expense</td>
+                <td align="center">&#160;</td>
+                <td>Debited during Cash Receipts Update</td>
+            </tr>
+            <tr>
+                <td align="center">COS</td>
+                <td>Cost of Sales</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Cost of Sales</td>
+                <td align="center">Branch</td>
+                <td>Can have exceptions by product category and/or product class</td>
+            </tr>
+            <tr>
+                <td align="center">CSH</td>
+                <td>Cash in Bank</td>
+                <td align="center">APU</td>
+                <td>Bank Code Maintenance</td>
+                <td align="left">Asset, Liability</td>
+                <td align="center">Bank Code</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">DEP</td>
+                <td>Payments on Sales Orders</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Liability</td>
+                <td align="center">&#160;</td>
+                <td>Temporary account to hold all payments taken on a sales order between the 
+time of Cash Drawer balancing and Invoice Update.&#160; Would also include any 
+pre-payment of services, deposits on special orders, etc.</td>
+            </tr>
+            <tr>
+                <td align="center">DIS</td>
+                <td>Discount Earned</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Cost of Sales or Other Income/Expense</td>
+                <td align="center">&#160;</td>
+                <td>Debited during PO Receiving if the option to Reduce Inventory Cost by the 
+Cash Discount is enabled in PO Parameter Maintenance.&#160; Credited during A/P 
+Check Update and Manual Check Update when a cash discount is taken at the time 
+of payment.&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">DRW</td>
+                <td>Cash in Drawer</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">Branch</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">FAD</td>
+                <td>Fixed Asset Depreciation</td>
+                <td align="center">F/A</td>
+                <td>Fixed Asset Category Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">Fixed Asset Category</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">FAS</td>
+                <td>Fixed Asset</td>
+                <td align="center">F/A</td>
+                <td>Fixed Asset Category Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">Fixed Asset Category</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">FAX</td>
+                <td>Fixed Asset Depreciation Expense</td>
+                <td align="center">F/A</td>
+                <td>Fixed Asset Category Maintenance</td>
+                <td align="left">Expense</td>
+                <td align="center">Fixed Asset Category</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">FCB</td>
+                <td>Finance Charge Billed</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Revenue or Other Income/Expense</td>
+                <td align="center">&#160;</td>
+                <td>Credited during Finance Charge Update</td>
+            </tr>
+            <tr>
+                <td align="center">FEE</td>
+                <td>Bank Fee</td>
+                <td align="center">APU</td>
+                <td>Bank Code Maintenance</td>
+                <td align="left">Expense</td>
+                <td align="center">Bank Code</td>
+                <td>Debited during Bank Reconciliation</td>
+            </tr>
+            <tr>
+                <td align="center">FGL</td>
+                <td>Gain/Loss on sale of Fixed Asset</td>
+                <td align="center">F/A</td>
+                <td>Fixed Asset Parameter Maintenance</td>
+                <td align="left">Revenue, Cost of Sales, or Other Income</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">FRB</td>
+                <td>Shipping Charges Billed</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Revenue or Cost of Sales</td>
+                <td align="center">&#160;</td>
+                <td>Credited during SOP Invoice Update</td>
+            </tr>
+            <tr>
+                <td align="center">FRT</td>
+                <td>Freight In</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Cost of Sales or Expense</td>
+                <td align="center">Warehouse</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">GCL</td>
+                <td>Unredeemed Gift Cards</td>
+                <td align="center">SOU</td>
+                <td>Payment Method Code Maintenance</td>
+                <td align="left">Liability</td>
+                <td align="center">Payment Method Code</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">INT</td>
+                <td>Interest Earned</td>
+                <td align="center">APU</td>
+                <td>Bank Code Maintenance</td>
+                <td align="left">Other income/expense</td>
+                <td align="center">Bank Code</td>
+                <td>Debited during Bank Reconciliation</td>
+            </tr>
+            <tr>
+                <td align="center">INV</td>
+                <td>Inventory</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">Warehouse</td>
+                <td>Can have exceptions by product category and/or product class</td>
+            </tr>
+            <tr>
+                <td align="center">IRA</td>
+                <td>Inventory Rounding Adjustment</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Expense or<br />Cost of Sales</td>
+                <td align="center">&#160;Warehouse</td>
+                <td>Credited when transferring inventory to alternate item# as when breaking an item with a box of 12 into a different item sold as each.&#160; Also credited when building or breaking an assortment.</td>
+            </tr>
+            <tr>
+                <td align="center">NOF</td>
+                <td>Special Order Inventory</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">Warehouse</td>
+                <td>Debited during Purchase Order Receiving for items not on the item file</td>
+            </tr>
+            <tr>
+                <td align="center">OVS</td>
+                <td>Cash Over/Short</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+                <td align="left">Expense or Other income/expense</td>
+                <td align="center">Branch</td>
+                <td>Debited during Cash Drawer Balancing</td>
+            </tr>
+            <tr>
+                <td align="center">RET</td>
+                <td>Retained Earnings</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Equity</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">SHR</td>
+                <td>Inventory Shrinkage</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Expense or<br />Cost of Sales</td>
+                <td align="center">&#160;Warehouse</td>
+                <td>Debited during Physical Inventory Update, Inventory Adjustments</td>
+            </tr>
+            <tr>
+                <td align="center">SLS</td>
+                <td>Sales</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Revenue</td>
+                <td align="center">Branch</td>
+                <td>Can have exceptions by product category and/or product class</td>
+            </tr>
+            <tr>
+                <td align="center">TAX</td>
+                <td>Sales Tax Payable</td>
+                <td align="center">CML</td>
+                <td>Sales Tax Region &amp; Rate Maintenance</td>
+                <td align="left">Liability</td>
+                <td align="center">Sales Tax Code</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">TOI</td>
+                <td>Transfer Order in Process</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">&#160;</td>
+                <td>Temporary account used to hold inventory between the time of shipment and 
+receipt.&#160; Represents the value of inventory in transit.</td>
+            </tr>
+            <tr>
+                <td align="center">UVR</td>
+                <td>UnVouchered Receipts</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Liability</td>
+                <td align="center">&#160;</td>
+                <td>Credited during Purchase Order Receiving, Debited during A/P Vendor Invoice 
+Update.&#160; Represents the value of inventory received, prior to receipt of 
+vendor's invoice.</td>
+            </tr>
+            <tr>
+                <td align="center">VRP</td>
+                <td>Vendor Returns Receivable</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">&#160;</td>
+                <td>Debited during Vendor Returns Update.&#160; Credited during Cash Receipts 
+Entry if vendor makes payment, during Vendor Invoice Data Entry/Update if vendor 
+issues credit memo, during Inventory Transaction Entry or Purchase Order 
+Receipts update if vendor replaces product.</td>
+            </tr>
+            <tr>
+                <td align="center">VRR</td>
+                <td>Vendor Rebate Receivable</td>
+                <td align="center">GLU</td>
+                <td>G/L Interface Maintenance</td>
+                <td align="left">Asset</td>
+                <td align="center">&#160;</td>
+                <td>Debited during PO Receiving based on the Vendor Rebate Percentage specified 
+in Vendor Maintenance, or when a Rebate parameter is enabled in PO Parameter 
+Maintenance and a rebate amount or percentage was entered in the PO Detail 
+properties.</td>
+            </tr>
+        </table>
+        <h5>Items &amp; Product Category Types</h5>
+        <p>Abbreviations:</p>
+INV Inventory<br />EXP Expense Account (used instead of INV)<br />PLE Payroll Labor Expense (used instead of INV)<br />SOI Special Order Inventory<br />UVR Unvouchered Receipts<br />COS Cost of Sales<br />A/P Accounts Payable<br />N/A Not applicable
+<table><tr><th rowspan="2">Type of Item</th><th rowspan="2">Product Category<br />Type</th><th rowspan="2">Example</th><th colspan="2">PO Receipts Update</th><th colspan="2">AP Invoice Update</th><th colspan="2">SO Invoice Update</th></tr><tr><th>DR</th><th>CR</th><th>DR</th><th>CR</th><th>DR</th><th>CR</th></tr><tr><td>Regular Inventory</td><td align="center">costed</td><td align="left">Any stocked item</td><td align="center">INV</td><td align="center">UVR</td><td align="center">UVR</td><td align="center">A/P</td><td align="center">COS</td><td align="center">INV</td></tr><tr><td rowspan="4">Item Status=L (Labor, etc.)<br />QOH not tracked</td><td align="center" rowspan="3">costed</td><td align="left" rowspan="2">Fuel, supplies, fees, contracted services</td><td align="center">EXP</td><td align="center">UVR</td><td align="center">UVR</td><td align="center">A/P</td><td align="center">COS</td><td align="center">EXP</td></tr><tr><td align="center" colspan="2">Item not purchased using POP</td><td align="center">EXP</td><td align="center">A/P</td><td align="center">COS</td><td align="center">EXP</td></tr><tr><td align="left">Employee labor for delivery charge, assembly, other services</td><td align="center" colspan="2">N/A</td><td align="center" colspan="2">N/A</td><td align="center">COS</td><td align="center">PLE</td></tr><tr><td align="center">uncosted</td><td align="left">Same as above when it is preferred that no cost be posted to cost of sales</td><td align="center" colspan="2">Uncosted items cannot be purchased</td><td align="center" colspan="2">N/A</td><td align="center" colspan="2">uncosted items have zero cost</td></tr><tr><td rowspan="2">Not-on-Item File Items</td><td align="center">costed</td><td align="left">Special order or one-time purchase</td><td align="center">SOI</td><td align="center">UVR</td><td align="center">UVR</td><td align="center">A/P</td><td align="center">COS</td><td align="center">SOI</td></tr><tr><td align="center">uncosted</td><td align="left">Same as above when it is preferred that no cost be posted to cost of sales</td><td align="center" colspan="2">Uncosted items cannot be purchased</td><td align="center" colspan="2">N/A</td><td align="center" colspan="2">uncosted items have zero cost</td></tr></table></body>
+</html>

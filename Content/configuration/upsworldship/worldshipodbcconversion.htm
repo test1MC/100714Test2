@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="12042" MadCap:lastWidth="838">
+    <head>
+        <meta http_equiv="Content-Language" content="en-us" /><title>UPS WorldShip ODBC Connection</title>
+        <link rel="stylesheet" type="text/css" href="../../policy.css" />
+    </head>
+    <body>
+        <p class="banner">&#160;</p>
+        <p class="SectionName">CONFIGURATION</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">UPS WorldShip ODBC&#160;Connection</p>
+                </td>
+                <td align="right">Last Revised: 07/14/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo can interface with UPS WorldShip.&#160; UPS WorldShip is a program provided by UPS that runs on a PC and is used to compute shipping charges, assign UPS tracking numbers, and print shipping labels.&#160; UPS can obtain the<i>ship to</i> address, service (Ground, Next Day Air, Three Day Select, etc.), billing method (Shipper, Receiver, Third Party), and other information from Dynamo.&#160; UPS can also send to Dynamo package weights, tracking numbers, and shipping costs.</p>
+        <p>This document describes how to set up a BBj Open Database Connectivity (ODBC) interface so that UPS WorldShip and Dynamo have a place to exchange information with each other. The database will operate in the background as a key, or decoder, for communication between the two programs. If you have already completed the following steps, visit the <a href="../../../../dynamo/Content/start/UPSWorldship.htm">UPS WorldShip documentation</a> page to continue using WorldShip with Dynamo.</p>
+        <h5>Has BBj ODBC driver been installed?</h5>
+        <ol>
+            <li>Go to <b>Windows Control Panel</b> from the start menu</li>
+            <li>Click on <b>Administrative Tools</b></li>
+            <li style="font-weight: normal;"><b>Data Sources (ODBC)</b> or <b>ODBC&#160;Data Sources)</b> (check both 32-bit and 64-bit).</li>
+            <li><b>Drivers</b> Tab</li>
+            <li>Verify BBj ODBC Driver is at version 15.00.01.00</li>
+            <li>If the driver is not installed, skip to the next session for instruction.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="../../Resources/Images/odbcUPS1.png" />
+        </p>
+        <p>&#160;</p>
+        <h5>If the driver is not installed:</h5>
+        <p>In a web browser, go to http://[SERVERNAME_OR_IP]:8888/install/installodbc.jnlp and press Enter. The file should run automatically upon download. Return to the above section to verify installation of the driver. Then proceed to the next section.</p>
+        <p>&#160;</p>
+        <h5>To Create Windows Data Source Name (DSN):</h5>
+        <ol>
+            <li>In the same window as pictured above, click <b>System DSN</b> tab</li>
+            <li>Click <b>Add</b>.</li>
+            <li>Select BBj ODBC Driver.</li>
+            <li>Click <b>Finish</b>.</li>
+            <li>Fill out form using the following details:<ol><li>Name: Dynamo</li><li>Description: Dynamo</li><li>Server: typically just the word: server</li><li>User Name &amp; Password: leave blank so that it can vary by shipping software</li><li>Database: Dynamo</li></ol></li>
+            <li>Click <b>OK</b>.</li>
+            <li>These steps should be performed for both ODBC Data Sources 32-bit and 64-bit.</li>
+        </ol>
+        <p>&#160;</p>
+        <h5>To Configure BBj Database:</h5>
+        <ol>
+            <li>Launch Basis Enterprise Manager from Browser: http://server:8888/bbjem/em</li>
+            <li>Click on your server name in the left pane, then click on the blue link button immediately at the top of the left pane.</li>
+            <li>In the pop-up window, enter <i>admin</i> as both the user name and password.  See Customer Notepad in Dynamo or use default password which is the same as the customer's router configuration password.</li>
+            <li>Double-click <b>Users</b> on the left side menu.</li>
+            <li>If the <b>ups</b> user does not exist, then:<ol><li>Click the green <b>+</b> button (not the one on the left, but in the middle toward the top of the page)</li><li>Enter username (with password same as username) of <b>ups</b> (for UPS), <b>fdx</b> (for Federal Express), <b>usm</b> (for US Mail using Endica)</li></ol></li>
+            <li>Double-click <b>Databases</b> on the left side menu (you may need to expand the list to see it)</li>
+            <li>If the Dynamo database name is not listed, then:<ol><li>Click the green <b>+</b> button (again at the top, in the middle)</li><li>Enter Database Name: Dynamo</li><li>Action: Use an Existing Data Dictionary</li><li>Dictionary Location: /u/CDI/DY/bbdict</li><li>Data Location: /u/CDI</li><li>Click OK</li></ol></li>
+            <li>To test if everything is in working order:<ol><li>Click on <b>Open a connection for running SQL statements</b> which is simply a running-man icon (toward top of window, in the middle)</li><li>Enter a shipping login/password such ups/ups.</li><li>In the large white box, type the following text: <b>select * from SO83</b></li><li>Click the running-man icon to execute (now at top left)</li><li>You should see something like in the screen shot below if it is working. If not, please follow these steps from the beginning to be sure a step was not missed.</li></ol></li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="../../Resources/Images/odbcUPS2.png" style="width: 576px;height: 213px;" />​</p>
+        <p>​</p>
+        <h5>"​From Dynamo" Configuration</h5>
+        <p>The <i>From Dynamo</i> configuration, if it already exists, can be edited instead of deleting it.  Editing the current configuration should take significantly less time than creating a new configuration after deleting the old one. However, if the From Dynamo map does not exist, it will need to be created using</p>
+        <p>1. Some of the fields that will need to be changed include the following:</p>
+        <ul>
+            <li>Step 1 - Delete SO83::PACKAGETYPE</li>
+                Package::PackageType
+            <li>Step 2 - Recreate using same Field Name from Shipment Information WorldShip Field</li>
+			SO83::PACKAGETYPE</ul>
+        <p>Shipment Information::PackageType</p>
+        <p>
+            <img src="odbc5.png" style="width: 420px;height: 348px;" />
+        </p>
+        <p>
+            <img src="odbc6.png" style="width: 404px;height: 288px;" />​</p>
+        <p>SO83::REF1</p>
+        <p>Shipment Information::Reference 1</p>
+        <p>SO83::REF2</p>
+        <p>Shipment Information::Reference 2</p>
+        <p>Remove SO83::SO83ID (Remove SO83ID and replace it with SO83::REF5)</p>
+        <p>Shipment Information::Reference 5 (Link to Reference 5 in Shipment Information section)</p>
+        <p>2. Other fields should already be mapped.  The other mapped fields should include the following:</p>
+        <p>SO83::S2RESIDENTIAL</p>
+        <p>Ship To::Residential Indicator</p>
+        <p>SO83::S2ZIP</p>
+        <p>Ship To::Postal Code</p>
+        <p>3. Continue on for the remaining From Dynamo fields.</p>
+        <p>4. Click OK when finished.</p>
+        <p>&#160;</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>UPS WorldShip - Import/Export Data Report (FromDynamo) </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Data Source Information:</p>
+                <p>DSN Name: Dynamo</p>
+                <p>DSN Description: Dynamo</p>
+                <p>ODBC Driver Name: BBj ODBC Driver</p>
+                <p>ODBC Driver: BBjODBC.dll</p>
+                <p>Database Name: Dynamo</p>
+                <p>Database Path:</p>
+                <p>Database Server: server</p>
+                <p>Map Information:</p>
+                <p>Map Type: Shipment</p>
+                <p>Map Version: 1017</p>
+                <p>Primary Table: SO83</p>
+                <p>Primary Key: SO83ID</p>
+                <p>Package Name:</p>
+                <p>Prompt for Table Name:No</p>
+                <p>XML Directory Location:</p>
+                <p>&#160;</p>
+                <p>Field Mappings:</p>
+                <p>ODBC Data Source Field (Table::Field)</p>
+                <p>WorldShip Field (Container::Field)</p>
+                <p>SO83::PACKAGETYPE</p>
+                <p>Shipment Information::Package Type</p>
+                <p>SO83::DESCOFGOODS</p>
+                <p>Goods::Description Of Good</p>
+                <p>SO83::S2RESIDENTIAL</p>
+                <p>Ship To::Residential Indicator</p>
+                <p>SO83::TPACCTNO</p>
+                <p>Third Party::UPS Account Number</p>
+                <p>SO83::S2ZIP</p>
+                <p>Ship To::Postal Code</p>
+                <p>SO83::QUANTITY</p>
+                <p>Goods::Invoice/CN22 Units</p>
+                <p>SO83::SBZIP</p>
+                <p>Ship From::Postal Code</p>
+                <p>SO83::SBSTATE</p>
+                <p>Ship From::State/Province/County</p>
+                <p>SO83::S2ACCTNO</p>
+                <p>Ship To::Receiver UPS Account Number</p>
+                <p>SO83::S2STATE</p>
+                <p>Ship To::State/Province/County</p>
+                <p>SO83::REF1</p>
+                <p>Shipment Information::Reference 1</p>
+                <p>SO83::BILLDUTYTAX</p>
+                <p>Shipment Information::Bill Duty and Tax To</p>
+                <p>SO83::REF2</p>
+                <p>Shipment Information::Reference 2</p>
+                <p>SO83::TPCITY</p>
+                <p>Third Party::City or Town</p>
+                <p>SO83::TPATTENTION</p>
+                <p>Third Party::Attention</p>
+                <p>SO83::DESCOFGOODS</p>
+                <p>Shipment Information::Description of Goods</p>
+                <p>SO83::S2ADDR1</p>
+                <p>Ship To::Address 1</p>
+                <p>SO83::S2ATTENTION</p>
+                <p>Ship To::Attention</p>
+                <p>SO83::S2NAME</p>
+                <p>Ship To::Company or Name</p>
+                <p>SO83::SBACCTNO</p>
+                <p>Ship From::UPS Account Number</p>
+                <p>SO83::UNITVALUE</p>
+                <p>Goods::Invoice/EEI/CN22 Unit Price</p>
+                <p>SO83::TPZIP</p>
+                <p>Third Party::Postal Code</p>
+                <p>SO83::TPADDR1</p>
+                <p>Third Party::Address 1</p>
+                <p>SO83::S2ADDR2</p>
+                <p>Ship To::Address 2</p>
+                <p>SO83::SERVICE</p>
+                <p>Shipment Information::Service Type</p>
+                <p>SO83::TPADDR2</p>
+                <p>Third Party::Address 2</p>
+                <p>SO83::S2ADDR3</p>
+                <p>Ship To::Address 3</p>
+                <p>SO83::REF5</p>
+                <p>Shipment Information::Reference 5</p>
+                <p>SO83::TPPHONE</p>
+                <p>Third Party::Telephone</p>
+                <p>SO83::TPADDR3</p>
+                <p>Third Party::Address 3</p>
+                <p>SO83::SBNAME</p>
+                <p>Ship From::Company or Name</p>
+                <p>SO83::S2EMAIL</p>
+                <p>Ship To::Email Address</p>
+                <p>SO83::S2PHONENO</p>
+                <p>Ship To::Telephone</p>
+                <p>SO83::S2COUNTRY</p>
+                <p>Ship To::Country/Territory</p>
+                <p>SO83::S2CITY</p>
+                <p>Ship To::City or Town</p>
+                <p>SO83::UNITOFMEASURE</p>
+                <p>Goods::Invoice/CN22 Unit Of Measure</p>
+                <p>SO83::TPCOUNTRY</p>
+                <p>Third Party::Country/Territory</p>
+                <p>SO83::TPNAME</p>
+                <p>Third Party::Company or Name</p>
+                <p>SO83::TPSTATE</p>
+                <p>Third Party::State/Province/County</p>
+                <p>SO83::SBCITY</p>
+                <p>Ship From::City or Town</p>
+                <p>SO83::SBATTENTION</p>
+                <p>Ship From::Attention</p>
+                <p>SO83::BILLINGOPTION</p>
+                <p>Shipment Information::Billing Option</p>
+                <p>SO83::SBADDR1</p>
+                <p>Ship From::Address 1</p>
+                <p>SO83::SBCOUNTRY</p>
+                <p>Ship From::Country/Territory</p>
+                <p>SO83::SBADDR2</p>
+                <p>Ship From::Address 2</p>
+                <p>SO83::COUNTRYOFMFG</p>
+                <p>Goods::Inv/NAFTA/CO/CN22 Country/Territory Of Origin</p>
+                <p>SO83::SBPHONE</p>
+                <p>Ship From::Telephone</p>
+                <p>SO83::SBADDR3</p>
+                <p>Ship From::Address 3</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h5>"To Dynamo" Configuration</h5>
+        <ol>
+            <li>Now we need to remove the existing map named <i>To Dynamo</i> .</li>
+            <li>Select the map named <i>To Dynamo</i> and then click the <b>Delete</b> button.</li>
+        </ol>
+        <p>&#160;</p>
+        <ol>
+            <li>Now we need to create a new map named <i>To Dynamo</i>.</li>
+            <li>At the bottom section of the <i>Create or Edit An Import/Export Map</i> window, select the radio button next to <i>Export to ODBC Database</i>. Leave the CSV option below it blank.  Change the Map Type to Shipment by clicking the drop arrow and selecting <i>Shipment</i> from the choices.  Type <b>To Dynamo</b> in the Name field and click the <b>Create</b> button.</li>
+            <li>Now we need to link the fields in SW81 to WorldShip Fields named Shipment Information, and Package.</li>
+            <li>Click the drop arrow in the left ODBC Tables and select SW81.</li>
+            <li>Click the drop arrow in the right WorldShip Fields and select Shipment Information.</li>
+            <li>Click the ODBC Tables Column Names listed below and 'Connect' them to their associated Shipment Information Field names (listed below)</li>
+            <li>Click on the Table name on left, click the WorldShip Field on the right, then click Connect. The pairing will be added to the mapped list at the bottom of the active window.</li>
+            <li>Continue mapping each field as noted under Shipment Information. Then select the WorldShip Field named Package and map the remaining SW81 fields that are in the Package Field.</li>
+            <li>Click OK when finished.</li>
+        </ol>
+        <p>
+            <img src="odbc7.png" />​</p>
+        <p>12. Create the following Field Mappings:</p>
+        <p>Shipment Information::Void Indicator</p>
+        <p>SW81::VOID</p>
+        <p>Shipment Information::Service Type</p>
+        <p>SW81::SERVICE</p>
+        <p>Package::Tracking Number </p>
+        <p>SW81::TRACKINGNO</p>
+        <p>Continue entering the remaining map pairings.</p>
+        <p>&#160;</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>UPS WorldShip - Import/Export Data Report To Dynamo</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Data Source Information:</p>
+                <p>DSN Name: Dynamo</p>
+                <p>DSN Description: Dynamo</p>
+                <p>ODBC Driver Name: BBj ODBC Driver</p>
+                <p>ODBC Driver: BBjODBC.dll</p>
+                <p>Database Name: Dynamo</p>
+                <p>Database Path:</p>
+                <p>Database Server: server</p>
+                <p>Map Information:</p>
+                <p>Map Type: Shipment</p>
+                <p>Map Version: 1017</p>
+                <p>Primary Table:</p>
+                <p>Primary Key:</p>
+                <p>Package Name:</p>
+                <p>Prompt for Table Name: No</p>
+                <p>XML Directory Location:</p>
+                <p>&#160;</p>
+                <p>Field Mappings:</p>
+                <p>WorldShip Field (Container::Field)</p>
+                <p>ODBC Data Source Field (Table::Field)</p>
+                <p>Shipment Information::Void Indicator</p>
+                <p>SW81::VOID</p>
+                <p>Shipment Information::Service Type</p>
+                <p>SW81::SERVICE</p>
+                <p>Package::Tracking Number</p>
+                <p>SW81::TRACKINGNO</p>
+                <p>Package::Postal Service Tracking ID</p>
+                <p>SW81::TRACKINGNO</p>
+                <p>Shipment Information::Number of Packages</p>
+                <p>SW81::NOPKGS</p>
+                <p>Package::Weight</p>
+                <p>SW81::WEIGHT</p>
+                <p>Package::Package Reference Charge</p>
+                <p>SW81::COST</p>
+                <p>Shipment Information::Reference 5</p>
+                <p>SW81::SO83ID</p>
+                <p>Package::Package Published Charge</p>
+                <p>SW81::PRICE</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h5>Changing ODBC&#160;Login</h5>
+        <p>1. Now that the ODBC driver has been configured, start the UPS WorldShip software and click on the Import/Export tab. </p>
+        <p>2. Click Create/Edit&#160;Map. </p>
+        <p>
+            <img src="odbc3.png" />
+        </p>
+        <p>
+            <img src="odbc4.png" />
+        </p>
+        <p>3. Click ODBC Login button and enter a username and password combination:</p>
+        <p>ups/ups (for UPS)</p>
+        <p>fdx/fdx (for FedEx)</p>
+        <p>usm/usm (for U.S. Mail)</p>
+        <p>Click OK&#160;when finished.</p>
+        <p>&#160;</p>
+        <p>4. Click Automatic Export, then hover your cursor over "Export After Shipment Processing." Select "To Dynamo." </p>
+        <p>
+            <img src="odbc10.png" />
+        </p>
+        <p>
+            <img src="odbc11.png" />
+        </p>
+        <p>&#160;</p>
+        <p>5. Click Keyed Import and select Dynamo</p>
+        <p>A yellow box should appear where you can scan or type a document number associated with a shipment.</p>
+        <p>
+            <img src="odbc8.png" />​</p>
+        <p>6. Details from Ship To and Reference should be populated.</p>
+        <p>
+            <img src="odbc9.png" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3714" MadCap:lastWidth="1210">
+    <head><title>G/L Interface Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">General Ledger Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">G/L Interface Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/10/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo is an integrated application.&#160; This means that all transactions flow through to the Dynamo General Ledger without the need to make manual journal entries.&#160; This application is used to maintain many of the General Ledger account numbers that are used when posting to the General Ledger.</p>
+        <p>Some G/L accounts can vary by G/L location, e.g., branch, warehouse, etc.&#160; Other accounts do not vary by location and only have one account that applies to then entire company.</p>
+        <p>This application has four major categories:</p>
+        <ol>
+            <li>Sales, Accounts Receivable (A/R), Accounts Payable (A/P), and General Ledger (G/L) accounts</li>
+            <li>Inventory Accounts</li>
+            <li>Rental Accounts</li>
+            <li>Special Purpose Accounts</li>
+        </ol>
+        <p>
+            <img src="gl240-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Sales Related Accounts</th>
+                </tr>
+                <tr>
+                    <td>Sales</td>
+                    <td>Try to specify as few sales G/L accounts as possible.&#160;Many companies only have one.&#160;If you have more than one, then specify the G/L Account to use by default, with the [ALL] Description, and then enter any exceptions by product category or product class.&#160;These accounts should be in the Revenue Account Group.&#160; The Sales account typically varies by the Dynamo Branch code.</td>
+                </tr>
+                <tr>
+                    <td>Cost of Sales</td>
+                    <td>
+                        <li>Specify one of more G/L accounts to be debited during SOP Invoice Update.&#160;These accounts should be in the Cost of Sales Account Group.&#160;The Cost of Sales account typically varies by the Dynamo Branch code.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Shipping Charges</td>
+                    <td>
+                        <li>Shipping charges that are billed to the customer are posted to this G/L account.&#160;This account should be in the Revenue or Other income/expense account groups.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Payments on&#160;Sales&#160;Orders</td>
+                    <td>
+                        <li>During <a href="../so/so530.htm">Cash Drawer Balancing</a>, and funds received from customers for sales order that are processed will debit this G/L account.&#160;Once the sale has been updated by SOP Invoice Update, payments received with the order will credit this G/L account.&#160;The balance in this account represents funds received&#160; from a customer including any down payment, when the sale has not yet been updated.&#160;The Payments on Open Sales Order (GLR) is used to reconcile this account.&#160; These accounts should be in the Asset Account Group.&#160;The 'Payments on Open Sales Orders' (GLR) report can be used to reconcile this account balance.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Customer Refunds Payable</td>
+                    <td>For retail stores, customers may return items that cost more than the amount available in the cash drawer. The balance in this account represents funds that must be paid to customers who have requested refund payments. </td>
+                </tr>
+                <tr>
+                    <td>Cash in Drawer</td>
+                    <td>The balance in this account represents the amount of money available in a location's cash drawer at the end of each night. The amount may vary from location to location. </td>
+                </tr>
+                <tr>
+                    <td>Cash Drawer Over/Short</td>
+                    <td>During Cash Drawer Balancing, when making a bank deposit, any variation in cash between what is counted in the drawer and what Dynamo shows should be in the Cash Drawer is posted to this account.&#160;These accounts should be in the Expense or Other income/expense Account Groups.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Accounts Receivable Accounts</th>
+                </tr>
+                <tr>
+                    <td>Accounts Receivable  </td>
+                    <td>
+                        <li>Debited during SOP Invoice Update if order was not paid in full using with payments entered with the sales order.&#160;Credited during A/R Cash Receipts Update.&#160; This account should be in the Asset Account Group.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cash Discount Allowed</td>
+                    <td>
+                        <li> Debited during A/R Cash Receipts Update.&#160;This account should be in the Expense, Other income/expense, Sales, or Cost of Sales Account Groups.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Finance Charge Billed </td>
+                    <td>
+                        <li>If you charge customers a finance charge for past due invoices, then Dynamo will credit this account when Finance Charge Update is run. This account should be in the Other income/expense,</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cash Receipts Application</td>
+                    <td>
+                        <li>Enter one or more G/L accounts that can be used during Cash Receipts Application for miscellaneous G/L transactions.&#160;These might include insurance refunds, payments received from vendors for returned products or rebates, a bad debts account, etc.&#160;Dynamo limits Cash Receipts Application to this list to prevent accidental posting to a G/L account that would not be appropriate.</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Accounts Payable Accounts</th>
+                </tr>
+                <tr>
+                    <td>Accounts Payable</td>
+                    <td>
+                        <li>Credited during A/P Invoice Update and A/P Manual Payment Update (if new invoices are created) and debited during A/P Check Update and A/P Manual Payment Update.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Discount Earned</td>
+                    <td>
+                        <li>Credited during A/P Check Update and A/P Manual Payment Update. This account should be in the Other income/expense or Cost of Sales Account Group.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Freight In</td>
+                    <td>
+                        <li>Debited during A/P Invoice Update for any amount entered in the Freight field. This account should be in the Cost of Sales or Expense Account Group.</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">General Ledger Accounts</td>
+                </tr>
+                <tr>
+                    <td>Retained Earnings</td>
+                    <td>
+                        <li>This account is used to post the profit or loss at the end of a fiscal year.&#160;This account should be in the Equity Account Group.</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="gl240-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Inventory Related Accounts</th>
+                </tr>
+                <tr>
+                    <td>Inventory</td>
+                    <td>
+                        <li>One of the inventory accounts is used when updating a Purchase Order Receipt, updating a Transfer Order Receipt, processing an Inventory Transaction Entry (I/C), updating a Physical Inventory, or during SOP Invoice Update.&#160;The Inventory account typically varies by the Dynamo Warehouse code.&#160;You may have one or more Inventory accounts. If more than one, they can vary by the Product Category or Product Class.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Not on Item&#160;File Transactions</td>
+                    <td>
+                        <li>Purchase and sale of items that are not on the Dynamo Item file are posted to this inventory account.&#160;The Special Order Inventory Detail (GLR) report can be used to reconcile this account balance.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prepaid Inventory</td>
+                    <td>
+                        <li>This account can be used when paying for inventory prior to receipt.&#160;In many cases, the amount is small, and instead of using Prepaid Inventory, the Unvouchered Receipts account is used. However, the Unvouchered Receipts account is a liability and typically has a credit balance. Should the prepaid inventory exceed the value of inventory received but not yet invoiced, then the Unvouchered Receipts account would have a debit balance.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>UnVouchered Receipts</td>
+                    <td>
+                        <li>This account is credited when updating a Purchase Order Receipt, and debited when updating the invoice for purchased products. Its account balance represents the value of Purchase Orders Received that have not yet been invoiced. These purchases can be for inventory as well as other non-inventory purchases.&#160;This account should be in the Liability Account Group.&#160;The Unvouchered Receipts Listing (GLR) can be used to reconcile this account balance.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Inventory Shrinkage</td>
+                    <td>
+                        <li>This account is debited when posting an ADJ Inventory Transaction.&#160;ADJ transactions are for shrinkage when you cannot determine the cause of the loss (or gain) of inventory.&#160;This account should be in the Expense, Other income/expense, or Cost of Sales Account Group.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Inventory Rounding Adjustment</td>
+                    <td>
+                        <li>Dynamo keeps inventory costs to two decimal places with an optional costing unit that can apply the cost per hundred pieces, per thousand pieces, or other quantity.&#160;In some cases, such as when using a discount percentage or multiplier on a purchase order, where the resultant inventory extension differs slightly from the received value.&#160;Whenever Dynamo changes inventory, any rounding adjustment is posted to this account.&#160;This account should be in the Cost of Sales, Expense, or Other income/expense Account Group.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendor Returns</td>
+                    <td>
+                        <li> This account is debited when updating a Vendor Return.&#160;It is typically linked to a Vendor Receivables/Returns account.&#160;If the vendor issues a check, then this account will be credited during Cash Receipts Update.&#160;If the vendor issues a credit memo, then this account will be credited during A/P Invoice Update when the credit memo is processed.&#160;This account should be in the Asset or Liability Account Group.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendor Rebates Receivable</td>
+                    <td>This account represents the vendor rebates receivable balance expected from occasions in which a vendor gives rebates for a customer's adherence to certain purchase requirements/levels. Typically, these estimates are measured in percents. If the operator does not want to estimate these numbers, Vendor Returns Receivables can be used instead. </td>
+                </tr>
+                <tr>
+                    <td>Vendor Price Protection</td>
+                    <td>This account contains the amount for when a customer requests a refund on an item after its price has been lowered. The refund amount is calculated based on the Quantity on Hand that remains after selling items at the previous price. </td>
+                </tr>
+                <tr>
+                    <td>Transfer&#160;Order in transit</td>
+                    <td>
+                        <li>This account is debited when updating a Transfer Order Shipment.&#160;It is credited when updating a Transfer Order Receipt.&#160;Its account balance reflects the value of inventory in transit on a transfer order, i.e., shipped but not yet received.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Used in House -Non-Rental Expense</td>
+                    <td>Specify the general ledger account used if non-rental inventory is used in house. This account will be debited. </td>
+                </tr>
+                <tr>
+                    <td>Purchase Order&#160;Processing</td>
+                    <td>
+                        <li>This list of account numbers is used to limit the G/L account numbers that can be used when entering a Purchase Order for an account other than Inventory.&#160; For example, purchase orders may be entered for Office Equipment, Office Supplies, etc.</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Inventory Transaction Entry</td>
+                    <td>
+                        <li>This list of account numbers is used to limit the G/L account numbers that can be used when entering a G/L Inventory Transaction Entry (I/C). Enter any account that use of inventory other than a sale to a customer might be used for.&#160;These might include Miscellaneous Warehouse Expense, Repairs &amp; Maintenance, New Equipment Preparation Costs, Vehicle Expense, etc.</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="gl240-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">Rental Related Accounts</th>
+                </tr>
+                <tr>
+                    <td>Used in House - Rental Expense</td>
+                    <td>When a product is received into a Dynamo warehouse coded as 'Rental' type and used within the company, this account is debited. This account is only necessary if a company makes a distinction between rental and sales items when they are used in house. </td>
+                </tr>
+                <tr>
+                    <td>Rental Expense -Serialized</td>
+                    <td>
+                        <li>When a product is received into a Dynamo warehouse coded as a 'Rental' type, and the value is less than the value of depreciated assets, and the item is marked a serialized item using Item Maintenance, then this G/L account is debited when updating the PO Receipt.&#160;The value that determines whether a purchase is depreciated or expensed, is maintained using A/P Parameter Maintenance (APU).</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rental Expense - Accessory</td>
+                    <td>
+                        <li>When a product is received into a Dynamo warehouse coded as a 'Rental' type, and the value is less than the value of depreciated assets, and the item is not marked a serialized item using Item Maintenance, then this G/L account is debited when updating the PO Receipt.&#160;The value that determines whether a purchase is depreciated or expensed, is maintained using A/P Parameter Maintenance (APU).</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="gl240-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Lab Usage</td>
+                    <td>If a company uses inventory in a lab, the funds can be posted to the general ledger account specified here. These items are not subject to use tax. </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

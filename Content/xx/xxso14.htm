@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2248" MadCap:lastWidth="1561">
+    <head><title>Sales Tax Control Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Sales Order Processing Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Sales Tax Control Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=XXSO14">Last Revised: 
+01/28/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to manage all settings related to sales tax calculation.</p>
+        <p>Features:</p>
+        <ol>
+            <li>Single rate applied to entire state</li>
+            <li>Multiple rates in state based on type of product, i.e., Illinois has different rates for sales, rental, and repairs</li>
+            <li>Destination based or single rate for Ohio</li>
+            <li>Date based rates so new rates can be entered in advance</li>
+            <li>Option to charge sales tax on shipping (Ohio started the practice in August 2003)</li>
+            <li>Branch specific tax calculation, i.e., internet sales branch using single state-wide rate, where branch in state uses product based rates</li>
+            <li>Automatic updating of Ohio destination based sales tax rates.&#160; Do not 
+enter any Ohio county based rates.</li>
+            <li>Support for 4 counties in central Ohio, Delaware, Fairfied, Licking, &amp; Union 
+counties, where part of the county is charged one tax rate, and the part of the 
+county serviced by the Central Ohio Transit Authority (COTA) is charged another 
+rate.</li>
+            <li>G/L Account# for sales tax liability can vary by state, type of product, etc.</li>
+            <li>Sales Tax report that includes Ohio's State Identifier numbers and not the Federal Information Processing Standard (FIPS).&#160; For example the FIPS number for Cuyahoga County is 35 but Ohio uses a different State Identifier# of 18.&#160; This report makes it easier to enter your monthly sales tax figures online.</li>
+            <li>Creation of a file in the format required by Ohio for monthly upload of sales tax data, reducing entry errors and time to process.</li>
+        </ol>
+        <h6>
+            <p>Note: Only enter states that you charge sales tax.&#160; Any state not listed will not be charged tax.&#160; 
+Ohio destination rates do not need to be entered here.&#160; They can be 
+downloaded automatically every month to insure latest rates are always in place.</p>
+        </h6>
+        <h6>
+            <p>Note: When making any rate change, you must re-enter all branch records with 
+the new effective date, even if there are no rate changes for other records for 
+the same branch.</p>
+        </h6>
+        <p>Example below would be a simple yet typical configuration for an Ohio company, with no out-of-state offices, that wants to charge Destination based sales tax to Ohio customers.</p>
+        <p>
+            <img src="xxso14-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Example below describes a company that wants to charge a single fixed rate to customers in Ohio 
+with shipping taxed, and also a fixed rate to customers in Pennsylvania with 
+shipping not taxed.</p>
+        <p>
+            <img src="xxso14-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Example below describes a more complex situation.</p>
+        <ul>
+            <li>Shipments to Ohio or customer pickup from Ohio stores will be charged Ohio destination based sales tax.</li>
+            <li>Shipments from internet branch J Illinois are charged a single interstate 
+rate unless shipped to Ohio.</li>
+            <li>Sales from branch R located in Illinois are taxed at one of three operator selected rates for sales, rental, or repair items.&#160; Note that you should not mingle different types of products on the same invoice as Dynamo only supports one sales tax rate per invoice.&#160; </li>
+        </ul>
+        <p>
+            <img src="xxso14-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>The Sales Tax State, Tax Identifier, description, and rate are all displayed on the 'Shipping Info' view of the Sales Order.&#160; 
+This example is for an Ohio destination based shipment to a Summit county 
+address.</p>
+        <p>
+            <img src="xxso14-4.png" style="width: 725px;height: 424px;" />
+        </p>
+    </body>
+</html>

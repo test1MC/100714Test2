@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="775" MadCap:lastWidth="1002">
+    <head><title>Searching for Items</title></head>
+    <body>
+        <p class="SectionName">getting started</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Searching for Items</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=[PROG]">Last Revised: 06/11/11</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo includes a Google like ability to search for items.&#160;&#160; Just enter what you know, and Dynamo will provide a list of matching items.</p>
+        <p>Here are some examples of what you can enter.</p>
+        <table>
+            <tr>
+                <th nowrap="nowrap">You Enter</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Complete Item#</td>
+                <td>You can always enter the Dynamo Item#, if you know it.&#160; Item numbers ABC123, ABC1234, ABC12345 all begin with ABC123, so when you enter ABC123 Dynamo does not know which of the items that begin with ABC123 you are looking for, so each of these items will be included in the list.&#160; To limit your search to only item# ABC123, touch the Space Bar after entering the item# before touching Enter.&#160; In this case only Item# ABC123 will be included in the list.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Starting Characters of Item#</td>
+                <td>All items that start with the characters entered will be displayed</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">One or more words from the Item Description</td>
+                <td>Only items that match all the words entered will be displayed.&#160; For 
+example entering RED PEN will display all items that have both RED and PEN in either of the two lines of Item Description.&#160; 
+You may enter the search words in any case (UPPER, lower, Mixed).</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Enter or scan UPC Bar Code#</td>
+                <td>Scanning or entering a UPC Bar Code will return the scanned item.&#160; 
+Dynamo requires each UPC Bar Code to refer to a single Dynamo Item#.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Enter or scan Dynamo Bar Code#</td>
+                <td>Scanning or entering a Dynamo Bar Code will return the item associated with 
+the bar code#.&#160; If there are other item numbers or vendor part numbers that 
+start with the same digits as the Dynamo Bar Code, they will be included in the 
+list of matching items.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Starting Characters of Vendor Part#</td>
+                <td>All items that have a Vendor Part# that starts with the characters entered 
+will be displayed.&#160;</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Equivalent Item#</td>
+                <td>Any Item that is Equivalent to the entry will display</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Customer Part#</td>
+                <td>Only applies when Dynamo knows the customer for the transaction, such as during Sales Order Processing</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">F3=Help</td>
+                <td>Select 'Item Level Help' to display this Help Text</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">F5=Search Options</td>
+                <td>You can temporarily change the search options to include discontinued items, 
+or to show only items with a Quantity Available at your warehouse/store, or to 
+show only items that are available at any warehouse/store in the company.<table><tr><th>Option</th><th align="center">Default Value</th></tr><tr><td>Exclude Discontinued Items with no QOH (Quantity on Hand)</td><td align="center">Y</td></tr><tr><td>Exclude Items if Warehouse Qty Avail=0 (at my Warehouse)</td><td align="center">N</td></tr><tr><td>Exclude Items if Company Qty Avail=0 (Company Wide)</td><td align="center">N</td></tr></table></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">F4=End</td>
+                <td>Exit Item Search</td>
+            </tr>
+        </table>
+        <p>Since searching for Items can sometimes take a while, especially when many items match the entry, you can also touch the F4 key during the search process to abort the search process, and display the items found so far.</p>
+    </body>
+</html>

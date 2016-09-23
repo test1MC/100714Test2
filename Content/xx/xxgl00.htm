@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="792" MadCap:lastWidth="1307">
+    <head><title>G/L Parameter Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">General ledger Utility functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">G/L Parameter Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/09/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">G/L Parameter Maintenance is used to define the 
+ structure of the General Ledger account number, and to indicate if Dynamo 
+ should post to the MAS90 accounting software.</p>
+        <p>
+            <img src="xxgl00-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">G/L Parameter Maintenance</th>
+            </tr>
+            <tr>
+                <td>Account# Structure</td>
+                <td>
+                    <p>Account numbers can be up to 9 digits in length (including locations if applicable) and divided into one, two, or three segments. &#160; Enter the numbers of digits in each of these segments. If an account number does not require the 2nd or 3rd segment, enter a zero for those segments.</p>
+                    <p>Typically the first segment identifies the primary account while the second segment identifies locations or branches. (The length of this second segment is determined by the number of locations. &#160; For example, a 2-digit segment will accommodate up to 99 locations.) &#160; A third segment could be used to identify departments within that location.</p>
+                    <p>In order to produce financial reports by location, these additional segments are essential.</p>
+                    <p>Once you have defined the structure of your account numbers, the account numbers and description can be set up in G/L Account Maintenance.&#160;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Location Segment</td>
+                <td>Enter 0 if your company has only one location. &#160; For those companies with multiple branches, divisions, or warehouses, enter 1 if the first segment of the account number identifies the location, 2 for the second segment, or 3 for the third segment.</td>
+            </tr>
+            <tr>
+                <td>Format</td>
+                <td>Once the Account Number Structure has been defined, this displays structure you have established. &#160; Valid account numbers must conform to this structure. &#160; For example, if the Account Number Structure is 4-3-0 and the Location Segment is the 2nd segment, the Mask will display 0000-LLL.</td>
+            </tr>
+            <tr>
+                <td>MAS 90 Company Code</td>
+                <td>Only required if you want Dynamo G/L postings to flow in to the MAS90 
+ accounting software.&#160; Typically only done when you have need for 
+ custom financial statements.<p>This is usually a 3-letter code that indicates the General Ledger module with which you are interfacing. &#160; If you are currently using MAS 90 and do not know your company code, access State of the Art Accounting. &#160; In MAS 90, your company code is indicated in parenthesis on the 1st line at the top left corner of the screen.</p></td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="9" MadCap:lastHeight="1422" MadCap:lastWidth="1173">
+    <head><title>Fixed Asset Depreciation Schedule</title>
+    </head>
+    <body>
+        <p class="SectionName">fixed asset accounting</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Fixed Asset Depreciation Schedule</p>
+                </td>
+                <td align="right">Last Revised: 03/10/14</td>
+            </tr>
+        </table>
+        <p>Fixed Asset Depreciation Schedule is used to determine the amount of annual depreciation on fixed assets. The listing will contain the asset number, the description of the asset, the depreciation method, the status of the method, the asset life in years, the acquisition date, the disposition date (where applicable), the acquired cost, the salvage cost, the prior depreciation, the current depreciation, the end depreciation, the net value, and any notes. </p>
+        <p>
+            <img src="fa020-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Fixed Asset Depreciation Schedule Primary View</th>
+                </tr>
+                <tr>
+                    <td>Depreciation&#160;Type</td>
+                    <td>
+                        <p>Choose the depreciation type from the following:</p>
+                        <ul>
+                            <li>T&#160;Tax</li>
+                            <li>B&#160;Book</li>
+                            <li>M&#160;Alternative Minimum Tax (AMT)</li>
+                            <li>Adjusted Current Earnings (ACE)&#160;</li>
+                        </ul>
+                        <p>See "Depreciation Types" explanation below. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Frequency</td>
+                    <td>
+                        <p>If depreciation is posted to the general ledger each month, this report should be run each month. If depreciation is posted to the general ledger once a year, then this report only needs to be printed once per year. </p>
+                        <p>Choose the depreciation frequency:</p>
+                        <ul>
+                            <li>M&#160;Monthly</li>
+                            <li>Q Quarterly</li>
+                            <li>S&#160;Semi-Annual</li>
+                            <li>A Annual </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Include all locations: choose "Y"&#160;or "N." </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Depreciation Types</th>
+                </tr>
+                <tr>
+                    <td>T Tax</td>
+                    <td>This type of depreciation is used when preparing federal income taxes. Companies usually take one of the accelerated depreciation methods for tax purposes.</td>
+                </tr>
+                <tr>
+                    <td>B Book</td>
+                    <td>Book depreciation is used when preparing company financial statements. Companies usually use the straight line method for book purposes since this does not reduce the bottom line as much as one of the accelerated methods.</td>
+                </tr>
+                <tr>
+                    <td>M&#160;Alternative Minimum Tax (AMT)</td>
+                    <td>AMT is used for tax purposes.</td>
+                </tr>
+                <tr>
+                    <td>Adjusted Current Earnings (ACE)</td>
+                    <td>ACE&#160;is used for tax purposes.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Methods of Depreciation</th>
+                </tr>
+                <tr>
+                    <td>DB&#160;Declining Balance</td>
+                    <td>(Acquisition cost less accumulated depreciation)
+                        divided by the life in years.</td>
+                </tr>
+                <tr>
+                    <td>LD&#160;Limited Declining Balance&#160;(1.5x)</td>
+                    <td>One and one half times the declining balance
+                        calculation.  Often applies to used equipment.</td>
+                </tr>
+                <tr>
+                    <td>DD&#160;Double Declining Balance</td>
+                    <td>Twice the declining balance calculation.</td>
+                </tr>
+                <tr>
+                    <td>SL&#160;Straight&#160;Line</td>
+                    <td>(Acquisition cost less scrap value and accumulated
+                     depreciation taken) divided by the remaining life
+                     of the asset.</td>
+                </tr>
+                <tr>
+                    <td>AC&#160;ACRS</td>
+                    <td>
+                        <p>This method is permitted for assets
+          acquired January 1, 1981 or later.  This method uses one of the
+          following tables depending on the asset life:
+
+          </p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <th>Asset Life</th>
+                                    <th>Depreciation percentage of acquisition cost each year</th>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>25% 38% 37%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5% 22% 21% 21% 21%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>       8% 14% 12% 10% 10% 10% 9% 9% 9% 9%</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>       5% 10%  9%  8%  7%  7% 6% 6% 6% 6% 6% 6% 6% 6% 6%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><![CDATA[
+           ]]></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For all methods of depreciation, the total accumulated depreciation will never exceed the acquisition cost less the scrap value. </p>
+    </body>
+</html>

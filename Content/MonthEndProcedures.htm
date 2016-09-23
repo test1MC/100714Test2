@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="508" MadCap:lastWidth="1225">
+    <head><title>Month End Procedures</title>
+    </head>
+    <body>
+        <p class="SectionName">Dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Month End Procedures</p>
+                </td>
+                <td align="right">Documentation Published on <MadCap:variable name="System.LongDate" /></td>
+            </tr>
+        </table>
+        <p>At the end of each month, several items should be taken care of in Dynamo to prepare for the next month of processing. Many of these should be run at the end of the year as well. </p>
+        <p>The applications on the Month End Procedures (M/E) menu are necessary for changing to a new month in Dynamo. However, before changing the booking month and updating, the operator should consider running some other applications that will ensure proper processing. </p>
+        <ul>
+            <li>The <a href="gl/gl280.htm">Unvouchered Receipts&#160;Listing</a> on the GLR menu should be run to ensure that all unvouchered receipts are linked to a purchase order and have the correct amount assigned to G/L&#160;accounts. This report will help ensure that all A/P invoices have been coded to properly reflect the PO#, Receipt#, and G/L account distribution.</li>
+            <li>The <a href="di/div060.htm">A/R Aging Report</a> (ARR) should be run in order to forecast cash flow and keep an eye on collections.</li>
+            <li>The <a href="ap/ap340.htm">A/P Trial Balance</a> Report (APR) should be run 
+	to view  any variation between the General Ledger Accounts Payable Account and the Accounts Payable detail as of a specific date.</li>
+            <li>The <a href="fa/fa020.htm">Fixed Asset Depreciation Schedule</a> (F/A) should be run since it applies depreciation to fixed assets and creates a G/L&#160;Posting. </li>
+            <li>The <a href="so/so300.htm">Salesperson Commission Report</a> (M/E) should be run (typically by branch/sales managers and salespersons) to verify that commissions were calculated correctly.</li>
+            <li>Run <a href="so/so433.htm">Change Order Booking Month</a> (M/E). This should be done as soon as the last order for the month being closed has been entered.</li>
+            <li>Run <a href="so/so280.htm">Month End Update</a> (M/E). </li>
+            <li><a href="gl/gl090.htm">G/L Period Ending Date Maintenance</a> (GLU) - Open the new month and be sure to mark the prior month as closed once all transactions have been processed. This helps prevent accidental posting to the wrong G/L period.</li>
+            <li><a href="gl/gl220.htm">Payments on Open Sales Orders</a> (GLR) - If you take payments of any kind when entering a sales order, then this report will provide a check to ensure that all open orders with payments have been invoiced.</li>
+            <li><a href="gl/gl210.htm">Daily Inventory Value</a> (GLR) - This report compares the inventory values at the end of each day to the inventory value in the General Ledger. It is much easier to resolve a variance when discovered quickly.</li>
+            <li><a href="gl/gl260.htm">Special Order Inventory Detail</a> (GLR) - If you ever buy and sell items that are one-time sales and are not set up using Item Maintenance, this report can help determine if the sales order used the correct item# and cost for these special order items.</li>
+            <li><a href="gl/gl400.htm">Inventory in Transit</a> (GLR) - If you have multiple warehouse or store locations, this report can be used to verify that all completed transfer orders have been received and updated and that the dollar value of the inventory in transit agrees with the General Ledger.</li>
+            <li><a href="gl/gl350.htm">Inventory Used in House</a> (GLR) - If you take product out of inventory for your own use, you may need to pay State Use Tax if you did not pay State Sales Tax when these items were purchased. This report lists items taken out of your inventory for your own use for assistance in computing State Use Tax.</li>
+            <li><a href="ic/ic500.htm">Physical Inventory</a> (I/C) - Whether you take a cycle count every month or the entire store/warehouse at the end of the year, this application can make taking and checking your inventory a snap.</li>
+            <li>If you have a local server with a tape drive, then run the cleaning tape to ensure best performance of your tape drive before replacing with the next backup tape. </li>
+        </ul>
+        <p>&#160;</p>
+        <p>Some companies may wish to run some of the Sales Order Processing Reports (SOR menu) and/or Inventory Evaluation Reports (I/C menu) before updating to the new month. </p>
+    </body>
+</html>

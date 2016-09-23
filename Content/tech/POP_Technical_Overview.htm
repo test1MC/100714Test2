@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>POP Technical Overview</title>
+ 
+        
+    </head>
+    <body>
+        
+        <p class="SectionName">Dynamo purchase order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Technical Overview</p>
+                </td>
+                <td align="right">Last Revised: 01/15/09</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo Purchase Order Processing provides the ability to enter, maintain, and send purchase orders to vendors, and to receive materials ordered into inventory.</p>
+        <p>There are many small programs involved this application.&#160; Refer to the 
+	Flow Diagrams below for a visual representation of the programs.</p>
+        <p><a target="_blank" href="POProcessingFlow.htm">PO Processing Flow Diagram</a>
+            <br /><a target="_blank" href="POReceivingFlow.htm">PO Receiving Flow Diagram</a>
+        </p>
+        <p><b>Purchase Order Data Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td>XXPO00</td>
+                <td>Purchase Order Parameters</td>
+                <td>Contains next purchase order# to be used and other parameters that control Purchase Order Processing.&#160; 
+		Single record retrieved using SW005.</td>
+            </tr>
+            <tr>
+                <td>XXPO40</td>
+                <td>PO Heading</td>
+                <td>Record for each purchase order</td>
+            </tr>
+            <tr>
+                <td>XXPO41</td>
+                <td>PO Detail</td>
+                <td>Record for each purchase order line item</td>
+            </tr>
+            <tr>
+                <td>XXPO42</td>
+                <td>PO Timestamps</td>
+                <td>Record for each purchase order timestamp</td>
+            </tr>
+            <tr>
+                <td>XXPO43</td>
+                <td>PO Notepad Text</td>
+                <td>
+        This file contains all notepad text associated with the PO.
+
+        <table class="lev2"><tr><th>First key segment</th><th>Notepad contents</th></tr><tr><td>PO number plus "INTERNAL"</td><td>Internal notepad not printed on purchase order</td></tr><tr><td>PO number plus "EXTERNAL"</td><td>Notepad printed at start of PO before first line item</td></tr><tr><td>PO number plus HTA(PO41.PO41ID)</td><td>Notepad associated with line item, printed on purchase order below line item.</td></tr><tr><td>STANDARD_NOTEPAD</td><td>Company Wide Notepad that prints on all purchase orders after all line items.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>XXPO50</td>
+                <td>PO Receipts Heading</td>
+                <td>Record for each receipt.&#160; A receipt is defined as all items that appear on the same vendor packing slip.&#160; A receipt can include items from more than one purchase order.</td>
+            </tr>
+            <tr>
+                <td>XXPO51</td>
+                <td>PO Receipts Detail</td>
+                <td>Record for each item received per PO Line Item.&#160; If the receipt 
+		includes multiple PO's, and a particular item is included on more than 
+		one PO, then there will be multiple PO51 records for this item.</td>
+            </tr>
+            <tr>
+                <td>XXPO52</td>
+                <td>PO Receipts by PO#</td>
+                <td>Record for each PO# included on a receipt.&#160; Typically a receipt includes items from a single PO, but some vendors consolidate all open orders, especially backorders, and ship them together in a single shipment on the same packing slip.</td>
+            </tr>
+            <tr>
+                <td>XXPO53</td>
+                <td>PO Receipts Timestamp</td>
+                <td>Record for each PO Receipt timestamp</td>
+            </tr>
+            <tr>
+                <td>XXPO54</td>
+                <td>PO Receipts by Skid#</td>
+                <td>Record for each item received by skid#.&#160; Used when it is 
+		necessary to produce a skid manifest listing items received on each 
+		skid.&#160; An item may be located on multiple skids.</td>
+            </tr>
+        </table>
+        <p><b>Related Data Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td>XXCM01</td>
+                <td>Customers</td>
+                <td>Used for drop ship PO's to obtain ship-to address</td>
+            </tr>
+            <tr>
+                <td>XXCM02</td>
+                <td>Ship To Addresses</td>
+                <td>Used for drop ship PO's to obtain ship-to address</td>
+            </tr>
+            <tr>
+                <td>XXCW00</td>
+                <td>Company Wide Parameters</td>
+                <td>Contains parameters that affect multiple programs such as whether the inventory is LIFO or FIFO, whether or not cores are used, whether or not federal excise tax is used, etc.</td>
+            </tr>
+            <tr>
+                <td>XXCW04</td>
+                <td>Application Menus</td>
+                <td>PO100 PO Processing<br />
+		PO150 PO Inquiry<br />
+		PO300 PO Receiving</td>
+            </tr>
+            <tr>
+                <td>XXCW10</td>
+                <td>Workstation Information</td>
+                <td>Used to determine default warehouse code and immediate purchase order printer for workstation.</td>
+            </tr>
+            <tr>
+                <td>XXCW12</td>
+                <td>Warehouses</td>
+                <td>One record per warehouse (Maintained on CWP menu)</td>
+            </tr>
+            <tr>
+                <td>XXCW13</td>
+                <td>Terms Codes</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXCW20</td>
+                <td>Shipping Carriers</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXCW21</td>
+                <td>Carrier Services</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXIC02</td>
+                <td>QOH Transactions</td>
+                <td>Written to by IC020 Change Qty on Hand</td>
+            </tr>
+            <tr>
+                <td>XXIC03</td>
+                <td>Inventory Receipts</td>
+                <td>Written to by IC030 Process Inventory Transaction</td>
+            </tr>
+            <tr>
+                <td>XXIC04</td>
+                <td>Inventory Usage</td>
+                <td>Written to by IC030 Process Inventory Transaction</td>
+            </tr>
+            <tr>
+                <td>XXIC10</td>
+                <td>Inventory Transactions</td>
+                <td>Written to by IC020 Change Qty on Hand.&#160; Processed by nightly 
+		process IC170 to post days activity to General Ledger.&#160; Also used 
+		to reverse a PO Receipt that was re-opened and adjusted.</td>
+            </tr>
+            <tr>
+                <td>XXIM01</td>
+                <td>Items</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXIM03</td>
+                <td>Vendor Part Numbers</td>
+                <td>Used by IM040 item selection, and to obtain VPN and cost for secondary vendors</td>
+            </tr>
+            <tr>
+                <td>XXIM04</td>
+                <td>Item Bar Codes</td>
+                <td>Used by IM040 item selection, and by scanning applications to obtain 
+		item# and quantity associated with each bar code.</td>
+            </tr>
+            <tr>
+                <td>XXIM11</td>
+                <td>Equivalent Part Numbers</td>
+                <td>Used by IM040 item selection</td>
+            </tr>
+            <tr>
+                <td>XXIM60</td>
+                <td>Vendor Prices</td>
+                <td>Used to obtain item cost for PO</td>
+            </tr>
+            <tr>
+                <td>XXUK20</td>
+                <td>Items by Keyword</td>
+                <td>Used by IM040 item selection</td>
+            </tr>
+            <tr>
+                <td>XXUM21</td>
+                <td>Warehouse</td>
+                <td>Used for Warehouse Locations.&#160; The purchase order programs no longer manage the Quantity on Order (UM21.QOO or W[2]) fields.&#160; Use IC035 program to obtain total Qty on Order.&#160; 
+		The Quantity on Hand is currently being maintained in UM21, although 
+		that is being phased out, and IC035 should be used to determine quantity 
+		on hand.</td>
+            </tr>
+            <tr>
+                <td>XXVM01</td>
+                <td>Vendors</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXVM03</td>
+                <td>Vendor Contact Names</td>
+                <td>Used to populate contact name in PO heading</td>
+            </tr>
+            <tr>
+                <td>XXVM04</td>
+                <td>Vendor Types</td>
+                <td>Used in Vendor Maintenance</td>
+            </tr>
+            <tr>
+                <td>XXVM06</td>
+                <td>Vendor Notepad</td>
+                <td>Used in Vendor Maintenance</td>
+            </tr>
+            <tr>
+                <td>XXVM08</td>
+                <td>Buyers</td>
+                <td>Used in Vendor Maintenance</td>
+            </tr>
+            <tr>
+                <td>DISM00</td>
+                <td>State/Country Codes</td>
+                <td>Used by SW460 Enter City/State/Zip (part of ZIP package)</td>
+            </tr>
+            <tr>
+                <td>DYSW01</td>
+                <td>City/State/Zip Codes</td>
+                <td>Used by SW460 Enter City/State/Zip (part of ZIP package)</td>
+            </tr>
+        </table>
+        <p><b>Temporary Work Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>XXPO170.</td>
+                <td>PO Generation</td>
+            </tr>
+            <tr>
+                <td>XXPO180.</td>
+                <td>Vendor Invoice Reconciliation</td>
+            </tr>
+            <tr>
+                <td>DYVM040.</td>
+                <td>Select Vendor</td>
+            </tr>
+        </table>
+        <p><b>Programs attached to Menu</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Menu</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>PO100</td>
+                <td>Purchase Order Processing</td>
+                <td align="center">POP</td>
+                <td>Uses Application Menu Processor (SW100)</td>
+            </tr>
+            <tr>
+                <td>PO150</td>
+                <td>Purchase Order Inquiry</td>
+                <td align="center">POP &amp; INQ</td>
+                <td>Uses Application Menu Processor (SW100)</td>
+            </tr>
+            <tr>
+                <td>PO170</td>
+                <td>Purchase Order Generation</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO180</td>
+                <td>Vendor Invoice Reconciliation</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO190</td>
+                <td>Purchase Order Receiving Documents</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO200</td>
+                <td>Purchase Order Listing</td>
+                <td align="center">POP</td>
+                <td>Lists open and/or closed purchase orders, heading or detail formats.</td>
+            </tr>
+            <tr>
+                <td>PO220</td>
+                <td>Purchase Order Receiving</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO230</td>
+                <td>Purchase Order Receipt Adjustment</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO250</td>
+                <td>Purchase Order Receipts Listing</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO300</td>
+                <td>Purchase Order Receiving</td>
+                <td align="center">POP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>GL280</td>
+                <td>Unvouchered Receipts Listing</td>
+                <td align="center">GLR</td>
+                <td>Lists received PO's that have not yet been processed through Accounts Payable.</td>
+            </tr>
+        </table>
+        <p><b>Called Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Data Dictionary Company</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>PO101</td>
+                <td>POP Vendor Info</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the PO40-B view containing vendor related information</td>
+            </tr>
+            <tr>
+                <td>PO102</td>
+                <td>POP Ship To</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the PO40-C view containing warehouse and ship to fields</td>
+            </tr>
+            <tr>
+                <td>PO103</td>
+                <td>POP Heading</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the PO40-I or PO40-H view containing PO Heading fields</td>
+            </tr>
+            <tr>
+                <td>PO104</td>
+                <td>POP Detail</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine that reads PO41 detail records, calls CDS352 to manage, and writes to PO41.&#160; CDS352 calls PO114 to maintain one line.</td>
+            </tr>
+            <tr>
+                <td>PO105</td>
+                <td>POP Print Options</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine used for printing, faxing and emailing</td>
+            </tr>
+            <tr>
+                <td>PO106</td>
+                <td>POP Merge PO</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine used to transfer all lines on a PO to the selected 
+		PO</td>
+            </tr>
+            <tr>
+                <td>PO107</td>
+                <td>POP Display Timestamps</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to displays PO42 timestamp records</td>
+            </tr>
+            <tr>
+                <td>PO108</td>
+                <td>POP Receipts</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display receipts for selected PO.&#160; CDS037 calls PO118 to display items received.</td>
+            </tr>
+            <tr>
+                <td>PO109</td>
+                <td>POP Vendor Inquiry</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to call the Vendor Inquiry program VM100 for the vendor assigned to the purchase order</td>
+            </tr>
+            <tr>
+                <td>PO110</td>
+                <td>POP Cancel/Delete/Re-Open Order</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine called to Void or Delete a purchase order.&#160; Once a purchase order has been printed, faxed, or emailed, it cannot be deleted but can be voided.&#160; A voided PO is inactive but still available for inquiry purposes.</td>
+            </tr>
+            <tr>
+                <td>PO111</td>
+                <td>POP Assign Status</td>
+                <td align="center">&#160;</td>
+                <td>Assigns PO40.STATUS$</td>
+            </tr>
+            <tr>
+                <td>PO114</td>
+                <td>POP PO Detail</td>
+                <td align="center">&#160;</td>
+                <td>CDS352 type routine used to display and enter PO Line item.&#160; Requires PO41 view A and B to maintain and display extended properties.</td>
+            </tr>
+            <tr>
+                <td>PO115</td>
+                <td>POP Print PO - Dot Matrix</td>
+                <td align="center">&#160;</td>
+                <td>Under Construction - will not be completed unless a customer requires it.&#160; Called by PO105.</td>
+            </tr>
+            <tr>
+                <td>PO116</td>
+                <td>POP Print PO - PCL</td>
+                <td align="center">&#160;</td>
+                <td>Used for PCL printing and faxing.&#160; Called by PO105.</td>
+            </tr>
+            <tr>
+                <td>PO117</td>
+                <td>POP Print PO - HTML</td>
+                <td align="center">&#160;</td>
+                <td>Used for emailing PO's.&#160; Called by PO105.</td>
+            </tr>
+            <tr>
+                <td>PO118</td>
+                <td>POP Receipts - detail</td>
+                <td align="center">&#160;</td>
+                <td>CDS037 SELRTN$ format to displays PO51 receipt detail for a given receipt.&#160; Called by CDS037 from PO108.</td>
+            </tr>
+            <tr>
+                <td>PO119</td>
+                <td>POP Generate Purchase Orders from SO</td>
+                <td align="center">&#160;</td>
+                <td>(Not completed)</td>
+            </tr>
+            <tr>
+                <td>PO120</td>
+                <td>POP Select Purchase Order</td>
+                <td align="center">DY</td>
+                <td>This routine is used to select an existing purchase order using purchase order number, vendor, vendor acknowledgement, etc.</td>
+            </tr>
+            <tr>
+                <td><a href="PO121.htm">PO121</a>
+                </td>
+                <td>POP Assign PO#</td>
+                <td align="center">&#160;</td>
+                <td>Called to obtain the next PO# to be used, and write a new PO40 heading record.</td>
+            </tr>
+            <tr>
+                <td><a href="PO122.htm">PO122</a>
+                </td>
+                <td>POP Select Vendor</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to select the vendor for a PO.</td>
+            </tr>
+            <tr>
+                <td><a href="PO123.htm">PO123</a>
+                </td>
+                <td>POP Select/Enter Vendor Contact</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to select a contact from the vendor contacts file, or manually enter a contact name.</td>
+            </tr>
+            <tr>
+                <td>PO125</td>
+                <td>POP Notepad</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to display/enter notepad text.</td>
+            </tr>
+            <tr>
+                <td>PO126</td>
+                <td>POP Warehouse Selection</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to select warehouse and assign WHSTYPE field.&#160; Calls
+		<a href="CW430.htm">CW430</a>.&#160; (PO40.WHS)</td>
+            </tr>
+            <tr>
+                <td>PO127</td>
+                <td>POP Drop Ship Customer# and address</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used for drop ship customer#, name and all address fields.</td>
+            </tr>
+            <tr>
+                <td>PO128</td>
+                <td>POP Extend PO Line Item</td>
+                <td align="center">&#160;</td>
+                <td>Used to compute PO41 extensions and validate PO41 properties</td>
+            </tr>
+            <tr>
+                <td>PO129</td>
+                <td>POP Validate Shipping Info View</td>
+                <td align="center">&#160;</td>
+                <td>Verifies that an address is specified for drop shipments, a billing account# is provided for shipments billed to recipient or third party, validates drop shipment address, and calls PO130 to update PO41 records.</td>
+            </tr>
+            <tr>
+                <td>PO130</td>
+                <td>POP Update PO detail</td>
+                <td align="center">&#160;</td>
+                <td>View validation type routine used to copy fields from PO40 to PO41 including warehouse code and date ordered.</td>
+            </tr>
+            <tr>
+                <td>PO131</td>
+                <td>POP Return PO Line Item Info</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine used to return total qty received and balance due for a PO41 record.</td>
+            </tr>
+            <tr>
+                <td>PO132</td>
+                <td>POP Return Date and Qty Received</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine similar to PO131 but includes logic to determine date received, or "* Multiple *".</td>
+            </tr>
+            <tr>
+                <td>PO133</td>
+                <td>POP Return Line Item Value Received</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine that returns value of given receipt line item.&#160; Value includes product cost and FET, but excludes core value.</td>
+            </tr>
+            <tr>
+                <td>PO134</td>
+                <td>POP Return Receipt Value Received</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine that returns total value of all items on receipt.</td>
+            </tr>
+            <tr>
+                <td>PO135</td>
+                <td>POP Return Line Item Due Date</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine that returns the Due Date, from the line item if present or the heading.</td>
+            </tr>
+            <tr>
+                <td>PO136</td>
+                <td>POP Return PO numbers for a given receipt</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine that return a 21 character field with the PO numbers and if they all don't fit, a count of the additional ones.</td>
+            </tr>
+            <tr>
+                <td>PO137</td>
+                <td>POP Return PO Info</td>
+                <td align="center">DY</td>
+                <td>CDS037/38 type external routine that returns info about a PO including the Received Value and Balance Open.</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" href="PO138.htm">PO138</a>
+                </td>
+                <td>POP Start New PO</td>
+                <td align="center">&#160;</td>
+                <td>Used during PO Generation to start new PO for a given vendor#.</td>
+            </tr>
+            <tr>
+                <td><a href="PO139.htm">PO139</a>
+                </td>
+                <td>POP Add line item to PO</td>
+                <td align="center">XX</td>
+                <td>Used during PO Generation to add a line item to a PO.</td>
+            </tr>
+            <tr>
+                <td>PO140</td>
+                <td>POP Start New Receipt</td>
+                <td align="center">&#160;</td>
+                <td>Called by scanner based applications to start a new PO Receipt</td>
+            </tr>
+            <tr>
+                <td>PO141</td>
+                <td>POP Receive Scanned Quantity</td>
+                <td align="center">&#160;</td>
+                <td>Called by scanner based application to post the scanned quantity to 
+		the PO51 Receipt Detail File</td>
+            </tr>
+            <tr>
+                <td>PO142</td>
+                <td>POP Add Line Item to Order Totals</td>
+                <td align="center">&#160;</td>
+                <td>Adds corresponding fields in detail to total in heading record</td>
+            </tr>
+            <tr>
+                <td>PO151</td>
+                <td>Purchase Order Inquiry - Detail</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display detail.&#160; Calls PO152 for highlighted line item.</td>
+            </tr>
+            <tr>
+                <td>PO152</td>
+                <td>Purchase Order Inquiry - Detail Properties</td>
+                <td align="center">&#160;</td>
+                <td>CDS037/38 type external routine to display PO41 detail properties using PO41-B view.</td>
+            </tr>
+            <tr>
+                <td>PO181</td>
+                <td>Vendor Invoice Reconciliation - Enter Invoiced Amt</td>
+                <td align="center">&#160;</td>
+                <td>CDS037 SELRTN$ routine called by PO180 and CDS037 for entry for the Invoiced Amount of a line item</td>
+            </tr>
+            <tr>
+                <td>PO201</td>
+                <td>Purchase Order Listing - Detail</td>
+                <td align="center">&#160;</td>
+                <td>CDS038 EXTRTN$ type routine called by PO200 when line item detail is requested.</td>
+            </tr>
+            <tr>
+                <td>PO221</td>
+                <td>Purchase Order Receiving - Enter Qty Received</td>
+                <td align="center">&#160;</td>
+                <td>CDS037 SELRTN$ routine called by PO220 and CDS037 for the entry of the quantity received.</td>
+            </tr>
+            <tr>
+                <td>PO222</td>
+                <td>PO Receiving - Return info for PO51</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO223</td>
+                <td>PO Receiving - PO# Entry</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO224</td>
+                <td>PO Receiving - Enter PO#</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO225</td>
+                <td>PO Receiving - Compute PO50 totals</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO250</td>
+                <td>PO Receipts Listing</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO301</td>
+                <td>POP Select Receipt</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO302</td>
+                <td>PO Receiving - Display Received Value by PO</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO303</td>
+                <td>PO Receiving - return list of PO's on receipt</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO304</td>
+                <td>PO Receiving - Heading</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO305</td>
+                <td>PO Receiving - Detail</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO306</td>
+                <td>PO Receiving - Print Options</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO307</td>
+                <td>PO Receiving - Display Timestamps</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO308</td>
+                <td>PO Receiving - Display Invoices</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO309</td>
+                <td>PO Receiving - Update/Delete/Reopen</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO310</td>
+                <td>PO Receiving - T Type Heading Fields</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO311</td>
+                <td>POP Compute invoiced amounts for PO Receipt</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO312</td>
+                <td>PO Receiving - Add/Delete PO</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>PO313</td>
+                <td>Return Whs Locations 7/row</td>
+                <td align="center">&#160;</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td><a href="po420.htm">PO420</a>
+                </td>
+                <td>POP Write PO Timestamp</td>
+                <td align="center">&#160;</td>
+                <td>Called by various programs to create a timestamp record for a PO.</td>
+            </tr>
+            <tr>
+                <td><a href="po530.htm">PO530</a>
+                </td>
+                <td>POP Write Receipt Timestamp</td>
+                <td align="center">&#160;</td>
+                <td>Called by various programs to create a timestamp record for a Receipt.</td>
+            </tr>
+            <tr>
+                <td>CW010</td>
+                <td>Return Workstation Record</td>
+                <td align="center">&#160;</td>
+                <td>Used to determine default warehouse and PO printer</td>
+            </tr>
+            <tr>
+                <td>CW133</td>
+                <td>Terms Code Entry</td>
+                <td align="center">&#160;</td>
+                <td>Used to enter terms code in PO Heading</td>
+            </tr>
+            <tr>
+                <td>CW222</td>
+                <td>Shipper Account# Entry</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (PO40.SHPACCTNO)</td>
+            </tr>
+            <tr>
+                <td>CW230</td>
+                <td>Carrier/Service/Billing Method Entry</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (PO00.SHPCARRIER &amp; PO40.SHPCARRIER)</td>
+            </tr>
+            <tr>
+                <td>CW430</td>
+                <td>Enter/Return Branch/Warehouse Code(s)</td>
+                <td align="center">&#160;</td>
+                <td>Used to enter one or more warehouse codes</td>
+            </tr>
+            <tr>
+                <td>GL013</td>
+                <td>Enter G/L Account#</td>
+                <td align="center">&#160;</td>
+                <td>X type external routine (PO41.GLACCTNO)</td>
+            </tr>
+            <tr>
+                <td>IC020</td>
+                <td>Change Quantity On Hand</td>
+                <td align="center">XX</td>
+                <td>Changes QOH in warehouse file, calls IC030 to create inventory receipt/usage, creates QOH Audit record</td>
+            </tr>
+            <tr>
+                <td>IC030</td>
+                <td>Process Inventory Transaction</td>
+                <td align="center">XX</td>
+                <td>Called by IC020 to manage IC03 Inventory Receipt and IC04 Inventory Usage records.</td>
+            </tr>
+            <tr>
+                <td>IC031</td>
+                <td>Compute Inventory Usage</td>
+                <td align="center">DY</td>
+                <td>Called by IC030 to accumulate total inventory usage of an IC03 record.</td>
+            </tr>
+            <tr>
+                <td>IC035</td>
+                <td>Return Inventory Quantities</td>
+                <td align="center">DY</td>
+                <td>Called by Purchase Order Generation PO170 and various Item Inquiry programs.</td>
+            </tr>
+            <tr>
+                <td>IC170</td>
+                <td>Process new IC10 records</td>
+                <td align="center">&#160;</td>
+                <td>Assigns G/L account numbers to IC10 records, creates daily G/L posting.&#160; Not attached to menu.&#160;&#160; Run by cron just after midnight daily.</td>
+            </tr>
+            <tr>
+                <td>IM040</td>
+                <td>Enter Item#</td>
+                <td align="center">XX</td>
+                <td>Used to enter an item or select from a list.&#160; Returns IM01$ item record.</td>
+            </tr>
+            <tr>
+                <td>IM042</td>
+                <td>Enter Item#</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (PO41.ITEMNO)</td>
+            </tr>
+            <tr>
+                <td>SW460</td>
+                <td>Enter City/State/Zip</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (PO40.CITY)</td>
+            </tr>
+            <tr>
+                <td>VM040</td>
+                <td>Enter Vendor#</td>
+                <td align="center">DY</td>
+                <td>Used to enter a vendor# or select from a list.&#160; Returns VM01$ vendor record.</td>
+            </tr>
+            <tr>
+                <td>VM013</td>
+                <td>Enter Vendor Alpha</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (PO40.ALPHASORT)</td>
+            </tr>
+            <tr>
+                <td>VM020</td>
+                <td>Validate Vendor - address verification</td>
+                <td align="center">&#160;</td>
+                <td>PO40 View B</td>
+            </tr>
+        </table>
+        <p><b>CDS037/38 Type External Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>PO131</td>
+                <td>PO41$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>QTYRCVD</td>
+                            <td>Total Qty Received for this line item</td>
+                        </tr>
+                        <tr>
+                            <td>BALANCE</td>
+                            <td>Qty open for this line item</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>Total Purchase Cost for line item (sum of Product Cost, FET Cost, and Core Costs)</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO132</td>
+                <td>PO41$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>QTYRCVD</td>
+                            <td>Total Qty Received for this line item</td>
+                        </tr>
+                        <tr>
+                            <td>QTYOPEN</td>
+                            <td>Qty open for this line item</td>
+                        </tr>
+                        <tr>
+                            <td>DATERCVD$</td>
+                            <td>Text version of Date Received.&#160; If only one receipt for this line item, then DATERCVD$ will contain the date in MM/DD/YY format.&#160; If multiple receipts then DATERCVD$ will contain "Multiple".</td>
+                        </tr>
+                        <tr>
+                            <td>VALRCVD</td>
+                            <td>Value received including product cost and FET.</td>
+                        </tr>
+                        <tr>
+                            <td>VALOPEN</td>
+                            <td>Value open including product cost and FET.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO133</td>
+                <td>PO51$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>VALUE</td>
+                            <td>The Value of the product received for one line item, including product cost and FET, but excluding Core Value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO134</td>
+                <td>PO50$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>VALUE</td>
+                            <td>The Value of the product received for all line items on a receipt, including product cost and FET, but excluding Core Value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO135</td>
+                <td>PO41$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>DATEDUE</td>
+                            <td>The date due for the line item if specified, otherwise the date due for the PO</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO136</td>
+                <td>PO50$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>PONOS$</td>
+                            <td>A list of purchase order numbers included on the receipt abbreviated to 21 characters.&#160; This is a display/print field with leading spaces removed.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>PO137</td>
+                <td>PO40$</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td>VALRCVD</td>
+                            <td>The value of the product received for all line items on the PO, including product cost and FET, but excluding Core Value</td>
+                        </tr>
+                        <tr>
+                            <td>VALOPEN</td>
+                            <td>The value of the product remaining open for all line items on the PO.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p><b>Utility Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>PO001</td>
+                <td>PO Installer (not complete)</td>
+            </tr>
+            <tr>
+                <td>PO160</td>
+                <td>Initializes all PO File</td>
+            </tr>
+            <tr>
+                <td>PO161</td>
+                <td>Converts older format PO's to current format</td>
+            </tr>
+            <tr>
+                <td>PO162</td>
+                <td>Checks and repairs PO STATUS and OPEN fields in PO40</td>
+            </tr>
+            <tr>
+                <td>PO163</td>
+                <td>Sets PO50.CLOSED</td>
+            </tr>
+        </table>
+        <p><b>Open Issues</b>
+        </p>
+        <table>
+            <tr>
+                <td>&#160;</td>
+                <td>Modify POP Entry Detail routine to remove PO41 record during delete and eliminate existing logic that builds string of prior PO41ID's</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>PO Receiving: Entry of Serial#'s for fully serialized items.&#160; Updating of SI01 records.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Cost Correction program</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>T Type Call for Costing Unit</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>Need to delete notepad records for items that are deleted and not pasted back.&#160; The problem is that the record could get pasted to another PO.&#160; I guess we could 'lose' any attached notepad during the paste operation when the PO# differs.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>A/P update should rename AP10 file and template file.</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>PO119: Generate PO's from Sales Order</td>
+            </tr>
+        </table>
+    </body>
+</html>

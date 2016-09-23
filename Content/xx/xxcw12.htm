@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="14" MadCap:lastHeight="2437" MadCap:lastWidth="1108">
+    <head><title>Warehouse Information Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Company Wide Parameters</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Warehouse Information Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/09/14</td>
+            </tr>
+        </table>
+        <p>Use this program to edit information about warehouses entered in Dynamo. </p>
+        <p>
+            <img src="xxcw12-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Warehouse&#160;Information Maintenance Primary View</th>
+                </tr>
+                <tr>
+                    <td>Warehouse</td>
+                    <td>Enter an existing warehouse code to maintain it or type a new character to create a new code for a warehouse.</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Give a location of the warehouse; this is typically a city name. </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Provide the name of the company.</td>
+                </tr>
+                <tr>
+                    <td>Address City, State/Country, Zip Code, County</td>
+                    <td>Provide the address for this warehouse of the company. When you enter the zip code, the city, state, and county will populate. </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Provide the phone number for this warehouse of the company.</td>
+                </tr>
+                <tr>
+                    <td>Fax</td>
+                    <td>Provide the fax number for this warehouse of the company. </td>
+                </tr>
+                <tr>
+                    <td>G/L&#160;Location</td>
+                    <td>Specify which general ledger account funds for this warehouse are sent.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>Standard&#160;Warehouse</td>
+                                </tr>
+                                <tr>
+                                    <td>D</td>
+                                    <td>Drop Ship Warehouse</td>
+                                </tr>
+                                <tr>
+                                    <td>R</td>
+                                    <td>Rental Only</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>Vendor Returns</td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>Transfer Order in Transit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td>A warehouse can be active or inactive. An inactive warehouse could be no longer in use or could be not yet active. </td>
+                </tr>
+                <tr>
+                    <td>Sequence</td>
+                    <td>Indicate the warehouse's priority over other warehouses (the lower the number the higher it shows up on a list of warehouse choices). </td>
+                </tr>
+                <tr>
+                    <td>Supplying&#160;Warehouse</td>
+                    <td>Specify which warehouse supplies the one being maintained. </td>
+                </tr>
+                <tr>
+                    <td>Location Mask</td>
+                    <td>Specify the location code format by using "A" to indicate letters and "N" to indicate numbers. For example, the code could be ANNN, so a location code might look like B123. </td>
+                </tr>
+                <tr>
+                    <td>Physical Inventory Locations</td>
+                    <td>
+                        <table style="width: 100%;">
+                            <col style="width: 289px;" />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>1 Clear no locations</td>
+                                    <td>Do not clear any locations from the computer's files after physical inventory.</td>
+                                </tr>
+                                <tr>
+                                    <td>2 Clear secondary locations not counted</td>
+                                    <td>Clear only the secondary locations of an item (typically overstock locations) after physical inventory.</td>
+                                </tr>
+                                <tr>
+                                    <td>3 Clear all locations</td>
+                                    <td>Clear all locations from the computer's files after physical inventory.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release Orders to&#160;Dynascan </td>
+                    <td>If the operator has Dynascan, this feature can be turned on to release sales orders and transfer orders to warehouse once no more changes will be made. Dynascan will calculate the orders once the warehouse has received the information. Dynascan can be used to receive, put away, ship, or count orders. </td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="xxcw12-2.png" style="width: 725px;height: 424px;" />
+        <br />
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Sales&#160;Order&#160;Processing Options</th>
+                </tr>
+                <tr>
+                    <td>SOP&#160;Qty Shipped Default</td>
+                    <td>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>Z</td>
+                                    <td>Default Quantity Shipped to Zero</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td>Default Quantity Shipped to Quantity Ordered</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Default Quantity Shipped to Quantity Available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Packing&#160;List Quantities</td>
+                    <td>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>B</td>
+                                    <td>Leave Quantity Shipped &amp;&#160;BO Blank</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>Print Quantity Shipped &amp;&#160;BO</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sort&#160;Packing List by Location</td>
+                    <td>Specify whether the packing list will be sorted by item location or not. </td>
+                </tr>
+                <tr>
+                    <td>Auto Invoice when Shipment Processed</td>
+                    <td>Invoices can be completed automatically by Dynamo upon shipment or manually. </td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="xxcw12-3.png" style="width: 725px;height: 424px;" />
+        <br />
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Transfer Order Processing Options</th>
+                </tr>
+                <tr>
+                    <td>TOP&#160;Generation Sequence</td>
+                    <td>This option controls the sequence in which warehouses are processed. A lower numbered warehouse receives transfer orders before warehouses with higher numbers. If "0" is specified, the warehouse is excluded.</td>
+                </tr>
+                <tr>
+                    <td>TOP&#160;Qty&#160;Shipped Default</td>
+                    <td>
+                        <p>Choose one of the following options the quantity shipped will default to for transfer orders for this warehouse. </p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>Z</td>
+                                    <td>Default Quantity Shipped to Zero</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td>Default Quantity Shipped to Quantity Ordered</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Default Quantity Shipped to Quantity Available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Transfer Orders</td>
+                    <td>Enter how the transfer orders will be printed/faxed/emailed by selecting a default printer.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

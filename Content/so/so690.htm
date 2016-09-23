@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1058" MadCap:lastWidth="1186">
+    <head><title>Rental Transaction Listing</title>
+    </head>
+    <body>
+        <p class="SectionName">sales order Processing&#160;Reports </p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Rental Transaction Listing</p>
+                </td>
+                <td align="right">Last Revised: 04/18/14</td>
+            </tr>
+        </table>
+        <p>Rental Transaction&#160;Listing is used to display the revenue generated for a group of rental items in a given range. The operator may use this report to view the cost of the fuel charge for customers for a particular time period or to view the adjustments made in the previous month, for example.</p>
+        <p>
+            <img src="so690-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Operator-Specified Fields</th>
+                </tr>
+                <tr>
+                    <td>Starting Month &amp;&#160;Year</td>
+                    <td>Specify the beginning date to be included on the listing.</td>
+                </tr>
+                <tr>
+                    <td>Ending Month &amp;&#160;Year</td>
+                    <td>Specify the ending date to be included on the listing.</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>Choose the desired branch. </td>
+                </tr>
+                <tr>
+                    <td>Product Class </td>
+                    <td>Type "Y" to select a specific product class or "N"&#160;to include all of them. </td>
+                </tr>
+                <tr>
+                    <td>Item&#160;</td>
+                    <td>
+                        <p>Choose one of the following:</p>
+                        <ul>
+                            <li>All Items</li>
+                            <li>All Items on Item File</li>
+                            <li>All Items not on Item File</li>
+                            <li>Operator Specified Item</li>
+                        </ul>
+                        <p>&#160;</p>
+                        <p>If "All&#160;Items" is selected, the report may take a few minutes to generate depending on how many items are in the system. If the operator prefers to see transactions for one item, "Operator Specified&#160;Item" should be chosen. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Customer </td>
+                    <td>Type "Y"&#160;to select a specific customer or "N"&#160;to include them all. If all customers will be on the report, it may take a few minutes to generate. </td>
+                </tr>
+                <tr>
+                    <td>Customer Type</td>
+                    <td>Type&#160;"Y"&#160;to select a specific customer type or "N"&#160;to include them all. </td>
+                </tr>
+                <tr>
+                    <td>Sequence</td>
+                    <td>
+                        <p>Choose one of the following information selections:</p>
+                        <ul>
+                            <li>Branch+Warehouse+InvoiceDate+SalesOrder#</li>
+                            <li>ProductClass+InvoiceDate+SalesOrder#</li>
+                            <li>CustType+Customer+InvoiceDate+SalesOrder#</li>
+                        </ul>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The report displays the alpha code, the order number, the product class, the item number and description, the daily rental cost, the weekly rental cost, the monthly rental cost, the overall usage, the fuel costs, the adjustment costs, and the total. The rest of the information displayed is based on what is chosen as the sequence. </p>
+        <p>&#160;</p>
+        <p>Sample <a href="rentaltranslisting.pdf">Rental Transaction Listing</a>.</p>
+    </body>
+</html>

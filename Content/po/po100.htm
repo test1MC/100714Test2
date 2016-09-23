@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="9" MadCap:lastHeight="8846" MadCap:lastWidth="1197">
+    <head><title>Purchase Order Processing</title>
+    </head>
+    <body>
+        <p class="SectionName">purchase order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Purchase Order Processing</p>
+                </td>
+                <td align="right">Last Revised: 02/13/15</td>
+            </tr>
+        </table>
+        <p>The Purchase Order Processing application allows the operator to start new orders and view/edit previously created ones.</p>
+        <p>
+            <img src="po100-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>In a list, open purchase orders are displayed first, then closed orders follow, both chronologically. </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Options</th>
+                </tr>
+                <tr>
+                    <td>(N) Start New Order</td>
+                    <td>
+                        <p>Dynamo assigns a new purchase order number. Fill in the necessary information. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;">(M) Start New&#160;Manually Numbered Order</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p>Choose an unused number and then fill in the necessary information.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: normal;">(O) Enter Existing Order Number</p>
+                    </td>
+                    <td>
+                        <p>Type in a purchase order number or choose it from the list. The information will automatically fill in. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;">(K) Enter Vendor Acknowledgment Number</span>
+                        </p>
+                    </td>
+                    <td>Type in a vendor acknowledgment number and the information will automatically fill in.</td>
+                </tr>
+                <tr>
+                    <td>(V)&#160;Display&#160;Vendor Orders</td>
+                    <td>Choose a purchase order from a vendor list.</td>
+                </tr>
+                <tr>
+                    <td>(B)&#160;Display Buyer Orders</td>
+                    <td>Choose a purchase order from a buyer list.</td>
+                </tr>
+                <tr>
+                    <td>(W)Display Warehouse&#160;Orders</td>
+                    <td>Choose a purchase order from a warehouse list.</td>
+                </tr>
+                <tr>
+                    <td>(A)&#160;Display All Orders</td>
+                    <td>All orders display. Choose one from the list. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="po100-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Once a purchase order has been selected, a list of options displays. Each of these options is marked with an asterisk '*', the letter 'A', 'D', 'S', or a blank:</p>
+        <ul>
+            <li>An asterisk '*' indicates there is data available to display for this option.</li>
+            <li>The letter 'A' indicates that no data is available, but you may select this option and enter information.</li>
+            <li>The letter 'D' indicates this option is disabled.</li>
+            <li>The letter 'S' indicates you do not have sufficient security clearance for this option.</li>
+            <li>A blank next to an option indicates there is no data to display.</li>
+        </ul>
+        <p>&#160;</p>
+        <h5>Vendor Info</h5>
+        <p>
+            <img src="po100-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This view displays the default contact information for the vendor. Many of the following fields will default to the information entered in <a href="../xx/xxvm01.htm">Vendor Maintenance</a> for this particular vendor. </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Vendor Info View</th>
+                </tr>
+                <tr>
+                    <td>Vendor#, Name</td>
+                    <td>Select a vendor by typing its vendor number or by typing its alpha code. </td>
+                </tr>
+                <tr>
+                    <td>Address, City, State/Country, Zip Code</td>
+                    <td>
+                        <p>The address will automatically populate these fields with the default contact information. If you need to change any of the address information, keep these guidelines in mind:</p>
+                        <ul>
+                            <li>If there is only one address line, enter it on Address Line 1. </li>
+                            <li>If you require a contact name or department, then enter it on Address Line 1, and the actual mailing address on Address Line 2.  </li>
+                            <li>Any suite number needs to be on the same line as the address.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alpha Sort Name</td>
+                    <td>This field will automatically populate with the alphabetization code specified in Vendor Maintenance.</td>
+                </tr>
+                <tr>
+                    <td>Terms Code</td>
+                    <td>The default Terms Code is specified in Vendor&#160;Maintenance.</td>
+                </tr>
+                <tr>
+                    <td>Confirming</td>
+                    <td>The Confirming field is used as an indicator of whether the order has already been placed. This field is typically set to “No,” but could be set to “Yes” if an order had been placed verbally and was confirmed by fax or email. </td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>The Contact field displays the vendor’s contacts, so you can select one here by pressing F4, or you can type one in.</td>
+                </tr>
+                <tr>
+                    <td>Telephone#</td>
+                    <td>The telephone number specified in Vendor Maintenance will populate this field, but it may be changed if necessary.</td>
+                </tr>
+                <tr>
+                    <td>Fax#</td>
+                    <td>The fax number specified in Vendor&#160;Maintenance will populate this field, but it may be changed if necessary.</td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td>You can enter the vendor contact’s email address here if you plan to email the PO.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Shipping Info</h5>
+        <p>
+            <img src="po100-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This view displays the shipping information for the purchase order. Many defaults in this view are specified in <a href="../xx/xxcm01.htm">Customer&#160;Maintenance</a>.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Shipping Info View</th>
+                </tr>
+                <tr>
+                    <td>Warehouse</td>
+                    <td>Select the warehouse that will be receiving the shipment.</td>
+                </tr>
+                <tr>
+                    <td>Customer#, Drop Ship To Name</td>
+                    <td>Specify a customer only if you want the shipment to be sent directly to a customer. Type their customer# or their alpha sort code to select them. </td>
+                </tr>
+                <tr>
+                    <td>Drop Ship Address, City, State/Country, Zip Code</td>
+                    <td>
+                        <p>If you've chosen a Drop Ship To Name, these fields will automatically populate with their default address. You can change the address if necessary.</p>
+                        <h6>Note: If Dynamo can't seem to validate your street address, please follow these guidelines:</h6>
+                        <ul>
+                            <li>If there is only one address line, enter it on Address Line 1. </li>
+                            <li>If you require a contact name or department, then enter it on Address Line 1, and the actual mailing address on Address Line 2.  </li>
+                            <li>Any suite number needs to be on the same line as the address.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Preferred Carrier</td>
+                    <td>
+                        <p>If shipping to one of your warehouses, the preferred carrier is specified in <a href="../xx/xxcw20.htm">Shipping Carrier &amp;&#160;Service Maintenance</a> on the CWP&#160;menu. </p>
+                        <p>&#160;</p>
+                        <p>If drop shipping to a customer, the preferred carrier is specified in Customer Maintenance. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Service</td>
+                    <td>
+                        <p>If shipping to one of your warehouses, the preferred service is specified in <a href="../xx/xxcw20.htm">Shipping Carrier &amp;&#160;Service Maintenance</a> on the CWP&#160;menu. </p>
+                        <p>&#160;</p>
+                        <p>If drop shipping to a customer, the preferred service is specified in Customer Maintenance. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Billing Method</td>
+                    <td>
+                        <p> The billing method is selected from the following choices:</p>
+                        <ul>
+                            <li>Prepay &amp; Add
+</li>
+                            <li> Prepay (Paid by Vendor)
+ </li>
+                            <li>No Charge
+</li>
+                            <li> Freight Collect
+ </li>
+                            <li>Bill Receiver's Acct
+ </li>
+                            <li>Third Party Billing
+ </li>
+                            <li>Consignee Billing</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bill Shipping to Acct#</td>
+                    <td>If a shipping account will be billed for freight on this purchase order, specify the account number here. </td>
+                </tr>
+                <tr>
+                    <td>FOB&#160;Point</td>
+                    <td>
+                        <p>Selecting Shipping Point indicates that the buyer is the one paying shipping costs and that he or she takes immediate responsibility for the items in the shipment as soon as they are shipped. </p>
+                        <p>Selecting Destination indicates that the vendor is paying shipping costs and that they take responsibility for the items in the shipment until the buyer receives the shipment.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>PO&#160;Heading</h5>
+        <p>
+            <img src="po100-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Displays information about the purchase order, such as the reference, the buyer, the date, etc.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">PO Heading View</th>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>Use this field to reference the purchases made on this order.</td>
+                </tr>
+                <tr>
+                    <td>Buyer Code or Initials</td>
+                    <td>This field references who made the purchase order. Buyer&#160;Codes can be maintained in <a href="../xx/xxvm08.htm">Buyer Maintenance</a> on the VML menu.</td>
+                </tr>
+                <tr>
+                    <td>Taxable</td>
+                    <td>Indicate whether or not the order is taxable. Items purchased for resale are typically not taxable, but you may change this field to taxable if you are purchasing items for your company’s own use. 
+</td>
+                </tr>
+                <tr>
+                    <td>Date New</td>
+                    <td>This date is automatically populated with the date in which the purchase order was created.</td>
+                </tr>
+                <tr>
+                    <td>Date Ordered</td>
+                    <td>This date indicates when the purchase order was made.</td>
+                </tr>
+                <tr>
+                    <td>Date Due</td>
+                    <td>This date indicates when payment is due for the purchase order.</td>
+                </tr>
+                <tr>
+                    <td>Date Received</td>
+                    <td>This date indicates when the items on this purchase order were received. This field is determined by when items were received <a href="po300.htm">Purchase Order Receiving</a>.</td>
+                </tr>
+                <tr>
+                    <td>Date Cancelled</td>
+                    <td>This date indicates when the purchase order was cancelled, if applicable. </td>
+                </tr>
+                <tr>
+                    <td>Sent Via</td>
+                    <td>
+                        <p>The operator can select how the purchase order was placed:</p>
+                        <ul>
+                            <li>Faxed to Vendor</li>
+                            <li>Phoned in to Vendor</li>
+                            <li>Emailed to Vendor</li>
+                            <li>Given to Sales Rep</li>
+                            <li>Entered on Vendor's Website</li>
+                            <li>Mailed to Vendor</li>
+                            <li>Vendor Generated</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendor Acknowledgement#</td>
+                    <td>Once an order has been placed, a vendor will often provide the buyer with an acknowledgement number. This number can be written here for future reference or for search purposes. </td>
+                </tr>
+                <tr>
+                    <td>Internal Notepad</td>
+                    <td>Anything written in this space can be viewed when inquiring about a purchase order, but it will not display on a printed purchase order.</td>
+                </tr>
+                <tr>
+                    <td>External&#160;Notepad</td>
+                    <td>Anything written in this space will be viewable in both Purchase Order&#160;Inquiry and on the printed purchase order. </td>
+                </tr>
+                <tr>
+                    <td>Global Discount%</td>
+                    <td>The Global Discount field is an optional and rarely used feature of Purchase Order Processing. Purchase Orders use the cost from the item file unless a different cost is entered. When a Global Discount is specified, it is applied to the cost entered on each line item. It can be used to apply an additional discount to every line of an order, such as during a promotional period or when an order qualifies for an extra discount due to order value, weight, or other threshold.
+</td>
+                </tr>
+                <tr>
+                    <td>Total Weight</td>
+                    <td>If a weight has been specified for the items listed on this purchase order, this field will populate. Otherwise, it will remain blank.</td>
+                </tr>
+                <tr>
+                    <td>Total Cube</td>
+                    <td>If a volume has been specified for the items listed on this purchase order, this field will populate. Otherwise, it will remain blank. </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>PO&#160;Detail</h5>
+        <p>
+            <img src="po100-7.png" style="width: 725px;height: 424px;" />s</p>
+        <p>View and add the items being purchased on the purchase order as well as their quantity and cost.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">PO&#160;Detail View</th>
+                </tr>
+                <tr>
+                    <td>Item#</td>
+                    <td>Enter the item number or a few characters of the item number or description to add it to the line item detail. </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>If you're adding an item that is on file, the description will automatically populate. The description can then be edited by pressing "P" in the "P" (Properties) column. </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>Indicate how many of each item will be purchased. </td>
+                </tr>
+                <tr>
+                    <td>Cost</td>
+                    <td>If a cost has been entered in <a href="../xx/xxim01.htm">Item&#160;Maintenance</a> for the item, this field will automatically populate. However, if the cost is different than what is in the system or there is no cost in the system, the operator can manually enter the cost. </td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>
+                        <p>This field is the costing unit. Choose from the following:</p>
+                        <ul>
+                            <li>Each</li>
+                            <li>Pair</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>Ten</li>
+                            <li>Dozen</li>
+                            <li>Fifty</li>
+                            <li>Hundred</li>
+                            <li>Thousand</li>
+                        </ul>
+                        <p>&#160;</p>
+                        <p>"Each" is the default unit when not otherwise specified.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>
+                        <p>In this column the operator can either type "I" to launch Item&#160;Inquiry, or they can type "P"&#160;to open the Properties screen for the item being edited.</p>
+                        <p>
+                            <img src="po100-13.png" />
+                        </p>
+                        <p>Default information for the item can be viewed, and it can also be changed if necessary. The only fields that cannot be changed here are the Item# and the Type. </p>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <th colspan="2">PO&#160;Detail Properties View</th>
+                                </tr>
+                                <tr>
+                                    <td>Description Line 1, Line 2</td>
+                                    <td>The predefined description will display here but it can also be edited.</td>
+                                </tr>
+                                <tr>
+                                    <td>Vendor Part#</td>
+                                    <td>Indicate the part number your vendor uses for this item.</td>
+                                </tr>
+                                <tr>
+                                    <td>Serialized Item</td>
+                                    <td>Specify whether or not this item is Fully Serialized,&#160;Partially Serialized, or Not Serialized.</td>
+                                </tr>
+                                <tr>
+                                    <td>Package Quantity</td>
+                                    <td>Indicate how many of this item are included in one package, if necessary.</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity Ordered</td>
+                                    <td>Though this can be changed on the main PO&#160;Detail View, the operator can also change the quantity ordered here.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cost</td>
+                                    <td>Though this can be changed on the main PO&#160;Detail View, the operator can also change the cost here.</td>
+                                </tr>
+                                <tr>
+                                    <td>Costing&#160;Unit</td>
+                                    <td>Though this can be changed on the main PO&#160;Detail View, the operator can also change the costing unit here.</td>
+                                </tr>
+                                <tr>
+                                    <td>Multiplier</td>
+                                    <td>This field can be enabled or disabled from <a href="../xx/xxpo00.htm">Purchase Order&#160;Parameter Maintenance</a>. It is optional, but you a two digit discount percentage can be entered in this field. </td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>The weight of the item can be specified here or in Item Maintenance.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cube</td>
+                                    <td>The volume of the item can be specified here or in Item Maintenance.</td>
+                                </tr>
+                                <tr>
+                                    <td>Date Due</td>
+                                    <td>If an item won't arrive on the premises until a certain date, enter the date here so the item won't be shipped to the customer until that date. </td>
+                                </tr>
+                                <tr>
+                                    <td>Notepad</td>
+                                    <td>Notes can be made about this item or its purchase using this field.</td>
+                                </tr>
+                                <tr>
+                                    <td>Rebate</td>
+                                    <td>This field is used to enter up to 
+3 rebates amount or percentages.&#160;These rebates are in addition to the vendor's rebate percentage that is maintained using Vendor Maintenance. The inventory cost will be reduced by the rebate amount, and the rebate will be debited to the Vendor Rebates Receivable G/L account.&#160;This account is maintained using <a href="../gl/gl240.htm">G/L Interface Maintenance</a> (GLU).</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Party Rebate</td>
+                                    <td>This field is similar to the Rebate option above but applies when a third party, such as a buying group, also offers a rebate amount or percent.</td>
+                                </tr>
+                                <tr>
+                                    <td>G/L&#160;Account#</td>
+                                    <td>If this item will need to be posted to a G/L&#160;account other than Unvouchered Receipts, specify it here. </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Print/Fax/Email PO</h5>
+        <p>
+            <img src="po100-8.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Use this option to print the purchase order or fax/email it to a specified recipient. </p>
+        <p>Sample <a href="../examples/PurchaseOrder.pdf">Purchase Order</a>. </p>
+        <h5>Print Receiving Document</h5>
+        <p>
+            <img src="po100-9.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Print the receiving document for this purchase order. </p>
+        <p>Sample <a href="../examples/POReceivingDocument.pdf">Receiving Document</a>. </p>
+        <h5>Timestamps</h5>
+        <p>
+            <img src="po100-10.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>View when the purchase order was changed, who changed it, and what was changed. </p>
+        <h5>Receipts</h5>
+        <p>
+            <img src="po100-11.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>View any receipts from the purchase order. If you have already received an item in <a href="po300.htm">Purchase Order Receiving</a>, you can not delete it from the PO&#160;Detail view. </p>
+        <h5>Merge Line Items from Another PO</h5>
+        <p>
+            <img src="po100-12.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Allows for the merging of items from another purchase order into this one, using the typical order options.</p>
+        <h5>Vendor Inquiry</h5>
+        <p>Launches the Vendor Inquiry application to search for a vendor. </p>
+        <h5>Cancel/Delete/Re-Open Order</h5>
+        <p>If the Purchase Order is Open, the balance can be cancelled here or the PO can be deleted. An order is closed once it has been received and the PO receipt has been updated and linked to an invoice. Once a purchase order has been updated, it cannot be deleted. The PO&#160;can be reopened at this point and the balance can be cancelled, however.</p>
+        <h3><a href="https://www.youtube.com/watch?v=QwrA6EStw9M">Video Documentation</a>
+        </h3>
+    </body>
+</html>

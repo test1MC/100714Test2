@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="816" MadCap:lastWidth="888">
+    <head><title>Operator Information Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Operator Information Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS478">Last Revised: 
+11/14/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used by Security Administrators to:</p>
+        <ul>
+            <li>Create new Operators</li>
+            <li>Set/Change Operator Profile, Preferences, &amp; Security Options</li>
+            <li>Define/Remove Operating System Login ID, password, and other operating system options</li>
+        </ul>
+        <h5>Profile</h5>
+        <p>The Profile view is used to specify a unique Operator ID, the user's Name, Department, Phone numbers, etc.</p>
+        <p>
+            <p>
+                <img src="cds470-1.png" />
+            </p>
+        </p>
+        <table>
+            <tr>
+                <th nowrap="nowrap" colspan="2">Profile</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Operator ID</td>
+                <td>The Operator ID is a 10 character field that is used to login to Dynamo. Some older versions of AIX and SCO&#160;operating systems have an 8 character maximum. The Operator ID&#160;is typically all lower case, should not contain internal spaces or other special character other than a period and the underscore. Typical operator ID's are the user's initials, first letter of first name followed by up to 9 characters in last name, first name plus first character of last name.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Name</td>
+                <td>Operator Name</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Operator's Initials</td>
+                <td>Used in some places where there is less space available to display the name</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Department/Location</td>
+                <td>Used to specify the operator's title, department, or work location</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Phone#</td>
+                <td>Four telephone numbers can be stored including work, home, cell, etc.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Extension</td>
+                <td>Primary Telephone Number Extension if applicable</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Email Address</td>
+                <td>This email address is used as the sending email address for any emails sent from Dynamo by this operator.&#160; If not specified the email will be sent from <a href="mailto:customer@excellware.com">customer@excellware.com</a>.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Windows Login</td>
+                <td>If using a Microsoft Windows PC, specify the Windows Login Name here.&#160; It must match exactly the Windows Login Name as specified in Windows Control Panel, operator Accounts.&#160; It is required for an operator to access shared files located on the server from Windows applications such as Microsoft Office, and Windows Explorer.&#160; 
+Best practice is not to have any spaces in the Windows Login.&#160; If spaces 
+are desired, then include quotes around the Login.&#160; It is possible to have 
+multiple Windows Logins separated by a blank space as shown in the example 
+above.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Dynamo Password</td>
+                <td>The Dynamo Password is used with Dynastart.&#160; You will be 
+prompted to enter the password twice.&#160; No operating system password is 
+required when using Dynastart.&#160; Dynastart can initially be launched Dynamo 
+from a web browser, and can be launched from a shortcut located on the desktop, 
+Applications folder, or other location after initial launch from the browser.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Security Group</td>
+                <td>
+                    <p>In most organizations, there are groups of users that all have the same security settings. By first creating a role user (Security Group) such as <code>"_counter"</code> and defining the required security settings, you can then assign all operators that share that same security to this Security Group.</p>
+                    <p>If this Operator requires their own security settings, then leave this Security Group field blank.</p>
+                    <p>If this Operator can use the security settings of the role based Security Group, then specify the Security Group that this operator should use.</p>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <h5>Preferences</h5>
+        </p>
+        <p>The Preferences View can be used to enter any special preferences for the user. Note that the user can edit the fields on this View using My Profile and Preferences on the SMS menu.</p>
+        <p>
+            <img src="cds470-2.png" />
+        </p>
+        <table>
+            <tr>
+                <th nowrap="nowrap" colspan="2">Preferences</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Font</td>
+                <td>The display font used with Dynastart can be set here. If no font is set, or the font does not exist on the workstation, then a default font will be used</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Font Size</td>
+                <td>The size of the font can be specified when using Dynastart. A default size will be used if not specified.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Company Code at Login</td>
+                <td>On a system with multiple companies, you can specify a company code here which will be used when Dynamo is started for this operator.&#160; If not specified Dynamo will be started in the last company accessed by the operator.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Menu Code at Login</td>
+                <td>Dynamo will be started at this menu code.&#160; If not specified, then menu code SYS will be used if present and if the operator has access to the SYS menu.&#160; Otherwise Dynamo will start in the first menu the operator is authorized to access.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Function Keys</td>
+                <td>Specify a Function Key Group Code to override the default Function Key Group Code of "STD."&#160; Function Key Groups are maintained using Terminal Function Key Maintenance on the SMC menu.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Colors</td>
+                <td>
+Dynamo screen colors are set by company using Company Information Maintenance 
+(SMC).&#160; However, operators that prefer other colors can specify them here.&#160; 
+For systems with multiple company codes, you may specify different colors for 
+each company.&#160; You may also define colors for company ** which will apply 
+to all company codes.&#160; There are four sets of colors that can be selected:<ul><li>Main window dim and bold text and background colors</li><li>Hot-key (F1) text and background colors for the window border, option, and highlighted option</li><li>Option (F2) text and background colors for the window border, option, and highlighted option</li><li>Help (F3) text and background colors for the window border, option, and highlighted option</li></ul><p>The initial display indicates which companies have colors specified.</p><p><img src="cds478-2.png" style="width: 725px;height: 424px;" /></p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Source Code Editor Path</td>
+                <td>Software Developers can specify the editor to use when editing programs using Dynastart. This path will be the path on the local workstation.</td>
+            </tr>
+        </table>
+        <h5>Security Information</h5>
+        <p>This view is used to set basic security options for the user.</p>
+        <p>
+            <img src="cds470-3.png" />
+        </p>
+        <p>&#160;</p>
+        <table>
+            <col style="width: 13px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="nowrap">Login Enabled</td>
+                    <td>This setting can be used to prevent an operator from logging in without permanently deleting the user.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Maximum # of Hoteys</td>
+                    <td>A Hotkey is used to launch another instance of Dynamo while suspending the current session. A user returns to the prior session when they close or leave the hotkey session. In order to prevent a user from getting confused with too many layered sessions created using a Hotkey, you can limit the maximum Hotkey depth with this setting. A Maximum Hotkey of 2 is typically sufficient for most users.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Message Security</td>
+                    <td>
+                        <p>Dynamo Tools has a messaging system where users can send message to one or more other users.</p>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>1 Only Read their own messages</td>
+                                    <td>This setting is satisfactory for most users where they can only read messages sent to their operator ID.</td>
+                                </tr>
+                                <tr>
+                                    <td>2 Read all non-private messages</td>
+                                    <td>This setting will allow users to read messages that are not marked as private, that were sent to some other user.</td>
+                                </tr>
+                                <tr>
+                                    <td>3 Read all messages</td>
+                                    <td>This setting allows the user to read all messages, including those marked as private.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Broadcast Messages</td>
+                    <td>
+                        <p>There is an option to Broadcast a message to all users.</p>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>Y Broadcast message to all users includes this user</td>
+                                    <td>This would be the typical setting.</td>
+                                </tr>
+                                <tr>
+                                    <td>N Broadcast message to all users excludes this user</td>
+                                    <td>This setting would be used for users that do not login.</td>
+                                </tr>
+                                <tr>
+                                    <td>S Exclude this user, but include all 'Same as' users</td>
+                                    <td>This setting would be used for role based Security Group users where a user does not login, but there are other users that share this same Security Group that should receive any broadcasted message.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Security Administrator</td>
+                    <td>Only users that are authorized to run this Operator Information Maintenance application should be defined as a Security Administrator. You can have more than one Security Administrator, but most users should not have this special designation.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Restricted File Utility Functions</td>
+                    <td>This setting can be used to restrict a user from certain risky File Utility (SMU) operations such as initializing or erasing, or renaming a data file, or using the General File Maintenance application. A&#160;<code>"Y"</code> setting means that this user is permitted to use the Restricted File Utility Options. Most users should not have this option enabled.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Console Mode</td>
+                    <td>The setting is used to permit a user to enter BBx/BBj console mode and enter business basic commands. It should be disabled for most users.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Set Job Prefix</td>
+                    <td>A Job Prefix can be set temporarily to test an application before activating a software project for all users. Only users that might need to perform such pre-activation testing should have this option enabled.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Early License Renewal Message</td>
+                    <td>Dynamo Tools are a licensed product that requires an annual license registration. This setting is used to indicate the operators who should be notified before others, that the license is getting close to renewal time. License renewal is accomplished via a brief telephone call to Excellware where license control number and activation keys are entered.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Bypass Company License Check</td>
+                    <td>Dynamo is licensed based on the maximum number of simultaneous users. Only Excellware staff members should have this parameter set to Y so their access does not count toward the number of currently licensed users.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Enable Double Vision</td>
+                    <td>Double Vision is a remote control application that enables a user to view another user's screen. This setting should only be set to&#160;Y for users that are authorized to view another's screen.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Kill User Process</td>
+                    <td>Typically a user will log out of Dynamo when they are finished for the day. However, sometimes the session disconnects from the server, or the application is stuck in some kind of infinite loop, and needs to be killed. This setting should only be set to Y for users that are authorized to kill (abort) another user's running session.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Remote Location Access</td>
+                    <td>This setting enables the user to connect to a remote location such as a branch office, to remotely control a workstation, configure a printer, etc.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Delete Installed Software Package</td>
+                    <td>Software packages installed can be viewed using the V menu option. This setting enables the user to delete a software package from the list.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Printer Menu Options</h5>
+        <p>This view is used to enable/disable the user from printing to special output device types.</p>
+        <p>
+            <img src="cds470-4.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Fax</td>
+                    <td>This setting is used to allow the user to print reports to a fax machine. Faxing at the system level must be enabled and configured for either Dynafax or VSI*FAX using Dynamo Configuration Maintenance (SMC).</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>This setting is used to allow a user to email reports. &#160;Emailing must be configured on the linux/unix server.</td>
+                </tr>
+                <tr>
+                    <td>File</td>
+                    <td>This setting is used to allow a user to print a report creating a text file, typically tab delimited for opening by a spread sheet or text editing application.</td>
+                </tr>
+                <tr>
+                    <td>PDF</td>
+                    <td>This setting is user to create reports in Adobe PDF format. It requires the third party PDF creation tools installed on the Linux server.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Company and Menu Access</h5>
+        <p>This view is used to maintain security access by company and menu code. Some systems have multiple Dynamo companies installed on the same server. Use this view to limit which companies a user may access, and what menus, and security levels they should have for each company.</p>
+        <p>In this example below, user willham has access only to company code UG, with access to the menu codes and security levels shown. The user would not have access to any other menu code since the wild card menu code of *** is not listed.</p>
+        <p>
+            <img src="cds470-5.png" />
+        </p>
+        <p>The Dynamo Security system will allow a user to run an application on a menu if:</p>
+        <ol>
+            <li>the user is authorized to access the current company code</li>
+            <li>the user's security level for the menu code is greater than or equal to the security level for the application.</li>
+        </ol>
+        <p>This program is used to assign the security level to the operator. Menu Control Maintenance (SMC)&#160;is used to assign the security level to each menu, and each application on the menu.</p>
+        <p>
+            <h5>Operating System Settings</h5>
+        </p>
+        <p>This view is used to define/remove the operator's operating system login ID and related information. This view is not applicable on Windows systems. A smaller list of options exist on non-linux systems.</p>
+        <p>
+            <img src="cds470-6.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="nowrap">Login Exists</td>
+                    <td>Dynastart users do not require an Operating System Login ID. But users that run a terminal emulator such as FacetWin, Power Term, or Apple Terminal, do need an operating system login ID. Changing this setting will define or remove the opearing system Login.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Home Directory</td>
+                    <td>This is a display only field just for information purposes.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Shell</td>
+                    <td>The Shell is the program run that provides the user with the ability to enter operating system commands. On Linux systems the <code>/bin/bash</code> Shell is most popular. You can use <code>/sbin/nologin</code> to prevent the user from logging in. Other special purpose shells are available.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Password</td>
+                    <td>The operating system password can be set or changed using this field. There is also an option to lock a user which prevents them from logging in. Locked users can be unlocked with this application.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Dynamo Tools Profile</td>
+                    <td>The Profile is the first program that is run when the user logs in. Typically it launches Dynamo. This setting indicates if the user is using the standard Dynamo Tools Profile program. There are options to replace the profile with the standard version, or to view/edit the user's profile.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">.rhosts file</td>
+                    <td>This file is required when using user based authentication in conjunction with the pro5 or BBj pro5 data server. Normally the file is configured to provide unrestricted access, which means that all users may connect from any location. There are options to display/edit the .rhosts file, or change it to be unrestricted.</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">Alternate Profile Present</td>
+                    <td>
+                        <p>An alternate profile is actually an additional profile with the name .altsmsprofile which is run near the end of the standard profile. It can be used for selected operators or specialty devices such as a hand-held computer to run a menu system other than the standard Dynamo Tools menu. Note that this option is only used when there are selected users with special requirements. If all users require a special menu or initial program to run, then the /u/CDI/bin/profile.local file is used for those commands.</p>
+                        <p>This option can be used to view/edit the alternate profile file, or to remove it.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

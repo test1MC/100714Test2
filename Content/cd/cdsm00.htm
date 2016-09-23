@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="11" MadCap:lastHeight="6093" MadCap:lastWidth="1250">
+    <head><title>Dynamo Configuration Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Dynamo Configuration Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 04/21/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to configure certain system 
+	wide parameters that apply to regular logins from a workstation (PC, Mac, 
+	Axel thin client, etc.), to Dynaweb applications, and to BBj stored 
+	procedures and triggers if they call CDS011.</p>
+        <p>Note that the System Activity Log and Contact Information routine name 
+	options can now vary by company code, and are maintained using Company 
+	Information Maintenance (SMS).</p>
+        <p>Users of existing sessions will need to log out and back in for changes 
+	to be effective.</p>
+        <p>&#160;</p>
+        <h5>Dynamo System Configuration</h5>
+        <p>
+            <img src="cdsm00-6.png" />
+        </p>
+        <table>
+            <tr>
+                <td><a name="MEM"></a>Memory Pages</td>
+                <td>
+        Specify the amount of memory that Dynamo menu should use.&#160; A page 
+		is 256K, so 4000 pages indicates 1Mb of memory.&#160; Memory pages of 
+		1000 to 65,536 are supported. Note that this parameter is not applicable for BBj sessions.</td>
+            </tr>
+            <tr>
+                <td><a name="MENUTIMEOUT"></a>Menu Timeout Minutes</td>
+                <td>Sessions that remain on a menu for the Menu Timeout Minutes will be 
+		automatically logged out.</td>
+            </tr>
+            <tr>
+                <td><a name="DYNPROFILES"></a>Function Keys</td>
+                <td>An entry here overrides the default Function Key Group Code of 'STD' 
+ for operators that do not have a Function Key Group Code specified in 'My 
+ Profile &amp; Preferences' (SMS).</td>
+            </tr>
+            <tr>
+                <td><a name="DYNPROFILES"></a>Use Dynamo Profiles</td>
+                <td>Set to "Y" to have Dynamo Tools software upgrades update the users login profile file.&#160; Set to "N" for those situations where a direct login to Dynamo Tools menu is not desired, or when custom profile files are used.</td>
+            </tr>
+            <tr>
+                <td>Use Command Processor</td>
+                <td>
+                    <table style="width: 100%;">
+                        <col />
+                        <col />
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;">Y</td>
+                                <td>Command Processor is used to perform certain functions typically restricted to 'root'.</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">N</td>
+                                <td>Command Processor is not used. User's with 'sudo' permissions can perform restricted functions such as adding users.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="COCHGRTN"></a>Company Change Routine</td>
+                <td>When multiple companies are installed on the same server, the Dynamo 
+		Menu processor can call an external routine when an operator first logs in, 
+		or when an operator changes company codes.&#160; The program is called after 
+		the prefix is set for the new company.&#160; The enter list for the 
+		called routine is simply <code>Y$</code>, where <code>Y.COMPCODE$</code> 
+		is the new company code.</td>
+            </tr>
+            <tr>
+                <td><a name="JOBCO"></a>Job Company</td>
+                <td>Used to indicate the company code for the first two characters of the job tracking data files.&#160; Leave blank if not using the Dynamo Tools job tracking software.</td>
+            </tr>
+            <tr>
+                <td><a name="HTTPNAME"></a>Public Http Name</td>
+                <td>
+                    <p>An entry here indicates that you want to use the web server 
+		to serve up files with extensions of .pdf, .htm, .txt, .xls, and .xml.&#160; 
+		After printing a report, the workstation's web browser will be pointed 
+		to this address.&#160; The Public Http Name can be the IP address when 
+		the host name does not resolve, as over certain vpn's.&#160; Include the 
+		tmp folder if using a local name.&#160; If there is no entry here, then 
+		file and print sharing using FacetWin or Samba or nfs can be used to 
+		display the output data.</p>
+                    <table>
+                        <tr>
+                            <th>Examples</th>
+                            <th>Resolves to</th>
+                        </tr>
+                        <tr>
+                            <td class="code">ex.exdy.info</td>
+                            <td class="code">dynaweb.excellware.com/tmp/</td>
+                        </tr>
+                        <tr>
+                            <td class="code">192.168.60.20/tmp/</td>
+                            <td class="code">192.168.60.20/tmp/</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th colspan="2">Prerequisites</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">1</td>
+                            <td>A web server such as apache needs to be configured on the 
+				server.</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">2</td>
+                            <td>The web server's Document Root directory must have a 
+				symbolic link for directory tmp to the tmp directory below the 
+				Dynamo Tools install directory.&#160; For example, if the web 
+				server's Document Root directory is <code>/var/www/htdocs</code>, and Dynamo is 
+				installed in <code>/u/CDI</code>, then <code>/var/www/htdocs/tmp</code> must 
+				be a symbolic link to <code>/u/CDI/tmp</code>.</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">3</td>
+                            <td>The web server and SElinux, if applicable, must be 
+				configured to permit the web server access across the tmp symbolic link.</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">4</td>
+                            <td>
+                                <p>In order to display the report file automatically, the 
+				following workstations are supported. If not running one of these emulators, the 
+				application will display the url which can be copied and pasted 
+				into the browser address to display the output.</p>
+                                <table>
+                                    <col />
+                                    <col />
+                                    <tbody>
+                                        <tr>
+                                            <td>Dynastart</td>
+                                            <td>BBj thin client</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Facetwin</td>
+                                            <td>Windows terminal emulator from FacetCorp</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PowerTerm</td>
+                                            <td>Terminal emulator from Ericom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VPro5</td>
+                                            <td>Windows Visual Pro5 Application</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="HELPURL"></a>Help Text URL</td>
+                <td>
+                    <p>For applications that use Dynamo Tools, but not Dynamo, you can 
+		specify the url where the html documentation is stored.&#160; Do not 
+		include http:// in the URL.&#160; A trailing / is required.&#160; 
+		Example: <code>www.company.com/help/</code></p>
+                    <table>
+                        <tr>
+                            <th>Help (F3) requested from </th>
+                            <th>Help Text URL consists of this field value followed by</th>
+                        </tr>
+                        <tr>
+                            <td>Dynamo Tools Program Editor,			for CALLed routine</td>
+                            <td>called routine name with .htm extension.&#160; Case or help text 
+			name must match that of called program name.<br />		Example: <code>www.company.com/help/PROGNAME.htm</code></td>
+                        </tr>
+                        <tr>
+                            <td>Dynamo Tools Data Entry<br />			(Item Level Help)</td>
+                            <td>help text ID as passed in {} within prompt with .htm extension<br />		Example: <code>CALL "CDS039",0,10,COL,ROW,"+Item#+{itemnohelp.htm}","A",REC$,"ITEMNO"<br />			www.company.com/help/itemnohelp.htm</code></td>
+                        </tr>
+                        <tr>
+                            <td>Dynamo Tools Data Entry<br />			(Program Level Help)</td>
+                            <td>base program name with .htm extension.&#160; Case or help text 
+			name must match that of called program name.<br />			Example: <code>www.company.com/help/PROGNAME.htm</code></td>
+                        </tr>
+                        <tr>
+                            <td>Dynamo Tools Data Entry<br />			(Release Notes)</td>
+                            <td>"releasenotes.htm"<br />			Example: <code>www.company.com/help/releasenotes.htm</code></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="ALTMSGRTN"></a>Alternate Message Handler</td>
+                <td>Only used on systems that use an alternate message sending mechanism 
+		instead of standard Dynamo messaging.&#160; These messages are those 
+		sent using the M menu option.</td>
+            </tr>
+            <tr>
+                <td><a name="LIMIT187"></a>Limit CDS187 output</td>
+                <td>CDS187 is a Dynamo Tool that returns information about an opened 
+		channel, typically a data file.&#160; CDS187 supports a mode that will 
+		return information about the file that can be readily determined using 
+		intrinsic bbx functions such as FID() and FIN(), but bypass all other 
+		logic that required disc access, such as obtaining the file owner, 
+		group, or file permissions.&#160; See the
+		<a href="http://www.excellware.com/docs/tools/CDS187.htm">CDS187</a> 
+		documentation for a complete list of optional fields.&#160; By setting 
+		this parameter to a Y, you are enabling the limited output by default, 
+		for all sessions including Dynamo, Dynaweb, BBj stored procedures, and 
+		BBj triggers.&#160; To enable the full output in this case, add 100,000 
+		to the channel number.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <h5>Printing &amp;&#160;Faxing</h5>
+        <p>
+            <img src="cdsm00-5.png" />
+        </p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a name="FAX"></a>Print to Fax Option</td>
+                    <td>Indicates which fax option to use when printing.<table><tr><td>N</td><td>No fax option</td></tr><tr><td>D</td><td>Dynafax via Esker on Demand<br />Requires that each sender's email address, or domain name, which enables all email addresses within the domain, to be configured within the Esker Fax On Demand system.<br />Excellware Priority Support Customers should use this option.</td></tr><tr><td>8</td><td>Dynafax via fax87.com<br />Requires that each sender's email address be configured within the Fax87.com system.</td></tr><tr><td>V</td><td>VSI*FAX<br />Requires VSI*FAX&#160;software installed on server, a fax modem, and phone line.</td></tr></table></td>
+                </tr>
+                <tr>
+                    <td><a name="VSIFAX"></a>VSIFAX installation folder</td>
+                    <td>If the VSIFAX faxing software is installed on this server, then 
+		specify the installation folder.&#160; It is used should faxing be 
+		required from background tasks including Dynaweb, Stored Procedures, and 
+		Triggers.</td>
+                </tr>
+                <tr>
+                    <td><a name="DSHN_PCL2PDF"></a>Data Server Hostname (pdf)</td>
+                    <td>This is used when another server is to be used for creating PDF files.&#160; Leave blank when 
+		the pcl2pdf binary is installed on the local server.&#160; 
+		Note that this option can also be used with VPRO/5 clients running 
+		Dynamo Tools.&#160; The Windows PC will communicate with the pro5 data 
+		server running on the unix hostname specified to create the PDF file.&#160; 
+		The pro5 data server must be installed on the hostname specified. Note that the BBj pro5 data server does not support printing, so a pro5 data server must be running. Note also that you can place the port# after the port name separated by a colon as in <code>bbds:1111</code>.</td>
+                </tr>
+                <tr>
+                    <td>User's Home Path</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Archive Description</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Archive Program</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h5>Email Options</h5>
+        <p>Dynamo can send internet email from Linux/Unix/AIX servers as well as 
+	from Windows when using a Linux/Unix/AIX server in conjunction with the pro5 
+	data server.&#160; The following parameters control the email options.</p>
+        <p>
+            <img src="../xx/cdsm00-2.png" />
+        </p>
+        <table>
+            <tr>
+                <td><a name="EMAIL"></a>Enable Printing to Email</td>
+                <td>Set to Y to enable printing to Email recipients.&#160; This option 
+		requires that this server or the server specified in 'Data Server 
+		Hostname - email' be configured for outgoing internet email.</td>
+            </tr>
+            <tr>
+                <td>Maximum Emails per Day</td>
+                <td>
+                    <p>Many email providers limit the number of outgoing emails in an effort to reduce spam. For example, GoDaddy limits outgoing emails not sent through their web browser interface to 250 per authentication email address per day. This parameter is used to enable Dynamo to send more emails per day when limited by the email service provider. Contact Excellware Support for assistance configuring this feature.</p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="DSHN_SENDMAIL"></a>Data Server Hostname (email)</td>
+                <td>This is used when another server is to be used for sending Dynamo 
+		email.&#160; Leave blank when using the local server to deliver email.&#160; 
+		Note that this option can also be used with VPRO/5 clients running 
+		Dynamo Tools.&#160; The Windows PC will communicate with the pro5 data 
+		server running on the hostname specified to deliver email initiated from 
+		the PC.&#160; The pro5 data server must be installed on the hostname 
+		specified. Note that you cannot use the BBj pro5 data server, and that a port number can be included after the hostname separated by a colon as in: <code>bbds:1111</code></td>
+            </tr>
+            <tr>
+                <td><a name="ERROREMAIL"></a>Error Email Addresses</td>
+                <td>The Dynamo Tools error routine will send an email containing error 
+		information to each of the email addresses specified.&#160; Include 
+		support@excellware.com so that Excellware is notified of any application 
+		that encounters an error.</td>
+            </tr>
+            <tr>
+                <td><a name="REDIRECTEMAIL"></a>Redirect Email</td>
+                <td>When separate servers are used for software development and quality 
+		assurance/staging, then set this parameter to <code>"Y"</code> on 
+		non-production servers so that applications being tested redirect email 
+		to the operator logged in, instead of to the intended operator.&#160; This 
+		enables testing of applications that send email without needing to make 
+		application program changes before promoting to the production server.&#160; 
+		This option requires that the Dynamo Tool printer selection routine 
+		CDS084 is used for sending email, and that the application also set
+		<code>S084.REDIRECTEMAIL$="Y"</code>. </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <h5>Excellware Server Backup</h5>
+        <p>&#160;</p>
+        <p>The following parameters are used to configure the Excellware Server Backup routine used with an in-house server when backing up to tape. Cloud based Dynamo installations use a different backup process.</p>
+        <p>
+            <img src="cdsm00-3.png" />
+        </p>
+        <table>
+            <tr>
+                <td><a name="BACKUPEMAIL"></a>Backup Email Addresses</td>
+                <td>If using the Excellware Server Backup program to backup the hard drive on the server, then the Backup Status Report will be emailed to up to three email addresses specified here.&#160; If more that three email addresses are required, then you could create a role address with your email service provider which can forward the email to an unlimited number of people.</td>
+            </tr>
+            <tr>
+                <td><a name="BACKUPSKIP"></a>Exclude from daily backup</td>
+                <td>The Excellware Server Backup program will backup all files on all discs except for the folders or files specified.&#160; The format is typically ^./folder_name.&#160; The ^ indicates that the expression that follows is anchored to the beginning of the file name.&#160; In the example shown, the /mnt and /kickstart/iso folders are specifically excluded from the backup.&#160; The ./ is required because relative and not absolute path names are used by the backup program.&#160; Contact Excellware support for assistance.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <h5>BBx Options</h5>
+        <p>&#160;</p>
+        <p>The BBx Options view is used to configure selected BBx SETOPTS options 
+	instead of requiring this information to be stored somewhat cryptically in 
+	the config.bbx file.&#160; These options are set for Dynamo, Dynaweb, and 
+	for BBj stored procedures and triggers that call CDS011.&#160; Click
+	<a target="_blank" href="http://www.basis.com/onlinedocs/documentation/commands2/setopts_verb.htm">
+	here</a> for BBx SETOPTS documentation.</p>
+        <p>
+            <img src="cdsm00-4.png" />
+        </p>
+        <p>&#160;</p>
+        <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-left-color: #c0c0c0;border-right-style: solid;border-right-width: 1px;border-right-color: #c0c0c0;border-top-style: solid;border-top-width: 8px;border-top-color: #006699;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #c0c0c0;">
+            <col style="width: 165px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Bypass numeric mask overflow</p>
+                    </td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Prevent writes to unextracted records</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Force filesize update on MSDOS systems</p>
+                    </td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Use advisory locking</p>
+                    </td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Permit multiple reads to key area</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Allow WRITE to EXTRACTED record</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Disable program hash checks</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Enable file integrity error checking</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Enable Access to Data Server</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Fill trailing mask #symbols with zeros</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h5>BBj Options</h5>
+        <p>
+            <img src="cdsm00-7.PNG" />
+        </p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>BBj Admin Login</td>
+                    <td>
+                        <p>Dynamo Tools uses this BBj Admin Login whenever a BBj user with administrative rights is required. &#160;Some examples include:</p>
+                        <ul>
+                            <li>determining what BBj sessions have a data file open</li>
+                            <li>killing BBj sessions</li>
+                            <li>importing a jnlp application from another environment</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BBj Admin Password</td>
+                    <td>The BBj Password used for the BBj Admin Login above.</td>
+                </tr>
+                <tr>
+                    <td>BBj Admin Alternate Port</td>
+                    <td>Specify the tcp port number used to connect to the BBj admin service when not using the default port of 2002.</td>
+                </tr>
+                <tr>
+                    <td>BBj Admin Use SSL</td>
+                    <td>Y/N setting whether to use Secure Sockets Layer (SSL) when connecting to BBj admin services.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

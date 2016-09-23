@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="dsap00.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="9" MadCap:lastHeight="3245" MadCap:lastWidth="1173">
+    <head><title>A/P Parameter Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts Payable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">A/P Parameter Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/15/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Parameter Maintenance is used to customize the Accounts Payable module to fit individual and specific requirements.</p>
+        <h6>Note: &#160; Any time parameters are changed, the operator must type an xx at any menu in order for the computer to recognize these changes --i.e., "refresh" the screen. &#160; A screen refresh can also be accomplished by logging off Dynamo and then logging back in.</h6>
+        <p>&#160;</p>
+        <p>
+            <img src="xxap00-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The A/P Parameter Maintenance screen</h6>
+        <p>1 Cash Discount Option<br />2 Payment Selection Sequence<br />3 Minimum Purchase to Depreciate</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">A/P&#160;Parameter Maintenance Primary View</th>
+                </tr>
+                <tr>
+                    <td>Cash Discount Option</td>
+                    <td>
+                        <p>Select from the following:</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>E Post Discounts Earned when&#160;Paid</td>
+                                    <td>Only post discounts once the customer has paid the invoice.</td>
+                                </tr>
+                                <tr>
+                                    <td>L&#160;Assume Discount will be taken at Inv Entry</td>
+                                    <td>Post discounts when inventory transactions are posted. </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Payment Selection Sequence</td>
+                    <td>
+                        <p>Choose the order in which payments will be selected:</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>D&#160;Due Date</td>
+                                    <td>Payments will be selected in the order they are due.</td>
+                                </tr>
+                                <tr>
+                                    <td>I&#160;Invoice#</td>
+                                    <td>Payments will be selected in order of invoice number. </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Minimum Purchase to Depreciate</td>
+                    <td>Specify the minimum amount an item must cost for depreciation to apply to it. Upon utilizing Data Invoice Entry, if an item is below this threshold, Dynamo will warn the operator that the item should be immediately expensed instead. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxap00-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>A/P Checking Printing Parameters screen</h6>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Check Position</td>
+                    <td>Specify if the check should be positioned on the top, the middle, or the bottom of the printed page. Excellware, Inc. recommends the check be positioned on the bottom. </td>
+                </tr>
+                <tr>
+                    <td>Print Remittance List</td>
+                    <td>
+                        <p>      The regular check stub has enough space to list up to 39 lines of invoice numbers. If variables such as Note or Discount apply to a check, the stub will not be able to accommodate 39 invoices since the additional information will take up stub space. If a check is being issued for more than 39 invoices, a full-page remittance list (an extended stub) can be printed.</p>
+                        <p>Entering "Y" at this field indicates that a remittance advice attachment will automatically print when necessary. After the checks have printed, the operator will receive a prompt on the screen to insert blank sheets of paper into the printer on which the extended stub will print. If operators require extended stubs regularly, Excellware, Inc.&#160; recommends enabling this option so that check forms will not be voided unnecessarily (refer to "N" option).</p>
+                        <p>Entering "N" indicates that the business rarely requires the remittance list feature. Note that if an operator enters "N" and at some point in the future requires a remittance list for a check, the first check form will be voided and its stub will be used to print the first 39 invoices. &#160; The remaining invoices and check will then print on the check form that follows.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Print 'Pay' before amount in words</td>
+                    <td>Select "Y" or "N." Selecting "Y" will display the word "pay" before the written amount (e.g., Pay Fifty Dollars). If the checks you have already have the word "Pay" printed on them, you would want to select "N"&#160;here. </td>
+                </tr>
+                <tr>
+                    <td>Print Box for Date, Check#, Amount</td>
+                    <td>
+                        <p>Enter "N" if the check form has pre-printed "boxes" for the check number, date, and amount.</p>
+                        <p>Enter "Y" to have the computer print these boxes on the check form.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount in Words</td>
+                    <td rowspan="5">
+                        <p>If the location of these fields needs to be adjusted for some reason (such as needing a more precise fit to a company's window envelopes), adjust the default column and row numbers, keeping in mind that the numbers represent dots. There are 300 dots to an inch. Columns are measured from the left edge of the paper. Rows are measured from the top of the check (not the paper).</p>
+                        <p>&#160;</p>
+                        <p>For example, if the "Payee Name and Address" needs to be moved up slightly (let's say about 1/10"), the number of dots in the row needs to be reduced. &#160; In this case, the operator would reduce the row number by 30 dots. If the "Payee Name and Address" also needed to be moved slightly to the left, the operator would reduce the number of dots in column since the number of dots are a measurement taken from the left of the paper.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Check&#160;Date</td>
+                </tr>
+                <tr>
+                    <td>Check Number</td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                </tr>
+                <tr>
+                    <td>Payee Name &amp;&#160;Address</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>
+            <img src="xxap00-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>A/P Parameter Maintenance Form 1099 Parameters screen</h6>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Form 1099 Payer's Name</td>
+                    <td>Enter the name of the company paying the 1099 tax form.</td>
+                </tr>
+                <tr>
+                    <td>Address, City, State/Country, Zip Code</td>
+                    <td>Enter the address of the company paying the 1099 tax form.</td>
+                </tr>
+                <tr>
+                    <td>Telephone#</td>
+                    <td>Enter the telephone number of the company paying the 1099 tax form.</td>
+                </tr>
+                <tr>
+                    <td>Form 1099 Payer's Federal ID#</td>
+                    <td>Enter a zero or 10 character number in the format xx-xxxxxxx.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxap00-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>A/P Parameter Maintenance Payment Export Options screen</h6>
+        <p>This feature prevents unauthorized access to your bank account using a bank-notifying system. </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Export File Format</td>
+                    <td>Select a popular file format from a bank for payment export (Key Bank and&#160;PNC are available at this time). Selecting&#160;"none"&#160;means A/P&#160;checks will not be reported to your bank.</td>
+                </tr>
+                <tr>
+                    <td>Include Payee Name</td>
+                    <td>Enable this option to include Payee Name on the file export. </td>
+                </tr>
+                <tr>
+                    <td>File Delivery Method</td>
+                    <td>
+                        <p>Indicate the method of file delivery:</p>
+                        <ul>
+                            <li>N&#160;None/Manual</li>
+                            <li>F File Transfer Protocol (ftp)</li>
+                            <li>S&#160;Secure File Transfer Protocol (sftp)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delivery URL</td>
+                    <td>Bank-provided website address where all authorized payment details are located.</td>
+                </tr>
+                <tr>
+                    <td>Login</td>
+                    <td>Enter the username for the provided URL.</td>
+                </tr>
+                <tr>
+                    <td>Password </td>
+                    <td>Enter the password for the provided URL.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

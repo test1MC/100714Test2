@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="dsap01.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1029" MadCap:lastWidth="1225">
+    <head><title>Bank Code Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">accounts payable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Bank Code Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/08/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to maintain information for each bank account from which checks can be drawn for payment of invoices. Multiple bank accounts can be established using a single character code for each account, such as A, B, C, etc.</p>
+        <p>
+            <img src="xxap01-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The Bank Code Maintenance screen.</h6>
+        <p><a href="#Bank%20Code:">1 Bank Code</a>
+            <br /><a href="#Bank%20Code%20Description:">2 Description</a>
+            <br /><a href="#Bank%20Assigned%20Account%20Number:">3 Bank Assigned Account Number</a>
+            <br /><a href="#General%20Ledger%20Cash%20Account:">4 G/L Account# - Cash</a>
+            <br /><a href="#General%20Ledger%20Interest%20Earned">5 G/L Account# - Interest Earned</a>
+            <br /><a href="#General%20Ledger%20Interest%20Earned">6 G/L Account# - Bank Fee</a>
+            <br /><a href="#Date%20Last%20Reconciled:">7 Date last reconciled</a>
+            <br /><a href="#Next%20Check%20Number:">8 Next Check Number</a>
+            <br /><a href="#Reconciled%20Balance:">9 Reconciled Balance</a>
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Bank Code Maintenance</th>
+            </tr>
+            <tr>
+                <td><a name="Bank Code:"></a>Bank Code</td>
+                <td>The Bank Code consists of 1 character you will assign to identify this account. &#160; This code will be used to select an account to be debited during Manual Payment Entry or Check Printing.</td>
+            </tr>
+            <tr>
+                <td><a name="Bank Code Description:"></a>Bank Code Description</td>
+                <td>The Bank Code Description is normally the name of the bank or some other description of this account such as Cash - City Bank.</td>
+            </tr>
+            <tr>
+                <td><a name="Bank Assigned Account Number:"></a>Bank Assigned Account Number</td>
+                <td>The bank identifies each account with an assigned number. This bank account number can be found on your monthly bank statement or on your checks.</td>
+            </tr>
+            <tr>
+                <td colspan="2">Refer to your <a href="../gl/gl130.htm">Chart of Accounts</a> set up on the G/L menu to enter the following General Ledger account numbers:</td>
+            </tr>
+            <tr>
+                <td><a name="General Ledger Cash Account:"></a>General Ledger Cash Account</td>
+                <td>This number identifies the cash account which will be credited when payments are drawn against it.</td>
+            </tr>
+            <tr>
+                <td><a name="General Ledger Interest Earned"></a>General Ledger Interest Earned</td>
+                <td>This number identifies the G/L account to which interest will be posted during Bank Reconciliation.</td>
+            </tr>
+            <tr>
+                <td><a name="General Ledger Bank Fee:"></a>General Ledger Bank Fee</td>
+                <td>This number identifies the G/L account to which miscellaneous expenses such as fees will be posted during Bank Reconciliation.</td>
+            </tr>
+            <tr>
+                <td><a name="Date Last Reconciled:"></a>Date Last Reconciled</td>
+                <td>This is the date on which your bank statement was last reconciled to the Accounts Payable detail in the system.</td>
+            </tr>
+            <tr>
+                <td><a name="Next Check Number:"></a>Next Check Number</td>
+                <td>When checks are printed, each check is given a sequentially-assigned check number. &#160; This number is displayed as the Next Check Number. &#160; If you are using Dynamo Accounts Payable for the first time, enter the check number of your first check form.</td>
+            </tr>
+            <tr>
+                <td><a name="Reconciled Balance:"></a>Reconciled Balance</td>
+                <td>This is the account balance as of the last reconciliation date.</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="409" MadCap:lastWidth="1479">
+    <head><title>Company Maintenance</title>
+        
+    </head>
+    <body>
+        <p class="SectionName">System Management utilities</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Company Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS240">Last Revised: 
+ 11/23/12</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo separates files by company or organization using a two character 
+ upper case company code.&#160; This company code becomes the first two characters of all data 
+ dictionary files, and typically all data files.&#160; Each company has its 
+ own folder immediately below the Dynamo Tools install folder with a folder 
+ name equal to the company code.&#160; <code>/u/CDI/CD</code>, <code>/u/CDI/DS</code>, 
+ and <code>/u/CDI/DY</code> are examples of company folders.&#160; This application is used to define a new Dynamo company, 
+ to archive an existing company, or to change the 2 character company code.</p>
+        <table>
+            <tr>
+                <th nowrap="" colspan="2">Creating a New Company</th>
+            </tr>
+            <tr>
+                <td nowrap="" colspan="2">This option is used to copy the current company 
+ data dictionary files to a new company.&#160; All Dynamo Tools data 
+ dictionary and menu files will be copied.&#160; </td>
+            </tr>
+            <tr>
+                <td>Copy From Company</td>
+                <td>This will be the current/active company.&#160; You can use company CD to copy only the minimum files required for a new company.</td>
+            </tr>
+            <tr>
+                <td>New Company</td>
+                <td>Enter a two character upper case company code that is not currently used.&#160; Most company codes are alpha characters, but one of the two characters can be numeric if desired.</td>
+            </tr>
+            <tr>
+                <td>New Company Directory</td>
+                <td>The default company directory is <code>XX/</code>, however, you can 
+ define company files in an alternate directory that you enter.&#160; Note 
+ that you will need to use the <code>P</code> menu option to set the prefix 
+ to access a company not located in the default directory of <code>XX/</code>.&#160; 
+ If the new Company Directory does not exist, and you do not have 
+ permissions to define the new directory, then <code>sudo</code> will be 
+ used on Linux/Unix systems.&#160; The <code>sudo</code> commands needed 
+ are <code>mkdir</code>, <code>chown</code>, and <code>chmod</code>.</td>
+            </tr>
+            <tr>
+                <th nowrap="" colspan="2">Archive Company</th>
+            </tr>
+            <tr>
+                <td colspan="2">This option will rename the company directory.&#160; For 
+ example <code>/u/CDI/DI</code> would be renamed to <code>/u/CDI/DI123</code>.&#160; 
+ You can still access an archived company by including the company 
+ directory in your prefix list.&#160; The most popular way this is done is 
+ using the P option in any Dynamo Tools menu.</td>
+            </tr>
+            <tr>
+                <th colspan="2">Change Company Code</th>
+            </tr>
+            <tr>
+                <td colspan="2">This option can be used to change one company code to 
+ another.&#160; The new company code cannot be already used.&#160; However, 
+ you can archive the target company first, then change to that company 
+ code.</td>
+            </tr>
+            <tr>
+                <td>Copy From Company</td>
+                <td>This will be the current/active company.</td>
+            </tr>
+            <tr>
+                <td>New Company</td>
+                <td>Enter a two character upper case company code that is not currently used.&#160; Most company codes are alpha characters, but one of the two characters can be numeric if desired.&#160; 
+ The new company will be created in folder <code>XX/</code> where <code>XX</code> 
+      is the company code.</td>
+            </tr>
+        </table>
+    </body>
+</html>

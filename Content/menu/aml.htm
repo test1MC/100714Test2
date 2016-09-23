@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1125" MadCap:lastWidth="1249">
+    <head><title>AML Menu Overview</title>
+    </head>
+    <body>
+        <p class="SectionName">Assortment Maintenance and Listings</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">AML Menu Overview</p>
+                </td>
+                <td align="right">Last Revised: 02/19/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">An Assortment, sometimes called an Assembly, is a collection of multiple products that can be sold as a single item.&#160; The applications on this menu are used to define what items and quantity are included in an assortment.&#160; Each component of an assortment, as well as the 'parent' assortment, require Dynamo Item numbers.</p>
+        <p>
+            <img src="aml.png" />
+        </p>
+        <ol>
+            <li style="font-weight: bold;"><a href="../im/im800.htm">Assortment Maintenance</a>
+            </li>
+            <li style="font-weight: bold;"><a href="../im/im820.htm">Assortment Listing</a>
+            </li>
+            <li style="font-weight: bold;"><a href="../im/im830.htm">Where&#160;Used Listing</a>
+            </li>
+            <li style="font-weight: bold;"><a href="../im/im810.htm">Compute Assortment Costs</a>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="SectionTitle">Glossary</p>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th colspan="2">Meaning and usage</th>
+            </tr>
+            <tr>
+                <td>Assortment</td>
+                <td colspan="2">
+                    <p>A group of related products or services keyed to a single Parent Item.<br />All elements in an Assortment can be sold by entering the Parent Item on the order.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Parent Item</td>
+                <td colspan="2">A valid Item Number in the company's Item Master File.<br />It will be used only to define the Assortment and cannot exist on its own.
+<p>A Parent Item can NOT be a component of another Assortment.</p></td>
+            </tr>
+            <tr>
+                <td>Component Item</td>
+                <td colspan="2">A valid Item Number in the company's Item Master File, or in some cases,<br />a non-stocked item.<br />It is one of the elements that make up the Assortment.
+<p>It can NOT be the Parent Item of another Assortment.</p></td>
+            </tr>
+            <tr>
+                <td rowspan="4">
+                    <p>Assortment Type</p>
+                </td>
+                <td colspan="2">The Type Code controls the way an assortment behaves in the system.&#160;</td>
+            </tr>
+            <tr>
+                <td align="center">Standard</td>
+                <td>Code = Blank.<br />Parent Item must be built using inventory transactions before it can be sold.<br />Sales are tracked for Parent Item only.</td>
+            </tr>
+            <tr>
+                <td align="center">'T'</td>
+                <td>Code = T.<br />Parent Item can be built using inventory transactions before it is sold, or it will be built from available components automatically when the order is entered.<br />Sales are tracked for the Parent Item only</td>
+            </tr>
+            <tr>
+                <td align="center">'X'</td>
+                <td>Code = X.<br />Same behavior as Type='T', except that sales are tracked for Component Items as well as for the Parent Item.</td>
+            </tr>
+        </table>
+    </body>
+</html>

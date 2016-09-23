@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1336" MadCap:lastWidth="1186">
+    <head><title>Sales Transaction Listing</title>
+    </head>
+    <body>
+        <p class="SectionName">Sales Order Processing Reports</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Sales Transaction Listing</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS160">Last Revised: 04/29/14</a>
+                </td>
+            </tr>
+        </table>
+        <p>Sales Transaction Listing is used to view and print a listing of all sales transactions in Dynamo. It will contain the branch, the warehouse, the invoice date, the sales order number, the order date, the name, the product category, the tax, the item &amp; its description, the quantity, the amount, and the cost of each sales transaction. </p>
+        <p>
+            <img src="so680-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Operator-Specified Fields</th>
+                </tr>
+                <tr>
+                    <td>Starting Date</td>
+                    <td>Specify the beginning date to be included on the listing.</td>
+                </tr>
+                <tr>
+                    <td>Ending Date</td>
+                    <td>Specify the ending date to be included on the listing. </td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>Choose the desired branch.</td>
+                </tr>
+                <tr>
+                    <td>Product Category Types</td>
+                    <td>
+                        <p>Enable the following to display them on the listing:</p>
+                        <ul>
+                            <li>costed</li>
+                            <li>uncosted</li>
+                            <li>other</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product Class</td>
+                    <td>Type "Y" to select a specific product class or "N"&#160;to include all of them. </td>
+                </tr>
+                <tr>
+                    <td>Item</td>
+                    <td>
+                        <p>Choose one of the following:</p>
+                        <ul>
+                            <li>All Items</li>
+                            <li>All Items on Item File</li>
+                            <li>All Items not on Item File</li>
+                            <li>Operator Specified Item</li>
+                            <li>Operated Specified Starting Characters of Item#</li>
+                        </ul>
+                        <p>&#160;</p>
+                        <p>If "All&#160;Items" is selected, the report may take a few minutes to generate depending on how many items are in the system. If the operator prefers to see transactions for one item, "Operator Specified&#160;Item" should be chosen. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Customer</td>
+                    <td>Type "Y"&#160;to select a specific customer or "N"&#160;to include them all. If all customers will be on the report, it may take a few minutes to generate. </td>
+                </tr>
+                <tr>
+                    <td>Customer&#160;Type</td>
+                    <td>Type&#160;"Y"&#160;to select a specific customer type or "N"&#160;to include them all. </td>
+                </tr>
+                <tr>
+                    <td>Sale/Rental/Used Rental</td>
+                    <td>Enable this options for the display of sale, rental, and used items on the listing. </td>
+                </tr>
+                <tr>
+                    <td>Extended Amount Range</td>
+                    <td>Indicate the desired range of extended amount (e.g., only items $500 and higher). The extended amount is the quantity times the price of the item. </td>
+                </tr>
+                <tr>
+                    <td>Sequence</td>
+                    <td>
+                        <p>Choose one of the following information selections:</p>
+                        <ul>
+                            <li>Branch+Warehouse+Invoice+SalesOrder#</li>
+                            <li>Product Class+InvoiceDate+SalesOrder#</li>
+                            <li>Product Class+Margin%</li>
+                            <li>CustType+Customer+InvoiceDate+SalesOrder#</li>
+                            <li>Item#+InvoiceDate+SalesOrder#</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Sample <a href="SalesTransactionListing.pdf">Sales Transaction Listing</a> using "Open &amp; Updated Invoices - invoice date range" option.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Sales Transaction&#160;Listing Key</th>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Branch</td>
+                </tr>
+                <tr>
+                    <td>W</td>
+                    <td>Warehouse</td>
+                </tr>
+                <tr>
+                    <td>Opn</td>
+                    <td>A blank indicates the transaction is open. A "C" indicates it is closed. </td>
+                </tr>
+                <tr>
+                    <td>SLS</td>
+                    <td>Salesperson</td>
+                </tr>
+                <tr>
+                    <td>PCL</td>
+                    <td>Product Class</td>
+                </tr>
+                <tr>
+                    <td>SRU</td>
+                    <td>Sales, Rental, or Used rental item</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>Whether this transaction was taxed or not. </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

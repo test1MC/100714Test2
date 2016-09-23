@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="ap190.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2247" MadCap:lastWidth="1561">
+    <head><title>Payment Selection Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts payable payment Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Payment Selection Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/31/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Payment Selection Maintenance is used to adjust invoices that were automatically marked for payment through Payment Selection.</p>
+        <p>
+            <h6>Note: the invoice record itself is not changed through this program; only the amount that is being paid on the&#160;invoice changes. To change the actual invoice record, see <a href="ap280.htm">Invoice Maintenance</a>.</h6>
+            <br /> &#160; </p>
+        <p>
+            <img src="ap190-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>The purpose for this program is as follows:</p>
+        <ul>
+            <li>Invoices that were automatically selected for payment can be removed from a payment batch.</li>
+            <li>Updated invoices that were not automatically selected for payment can be added to a payment batch.</li>
+            <li>The amount being paid on an invoice can be adjusted in order to make a partial payment.</li>
+            <li>Invoices that were put "On Hold" can be released for payment.</li>
+            <li>Invoices for <a href="#Add%20Miscellaneous%20vendors%20reversed%20invoice%20to%20a%20payment%20batch">Miscellaneous vendors that were reversed</a> can be selected for a payment batch in order to offset the original invoice. (See * below for specific procedure.)</li>
+        </ul>
+        <p>The first screen displays all existing payment batches (typically only one). &#160; Upon selecting a batch, the Gross, Discount, and Net amounts for this batch display in the header. &#160; Enter a vendor requiring a payment adjustment. &#160; The following options will display:</p>
+        <p>1. Maintain payment #1</p>
+        <p>This option is used to adjust or delete existing payments in this batch. &#160; It is also used to add an updated invoice (not automatically selected) to the existing payment. &#160; <h6>Note: a "payment" can reflect one invoice being paid or multiple invoices being paid.</h6> &#160;</p>
+        <p>Existing payments for this vendor will display. &#160; Using the arrow keys, position the asterisk (*) at the line to be edited, deleted, or inserted. &#160; Once the * is positioned next to the payment needing adjustment, press Enter and the cursor moves through the payment detail, allowing you to accept or adjust. &#160; The Batch totals (Gross/Discount/Net) will automatically reflect any changes.</p>
+        <p>
+            <img src="ap190-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Press Delete to remove an invoice that was selected for payment.</p>
+        <p>To add an updated invoice to this payment batch, press the Insert key at any line OR move the * down to a blank line. &#160; Press Enter(=Add) and the vendor's updated invoices will display. &#160; Upon selecting an invoice to add, the blank line fills in. &#160; Press F4 until you exit to the menu and proceed to print the Payment Selection Register.</p>
+        <p>If you wish to include a new invoice to the payment batch but want it to remain as a separate payment, use the option "Add a new payment for this vendor."</p>
+        <p>2. Add new payment for this Vendor</p>
+        <p>&#160;</p>
+        <p>This option is used to add an invoice to the payment batch that was not automatically selected for payment. &#160; The invoice will be included in the batch as a payment that is separate from the existing payments for this vendor (i.e. a separate check will print for it). &#160;</p>
+        <p>Once this option is selected, you will be prompted to indicate the Payment Method for this separate payment. &#160; At this point, updated invoices for this vendor display.&#160; (If any of these updated invoices currently exist in this payment batch as a separate payment or currently exist in another payment batch, the display shows a zero balance due.) &#160; Select the invoice to be added to this payment batch as a separate payment.</p>
+        <p>
+            <img src="ap190-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>If you select an invoice that was put on Hold, a "warning" prompt will ask you to confirm that this invoice should be released for payment.</p>
+        <p>If an invoice is selected that has already been marked for payment through Payment Selection, you will be prompted that this invoice is already scheduled to be paid.</p>
+        <p>After adjustments are complete, reprint the Payment Selection Register. &#160; Review the register for accuracy and proceed to Check Printing.</p>
+        <h6>Note: &#160; An underlined command, such as Insert or Delete refers to the keys themselves.</h6>
+        <h5><a name="Add Miscellaneous vendors reversed invoice to a payment batch"></a>Add Miscellaneous vendor's reversed invoice to a payment batch</h5>
+        <p>As an example, John Smith is a Miscellaneous vendor for which an invoice has been previously entered and updated. &#160; The invoice has been reversed through Invoice Data Entry. &#160;</p>
+        <p>During Payment Selection, the offsetting or reversed invoices for Miscellaneous vendors will not be picked up since all transactions labeled as "M" are regarded separately. &#160; You must add this offsetting or negative amount to the payment batch through Payment Selection Maintenance as follows:</p>
+        <p>1. Enter "M" as the vendor. &#160; A box displays with an option to Maintain Payment (e.g. for John Smith) or Add New Payment. &#160; </p>
+        <p>2. Select Maintain Payment for John Smith (original invoice information displays on a line preceded by an *). &#160;</p>
+        <p>3. At this point we want to add the offsetting (reversed) invoice to this payment batch. &#160; Press the down arrow key (the asterisk moves to a blank line). &#160; </p>
+        <p>4. Other invoices for John Smith display. &#160; Highlight and select the offsetting invoice and this invoice information displays at the *. </p>
+        <p>5. Press F4.</p>
+        <p>6. The option box to Maintain Payment or Add Payment displays again. &#160; At this point you can hit F4 until you exit the screen or select another Miscellaneous vendor and go through the same process. &#160;</p>
+        <p>Print the Payment Selection Register again for this batch and you will see the offsetting invoices that equal zero. &#160; No check will print since the balance is zero. &#160; If these offsetting invoices are the only payments in this payment batch, your batch will show the number of Misc. vendors under "count" and a zero balance. &#160; Even though no check will print, you must still continue with the Check Printing process. &#160; Run the Check Register and Check Update.</p>
+        <p>Note that if a payment batch contains only permanent vendors with offsetting invoices, the batch "count" shows 0 with a 0 balance. &#160; This batch won't display as a choice during Check Printing so you can't run a Check Register as in the case for Misc. vendors. &#160; You will see these offsetting invoice in Vendor Inquiry, however.</p>
+    </body>
+</html>

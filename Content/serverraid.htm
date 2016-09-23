@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="549" MadCap:lastWidth="1332">
+    <head><title>Server RAID</title>
+    </head>
+    <body>
+        <p class="SectionName">server configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Server RAID</p>
+                </td>
+                <td align="right">Last Revised: 11/25/06</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">With the significant increase in disc capacities and reduction in disc drive costs, Excellware frequently recommends server configurations that include multiple disc drives.&#160; A concept known as RAID writes the same data to more than one drive, so that if one drive fails, the server can still operate.</p>
+        <p>In RAID 0+1, there are two disc drives, and the same data is written to each drive.&#160; The following steps can be followed to a) verify that the data is in fact being written to each drive and the drives contain the same data, and b) to re-synchronize the drives should the data not be the same.&#160; These steps will take several hours to run.</p>
+        <p><b>Verifying</b>
+        </p>
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Connect a monitor, keyboard, and mouse directly to the server if necessary.&#160; These steps cannot be run from a PC on the network.</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Log out all Dynamo operators.</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Log out any operator logged in on the console monitor.&#160; Actions-&gt;Log Out-&gt;Log Out</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Reboot the server.&#160; Click Reboot located in the bottom right of the console login screen.</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>As the server reboots, watch for the message: "&lt;&lt;&lt; Press &lt;Ctrl&gt;&lt;A&gt; for SCSISelect(TM) Utility!" and Hold Ctrl and touch A as directed.&#160; If you do not do this within a few seconds, then the server will boot normally.&#160; If that occurs, restart at step 1.</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Touch the Down Arrow to highlight channel B, then press Enter.</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Touch the Down Arrow to highlight Configure/View HostRAID Settings, then press Enter.</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>The array of disc drives should display with a "Type of Mirrored (R1)" and a Status of "Optimal."&#160; Touch Enter to select this array.</td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td>The drives that make up the array will display.&#160; Touch V to Verify that the data written to each drive is the same.&#160; Then highlight Yes and touch Enter to begin verification.</td>
+            </tr>
+            <tr>
+                <td align="center">10</td>
+                <td>You can abort the verification by touching the Esc key.</td>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td>If the drives have many sectors that are out of sync, then the Verification process will stop after approximately 65,000 sectors are scanned.&#160; Restart the verification process again which will now exclude the sectors previously verified.</td>
+            </tr>
+        </table>
+        <p><b>Re-synchronizing</b>
+        </p>
+        <table>
+            <tr>
+                <th width="29">Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center" width="29">1</td>
+                <td>Follow steps 1-8 as described above.</td>
+            </tr>
+            <tr>
+                <td align="center" width="29">2</td>
+                <td>The drives that make up the array will display.&#160; Touch R to Rebuild the data so the drives are re-synchronized.&#160; Then highlight Yes and touch Enter to begin.</td>
+            </tr>
+        </table>
+    </body>
+</html>

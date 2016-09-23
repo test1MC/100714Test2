@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="701" MadCap:lastWidth="762">
+    <head><title>Form Processing</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Form Processing</p>
+                </td>
+                <td align="right">Last Revised: 03/22/11</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to produce printed forms.&#160; The form can contain text, dates, check boxes, and radio buttons.&#160; The empty form is maintained using a word processor.&#160; A called routine is provided to return an empty templated data structure used to populate each of the fields on the form.&#160; Another called routine is used to merge the variable data with the empty form, and to send the completed form to a PCL compatible printer or PDF file.</p>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <th colspan="2" nowrap="nowrap">Heading</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Form ID</td>
+                <td>A 4 character identifier for the form.&#160; Use a valid string variable name, i.e., begins with a letter, contains only letters, numbers, and underscore.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Description</td>
+                <td>A brief description of the form</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Orientation</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>P</td>
+                            <td>Portrait</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>Landscape</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Overlay File Name</td>
+                <td>The empty form can be maintained using a Word Processor.&#160; Email the document to Excellware Support Manager, who will process the document and return to you an overlay file.&#160; Specify the path to the overlay file name here.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Use Bold Text</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>N</td>
+                            <td>The merged data is printed using the normal font weight</td>
+                        </tr>
+                        <tr>
+                            <td>Y</td>
+                            <td>The merged data is printed using bold font weight</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <th colspan="2">Form Fields</th>
+            </tr>
+            <tr>
+                <td>Field Name</td>
+                <td>Each field on the form must be assigned a unique bbx field name.&#160; Normal field naming rules apply, i.e., starts with a letter, only contains letters, numbers, and underscores.</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Optional additional descriptive information about the field.</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>T</td>
+                            <td>Text - text field consisting of one or more rows</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>Date</td>
+                        </tr>
+                        <tr>
+                            <td>R</td>
+                            <td>Radio Button - only one radio button per variable can be selected at a time, for example, a Yes/No field is a radio button, as the value can be Y or N, but not both.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>Checkbox - one or more boxes may be checked.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td>The use of the Size field varies with the field Type.
+<table><tr><th>Type</th><th>Size</th></tr><tr><td align="center">T</td><td>Maximum number of characters in field</td></tr><tr><td align="center">D</td><td>Always 8</td></tr><tr><td align="center">R</td><td>Always 1</td></tr><tr><td align="center">C</td><td>Always 1</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Repeat</td>
+                <td>The use of the Repeat field also varies with the field Type.
+<table><tr><th>Type</th><th>Repeat</th></tr><tr><td align="center">T</td><td>The number of rows in the text field</td></tr><tr><td align="center">D</td><td>The number of different dates in the date field</td></tr><tr><td align="center">R</td><td>The number of different options in the radio button field</td></tr><tr><td align="center">C</td><td>The number of different checkboxes in the checkbox field</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Row</td>
+                <td>The dot row of the baseline where the variable field is placed on the form.&#160; There are 300 dot rows per inch.&#160; The Row can best be estimated using 'Print Sample Form', 'Print Grid over Form' option.&#160; This will print a grid of numbered row and column lines every 50 dots.&#160; Once the Row is estimated, you can fine tune the position by printing the sample form.</td>
+            </tr>
+            <tr>
+                <td>Col</td>
+                <td>The dot column of the left side of the position where the variable field is placed on the form.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <th colspan="2">Repeating Fields</th>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Optional additional description of the element within the repeating field</td>
+            </tr>
+            <tr>
+                <td>Value</td>
+                <td>The single character value associated with the element.&#160; The Value must be different for each element in the repeating field</td>
+            </tr>
+            <tr>
+                <td>Row</td>
+                <td>Dot Row for placement of repeating element on page</td>
+            </tr>
+            <tr>
+                <td>Col</td>
+                <td>Dot Column for placement of repeating element on page</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Print Sample Form Options</th>
+            </tr>
+            <tr>
+                <td>Print Grid over Form</td>
+                <td>Use this option to assist in estimating the Row and Col that each form element should appear on the page.</td>
+            </tr>
+            <tr>
+                <td>Print All Fields</td>
+                <td>This option will print text in each position of the form to assist in fine tuning the best Row and Col.</td>
+            </tr>
+            <tr>
+                <td>Print Typical Form</td>
+                <td>This option is similar to the 'Print All Fields' option, but only prints one of the Radio Button elements, as would be typical of the actual form.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Called Routines used by developer</th>
+            </tr>
+            <tr>
+                <td>CDS604
+                </td>
+                <td>Return Template for Form</td>
+            </tr>
+            <tr>
+                <td>CDS606
+                </td>
+                <td>Merge Form with Variable Data &amp; Print</td>
+            </tr>
+        </table>
+    </body>
+</html>

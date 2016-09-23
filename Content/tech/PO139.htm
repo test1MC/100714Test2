@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>PO139 - Add Line Item to PO</title>
+ 
+        
+    </head>
+    <body>
+        
+        <p class="CalledName">PO139</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Add Line Item to PO</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=PO139">Last Revised: 08/09/07</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine can be used by programs that generate purchase orders to add a line item to a purchase order.&#160; It will take information from PO40$ and PO139$ and create a PO41$ record and write to XXPO41 data file.&#160; It also updates totals in PO40$.&#160; The calling program should write PO40$ to XXPO40 when finished generating the PO.</p>
+        <p>Before calling PO139, call <a href="PO138.htm">PO138</a> to create a purchase order heading record.</p>
+        <p><code>CALL "PO139", Y$, PO40$, PO139$, { PO41$ }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">PO139 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO40$</code>
+                </td>
+                <td align="center">To</td>
+                <td>PO Heading Record</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO139$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+        Fields used to populate PO41$.
+
+        <table class="lev2"><tr><td><code>ITEMNO</code></td><td>Item# can be on item file, or not on item file.</td></tr><tr><td><code>DESC1</code></td><td>Required for not-on-file items, will be retrieved from Item File for not-on-file items if passed as blank</td></tr><tr><td><code>DESC2</code></td><td>Optional</td></tr><tr><td><code>COST</code></td><td>Required for not-on-file items.&#160; For on file items, this field will be populated using 
+			<a href="IM600.htm">IM600</a> if passed as zero.</td></tr><tr><td><code>CU</code></td><td rowspan="4">For on file items, these fields will be populated using 
+			<a href="IM600.htm">IM600</a> if COST is passed as zero.</td></tr><tr><td><code>DISCPCT</code></td></tr><tr><td><code>CORECOST</code></td></tr><tr><td><code>FETCOST</code></td></tr><tr><td><code>QTY</code></td><td>Positive non-zero value required.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO41$</code>
+                </td>
+                <td align="center">From</td>
+                <td>Optional.&#160; PO Detail Record created by PO139.</td>
+            </tr>
+        </table>
+        <p>PO139 will EXIT 99 if any of the following conditions are not met:</p>
+        <ol>
+            <li>PO40.PONO$ must be non-blank</li>
+            <li>PO40.VENDNO$ must be non-blank</li>
+            <li>PO40.WHS$ must be non-blank</li>
+            <li>PO139.ITEMNO$ must be non-blank</li>
+            <li>PO139.QTY must be greater than zero</li>
+        </ol>
+    </body>
+</html>

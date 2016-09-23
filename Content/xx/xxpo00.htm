@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1302" MadCap:lastWidth="1199">
+    <head><title>Purchase Order Parameter Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Purchase Order Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Purchase Order Parameter Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=XXPO00">Last Revised: 01/09/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Purchase Order Parameter Maintenance is used to set configurable options used in Purchase Order Processing.</p>
+        <p>
+            <img src="xxpo00-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <td>Next Purchase Order#</td>
+                <td>This is used to set the starting computer assigned PO#.&#160;It is 
+incremented automatically as each PO# is assigned.</td>
+            </tr>
+            <tr>
+                <td>Cost Multiplier Used</td>
+                <td>Dynamo Purchase Order Processing supports a two digit discount percentage by PO Line item.&#160;Some vendors use cost multipliers instead of a discount%.&#160; If this option is Y, then the option to enter a multiplier will be enabled on the Properties page of PO Detail.</td>
+            </tr>
+            <tr>
+                <td>Item# on PO</td>
+                <td>
+                    <p>This option controls whether the Dynamo Item# and/or the Vendor Part# appear on 
+a purchase order.</p>
+                    <table>
+                        <tr>
+                            <td>I</td>
+                            <td>PO will show Dynamo Item# only</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <td>PO will show Vendor Part# only</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>PO will show both Dynamo Item# and Vendor Part#</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Receive by Skid#</td>
+                <td>When large shipments are received on multiple skids, it can be useful to record a skid# during the receiving process. This will enable printing of a skid manifest which lists all items received on a skid.&#160;Some vendors provide a skid manifest which could be compared to the Dynamo skid manifest when trying to locate a variance in a receipt.</td>
+            </tr>
+            <tr>
+                <td>Notepad text to print on each PO</td>
+                <td>This field is used to maintain multi-line notepad text that will print on each purchase order.&#160;It can be used to indicate the receiving hours, or the need for a dock appointment, etc.</td>
+            </tr>
+            <tr>
+                <td>Preferred Carrier</td>
+                <td>If the Vendor does not have a preferred shipping carrier, then this carrier will be the default carrier for new purchase orders.&#160;A carrier is a company such as UPS, FedEx, R+L Carriers, Roadway, etc.&#160;There is also a carrier code OTH for other.</td>
+            </tr>
+            <tr>
+                <td>Service</td>
+                <td>The default service for the carrier listed above.&#160;The UPS Services include Ground, 3 Day Select, 2nd Day Air, Next Day Air, etc.&#160;Some carriers only have one service.&#160;'Best Way' is a service of the carrier code OTH.</td>
+            </tr>
+            <tr>
+                <td>Billing Method</td>
+                <td>
+                    <p>Indicates if the vendor should prepay the shipping or charge the buyer.</p>
+                    <table>
+                        <tr>
+                            <td>A</td>
+                            <td>Prepay &amp; Add</td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td>Prepay (Paid by Vendor)</td>
+                        </tr>
+                        <tr>
+                            <td>N</td>
+                            <td>No Charge</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>Freight Collect</td>
+                        </tr>
+                        <tr>
+                            <td>R</td>
+                            <td>Bill Receiver's Acct</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>Third Party Billing</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>Consignee Billing</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Reduce Inventory Cost by Cash Discount</td>
+                <td>If N, then any cash discount taken at the time of invoice payment will be posted to the Discounts Earned G/L account.<br />If Y, then the inventory cost for each item received, will be reduced by the cash discount that is expected to be taken at receiving. PO Receiving will debit the Cash Discount amount, which will be offset by a credit when the invoice is paid, and the cash discount is taken.</td>
+            </tr>
+            <tr>
+                <td>Enable Vendor Rebates</td>
+                <td>If Y, then the PO Detail Properties page will include a place to enter up to 
+3 rebates amount or percentages.&#160;These rebates are in addition to the vendor's rebate percentage that is maintained using Vendor Maintenance. The inventory cost will be reduced by the rebate amount, and the rebate will be debited to the Vendor Rebates Receivable G/L account.&#160;This account is maintained using <a href="../gl/gl240.htm">G/L Interface Maintenance</a> (GLU).</td>
+            </tr>
+            <tr>
+                <td>Enable 3rd Party Rebates</td>
+                <td>This is similar to the 'Enable Vendor Rebates' option above but applies when a third party, such as a buying group, also offers a rebate amount or percent.</td>
+            </tr>
+        </table>
+    </body>
+</html>

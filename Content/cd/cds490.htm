@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="1222" MadCap:lastWidth="1236">
+    <head><title>Dynamo Print Spooler</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Dynamo Print Spooler</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS490">Last Revised: 03/15/16</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Spooling refers to putting jobs into temporary memory or on disk until they are ready to be accessed by a device. It is widely used to create print queues where a print job can wait its turn to be printed, rather than be terminated by a busy printer. It also permits more than one program that normally requires the printer to run at the same time. Dynamo can spool anything that it can print. The utility of spooling the output, as opposed to sending it once off to the printer, is that the output is available to be printed repeatedly even after access to the content is no longer available in Dynamo, such as a report that has already been updated. Once the output is no longer needed, the Dynamo Print Spooler can also be used to delete the job.</p>
+        <h5>To spool a print job in Dynamo instead of sending it directly to the printer:</h5>
+        <ol>
+            <li>When printing anything from Dynamo, choose the printer the job will eventually be printed to. Note that spooling is not available when choosing to create a PDF or printing to display.</li>
+            <li>When presented with the printer options, the printer <i>method</i> (option 3) is typically set to O/S Spooler, which uses the spooler of the computer's operating system. Change this to Dynamo Spooler. (see image below)</li>
+            <li>Enter an optional comment to, for example, easily identify the job from the list in the Dynamo Print Spooler in case there are other versions of the job.</li>
+            <li>Touch Enter to print.</li>
+            <li>The job will now be available to print from the Dynamo Print Spooler.</li>
+            <li>Once the job is no longer needed, return to the Dynamo Print Spooler main screen and choose <i>Delete report</i>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="cds490.JPG" style="width: 628px;height: 189px;" />
+        </p>
+        <p>&#160;</p>
+        <h5>&#160;Dynamo Print Spooler Menu:</h5>
+        <p>
+            <img src="cds490-1.jpg" style="width: 618px;height: 329px;" />
+        </p>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <th width="100%" colspan="2">Dynamo Print Spooler</th>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Schedule reports to print</td>
+                <td>Choose this option to view jobs that are currently spooled. After selecting a job, the operator will be presented with the options for printing the job. These options include the number of copies to be printed, the page range to print (<i>All</i>is the default), and the printer the job will be sent to. Note that if the job has been printed previously, the number of copies to be printed will be blank and will need be filled with a number before the document will print. Other information regarding the job is also displayed, in a view-only format, such as the name of the report, the number of pages, as well as who initiated the spool and when.</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Delete Reports</td>
+                <td>If a print job is no longer needed, it can be deleted here. Once selecting the print job, Dynamo will confirm whether or not the operator really intends to delete the file. Choose Y (Yes) to delete the job.</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Cancel reports being printed</td>
+                <td>This option cancel a print job that is currently being run on the printer. This can be useful for reports that have a lot of pages so that, if something goes wrong, the operator does not have to wait for the entire job to print.</td>
+            </tr>
+        </table>
+        <p>
+            <br />
+            <br />
+            <br />  &#160;</p>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>PO138 - Start New PO</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">PO138</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">POP Start New PO</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=PO138">Last Revised: 08/03/07</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is called by programs such as PO 
+	Generation to start a new purchase order.</p>
+        <p>It will populate vendor related fields in PO40$ if VEND$ is passed.</p>
+        <p>It will populate warehouse related fields in PO40$ if WHS$ is passed.</p>
+        <p>It will initialize other PO40$ fields as required for a new purchase 
+	order.</p>
+        <p>It will assign a unique purchase order# and write PO40$ to XXPO40 file if 
+	PO40.PONO$ is all blank.</p>
+        <p>It is also called during Purchase Order Processing when the vendor# is 
+	changed on an existing purchase order.</p>
+        <p><code>CALL "PO138", ERR=XXXX, Y$, PO40$, { VEND$, WHS$ }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">PO138 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code>ERR=XXXX</code>
+                </td>
+                <td align="center">N/A</td>
+                <td>Error branch taken if <code>VEND$</code> is passed as a vendor#, but 
+		not on the VM01 vendor file, or <code>WHS$</code> is passed but not on 
+		the CW12 warehouse file. The operator will be informed.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>Y$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>PO40$</code>
+                </td>
+                <td align="center">To/From</td>
+                <td>Purchase Order heading record, must be passed to PO138.&#160; Will be 
+		changed by PO138 as described above.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>VEND$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional.&#160; You may pass as a null string (no mapping done), a 6 character vendor#, or the complete vendor record as in VM01$.&#160; 
+		If passed, fields from VM01$ will be mapped to PO40$.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>WHS$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Optional.&#160; You may pass a null string (no mapping done), or a 
+		warehouse code.&#160; If passed, fields from CW12$ will be mapped to 
+		PO40$.</td>
+            </tr>
+        </table>
+    </body>
+</html>

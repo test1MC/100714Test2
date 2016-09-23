@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="810" MadCap:lastWidth="1306">
+    <head><title>CM040 - Customer Selection</title>
+    </head>
+    <body>
+        <p class="CalledName">CM040</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Select Customer</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=CM040">Last Revised: 02/27/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program should be called whenever it is necessary to select a single customer.</p>
+        <p>Additional description.</p>
+        <p><code>CALL "CM040", Y$, CM040$, CM01$ {, ADDR$[ALL], CM03$ }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">CM040 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.COL</code>
+                </td>
+                <td align="center">To</td>
+                <td>Column number for data entry</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.ROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>Row number for data entry</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.NAMECOL</code>
+                </td>
+                <td align="center">To</td>
+                <td>Column number where customer name will be displayed.&#160; Leave <code>NAMECOL</code> and <code>NAMEROW</code> zero to disable display of customer name.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.NAMEROW</code>
+                </td>
+                <td align="center">To</td>
+                <td>Row number where name will be displayed.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.DISPADDR$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Do not display customer address</td>
+                        </tr>
+                        <tr>
+                            <td align="center">B</td>
+                            <td>Display address below name formatted as it would print on an envelope, i.e., with address line 2 omitted if empty, and City, State, and Zip on the same line.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">F</td>
+                            <td>Display address below name formatted with separate lines for address line 1, line 2, city, state, and zip.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.ALLOWCTL4$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Pass as <code>Y</code> or <code>+</code> to allow operator to touch F4 and not select a customer.&#160; Calling program can check if <code>CTL=4</code>.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.CRMODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Customer entry is required</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Y</td>
+                            <td>Customer entry is not required.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">A</td>
+                            <td>Prompt should include: Enter or SpaceBar = All</td>
+                        </tr>
+                        <tr>
+                            <td align="center">U</td>
+                            <td>Prompt should include: Enter or SpaceBar = Next unused#.&#160; Used to determine the next available customer#.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.NOFMODE$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Customer must exist on customer file</td>
+                        </tr>
+                        <tr>
+                            <td align="center">N</td>
+                            <td>operator may enter a customer# that is not on the customer file.&#160; This is required for applications that create new customer records.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.USMAIL$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Passed to DIS481 which will capitalize the address if passed as <code>Y</code>.&#160; The US Post Office prefers addresses be all capital letters.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.EXTRACT$</code>
+                </td>
+                <td align="center">To</td>
+                <td>If passed as <code>Y</code> then CM040 will extract the customer record, preventing others from extracting it while changes are being made.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.CLEARVDT$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Pass as Y to cause the display area where the name and address fields are shown to be cleared prior to any operator entry.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.ARROWS$</code>
+                </td>
+                <td align="center">To</td>
+                <td>
+                    <table class="lev2">
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>No arrow options displayed</td>
+                        </tr>
+                        <tr>
+                            <td align="center">U</td>
+                            <td>Prompt includes 'ArrowUp=prev screen'</td>
+                        </tr>
+                        <tr>
+                            <td align="center">D</td>
+                            <td>Prompt includes 'ArrowDn=next screen'</td>
+                        </tr>
+                        <tr>
+                            <td align="center">B</td>
+                            <td>Prompt includes both ArrowUp and ArrowDn prompts</td>
+                        </tr>
+                    </table>
+                    <p>Calling application can test if <code>CTL=2</code> then operator touched ArrowUp, <code>CTL=3</code> for ArrowDn.</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.PWIN$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Pass as <code>P</code> to enable separate prompt window for all entries.&#160; This is required when there is information at the bottom of the screen that must be retained, or when the entry takes place inside a window and it is desired to display the prompt at the bottom of the physical display, and not the active window.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM040.DISP$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Pass as <code>Q</code> to have CM040 read the customer record and display the customer number, and optionally the name and address with no operator entries.&#160; The customer# is passed to CM040 in the <code>CM01$</code> field.&#160; It does not need to be templated.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM01$</code>
+                </td>
+                <td align="center">To/From</td>
+                <td>The calling application does not need to obtain the <code>CM01$</code> template prior to calling CM040.&#160; To pass a default customer#, you can pass a templated <code>CM01$</code> or a non-templated 6 character <code>CM01$</code> as the default customer#.&#160; <code>CM01$</code> will be returned as the templated customer record.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>ADDR$[ALL]</code>
+                </td>
+                <td align="center">From</td>
+                <td>Optional.&#160; The address returned from DIS481 formatted for printing.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CM03$</code>
+                </td>
+                <td align="center">From</td>
+                <td>Optional.&#160; The customer contact record when the customer was selected using a contact name or contact telephone number.</td>
+            </tr>
+        </table>
+    </body>
+</html>

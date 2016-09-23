@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1982" MadCap:lastWidth="949">
+    <head><title>Project Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">FILE Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Project Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 06/04/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to manage software development projects. It provides basic project descriptive information, project activation, activation history, and a project rollback function.</p>
+        <p>Note that Project Maintenance is system-wide, and is shared by all companies defined on a system.</p>
+        <p>In a multiple server environment, projects are typically defined on a development server, where code is written and tested. Project Maintenance is used at the start of the project to specify the Project Title. Upon completion of creation of a new project, a Job Folder is automatically defined. The Job Folder is <code>/u/CDI/J/[JOB_NUMBER]</code>.</p>
+        <p>When working on a project, use the Dynamo Tools J menu option to select the current project. The search prefix will include the Job Number prefix first in the list, so that new and modified programs are accessed from the Job Folder.</p>
+        <p>Use the File Utility (SMS) menu to define new program files in the Job Folder.</p>
+        <p>Use either the File Utility or the Disc Utility (SMS) to copy program files to be modified from the production folder, to the Job Folder.</p>
+        <p>
+            <img src="cdpm10-1.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Job#</td>
+                    <td>Typically a sequential number, but alpha characters are supported. 8 characters max.</td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>A short but descriptive one-line project description</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>blank</td>
+                                    <td>Open Project - not yet activated on all servers</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">C</td>
+                                    <td>Closed Project - activated on all servers. Can be re-opened by changing the status if necessary, and copying programs to the Job Folder.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Job Folder</td>
+                    <td>The number of files in the Job Folder are displayed. Use the File Utility (SMS) to add/change/delete files in the Job Folder.</td>
+                </tr>
+                <tr>
+                    <td>Opened by</td>
+                    <td>Dynamo Tools Login ID of the user who first created the Project.</td>
+                </tr>
+                <tr>
+                    <td>Opened on</td>
+                    <td>Date Project was first created.</td>
+                </tr>
+                <tr>
+                    <td>Reviewed by</td>
+                    <td>Dynamo Tools Login ID of the user who reviewed the project prior to deployment. Manually assigned using this Project Maintenance application.</td>
+                </tr>
+                <tr>
+                    <td>Reviewed on</td>
+                    <td>Date Project was reviewed</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>When a project is ready for deployment, use the Project Deployment application on the FMS menu to export all programs, data dictionary entries, and other resources required by the project.</p>
+        <p>On the target system, use Project Deployment to download, import, and optionally activate the project. Note that you do not need to perform any Project Maintenance manually on the target systems. The import process will create the Project record.</p>
+        <p>Refer to the <a href="cds910.htm">Project Deployment</a> documentation for more details.</p>
+        <p style="font-weight: normal;"><b>Activate Project</b>
+        </p>
+        <p>In many cases, the Project Deployment application will Activate a Project, i.e., move the programs and other resources from the Job Folder to the appropriate destination folder. However, in some cases, the project needs to be tested by a few users prior to being made available to all users. In this case, the Project is imported, but not activated. &#160;It remains in the Job Folder which can be used by selected testers who use the Dynamo Tools J&#160;menu option to select the Job/Project for testing.</p>
+        <p>When a project is not activated during Project Deployment, it may be activated later using this option in Project Maintenance.</p>
+        <p>Project Activation must be done on the local server, and not across a data server connection.</p>
+        <p>Note that when using strict change control, the user activating the project must be a member of the restricted (IPOps) user group.</p>
+        <p style="font-weight: bold;">Activation History</p>
+        <p style="font-weight: normal;">When a Project is activated, each program or other resource activated, is logged in the Activation History. &#160;The Activation History option is used to display the date, time, and user who performed the activation, and each program/resource activated, and an indicator if the resource was new, or a replacement of an existing file. &#160;This information is often required when strict change controls are implemented.</p>
+        <p style="font-weight: normal;">
+            <img src="cdpm10-2.png" />
+        </p>
+        <p>&#160;</p>
+        <p>
+            <img src="cdpm10-3.png" />
+        </p>
+        <p style="font-weight: bold;">Rollback</p>
+        <p style="font-weight: normal;">In some cases, a project must be rolled back. This option is used to select the activation to be rolled back, and to restore any program or other resource replaced during the activation. Note that Rollback does not undo changes made to the Dynamo Tools Data Dictionary, nor to data files converted during the import process. In most cases, however, the original data file and its template are archived during the import process, and can be manually restored when necessary.</p>
+        <p style="font-weight: normal;">Rollback operations must be done on the local server only, and not using a data server connection.</p>
+        <p style="font-weight: normal;">Note that when using strict change control, the user performing the rollback must be a member of the restricted (ITOps) user group.</p>
+        <p style="font-weight: normal;">&#160;</p>
+    </body>
+</html>

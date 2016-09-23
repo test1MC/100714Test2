@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="gl320.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="9" MadCap:lastHeight="1321" MadCap:lastWidth="1173">
+    <head><title>G/L Posting Entry &amp;&#160; Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">General Ledger</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">G/L Posting Entry &amp; Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/07/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">G/L Posting Entry &amp; Maintenance is used to create general ledger journal entries manually and to adjust a program-generated journal entry when required. &#160;</p>
+        <p>For example, a manual entry to the general ledger would be required if money is transferred from a savings account to a checking account. Year-end entries, such as depreciation of furniture, would also require that assets are reduced and expenses are increased. These kind of transactions must be posted manually because they do not have an automatic update to the General Ledger.</p>
+        <p>This program offers the following options:</p>
+        <ol>
+            <li>Create a new posting</li>
+            <li>Modify or Delete a Posting not yet updated</li>
+            <li>Duplicate an updated Posting</li>
+            <li>Reverse an updated Posting</li>
+        </ol>
+        <p>
+            <img src="gl320-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">G/L&#160;Posting Entry &amp;&#160;Maintenance View</th>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <p>Select a type:</p>
+                        <ul>
+                            <li>Create a new Posting</li>
+                            <li>Modify or Delete a Posting not yet updated</li>
+                            <li>Duplicate an updated Posting</li>
+                            <li>Reverse an updated Posting</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Source Code</td>
+                    <td>
+                        <p>This field displays from where the posting originates. </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>A/P</td>
+                                    <td>Accounts Payable</td>
+                                </tr>
+                                <tr>
+                                    <td>CD</td>
+                                    <td>Cash Disbursements</td>
+                                </tr>
+                                <tr>
+                                    <td>CR</td>
+                                    <td>Cash Receipts</td>
+                                </tr>
+                                <tr>
+                                    <td>DR</td>
+                                    <td>Cash in Drawer</td>
+                                </tr>
+                                <tr>
+                                    <td>F/A</td>
+                                    <td>Fixed Asset Accounting</td>
+                                </tr>
+                                <tr>
+                                    <td>I/C</td>
+                                    <td>Inventory Control</td>
+                                </tr>
+                                <tr>
+                                    <td>MP</td>
+                                    <td>Manual Payment</td>
+                                </tr>
+                                <tr>
+                                    <td>SO</td>
+                                    <td>Sales Order Processing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Batch#</td>
+                    <td>This field is associated with the source code and displays the current batch. </td>
+                </tr>
+                <tr>
+                    <td>Note</td>
+                    <td>Type a note to explain why you are making a new journal entry. </td>
+                </tr>
+                <tr>
+                    <td>G/L&#160;Posting Date</td>
+                    <td>Indicate the date on which the entry is being posted.</td>
+                </tr>
+                <tr>
+                    <td>Reversal Date</td>
+                    <td>If a posting should automatically reverse at some point, the operator should specify a date. At this point, general ledger accounts that were credited will be debited and vice versa. However, if the posting should never reverse, the operator can leave this field blank. </td>
+                </tr>
+                <tr>
+                    <td>G/L&#160;Account</td>
+                    <td>Specify the G/L&#160;Account being posted to.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>The description of the specified G/L account displays here.</td>
+                </tr>
+                <tr>
+                    <td>DR&#160;Amount</td>
+                    <td>Indicate the debit record amount.</td>
+                </tr>
+                <tr>
+                    <td>CR&#160;Amount </td>
+                    <td>Indicate the credit record amount.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The option to Modify or Delete an existing posting is only valid prior to updating the G/L Posting Report.</p>
+        <p>If you are currently running G/L reports in MAS90, any manual journal entries you make should be done in both Dynamo and MAS90.</p>
+        <h6>Note: Personnel can be given or denied access to specific menus/programs through Operator Info Maintenance on the SMS menu. &#160;Refer to the Security Listing program on the SMS menu to review an operator's current status relative to accessing a particular program/menu.</h6>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+﻿/*<meta />*/
+
+/* Override MadCap css
+   Revision History
+   03/09/13 - top right border on nav section & topic top left
+*/
+
+.tabs-panel
+{
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0 !important;
+}
+
+#contentBody
+{
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0 !important;
+}

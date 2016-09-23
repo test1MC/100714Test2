@@ -1,0 +1,1354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProject
+  Version="1"
+  xml:lang="en-us"
+  IncludePattern="*worldshipodbcconversion*.htm;*worldshipodbcconversion*.html"
+  AutoExcludeNonTaggedFiles="false"
+  IncludeLinkedFiles="true"
+  DeleteStale="false"
+  AutoSync="true"
+  LastImport="2016-09-02T11:45:41.9625091-04:00"
+  MasterToc="/Project/TOCs/dynamo.fltoc"
+  DeleteUnreferenced="false">
+  <Files>
+    <Url
+      Source="file:///F:/Flare/policies/policies.flprj"
+      AbsoluteSource="file:///F:/Flare/policies/policies.flprj" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../tools/Content/Overview-FMS.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-FMS.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-SMS.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-SMS.htm" />
+    <Url
+      Source="../../../tools/Content/images/overvi1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/overvi14.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi14.jpg" />
+    <Url
+      Source="../../../tools/Content/images/overvi15.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi15.jpg" />
+    <Url
+      Source="../../../tools/Content/images/overvi2.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi2.jpg" />
+    <Url
+      Source="../../../tools/Content/images/overvi3.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi3.jpg" />
+    <Url
+      Source="../../../tools/Content/images/overvi4.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/overvi4.jpg" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/worldshipodbcconversion.htm"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/worldshipodbcconversion.htm" />
+    <Url
+      Source="../../../policies/Content/Resources/Images/odbcUPS1.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/Resources/Images/odbcUPS1.png" />
+    <Url
+      Source="../../../policies/Content/Resources/Images/odbcUPS2.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/Resources/Images/odbcUPS2.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc5.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc5.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc6.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc6.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc7.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc7.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc3.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc3.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc4.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc4.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc10.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc10.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc11.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc11.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc8.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc8.png" />
+    <Url
+      Source="../../../policies/Content/configuration/upsworldship/odbc9.png"
+      AbsoluteSource="file:///F:/Flare/policies/Content/configuration/upsworldship/odbc9.png" />
+    <Url
+      Source="../../../policies/Content/policy.css"
+      AbsoluteSource="file:///F:/Flare/policies/Content/policy.css" />
+    <Url
+      Source="../../../policies/Content/images/banner.gif"
+      AbsoluteSource="file:///F:/Flare/policies/Content/images/banner.gif" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles>
+    <Url
+      Source="../../../tools/Content/background.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/background.htm" />
+    <Url
+      Source="../../../tools/Content/Batch_Process.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Batch_Process.htm" />
+    <Url
+      Source="../../../tools/Content/BestPractices.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/BestPractices.htm" />
+    <Url
+      Source="../../../tools/Content/CDC950.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDC950.htm" />
+    <Url
+      Source="../../../tools/Content/CDC960.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDC960.htm" />
+    <Url
+      Source="../../../tools/Content/CDS000.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS000.htm" />
+    <Url
+      Source="../../../tools/Content/CDS001.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS001.htm" />
+    <Url
+      Source="../../../tools/Content/CDS002.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS002.htm" />
+    <Url
+      Source="../../../tools/Content/CDS003.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS003.htm" />
+    <Url
+      Source="../../../tools/Content/CDS011.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS011.htm" />
+    <Url
+      Source="../../../tools/Content/CDS016.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS016.htm" />
+    <Url
+      Source="../../../tools/Content/CDS017.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS017.htm" />
+    <Url
+      Source="../../../tools/Content/CDS018.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS018.htm" />
+    <Url
+      Source="../../../tools/Content/CDS028.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS028.htm" />
+    <Url
+      Source="../../../tools/Content/CDS030.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS030.htm" />
+    <Url
+      Source="../../../tools/Content/CDS031.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS031.htm" />
+    <Url
+      Source="../../../tools/Content/CDS033.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS033.htm" />
+    <Url
+      Source="../../../tools/Content/CDS034.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS034.htm" />
+    <Url
+      Source="../../../tools/Content/CDS035.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS035.htm" />
+    <Url
+      Source="../../../tools/Content/CDS036.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS036.htm" />
+    <Url
+      Source="../../../tools/Content/CDS037.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS037.htm" />
+    <Url
+      Source="../../../tools/Content/CDS038.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS038.htm" />
+    <Url
+      Source="../../../tools/Content/CDS039.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS039.htm" />
+    <Url
+      Source="../../../tools/Content/CDS041.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS041.htm" />
+    <Url
+      Source="../../../tools/Content/CDS043.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS043.htm" />
+    <Url
+      Source="../../../tools/Content/CDS045.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS045.htm" />
+    <Url
+      Source="../../../tools/Content/CDS046.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS046.htm" />
+    <Url
+      Source="../../../tools/Content/CDS047.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS047.htm" />
+    <Url
+      Source="../../../tools/Content/CDS048.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS048.htm" />
+    <Url
+      Source="../../../tools/Content/CDS049.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS049.htm" />
+    <Url
+      Source="../../../tools/Content/CDS050.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS050.htm" />
+    <Url
+      Source="../../../tools/Content/CDS051.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS051.htm" />
+    <Url
+      Source="../../../tools/Content/CDS052.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS052.htm" />
+    <Url
+      Source="../../../tools/Content/CDS053.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS053.htm" />
+    <Url
+      Source="../../../tools/Content/CDS054.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS054.htm" />
+    <Url
+      Source="../../../tools/Content/CDS055.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS055.htm" />
+    <Url
+      Source="../../../tools/Content/CDS056.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS056.htm" />
+    <Url
+      Source="../../../tools/Content/CDS057.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS057.htm" />
+    <Url
+      Source="../../../tools/Content/CDS058.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS058.htm" />
+    <Url
+      Source="../../../tools/Content/CDS059.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS059.htm" />
+    <Url
+      Source="../../../tools/Content/CDS060.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS060.htm" />
+    <Url
+      Source="../../../tools/Content/CDS061.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS061.htm" />
+    <Url
+      Source="../../../tools/Content/CDS062.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS062.htm" />
+    <Url
+      Source="../../../tools/Content/CDS063.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS063.htm" />
+    <Url
+      Source="../../../tools/Content/CDS063ex1.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS063ex1.htm" />
+    <Url
+      Source="../../../tools/Content/CDS064.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS064.htm" />
+    <Url
+      Source="../../../tools/Content/CDS065.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS065.htm" />
+    <Url
+      Source="../../../tools/Content/CDS066.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS066.htm" />
+    <Url
+      Source="../../../tools/Content/CDS067.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS067.htm" />
+    <Url
+      Source="../../../tools/Content/CDS068.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS068.htm" />
+    <Url
+      Source="../../../tools/Content/CDS069.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS069.htm" />
+    <Url
+      Source="../../../tools/Content/CDS070.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS070.htm" />
+    <Url
+      Source="../../../tools/Content/CDS071.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS071.htm" />
+    <Url
+      Source="../../../tools/Content/CDS072.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS072.htm" />
+    <Url
+      Source="../../../tools/Content/CDS073.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS073.htm" />
+    <Url
+      Source="../../../tools/Content/CDS074.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS074.htm" />
+    <Url
+      Source="../../../tools/Content/CDS075.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS075.htm" />
+    <Url
+      Source="../../../tools/Content/CDS076.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS076.htm" />
+    <Url
+      Source="../../../tools/Content/CDS077.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS077.htm" />
+    <Url
+      Source="../../../tools/Content/CDS078.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS078.htm" />
+    <Url
+      Source="../../../tools/Content/CDS079.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS079.htm" />
+    <Url
+      Source="../../../tools/Content/CDS080.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS080.htm" />
+    <Url
+      Source="../../../tools/Content/CDS081.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS081.htm" />
+    <Url
+      Source="../../../tools/Content/CDS082.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS082.htm" />
+    <Url
+      Source="../../../tools/Content/CDS083.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS083.htm" />
+    <Url
+      Source="../../../tools/Content/CDS084.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS084.htm" />
+    <Url
+      Source="../../../tools/Content/CDS085.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS085.htm" />
+    <Url
+      Source="../../../tools/Content/CDS086.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS086.htm" />
+    <Url
+      Source="../../../tools/Content/CDS087.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS087.htm" />
+    <Url
+      Source="../../../tools/Content/CDS088.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS088.htm" />
+    <Url
+      Source="../../../tools/Content/CDS089.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS089.htm" />
+    <Url
+      Source="../../../tools/Content/CDS090.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS090.htm" />
+    <Url
+      Source="../../../tools/Content/CDS091.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS091.htm" />
+    <Url
+      Source="../../../tools/Content/CDS092.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS092.htm" />
+    <Url
+      Source="../../../tools/Content/CDS093.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS093.htm" />
+    <Url
+      Source="../../../tools/Content/CDS094.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS094.htm" />
+    <Url
+      Source="../../../tools/Content/CDS095.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS095.htm" />
+    <Url
+      Source="../../../tools/Content/CDS096.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS096.htm" />
+    <Url
+      Source="../../../tools/Content/CDS097.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS097.htm" />
+    <Url
+      Source="../../../tools/Content/CDS098.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS098.htm" />
+    <Url
+      Source="../../../tools/Content/CDS099.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS099.htm" />
+    <Url
+      Source="../../../tools/Content/CDS133.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS133.htm" />
+    <Url
+      Source="../../../tools/Content/CDS135.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS135.htm" />
+    <Url
+      Source="../../../tools/Content/CDS140.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS140.htm" />
+    <Url
+      Source="../../../tools/Content/CDS140A.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS140A.htm" />
+    <Url
+      Source="../../../tools/Content/CDS140B.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS140B.htm" />
+    <Url
+      Source="../../../tools/Content/CDS173.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS173.htm" />
+    <Url
+      Source="../../../tools/Content/CDS173ex1.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS173ex1.htm" />
+    <Url
+      Source="../../../tools/Content/CDS173ex2.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS173ex2.htm" />
+    <Url
+      Source="../../../tools/Content/CDS174.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS174.htm" />
+    <Url
+      Source="../../../tools/Content/CDS178.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS178.htm" />
+    <Url
+      Source="../../../tools/Content/CDS179.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS179.htm" />
+    <Url
+      Source="../../../tools/Content/CDS180.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS180.htm" />
+    <Url
+      Source="../../../tools/Content/CDS181.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS181.htm" />
+    <Url
+      Source="../../../tools/Content/CDS182.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS182.htm" />
+    <Url
+      Source="../../../tools/Content/CDS184.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS184.htm" />
+    <Url
+      Source="../../../tools/Content/CDS185.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS185.htm" />
+    <Url
+      Source="../../../tools/Content/CDS186.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS186.htm" />
+    <Url
+      Source="../../../tools/Content/CDS187.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS187.htm" />
+    <Url
+      Source="../../../tools/Content/CDS188.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS188.htm" />
+    <Url
+      Source="../../../tools/Content/CDS189.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS189.htm" />
+    <Url
+      Source="../../../tools/Content/CDS191.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS191.htm" />
+    <Url
+      Source="../../../tools/Content/CDS200.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS200.htm" />
+    <Url
+      Source="../../../tools/Content/CDS234.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS234.htm" />
+    <Url
+      Source="../../../tools/Content/CDS235.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS235.htm" />
+    <Url
+      Source="../../../tools/Content/CDS236.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS236.htm" />
+    <Url
+      Source="../../../tools/Content/CDS250.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS250.htm" />
+    <Url
+      Source="../../../tools/Content/CDS252.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS252.htm" />
+    <Url
+      Source="../../../tools/Content/CDS253.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS253.htm" />
+    <Url
+      Source="../../../tools/Content/CDS254.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS254.htm" />
+    <Url
+      Source="../../../tools/Content/CDS255.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS255.htm" />
+    <Url
+      Source="../../../tools/Content/CDS257.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS257.htm" />
+    <Url
+      Source="../../../tools/Content/CDS261.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS261.htm" />
+    <Url
+      Source="../../../tools/Content/CDS262.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS262.htm" />
+    <Url
+      Source="../../../tools/Content/CDS263.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS263.htm" />
+    <Url
+      Source="../../../tools/Content/CDS264.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS264.htm" />
+    <Url
+      Source="../../../tools/Content/CDS265.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS265.htm" />
+    <Url
+      Source="../../../tools/Content/CDS268.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS268.htm" />
+    <Url
+      Source="../../../tools/Content/CDS269.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS269.htm" />
+    <Url
+      Source="../../../tools/Content/CDS273.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS273.htm" />
+    <Url
+      Source="../../../tools/Content/CDS274.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS274.htm" />
+    <Url
+      Source="../../../tools/Content/CDS275.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS275.htm" />
+    <Url
+      Source="../../../tools/Content/CDS276.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS276.htm" />
+    <Url
+      Source="../../../tools/Content/CDS277.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS277.htm" />
+    <Url
+      Source="../../../tools/Content/CDS278.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS278.htm" />
+    <Url
+      Source="../../../tools/Content/CDS279.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS279.htm" />
+    <Url
+      Source="../../../tools/Content/CDS284.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS284.htm" />
+    <Url
+      Source="../../../tools/Content/CDS299.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS299.htm" />
+    <Url
+      Source="../../../tools/Content/CDS340.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS340.htm" />
+    <Url
+      Source="../../../tools/Content/CDS346.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS346.htm" />
+    <Url
+      Source="../../../tools/Content/CDS348.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS348.htm" />
+    <Url
+      Source="../../../tools/Content/CDS350.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS350.htm" />
+    <Url
+      Source="../../../tools/Content/CDS352.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS352.htm" />
+    <Url
+      Source="../../../tools/Content/CDS353.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS353.htm" />
+    <Url
+      Source="../../../tools/Content/CDS354.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS354.htm" />
+    <Url
+      Source="../../../tools/Content/CDS355.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS355.htm" />
+    <Url
+      Source="../../../tools/Content/CDS356.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS356.htm" />
+    <Url
+      Source="../../../tools/Content/CDS357.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS357.htm" />
+    <Url
+      Source="../../../tools/Content/CDS358.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS358.htm" />
+    <Url
+      Source="../../../tools/Content/CDS359.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS359.htm" />
+    <Url
+      Source="../../../tools/Content/CDS391.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS391.htm" />
+    <Url
+      Source="../../../tools/Content/CDS393.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS393.htm" />
+    <Url
+      Source="../../../tools/Content/CDS394.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS394.htm" />
+    <Url
+      Source="../../../tools/Content/CDS395.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS395.htm" />
+    <Url
+      Source="../../../tools/Content/CDS400.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS400.htm" />
+    <Url
+      Source="../../../tools/Content/CDS401.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS401.htm" />
+    <Url
+      Source="../../../tools/Content/CDS454.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS454.htm" />
+    <Url
+      Source="../../../tools/Content/CDS468.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS468.htm" />
+    <Url
+      Source="../../../tools/Content/CDS469.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS469.htm" />
+    <Url
+      Source="../../../tools/Content/CDS480.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS480.htm" />
+    <Url
+      Source="../../../tools/Content/CDS481.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS481.htm" />
+    <Url
+      Source="../../../tools/Content/CDS550.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS550.htm" />
+    <Url
+      Source="../../../tools/Content/CDS553.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS553.htm" />
+    <Url
+      Source="../../../tools/Content/CDS554.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS554.htm" />
+    <Url
+      Source="../../../tools/Content/CDS555.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS555.htm" />
+    <Url
+      Source="../../../tools/Content/CDS556.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS556.htm" />
+    <Url
+      Source="../../../tools/Content/CDS557.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS557.htm" />
+    <Url
+      Source="../../../tools/Content/CDS562.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS562.htm" />
+    <Url
+      Source="../../../tools/Content/CDS604.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS604.htm" />
+    <Url
+      Source="../../../tools/Content/CDS606.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS606.htm" />
+    <Url
+      Source="../../../tools/Content/CDS654.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS654.htm" />
+    <Url
+      Source="../../../tools/Content/CDS700.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS700.htm" />
+    <Url
+      Source="../../../tools/Content/CDS900.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS900.htm" />
+    <Url
+      Source="../../../tools/Content/CDW000.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW000.htm" />
+    <Url
+      Source="../../../tools/Content/CDW001.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW001.htm" />
+    <Url
+      Source="../../../tools/Content/CDW038.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW038.htm" />
+    <Url
+      Source="../../../tools/Content/CDW040.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW040.htm" />
+    <Url
+      Source="../../../tools/Content/CDW055.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW055.htm" />
+    <Url
+      Source="../../../tools/Content/CDW068.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW068.htm" />
+    <Url
+      Source="../../../tools/Content/CDW069.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW069.htm" />
+    <Url
+      Source="../../../tools/Content/CDW100.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW100.htm" />
+    <Url
+      Source="../../../tools/Content/CDW130.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW130.htm" />
+    <Url
+      Source="../../../tools/Content/CDW131.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW131.htm" />
+    <Url
+      Source="../../../tools/Content/CDW200.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW200.htm" />
+    <Url
+      Source="../../../tools/Content/CDW279.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW279.htm" />
+    <Url
+      Source="../../../tools/Content/CDW550.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW550.htm" />
+    <Url
+      Source="../../../tools/Content/CDW841.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW841.htm" />
+    <Url
+      Source="../../../tools/Content/CDW999.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDW999.htm" />
+    <Url
+      Source="../../../tools/Content/CDX010.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX010.htm" />
+    <Url
+      Source="../../../tools/Content/CDX020.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX020.htm" />
+    <Url
+      Source="../../../tools/Content/CDX030.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX030.htm" />
+    <Url
+      Source="../../../tools/Content/CDX040.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX040.htm" />
+    <Url
+      Source="../../../tools/Content/CDX050.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX050.htm" />
+    <Url
+      Source="../../../tools/Content/CDX100.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX100.htm" />
+    <Url
+      Source="../../../tools/Content/CDX110.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDX110.htm" />
+    <Url
+      Source="../../../tools/Content/COLORS.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/COLORS.htm" />
+    <Url
+      Source="../../../tools/Content/DataServer.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/DataServer.htm" />
+    <Url
+      Source="../../../tools/Content/dynascan.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/dynascan.htm" />
+    <Url
+      Source="../../../tools/Content/environment.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/environment.htm" />
+    <Url
+      Source="../../../tools/Content/FileMaintenance.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/FileMaintenance.htm" />
+    <Url
+      Source="../../../tools/Content/Installation.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Installation.htm" />
+    <Url
+      Source="../../../tools/Content/launch.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/launch.htm" />
+    <Url
+      Source="../../../tools/Content/Licensing.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Licensing.htm" />
+    <Url
+      Source="../../../tools/Content/MotorolaLineDraw.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/MotorolaLineDraw.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-CalledPrograms.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-CalledPrograms.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-ConsoleModeTools.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-ConsoleModeTools.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-Examples.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-Examples.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-ISC.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-ISC.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-menu.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-menu.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-ProgramEditor.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-ProgramEditor.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-scripts.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-scripts.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-SPF.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-SPF.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-Tools.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-Tools.htm" />
+    <Url
+      Source="../../../tools/Content/Overview-WMS.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview-WMS.htm" />
+    <Url
+      Source="../../../tools/Content/Overview.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/Overview.htm" />
+    <Url
+      Source="../../../tools/Content/SW001.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW001.htm" />
+    <Url
+      Source="../../../tools/Content/SW002.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW002.htm" />
+    <Url
+      Source="../../../tools/Content/SW004.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW004.htm" />
+    <Url
+      Source="../../../tools/Content/SW005.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW005.htm" />
+    <Url
+      Source="../../../tools/Content/SW010.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW010.htm" />
+    <Url
+      Source="../../../tools/Content/SW022.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW022.htm" />
+    <Url
+      Source="../../../tools/Content/SW100.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW100.htm" />
+    <Url
+      Source="../../../tools/Content/SW101.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW101.htm" />
+    <Url
+      Source="../../../tools/Content/SW110.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW110.htm" />
+    <Url
+      Source="../../../tools/Content/SW404.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW404.htm" />
+    <Url
+      Source="../../../tools/Content/SW460.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW460.htm" />
+    <Url
+      Source="../../../tools/Content/SW461.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/SW461.htm" />
+    <Url
+      Source="../../../tools/Content/WMS-FolderLocations.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/WMS-FolderLocations.htm" />
+    <Url
+      Source="../../../tools/Content/WMS-HelpText.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/WMS-HelpText.htm" />
+    <Url
+      Source="../../../tools/Content/XXSD55.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/XXSD55.htm" />
+    <Url
+      Source="../../../tools/Content/_example.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/_example.htm" />
+    <Url
+      Source="../../../tools/Content/examples/CDW200-1.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/CDW200-1.htm" />
+    <Url
+      Source="../../../tools/Content/examples/CDW200-2.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/CDW200-2.htm" />
+    <Url
+      Source="../../../tools/Content/examples/CDW200-3.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/CDW200-3.htm" />
+    <Url
+      Source="../../../tools/Content/examples/CDW200-4.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/CDW200-4.htm" />
+    <Url
+      Source="../../../tools/Content/examples/CDW200-5.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/CDW200-5.htm" />
+    <Url
+      Source="../../../tools/Content/examples/dashboard.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/examples/dashboard.htm" />
+    <Url
+      Source="../../../tools/Content/lang/POS_function.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/lang/POS_function.htm" />
+    <Url
+      Source="../../../tools/Content/lang/substring.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/lang/substring.htm" />
+    <Url
+      Source="../../../tools/Content/templates/Content/Overview.htm"
+      AbsoluteSource="file:///F:/Flare/tools/Content/templates/Content/Overview.htm" />
+    <Url
+      Source="../../../tools/Content/CDS0377.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS0377.jpg" />
+    <Url
+      Source="../../../tools/Content/CDS3541.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/CDS3541.gif" />
+    <Url
+      Source="../../../tools/Content/images/banner.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/banner.gif" />
+    <Url
+      Source="../../../tools/Content/images/bookclosed.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/bookclosed.gif" />
+    <Url
+      Source="../../../tools/Content/images/bookopen.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/bookopen.gif" />
+    <Url
+      Source="../../../tools/Content/images/calendar.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/calendar.gif" />
+    <Url
+      Source="../../../tools/Content/images/CDS0281.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0281.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS02810.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS02810.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0282.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0282.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0283.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0283.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0284.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0284.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0285.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0285.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0286.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0286.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0287.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0287.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0288.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0288.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0289.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0289.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0361.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0361.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS03710.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS03710.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS03711.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS03711.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS03712.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS03712.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS03713.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS03713.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0372.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0372.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0373.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0373.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0374.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0374.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0375.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0375.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0376.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0376.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0377.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0377.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0378.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0378.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0379.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0379.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0491.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0491.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0501.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0501.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0531.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0531.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06111.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06111.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0612.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0612.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0613.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0613.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0614.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0614.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0691.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0691.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06910.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06910.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06911.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06911.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06912.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06912.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06913.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06913.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06914.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06914.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06915.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06915.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS06916.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS06916.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0692.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0692.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0693.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0693.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0694.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0694.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0695.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0695.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0696.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0696.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0697.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0697.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0698.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0698.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS0699.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0699.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS069w1.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS069w1.gif" />
+    <Url
+      Source="../../../tools/Content/images/CDS069w2.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS069w2.gif" />
+    <Url
+      Source="../../../tools/Content/images/CDS069w3.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS069w3.gif" />
+    <Url
+      Source="../../../tools/Content/images/CDS069w4.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS069w4.gif" />
+    <Url
+      Source="../../../tools/Content/images/CDS0981.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS0981.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1351.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1351.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS14010.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS14010.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS14011.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS14011.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS14012.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS14012.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1402.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1402.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1403.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1403.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1404.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1404.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1405.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1405.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1406.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1406.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1407.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1407.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1408.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1408.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1409.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1409.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS182.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS182.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1871.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1871.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1872.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1872.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1873.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1873.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS1874.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS1874.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2361.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2361.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS23610.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS23610.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS23611.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS23611.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS23612.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS23612.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2362.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2362.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2363.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2363.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2364.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2364.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2365.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2365.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2366.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2366.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2367.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2367.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2368.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2368.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2369.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2369.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2370.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2370.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2371.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2371.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2372.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2372.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2373.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2373.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2374.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2374.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2375.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2375.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2376.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2376.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2377.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2377.jpg" />
+    <Url
+      Source="../../../tools/Content/images/cds250.png"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/cds250.png" />
+    <Url
+      Source="../../../tools/Content/images/CDS2502.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2502.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2572.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2572.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2573.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2573.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2611.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2611.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS26513.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS26513.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2774.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2774.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2776.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2776.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2777.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2777.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2778.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2778.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2791.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2791.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS27910.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS27910.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2792.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2792.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2799.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2799.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS2841.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS2841.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS29911.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS29911.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS3401.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS3401.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS354.PNG"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS354.PNG" />
+    <Url
+      Source="../../../tools/Content/images/CDS3581.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS3581.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS4684.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS4684.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS4801.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS4801.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS4813.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS4813.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS5501.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS5501.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS5502.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS5502.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS5503.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS5503.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS5531.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS5531.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS5532.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS5532.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDS6045.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDS6045.jpg" />
+    <Url
+      Source="../../../tools/Content/images/cds7005.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/cds7005.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW1001.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW1001.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW1002.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW1002.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW5501.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW5501.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW5502.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW5502.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW9991.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW9991.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW9992.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW9992.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDW9993.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDW9993.jpg" />
+    <Url
+      Source="../../../tools/Content/images/CDX1001.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/CDX1001.jpg" />
+    <Url
+      Source="../../../tools/Content/images/COLORS1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/COLORS1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc2.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc2.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc3.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc3.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc4.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc4.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc5.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc5.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc6.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc6.jpg" />
+    <Url
+      Source="../../../tools/Content/images/dynasc7.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/dynasc7.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa10.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa10.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa11.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa11.gif" />
+    <Url
+      Source="../../../tools/Content/images/FileMa12.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa12.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa13.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa13.gif" />
+    <Url
+      Source="../../../tools/Content/images/FileMa14.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa14.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa15.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa15.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa16.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa16.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa2.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa2.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa3.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa3.gif" />
+    <Url
+      Source="../../../tools/Content/images/FileMa4.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa4.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa5.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa5.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa6.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa6.gif" />
+    <Url
+      Source="../../../tools/Content/images/FileMa7.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa7.jpg" />
+    <Url
+      Source="../../../tools/Content/images/FileMa8.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa8.gif" />
+    <Url
+      Source="../../../tools/Content/images/FileMa9.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/FileMa9.jpg" />
+    <Url
+      Source="../../../tools/Content/images/stripes2.png"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/stripes2.png" />
+    <Url
+      Source="../../../tools/Content/images/SW100.1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW100.1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW100.2.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW100.2.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW100.3.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW100.3.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW100.4.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW100.4.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW100.5.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW100.5.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW460.1.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW460.1.jpg" />
+    <Url
+      Source="../../../tools/Content/images/SW460.2.jpg"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/SW460.2.jpg" />
+    <Url
+      Source="../../../tools/Content/images/toolsFlareLogo.png"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/toolsFlareLogo.png" />
+    <Url
+      Source="../../../tools/Content/images/toolsIcon.55X55.png"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/toolsIcon.55X55.png" />
+    <Url
+      Source="../../../tools/Content/images/ToolsIcon.gif"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/ToolsIcon.gif" />
+    <Url
+      Source="../../../tools/Content/images/toolsIcon48x48.png"
+      AbsoluteSource="file:///F:/Flare/tools/Content/images/toolsIcon48x48.png" />
+    <Url
+      Source="../../../policies/Content/policy.css"
+      AbsoluteSource="file:///F:/Flare/policies/Content/policy.css" />
+    <Url
+      Source="../../../policies/Content/images/banner.gif"
+      AbsoluteSource="file:///F:/Flare/policies/Content/images/banner.gif" />
+  </SkippedSourceFiles>
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Overview-FMS.htm"
+      TimeStamp="2/10/2013 9:51:12 AM" />
+    <Url
+      Source="../../Content/Overview-SMS.htm"
+      TimeStamp="2/10/2013 11:19:24 AM" />
+    <Url
+      Source="../../Content/images/overvi1.jpg"
+      TimeStamp="4/26/2010 11:45:22 PM" />
+    <Url
+      Source="../../Content/images/overvi14.jpg"
+      TimeStamp="2/26/2009 4:12:02 PM" />
+    <Url
+      Source="../../Content/images/overvi15.jpg"
+      TimeStamp="2/26/2009 4:12:12 PM" />
+    <Url
+      Source="../../Content/images/overvi2.jpg"
+      TimeStamp="4/26/2010 11:45:49 PM" />
+    <Url
+      Source="../../Content/images/overvi3.jpg"
+      TimeStamp="4/26/2010 11:46:05 PM" />
+    <Url
+      Source="../../Content/images/overvi4.jpg"
+      TimeStamp="4/26/2010 11:46:14 PM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/worldshipodbcconversion.htm"
+      TimeStamp="7/14/2015 11:27:31 AM" />
+    <Url
+      Source="../../Content/Resources/Images/odbcUPS1.png"
+      TimeStamp="7/9/2015 4:33:54 PM" />
+    <Url
+      Source="../../Content/Resources/Images/odbcUPS2.png"
+      TimeStamp="7/10/2015 9:16:31 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc5.png"
+      TimeStamp="11/7/2014 10:48:13 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc6.png"
+      TimeStamp="11/7/2014 10:48:19 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc7.png"
+      TimeStamp="11/7/2014 10:48:27 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc3.png"
+      TimeStamp="11/7/2014 10:47:57 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc4.png"
+      TimeStamp="11/7/2014 10:48:04 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc10.png"
+      TimeStamp="11/17/2014 11:15:23 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc11.png"
+      TimeStamp="11/17/2014 11:16:01 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc8.png"
+      TimeStamp="11/7/2014 10:48:33 AM" />
+    <Url
+      Source="../../Content/configuration/upsworldship/odbc9.png"
+      TimeStamp="11/7/2014 10:48:39 AM" />
+    <Url
+      Source="../../Content/policy.css"
+      TimeStamp="5/2/2015 4:05:46 PM" />
+    <Url
+      Source="../../Content/images/banner.gif"
+      TimeStamp="2/28/2004 12:48:07 PM" />
+  </GeneratedFiles>
+</CatapultProject>

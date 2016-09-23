@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="817" MadCap:lastWidth="762">
+    <head><title>VRP Technical Overview</title>
+    </head>
+    <body>
+        <p class="SectionName">Dynamo vendor returns processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Technical Overview</p>
+                </td>
+                <td align="right">Last Revised: 01/11/08</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo Vendor Returns Processing provides the ability to enter, maintain, and process items that are being sent back to the vendor.</p>
+        <p><b>Vendor Returns Data Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td>XXVR40</td>
+                <td>VR Heading</td>
+                <td>Record for each vendor return</td>
+            </tr>
+            <tr>
+                <td>XXVR41</td>
+                <td>VR Detail</td>
+                <td>Record for each vendor return line item</td>
+            </tr>
+            <tr>
+                <td>XXVR42</td>
+                <td>VR Timestamps</td>
+                <td>Record for each vendor return timestamp</td>
+            </tr>
+            <tr>
+                <td>XXVR43</td>
+                <td>VR Notepad Text</td>
+                <td>
+        This file contains all notepad text associated with the return.
+
+        <table class="lev2"><tr><th>First key segment</th><th>Notepad contents</th></tr><tr><td>VR number plus "INTERNAL"</td><td>Internal notepad not printed on vendor return packing slip</td></tr><tr><td>VR number plus "EXTERNAL"</td><td>Notepad printed at start of VR before first line item</td></tr><tr><td>VR number plus HTA(VR41.VR41ID)</td><td>Notepad associated with line item, printed on vendor return below line item.</td></tr></table></td>
+            </tr>
+        </table>
+        <p><b>Related Data Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td>XXCW00</td>
+                <td>Company Wide Parameters</td>
+                <td>Contains parameters that affect multiple programs such as whether the inventory is LIFO or FIFO, whether or not cores are used, whether or not federal excise tax is used, etc.</td>
+            </tr>
+            <tr>
+                <td>XXCW04</td>
+                <td>Application Menus</td>
+                <td>VR100 and VR150 entries</td>
+            </tr>
+            <tr>
+                <td>XXCW10</td>
+                <td>Workstation Information</td>
+                <td>Used to determine default warehouse code and immediate printer for workstation.&#160; The default printer for purchase order printing is used for vendor returns.</td>
+            </tr>
+            <tr>
+                <td>XXCW12</td>
+                <td>Warehouses</td>
+                <td>One record per warehouse (Maintained on CWP menu)</td>
+            </tr>
+            <tr>
+                <td>XXCW20</td>
+                <td>Shipping Carriers</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXCW21</td>
+                <td>Carrier Services</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXIC02</td>
+                <td>QOH Transactions</td>
+                <td>Used by IC020 Change Qty on Hand</td>
+            </tr>
+            <tr>
+                <td>XXIC03</td>
+                <td>Inventory Receipts</td>
+                <td>Used by IC030 Process Inventory Transaction</td>
+            </tr>
+            <tr>
+                <td>XXIC04</td>
+                <td>Inventory Usage</td>
+                <td>Used by IC030 Process Inventory Transaction</td>
+            </tr>
+            <tr>
+                <td>XXIC10</td>
+                <td>Inventory Transactions</td>
+                <td>Used by IC020 Change Qty on Hand</td>
+            </tr>
+            <tr>
+                <td>XXIM01</td>
+                <td>Items</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXIM03</td>
+                <td>Vendor Part Numbers</td>
+                <td>Used by IM040 item selection, and to obtain VPN for secondary vendors</td>
+            </tr>
+            <tr>
+                <td>XXIM11</td>
+                <td>Equivalent Part Numbers</td>
+                <td>Used by IM040 item selection</td>
+            </tr>
+            <tr>
+                <td>XXUK20</td>
+                <td>Items by Keyword</td>
+                <td>Used by IM040 item selection</td>
+            </tr>
+            <tr>
+                <td>XXUM21</td>
+                <td>Warehouse</td>
+                <td>Used for Warehouse Locations.</td>
+            </tr>
+            <tr>
+                <td>XXVM01</td>
+                <td>Vendors</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>XXVM03</td>
+                <td>Vendor Contact Names</td>
+                <td>Used to populate contact name in VR heading</td>
+            </tr>
+            <tr>
+                <td>XXVM04</td>
+                <td>Vendor Types</td>
+                <td>Used in Vendor Maint</td>
+            </tr>
+            <tr>
+                <td>XXVM06</td>
+                <td>Vendor Notepad</td>
+                <td>Used in Vendor Maint</td>
+            </tr>
+            <tr>
+                <td>XXVM08</td>
+                <td>Buyers</td>
+                <td>Used in Vendor Maint</td>
+            </tr>
+            <tr>
+                <td>DISM00</td>
+                <td>State/Country Codes</td>
+                <td>Used by SW460 Enter City/State/Zip (part of ZIP package)</td>
+            </tr>
+            <tr>
+                <td>DYSW01</td>
+                <td>City/State/Zip Codes</td>
+                <td>Used by SW460 Enter City/State/Zip (part of ZIP package)</td>
+            </tr>
+        </table>
+        <p><b>Temporary Work Files</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>XXVR170.</td>
+                <td>Vendor Return Generation</td>
+            </tr>
+            <tr>
+                <td>DYVM040.</td>
+                <td>Select Vendor</td>
+            </tr>
+        </table>
+        <p><b>Programs attached to Menu</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Menu</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>VR100</td>
+                <td>Vendor Return Processing</td>
+                <td align="center">VRP</td>
+                <td>Uses Application Menu Processor (SW100)</td>
+            </tr>
+            <tr>
+                <td>VR150</td>
+                <td>Vendor Return Inquiry</td>
+                <td align="center">VRP</td>
+                <td>Uses Application Menu Processor (SW100)</td>
+            </tr>
+            <tr>
+                <td>VR170</td>
+                <td>Vendor Return Generation</td>
+                <td align="center">VRP</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td>VR200</td>
+                <td>Vendor Return Listing</td>
+                <td align="center">VRP</td>
+                <td>Lists open and/or closed vendor returns, heading or detail formats.</td>
+            </tr>
+        </table>
+        <p><b>Called Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Data Dictionary Company</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>VR022</td>
+                <td>VRP Write SO83 shipping data</td>
+                <td align="center">&#160;</td>
+                <td>Used to interface with shipping software such as UPS WorldShip  and FedEx Shipment Manager</td>
+            </tr>
+            <tr>
+                <td>VR101</td>
+                <td>VRP Vendor Info</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the VR40-B view containing vendor related information</td>
+            </tr>
+            <tr>
+                <td>VR102</td>
+                <td>VRP Shipping Info</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the VR40-C view containing warehouse and shipping method fields</td>
+            </tr>
+            <tr>
+                <td>VR103</td>
+                <td>VRP Heading</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display and maintain the VR40-I or VR40-H view containing VR Heading fields</td>
+            </tr>
+            <tr>
+                <td>VR104</td>
+                <td>VRP Detail</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine that reads VR41 detail records, calls CDS352 to manage, and writes to VR41.&#160; CDS352 calls VR114 to maintain one line.</td>
+            </tr>
+            <tr>
+                <td>VR105</td>
+                <td>VRP Print Options</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine used for printing, faxing and emailing</td>
+            </tr>
+            <tr>
+                <td>VR107</td>
+                <td>VRP Display Timestamps</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to displays VR42 timestamp records</td>
+            </tr>
+            <tr>
+                <td>PO109</td>
+                <td>POP/VRP Vendor Inquiry</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to call the Vendor Inquiry program VM100 for the vendor assigned to the return</td>
+            </tr>
+            <tr>
+                <td>VR110</td>
+                <td>VRP Update/Delete Vendor Return</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine called to Update or Delete a vendor return.</td>
+            </tr>
+            <tr>
+                <td>VR114</td>
+                <td>VRP Detail - process record</td>
+                <td align="center">&#160;</td>
+                <td>CDS352 type routine used to display and enter VR Line item.&#160; Requires VR41 view A and B to maintain and display extended properties.</td>
+            </tr>
+            <tr>
+                <td>VR115</td>
+                <td>VRP Print Vendor Return - Dot Matrix</td>
+                <td align="center">&#160;</td>
+                <td>Called by VR105 if target printer does not support PCL</td>
+            </tr>
+            <tr>
+                <td>VR116</td>
+                <td>VRP Print Vendor Return - PCL</td>
+                <td align="center">&#160;</td>
+                <td>Used for PCL printing and faxing.&#160; Called by VR105.</td>
+            </tr>
+            <tr>
+                <td>VR117</td>
+                <td>VRP Print Vendor Return - HTML</td>
+                <td align="center">&#160;</td>
+                <td>Used for emailing vendor returns.&#160; Called by VR105.</td>
+            </tr>
+            <tr>
+                <td>VR120</td>
+                <td>VRP Select Vendor Return</td>
+                <td align="center">DY</td>
+                <td>This routine is used to select an existing vendor return using return number, vendor, vendor RMA#, or warehouse.</td>
+            </tr>
+            <tr>
+                <td>VR121</td>
+                <td>VRP Assign Vendor Return#</td>
+                <td align="center">&#160;</td>
+                <td>Called to obtain the next Vendor Return to be used, and write a new VR40 heading record.</td>
+            </tr>
+            <tr>
+                <td>VR122</td>
+                <td>VRP Select Vendor</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to select the vendor for a VR.</td>
+            </tr>
+            <tr>
+                <td>VR125</td>
+                <td>VRP Notepad</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to display/enter notepad text.</td>
+            </tr>
+            <tr>
+                <td>VR126</td>
+                <td>VRP Warehouse Selection</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine used to select warehouse and assign WHSTYPE field.&#160; Calls <a href="CW430.htm">CW430</a>.&#160; (VR40.WHS)</td>
+            </tr>
+            <tr>
+                <td>VR128</td>
+                <td>VRP Extend VR Detail</td>
+                <td align="center">&#160;</td>
+                <td>Used to compute VR41 extensions and validate VR41 properties</td>
+            </tr>
+            <tr>
+                <td>VR129</td>
+                <td>VRP Validate Shipping Info View</td>
+                <td align="center">&#160;</td>
+                <td>Verifies that an address is specified for drop shipments, a billing account# is provided for shipments billed to recipient or third party, validates drop shipment address, and calls VR130 to update VR41 records.</td>
+            </tr>
+            <tr>
+                <td>VR130</td>
+                <td>VRP Update VR detail</td>
+                <td align="center">&#160;</td>
+                <td>View validation type routine used to copy fields from VR40 to VR41 including warehouse code.</td>
+            </tr>
+            <tr>
+                <td>VR138</td>
+                <td>VRP Start New VR</td>
+                <td align="center">&#160;</td>
+                <td>Used during Vendor Return Generation to start new VR for a given vendor#.</td>
+            </tr>
+            <tr>
+                <td>VR139</td>
+                <td>VRP Add line item to Vendor Return</td>
+                <td align="center">&#160;XX</td>
+                <td>Used during Vendor Return Generation to add a line item to a Vendor Return.</td>
+            </tr>
+            <tr>
+                <td>VR151</td>
+                <td>Vendor Returns Inquiry - Detail</td>
+                <td align="center">&#160;</td>
+                <td>SW100 type routine to display detail.&#160; Calls VR152 for highlighted line item.</td>
+            </tr>
+            <tr>
+                <td>VR152</td>
+                <td>Vendor Returns Inquiry - Detail Properties</td>
+                <td align="center">&#160;</td>
+                <td>CDS037/38 type external routine to display VR41 detail properties using VR41-B view.</td>
+            </tr>
+            <tr>
+                <td>VR201</td>
+                <td>Vendor Return Listing - Detail</td>
+                <td align="center">&#160;</td>
+                <td>CDS038 EXTRTN$ type routine called by VR200 when line item detail is requested.</td>
+            </tr>
+            <tr>
+                <td>VR420</td>
+                <td>VRP Write Timestamp</td>
+                <td align="center">&#160;</td>
+                <td>Called by various programs to create a timestamp record for a Vendor Return.</td>
+            </tr>
+            <tr>
+                <td>CW010</td>
+                <td>Return Workstation Record</td>
+                <td align="center">&#160;</td>
+                <td>Used to determine default warehouse and PO printer which is also used for Vendor Returns</td>
+            </tr>
+            <tr>
+                <td>CW222</td>
+                <td>Shipper Account# Entry</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (VR40.SHPACCTNO)</td>
+            </tr>
+            <tr>
+                <td>CW230</td>
+                <td>Carrier/Service/Billing Method Entry</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (VR00.SHPCARRIER &amp; VR40.SHPCARRIER)</td>
+            </tr>
+            <tr>
+                <td>CW430</td>
+                <td>Enter/Return Branch/Warehouse Code(s)</td>
+                <td align="center">&#160;</td>
+                <td>Used to enter one or more warehouse codes</td>
+            </tr>
+            <tr>
+                <td>IC020</td>
+                <td>Change Quantity On Hand</td>
+                <td align="center">XX</td>
+                <td>Changes QOH in warehouse file, calls IC030 to create inventory receipt/usage, creates QOH Audit record</td>
+            </tr>
+            <tr>
+                <td>IC030</td>
+                <td>Process Inventory Transaction</td>
+                <td align="center">XX</td>
+                <td>Called by IC020 to manage IC03 Inventory Receipt and IC04 Inventory Usage records.</td>
+            </tr>
+            <tr>
+                <td>IC031</td>
+                <td>Compute Inventory Usage</td>
+                <td align="center">DY</td>
+                <td>Called by IC030 to accumulate total inventory usage of an IC03 record.</td>
+            </tr>
+            <tr>
+                <td>IC035</td>
+                <td>Return Inventory Quantities</td>
+                <td align="center">DY</td>
+                <td>Called by Vendor Return Generation VR170 and various Item Inquiry programs.</td>
+            </tr>
+            <tr>
+                <td>IC170</td>
+                <td>Process new IC10 records</td>
+                <td align="center">&#160;</td>
+                <td>Assigns G/L account numbers to IC10 records, creates daily G/L posting.&#160; Not attached to menu.&#160;&#160; Run by cron just after midnight daily.</td>
+            </tr>
+            <tr>
+                <td>IM040</td>
+                <td>Enter Item#</td>
+                <td align="center">XX</td>
+                <td>Used to enter an item or select from a list.&#160; Returns IM01$ item record.</td>
+            </tr>
+            <tr>
+                <td>IM042</td>
+                <td>Enter Item#</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (VR41.ITEMNO)</td>
+            </tr>
+            <tr>
+                <td>SW460</td>
+                <td>Enter City/State/Zip</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (VR40.CITY)</td>
+            </tr>
+            <tr>
+                <td>VM040</td>
+                <td>Enter Vendor#</td>
+                <td align="center">DY</td>
+                <td>Used to enter a vendor# or select from a list.&#160; Returns VM01$ vendor record.</td>
+            </tr>
+            <tr>
+                <td>VM013</td>
+                <td>Enter Vendor Alpha</td>
+                <td align="center">&#160;</td>
+                <td>T type external routine (VR40.ALPHASORT)</td>
+            </tr>
+            <tr>
+                <td>VM020</td>
+                <td>Validate Vendor - address verification</td>
+                <td align="center">&#160;</td>
+                <td>VR40 View B</td>
+            </tr>
+        </table>
+        <p><b>CDS037/38 Type External Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p><b>Utility Routines</b>
+        </p>
+        <table>
+            <tr>
+                <th>Program</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+        <p><b>Open Issues</b>
+        </p>
+        <table>
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </table>
+    </body>
+</html>

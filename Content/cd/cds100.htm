@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress">
+    <head>
+        
+        <title>General File Maintenance</title>
+        
+    </head>
+    <body>
+  &#160;
+
+  <p class="SectionName">System Management Software</p><table class="revision"><tr><td><p class="SectionTitle">General File Maintenance&#160;</p></td><td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS100">Last Revised: 02/11/06</a></td></tr></table><p class="SectionDesc">This utility program is used to display, add, modify, or delete records from any file within the system. It is generally only used by programmers to display file information that is not available elsewhere.&#160; Due to the power of this program, it is recommended that this program be run only under the direct guidance of your programmer.&#160; 
+		This program was not written by Excellware, and in most cases is only 
+		needed when the File Utility (SMS) cannot be used.</p>
+
+  1. Enter file name desired. Prompt appears at top left of screen.
+
+  <p>Example : <code>FILE MMYD10</code></p><p>The file must be a valid direct direct, sort, or indexed file. Hit 'CR' to retrieve file information.</p><p>2. General information about file appears at top of screen.</p><p>Example : <code>FILE MMYD10 DISC 0/0 DIRECT 24 RECORDS USED OF 25</code></p><p>For indexed files the total number of defined records displayed is actually one less than the total number of records in the file as it is assumed that index 0 is used to store the number of records currently in use, plus a possible file identification. to get a different file at this point, hit 'CR' or CTL IV.</p><p>3. The following will appear at the bottom of the screen:</p><p><code><a href="#F">FILE</a>,<br /><a href="#P">PRINT</a>,<br /><a href="#H">HARD-COPY</a>,<br /><a href="#K">KILL</a>,<br /><a href="#D">DELETE</a>,<br /><a href="#L">LIST</a>,<br /><a href="#E">END</a>(F,P,H,K,D,L,E)<br />
+  &#160;</code></p><table><tr><th colspan="3">cDS100</th></tr><tr><td><b>Entry Code</b></td><td><b>Action</b></td><td><b>Explanation</b></td></tr><tr><td><a name="F"></a>F</td><td>FILE</td><td>Choose a different file.</td></tr><tr><td><a name="P"></a>P</td><td>PRINT</td><td>
+        Allows you to print on the VDT all KEYS to a file or specific KEYS. 'START FROM ___' appears at the bottom of the screen. Enter the key at which to begin printing in the blank provided. **This does not right justify numbers - you must do this yourself.
+
+        <p><i>EXAMPLE:&#160; If you desire the record with a key of 4, you must enter __4 (that is, space-space-4), not 4__ (4-space-space).</i></p></td></tr><tr><td><a name="H"></a>H</td><td>HARD COPY</td><td>Creates a copy of the keys you specify on paper.&#160; First it asks you for the printer you desire to use.&#160; Next it asks for a starting key.</td></tr><tr><td><a name="K"></a>K</td><td>KILL</td><td>Delete entire file</td></tr><tr><td><a name="D"></a>D</td><td>DELETE</td><td>
+        Delete a single record or several records. At the bottom of the screen this will appear:
+
+        <p><code>DELETE FROM ___ TO___ OK?(Y/N)</code></p><p>To have the same key appear in the second field, hit 'CR'.</p></td></tr><tr><td><a name="L"></a>L</td><td>LIST</td><td>
+        At the bottom of the screen this will appear:
+
+        <p><img border="0" src="cds100-2.jpg" width="488" height="304" alt="" /></p><p><code>LIST (OR F,P,H,K,D,Z,E,N,I,S,T,M,A,R)___</code></p><p>At this point enter either the key of the record desired to appear on the screen OR enter one of the letters listed. The function of each letter is listed below.<br />
+        &#160;</p><table><tr><td>F,P,H,K,D</td><td>Function the same as listed above</td></tr><tr><td>Z</td><td>
+              Displays original menu at screen bottom :
+
+              <p>FILE,PRINT,HARD-COPY,KILL,DELETE,LIST,END(F,P,H,K,D,L,E)</p></td></tr><tr><td>E</td><td>Ends program, returns to CTL menu</td></tr><tr><td>N</td><td>Displays next record on screen</td></tr><tr><td>CTL I<br />
+            CTL II<br />
+            CTL III</td><td>All display next record on screen and allow you to scroll through records in file</td></tr><tr><td>CR</td><td>Always displays first record in file if a record is already displayed</td></tr><tr><td>I</td><td>Displays first 20 fields of record (fields 1-20)</td></tr><tr><td>S</td><td>Displays second 20 fields of record (fields 21-40)</td></tr><tr><td>T</td><td>Displays third 20 fields of record (fields 41-60)</td></tr><tr><td>M</td><td>
+              Changes fields (entire field or partial field)
+
+              <p>Appearing at screen bottom:&#160; 'ENTER FIELD # (OR 'CR' TO EXIT)___'</p><p>Choose either field number (to change entire field) OR portion of field to be changed.</p><p><i>Example:</i> <![CDATA[ ]]><![CDATA[ ]]><code>3(3,2)</code> <![CDATA[ ]]><![CDATA[ ]]><i>will change the third field, starting at the third character, length of two characters.</i></p></td></tr><tr><td>A</td><td>
+              Adds a record to the file. Appearing at screen bottom:
+
+              <p>'ENTER KEY ___'</p><p>Enter key of record to be added to the file.</p></td></tr><tr><td>R</td><td>Changes or renames key</td></tr></table></td></tr><tr><td><a name="E"></a>E</td><td>END</td><td>Ends program, returns to CTL menu</td></tr></table></body>
+</html>

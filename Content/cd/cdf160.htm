@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="3050" MadCap:lastWidth="1561">
+    <head><title>Basis Data Dictionary Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Basis Data Dictionary Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/10/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application can be used to:</p>
+        <ul>
+            <li>
+                <p class="SectionDesc">Define files required by the Basis Data Dictionary,</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Populate the Basis Data Dictionary for one or more files defined in the Dynamo Tools Data Dictionary,</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Launch the character based Basis Data Dictionary maintenance program</p>
+            </li>
+        </ul>
+        <p>
+            <img src="cdf160-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>The first option is used to create a folder for the Basis Data Dictionary files (if it does not exist), define the Basis Data Dictionary files (if they do not exist), and to launch the Basis character based Data Dictionary Maintenance program.&#160; The Basis Data Dictionary files are defined in the XX/bbdict/ folder where XX is the two character Dynamo Company Code.&#160; Click <a target="_blank" href="http://www.basis.com/onlinedocs/documentation/eus/data_dictionary_files_and_record_layouts.htm">here</a> to display the Basis documentation for the Basis Data Dictionary files.&#160; 
+	Within the Basis Enterprise Manager, set the DATA variable to <code>"/&lt;localhost,port=1100&gt;"</code> 
+	and the DICTIONARY variable to <code>"/&lt;localhost,port=1100&gt;/u/CDI/XX/bbdict/"</code> 
+	when using the pro5 data server to access the data files and Basis Data 
+	Dictionary.&#160; Note that /u/CDI should be replaced by the Dynamo Tools 
+	install directory (SMSDIR), and XX should be replaced by the two character 
+	Dynamo Company Code.</p>
+        <p>Note that it is recommended to use the Basis Enterprise Manager to view or change the Basis Data Dictionary, and not the character based version of the Basis Data Dictionary Maintenance.</p>
+        <p>The second option is used to replace the Basis Data Dictionary entry for 
+	any MKY, SKY or DIR data file described in the Dynamo Tools Data Dictionary.</p>
+        <p>It is recommended that you only create a Basis Data Dictionary for the files that you require.&#160; Many third party applications, such as Microsoft Excel, Microsoft Word, Microsoft Excel, and WordPerfect retrieve the complete list of all entries in the Basis Data Dictionary.&#160; This can cause a significant delay when there are many entries.</p>
+        <p>Effective 09/24/08, this application will populate the Basis Data 
+	Dictionary with the data file name as "(DATA)" plus the full path name to 
+	the data file.&#160; This means that the data file must exist in order to 
+	Update the Basis Data Dictionary.</p>
+        <p>The file type specified in the Dynamo Data Dictionary must match the 
+	actual file type.</p>
+        <p>The field names defined in the Dynamo Data Dictionary are used to 
+	populate the Basis Data Dictionary.&#160; The field names contained in the .tpl 
+	file are not used.</p>
+        <p>Although the Dynamo Tools Data Dictionary supports all file types, the fields that make up the keys are only described for MKY file types.</p>
+        <p>Effective 09/24/08, this application assumes the key to any SKY or DIR 
+	file is the first N characters of the record.&#160; Although this is a 
+	popular convention, it is not always the case.&#160; If the defined keysize 
+	is larger than the first N characters of the record, or there are field 
+	separators within the first N characters, or the key is not the first N 
+	characters, then you should use the Basis Enterprise Manager to describe the 
+	key structure.&#160; Note that the Basis Data Dictionary requires the key be 
+	contained somewhere within the record.</p>
+        <p>Due to the limitations of SKY and DIR file types, the best practice is to use MKY 
+	file types for all data files.</p>
+        <p>Examples:</p>
+        <p>
+            <img src="cdf160-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img border="0" src="cdf1603.jpg" />
+        </p>
+        <p>
+            <img border="0" src="cdf1604.jpg" />
+        </p>
+        <p>
+            <img border="0" src="cdf1605.jpg" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="798" MadCap:lastWidth="762">
+    <head><title>Virtual Private Network (VPN)</title>
+        <style type="text/css">
+div.Section1
+{
+	page: Section1;
+}
+
+</style>
+    </head>
+    <body>
+        <p class="SectionName">configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Virtual Private Networks (VPN)</p>
+                </td>
+                <td align="right">Last Revised: 07/30/11</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">A Virtual Private Network can be used to enable remote 
+	access to the Dynamo server or other servers and resources on your office 
+	network.&#160; Even though you are using the public internet, all data 
+	between your workstation and the office network is encrypted.&#160; The VPN 
+	creates what is called a 'tunnel' where your secure information can flow.</p>
+        <p class="SectionDesc">In many cases, you can use Dynamo from home, a hotel, or wherever there is an internet connection without requiring a Virtual Private Network (VPN).&#160; However, if you want to access shared files stored on the server or your office PC, or remotely control your office PC from home, then you need a VPN.&#160; A VPN does not require any special hardware at the remote location but does require VPN 
+	software.</p>
+        <p>There are several types of VPN's.</p>
+        <ul>
+            <li>An IPSec VPN is typically used between your headquarters and your 
+		branch offices or retail stores.&#160; These VPN's are established by 
+		configuring the router at each end of the connection.&#160; This 
+		document does not discuss IPSev VPN's.</li>
+            <li>A Point-to-Point Tunneling Protocol VPN (pptp) is typically used to 
+		temporarily connect a single workstation to the office network.&#160; A 
+		pptp VPN requires software on the workstation.&#160; Pptp VPN software is included with Windows XP and 
+		newer, as well as on Apple Macintosh and tablet computers including the 
+		iPad.&#160; The router at the office establishes the VPN.&#160; 
+		MultiTech routers include the pptp server feature required.&#160; Most 
+		Small Business Cisco routers do not include the pptp server feature.&#160; 
+		However the Cisco RV220W router does.&#160; If you have a Small Business 
+		Cisco router at the office that does not support the standard pptp VPN 
+		software that comes with Windows and Mac OS-X, you can still establish a 
+		VPN to your office network using one of the other options listed below.&#160; 
+		This document illustrates how to define a pptp VPN connection.</li>
+            <li>Some manufacturers including Cisco and SonicWall provide special 
+		software to create a temporary VPN that go by names such as Quick-VPN 
+		and NetExtender.&#160; These VPN's typically only are available for 
+		Windows PC's and not Apple products.&#160; Refer to the manufacturers 
+		operator guide for additional details.</li>
+            <li>SSL VPN's are established using your browser.&#160; These VPN's can 
+		be established on workstations and network devices such as tablets that 
+		have a web browser and support Java.&#160; This document provides an 
+		example of connecting using a SSL VPN where your office has a Cisco 
+		Small Business router.</li>
+        </ul>
+        <p>You will need three things to connect using a VPN.&#160; Contact Excellware 
+	for this information.</p>
+        <ol>
+            <li>The connection url or IP address.&#160; This is a web address such as 
+		mycompany.dyndns.org or vpn.mycompany.com or an IP address such as 
+		99.123.1.55.</li>
+            <li>A VPN Login ID.&#160; The VPN Login ID may be different than your 
+		Dynamo Login ID.</li>
+            <li>A VPN Password.&#160; The VPN Password may be different than your 
+		Dynamo Login ID.</li>
+        </ol>
+        <p>Note that when using a VPN over the internet to connect to your office 
+	network, the performance will not be as good as it is when you are at the 
+	office.&#160; However, in most cases the speed is acceptable.&#160; But be 
+	patient, especially when browsing shared folders on the server.</p>
+        <p>Table of Contents</p>
+        <ul>
+            <li><a href="#Establishing_a_pptp_VPN_connection_from_a_Windows_PC_">
+		Establishing a pptp VPN connection from a Windows PC</a>
+            </li>
+            <li><a href="#Establishing_a_pptp_VPN_connection_from_an_Apple_computer">
+		Establishing a pptp VPN connection from an Apple computer</a>
+            </li>
+            <li><a href="#Establishing_a_SSL_VPN_connection">Establishing a SSL VPN 
+		connection</a>
+            </li>
+        </ul>
+        <h5><a name="Establishing_a_pptp_VPN_connection_from_a_Windows_PC_"></a>
+	Establishing a pptp VPN connection from a Windows PC</h5>
+        <p>This document describes how to create a VPN connection using a PC running Microsoft Windows XP.&#160; 
+	The screen shots shown may differ with Windows Vista and Windows 7.</p>
+        <table>
+            <tr>
+                <th colspan="2">Windows XP - Creating a VPN connection</th>
+            </tr>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Click Start, right click My Network Places, click Properties.</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Click Create a New Connection -&gt; Next -&gt; Connect to the Internet at my workplace -&gt; Next -&gt; Virtual Private Network Connection -&gt; Next</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Company Name: <i>[Enter your company Name]</i> -&gt; Next</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Do not dial the initial connection -&gt; Next</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Host Name: <i>[Enter the url provided by Excellware that connects to your office]</i> -&gt; Next</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Click ‘Add a shortcut to this connection to my desktop’ if desired.</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Finish</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>Enter the vpn operator name and password provided by Excellware.</td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td>Click ‘Save this operator name and password for the following operators’</td>
+            </tr>
+            <tr>
+                <td align="center">10</td>
+                <td>Click Properties -&gt; Networking tab -&gt; Internet Protocol -&gt; Properties 
+		-&gt; Advanced -&gt; Uncheck the box: Use default gateway on remote network -&gt; 
+		OK -&gt; OK -&gt; OK</td>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td>Continue with step 2 below.</td>
+            </tr>
+        </table>
+        <h6>Note: If your VPN&#160;connects but you cannot browse the Internet, please review #10 from above. Be certain to uncheck the box for "use default gateway on remote network."</h6>
+        <table>
+            <tr>
+                <th colspan="2">Windows XP - To activate the VPN connection</th>
+            </tr>
+            <tr>
+                <th width="29">Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center" width="29">1</td>
+                <td>If you added a desktop shortcut for the VPN connection in step 6 above, then double click the desktop icon.&#160; If you did not create a desktop shortcut, then click Start, right click My Network Places, click Properties.&#160; Then double click the VPN connection desired in the list of Virtual Private Network connections.</td>
+            </tr>
+            <tr>
+                <td align="center" width="29">2</td>
+                <td>Click Connect.&#160; You should get a network icon on the Windows task bar, typically located at the bottom right, and a balloon message indicating you are connected.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">To disconnect the VPN</th>
+            </tr>
+            <tr>
+                <th width="29">Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center" width="29">1</td>
+                <td>Click the VPN connection icon located in the bottom right taskbar, near the time.&#160; It is a picture of two computer monitors which blink with VPN activity.</td>
+            </tr>
+            <tr>
+                <td align="center" width="29">2</td>
+                <td>Click Disconnect.</td>
+            </tr>
+        </table>
+        <p>
+            <img border="0" src="vpn.ht1.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht2.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht3.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht4.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht5.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht6.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht7.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht8.jpg" alt="" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht9.jpg" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht10.jpg" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht11.jpg" />
+        </p>
+        <p>
+            <img border="0" src="vpn.ht12.jpg" />
+        </p>
+        <h5><a name="Establishing_a_pptp_VPN_connection_from_an_Apple_computer"></a>
+	Establishing a pptp VPN connection from an Apple computer</h5>
+        <p>The following procedure has been used with Mac OS X 10.5.7 and 10.5.8.&#160; 
+	It may be similar in other versions.</p>
+        <table>
+            <tr>
+                <th colspan="2">Mac OS X - Creating a VPN connection</th>
+            </tr>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Click the Apple in top left corner, then click System Preferences</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Click the Network icon</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>In the left hand panel, you may see connections for Ethernet, 
+		Bluetooth, FireWire, and AirPort.&#160; Click the + symbol at the bottom 
+		of the connection panel to add a new connection.&#160; Click the 
+		Interface drop down and select VPN.&#160; In the VPN Type select PPTP.&#160; 
+		For the Service Name enter something like 'VPN to Office'.&#160; Then 
+		click Create.&#160; This will add a connection titled 'VPN to Office' in 
+		the left panel.</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>The 'Configuration' can remain at the 'Default' setting.&#160; In the 
+		server address field, enter the vpn url, such as vpn.mycompany.com.&#160; 
+		Contact Excellware for your vpn url.&#160; Enter the vpn account name (vpn 
+		login) that you have been assigned.&#160; The Encryption can be left on 
+		'Automatic'.&#160; Click on 'Authentication Settings' then enter your 
+		vpn Password.&#160; Click OK.&#160; Then click 'Apply' to save all 
+		settings.</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Continue with step 4 below to connect.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Mac OS X - To activate the VPN connection</th>
+            </tr>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>If there is a VPN icon in the top right side of the menu bar, then 
+		click the VPN icon, then click 'Connect to VPN at Office'.&#160; 
+		Otherwise follow the steps below.</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Click the Apple in top left corner, then click System Preferences</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Click the Network icon</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>In the left hand panel, click the 'VPN to Office' connection created 
+		above.&#160; Then click 'Connect'.</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>If the VPN connects, then the Status will be 'Connected' and the 
+		connect time and IP address assigned will display in the top of the 
+		Network panel.&#160; A VPN icon and connection time will also display in 
+		the top menu bar.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Mac OS X - Disconnecting the VPN connection</th>
+            </tr>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Click the VPN icon in the menu bar on the top right of the display</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Click 'Disconnect VPN to Office'</td>
+            </tr>
+        </table>
+        <p>Excellware typically assigns each VPN operator a unique IP address.&#160; The 
+	VPN connection will fail if this IP address is in use.&#160; If you are 
+	unable to connect, verify that the connection url, VPN login ID, and VPN 
+	password are correct.&#160; Rebooting the PC or Mac may also help.&#160; 
+	Contact Excellware to for VPN operator or password maintenance.</p>
+        <p>
+            <img border="0" src="vpnmac1.png" width="748" height="617" />
+        </p>
+        <h5><a name="Establishing_a_SSL_VPN_connection"></a>Establishing a SSL VPN 
+	connection</h5>
+        <p>There is no software to pre-install when using SSL VPN connections, 
+	rather the remote site will deliver and install the software to you via the 
+	browser.&#160; These notes describe the process when using a Cisco Small 
+	Business router.</p>
+        <p>Open a web browser (Chrome, Firefox, Safari, or even Internet Explorer).&#160; 
+	Enter the address such as
+	<a href="https://mydnsname.dyndns.org/portal/SSLVPN">
+	https://myname.dyndns.org/portal/SSLVPN</a>.&#160; Replace 'myname' with the 
+	name provided by Excellware.</p>
+        <p>Enter your VPN login and password, provided by Excellware.</p>
+        <p>
+            <img border="0" src="vpn.ht13.jpg" />
+        </p>
+        <p>Click on the VPN Tunnel option on the left.</p>
+        <p>
+            <img border="0" src="vpn.ht14.jpg" />
+        </p>
+        <p>Click on the icon with the three blue spheres and cloud to establish the 
+	VPN connection.&#160; Any software required will be downloaded.&#160; You 
+	may encounter a prompt such as this:</p>
+        <p>
+            <img border="0" src="vpn.ht15.jpg" />
+        </p>
+        <p>You can click the 'Yes to All' button to download the latest version of 
+	the VPN client software.</p>
+        <p>On Window's PC's there will be a couple new icons that appear in the 
+	status bar.&#160; You can right-click on the icon for VPN status, or to 
+	disconnect the VPN.</p>
+        <p>At this point you should be able to access Dynamo and shared folders on 
+	the Dynamo server or other shared resources on your office network, much 
+	like you can from the office.&#160; In some cases you must use the server IP 
+	address instead of the name, because the name resolution for resources at 
+	your office are not typically available across the VPN.&#160; Contact 
+	Excellware for assistance.</p>
+        <p>The VPN is closed when you close the browser tab.&#160; Be careful to 
+	keep the browser tab open as long as you need the VPN connection.</p>
+        <p>Note that you can change your VPN password by clicking on the Change 
+	Password option located on the left side.&#160; You will need to enter your 
+	old password once, and your new password twice.&#160; Best passwords include 
+	one or more capital letters, small letters, numbers, and special characters.</p>
+        <p>
+            <img border="0" src="vpn.ht16.jpg" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultDestination
+  Version="1"
+  Comment="This is my publish destination"
+  Host="www.excellware.com"
+  User="MyAccountId"
+  Password=""
+  Directory="/docs/dynamo/"
+  Port=""
+  ViewUrl="http://www.excellware.com/docs/dynamo/dynamo.htm"
+  Type="ftp"
+  ChangedOnly="true"></CatapultDestination>

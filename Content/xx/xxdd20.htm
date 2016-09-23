@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="16" MadCap:lastHeight="6621" MadCap:lastWidth="1082">
+    <head><title>Data Dictionary Maintenance - Views</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Data Dictionary Maintenance - Views</p>
+                </td>
+                <td align="right">Last Revised: 02/25/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Views option of Data Dictionary Maintenance is used to describe a view.&#160; There are several different types of views, but the most popular type of view, called a standard view, is simply an 
+	ordered list of fields within a data structure.&#160; 
+	Views can be used in File Maintenance applications and by applications using the View Manager CDS550.&#160; Standard Views can be used in Dynaweb applications using CDW550. Defining one or more standard views is required 
+	for File Maintenance applications.</p>
+        <p>The following screen shot is an example of a Standard View.</p>
+        <p>
+            <img src="../cd/dd20-1.png" />
+        </p>
+        <p>Standard views can be used in File Maintenance, Dynaweb, and other applications.&#160; 
+	When used in File Maintenance, the views to be included are defined using the File Maintenance Option in Data Dictionary Maintenance.&#160; When used 
+	within an application program, a Standard View is referenced by calling the 
+	View Manager
+	<a target="_blank" href="http://www.excellware.com/docs/tools/CDS550.htm">
+	CDS550</a>.&#160; When used with Dynaweb, a Standard View is accessed using the Web based View Manager <a href="http://www.excellware.com/docs/tools/CDW550.htm" target="_blank">CDW550</a>. The View Manager can display the background text, display 
+	the view of a particular record or data structure, and allow changes to the 
+	fields in the view if desired.</p>
+        <table>
+            <tr>
+                <td>View</td>
+                <td>A letter or number to define the view.&#160; You can have multiple views per file name.</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>Descriptive Information about what the view is used for.&#160; During File Maintenance that includes multiple views, this View Tile is displayed to allow the operator to select the desired view of the data file to maintain.</td>
+            </tr>
+            <tr>
+                <td>Security Level</td>
+                <td>Used to restrict file maintenance of this view to operators that have a security level at or higher than the security level assigned to the view.&#160; For example, an operator with a security level of 5 would not be permitted to access views with a security level higher than 5.</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>V</td>
+                            <td>Standard View - an ordered list of fields in the data structure</td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td>Called Program - this type of view is used when a custom program is required for any purpose during File Maintenance</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>Subsidiary File Maintenance - this type of view is used to describe a subsidiary file that should also be maintained using file maintenance.&#160; For example, a warehouse file with a key of item# + warehouse code might be a subsidiary file to the item file.&#160; A ship to address file with a key of customer# + sequence# might be a subsidiary file to the customer file.&#160;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Program</td>
+                <td>
+        The use of the Program field varies with the View Type above.<table><tr><th>View Type</th><th>Use of Program Field</th></tr><tr><td>V Standard View</td><td>View Validation Routine - Program is called before the View 
+				Manager CDS550 exits the view.&#160; The&#160; View Validation 
+				routine can perform additional data tests or activity logging 
+				and either accept the data, modify the data, or reject the view 
+				returning the operator to view to make corrections to the data.&#160; 
+				The View Validation routine should have an <code>ENTER</code> 
+				list of <code>ENTER Y$,REC$,RECOLD$,D1$,D2$,S039$</code>.&#160; Each field is described in the table below.&#160; The View Validation routine should 
+				<code>EXIT 99</code> when it is necessary to return to the view for additional operator editing.&#160; See example below.<table><tr><td><code>Y$</code></td><td>Standard session control variable</td></tr><tr><td><code>REC$</code></td><td>The templated data structure as modified by the operator, i.e.,
+			<code>CM01$</code>.</td></tr><tr><td><code>RECA$</code></td><td>The templated data structure before any modifications were made by the operator, 
+			i.e., <code>CM01A$</code>.</td></tr><tr><td><code>D1$</code></td><td>
+              This templated data structure contains information about the view.&#160; Each field is described in the table below.
+
+              <table><tr><td><code>FLDS</code></td><td>The number of fields in the view</td></tr><tr><td><code>ROW</code></td><td>When the view is displayed in a separate window, <code>D1.ROW</code> refers to the row where the window is displayed.&#160; In file maintenance, this is the row where the yellow line with the view description is printed</td></tr><tr><td><code>KEYSEGSDISP</code></td><td>The number of key segments that are displayed in this view</td></tr><tr><td><code>MAXTITLE</code></td><td>The length of the longest field description of the fields in the view</td></tr><tr><td><code>COLENT</code></td><td>The column number where data entries will take place, or data is displayed for display only views</td></tr><tr><td><code>MAP$</code></td><td>A variable length string containing a pointer to each maintainable field in the view.&#160; The view can contain heading fields and display-only fields.&#160; Each position in 
+					<code>D1.MAP$</code> contains the reference to the actual field#.&#160; For example, the field that is numbered 5 would point to the 6th field if there was one heading line in the earlier fields of the view.&#160; In this example
+					<code>D1.MAP$(5,1)</code> would contain <code>CHR(6)</code>.</td></tr><tr><td><code>MAINT$</code></td><td>
+                    A variable length string containing the view field type for each numbered field in the view.
+
+                    <table><tr><td align="center">blank</td><td>Normal maintainable field</td></tr><tr><td align="center">S</td><td>Skip this field when entering all fields on a new record</td></tr><tr><td align="center">B</td><td>Skip this field when entering all fields if it is non-blank</td></tr></table></td></tr><tr><td><code>FLDINFO$</code></td><td>Used to store the <code>S039$</code> template for each field in the view</td></tr><tr><td><code>VDT$</code></td><td>Used to store the display background text for the view</td></tr></table></td></tr><tr><td><code>D2$</code></td><td>This templated data structure contains the field data (<code>S039$</code>) for each field in the view.<p><code>D2.FLD$[1]</code> contains the <code>S039$</code> string for 
+			the first field in the view.</p><p><code>D2.FLD$[D1.FLDS]</code> contains the <code>S039$</code> 
+			string for the last field in the view.</p></td></tr><tr><td><code>S039$</code></td><td>The template for CDS039 is passed to eliminate the need for the 
+			view validation program to retrieve the template, and to inform the 
+			Field Change Program what field was being entered when called.</td></tr></table></td></tr><tr><td>P Called Program</td><td><p>Program to be called.&#160; The <code>ENTER</code> list for 
+				the Called Program should be <code>Y$,REC$</code>.&#160; The 
+				Called Program can change any field in <code>REC$</code> except 
+				segments of the primary key.</p><p>When used in File Maintenance applications, the Called 
+				Program should <code>EXIT 98 </code>to re-fresh the display of 
+				the primary view.&#160; To 
+				have File Maintenance write the record to disc, as if the 
+				operator touched F4 at the list of views, the Called Program 
+				should <code>EXIT 99</code>.</p></td></tr><tr><td>F Subsidiary File Maintenance</td><td>not used in Standard Views</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Field Change Program</td>
+                <td>The view manager can call an operator defined Field Change Program after the operator enters each field in the view.&#160; Such a program could be used to compute totals or validate the view immediately upon entry of each field instead of waiting until the operator exits the view.&#160; The 
+		<code>ENTER</code> list for the field change program should be <code>ENTER Y$,REC$,RECA$,D1$,D2$,S039$</code>.&#160; Refer to the information above for field definitions.&#160; 
+		Applies only to Standard (Type V) Views.&#160; The Field Change program 
+		can <code>EXIT 99</code> to inform the View Manager to return to the 
+		entry of the current field, as would be necessary if the Field Change 
+		Program determined the entry was invalid.&#160; The Field Change program 
+		can <code>EXIT 98</code> to inform the View Manager to re-display all 
+		fields in the View.<p>Note that the Field Change Program is also called 
+		once after displaying a view.&#160; This is done so that any information 
+		such as a computation result can be displayed when the view is 
+		displayed.&#160; In this case <code>S039$</code> will be an initialized 
+		templated string that does not have any values.&#160; The <code>EXIT</code> 
+		options are ignored during this initial <code>CALL</code>.</p></td>
+            </tr>
+            <tr>
+                <td>Subsidiary F/M File Name</td>
+                <td>This field only applies to Type F (File Maintenance) views and should 
+		contain the name of the subsidiary file to be maintained in this view.&#160; This is the file name as stored in the data dictionary so it would exclude the company code.</td>
+            </tr>
+            <tr>
+                <td>Subsidiary F/M VDT Suffix</td>
+                <td>The VDT Suffix is required for Type F (File Maintenance) views and refers to the VDT suffix used when defining the File Maintenance Configuration for the subsidiary file to be maintained.&#160; It is typically the letter A for the first file maintenance, and B for the second, although most files do not require more than one File Maintenance Configuration.</td>
+            </tr>
+            <tr>
+                <td>Top Row</td>
+                <td>File Maintenance will position any secondary view window at the bottom of the display to retain as much of the primary view on the display as possible.&#160; You can specify a top row for the view when it is necessary to override the default view position.</td>
+            </tr>
+            <tr>
+                <td>Detail</td>
+                <td>
+        Only applies to type V (Standard) views and is a list of each field to be included in the view.&#160; Fields are displayed in a single column, so if you have more fields than would fit in a single column, then create a second view.&#160; The data elements that make up the view detail are described below.
+
+        <table><tr><th>Column Heading</th><th>
+              Definition</th></tr><tr><td>M</td><td>
+              Field Modes
+
+              <table><tr><td align="center">blank</td><td>standard field from data dictionary</td></tr><tr><td align="center">O</td><td>Omit this field from the view.&#160; You could also delete the field, but the Omit option is useful if there may be a need to un-omit the field in the same position in the view in the future.</td></tr><tr><td align="center">B</td><td>Omit this field from the view if the numeric field is 
+					zero, or a string field is null or blank.&#160; Note that 
+					this Mode only applies when calling the View Manager
+					<a target="_blank" href="http://www.excellware.com/docs/tools/CDS550.htm">
+					CDS550</a> with <code>S550.BKG=1</code> (display background) 
+					and <code>S550.DISP=1</code> (display record).</td></tr><tr><td align="center">C</td><td>Conditionally omit the field from the view.&#160; This field will be dynamically omitted based on the conditions specified below.</td></tr><tr><td align="center">H</td><td>Use to insert a heading row (or blank row) on the display</td></tr></table></td></tr><tr><td>Field Name</td><td>Enter the field name or use the F2 option to select a field name from the data dictionary that is not yet included in this view.&#160; For Heading type fields, the heading text is entered here.</td></tr><tr><td>O</td><td>
+              Maintenance Option
+
+              <table><tr><td align="center">blank</td><td>Field can be maintained</td></tr><tr><td align="center">Q</td><td>Field is displayed but not maintained (inquiry only)</td></tr><tr><td align="center">S</td><td>Skip this field when entering all fields on a new record</td></tr><tr><td align="center">B</td><td>Skip this field when entering all fields on a new record if the field is non-blank</td></tr></table></td></tr><tr><td>Type/Condition</td><td>
+              For normal fields the field type information is displayed from the data dictionary for convenience.&#160; For fields with a Mode of C (Conditionally Omit), the condition to omit the field is described here.
+
+              <table><tr><td>Module Code</td><td>A two character code that describes a Dynamo Parameter record.&#160; A Dynamo Parameter File contains a single Dynamo Parameter Record with a key of XX where XX is the module code, i.e., AP, GL, SO, PO, TO, etc.</td></tr><tr><td>Field Name</td><td>The Field name from the Dynamo Parameter Record that is used for the conditional test</td></tr><tr><td>Field Value(s)</td><td>A list of values which if the Dynamo Parameter Record Field contains one of the values entered, then the field will be included in the view, otherwise it is omitted.&#160; For example, if the Module Code is PO, and the Field Name is SERIALIZED, and the Field Value is FP, then the field will be shown if 
+					<code>PO00.SERIALIZED$</code> contains F or P.&#160; Note that the view manager uses SW005 to retrieve the Module Parameter Record.</td></tr></table></td></tr></table></td>
+            </tr>
+        </table>
+        <p>Example - Called Program View type.</p>
+        <p>
+            <img src="../cd/dd20-2.png" />
+        </p>
+        <p>Example - Subsidiary File Maintenance View type.</p>
+        <p>
+            <img src="../cd/dd20-3.png" />
+        </p>
+        <p>Example - View Validation Routine</p>
+        <table>
+            <tr>
+                <td>This example is used in Purchase Order processing to perform some additional processing when exiting the view that contains the warehouse code or date ordered.&#160; The program copies the warehouse and date ordered fields to each line item on the purchase order as they are used in keys in the PO detail record.</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "PO130 - 10/09/06 POP Validate All Heading Views<br />        0110 SETESC 8000; SETERR 8000<br />        0120 ENTER Y$,PO40$,PO40A$,D1$,D2$,S039$,ERR=0130<br />        0130 IF LEN(PO40A$)=0 OR FNC("WHS") OR FNC("DATEORD") THEN GOSUB DODETAIL<br />        0140 GOTO EOJ<br /><br />        1000 DODETAIL:<br />        1010 IF PO40.DATEORD=0 THEN LET PO40.DATEORD$=$FFFFFF$<br />        1020 CALL "PO111",Y$,PO40$<br />        1030 CALL "CDS095",PO41,"XXPO41","YUY",PO41$<br />        1040 READ (PO41,KNUM=1,KEY=PO40.PONO$,DOM=1050)<br />        1050 LET K$=KEY(PO41,END=1110)<br />        1060 IF K$(1,8)&lt;&gt;PO40.PONO$ THEN GOTO 1110<br />        1070 EXTRACT RECORD(PO41)PO41$<br />        1080 LET PO41.WHS$=PO40.WHS$,PO41.DATEORD=PO40.DATEORD<br />        1090 WRITE RECORD(PO41)PO41$<br />        1100 GOTO 1050<br />        1110 RETURN<br /><br />        1200 FUNCTIONS:<br />        1210 DEF FNC(FLDNAM$)=FIELD(PO40$,FLDNAM$)&lt;&gt;FIELD(PO40A$,FLDNAM$)<br />        &#160;</code>
+                    <p><code>8000 REM "Call Error/Escape Routine<br />        8010 CALL "CDS063",STR(TCB(5)),Y$,PGM(-2)<br />        8020 ON Y.ERRSTS GOTO 8030,8040,8050,8060<br />        8030 SETERR 0<br />        8040 RETRY<br />        8050 RETURN<br />        8060 RETRY<br /><br />        9000 EOJ:<br />        9010 IF TCB(13) THEN EXIT<br />        9020 RUN "CDS001"<br /><br />        9100 EOJERR:<br />        9110 EXIT ERR</code>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p>Field Change Program Example</p>
+        <table>
+            <tr>
+                <td>This example, also from Purchase Order Processing is used whenever a field is changed on a line item such as QTY, COST, MULT, etc.&#160; it will re-compute all line item extensions and display the extended amounts to the right of the view fields below the 'Total' heading.&#160; See screen shot below example code.</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "PO128 - 03/02/07 POP Extend PO Detail<br />        0110 SETESC 8000; SETERR 8000<br />        0120 ENTER Y$,PO41$,PO41A$,D1$,D2$,S039$,ERR=0130<br />        0130 IF PO41.OPEN$="C" OR FIELD(S039$,"FLDNAM",ERR=0140)="QTY" THEN GOSUB CHKQTY<br />        0140 CALL "DIS010",PO41.CU$,CUQTY<br />        0150 LET PO41.EXTCOST=PO41.QTY*PO41.COST*(100-PO41.DISCPCT)/100/CUQTY<br />        0160 IF PO41.MULT THEN LET PO41.EXTCOST=PO41.EXTCOST*PO41.MULT<br />        0170 LET PO41.EXTFET=PO41.QTY*PO41.FET<br />        0180 LET PO41.EXTCORE=PO41.QTY*PO41.CORE<br />        0190 LET PO41.EXTWEIGHT=PO41.QTY*PO41.WEIGHT/MAX(1,PO41.PKGQTY)<br />        0200 LET PO41.EXTCUBE=PO41.QTY*PO41.CUBE/MAX(1,PO41.PKGQTY)<br />        0210 IF LEN(D1$) THEN GOSUB DISP<br />        0220 EXIT<br /><br />        1000 DISP:<br />        1010 LET FLDNAM$="COST",MASK$="#,###,###.00"; GOSUB DISPFLD<br />        1015 LET FLDNAM$="CORE",MASK$="#,###,###.00"; GOSUB DISPFLD<br />        1020 LET FLDNAM$="FET",MASK$="#,###,###.00"; GOSUB DISPFLD<br />        1040 LET FLDNAM$="WEIGHT",MASK$="N12.4"; GOSUB DISPFLD<br />        1050 LET FLDNAM$="CUBE",MASK$="N12.4"; GOSUB DISPFLD<br />        1060 RETURN</code>
+                    <p>
+                        <br /><code>1100 DISPFLD:<br />        1110 FOR I=1 TO D1.FLDS<br />        1120 LET S039$=D2.FLD$[I]<br />        1130 IF S039.FLDNAM$=FLDNAM$ THEN GOSUB DISPEXT; BREAK<br />        1140 NEXT I<br />        1150 RETURN<br /><br />        1160 DISPEXT:<br />        1162 IF FLDNAM$="COST" THEN PRINT @(S039.COL+12,S039.ROW-1),'SB','BU',PAD("Total",12,"R"),'EU','SF',<br />        1165 LET VAL=NFIELD(PO41$,"EXT"+FLDNAM$),OUT$=FILL(12)<br />        1170 IF VAL THEN IF MASK$(1,1)="N" THEN CALL "CDS359",12,VAL,OUT$ ELSE LET OUT$=FILL(12,"*"),OUT$=STR(VAL:MASK$,ERR=1175)<br />        1175 PRINT @(S039.COL+12,S039.ROW),OUT$,<br />        1180 RETURN<br /><br />        1200 CHKQTY:<br />        1205 IF PO41.QTY&lt;0 THEN LET PO41.QTY=1; CALL "CDS069",0,0,0,0,'RB'+"Quantity Ordered cannot be negative-"; EXIT 99<br />        1210 CALL "PO131",Y$,PO41$,PO131$<br />        1220 IF PO41.QTY&lt;PO131.QTYRCVD THEN LET PO41.QTY=PO131.QTYRCVD; CALL "CDS069",0,0,0,0,'RB'+"Quantity Ordered cannot be changed to be less than Quantity already received of "+STR(PO131.QTYRCVD)+"-"; EXIT 99<br />        1230 IF PO41.QTY&gt;PO131.QTYRCVD THEN LET PO41.OPEN$=" "; REM "Re-open line item if qty was changed<br />        1240 RETURN</code>
+                    </p>
+                    <p><code>8000 REM "Call Error/Escape Routine<br />        8010 CALL "CDS063",STR(TCB(5)),Y$,PGM(-2)<br />        8020 ON Y.ERRSTS GOTO 8030,8040,8050,8060<br />        8030 SETERR 0<br />        8040 RETRY<br />        8050 RETURN<br />        8060 RETRY<br /><br />        9000 EOJ:<br />        9010 IF TCB(13) THEN EXIT<br />        9020 RUN "CDS001"<br /><br />        9100 EOJERR:<br />        9110 EXIT ERR</code>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="xxdd20-4.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+        </table>
+        <table class="example">
+            <tr>
+                <td>Example of a Field Change Program where a total field is 
+			computed and re-displayed when its value has changed.</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "PO603 - 01/07/10 POP Invoice Reconciliation 
+			Field Change Routine<br />			0110 SETESC 8000; SETERR 8000<br />			0120 ENTER Y$,PO60$,PO60A$,D1$,D2$,S039$<br />			0130 LET INVAMT=PO60.SUBTOTAL-PO60.DISCOUNT+PO60.SHIPPING<br />			0140 IF PO60.INVAMT&lt;&gt;INVAMT THEN GOSUB DISP<br />			0150 EXIT<br /><br />			1000 DISP:<br />			1010 LET PO60.INVAMT=INVAMT<br />			1020 DIM S039A$:FATTR(S039$)<br />			1030 FOR I=1 TO D1.FLDS<br />			1040 LET S039A$=D2.FLD$[I]<br />			1050 IF S039A.FLDNAM$="INVAMT" THEN LET S039A.TYPE$="Q"+S039A.TYPE$; 
+			CALL "CDS039",S039A$,PO60$; BREAK<br />			1060 NEXT I<br />			1070 RETURN<br /><br />			8000 REM "Call Error/Escape Routine</code>
+                    <p><code>8010 CALL 
+			"CDS063",STR(TCB(5)),Y$,PGM(-2)<br />			8020 ON Y.ERRSTS GOTO 8030,8040,8050,8060<br />			8030 SETERR 0<br />			8040 RETRY<br />			8050 RETURN<br />			8060 RETRY<br /><br />			9000 EOJ:<br />			9010 IF TCB(13) THEN EXIT<br />			9020 RUN "CDS001"</code>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

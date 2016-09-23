@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1757" MadCap:lastWidth="1212">
+    <head><title>POP Menu Overview</title>
+    </head>
+    <body>
+        <p class="SectionName">Purchase Order Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Menu Overview</p>
+                </td>
+                <td align="right">Last Revised: 02/13/14</td>
+            </tr>
+        </table>
+        <p>The applications on this menu are used to manage orders placed for products and services from vendors.  Purchase orders can be placed for products bought for resale as well as for your own use.</p>
+        <p>
+            <img src="pop.png" />
+        </p>
+        <ol><b><li><a href="../po/po150.htm">Purchase Order&#160;Inquiry</a></li><li><a href="../po/po100.htm">Purchase Order Processing</a></li><li><a href="../po/po170.htm">Purchase Order Generation</a></li><li><a href="../po/po190.htm">Print Receiving Document</a></li><li><a href="../po/po300.htm">Purchase Order Receiving</a></li><li><a href="../xx/xxpo60.htm">Vendor&#160;Invoice Reconciliation</a></li><li><a href="../po/po200.htm">Purchase Order Listing</a></li><li><a href="../po/po250.htm">Purchase Order Receipts Listing</a></li><li><a href="../xx/xxpo00.htm">Purchase Order&#160;Parameter&#160;Maintenance</a></li><li><a href="../po/po400.htm">Purchase Order File Integrity Tests</a></li><li><a href="vrp.htm">Vendor Returns Processing (VRP)</a></li><li><a href="../xx/xxpo70.htm">Vendor Price Protection&#160;Entry</a></li></b>
+        </ol>
+        <h5>Getting Started</h5>
+        <p>Before using the selections on the Purchase Order Processing Menu, you will 
+need to complete the following:</p>
+        <ul>
+            <li>Setup Vendors (VML menu)</li>
+            <li>Setup Product Categories (IML)</li>
+            <li>Setup Product Classes (IML)</li>
+            <li>Setup Items (IML)</li>
+            <li>Create G/L Account Numbers (G/L) for:<ul><li>Inventory (one or more accounts may be used)</li><li>Special Order Inventory (for purchase of items not on Item file)</li><li>Unvouchered Receipts (Liability like Accounts Payable)</li><li>Inventory Rounding Adjustment (Expense related to penny adjustments 
+		due to discounts, multipliers, and costing units)</li><li>Vendor Returns Receivable (Asset account for merchandise returned to 
+		vendor)</li><li>Vendor Rebates Receivable (Asset account for projected rebate issued 
+		by vendor)</li></ul></li>
+            <li>Use G/L Interface Maintenance (GLU) to indicate the G/L account numbers 
+	that Dynamo should use for automated postings.</li>
+        </ul>
+        <h5>Upgrading</h5>
+        <p>If you used a version of Dynamo Purchase Order Processing prior to 2007, you 
+will notice that the current Dynamo version is radically different from what you 
+are used to.&#160; But we hope that you will find that the current version is 
+much easier to use and offers many features not previously available.&#160; 
+Here are some of the significant differences.</p>
+        <ul>
+            <li>The screen layout (we call them views) are much less cluttered, 
+	typically with a single column of longer field descriptions, with data to 
+	the right.</li>
+            <li>There are more views, for example there are 3 separate heading views for 
+	a purchase order.</li>
+            <li>There are many changes to the detail section where line items are 
+	entered:<ul><li>the line number is no longer visible</li><li>you can insert lines anywhere on the PO using the Insert key</li><li>you can delete a line item using the Delete key</li><li>you can scroll forwards and backwards within the line items</li><li>you can even search the line items for a particular item# or 
+		description.&#160; This is especially useful for long purchase orders 
+		with hundreds of line items.</li><li>the primary detail screen is uncluttered and shows only the basic 
+		information: Item#, description lines, quantity ordered, cost, and 
+		costing unit</li><li>you can access all other fields related to a line item using the 
+		Properties option</li><li>you can enter a discount% or a multiplier</li><li>in addition to showing the extended cost, the extended weight and 
+		cube are shown which can be helpful when placing a full trailer order</li><li>the message lines have been replaced with a Dynamo Notepad that is 
+		linked to an item</li><li>you can specify a general ledger account number to be used when 
+		purchasing products that are not for inventory</li></ul></li>
+            <li>Timestamps are created for most activities</li>
+            <li>You can transfer the line items from one PO to another</li>
+            <li>You can jump over to Vendor Inquiry from Purchase Order Processing 
+	without re-entering the Vendor#.</li>
+            <li>You don't lose your position when selecting a PO from a list.&#160; The 
+	highlight bar will move down to the next PO in the list.</li>
+            <li>You can select from a list of POs based on a specific warehouse/store 
+	code.</li>
+            <li>Purchase Order Processing is no longer used for Receiving, a separate 
+	menu selection is used.</li>
+            <li>There are no longer any PO.</li>
+            <li>Emailed POs now include an attached spreadsheet of line items purchased 
+	to assist the vendor that imports a PO into their computer system.</li>
+            <li>You no longer get messages like "PO in use at another terminal" and must 
+	be "unlocked" by Excellware.</li>
+            <li>One PO Receipt can include multiple purchase orders, and should whenever a 
+	vendor ships products that were ordered on multiple POs together.</li>
+            <li>PO receipts can be entered using a Workstation (PC, Mac, thin client), 
+	using a tethered bar code reader (attached to a Workstation), or a hand-held 
+	wireless computer with bar code scanner.</li>
+            <li>PO receipts are updated individually and no longer in a batch.</li>
+            <li>Dynamo will create a G/L posting for each receipt.&#160; Note that all 
+	PO Receipts are consolidated into a single G/L posting that takes place just 
+	after midnight each day.&#160; Dynamo will debit the G/L inventory account 
+	(or other account specified in the PO Line Item Properties), and credit the 
+	Unvouchered Receipts account.&#160; It is important to change your A/P 
+	Invoice Data Entry procedure not to distribute invoices to the Inventory 
+	account.&#160; Instead, all invoices for inventory purchases should debit 
+	the Unvouchered Receipts account.</li>
+            <li>Dynamo Accounts Payable is fully integrated with PO Receipts, so it is 
+	important to enter the PO# whenever entering Vendor Invoices and select 
+	from the list of open PO receipts for that PO.</li>
+            <li>You can re-open a closed PO when you discover that the cost of an item 
+	as shown on the PO differs from the vendor invoice.&#160; Dynamo will change 
+	the cost of the received product.</li>
+            <li>Dynamo will track the receipt of each item separately.&#160; Each 
+	receipt and how the product received was used can be displayed in Item 
+	Inquiry.</li>
+            <li>Item Inquiry also will show the complete PO Receipt history of an item, 
+	showing quantity and cost, with the most recent purchases first.</li>
+            <li>Vendor Returns are no longer entered as a negative quantity on a 
+	purchase order.&#160; There is a separate menu (VRP) to enter returns, print 
+	packing slips, update the inventory, and post to the General Ledger the 
+	reduction in inventory and Vendor Returns Receivable.</li>
+            <li>There is no longer a need to "Reset the Quantity on Order."</li>
+        </ul>
+        <p>Thank you for upgrading Dynamo.&#160; We hope you enjoy the new features and 
+find the programs easier to use and provide the information needed to make smart 
+purchasing decisions.</p>
+    </body>
+</html>

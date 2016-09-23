@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="5222" MadCap:lastWidth="1012">
+    <head><title>Server Backup</title>
+        <style type="text/css">
+body.ex
+{
+	font-family: Tahoma, Verdana, SansSerif;
+	font-size: 9pt;
+}
+tr.ex
+{
+	font-size: 9pt;
+}
+tr.exhead
+{
+	background-color: #FFFF66;
+}
+tr.extitle
+{
+	background-color: #FFFF99;
+}
+tr.extop
+{
+	background-color: #FFFFCC;
+}
+tr.exrowodd
+{
+	background-color: #FFFFFF;
+}
+tr.exroweven
+{
+	background-color: #E0E0E0;
+}
+td.ex
+{
+	border-color: #404040;
+}
+
+</style>
+    </head>
+    <body>
+        <p class="SectionName">dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Server Backup</p>
+                </td>
+                <td align="right">Last Revised: 01/06/15</td>
+            </tr>
+        </table>
+        <p>We cannot over-emphasize the importance of a backup.&#160; If your server was stolen or lost in a fire, how would you recover?&#160; The goal of the backup is to be able to restore the entire server in the case of an emergency, or one or more files if they were accidentally erased or modified and an earlier revision is required.</p>
+        <p>The backup process is initiated automatically each night, typically at 2:00AM.&#160; In most cases the entire server hard drive or drives are backed up onto a single tape.&#160; In some situations, with large capacity disc drives, certain files are excluded from the nightly backup because they would not fit on even one of the largest capacity tapes.&#160; In this case a separate manual backup is provided to back up the files that are not backed up each night.</p>
+        <p>Because the backup process is not foolproof, Dynamo emails the backup results to up to three system administrators as specified in Dynamo Configuration Maintenance (SMC).&#160; This email will include the last 30 server backup attempts.&#160; An example of the email is shown below.&#160; There is also a complete Server Backup Log available on the SMS menu.</p>
+        <p align="center">Insert tape <strong>A-Wed</strong> today for tonight's 
+	backup.</p>
+        <table align="center" border="1" cellspacing="0" cellpadding="3">
+            <colgroup>
+                <col align="right" />
+                <col align="right" />
+                <col align="right" />
+                <col align="center" />
+                <col align="right" />
+                <col align="right" />
+                <col align="center" />
+                <col align="center" />
+                <col align="center" />
+            </colgroup>
+            <tr class="extop" bgcolor="#FFFFCC">
+                <td class="ex" align="center" colspan="9"><strong>Excellware, Inc.</strong>
+                </td>
+            </tr>
+            <tr class="extitle" bgcolor="#CCFFFF">
+                <td class="ex" align="center" colspan="9">Server Backup</td>
+            </tr>
+            <tr class="exhead">
+                <td class="ex" align="left">Tape</td>
+                <td class="ex">Started</td>
+                <td class="ex" align="center">at</td>
+                <td class="ex">Status</td>
+                <td class="ex">Files to Backup</td>
+                <td class="ex">Files on Tape</td>
+                <td class="ex">Time to Backup</td>
+                <td class="ex">Time to Verify</td>
+                <td class="ex">Done</td>
+            </tr>
+            <tr class="exrowodd">
+                <td class="ex" align="left">C-Jan</td>
+                <td class="ex">Wed 02/01/06</td>
+                <td class="ex" align="center">2:00</td>
+                <td class="ex">Good</td>
+                <td class="ex">134,500</td>
+                <td class="ex">134,500</td>
+                <td class="ex">01:12:36</td>
+                <td class="ex">01:08:25</td>
+                <td class="ex">4:25</td>
+            </tr>
+            <tr class="exroweven">
+                <td class="ex" align="left">A-Mon</td>
+                <td class="ex">Tue 01/31/06</td>
+                <td class="ex" align="center">2:00</td>
+                <td class="ex"><a href="http://www.excellware.com/docs/dynamo/serverbackup.htm#Status" class="a_1">Bad</a>
+                </td>
+                <td class="ex">133,299</td>
+                <td class="ex">0</td>
+                <td class="ex">00:00:01</td>
+                <td class="ex">00:00:00</td>
+                <td class="ex">2:00</td>
+            </tr>
+            <tr class="exrowodd">
+                <td class="ex" align="left">B-Fri</td>
+                <td class="ex">Mon 01/03/06</td>
+                <td class="ex" align="center">2:00</td>
+                <td class="ex">Good</td>
+                <td class="ex">133,227</td>
+                <td class="ex">133,227</td>
+                <td class="ex">01:08:10</td>
+                <td class="ex">01:00:17</td>
+                <td class="ex">4:10</td>
+            </tr>
+        </table>
+        <p class="SectionTitle">Tape Rotation and Storage</p>
+        <ol>
+            <li>It is recommended that you use two sets of 5 tapes for your nightly backup.&#160; Label them A-Mon thru A-Fri and B-Mon thru B-Fri.&#160; Use Set A one week and Set B the next.&#160; The&#160; nightly backup email recommends the tape to use each day.&#160; On Monday, insert the A-Mon or B-Mon tape, even though the backup will not take place until early Tuesday morning.&#160; The backup also runs on Saturday and Sunday, but typically writes on top of the Friday backup.&#160; Each time a backup is run, it writes over what was on the tape previously.</li>
+            <li>Set C should contain 12 tapes labeled C-Jan thru C-Dec.&#160; Insert the C tape on the last working day of each month instead of the scheduled A/B tape.</li>
+            <li>Always keep one set of tapes out of the office.&#160; Even a fire proof safe does not provide adequate protection.&#160; Such a safe is fine for the set you are using, but the other set should be off site.&#160; Some customers take one tape home each day and bring back the oldest, so all tapes are kept off site.&#160; Do not store the tapes in a car where the temperature can get too hot during the summer days causing the tape to fail.&#160; There are also Data Storage companies who will stop by each week and exchange a set of tapes with you and store the tapes in a secure vault.</li>
+        </ol>
+        <p class="SectionTitle"><a name="Status"></a>Status</p>
+        <p>The backup can fail for a variety of reasons.&#160; Look for your situation 
+	below, and follow the steps in the Corrective Action column in an effort to 
+	resolve the problem.</p>
+        <table>
+            <tr>
+                <th>Case</th>
+                <th width="50%">Situation</th>
+                <th width="50%">Corrective Action</th>
+            </tr>
+            <tr>
+                <td align="center">A</td>
+                <td width="50%">Email indicates:<ol><li>'Files on Tape' is zero each day no matter what tape is 
+				used, or</li><li>error mssage: <i><span>cpio: /dev/st0: Read-only file system</span></i></li></ol></td>
+                <td width="50%">
+                    <ol>
+                        <li>Verify that tape has been inserted into tape drive, and did 
+				not eject prior to the start of the backup.</li>
+                        <li>Verify that the tape is not '<a href="#Write_enabled_vs._Write_protected_">write-protected</a>'.</li>
+                        <li><a href="#Shutdown_&amp;_Restart_Server">Shutdown &amp; restart the 
+				server</a>
+                        </li>
+                        <li>Run a <a href="#Manual_Backup_">manual backup</a> from a PC 
+				so you can see any error message.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">B</td>
+                <td width="50%">Email shows message: <i>cpio: write error: No medium 
+			found</i></td>
+                <td width="50%">
+                    <ol>
+                        <li>Verify that tape has been inserted into tape drive, and did 
+				not eject prior to the start of the backup.</li>
+                        <li>Verify that the tape is not '<a href="#Write_enabled_vs._Write_protected_">write-protected</a>'.</li>
+                        <li><a href="#Shutdown_&amp;_Restart_Server">Shutdown &amp; restart&#160; 
+				the server</a>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td width="50%">The Friday/Saturday/Sunday backup fails, but other 
+			days work</td>
+                <td width="50%">
+                    <ol>
+                        <li>Since the Friday tape is written to 3 times as often as the 
+				other tapes, it is most likely that the tape can no longer be 
+				used and should be replaced.&#160; Using the recommended 
+				schedule, a Friday tape would need to be replaced approximately 
+				every 18 months, where a weekday tape should last 48 months 
+				before replacing. </li>
+                        <li>The tape used on Friday is a lower capacity than the tape 
+				used other days.&#160; Refer to <a href="#Replacement_Tapes">
+				chart</a> of tapes available below.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td width="50%">The same tape, i.e, A-Wed, always fails, yet other 
+			tapes backup without a problem, or<br />			Email shows error message: <i>cpio: I/O error on write(): I/O error 
+			(error 5)</i></td>
+                <td width="50%">
+                    <ol>
+                        <li>The tape is worn out and must be replaced.&#160; Tapes 
+				typically can be used about 100 times before replacement.</li>
+                        <li>The tape that fails is a lower capacity than the tapes that 
+				work.&#160; Refer to <a href="#Replacement_Tapes">chart</a> of 
+				tapes below.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td width="50%">Email indicates:<ol><li>'Files on Tape' is less than the 'Files to Backup', or</li><li>The 'Time to Backup' is much shorter than normal, or</li><li>error message: <i>cpio: /dev/tty: No such device or address</i></li><li>error message: <i>cpio: can't open /dev/tty for writing</i></li></ol></td>
+                <td width="50%">
+                    <ol>
+                        <li>Files may not all fit on one tape.&#160; Use the Dynamo menu 
+				D option to show disc usage and verify the
+				<a href="#Replacement_Tapes">tape</a> being used is large 
+				enough.&#160; Try a different tape with sufficient capacity</li>
+                        <li><a href="#Erase_files">Erase any files</a>, created from a 
+				PC application, that are stored on the server that are no longer 
+				needed.</li>
+                        <li>Contact Excellware to erase any archived Dynamo files that 
+				are no longer needed.</li>
+                        <li><a href="#Tape_Drive_Cleaning">Clean the tape drive</a>
+                        </li>
+                        <li><a href="#Shutdown_&amp;_Restart_Server">Shutdown &amp; restart the 
+				server</a>
+                        </li>
+                        <li>Run a <a href="#Manual_Backup_">manual backup</a> from a PC 
+				so you can see any error message</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">F</td>
+                <td width="50%">Email indicates:<ol><li>'Files to Backup' is a few numbers higher than 'Files on 
+				Tape'</li><li>error message: <i>cpio: 0511-025 Cannot get information 
+				about xxxx</i></li></ol></td>
+                <td width="50%">File xxxx was present when the backup started and 
+			the list of files to backup was prepared, but was erased by the time 
+			the backup was processing that section of the disc.&#160; Although 
+			the backup is run when there should be minimal activity on the 
+			server, there still may be some activity related to outgoing email, 
+			scheduled communication activity, or other tasks scheduled during 
+			the backup.&#160; If the message occurs each day, then the time of 
+			the backup or other scheduled activity could be changed not to 
+			overlap.&#160; If the message occurs only rarely, then the backup is 
+			probably complete, and simply excludes the files that were removed 
+			while the backup was in progress.</td>
+            </tr>
+            <tr>
+                <td align="center">G</td>
+                <td width="50%">Email indicates:<ol><li>'Files to Backup' are the same as the 'Files on Tape', but 
+				the Status shows 'Bad'.</li><li>The 'Time to Verify' is much lower than normal</li></ol></td>
+                <td width="50%">
+                    <ol>
+                        <li><a href="#Tape_Drive_Cleaning">Clean the tape drive</a>
+                        </li>
+                        <li>Verify that the tape is not '<a href="#Write_enabled_vs._Write_protected_">write-protected</a>'</li>
+                        <li>Replace tape</li>
+                        <li><a href="#Shutdown_&amp;_Restart_Server">Shutdown &amp; restart the 
+				server</a>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <p>The list of Corrective Action steps that you can take are listed below.</p>
+        <ol>
+            <li>Verify that the tape is not '<a href="#Write_enabled_vs._Write_protected_">write-protected</a>'.</li>
+            <li>Clean the tape drive with a <a href="#Tape_Drive_Cleaning">cleaning 
+		tape</a> that is not all used up</li>
+            <li><a href="#Erase_files">Erase files</a> created by PC applications 
+		that are stored on server.&#160; This is one of the most common causes 
+		of backup failure.</li>
+            <li>Run the 'Purge Fax &amp; Email Logs' option on the PFM menu to free up 
+		disc space.</li>
+            <li>Contact Excellware to erase any Dynamo archive files that are no 
+		longer needed.</li>
+            <li>Use a new <a href="#Replacement_Tapes">tape of sufficient capacity</a> 
+		for the data to be backed up</li>
+            <li><a href="#Shutdown_&amp;_Restart_Server">Shutdown and restart the server</a>
+            </li>
+            <li>Run a <a href="#Manual_Backup_">manual backup</a> from a PC to see 
+		the complete backup error message</li>
+        </ol>
+        <p>If you have performed <b>all</b> of these steps, yet you still are unable 
+	to get successful backups each day, then although unlikely, perhaps the tape 
+	drive hardware has failed.&#160; Contact IBM at 1-800-IBM-SERV for service.&#160; 
+	You will need the server machine type and serial number when you call.&#160; 
+	This information is on a small sticker on the front of the server.</p>
+        <p class="SectionTitle"><a name="Tape_Drive_Cleaning"></a>Tape Drive Cleaning</p>
+        <ol>
+            <li>You should clean the tape drive at least once per month.&#160; You will 
+	be reminded in the daily backup email when to clean the tape drive.&#160; 
+	Systems that backup more than 36Gb per day, may require more frequent 
+	cleaning.&#160; Use the special cleaning tape provided for this purpose.</li>
+            <li>If the left most light on the tape drive is flashing slowly, then the 
+	tape drive is telling you that it needs cleaning.&#160; In very dusty or 
+	dirty environments, the tape drive may need cleaning more often than 
+	monthly.</li>
+            <li>To clean the tape drive, just insert the special cleaning tape.&#160; It will eject after a minute or so when complete.</li>
+            <li>The cleaning tape does not last forever.&#160; Normal use is about 30-50 
+	cleanings.&#160; If you insert the cleaning tape, and it comes right back 
+	out, then it has been used up and must be replaced.&#160; Contact Excellware 
+	to order a replacement cleaning tape.</li>
+        </ol>
+        <p class="SectionTitle"><a name="Replacement_Tapes"></a>Replacement Tapes</p>
+        <ol>
+            <li>Excellware has used DDS/DAT tape drives for server backup since 1995.&#160; 
+ There are 6 model drives and related tapes.&#160; The tape drive itself often indicates the model 
+	on the front of the drive.&#160; If the drive does not have a marking, then it is probably a DDS-1 drive and can only use DDS-1 tapes.&#160; 
+	The table below lists which drives are compatible with each tape.</li>
+            <li>If when you insert a tape, it ejects immediately, then the tape being 
+	used is not compatible with the tape drive.&#160; Check the tape, drive, and 
+	chart below to insure compatibility.</li>
+            <li>The tapes vary by thickness so to prevent uneven wear on the tape head, always use the same tape number, i.e., don't use DDS-4 tapes some days and DDS-3 tapes other days.</li>
+            <li>In addition to differing in thickness, the tapes with the higher numbers can store a greater capacity.&#160; But the higher capacity tapes are also more expensive.&#160; You don't need to use DDS-4 tapes if your current disc usage fits on DDS-3 tapes.&#160; 
+	Use the D menu option to display the Total Mb used.&#160; Divide by 1000 for Gb used.&#160; Refer to the table below.</li>
+        </ol>
+        <div align="center">
+            <table>
+                <tr>
+                    <th align="center">Manufacturer</th>
+                    <th>Item#</th>
+                    <th>Type</th>
+                    <th align="center">Tape width (mm)</th>
+                    <th align="center">Tape length (meters)</th>
+                    <th align="center">Approximate Capacity (Gb)</th>
+                    <th>Works with Drives</th>
+                    <th align="center">Price (as of<br />Jan 2015)</th>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">42818</td>
+                    <td align="center">DDS-1</td>
+                    <td align="center">3.81</td>
+                    <td align="center">90</td>
+                    <td align="center">2 to 4</td>
+                    <td align="left">DDS-1, DDS-2, DDS-3, DDS-4</td>
+                    <td align="center">$5</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">43347</td>
+                    <td align="center">DDS-2</td>
+                    <td align="center">3.81</td>
+                    <td align="center">120</td>
+                    <td align="center">4 to 8</td>
+                    <td align="left">DDS-2, DDS-3, DDS-4</td>
+                    <td align="center">$8</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">11737</td>
+                    <td align="center">DDS-3</td>
+                    <td align="center">3.81</td>
+                    <td align="center">125</td>
+                    <td align="center">12 to 24</td>
+                    <td align="left">DDS-3, DDS-4, DAT 72</td>
+                    <td align="center">$7</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">40963</td>
+                    <td align="center">DDS-4</td>
+                    <td align="center">3.81</td>
+                    <td align="center">150</td>
+                    <td align="center">20 to 40</td>
+                    <td align="left">DDS-4, DAT 72, DAT 160</td>
+                    <td align="center">$11</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">17204</td>
+                    <td align="center">DAT 72</td>
+                    <td align="center">3.81</td>
+                    <td align="center">170</td>
+                    <td align="center">36 to 72</td>
+                    <td align="left">DAT 72, DAT 160</td>
+                    <td align="center">$20</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">26837</td>
+                    <td align="center">DAT 160</td>
+                    <td align="center">8</td>
+                    <td align="center">154</td>
+                    <td align="center">80 to 160</td>
+                    <td align="left">DAT 160</td>
+                    <td align="center">$35</td>
+                </tr>
+                <tr>
+                    <td align="center">Imation</td>
+                    <td align="left">45382</td>
+                    <td align="center">Cleaning Tape</td>
+                    <td align="center">&#160;</td>
+                    <td align="center">N/A</td>
+                    <td align="center">30-50 cleanings</td>
+                    <td align="left">all</td>
+                    <td align="center">$15</td>
+                </tr>
+            </table>
+            <p class="SectionTitle" align="left"><a name="Write_enabled_vs._Write_protected_"></a>Write enabled vs. Write 
+	protected</p>
+            <p align="left">Each 4mm tape has a small slider as shown below.&#160; When 
+	the slider is 'open' the tape is write-protected, i.e., you cannot write on 
+	the tape.&#160; This is often done when restoring files from a tape, to 
+	prevent accidentally overwriting the information on the tape.&#160; The 
+	slider must be closed to enable writing (recording) information on a tape.</p>
+            <p class="SectionTitle" align="left"><b><i><span class="span_3"><a href="http://www.smartcomputing.com/editorial/fullsize.asp?guid=B2AB38EDB85D44F0A51E86B9FF79D8FA&amp;image=00487377.jpg&amp;caption=+Step+2%3A+Left+%3D+write%2Denabled%2C+Right+%3D+write%2Dprotected+%3C%2FI%3E%3C%2FB%3E%3C%2FCENTER%3E+%3C%2FTD%3E"><img hspace="10" src="backuptape.jpg" align="left" vspace="10" border="0" /></a></span></i></b>
+            </p>
+            <p class="SectionTitle" align="left">&#160;</p>
+            <p class="SectionTitle" align="left">&#160;</p>
+            <p class="SectionTitle" align="left">&#160;</p>
+            <p class="SectionTitle" align="left"><a name="Erase_files"></a>Erase files 
+	created by PC applications that are stored on server</p>
+            <p align="left">Excellware recommends that no files of importance are stored 
+	on the PC.&#160; Important files should be stored on the server to insure 
+	they are backed up daily, and can be recovered should the hard drive of the 
+	PC fail.</p>
+            <p align="left">However, these PC application files can take up quite a bit 
+	if disc space, which will cause the backup to fail, when the data to be 
+	backed up does not fit on a single tape.</p>
+            <p align="left">Use the Windows Explorer (Right Click Start, and left click 
+	on Explore) to explore the shared folders located on the server, or click on 
+	Start, then Run, and enter \\server in the Open 
+	box.</p>
+            <p align="left">Erase files no longer needed.</p>
+            <p align="left">The PRT share contains Dynamo reports that were printed to a 
+	file, and the export share contains files exported by Dynamo.&#160; These 
+	too should be erased when no longer needed.&#160; You can also use the 
+	Dynamo option to 'Manage reports printed to a file' option on the SMU menu 
+	to remove files.</p>
+            <p align="left">If you have erased all of the files you can, yet the backup 
+	still does not fit on one tape, then you will need to use a higher capacity 
+	tape drive, or exclude some data from the daily backup.</p>
+            <p class="SectionTitle" align="left"><a name="Manual_Backup_"></a>Manual Backup</p>
+            <p align="left">The backup program that runs at night shows most error 
+	message in the backup email.&#160; But some error messages cannot be 
+	included in the email.&#160; In that situation, it is best to run a Manual 
+	Backup from a PC, so that you can observe all error messages.</p>
+            <p align="left">Normally a backup is run when there is no activity on the 
+	server, so that the backup could be restored in case of emergency.&#160; In 
+	this case, however, the purpose of the manual backup is to observe any error 
+	messages.&#160; Since the backup will not be used to restore data, you can 
+	run the manual backup while other operators are logged in.&#160; You may 
+	encounter a message that indicates a file changed while it was being backed 
+	up, but that would be expected when running a manual backup while Dynamo is 
+	being used.</p>
+            <p align="left">An operator with Console Mode permissions (as set using Operator 
+	Info Maintenance on SMS menu), should enter <code>!</code> at any Dynamo 
+	menu.</p>
+            <p align="left">Then enter <code>su</code> to request super-operator (root) 
+	permissions.</p>
+            <p align="left">Then enter root's password when prompted.&#160; Contact 
+	Excellware if you forgot root's password.</p>
+            <p align="left">At the # prompt enter: <code>backup.cpio</code></p>
+            <p align="left">This will start a manual backup that is very similar to what 
+	runs each night.&#160; The manual backup will take just as long as the 
+	nightly backup, including the verification time.</p>
+            <p align="left">Look for any messages that might provide a clue as to the 
+	cause of the backup.&#160; For example, if you have more data to backup then 
+	will fit on a single tape, the display will show: <code>Found end of tape. 
+	To continue, type device/file name when ready.</code></p>
+            <p align="left">When the backup is completed, enter <code>exit</code> at the 
+	# prompt to return to the Dynamo menu.</p>
+            <p class="SectionTitle" align="left"><a name="Shutdown_&amp;_Restart_Server"></a>Shutdown &amp; Restart Server</p>
+            <ol>
+                <li>
+                    <p align="left">Have all operators log out of Dynamo.&#160; Verify that all 
+		operators are logged out using the Dynamo T menu option.&#160; Then logout 
+		yourself.</p>
+                </li>
+                <li>
+                    <p align="left">If you have a monitor, keyboard, and mouse connected to 
+		the server, then use the mouse to click on the word 'Shutdown' server, 
+		and then confirm that you want to shut down and power off the server.&#160; 
+		If you do not have a monitor, keyboard, and mouse connected to the 
+		server, then use the eraser end of a pencil to press and hold the small 
+		round white power button on the server until all the server lights go 
+		out.&#160; This takes about 5 seconds.</p>
+                </li>
+                <li>
+                    <p align="left">Wait one full minute.</p>
+                </li>
+                <li>
+                    <p align="left">Then use the eraser end of a pencil to touch the small 
+		round white power button on the server to power it back on.&#160; The 
+		server will take a couple minutes to complete the reboot process before 
+		operators can log back on.</p>
+                </li>
+            </ol>
+            <p class="SectionTitle" align="left">Technical Description of the Excellware Server Backup process</p>
+            <ol>
+                <li>
+                    <p align="left">At the start of the backup, an empty file named /tmp/backup.date is created.&#160; You can look at the date and time of this file on the disk to determine the last time the server backup program was run.&#160; This empty file is also copied to the backup tape so that later you can determine when the tape was last used.&#160; You can also look at the date and time of this file on a backup tape to know when this particular tape was last used for a backup.&#160; See the example below.</p>
+                </li>
+                <li>
+                    <p align="left">A list of all files to be backed up is created and named /tmp/backup.disk.</p>
+                </li>
+                <li>
+                    <p align="left">The tape is rewound to the beginning, and all files from step 2 above are copied to the tape.</p>
+                </li>
+                <li>
+                    <p align="left">The tape is rewound again, and the tape is read from beginning to end, making a list of all files found on the tape.&#160; The list is stored in /tmp/backup.tape.&#160; This step insures that we can read the tape from beginning to end without problems.</p>
+                </li>
+                <li>
+                    <p align="left">Finally, the tape is rewound again, and an internet email is sent to the designated system administrator(s) reporting the backup status.&#160; See example email above.&#160; The email contains the last 30 times the server backup program was started.&#160; You can view older backup activity using the Display Server Backup Log (SMS).</p>
+                </li>
+            </ol>
+            <p class="SectionTitle" align="left">Viewing and Restoring Tapes</p>
+            <p align="left">The instructions that follow, assume the backup tape was created using Excellware Server Backup program.</p>
+            <p align="left">The first step is to get to the Linux command line.&#160; There are several ways to do this depending on your particular situation.</p>
+            <ol>
+                <li>
+                    <p align="left">If you use the FacetWin terminal emulator, you can login using your normal login and password, enter an exclamation point (!) at any Dynamo menu, to get to the $ command prompt.</p>
+                </li>
+                <li>
+                    <p align="left">If you have a monitor connected directly to the server, you can login using your regular operator name and password, then select System Tools, then Terminal.&#160; The Terminal program may be in a different location depending on your version of linux.</p>
+                </li>
+                <li>
+                    <p align="left">If you do not have a monitor connected directly to the server, nor are using the FacetWin terminal emulator, you can get to the Linux command prompt from any PC on the network.&#160; Click Start, Run, then enter telnet in the box and click OK.&#160; At the '<code>Microsoft Telnet&gt;</code>' prompt enter: open server, then enter your login id and password.&#160; Note that if you make an entry error entering your login id, you need to use the Delete key to backup, and not the Backspace or Left Arrow key.</p>
+                </li>
+                <li>
+                    <p align="left">If your server is not configured for telnet you will need to access the server using the <a target="_blank" href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">putty</a> program.&#160; To run this program you will need to click the Start, Run, then enter putty in the box and click OK. Alternatively you can type C:\program files\putty\putty.exe 
+		in the box to run.&#160; In the dialog that opens type server in the 
+		host name and click Open.</p>
+                </li>
+            </ol>
+            <p align="left">For each of the options listed above, you should now be at a Linux command line with a $ prompt:</p>
+            <p align="left">The next step is to become root, the super-operator.</p>
+            <p align="left">At the $ prompt, enter:</p>
+            <p align="left"><code>su</code>
+            </p>
+            <p align="left">then enter root's password.&#160; If you don't know root's password <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a>.</p>
+            <p align="left">You should how have a # prompt instead of a $.</p>
+            <p align="left" class="SectionTitle">When did the system backup last?</p>
+            <p align="left">Follow the steps outlined above to obtain the # prompt, then enter this command to see when the backup was run last.&#160; Normally it should indicate today at 2:00AM.&#160; If it does not then please <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> to insure the backup program is still being scheduled to run.</p>
+            <p align="left"><code>ls -l /tmp/backup.date</code>
+            </p>
+            <p align="left" class="SectionTitle">What files were included in the most recent backup?</p>
+            <p align="left">The files scheduled to be backed up can be listed with the command:</p>
+            <p align="left"><code>less /tmp/backup.disk</code>
+            </p>
+            <p align="left">If you get an error message saying that 'less command not 
+	found', then substitute the 'more' command in each example.</p>
+            <p align="left">The files that were found on the most recent backup tape can be listed with the command:</p>
+            <p align="left"><code>less /tmp/backup.tape</code>
+            </p>
+            <p align="left">The 'less' command will fill the screen and pause.&#160; You may enter the following commands:</p>
+            <p align="left">Enter - displays next line in file<br />    space bar or d - displays next page<br />    u - displays previous page<br />    / - followed by search argument will search file<br />    n - after a search, n will search again for the next occurrence<br />    p - returns to top of list<br />    any number - advances the number of lines specified<br />    q - quits</p>
+            <p align="left">In many cases, the following keys also work:<br />    Home - top of list<br />    End - bottom of list<br />    PgUp - next page<br />    PgDn - previous page</p>
+            <p align="left" class="SectionTitle">When was a particular tape last written to?</p>
+        </div>
+        <p>Insert the tape to be checked into the tape drive, follow the steps outlined above to obtain the # prompt, then enter this command to see when a tape was last used for backup.&#160; Note that this may take a while since it will read the entire tape.</p>
+        <p><code>cpio -itcvC10240 &lt;/dev/st0 | grep tmp/backup.date</code>
+        </p>
+        <p>The results would look similar to:</p>
+        <p><code>-rw-r--r-- 1 root root 0 Nov 30 02:00 tmp/backup.date</code>
+        </p>
+        <p>which indicates this tape was last written to on November 30 and 2:00AM.</p>
+        <p class="SectionTitle">What files are stored on a particular tape?</p>
+        <p>To display the contents of a backup tape, enter:</p>
+        <p><code>cpio -itcvC10240 &lt;/dev/st0 | less</code>
+        </p>
+        <p>Use the same options for the 'less' command listed above, however since it will take some time to read the tape, the search and end options may take a long time before anything displays.</p>
+        <p class="SectionTitle">Restoring files</p>
+        <p>Restoring files from a backup is a serious matter.&#160; Be very careful before touching the Enter key, that you have entered the command exactly.&#160; If you restore more files than you planned to, you could destroy other files that have not been backed up.&#160; If you type the command incorrectly, you could accidentally write on the tape instead of read from it.</p>
+        <p>We also recommend changing the tape to "read-only" when restoring, so you don't accidentally write on the tape which could happen if the command is entered incorrectly. You can make a 4mm tape "read-only" by opening a small sliding door on the side of the tape.&#160; Be sure to close the sliding door before the next time you want to write on the tape.</p>
+        <p>If you have any questions or need assistance, please call Excellware.</p>
+        <p>To restore files into the same location they were backup up, overwriting the current version (if any), be sure there are no operators accessing any of the files to be restored, and enter this command to change to the root directory:</p>
+        <p><code>cd /</code>
+        </p>
+        <p>To restore files into another location on the disc, use the change directory command (cd) to change to another directory such as /tmp:</p>
+        <p><code>cd /tmp</code>
+        </p>
+        <p class="SectionTitle">How do I restore one or more files?</p>
+        <p>To restore one file or a short list of files enter the command:</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 file1 file2 ...</code>
+        </p>
+        <p>where file1 and file2 are the full names of the file as stored on the tape.&#160; Use the</p>
+        <p align="left"><code>less /tmp/backup.tape</code>
+        </p>
+        <p>command to display the format of the file name.&#160; Typically the file names should exclude the leading / and period.&#160; For example, to restore two files and replace the existing copies of the files, enter the commands:</p>
+        <p><code>cd/</code>
+        </p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 u/CDI/EX/EXCM01 u/CDI/EX/EXIM01</code>
+        </p>
+        <p class="SectionTitle">How do I restore a particular list of files?</p>
+        <p>To restore a large number of files, it is often easier to create a list of files to be restored and store them in a file using vi or another text editor.&#160; The following command restores all files contained within the namelist file /tmp/filenames:</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 -E/tmp/filenames</code>
+        </p>
+        <p class="SectionTitle">How do I restore an entire directory?</p>
+        <p>To restore one directory and all of its contents including sub-directories:</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 "u/CDI/OS/*"</code>
+        </p>
+        <p class="SectionTitle">How do I restore multiple files based on wild-cards?</p>
+        <p>To restore multiple files based on a wild-card:</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 "u/CDI/OS/OST*" "u/CDI/EX/EXU0??"</code>
+        </p>
+        <p>Note the use of quotes when using wildcards.&#160; Quotes are also required when a file name contains spaces (a discouraged practice).</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0 "u/pc/xl/Physical Inventory Data.xls"</code>
+        </p>
+        <p class="SectionTitle">How do I restore everything on the tape?</p>
+        <p>To restore everything on the tape:</p>
+        <p><code>cpio -imudcvC10240 &lt;/dev/st0</code>
+        </p>
+    </body>
+</html>

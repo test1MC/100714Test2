@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="744" MadCap:lastWidth="1479">
+    <head>
+        <title>Save/Restore Program Security Levels</title>
+        
+    </head>
+    <body>
+        <p class="SectionName">System Management Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Save/Restore program security levels</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS270">Last Revised: 02/11/06</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The customer maintains his own security level codes 
+	and company name and address.&#160; This program is used to save menu 
+	security information when the menu file is being replaced with a copy from 
+	Excellware.</p>
+        <p>New programs are added to the selector and the selector file is copied to the customer's system.&#160; This destroys any program security level codes that the customer may have entered.&#160; In order to prevent this situation from occurring, this program will save these security level codes prior to replacing file XXS150 with a copy from 
+	Excellware.&#160; Then after the file has been replaced, it will restore the saved security level codes.</p>
+        <p>Only level codes above 1 are saved.&#160; Even if the program has been moved from one menu to another, the level code can be properly restored.&#160; Each program is identified by all 6 characters of the program name, plus the screen suffix and the pass parameter.&#160; Therefore, if the new selector file has a different pass parameter, for example, the level code will not be properly restored.&#160; In most cases the selector file has been changed due to new additions and not changes to existing entries on the menu.</p>
+        <p>In addition to saving the security levels, this program saves the program memory pages, and the hot key selection code.</p>
+        <p>The saved information is kept in file XXSD00 with a key of SECLV1XXX and removed after the restore has been completed.</p>
+        <p>
+            <img border="0" src="cds270-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <h6>The Save/Restore Program Security Levels Screen</h6>
+        <h5>In summary</h5>
+        <ol>
+            <li>Create tape/disc at Excellware with XXS150 - Selector file.</li>
+            <li>On Customer's system, run this program to Store all security levels as well as dates, company name, etc.</li>
+            <li>Restore tape or copy disc file, replacing customer's XXS150 file. Security Level codes have now been replaced, losing any customer entered changes.</li>
+            <li>Re-run this program to Restore all security level codes, dates, company name, etc.</li>
+        </ol>
+        <h5>Technical Notes</h5>
+        <p>This program may be called. The parameters are Y$ - standard terminal control string. Used to determine what company code to process. MODE$ - "S" to save security levels, "R" to restore them.</p>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1018" MadCap:lastWidth="1332">
+    <head><title>Selecting Records from a Grid</title>
+    </head>
+    <body>
+        <p class="SectionName">dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Selecting records from a grid</p>
+                </td>
+                <td align="right">Last Revised: 05/20/10</td>
+            </tr>
+        </table>
+        <p>Dynamo often presents records in a grid format.&#160; The list can be automatically presented by the application, or displayed in response to the operator touching the F2 key.&#160; You can easily identify a grid format by the vertical grid lines that separate the columns.&#160; An example list in grid format is shown below.</p>
+        <p>Note that Dynamo also frequently presents a list of valid options in a simple list format.&#160; This is somewhat different than a grid.&#160; Click <a href="DataEntryLists.htm">here</a> for additional information about selecting records from a simple list.</p>
+        <p>In this example, you may enter an option# (1-10), or move the highlight bar to the desired option and then touch the Enter key, or touch the F4 key to exit.</p>
+        <p>When presented with a list, the operator has the following options.&#160; The workstation will sound the bell if an invalid entry is made.</p>
+        <p>For workstations with a full keyboard, the 'Normal Key' can be used.&#160; Workstations with a keyboard that does not include the Normal Key specified, can perform the Action by holding the Ctrl key down while touching the Key specified in the Ctrl + Key column.</p>
+        <table>
+            <tr>
+                <th nowrap="nowrap">Action</th>
+                <th nowrap="nowrap">Normal Key</th>
+                <th nowrap="nowrap">Ctrl + Key</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move highlight bar down to the next record</td>
+                <td align="center" nowrap="nowrap">ArrowDn</td>
+                <td align="center" nowrap="nowrap">Ctrl + J</td>
+                <td>If the last record on the page is highlighted, ArrowDn will display the next page with the first record on the page highlighted.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar down 5 records</td>
+                <td nowrap="nowrap" class="td_1">Tab</td>
+                <td nowrap="nowrap" class="td_1">Ctrl + I</td>
+                <td>If the last record on the page is highlighted, Tab will display the next page with the first record on the page highlighted.
+<p>If there are less than 5 records remaining on the page, Tab will highlight the last record on the page.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar to the last record on the page</td>
+                <td align="center" nowrap="nowrap">PageDn</td>
+                <td align="center" nowrap="nowrap">Ctrl + N</td>
+                <td>If the last record on the page is already highlighted, PageDn will move the highlight bar to the last record on the next page</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar to the last record in the list</td>
+                <td align="center" nowrap="nowrap">End</td>
+                <td align="center" nowrap="nowrap">Ctrl + E</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move highlight bar up to the next record</td>
+                <td align="center" nowrap="nowrap">ArrowUp</td>
+                <td align="center" nowrap="nowrap">Ctrl + K</td>
+                <td>If the first record on the page is highlighted, ArrowUp will display the previous page with the last record on the page highlighted.&#160;</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar up 5 records</td>
+                <td nowrap="nowrap" class="td_1">Shift + Tab</td>
+                <td nowrap="nowrap" class="td_1">Ctrl + B</td>
+                <td>Most operators will need to use Ctrl + B, as Shift + Tab only works in limited cases.
+<p>If the first record on the page is highlighted, Shift + Tab and Ctrl + B will display the previous page with the last record on the page highlighted.</p><p>If you are within 5 records of the top of the page, then the first record on the page will be highlighted.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar to the first record on the page</td>
+                <td align="center" nowrap="nowrap">PageUp</td>
+                <td align="center" nowrap="nowrap">Ctrl + O</td>
+                <td>If the first record on the page is highlighted, PageUp will move the highlight bar to the first selection on the previous page</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Move the highlight bar to the first record in the list</td>
+                <td nowrap="nowrap" class="td_1">Home</td>
+                <td nowrap="nowrap" class="td_1">Ctrl + P</td>
+                <td>&#160;</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Display columns to the right of the current view</td>
+                <td align="center" nowrap="nowrap">ArrowRt</td>
+                <td align="center" nowrap="nowrap">Ctrl +L</td>
+                <td>Only applies when the view does not fit on one page.&#160; The prompt will indicate "<u>ArrowRt</u>=Shift right"</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Display columns to the left of the current view</td>
+                <td align="center" nowrap="nowrap">ArrowLf</td>
+                <td align="center" nowrap="nowrap">Ctrl + V</td>
+                <td>Only applies when the view does not fit on one page.&#160; The prompt will indicate "<u>ArrowLf</u>=Shift left"</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Advance the highlight bar to a specific record</td>
+                <td nowrap="nowrap" class="td_1">Text</td>
+                <td nowrap="nowrap" class="td_1">Text</td>
+                <td>As each character is entered, the list will re-display with the first record on the page matching the characters entered.&#160; For example, in the example above where purchase orders are shown in a grid, you can touch the letter C to advance the highlight bar to the first closed Purchase Order, i.e., the one with C in the Opn column.&#160; In most cases, the text you enter is matching the data displayed starting with the first column.
+<p>In some cases when the first column is a numeric field, the operator will be prompted: "Enter numeric value to jump to".&#160; In this case the number is entered, then the display is refreshed starting with the first record that has the numeric value entered.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">Enter</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>If prompt includes: "<code>Enter=select record</code>", select the highlighted record and exit the display.
+<p>If prompt includes: "<code>Enter=Continue</code>", you can still navigate the records and columns of the grid, but the highlighted record is not returned for the application to use.</p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">F1</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>Temporarily hotkey to another application</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">F2</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>Perform the activity specified in the prompt, i.e., F2=Delete Record.&#160; This option is used infrequently.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">F3</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>Display this Help Document.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">F4</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>Exit the display without a record being selected</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">&#160;</td>
+                <td nowrap="nowrap" class="td_1">F5</td>
+                <td nowrap="nowrap" class="td_1">&#160;</td>
+                <td>Perform the activity specified in the prompt, i.e., F5=Sort by Item#.&#160; This option is used infrequently.</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="760" MadCap:lastWidth="762">
+    <head><title>My Profile &amp; Preferences</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">My Profile &amp; Preferences</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS478">Last Revised: 
+11/01/14</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application can be used by the operator currently logged in to set their name, phone numbers, and other operator profile information, as well as certain Dynamo preferences including font, font size, company code, and menu to use when Dynamo is started, etc.</p>
+        <p class="SectionDesc">
+It can also be used to create or update the desktop icons used to launch Dynastart.</p>
+        <p class="SectionDesc">
+For users that have an operating system login on a Linux/Unix system, this application can also be used to change the operator's operating system password. Note that Dynastart users do not typically need an operating system login. </p>
+        <p>
+            <img src="cds478-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5>Maintain Profile &amp; Preferences</h5>
+        <p>This option is used for an operator to maintain the name, email address, and 
+other profile information, as well as certain preferences including screen 
+colors.&#160; It is also used to set or change the Dynamo Password which only 
+applies when using Dynastart.&#160; Dynastart works on PCs and 
+Apple Macs and Linux workstations.&#160; It does not use any terminal emulator 
+such as FacetWin, PowerTerm, Terminal, etc.&#160; Typically Dynamo is launched 
+using an icon on the desktop or Macs Application folder.</p>
+        <p>
+            <h6>Note that changes to some fields do not go into effect until the next time the operator logs in.</h6>
+            <p>
+                <img src="cds478-10.png" style="width: 725px;height: 424px;" />
+            </p>
+        </p>
+        <table>
+            <tr>
+                <th nowrap="nowrap" colspan="2">Profile</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Name</td>
+                <td>Operator Name</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Operator's Initials</td>
+                <td>Used in some places where there is less space available to display the name</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Department/Location</td>
+                <td>Used to specify the operator's title, department, or work location</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Phone#</td>
+                <td>Four telephone numbers can be stored including work, home, cell, etc.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Ext</td>
+                <td>Primary Telephone Number Extension if applicable</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Email Address</td>
+                <td>This email address is used as the sending email address for any emails sent from Dynamo by this operator.&#160; If not specified the email will be sent from <a href="mailto:customer@excellware.com">customer@excellware.com</a>.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Windows Login</td>
+                <td>If using a Microsoft Windows PC, specify the Windows Login Name here.&#160; It must match exactly the Windows Login Name as specified in Windows Control Panel, operator Accounts.&#160; It is required for an operator to access shared files located on the server from Windows applications such as Microsoft Office, and Windows Explorer.&#160; 
+Best practice is not to have any spaces in the Windows Login.&#160; If spaces 
+are desired, then include quotes around the Login.&#160; It is possible to have 
+multiple Windows Logins separated by a blank space as shown in the example 
+above.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Dynamo Password</td>
+                <td>The Dynamo Password is used with Dynastart.&#160; You will be 
+prompted to enter the password twice.&#160; No operating system password is 
+required when using Dynastart.&#160; Dynastart can initially be launched Dynamo 
+from a web browser, and can be launched from a shortcut located on the desktop, 
+Applications folder, or other location after initial launch from the browser.</td>
+            </tr>
+        </table>
+        <p>
+            <img src="cds478-11.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th nowrap="nowrap" colspan="2">Preferences</th>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Font</td>
+                <td>The display font used with Dynastart can be set here. If no font is set, or the font does not exist on the workstation, then a default font will be used</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Font Size</td>
+                <td>The size of the font can be specified when using Dynastart. A default size will be used if not specified.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Company Code at Login</td>
+                <td>On a system with multiple companies, you can specify a company code here which will be used when Dynamo is started for this operator.&#160; If not specified Dynamo will be started in the last company accessed by the operator.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Menu Code at Login</td>
+                <td>Dynamo will be started at this menu code.&#160; If not specified, then menu code SYS will be used if present and if the operator has access to the SYS menu.&#160; Otherwise Dynamo will start in the first menu the operator is authorized to access.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Function Keys</td>
+                <td>Specify a Function Key Group Code to override the default Function Key Group Code of "STD."&#160; Function Key Groups are maintained using Terminal Function Key Maintenance on the SMC menu.</td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Colors</td>
+                <td>
+Dynamo screen colors are set by company using Company Information Maintenance 
+(SMC).&#160; However, operators that prefer other colors can specify them here.&#160; 
+For systems with multiple company codes, you may specify different colors for 
+each company.&#160; You may also define colors for company ** which will apply 
+to all company codes.&#160; There are four sets of colors that can be selected:<ul><li>Main window dim and bold text and background colors</li><li>Hot-key (F1) text and background colors for the window border, option, and highlighted option</li><li>Option (F2) text and background colors for the window border, option, and highlighted option</li><li>Help (F3) text and background colors for the window border, option, and highlighted option</li></ul><p>The initial display indicates which companies have colors specified.</p><p><img src="cds478-2.png" style="width: 725px;height: 424px;" /></p></td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="nowrap">Source Code Editor Path</td>
+                <td>Software Developers can specify the editor to use when editing programs using Dynastart. This path will be the path on the local workstation.</td>
+            </tr>
+        </table>
+        <h5>Create/Update Dynastart Shortcut</h5>
+        <p>This option is used to either create or update the shortcut used to launch 
+Dynamo using Dynastart.&#160;The Dynamo shortcut icon is typically located on the 
+desktop. This option might be needed if the Dynastart shortcut was accidentally deleted.</p>
+        <p>The Dynastart desktop icon will look similar to the image shown below.</p>
+        <p>
+            <img src="cds478-7.jpg" />
+        </p>
+        <h5>Launch Java WebStart&#160;Viewer</h5>
+        <p>This option is used to Launch the Java Control Panel where Java-related settings can be modified. It is not typically needed, but can be used when there are problems launching Dynamo.</p>
+        <p>The screen shots shown below are for Java version 1.8.0_25. For best results, update the version of Java on your workstation to this version or later. Oracle has made several changes to Java related to security.</p>
+        <p>Specify the security level as High, and add the url you are using to install Dynamo in the Exception Site List as shown in the screen shot below.</p>
+        <p>
+            <img src="cds478-13.png" />
+        </p>
+        <p>In some cases, it may be necessary to delete all Resources stored on your workstation. You can select and delete them all as shown on the screen shot below.</p>
+        <p>
+            <img src="cds478-14.png" />
+        </p>
+        <h5>Change Operating System Password</h5>
+        <p>This option is used to set or change the operating system password on linux, 
+AIX, and Unix servers.&#160; It is not required nor applicable when using Dynastart.&#160; Note that the default operating system password restrictions 
+can be strict, including requirements that the password does not contain any 
+words found in a dictionary.&#160; In most cases you can create a successful 
+password that includes one or more upper case letters, one or more lower case 
+letters, one or more numeric digits, and one or more special characters.&#160; 
+Some operating systems require passwords to be at least 8 characters long.&#160; 
+Example of a strong password: <code>7My$paSS</code>.</p>
+        <p>Excellware can customize the password requirements based on your companies 
+password policy.&#160; The possibilities include:</p>
+        <ul>
+            <li>eliminating the dictionary check</li>
+            <li>requiring the password to be changed every so many days</li>
+            <li>requiring the new password to be significantly different from the old</li>
+            <li>requiring an upper case, lower case, number, and special character in 
+	every password</li>
+        </ul>
+        <p>Contact Excellware support to customize the operating system password requirements.</p>
+    </body>
+</html>

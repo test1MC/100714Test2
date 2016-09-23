@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="826" MadCap:lastWidth="762">
+    <head><title>Vendor Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Vendor Maintenance</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Vendor Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 07/28/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Vendor Maintenance is used to define and maintain information 
+	about the companies or individuals where you purchase products and services.&#160; Vendors are used in Item Maintenance, Purchase 
+	Order Processing, Vendor Return Processing, and Accounts Payable.</p>
+        <p>There are several views that are used in Vendor Maintenance.</p>
+        <ol>
+            <li><a href="#Address_and_Basic_Information_View_">Address and Basic 
+		Information</a>
+            </li>
+            <li><a href="#Contacts_View">Contacts</a>
+            </li>
+            <li><a href="#Purchase_Order_Options_View_">Purchase Order Options</a>
+            </li>
+            <li><a href="#APView">Accounts Payable Options</a>
+            </li>
+            <li><a href="#Manual_Payment_Import_View">Manual Payment Import</a>
+            </li>
+            <li><a href="#Vendor_Part_Maintenance_View_">Vendor Part# Maintenance</a>
+            </li>
+            <li><a href="#Vendor_Notepad">Vendor Notepad</a>
+            </li>
+        </ol>
+        <h5><a name="Address_and_Basic_Information_View_"></a>Address and Basic Information View</h5>
+        <p>
+            <img src="xxvm01-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <td>Vendor#</td>
+                <td>The Dynamo vendor# can be up to 6 characters long. It is typically 
+	numeric and assigned sequentially by Dynamo.&#160;Single character vendor numbers such as 1 
+	or M have special significance, as they are used for miscellaneous vendors 
+	that do not have their own vendor#. Do not use single character vendor 
+	numbers for vendors you expect to work with regularly.&#160;Select the 
+			option to manually assign a vendor# for the single character vendor 
+			numbers used for miscellaneous vendors.</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>The vendor name as should appear on purchase orders and checks. 
+ You may also include an internal code between braces {ABC} for your 
+ own internal use.&#160; For example, you may have several vendors 
+ such as "Treasurer of State" but they have different addresses 
+ depending on whether you are paying Commercial Activity Tax, Sales 
+ Tax, Use Tax, etc. You can differentiate these vendors by 
+ adding codes such as {CAT}, {Sales}, {Use} in the Name field. 
+ These codes will appear on reports and inquiries but will not appear
+ when printing accounts payable checks. Example Name: Treasurer 
+ of State {Sales}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>If there is only one address line, enter it on Address Line 1.&#160;If you require a contact name or department, then enter it on 
+			Address Line 1, and the actual mailing address on Address Line 2. Any suite# needs to be on the same line as the address.</td>
+            </tr>
+            <tr>
+                <td>City/State/Country/Zip</td>
+                <td>Enter the Zip Code for US addresses, or postal code for Canadian 
+			addresses.&#160;Leave blank for other foreign addresses.&#160;
+			Select from a list of cities that are valid for the Zip Code, or 
+			enter the city name.&#160;The US State code and Canadian country 
+			code will be determined automatically, or enter select a foreign 
+			country code from the list when applicable.</td>
+            </tr>
+            <tr>
+                <td>Alpha Sort Name</td>
+                <td>This field is used to alphabetize the 
+	vendor.&#160;It could be the same as the starting characters of the Vendor 
+	Name, but may differ for cases such as for a vendor named John Brown and 
+	Associates, where you may prefer to use an Alpha Sort Name of BROWN.</td>
+            </tr>
+            <tr>
+                <td>Telephone#</td>
+                <td>The primary telephone number is stored here.&#160;Additional 
+			telephone numbers and extensions can be stored in the Contacts 
+			section.</td>
+            </tr>
+            <tr>
+                <td>Alternate Telephone#</td>
+                <td>Typically used for a Fax#.&#160;Be sure to mark the phone type 
+			accurately as this field will be used for faxing of purchase orders.</td>
+            </tr>
+            <tr>
+                <td>Customer#</td>
+                <td>This field is the identification number that the vendor has 
+			assigned to your company. It will appear on purchase orders 
+			and checks sent to the vendor.</td>
+            </tr>
+            <tr>
+                <td>Vendor Type</td>
+                <td>This field can be used to group vendors for mailings, label 
+			printing, etc.</td>
+            </tr>
+            <tr>
+                <td>Web Address</td>
+                <td>Specify the vendor's web site address if known.</td>
+            </tr>
+        </table>
+        <p>When exiting the Address &amp; Basic Information View, Dynamo will verify US 
+	and Canadian addresses.&#160; Refer to Dynamo Address Correction for 
+	additional information.</p>
+        <h5><a name="Contacts_View"></a>Contacts View</h5>
+        <p>
+            <img src="xxvm01-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>The initial Contacts View shows limited information about each contact. Use the cursor movement keys, i.e., ArrowUp, ArrowDn, PageUp, PageDn, Home, 
+	and End to move the * to the desired contact, then touch Enter to display or 
+	maintain complete contact information.&#160;You can add a contact in any 
+	position by using the cursor movement keys, then touching the Insert key.&#160;You can also add a contact to the end of the list by touching Enter on the 
+	blank row at the end of the list.&#160;You delete a contact using the 
+	Delete key. Note the list of valid keys are shown at the bottom of the 
+	display.</p>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Contact Name used for labels, email to name, fax to name, etc.</td>
+            </tr>
+            <tr>
+                <td>Department/Title</td>
+                <td>Specify the Department or contact's Title if known</td>
+            </tr>
+            <tr>
+                <td>Telephone#s</td>
+                <td>The first telephone# should be the contact's business telephone# 
+			as it include an optional extension#.&#160;
+
+  <p>The other phone numbers can be used for fax numbers, cell phones, home 
+	phone numbers, etc.</p></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td>Enter the contact's Email Address which is used when emailing a 
+			purchase order.&#160; Dynamo confirms that the domain name, i.e., 
+			the part of the email address after the @ accepts inbound email.&#160; 
+			Verify proper spelling if you get a message indicating that the 
+			domain name entered does not accept inbound email.</td>
+            </tr>
+            <tr>
+                <td>Dear Name</td>
+                <td>Can be used to indicate how the contact is addressed, such as 
+			Brad, Mr. Cline, Dr. Cline, etc.</td>
+            </tr>
+            <tr>
+                <td>Selection Code</td>
+                <td>Can be blank or any single letter or number.&#160;Used for 
+			mailing lists and labels to select vendor contacts with a common 
+			selection code.</td>
+            </tr>
+        </table>
+        <h5><a name="Purchase_Order_Options_View_"></a>Purchase Order Options View</h5>
+        <p>
+            <img src="xxvm01-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This view includes vendor fields related to purchase order processing.</p>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <td>Buyer</td>
+                <td>If more than one person purchases products, then you can specify 
+			the primary buyer for the vendor in this field.&#160;Buyers are maintained 
+			using <a href="xxvm08.htm">Buyer Maintenance</a> on the VML menu.</td>
+            </tr>
+            <tr>
+                <td>Preferred Carrier, Service, and Billing Method</td>
+                <td>If you or the 
+	vendor have a preferred carrier, then the carrier code can be specified 
+	here.&#160;Carriers are defines using Carrier &amp; Service Maintenance on the CWP menu. The Carrier refers to the company providing the shipping or 
+	delivery, such as UPS, FedEx, or a common carrier. The Service field 
+	only applies when the vendor has more than one service.&#160;The Billing 
+	Method can be used to indicate your preference to have the shipping charges 
+	charged directly to your account with the carrier as opposed to having the 
+	vendor bill you for shipping.</td>
+            </tr>
+            <tr>
+                <td>Terms Code</td>
+                <td>The Terms Code is used as the default during Purchase 
+	Order Entry.&#160;Terms codes are created and maintained on either the APU 
+			or CWP menu.</td>
+            </tr>
+            <tr>
+                <td>F.O.B. Point</td>
+                <td>Used during Purchase Order Entry as the default for 
+	this vendor.</td>
+            </tr>
+            <tr>
+                <td>Minimums</td>
+                <td>For your information only, you can store the vendor 
+	minimum order values, weight, or volume (cubic feet) to place an order, or 
+	to obtain free freight.</td>
+            </tr>
+            <tr>
+                <td>Freight/Duty%</td>
+                <td>Enter a percentage which is the estimated cost for inbound 
+			freight or duty.&#160;Dynamo will estimate the freight/duty amount 
+			for each purchase receipt, and add to the cost of the items 
+			received.&#160;This cost is sometimes referred to as the landed 
+			cost.&#160; </td>
+            </tr>
+            <tr>
+                <td>Vendor Rebate%</td>
+                <td>If the vendor offers a 'trailing' rebate, where the cost shown 
+			on the purchase order is higher than the final cost based on some 
+			quota achievement, then specify the percentage here.&#160;Dynamo 
+			will reduce the inventory cost of received goods from this vendor 
+			and post an estimated rebate to the Vendor Rebates Receivable G/L 
+			Account as specified in G/L Interface Maintenance (GLU) in the 
+			Inventory Related Accounts View.</td>
+            </tr>
+        </table>
+        <h5><a name="APView"></a>Accounts Payable Options View</h5>
+        <p>
+            <img src="xxvm01-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <td>G/L Location</td>
+                <td>This field only applies when Dynamo has been 
+	configured to have multiple locations, with a segment of the G/L Account# 
+	used to store the location number.&#160;It will be used during Accounts 
+	Payable to default to that location.&#160;You do not need to set up a 
+	vendor multiple times for each location that purchases products, although 
+	you can do that when it is desired to track purchases by vendor by location.</td>
+            </tr>
+            <tr>
+                <td>G/L Account# - Vendor Default</td>
+                <td>This is the default G/L Account# 
+	used for during Vendor Invoice Data Entry for invoices from this vendor.&#160;
+	Most vendors that you purchase products that are placed in inventory will be 
+	posted to the Unvouchered Receipts account, but other vendors for utilities, 
+	etc. should have their preferred G/L account to reduce coding errors during 
+	Invoice Data Entry.&#160;You can leave the field blank to force the 
+	operator to manually enter the G/L account distribution during Vendor 
+	Invoice Data Entry.</td>
+            </tr>
+            <tr>
+                <td>Terms Code</td>
+                <td>This is the same Terms Code as displayed on the Purchase 
+	Order Options View, but is repeated here for convenience.&#160;It is used 
+	as the default terms for vendors that are not issued purchase orders.</td>
+            </tr>
+            <tr>
+                <td>Taxpayer ID</td>
+                <td>This field is used to store the Vendor's Taxpayer ID 
+	which will be printed on 1099's when applicable.</td>
+            </tr>
+            <tr>
+                <td>1099 Type</td>
+                <td>Used to indicate that the vendor should receive an 
+	annual 1099 form. Values are D for Dividend, I for Interest, and M for 
+	Miscellaneous, blank if this vendor should not be sent a 1099 form. The 1099 box number corresponding to the box number on the pre-printed 
+	government form is also required.&#160;The boxes for a 2006 1099 Misc form 
+	are shown below.</td>
+            </tr>
+            <tr>
+                <td>Payment Cycle Code</td>
+                <td>If you make payments to vendors on a 
+	particular payment cycle, such as every Friday, as opposed to selecting 
+	payments based on the due dates, they you may assign a cycle code of your 
+	choice. During A/P Payment Selection, you have the option to enter a 
+	Payment Cycle Code which will limit the invoices selected for payment to 
+	those vendors with a matching Payment Cycle Code.</td>
+            </tr>
+            <tr>
+                <td>Place new invoices on Hold</td>
+                <td>When set to Y then all new invoices to 
+	this vendor will be placed on Hold.&#160;The invoice must be taken off a 
+	Hold status, or selected for payment manually, to be paid.</td>
+            </tr>
+            <tr>
+                <td>Default Payment Method</td>
+                <td>
+                    <p>Used during A/P Invoice Data Entry to 
+	indicate how this invoice will be paid.</p>
+                    <table>
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Normal (check is printed)</td>
+                        </tr>
+                        <tr>
+                            <td align="center">S</td>
+                            <td>Separate Check is required for each invoice</td>
+                        </tr>
+                        <tr>
+                            <td align="center">T</td>
+                            <td>Transfer of Funds, initiated by you, typically using an online 
+			bill payment service</td>
+                        </tr>
+                        <tr>
+                            <td align="center">W</td>
+                            <td>Automated Withdrawal, initiated by vendor, sometimes referred to 
+			as a pre-authorized debit, where the vendor obtains funds by sending 
+			a payment request to your financial institution</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Master Vendor#</td>
+                <td>This option field is used to group vendors 
+	together for the Vendor Purchases Report (APR).&#160;It is sometimes used 
+	when a vendor has multiple plants or distribution centers, and purchase 
+	orders are issued to each facility. This would require multiple Dynamo 
+	Vendor numbers so that the address on the purchase order can vary by 
+	facility. The Vendor Purchases Report has the option to combine the 
+	purchase to these vendors into a single row on the report. All Dynamo 
+	Vendor numbers that refer to the same company would be assigned the same 
+	Master Vendor#, which if used, must be a vendor that has been previously 
+	defined on the Dynamo Vendor file.</td>
+            </tr>
+            <tr>
+                <td>A/P Vendor#</td>
+                <td>The A/P Vendor# is only used when the check is to be 
+	issued to a different company than the purchase order.&#160;This is often 
+	the case when payment is made by credit card.&#160;The shipping vendor 
+	receives the PO, but the credit card company is sent the payment.&#160;It 
+	also applies when the vendor is part of a buying group and you issue a 
+	single check to the buying group vendor for purchases of all vendors in the 
+	group.&#160;The credit card vendor# or buying group vendor# would be 
+	entered in this field when applicable.</td>
+            </tr>
+            <tr>
+                <td>Check Address</td>
+                <td>Should only be used when the address where the 
+	check is to be mailed is different from the address entered on the Address 
+	and Basic Information View.</td>
+            </tr>
+        </table>
+        <h5><a name="Manual_Payment_Import_View"></a>Manual Payment Import View</h5>
+        <p>
+            <img src="xxvm01-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>When a vendor such as a payroll service provides a file which can be 
+	imported into Dynamo Manual Payment Entry, the fields on this view are used 
+	to indicate which columns in the import file are used for each field. The 
+	G/L Account# and Amount columns are required.&#160;The Payment Date and 
+	Payment# columns are optional and only needed when the import file contains 
+	multiple payments.&#160;Some payroll services process a payment for net 
+	checks separately from payroll taxes. By treating these two payments 
+	separately, each payment amount will match up properly during Bank 
+	Reconciliation.</p>
+        <p>&#160;</p>
+        <p>Note that in some cases, the import file received from the vendor is not in a suitable format for automated importing.  Dynamo supports a pre-processor routine which can be used to convert the file received from the vendor into a compatible format. For example, the pre-processor routine could split the transaction into multiple payments, as might be required when a payroll service impounds multiple amounts from your bank account(e.g. for net checks, taxes, retirement, wage garnishments, etc.</p>
+        <p>&#160;</p>
+        <p><a href="http://www.excellware.com/index.php/about/contact-us/">Contact Excellware</a> support to discuss your particular data import needs.</p>
+        <p>&#160;</p>
+        <h5><a name="Vendor_Part_Maintenance_View_"></a>Vendor Part# Maintenance View</h5>
+        <p>
+            <img src="xxvm01-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>This view is used to maintain the same information in Item Maintenance.&#160; 
+	It is used when the Dynamo Item# can be purchased from multiple vendors, and 
+	you want the vendor part# to appear on the purchase order.&#160; This option 
+	is not required when the Dynamo Item# is the same as the Vendor's Item#.</p>
+        <p>&#160;</p>
+        <table>
+            <tr>
+                <td>Item#</td>
+                <td>Dynamo Item#</td>
+            </tr>
+            <tr>
+                <td>Vendor Part#</td>
+                <td>This Vendor's identification# for the item.&#160;Will appear on 
+			purchase orders to this vendor.</td>
+            </tr>
+            <tr>
+                <td>Cost Date</td>
+                <td>For reference only, and can be used to indicate when the Cost 
+			was last verified.</td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td>For reference only, not used during Purchase Order Processing. 
+			Typically used for secondary sources of the item when the cost 
+			differs from your primary vendor.</td>
+            </tr>
+            <tr>
+                <td>Costing Unit</td>
+                <td>For reference only, indicates the quantity associated with the 
+			Cost.</td>
+            </tr>
+            <tr>
+                <td>Note</td>
+                <td>A brief note for your use that could indicate the minimum 
+			quantity that the cost applies to or other information related to 
+			this vendor.</td>
+            </tr>
+        </table>
+        <h5><a name="Vendor_Notepad"></a>Vendor Notepad</h5>
+        <p>
+            <img src="xxvm01-7.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Free form field where other vendor information can 
+	be entered.&#160; You are not limited to the size of the notepad window.&#160;The text you enter will scroll up as required.</p>
+        <p>&#160;</p>
+    </body>
+</html>

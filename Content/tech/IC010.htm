@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>IC010 - Return Price/Cost Unit Quantity</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">IC010</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Return Price/Cost Unit Quantity</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=IC010">Last Revised: 03/16/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is called to determine the quantity associated with any costing or pricing unit.&#160; The costing/pricing unit is a single character field such as blank for each, C for per hundred, M for per thousand.&#160; This routine can also be called to obtain a list of the valid costing units.</p>
+        <p>Additional description.</p>
+        <p><code>CALL "IC010", CU$, CUQTY</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">IC010 Arguments</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code>CU$</code>
+                </td>
+                <td align="center">To/From</td>
+                <td>If passed as a single character costing or pricing unit, then <code>CUQTY</code> will be returned as the numeric value of the unit.&#160; If passed as a null string, then CU$ will be returned as a pipe separated list of valid costing units and related descriptions.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CUQTY</code>
+                </td>
+                <td align="center">From</td>
+                <td>Quantity associated with <code>CU$</code>.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th align="center">Costing Unit</th>
+                <th align="right">Value</th>
+            </tr>
+            <tr>
+                <td align="center">blank</td>
+                <td align="right">1</td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td align="right">1</td>
+            </tr>
+            <tr>
+                <td align="center">P</td>
+                <td align="right">2</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td align="right">2</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td align="right">3</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td align="right">4</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td align="right">5</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td align="right">6</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td align="right">7</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td align="right">8</td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td align="right">9</td>
+            </tr>
+            <tr>
+                <td align="center">T</td>
+                <td align="right">10</td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td align="right">12</td>
+            </tr>
+            <tr>
+                <td align="center">L</td>
+                <td align="right">50</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td align="right">100</td>
+            </tr>
+            <tr>
+                <td align="center">G</td>
+                <td align="right">144</td>
+            </tr>
+            <tr>
+                <td align="center">M</td>
+                <td align="right">1000</td>
+            </tr>
+        </table>
+        <table class="example">
+            <tr>
+                <td>Example: Called with a specific Pricing/Costing Unit</td>
+            </tr>
+            <tr>
+                <td><code>&gt;CALL "IC010","M",CUQTY<br />
+      &gt;?CUQTY<br />
+      1000</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Example: Call to determine list of valid costing units</td>
+            </tr>
+            <tr>
+                <td><code>0900 BEGIN<br />
+      0910 PRINT 'CS',<br />
+      0920 CALL "IC010",PUL$<br />
+      0930 CALL "CDS069",0,1,0,0,"+pricing unit","R{|,2,|,,R}"+PUL$,0,PU$</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img border="0" src="IC010.1.jpg" alt="" width="648" height="374" />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

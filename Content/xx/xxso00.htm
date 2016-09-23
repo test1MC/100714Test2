@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="824" MadCap:lastWidth="762">
+    <head><title>SOP Parameter Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">sales order processing Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">SOP Parameter Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 08/18/15</td>
+            </tr>
+        </table>
+        <p>This program allows the operator to edit default settings for sales order processing. </p>
+        <p>
+            <img src="xxso00-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">SOP&#160;Parameter Maintenance Primary View</th>
+                </tr>
+                <tr>
+                    <td>Book&#160;Year</td>
+                    <td>Indicate the current year in which orders will be recorded in the General Ledger. </td>
+                </tr>
+                <tr>
+                    <td>Book Month</td>
+                    <td>Indicate the current month in which orders will be recorded in the General Ledger. </td>
+                </tr>
+                <tr>
+                    <td>Default Terms of Sale</td>
+                    <td>These are default the terms used for customer credit (eg Net 30 Days indicates payment is due 30 days after invoicing)</td>
+                </tr>
+                <tr>
+                    <td>Sec Lev to change terms to charge</td>
+                    <td>Indicate the user security level necessary to change the terms. Security levels are defined in <a href="../cd/cds260.htm">Menu Control&#160;Maintenance</a>. </td>
+                </tr>
+                <tr>
+                    <td>Additional Past Due&#160;Days</td>
+                    <td>Indicate how many days past due customers are allowed before finance charges are applied. </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Perform Credit Hold Check</td>
+                    <td>Enables notification if the customer tries to place an order and is past due. Here you can set whether or not you want to perform this check when creating a sales order, as well as the terms that will trigger this code (eg more than 30 Days past due)</td>
+                </tr>
+                <tr>
+                    <td>Allow Not-on-File Items</td>
+                    <td>Choose this if you wish to allow items to be sold on sales orders that have not been created in Dynamo Item Maintenance. You may wish to use this for items that will be sold only once or something that is a one-time service.</td>
+                </tr>
+                <tr>
+                    <td>Price on&#160;Orders/Quotes/Invoices</td>
+                    <td>Choosing (D)&#160;Show Undiscounted Price &amp;&#160;Discount%. This may make a customer assured they received their proper discount(s). Choose (N)&#160;to Show Net Price. This second option may be useful if a pricing scheme is complicated. It shows only the final amount due.</td>
+                </tr>
+                <tr>
+                    <td>Batch Order Printing&#160;Sequence</td>
+                    <td>
+                        <p>Choose from the following for printing batch orders. They will print in the order of:</p>
+                        <ul>
+                            <li>0 Order#</li>
+                            <li>1 Alphabetically by Customer</li>
+                            <li>2 Customer# </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Batch Invoice Printing Sequence</td>
+                    <td>
+                        <p>Choose from the following for printing batch invoices. They will print in the order of:</p>
+                        <ul>
+                            <li>0 Order#</li>
+                            <li>1 Alphabetically by Customer</li>
+                            <li>Customer#</li>
+                            <li>Customer Zip Code</li>
+                            <li>Invoice# </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Invoice&#160;Name &amp;&#160;Address</td>
+                    <td>
+                        <p>Choose one of these to be included on the invoice:</p>
+                        <ul>
+                            <li>C&#160;Company Name &amp;&#160;Address</li>
+                            <li>c Company Address</li>
+                            <li>B Branch Name &amp; Address</li>
+                            <li>b Branch Address</li>
+                            <li>N None (included in overlay) </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Show Taken By on Invoice</td>
+                    <td>Enable this option if invoices should show who took the order.</td>
+                </tr>
+                <tr>
+                    <td>Show Salesman on Invoice</td>
+                    <td>Enable this option if invoices should display the salesperson.</td>
+                </tr>
+                <tr>
+                    <td>Commission</td>
+                    <td>
+                        <p>Choose one of these for commissions:</p>
+                        <ul>
+                            <li>N No Commission Calculations</li>
+                            <li>S&#160;Commission paid upon sale</li>
+                            <li>P Commission paid when payment is received </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rental Fuel Rate Gas</td>
+                    <td>Enter the rate paid for gas.</td>
+                </tr>
+                <tr>
+                    <td>Rental Fuel Rate Diesel</td>
+                    <td>Enter the rate paid for diesel.</td>
+                </tr>
+                <tr>
+                    <td>Allow returns dated before</td>
+                    <td>Type the latest date returns will be accepted.</td>
+                </tr>
+                <tr>
+                    <td>Prompt for Selling Price</td>
+                    <td>Enable this option if the operator should be prompted to enter a selling price. This can be useful, for example, if items are regularly sold for a price that is not "on the sticker."</td>
+                </tr>
+                <tr>
+                    <td>Prompt for Discount%</td>
+                    <td>Enable this option if the operator should be prompted to enter a discount percent. This may be useful, for example, if you have a rewards program for frequent customers.</td>
+                </tr>
+                <tr>
+                    <td>From&#160;Email Address</td>
+                    <td>Type in an e-mail address from which sales orders will be sent from. As an example, it can be sent from <i>sale@yourcompany.com</i></td>
+                </tr>
+                <tr>
+                    <td>Ohio&#160;Sales Tax Vendor#</td>
+                    <td>Indicate the Ohio&#160;Sales Tax Vendor# for sales orders. This is used during Sales Tax Processing (SOR) to determine the Ohio Taxpayer ID#.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxso00-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Document Numbering View</th>
+                </tr>
+                <tr>
+                    <td>Order#&#160;Sequence</td>
+                    <td>Choose (C)&#160;Single Company-Wide Sequence or (B)&#160;Separate Sequence by Branch for the order number sequence. </td>
+                </tr>
+                <tr>
+                    <td>Allow manually assigned order#s</td>
+                    <td>Enable this option if order numbers can be assigned by the operator. </td>
+                </tr>
+                <tr>
+                    <td>Next Sales&#160;Order#</td>
+                    <td>This is used to set the starting computer assigned SO#.&#160;It is 
+incremented automatically as each SO# is assigned.</td>
+                </tr>
+                <tr>
+                    <td>Invoice#</td>
+                    <td>Indicate whether the Invoice# is (S)&#160;Sequentially Assigned or (O) Same as Order#. If Sequentially Assigned is selected, the invoice number may not always be the same as the order number. </td>
+                </tr>
+                <tr>
+                    <td>Next Invoice#</td>
+                    <td>This is used to set the starting computer assigned invoice#.&#160;It is 
+incremented automatically as each invoice# is assigned.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxso00-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Optional Remit to Address View</th>
+                </tr>
+                <tr>
+                    <td>Remit to Name</td>
+                    <td>Input the name of the person who will receive payment for invoices. </td>
+                </tr>
+                <tr>
+                    <td>Remit to&#160;Address</td>
+                    <td> Input the street address of a location where customers should send their payments for their invoices. </td>
+                </tr>
+                <tr>
+                    <td>Remit to City, State/Country, Zip Code </td>
+                    <td> Input the zip code of the location where customers should send their payments for invoices. The city and state/country fields will automatically populate. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

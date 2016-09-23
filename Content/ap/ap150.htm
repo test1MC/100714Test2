@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="7967" MadCap:lastWidth="882">
+    <head><title>Manual Payment Entry</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts payable payment Processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Manual Payment Entry</p>
+                </td>
+                <td align="right">Last Revised: 04/23/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Manual Payment Entry is used to enter the following 
+		transactions:</p>
+        <ul class="SectionDesc">
+            <li>
+                <p class="SectionDesc">Print one check quickly</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Record a payment that does not require a printed 
+					check, such as a hand-written check or a payment made online or 
+				automatically deducted from your checking account</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Reverse a previously updated payment</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Void a check not used</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Transfer funds from one of your bank accounts to 
+				another, either by check or online transfer</p>
+            </li>
+            <li>
+                <p class="SectionDesc">Import an automated payment such as one made by a 
+				payroll service using an import file</p>
+            </li>
+        </ul>
+        <p>Manual Payment Entries are grouped into batches.&#160;Multiple batches 
+			may be opened at the same time if necessary.&#160;All transactions within a 
+			batch must have a payment date within the same G/L accounting period.&#160;
+		All combinations of entry types are permitted within the same batch.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="ap150-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <ol>
+            <li><a href="#Print check">Print check</a>
+            </li>
+            <li><a href="#Record payment">Record payment</a>
+            </li>
+            <li><a href="#Reprint lost or damaged check">Re-print lost or damaged 
+				check</a>
+            </li>
+            <li><a href="#Reverse payment">Reverse payment</a>
+            </li>
+            <li><a href="#Void_check_not_used">Void check not used</a>
+            </li>
+            <li><a href="#Transfer_funds">Transfer funds</a>
+            </li>
+            <li><a href="#Import_automated_payment">Import automated payment</a>
+            </li>
+            <li><a href="#Modify">Modify/Delete transaction in this batch</a>
+            </li>
+        </ol>
+        <h5><a name="Print check"></a>Print check</h5>
+        <p>This option is used when it is necessary to print a single check quickly. You can print a check for existing invoices previously entered using Invoice 
+		Data Entry or for new invoices not yet entered.</p>
+        <table>
+            <tr>
+                <td>Vendor</td>
+                <td>
+                    <p>Select the vendor to be paid by entering the Vendor#, a few 
+						characters of their alpha sort name, a contact name, contact email 
+					address, phone#, or zip code.</p>
+                    <p>Checks can also be printed for 
+						Miscellaneous vendors.&#160; A Miscellaneous vendor is one the you 
+						do not want to set up as a permanent vendor using Vendor 
+						Maintenance.&#160; A vendor must be previously defined in Vendor 
+					Maintenance using a single character Vendor# such as "M".</p>
+                    <p>When a check is printed for a Miscellaneous Vendor, you will be 
+						prompted to enter the vendor name and address.&#160; You can also 
+						select the name and address from prior miscellaneous invoices for 
+					this vendor.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Payment Method</td>
+                <td>Remains blank for this option, indicates that a check will be 
+				printed</td>
+            </tr>
+            <tr>
+                <td>Check Date</td>
+                <td>Just touch enter to accept today's date or enter the date to 
+					print on the check.&#160; Note that all checks in the batch must be 
+				within the same G/L accounting period.</td>
+            </tr>
+            <tr>
+                <td>Bank Code</td>
+                <td>Select from list of active bank codes established using Bank 
+				Code Maintenance (APU).</td>
+            </tr>
+            <tr>
+                <td>Check#</td>
+                <td>Just touch enter to accept the next unused check number, or 
+				enter the actual check# pre-printed on the check to be used.</td>
+            </tr>
+        </table>
+        <h5>
+            <img src="ap150-2.png" style="width: 725px;height: 424px;" />
+        </h5>
+        <p>
+            <img src="ap150-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <ol>
+            <li>Select existing invoice for payment: Use this option to select an 
+			existing open invoice to be paid.</li>
+            <li>Create new invoice: Use this option to create a new invoice.</li>
+            <li>Select existing invoice from vendor using this A/P Vendor#: Use 
+				this option when another vendor has this vendor as its A/P Vendor#.&#160; 
+				Refer to Vendor Maintenance for additional details about the A/P Vendor# 
+			field and how it is used.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="ap150-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Example of a payment to a Miscellaneous vendor.</p>
+        <h5>&#160;</h5>
+        <p>You will be prompted to select a printer.&#160; You can place a check 
+			face up in the fold-down tray of a laser printer.&#160; If printed to an 
+			ink-jet printer, the box borders and box shading will not be printed.&#160; 
+			Dot matrix printers are not supported.&#160; Contact Excellware for a quote 
+			for a fully functional, low cost, Hewlett Packard or Brother laser printer 
+		priced around $250.</p>
+        <h5><a name="Record payment"></a>Record payment</h5>
+        <p>This option is used to make a payment when a printed check is not required.&#160; 
+			This would include recording a handwritten check, recording a payment made 
+			online, or recording a payment that was automatically withdrawn from your 
+		bank account.</p>
+        <table>
+            <tr>
+                <td>Vendor</td>
+                <td>Select vendor as described above in 'Print check' section.</td>
+            </tr>
+            <tr>
+                <td>Payment Method</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>a handwritten check was used for payment</td>
+                        </tr>
+                        <tr>
+                            <td align="center">T</td>
+                            <td>you initiated the funds transfer online</td>
+                        </tr>
+                        <tr>
+                            <td align="center">W</td>
+                            <td>the vendor initiated an automated withdrawal to your 
+							bank account</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Check or Payment Date</td>
+                <td>Just touch enter to accept today's date, or enter the actual 
+					payment date.&#160; Note that all payments in the batch must be 
+				within the same G/L accounting period.</td>
+            </tr>
+            <tr>
+                <td>Bank Code</td>
+                <td>Enter Bank Code or select from list of active Bank Codes established using Bank 
+				Code Maintenance (APU).</td>
+            </tr>
+            <tr>
+                <td>Check#</td>
+                <td>Just touch enter to accept the next unused check number, or 
+				enter the actual check# pre-printed on the check to be used.</td>
+            </tr>
+        </table>
+        <p>The process to select an existing invoice, create a new invoice, 
+			or select an invoice from a vendor with an A/P Vendor# is the same as 
+		described above when printing a check.</p>
+        <p>
+            <img src="ap150-7.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="Reprint lost or damaged check"></a>Re-print lost or damaged check</h5>
+        <p>This option is currently under construction.&#160; You can re-print a lost 
+		or damaged check using Check Printing on the APP menu.</p>
+        <h5><a name="Reverse payment"></a>Reverse payment</h5>
+        <p>
+            <img src="ap150-8.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>If the operator no longer wants to make a certain payment, it should be deleted before updating.</p>
+        <p>This option is used to reverse a payment previously updated using 
+			Check Update or a Manual Payment Update that has not yet cleared the 
+		bank using Bank Reconciliation.</p>
+        <p>You might need to reverse a payment if:</p>
+        <ul>
+            <li>an invoice paid was for a different vendor</li>
+            <li>you have stopped payment on the check</li>
+            <li>you have decided not to pay one or more of the invoices at this 
+			time</li>
+            <li>an amount was entered incorrectly, etc.</li>
+        </ul>
+        <p>Once a payment is reversed, any invoices paid will be re-opened and 
+			can be paid again later.&#160; Use A/P Invoice Data Entry or A/P Invoice 
+			Maintenance if you need to adjust or reverse completely any invoices on 
+		the payment.</p>
+        <p>Note that <a href="ap100.htm">Vendor Inquiry</a> (A/P Checks option) 
+			will show the original payment as well as the reversed payment, coded with 
+		an "R" in the Pmt column for Reversal.</p>
+        <p><b>Why doesn't the payment I want to reverse appear in the list of reversible payments?</b> <![CDATA[ ]]></p>
+        <p>When the payment has already cleared the bank, it cannot be reversed in the same way as it is done before Bank Reconciliation. </p>
+        <p>To rectify this situation, the operator must complete the following in a single manual payment batch:</p>
+        <ol>
+            <li>Enter a new invoice to the incorrect vendor with a negative amount and process it as a payment (it cannot be processed as a check since checks cannot be negative).</li>
+            <li>Run Manual&#160;Payment Update.</li>
+            <li>Enter a new invoice to the correct vendor with a positive amount and process it as a payment. </li>
+            <li>Run&#160;Manual Payment Update. </li>
+            <li>In Bank Reconciliation, mark the two new payments as cleared. They will offset one another. </li>
+        </ol>
+        <h5><a name="Void_check_not_used"></a>Void check not used</h5>
+        <p>
+            <img src="ap150-9.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Note that this is different from a payment reversal.</p>
+        <p>This option is used whenever there is a check number that will not be 
+			used -- for example, if you print a batch of checks, and <i>before 
+			updating</i> discover one check is incorrect, and then delete the 
+			payment using either A/P Check Maintenance or Manual Payment Entry.&#160; 
+			The check# originally printed should be destroyed.&#160; In this case 
+			you should use this option to record the fact that this check# will 
+			never be used.&#160; Voiding a check is not required, but many 
+		accountants want to account for every sequential check#.</p>
+        <p>This option could also be used if a check was damaged or otherwise 
+		not used.</p>
+        <h5><a name="Transfer_funds"></a>Transfer funds</h5>
+        <p>This option is used to transfer funds from one of your bank accounts 
+		to another.</p>
+        <p>You have the option to print a check, or to record a funds transfer 
+		made online.</p>
+        <p>
+            <img src="ap150-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <td>Vendor</td>
+                <td>Select a vendor with your company name or the name of the 
+					financial institution.&#160; Create a vendor with your name in 
+				Vendor Maintenance if necessary.</td>
+            </tr>
+            <tr>
+                <td>Payment Method</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">blank</td>
+                            <td>Use this option to print a check that you can deposit or 
+							mail to the financial institution.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">T</td>
+                            <td>Transfer of Funds - Use this payment method when you 
+							initiated the transfer online at the financial institution</td>
+                        </tr>
+                        <tr>
+                            <td align="center">W</td>
+                            <td>Automated Withdrawal - Use this option when you have 
+								scheduled an automated transfer that is initiated by the 
+							financial institution </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Transfer Date</td>
+                <td>Just touch enter to accept today's date or enter the date to 
+					print on the check.&#160; Note that all payments and transfers in 
+				the batch must be within the same G/L accounting period.</td>
+            </tr>
+            <tr>
+                <td>From Bank Code</td>
+                <td>Enter or select from list of active bank codes where the funds 
+				will be withdrawn.</td>
+            </tr>
+            <tr>
+                <td>Check#</td>
+                <td>If the Payment Method is blank, then just touch enter to accept 
+					the next unused check number, or enter the actual check# pre-printed 
+				on the check to be used.</td>
+            </tr>
+            <tr>
+                <td>To Bank Code</td>
+                <td>Enter or select form list of active bank codes where the funds 
+				will be deposited.</td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>Enter the amount to transfer.</td>
+            </tr>
+        </table>
+        <h5><a name="Import_automated_payment"></a>Import automated payment</h5>
+        <p>This option is used to record a payment where you have payment data 
+			in a file, such as what might be provided by a payroll service.&#160; Since a 
+			payroll posting often includes many G/L account numbers and amounts, 
+			importing a payment from a file can save time and reduce data entry 
+		errors.</p>
+        <p>The import file must be a comma or tab delimited file and stored on 
+			the Dynamo server.&#160; You can access the default folder from a 
+			Windows PC by clicking Start, Run and entering \\server\XX-shared where 
+			XX is your two letter company code.&#160; Contact Excellware support if 
+		you cannot view this folder from Windows.&#160; </p>
+        <p>If using Microsoft Excel, open the spreadsheet file and click File, then 
+			Save As.&#160; Change the 'Save as type' to 'Text (Tab Delimited) (*.txt)'.&#160; 
+			This will save the spreadsheet file on the server in a format that can be 
+		used by Dynamo.</p>
+        <p>Prior to importing a payment for a vendor, use Vendor Maintenance to 
+			specify the import column letters that will contain the G/L Account# and 
+			Amount.&#160; You may also specify the Payment Date column, and optionally a 
+			Payment# column, useful when the file contains multiple payments, such as a 
+			payroll file that has one payment for net checks on one date, and taxes on 
+		another.&#160; See Vendor Maintenance, Manual Payment Import view for additional details.</p>
+        <table>
+            <tr>
+                <th colspan="2">Import File Contents</th>
+            </tr>
+            <tr>
+                <td>G/L Account#</td>
+                <td>The Dynamo G/L Account# with or without hyphens.</td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>Positive amount indicates debit to the general ledger, 
+					negative indicates a credit.&#160; The sum of all the amounts 
+				for each payment need to add up to zero.</td>
+            </tr>
+            <tr>
+                <td>Payment#</td>
+                <td>Up to 3 characters or digits.&#160; Only required when the 
+					import file contains multiple payments.&#160; For example, if 
+					the payroll service makes two separate withdrawals from your 
+					bank account, then each withdrawal should have a unique 
+					payment#.&#160; These could be N for Net Pay, T for Taxes, or 1 
+				and 2, or any other identifier to identify the payment.</td>
+            </tr>
+            <tr>
+                <td>Payment Date</td>
+                <td>Optional.&#160; If provided it can be in MM/DD/YY or 
+					MMDDYYYY or YYMMDD or YYYYMMDD format.&#160; If not provided, 
+				the operator will be prompted for the payment date.</td>
+            </tr>
+        </table>
+        <p>Note that Dynamo determines the bank account based on the G/L Account 
+			linked to the Bank Account in Bank Account Maintenance (APU).&#160; The 
+			operator will be prompted should multiple active bank accounts be linked 
+		to the same G/L Account#.</p>
+        <p>You have the option to delete the imported data file after a 
+		successful import.</p>
+        <p>The following error message can occur during the import process.&#160; 
+			Open the import file using Microsoft Excel or Open Office to correct the 
+			date in the import file if required.&#160; Contact the creator of the 
+		file should permanent corrections be required.</p>
+        <p>
+            <img src="ap150-9.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Import Error Messages</th>
+            </tr>
+            <tr>
+                <td>Row xxx contains yyy columns but requires zzz columns</td>
+                <td>Row xxx does not include sufficient number of columns to 
+				obtain the data.</td>
+            </tr>
+            <tr>
+                <td>Row xxx contains invalid G/L Account# of yyyy.</td>
+                <td>The G/L Account number is all blank, all zeroes, contains a 
+				blank, or is longer than 9 digits, excluding any dashes.</td>
+            </tr>
+            <tr>
+                <td>Row xxx has an invalid payment# of yyyy.</td>
+                <td>If used, the payment# must be 3 or fewer characters.</td>
+            </tr>
+            <tr>
+                <td>Row xxx has an invalid payment date of yyyy.</td>
+                <td>If used, the payment date must be one of the formats shown 
+				above.</td>
+            </tr>
+            <tr>
+                <td>Row xxx has an invalid amount of xxxxx.</td>
+                <td>Negative amounts must have a leading - sign.</td>
+            </tr>
+            <tr>
+                <td>Row xxx has a G/L Account# of yyyy that is not on G/L 
+				Accounts File</td>
+                <td>Either the G/L Account# in the import file is incorrect, or 
+				needs to be added using G/L Account Maintenance (G/L).</td>
+            </tr>
+            <tr>
+                <td>Row xxx has a G/L Account# of yyyy that is not on G/L 
+				Locations File</td>
+                <td>For companies with multiple locations, the segment of the 
+					G/L Account# that contains the Location, this error message 
+					indicates the Location is either incorrect or needs to be added 
+				using G/L Location Maintenance (GLU)</td>
+            </tr>
+            <tr>
+                <td>The sum of the amounts of one or more payments do not add up 
+				to zero.</td>
+                <td>The sum of the amounts of each payment must add up to zero.</td>
+            </tr>
+            <tr>
+                <td>No G/L Account was found that is linked to an active bank 
+				account.</td>
+                <td>The import process posts a payment to a bank account as 
+					determined by the G/L Account#.&#160; Verify that the G/L 
+					Account# linked to the bank account using Bank Account 
+				Maintenance (APU) is correct and contained within import file.</td>
+            </tr>
+            <tr>
+                <td>Payment contains multiple G/L Accounts that are linked to a 
+				Bank Code.</td>
+                <td>There can only be one G/L Account per payment that is linked 
+				to a Bank Code.</td>
+            </tr>
+        </table>
+        <p>Imported payments may be viewed, modified, or deleted using the 
+			option to Modify/Delete transaction in this batch, then selecting a 
+			transaction type with 'Record' in the Trans column for the desired 
+		vendor shown.</p>
+        <h5><a name="Modify"></a>Modify/Delete transaction in this batch</h5>
+        <p>Once any of the above transactions are made, use this option to 
+		modify or delete a transaction prior to updating.</p>
+        <p>
+            <img src="ap150-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>After all Manual Payment entries have been made, print the Manual 
+			Payment Register and review for accuracy.&#160; Return to Manual Payment 
+			Entry to make any corrections required.&#160; File the Manual Payment 
+			Register in the Dynamo Reports binder and update the transactions using 
+		Manual Payment Update.</p>
+        <p>&#160;</p>
+    </body>
+</html>

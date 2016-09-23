@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="9119" MadCap:lastWidth="1249">
+    <head><title>A/P Recurring Invoice Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts Payable</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">A/P Recurring Invoice Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/03/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This function is used to set up or maintain those invoices which must be paid regularly, but for which you receive no written reminders or bills. &#160; This eliminates the need to enter these payables repeatedly (in Invoice Data Entry) each time they are due (monthly, semi-monthly, weekly, bi-weekly).</p>
+        <p>Examples of these types of payables include rent, utilities, royalty payments, or dividends to stockholders. Once these invoices are set up, they can be placed in a batch for processing through the menu option called <a href="ap120.htm">Recurring Invoice Generation</a>.</p>
+        <p>You will be given the option to select from a list of all existing recurring payables, which will be displayed by vendor or to enter a new/maintain existing recurring invoices.</p>
+        <p>
+            <img src="ap110-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>A/P Recurring Invoice Maintenance Screen</h6>
+        <p><a href="#1%20Vendor">1 Vendor</a>;&#160;<br /><a href="#2%20Invoice%20Number">2 Invoice#</a>;&#160;<br /><a href="#3%20Location">3 Location</a>;&#160;<br /><a href="#4%20Starting%20Invoice%20Date">4 Starting Inv Date</a>;&#160;<br /><a href="#5%20Terms">5 Terms</a>;&#160;<br /><a href="#6%20PO%20Number">6 PO#</a>;&#160;<br /><a href="#7%20Invoice%20Amount">7 Invoice Amount</a>;&#160;<br /><a href="#8%20Frequency">8 Frequency</a>;&#160;<br /><a href="#9%20Maximum%20Payments">9 Maximum Payments</a>;&#160;<br /><a href="#10%20Maximum%20Amount">10 Maximum Amount</a>;&#160;<br /><a href="#11%20Note">11 Note</a>;&#160;<br /><a href="#12%20Payment%20Method">12 Payment Method</a>;&#160;<br /><a href="#13%201099%20Form/Box">13 1099 Form/Box</a>;&#160;<br /><a href="#14%20Last%20Invoice%20Date">14 Last Invoice Date</a>;&#160;<br /><a href="#15%20Payments%20to%20Date">15 Payments to Date</a>;&#160;<br /><a href="#16%20Paid%20to%20Date">16 Paid to Date</a>;&#160;<br /><a href="#17 G/L Account Description">17 G/L Account Description</a></p>
+        <h6>Note:<br /><b>3 Locations</b> will <b>NOT</b> appear on the A/P Invoice Data Entry Screen if the Location Segment in General Ledger Parameter Maintenance is not set to 2 or above (multiple locations).&#160; In that case (i.e., your company operates from one, not multiple locations) only 16 menu items will appear on the A/P Invoice Data Entry Screen.</h6>
+        <h5><a name="1 Vendor"></a>1 Vendor</h5>
+        <p>Enter vendor number, alpha sort name, contact first or last name, phone number, or zip code. &#160; Entering a single-character vendor number is not valid since this type of vendor number represents a category of individual vendors (i.e. one-time vendors).</p>
+        <p>
+            <img src="ap110-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="2 Invoice Number"></a>2 Invoice #</h5>
+        <p>Since an invoice number does not usually exist for recurring payables, enter a generic term or description (e.g. rent, loan).</p>
+        <p>
+            <img src="ap110-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="3 Location"></a>3 Location</h5>
+        <p>This entry is applicable only for those companies who have multiple locations. Location codes previously set up in 
+	<a href="..\gl\gl080.htm">G/L Location Maintenance</a> on the GLU menu are valid entries. Default location codes for vendors are set up in 
+	VML-A/P.</p>
+        <p>When the invoice amount is distributed to the General Ledger (at the bottom of the 
+	<a href="ap100.htm">Invoice Data Entry</a> screen), the account number picks up the location code entered in the location field. For example, if the location code entered is 010 Akron and the invoice amount is distributed to the inventory account 4500, the G/L distribution shows 4500-010.</p>
+        <h5><a name="4 Starting Invoice Date"></a>4 Starting Invoice Date</h5>
+        <p>The starting invoice date is the date this invoice was first generated (e.g. the first date of a loan payment).</p>
+        <p>
+            <img src="ap110-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="5 Terms"></a>5 Terms</h5>
+        <p>Terms will normally be Net upon Receipt (code 01), but any valid terms code may be used, including those that use cash discounts or multiple payments.</p>
+        <p>
+            <img src="ap110-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="6 PO Number"></a>6 PO#</h5>
+        <p>The purchase order number does not normally apply to recurring invoices but may be used if applicable.</p>
+        <p>
+            <img src="ap110-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="7 Invoice Amount"></a>7 Invoice Amount</h5>
+        <p>This is the total amount of the periodic payment.</p>
+        <p>
+            <img src="ap110-7.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="8 Frequency"></a>8 Frequency</h5>
+        <p>This indicates how often you want an invoice to be generated. You will be given the option of choosing weekly, bi-weekly (every 2 weeks), semi-monthly (twice a month), monthly, quarterly, or annually.</p>
+        <p>
+            <img src="ap110-8.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="9 Maximum Payments"></a>9 Maximum Payments</h5>
+        <p>This field acts as a counter to track the number of payments you wish to make. The invoice will no longer be generated after this number of payments has been reached. &#160; (e.g. Loan amount was $100 and you wish to make 10 payments.) &#160; If you want the invoice to continue without limit (e.g. rent) then leave this field zero.</p>
+        <p>
+            <img src="ap110-9.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="10 Maximum Amount"></a>10 Maximum Amount</h5>
+        <p>This is the amount, when reached, at which invoices will no longer be generated. To avoid overpaying, the maximum amount must be a multiple of the invoice amount. &#160; The computer will not calculate fractions of an amount. &#160; For example, if the invoice amount is $100, the maximum amount should be a multiple of 100 such as 1,000 or 10,000. &#160; If invoicing should continue without limit, leave the maximum amount zero.</p>
+        <p>
+            <img src="ap110-10.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="11 Note"></a>11 Note</h5>
+        <p>Any note/comment entered will print on the check stub.</p>
+        <p>
+            <img src="ap110-11.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="12 Payment Method"></a>12 Payment Method</h5>
+        <p>Optional entries are:</p>
+        <ul>
+            <li>
+                <p>blank = normal check</p>
+            </li>
+            <li>
+                <p>T = Electronic Transfer of Funds</p>
+            </li>
+            <li>
+                <p>W = Automated Withdrawal</p>
+            </li>
+            <li>
+                <p>S = Separate Check. &#160;</p>
+            </li>
+        </ul>
+        <p>For further details on these options, refer to <a href="ap100.htm#15 Payment Method">Invoice Data Entry - Payment Method</a> documentation.</p>
+        <p>
+            <img src="ap110-12.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="13 1099 Form/Box"></a>13 1099 Form/Box</h5>
+        <p>For optional entries, refer to documentation for <a href="ap100.htm#16 1099 Form Box">Invoice Data Entry - 1099 Form/Box</a> or follow the messages displayed at the bottom of the screen.</p>
+        <p>
+            <img src="ap110-13.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The next 3 fields are updated by the computer, but can be manually overridden if necessary.</h6>
+        <h5><a name="14 Last Invoice Date"></a>14 Last Invoice Date</h5>
+        <p>This is the invoice date on which the last invoice is generated. &#160; It is used to determine the invoice date for the next invoice generated. &#160; If not specified, then the invoice date for the next invoice generated will be the starting invoice date specified above.</p>
+        <p>
+            <img src="ap110-14.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="15 Payments to Date"></a>15 Payments to Date</h5>
+        <p>This displays the number of payments that have been generated. Usually, invoices are generated and paid on the same day. In this case, this reflects the number of payments that have been generated and paid. &#160; However, if an operator generated recurring invoices and postponed actually paying the invoices, a more accurate description of this field would be number of payments that have been generated (the most recent not having yet been paid).</p>
+        <p>
+            <img src="ap110-15.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="16 Paid to Date"></a>16 Paid to Date</h5>
+        <p>Paid to Date reflects the total amount of all recurring invoices that have been generated (not necessarily paid). The same explanation applies as in Payments to Date.</p>
+        <p>
+            <img src="ap110-16.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>These fields can be manually overridden. &#160; This would be necessary if these recurring invoices were added to a batch which was subsequently deleted. &#160; These fields would have to be adjusted in order to back-out the deleted recurring invoices.</p>
+        <h5><a name="17 G/L Account Description"></a>17 G/L Account Description</h5>
+        <p>Functions the same as in <a href="ap100.htm">Invoice Data Entry</a>.</p>
+        <p>
+            <img src="ap110-17.png" style="width: 725px;height: 424px;" />
+        </p>
+    </body>
+</html>

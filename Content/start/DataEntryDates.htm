@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>Rules for entering Dates</title>
+        
+    </head>
+    <body>
+        
+        <p class="SectionName">dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Rules for Entering Dates</p>
+                </td>
+                <td align="right">Last Revised: 02/11/06</td>
+            </tr>
+        </table>
+        <p>Excellware strives to design software that enables the computer to help you do your job.&#160; We also want to prevent data entry errors whenever possible.&#160; This is especially true when entering dates.</p>
+        <p>The following rules apply to all date entries:</p>
+        <ol>
+            <li>You do not need to enter the / characters.&#160; You can if you really want to, but its usually easier just to enter the numbers.</li>
+            <li>You do not need to enter the year.&#160; Dynamo will append a year depending on the month you entered, and the current month.&#160; Dynamo will choose the closest year.&#160; For example, in December, or even August, if you enter 0101, Dynamo will assume January 1 of next year.&#160; Similarly, in January or even June, if you enter 1231, Dynamo will assume December 31 of last year.&#160; Try leaving the year off when entering dates.&#160; Dynamo will guess correctly most of the time.</li>
+            <li>You do not need to enter the month unless it is different from the current month.&#160; So you can simply enter 10 and in July 1995, the date displayed will be 07/10/95.</li>
+            <li>The leading zero is not required for the month nor for the day.&#160; For example, you could enter 85 and in 1995, the date displayed will be 08/05/95.&#160; But in cases of ambiguity, such as 111 the program adds a leading zero to the month and assumes 01/11 not 11/01.</li>
+            <li>The letter T can be used whenever you want today's date.&#160; Once you enter a T, you can still use option 6 below.</li>
+            <li>Touch + or - to advance to the next or previous date.&#160; Note that the = character also acts like + so you don't have to hold the shift key down.</li>
+            <li>Touch W or w to advance to the next or previous week.</li>
+            <li>Touch C or c to bring up calendar for selecting date.</li>
+            <li>Year 2000 issues: This program does not permit the operator to enter the complete 4 digit year.&#160; Rather, it assumes the century based on today's date.&#160; It allows date entries in the past 90 years, the current year, and the next 9 years. For example, if today is 2/14/99 and you enter a year of 00, 01, 02, 03, 04, 05, 06, 07, or 08, then the year will be assumed to be 20xx.&#160; If you enter 09, 10, 11,...,99 then the year will assumed to be 19xx. If you need to enter a date that is earlier than 90 years ago, or more than 9 years from today, please contact your software supplier or Excellware, Inc.</li>
+            <li>If you've made some entries and want to return to the original default date, simply touch the Escape key.&#160; Note that there is sometimes a brief pause after touching the Escape key before the original date is displayed.<br />
+    &#160;</li>
+        </ol>
+        <p><b>Examples</b>
+        </p>
+        <table class="example">
+            <tr>
+                <th align="center">Operator Enters</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td>MM/11/YY (where MM is the current month, and YY is either last year, this year, or next year, whichever is closest to the current month)</td>
+            </tr>
+            <tr>
+                <td align="center">23</td>
+                <td>MM/23/YY (same as above)</td>
+            </tr>
+            <tr>
+                <td align="center">32</td>
+                <td>03/02/YY</td>
+            </tr>
+            <tr>
+                <td align="center">102</td>
+                <td>01/02/YY</td>
+            </tr>
+            <tr>
+                <td align="center">213</td>
+                <td>02/13/YY</td>
+            </tr>
+            <tr>
+                <td align="center">1122</td>
+                <td>11/22/YY</td>
+            </tr>
+            <tr>
+                <td align="center">1194</td>
+                <td>Invalid day of month</td>
+            </tr>
+            <tr>
+                <td align="center">112294</td>
+                <td>11/22/94</td>
+            </tr>
+            <tr>
+                <td align="center">92294</td>
+                <td>09/22/94</td>
+            </tr>
+            <tr>
+                <td align="center">T</td>
+                <td>MM/DD/YY (Today's Date)</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td>Display calendar.&#160; Use arrow keys &amp; page up/down keys to highlight desired date, then touch enter.</td>
+            </tr>
+        </table>
+        <p>
+            <img border="0" src="DataEntryDates1.jpg" width="964" height="562" alt="" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="6675" MadCap:lastWidth="741">
+    <head>
+        <title>Data Dictionary Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Data Dictionary Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 12/29/13</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to describe the contents of data files, 
+	temporary work files, and templated data structures used by programs.</p>
+        <p>
+            <img src="cdf130-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th>Field#</th>
+                <th>Heading</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>File Name</td>
+                <td>
+        Dynamo typically uses a 6 character file name that starts with the two character company code.&#160; The data dictionary should only include that portion of the file name that follows the company code.&#160; In this example, the file name is DSCM01, the company code is DS, so only CM01 is needed here.&#160; You may store files with names up to 
+		10 characters long (excluding the 2 character company code).<br /><br />       Data Dictionary Maintenance can also be used for describing other data structures that are used to store data and transfer between programs.&#160; The File Name field would often refer to the string variable name used (excluding the trailing 
+		dollar sign).&#160; For example, program CM040 has a data structure used to pass information to and back from CM040.&#160; The File Name field in that example would be CM040.&#160; The company used to store the Data Dictionary for program templates should be the same as the folder where the program is located.&#160; In this example, the CM040 program is located in the DY/ directory, so company DY should be used to store the Data Dictionary.
+
+        <p>&#160;</p><p>Temporary work files should also be described in the Data Dictionary.&#160; Temporary files are designated using a period following the file name.&#160; The CM040 program, for example, creates a work file.&#160; This work file has a data dictionary file name of CM040. (including the period at the end).&#160; 
+		No other periods may appear in the File Name.</p></td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Description</td>
+                <td>Up to 40 characters.</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>File Type</td>
+                <td>Use the 3 character file types used in Dynamo<table><tr><th nowrap="">File Type</th><th>Description</th></tr><tr><td nowrap="" align="center">MKY</td><td>Multi-keyed MKEYED file.&#160; This is the most popular and 
+			recommended file type for all files.&#160; Supports multiple keys or 
+			indexes.</td></tr><tr><td nowrap="" align="center">MKX</td><td>Multi-keyed XKEYED file.&#160; Requires BBj.&#160; Allows for 
+			more KNUM's and segments that MKY.</td></tr><tr><td nowrap="" align="center">MKJ</td><td>Multi-keyed JKEYED file.&#160; Requires BBj.&#160; Supports 
+			journaling and transactions</td></tr><tr><td nowrap="" align="center">MKV</td><td>Multi-keyed VKEYED file.&#160; Requires BBj.&#160; Similar to 
+			MKX except MKV support variable length records, named key chains, 
+			dynamically add, change, and drop key chains, and enables storing 
+			the template within the file itself, eliminating the need for the .tpl 
+			template file.</td></tr><tr><td nowrap="" align="center">SKY</td><td>Single-keyed MKEYED files.&#160; Supports only a single key or 
+			index.&#160; Requires KEY= on new WRITE's.&#160; Best to use a MKY 
+			file, even if at first you only expect to need a single key.</td></tr><tr><td nowrap="" align="center">SKX</td><td>Single-keyed XKEYED file (BBj only).</td></tr><tr><td nowrap="" align="center">SKJ</td><td>Single-keyed JKEYED file (BBj only).</td></tr><tr><td nowrap="" align="center">SKV</td><td>Sinlge-keyed VKEYED file (BBj only).</td></tr><tr><td nowrap="" align="center">DIR</td><td>Direct files.&#160; Obsolete format replaced by SKY files.&#160; 
+			File cannot be dynamic.</td></tr><tr><td nowrap="" align="center">SRT</td><td>Sort files, i.e., keys but no data.&#160; Obsolete format, also 
+			replaced by SKY files.&#160; File cannot be dynamic.</td></tr><tr><td nowrap="" align="center">IND</td><td>Indexed files have no key associated with the data.&#160; 
+			Records can be read sequentially, or by relative record number.</td></tr><tr><td nowrap="" align="center">SER</td><td>Serial files, primarily used for spooled reports.&#160; No keyed 
+			or random access.</td></tr><tr><td nowrap="" align="center">PGM</td><td>BBx program files.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Menu Code</td>
+                <td>Store the 3 letter menu code that this file is most likely to be associated with.&#160; It is used by the F menu option to display file information for files associated with the menu.&#160; It does not apply to dictionary entries of file type PGM nor for temporary work files.</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Record Structure</td>
+                <td>The data elements that make up the record (or data structure) are described using this option.</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Key Structure</td>
+                <td>For MKY files, this option is used to describe the key structure of MKY data files.&#160; For SKY and DIR data files, specify the key size in this field.</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Characters per record</td>
+                <td>Only required when there are variable length fields in the record, and you want to define the data file with more or less than the number of characters required based on the record structure.&#160; If non-zero, this field will be used to override the computed records size when defining a data file.</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>File Notes</td>
+                <td>Notepad text typically used to describe how records are added, changed, and removed, and to describe the usage of each KNUM.</td>
+            </tr>
+        </table>
+        <p>
+            <img src="cdf130-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th nowrap="" colspan="2">Record Structure - Main Display</th>
+            </tr>
+            <tr>
+                <td>Field Name</td>
+                <td>
+        This is the bbx compatible template field name.&#160; It can be up to 16 characters containing letters, numbers, and underscore, and must begin with a letter.
+
+        <p><br />        Field names in the format FSn where n is a number have special significance in Dynamo Tools.&#160; They indicate that the field represents a field separator, used in files that still use an IOLIST for reading and writing data.&#160; In the example above FS1 is the first field separator in the record.&#160; Note that the NAME field is variable length and does not have an FS2 field following it.&#160; This is because the NAME field truly is variable in length, where the CUSTNO field is always 6 characters long, and thus requires a template type of C(6) and not C(6*).</p><p>It is our recommendation, that any new file use fixed length fields, and no field separators.&#160; The CVS() function can be used to strip trailing blanks from fields when required.</p></td>
+            </tr>
+            <tr>
+                <td>Link to</td>
+                <td>The Dynamo Data Dictionary allows you to define a field once, and then refer to the primary definition in all data structures that also contain that field.&#160; This is an important design concept of the Data Dictionary.&#160; When any field attributes of such a linked field are changed, then all references to the field reflect that change.&#160; Note that the linkage is prompted based on a common field name.&#160; You are not required to link fields with the same name, so that the field NAME in the customer file, does not have to be the same as field NAME in the vendor file.</td>
+            </tr>
+            <tr>
+                <td>Repeat</td>
+                <td>If the field is a repeating field, then the maximum repeat is stored here.</td>
+            </tr>
+            <tr>
+                <td>Template Type</td>
+                <td>
+        This is the bbx template type.&#160; A character type is assumed, so an entry of 10 will display as C(10).&#160; An entry of 10* will display as C(10*).&#160; An entry of N5 will display as N(5).&#160; The * indicates variable length, but unlike bbx, Dynamo assumes the number before the * is the maximum length of the field.
+
+        <p><br />       For new files, we recommend using fixed length field types.&#160; The CVS() function can be used to strip trailing blanks from fields when required.&#160; We also recommend using B type fields for all numeric fields that have fractional places such as any field containing amounts of dollars and cents.</p><p>We also suggest using U(3) fields for all dates, and storing the date in the julian format.&#160; The DATE() function can be used when required to format this internal date value.&#160; However, the Dynamo Data Dictionary will support dates in C(8) format: MM/DD/YY, C(6)/N(6) format: YYMMDD, N(5) format using the Microsoft serial# date, or C(8)/N(8) format: YYYYMMDD.</p><p>Note that unlike bbx that uses -1 as the julian date value for a field without a date, and 0 to indicate today's date, Dynamo considers a date with a value of 0 as a field without a date.&#160; This definition eliminates the need to populate newly dimensioned string templates containing date fields with -1 values.</p></td>
+            </tr>
+            <tr>
+                <td>Mask</td>
+                <td>The Mask is similar to a bbx mask, with the addition of the floating 
+		decimal format and the elapsed time format.&#160; The best practice is 
+		to store the preferred mask in the data dictionary, and not specify a 
+		mask when using other Dynamo Tools such as CDS037 
+		and CDS038.&#160; You may need a mask in CDS038 
+		when printing totals, where the total could be larger than what could be 
+		displayed using the mask that is used for a single field.<table><tr><th>Numeric field type</th><th>Examples</th><th>Note</th></tr><tr><td>regular numeric</td><td><code>###<br />			#,##0<br />			-###,##0<br />			-###,###.00<br />			###,###.00CR</code></td><td>Any valid bbx mask can be used</td></tr><tr><td>floating numeric</td><td><code>N4.3<br />			N7.4<br />			N8.1</code></td><td>A floating numeric only displays the decimal point and negative 
+			indicator when required.&#160; It is useful for numbers such as 
+			quantities, that are almost always whole numbers, but could include 
+			a fractional part.&#160; Floating numeric masks are in the format of Nx.y 
+			where x is the maximum number of characters to be displayed, and y 
+			is the maximum number of places to the right of the decimal point.</td></tr><tr><td>date</td><td><code>%Mz/%Dz/%Yz<br />			%Ds %Mz/%Dz/%Yz</code></td><td>Any mask that can be used in the bbx DATE() function for dates 
+			can be used</td></tr><tr><td>time</td><td><code>%hz:%mz %p<br />			%Hz:%mz:%s</code></td><td>Any mask that can be used in the bbx DATE() function for time 
+			can be used</td></tr><tr><td>elapsed time</td><td><code>%HHHH:%mz</code></td><td>The number of H's indicate the number of digits for the hours.&#160; 
+			This mask will show hours and minutes.&#160; You can use a mask such 
+			as <code>####.00</code> to show hours and fractional hours.</td></tr></table></td>
+            </tr>
+        </table>
+        <p>There is an optional window containing additional attributes of each field described below.</p>
+        <p>
+            <img src="cdf130-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th nowrap="" colspan="2">Record Structure - Additional Attributes</th>
+            </tr>
+            <tr>
+                <td>Column Title</td>
+                <td>The column title should contain a short but descriptive heading that will be used by Dynamo Tools such as 
+		<a href="http://www.excellware.com/docs/tools/CDS037.htm">CDS037</a> and 
+		<a href="http://www.excellware.com/docs/tools/CDS038.htm">CDS038</a>.&#160; Avoid long column titles for short data fields and the columns required to display or print the column title limit what can be displayed or printed on a single row.&#160; Note that the Column Title is optional and should not be specified when it can be derived from the field name.&#160; When the column title is not specified, it will be the same as the field name, converted to proper case, and with any trailing "NO" for number, replaced with a #.&#160; Field name of ITEMNO becomes Item#.&#160; You may enter leading blanks in the column title in order to right justify the title over a column of right justified data.</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <p>The description field is also optional, and only used during 
+		File Maintenance or a View Manager such as CDS550 or CDW550.&#160; It may be the same as the field name or 
+		column title, but is typically longer and contains spaces when required.</p>
+                    <p>If the field is repeating, then the index will normally be included 
+		within square brackets and follow the description in a view, i.e.,<br />		Special Instructions[1]<br />		Special Instructions[2]<br />		Special Instructions[3]<br />		However, there are times where the index should be omitted, especially 
+		when the field uses a T type called routine.&#160; To omit the index and 
+		square brackets, add a period to the end of the Description.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Data Entry Type</td>
+                <td>
+        This is the data entry type used in CDS039/CDS069.
+
+        <table><tr><th align="center">Type</th><th>Description</th><th align="center">Applies to string template fields</th><th align="center">Applies to numeric template fields</th></tr><tr><td align="center">A</td><td>Alpha-numeric</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">L</td><td>Left justified alpha-numeric</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">R</td><td>Right justified alpha-numeric</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">a</td><td>Alpha-numeric, null permitted</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">l</td><td>Left justified alpha-numeric, null permitted</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">r</td><td>Right justified alpha-numeric, null permitted</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">J</td><td>Date stored in julian format</td><td align="center">N</td><td align="center">Y</td></tr><tr><td align="center">j</td><td>Date stored in julian format, zero value permitted</td><td align="center">N</td><td align="center">Y</td></tr><tr><td align="center">D</td><td>Date form mm/dd/yy</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">d</td><td>Date form mm/dd/yy, null permitted</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">S</td><td>Date form yymmdd</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">s</td><td>Date form yymmdd, null permitted</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">*</td><td>Password</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">W</td><td>Window text</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">C</td><td>Called routine - Custom</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">X</td><td>Called routine - External</td><td align="center">Y</td><td align="center">N</td></tr><tr><td align="center">T</td><td>Called routine - Template</td><td align="center">Y</td><td align="center">Y</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Upper Case</td>
+                <td>Specify as U to cause data to be displayed and stored in upper case.&#160; Only applies to selected data entry field types.</td>
+            </tr>
+            <tr>
+                <td>Minimum</td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Data Entry Types</th>
+                            <th>Usage</th>
+                        </tr>
+                        <tr>
+                            <td>A, L, R, a, l, r, *</td>
+                            <td>The minimum number of non-blank characters required.</td>
+                        </tr>
+                        <tr>
+                            <td>J, j, D, d, S, s</td>
+                            <td>
+              The minimum value has several different meanings for dates.
+
+              <p>Zero indicates no restrictions.<br />              Values of julian dates indicate the minimum date permitted, i.e., JUL(2007,24,7).<br />              Values between 74 and 99 indicate a minimum value of Jan 1, 19xx where xx is the value passed. (Functional but obsolete).<br />              Values under 1900 represent the number of days after the current date.<br />              Values between 1900 and 3000 represent Jan 1 of the year with the value passed.</p></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>The number of columns for the window text</td>
+                        </tr>
+                        <tr>
+                            <td>C, X, T</td>
+                            <td>Passed to external routine</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Data Entry Types</th>
+                            <th>Usage</th>
+                        </tr>
+                        <tr>
+                            <td>A, L, R, a, l, r, *</td>
+                            <td>The maximum number of characters required.</td>
+                        </tr>
+                        <tr>
+                            <td>J, j, D, d, S, s</td>
+                            <td>
+              The maximum value has several different meanings for dates.
+
+              <p>Zero indicates no restrictions.<br />              Values of julian dates indicate that is the highest date permitted, i.e., JUL(2007,12,31).<br />              Values between 74 and 99 indicate a maximum value of Jan 1, 19xx where xx is the value passed. (Functional but obsolete).<br />              Values under 1900 represent the number of days after the current date.<br />              Values between 1900 and 3000 represent Dec 31 of the year with the value passed.</p></td>
+                        </tr>
+                        <tr>
+                            <td>W</td>
+                            <td>The number of rows for the window text</td>
+                        </tr>
+                        <tr>
+                            <td>C, X, T</td>
+                            <td>Passed to external routine</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td>Notepad text that can be used to describe additional information about the field.</td>
+            </tr>
+            <tr>
+                <td>Verification</td>
+                <td>Additional validation that can be done to insure the entered data is in a list or on file.</td>
+            </tr>
+        </table>
+        <p>
+            <img src="cdf130-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">File Verification Parameters</th>
+            </tr>
+            <tr>
+                <td>Related File</td>
+                <td>The file name (including company code) used for to validate the entered data</td>
+            </tr>
+            <tr>
+                <td>KNUM</td>
+                <td>The KNUM of the Related File to use when validating the entry</td>
+            </tr>
+            <tr>
+                <td>Display Fields</td>
+                <td>An optional pipe separated list of field names, in the Related File, that should be displayed during the F2 window of valid records.&#160; 
+		Example: NAME|CITY|ST.</td>
+            </tr>
+            <tr>
+                <td>Display Position</td>
+                <td>The Display Fields can be displayed to the Right of the entry, Below the entry, or N for not displayed.</td>
+            </tr>
+            <tr>
+                <td>Auto Display List</td>
+                <td>Y indicates that the list of valid entries should be displayed without during initial entry without requiring the operator to touch the F2 key first.</td>
+            </tr>
+            <tr>
+                <td>Key Prefix</td>
+                <td>Any additional text that precedes the entered value in the key of the 
+		related file.</td>
+            </tr>
+            <tr>
+                <td>Window Title</td>
+                <td>Optional text to appear in window border listing valid values.</td>
+            </tr>
+        </table>
+        <p>
+            <img src="cdf130-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Related Field List Parameters</th>
+            </tr>
+            <tr>
+                <td>Display Position</td>
+                <td>The Display Fields can be displayed to the Right of the entry, Below the entry, or N for not displayed.</td>
+            </tr>
+            <tr>
+                <td>Auto Display List</td>
+                <td>Y indicates that the list of valid entries should be displayed without during initial entry without requiring the operator to touch the F2 key first.</td>
+            </tr>
+            <tr>
+                <td>Field Title</td>
+                <td>Optional text to appear above column of valid values during entry.</td>
+            </tr>
+            <tr>
+                <td>Window Title</td>
+                <td>Optional text to appear in window border listing valid values.</td>
+            </tr>
+            <tr>
+                <td>Verification List</td>
+                <td>A list of field values along with text to display to the right of the value.</td>
+            </tr>
+        </table>
+    </body>
+</html>

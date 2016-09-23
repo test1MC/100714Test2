@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1511" MadCap:lastWidth="1479">
+    <head>
+        <title>Terminal Function Key Maintenance</title>
+        
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Terminal Function Key Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS230">Last Revised: 03/25/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The purpose of this program is to permit easy assignment of function and editing key values on selected terminals.&#160; Certain terminals have function keys labeled F1, F2, F3, or PF1, PF2, PF3, etc.&#160; These keys can be set up so that touching a single function key, the terminal sends to the computer one or more characters.</p>
+        <p>For example, you may set the F6 key to send 'SMS followed by ENTER, and 2 followed by ENTER.'&#160; Then from any menu, when you touch the F6 key, the terminal will send the SMS 'Enter' and 2 'Enter' to the computer, which will run program 2 on the SMS menu.&#160; If this is a program that you run frequently, it is easier to touch the F6 key than to type in the complete sequence of keys.</p>
+        <p>Each function key can store two sets of sequences, one when the function key is touched alone, and one when it is touched while holding down the shift key.&#160; Some terminals such as the Wyse 30 have only 4 function keys, while others have 12, 14, or even 16.</p>
+        <p>
+            <img border="0" src="cds2301.jpg" />
+        </p>
+        <p>In addition to function keys, many terminals also have editing keys.&#160; Editing keys include the four directional arrows, keys such as insert, delete, home, end, page up, page down, print screen, tab, escape, backspace, enter/return, and enter on the keypad.</p>
+        <p>This program is used to specify what characters each function and editing key will generate.&#160; There are three groups of keys that are pre-defined named EDIT, OSP 
+	and STD.&#160; These keys will be set when an operator signs on to the 
+	system unless a different group code is assigned to the operator in the 
+	Operator Preference Maintenance program.&#160; Do not modify or delete these 
+	pre-defined groups as they will be replaced during a Dynamo Tools upgrade.&#160; You may create new groups and even copy existing groups and modify them.&#160; Then use Operator Preference Maintenance to indicate which function key group a given operator should use.</p>
+        <h5>Entering key values</h5>
+        <p>For all text and most special keys, just touch the key desired.&#160; 
+	Since the Enter key and all other function keys are valid, the Delete key is 
+	used to complete the entry.&#160; If your keyboard does not have a Delete 
+	key (like an Apple Mac), then wait 10 seconds, or try touching Ctrl+F1 or 
+	Ctrl+@ which will also terminate the entry on many workstations and 
+	emulators.</p>
+        <p>For Function Keys F1 through F4, enter the key sequence shown in the 
+	table below.</p>
+        <table>
+            <tr>
+                <th align="center">Function Key</th>
+                <th>Equivalent Keystroke</th>
+            </tr>
+            <tr>
+                <td align="center">F1</td>
+                <td>Ctrl + \</td>
+            </tr>
+            <tr>
+                <td align="center">F2</td>
+                <td>Ctrl + ]</td>
+            </tr>
+            <tr>
+                <td align="center">F3</td>
+                <td>Ctrl + ^</td>
+            </tr>
+            <tr>
+                <td align="center">F4</td>
+                <td>Ctrl + _</td>
+            </tr>
+        </table>
+        <h6>Note that function keys are assigned during the login process.&#160; If changes are made using this program, they will not take effect until the next login.</h6>
+        <h5>Standard Function Keys Assignments</h5>
+        <table>
+            <tr>
+                <th colspan="2">Standard Function Keys</th>
+            </tr>
+            <tr>
+                <td>F1</td>
+                <td>Hotkeys to another application</td>
+            </tr>
+            <tr>
+                <td>F2</td>
+                <td>Displays Options</td>
+            </tr>
+            <tr>
+                <td>F3</td>
+                <td>Displays Help</td>
+            </tr>
+            <tr>
+                <td>F4</td>
+                <td>Exits</td>
+            </tr>
+            <tr>
+                <td>F11&#160;&#160;&#160;</td>
+                <td>Toggles case of entry to Proper Case, then ALL CAPS</td>
+            </tr>
+            <tr>
+                <td>F12</td>
+                <td>Inserts character</td>
+            </tr>
+        </table>
+        <h5>Shifted Function Keys</h5>
+        <table>
+            <tr>
+                <th colspan="2">Shifted Function Keys</th>
+            </tr>
+            <tr>
+                <td>Shift+F1</td>
+                <td>Restores last deletion</td>
+            </tr>
+            <tr>
+                <td>Shift+F6</td>
+                <td>Center (Window and Text Editor)</td>
+            </tr>
+            <tr>
+                <td>Shift+F9</td>
+                <td>Delete up to next non-blank</td>
+            </tr>
+            <tr>
+                <td>Shift+F10</td>
+                <td>Delete to end of line</td>
+            </tr>
+            <tr>
+                <td>Shift+F12</td>
+                <td>Insert 8 characters</td>
+            </tr>
+        </table>
+        <h5>Compatible Serial Terminals</h5>
+        <table>
+            <tr>
+                <th colspan="2">Serial Terminals</th>
+            </tr>
+            <tr>
+                <td>Basic Four<br />		DT-4313/4314</td>
+                <td>
+        There are 14 function keys, that can be assigned both an unshifted and a shifted value.
+
+        <p>The editing keys that can be loaded include the directional arrows on the 10 key pad, both unshifted and shifted with the pad lock on (Funct+Caps Lock - Pd will display on status line), the enter key on the key pad, both unshifted and shifted, the tab key (shifted only), the backspace key (unshifted only but applies when shifted also), the delete (DEL) key (unshifted only but applies when shifted also).</p><p>There is a total of 300 characters available for all function and editing keys.</p></td>
+            </tr>
+            <tr>
+                <td>Wyse 30</td>
+                <td>
+        There are only 4 physical function keys. However, 8 key values may be assigned. Keys 5 through 8 are invoked by holding down the CTRL key when touching function keys 1 through 4. You can also hold the shift key down for all 8 keys.
+
+        <p>The editing keys that can be set include the ESC, TAB, BACKSPACE, RETURN, all four arrow keys, DELETE, HOME, and ENTER on the keypad. Only the unshifted keys may be set.&#160; If the shift key is held, the unshifted characters will be sent to the computer.</p><p>Each key can store up to 64 characters.</p></td>
+            </tr>
+            <tr>
+                <td>Wyse 50</td>
+                <td>
+        There are 16 function keys and they all may be set, both unshifted and shifted.
+
+        <p>Each function key can store up to 8 characters.</p></td>
+            </tr>
+            <tr>
+                <td>Wyse 60 &amp; 160</td>
+                <td>
+        All function keys can be set, both shifted and unshifted.
+
+        <h6>(Note that there are different keyboards available for the Wyse 60. The most popular keyboard has 12 function keys.)</h6><p>All 16 editing keys can be set, both shifted and unshifted.</p><p>Each key can contain up to 255 characters (but his program imposes a limit of the maximum number of characters that can be entered on one display line).</p></td>
+            </tr>
+        </table>
+    </body>
+</html>

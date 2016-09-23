@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2591" MadCap:lastWidth="1173">
+    <head><title>Location &amp; Device Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Location &amp; Device Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/04/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to describe branch offices that are connected to the headquarters, over a Private Network, or a Virtual Private Network.&#160; It is also used to describe devices that can be remotely managed including routers, PCs via VNC, printers via a web browser, servers via ssh using putty, etc.</p>
+        <p>The list of Locations is displayed using the 'Remote location &amp; device status' option of Display System Status.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Location Code</td>
+                    <td>A six character identifier for each location</td>
+                </tr>
+                <tr>
+                    <td>Location Name</td>
+                    <td>Descriptive Name that can by searched on using the Remote Location and Device Status option of Display System Status</td>
+                </tr>
+                <tr>
+                    <td>Public Hostname or IP</td>
+                    <td>WAN&#160;hostname or IP used for connections to router</td>
+                </tr>
+                <tr>
+                    <td>Router LAN&#160;IP&#160;Address</td>
+                    <td>Used to determine if the VPN&#160;tunnel is operational, and to connect to the router from the LAN or over VPN</td>
+                </tr>
+                <tr>
+                    <td>VPN&#160;Active</td>
+                    <td>Y/N to indicate if there is a VPN&#160;normally connected to this location. &#160;Used to verify the status and ping time of VPN's.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="cdsm14-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <p>
+            <img src="cdsm14-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Remote Control Devices</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Description of Device such as Router, Printer location, server connection, etc.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <p>Indicates the type of remote connection</p>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>B</td>
+                                    <td>Browser</td>
+                                </tr>
+                                <tr>
+                                    <td>W</td>
+                                    <td>FacetWin terminal emulator</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>pptp vpn connection</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>VNC (GUI&#160;remote control)</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>ssh (secure shell)</td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>telnet</td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td>ftp (file transfer)</td>
+                                </tr>
+                                <tr>
+                                    <td>D</td>
+                                    <td>Disk Share</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td>Other</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Connection</td>
+                    <td>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>URL</td>
+                                    <td>example:&#160;www.excellware.com</td>
+                                </tr>
+                                <tr>
+                                    <td>IP Address</td>
+                                    <td>example:&#160;192.168.254.2</td>
+                                </tr>
+                                <tr>
+                                    <td>pub</td>
+                                    <td>Use the Public Hostname or IP as specified on the heading page</td>
+                                </tr>
+                                <tr>
+                                    <td>pri</td>
+                                    <td>Use the Router LAN&#160;IP&#160;address as specified on the heading page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Port</td>
+                    <td>Enter the TCP port used for the connection or select from the list of popular values based on the connection type.</td>
+                </tr>
+                <tr>
+                    <td>Login ID</td>
+                    <td>For some connections the Login ID is passed to the connected device, for other connections, the Login ID is for reference or manual data entry purpose.</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>Password for the above Login ID.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="cdsm14-3.png" />
+        </p>
+        <p>&#160;</p>
+        <p style="text-decoration: none;"><u>PC Requirements</u>
+        </p>
+        <p style="text-decoration: none;">&#160;</p>
+        <p>The ssh and telnet connections use the free third party application called Putty. It is available from the downloads page of our web site. You should also download, extract, and open, the recommended Excellware Putty Default Settings which update the PC's windows registry with appropriate default values. You do not need to create a connection within Putty for each connection defined using Location &amp; Device Maintenance. You may need to add the path to the putty.exe executable to the Windows program PATH.</p>
+        <p>The pptp connection options use the pptp client connection application that is included with Microsoft Windows. However, you do need to create one pptp VPN connection with a connection name DynamoTools. The hostname/IP&#160;Address, login, and password can be specified as default values, but they are not used when making a connection. Remember to uncheck the option to <i>Use default gateway on remote network</i> if you need access to the local area network while the pptp vpn is active.</p>
+        <p>
+            <img src="cdsm14-4.png" />
+        </p>
+        <p style="text-decoration: none;">&#160;</p>
+    </body>
+</html>

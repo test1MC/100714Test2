@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="2127" MadCap:lastWidth="1199">
+    <head><title>Terms Code Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">accounts payable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Terms Code Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 07/18/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to maintain and create Terms Codes for Sales Order, Accounts Receivable, and Accounts Payable processing.&#160;Dynamo provides a set of popular terms codes. These terms codes can be added to, deleted, or modified as necessary.</p>
+        <p>
+            <img src="cw130-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Terms Code Maintenance</th>
+            </tr>
+            <tr>
+                <td><a name="TC (Terms Code):"></a>TC (Terms Code)</td>
+                <td>A two-digit code identifies the terms of sale. The established codes range from 00 through 99.&#160;Not every number between 00 and 99 is used, however, which allows you to create additional codes as needed. A terms code from 90 through 94 indicates the invoice must be prepaid or shipped COD. All other terms codes are standard charge terms.</td>
+            </tr>
+            <tr>
+                <td><a name="Description:"></a>Description</td>
+                <td>The Description describes the terms of sale or purchase.</td>
+            </tr>
+            <tr>
+                <td><a name="Short:"></a>Short</td>
+                <td>Credit bureaus, such as Experian, require a shorter code for the description.  This is an abbreviated form of the description that can be up to 7 characters long.</td>
+            </tr>
+            <tr>
+                <td><a name="Disc%:"></a>Disc%</td>
+                <td>A percentage of the invoice amount may be taken as a discount if payment is made by the discount due date. This percentage is represented in decimal form. &#160; (For example: 2% = 2.00, 1%=1.00) A zero on the printout (or blank on the screen) indicates no cash discount is applicable.</td>
+            </tr>
+            <tr>
+                <td><a name="Discount:"></a>Discount</td>
+                <td>
+        This indicates the maximum number of days after the invoice date that the cash discount may be taken. The following examples show how to interpret variations in discount terms.        &#160;
+
+        <table><tr><td>1% 10 Days, Net 30</td><td>A 1% discount is applicable if the invoice is paid within 10 days of the invoice date.&#160;&#160; Discount field displays: 10 days</td></tr><tr><td colspan="2">Some terms codes indicate that the discount can be applied if payment is made by a certain day of the following month as in the following examples:</td></tr><tr><td>2% 10th Prox, Net 30</td><td>&#160;2% discount is applicable if the invoice is paid by the 10th day of the following month.&#160;&#160; Discount field displays:&#160;&#160; 10th</td></tr><tr><td>2% End of Month, Net 30</td><td>A 2% discount is applicable if the invoice is paid by the end of the following month. Discount field displays:&#160;&#160; 31st (even if there are less than 31 days in a given month)</td></tr></table></td>
+            </tr>
+            <tr>
+                <td><a name="Due:"></a>Due</td>
+                <td>
+                    <p>An invoice payment is due within a specific number of days after the invoice date. In the terms code, the word "Net" precedes the maximum number of days within which the payment should be made.&#160;&#160; The Due field displays this maximum number of days.&#160;&#160;</p>
+                    <h6>For example:</h6>
+                    <table>
+                        <tr>
+                            <td>Net 30 Days</td>
+                            <td>The invoice should be paid within 30 days of the invoice date. Payments made after 30 days of the invoice date are considered past due.</td>
+                            <td>Due field displays:&#160;&#160; 30 Days</td>
+                        </tr>
+                        <tr>
+                            <td>Net 10th Day</td>
+                            <td>The invoice should be paid by the 10th day of the following month.&#160;&#160; Payments made after the 10th are considered past due.</td>
+                            <td>Due field displays: &#160; 10th</td>
+                        </tr>
+                    </table>
+                    <p>In some cases, the terms of sale allow for several payments to be made. Terms codes that designate these split payments may specify a particular day of the month on which payment is due.&#160;&#160;</p>
+                    <h6>For example:</h6>
+                    <table>
+                        <tr>
+                            <td>1/2 1st 10th, 1/2 2nd 10th</td>
+                            <td>Half of the invoice amount is due by the 10th of the following month.&#160;The second 1/2 is due on the 10th of the second month following the invoice date.</td>
+                            <td>Due field displays: 10th</td>
+                        </tr>
+                        <tr>
+                            <td>1/2 2nd 10th, 1/2 3rd 10th</td>
+                            <td>Half of the invoice amount is due by the 10th of the 2nd month following the invoice date. The other 1/2 is due on the 10th of the third month after the invoice date.</td>
+                            <td>Due field displays:&#160;&#160; 10th +1</td>
+                        </tr>
+                    </table>
+                    <p>Some terms allow monthly payments to be made on an invoice.&#160;In this case the Due field displays the time intervals at which payments should be made.&#160;&#160;</p>
+                    <h6>For example:</h6>
+                    <table>
+                        <tr>
+                            <td>6 Monthly Payments</td>
+                            <td>A payment should be made every month for the next 6 months.</td>
+                            <td>Due field displays: &#160; 30 Days</td>
+                        </tr>
+                    </table>
+                    <h6>Note in the previous examples that the Due column displays 30 Days for terms code of "Net 30" as well as for terms code of &#160; "Monthly Payments." &#160; In order to distinguish one from another, refer to the adjacent columns Pmts (Number of Payments) and Freq (Frequency of Payments) to interpret the Due column correctly. &#160; These are explained below. &#160;&#160;</h6>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="LD (Last Day of the Month):"></a>LD (Last Day of the Month)</td>
+                <td>
+        The LD field displays a day of the month which acts as a "cutoff" day.&#160;When the invoice date falls before this cutoff day, the due date/discount due date is bumped into the following month.&#160;&#160;
+
+        <h6>For example:</h6><table><tr><td>Terms: &#160; 2% 10th Prox, Net 30</td><td>LD: 31</td></tr><tr><td>Invoice date:</td><td>October 26 The terms indicate a 2% discount is applicable if payment is made by the 10th of the next month.&#160;The invoice date is prior to the cutoff (LD) of the 31st, so the discount due date falls in the next month and is November 10th.</td></tr><tr><td>Terms: 2% 10th Prox, Net 30</td><td>LD: 25</td></tr><tr><td>Invoice Date:</td><td>October 26 The terms indicate a 2% discount is applicable if payment is made by the 10th of the next month (November).&#160;The invoice date falls after the cutoff (LD) of October25; therefore, the due date is bumped into the month following the next month. In this case, the discount due date is Dec.10.</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>No (Number of Payments) </td>
+                <td>
+                    <p>This field indicates the number of payments that will be made in order to pay the invoice in full.&#160;&#160;</p>
+                    <h6>For example:</h6>
+                    <table>
+                        <tr>
+                            <td>Net 30</td>
+                            <td>Pmts field displays:&#160;&#160; 1</td>
+                        </tr>
+                        <tr>
+                            <td>6 Monthly Payments</td>
+                            <td>Pmts field displays:&#160;&#160; 6</td>
+                        </tr>
+                        <tr>
+                            <td>1/2 1st 10th, 1/2 2nd 10th</td>
+                            <td>Pmts field displays:&#160;&#160; 2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>F (Frequency)</td>
+                <td>
+        The Frequency field is an alpha code that corresponds to the time intervals in which split payments are due. If the terms code indicates that only one payment will be made, this field is not applicable.&#160;&#160;
+
+        <h6>For example:</h6><table><tr><td>6 Monthly Payments</td><td>Freq field displays M (Monthly)</td></tr><tr><td>1/2 10 Days, 1/2 25 Days</td><td>Freq field displays S (Semi-monthly or every 15 days)</td></tr></table></td>
+            </tr>
+            <tr>
+                <td>Cust</td>
+                <td>
+                    <p>Specify whether or not this terms code is offered to customers using "Y"&#160;or "N." When specifying&#160;yes, the terms code will be an option on sales orders. </p>
+                    <p>Note: This column cannot be changed to "Y" for terms code 00 No Terms Established. It cannot be modified because there is no reason to assign a terms code of "no terms established" to a customer. This code is only used when a customer record does not contain a terms code.</p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="C:"></a>C</td>
+                <td>
+                    <p>The C field is used for modifying the established Terms Codes.  You may change or delete a specific terms code by entering its 2 digit TC.  Use the Enter key to move from column to column and override the established entries.</p>
+                    <p>You will be given the option of displaying a schedule of examples by pressing Enter after the PMTS column (or FREQ if applicable). &#160;Using specific months and days, the examples demonstrate how the terms code affects due dates and payments in relation to the invoice date.</p>
+                    <h6>To add a new Terms Code:</h6>
+                    <p>Choose a 2 digit code that is not being used for the established codes (For example, to add Net 100 days you may want to choose code 12). The prompts at the bottom of the screen will guide you in setting up this new terms code.</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

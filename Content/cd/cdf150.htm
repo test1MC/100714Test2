@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="5533" MadCap:lastWidth="1340">
+    <head><title>Data Dictionary Search</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Data Dictionary Search</p>
+                </td>
+                <td align="right">Last Revised: 06/08/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program can be used to search the Data Dictionary.</p>
+        <p>Options include:</p>
+        <p>
+            <img src="../xx/cdf150-1.png" />
+        </p>
+        <h5>
+	Option 1 - Display where field name is used</h5>
+        <p>This option can be used when you need to find all places that a particular field name is used. You can enter a field name, starting characters of a field name, or just touch F2 to select from a list of all field names in alphabetical order, as shown in the screen shot below.</p>
+        <table class="example">
+            <tr>
+                <td>Option 1 Example</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="cdf150-2.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>Example of search results</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../xx/cdf150-2.png" />
+                </td>
+            </tr>
+        </table>
+        <h5>Option 2 - Display where external program name is used</h5>
+        <p>Touch F2 at the "Enter program name" prompt to display all external 
+	programs found in the data dictionary.&#160; The Typ column indicates the 
+	external program type.</p>
+        <table>
+            <tr>
+                <th colspan="2">External Program Types</th>
+            </tr>
+            <tr>
+                <th style="text-align: center;">Typ</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">T</td>
+                <td>Template based external call, linked to a field</td>
+            </tr>
+            <tr>
+                <td align="center">X</td>
+                <td>External routine compatible with the older file maintenance, 
+			deprecated yet still supported.&#160; Use T type for any new 
+			external routine.</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td>Original external routine compatible with the older file 
+			maintenance, deprecated yet still supported.&#160; Use T type for 
+			any new external routine.</td>
+            </tr>
+            <tr>
+                <td align="center">V</td>
+                <td>View or field level view validation routine</td>
+            </tr>
+            <tr>
+                <td align="center">F</td>
+                <td>File Maintenance Add/Write/Delete routine</td>
+            </tr>
+        </table>
+        <table class="example">
+            <tr>
+                <td>Option 2 Example</td>
+            </tr>
+            <tr>
+                <td>F2 entered at program name:</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="cdf150-3.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="cdf150-4.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="cdf150-5.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+        </table>
+        <h5>Option 3 - Display where file is used for file verification</h5>
+        <p>You may enter a specific file name (including the company code or XX) or 
+	touch the SpaceBar to display all files used for verification.</p>
+        <table class="example">
+            <tr>
+                <td>Option 3 Example</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="cdf150-6.png" style="width: 1169px;height: 417px;" />
+                </td>
+            </tr>
+        </table>
+        <h5>Option 4 - Display fields that call external program</h5>
+        <p>You may include one or more external program types, T, X, or C. The result is sorted by external program name.</p>
+        <table style="width: 100%;" class="example">
+            <col />
+            <tbody>
+                <tr>
+                    <td>Option 4 Example</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../xx/cdf150-3.png" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Option 5 - Display/Rename/Delete orphan notepad text</h5>
+        <p>When a field is deleted using Data Dictionary Maintenance, it can be pasted into a different location within the data structure. As a result, the notepad text associated with that field name is not automatically deleted. When a field is renamed, any existing notepad text probably should be renamed as well. This process can result in notepad text that refers to a field name that has been deleted. This option can be used to list any orphan notepad text, to display the text, and to delete individual notepad text entries. It also provides an option to delete all orphan notepad text.</p>
+        <p>When exiting Data Dictionary Maintenance, there is also an option to rename the notepad text to another field that has not been deleted.</p>
+        <table style="width: 100%;" class="example">
+            <col />
+            <tbody>
+                <tr>
+                    <td>Option 5 Example</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../xx/cdf150-4.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../xx/cdf150-5.png" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Option 6 - Display missing or invalid links</h5>
+        <p>It is possible by deleting or changing a data dictionary to have a field 
+	that links to a field that has been deleted.&#160; This option can be used 
+	to locate these problems.&#160; Use Data Dictionary Maintenance to resolve.</p>
+        <table style="width: 100%;" class="example">
+            <col />
+            <tbody>
+                <tr>
+                    <td>Option 6 Example</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../xx/cdf150-7.png" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

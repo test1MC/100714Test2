@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1450" MadCap:lastWidth="1210">
+    <head><title>Documentation Manual Printing</title>
+    </head>
+    <body>
+        <p class="SectionName">Old File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Documentation Manual Printing</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS990">Last Revised: 02/11/06</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to print system documentation for one or all systems for a certain company. Certain portions of the text may be included or excluded depending on the preference of the operator and the purpose for printing the documentation.&#160; 
+	Note that most documentation is now kept online at
+	<a href="http://www.excellware.com">http://www.excellware.com</a>.&#160; The 
+	information printed using Documentation Manual Printing is not kept current 
+	like the online documentation.</p>
+        <p>
+            <img src="cds990-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The Documentation Manual Printing Menu</h6>
+        <p><a href="#System%20Code">SYSTEM CODE:</a>
+            <br /><a href="#Company%20Name">COMPANY NAME:</a>
+            <br /><a href="#Table%20of%20Contents">TABLE OF CONTENTS:</a>
+            <br /><a href="#Selectors">SELECTORS:</a>
+            <br /><a href="#Detail%20Selectors">DETAIL SELECTORS:</a>
+            <br /><a href="#Screen%20Formats">SCREEN FORMATS:</a>
+            <br /><a href="#Documentation%20Text">DOCUMENTATION TEXT:</a>
+            <br /><a href="#Operator%20Instructions">OPERATOR INSTRUCTIONS:</a>
+            <br /><a href="#Missing%20Text/VDT%20List">MISSING TEXT/VDT LIST:</a>
+            <br /><a href="#Subselectors">SUBSELECTORS:</a>
+            <br /><a href="#Program/File%20Names">PROGRAM/FILE NAMES:</a>
+            <br /><a href="#Lower%20Case%20Option">LOWER CASE OPTION:</a>
+            <br /><a href="#Blank%20Lines%20in%20Text">BLANK LINES IN TEXT:</a>
+        </p>
+        <p>The following information is entered prior to printing the documentation. Defaults for each prompt have been set and are given below.</p>
+        <table>
+            <tr>
+                <th colspan="2">CDS990</th>
+            </tr>
+            <tr>
+                <td><a name="System Code"></a>System Code</td>
+                <td>Enter the three character system code for which the documentation is desired. The default is 'SYS' which is the main system selector.</td>
+            </tr>
+            <tr>
+                <td><a name="Company Name"></a>Company Name</td>
+                <td>Enter the company name to print in the heading of each page of text.&#160; The default is the name of the company from which the program is being executed.</td>
+            </tr>
+            <tr>
+                <td><a name="Table of Contents"></a>Table of Contents</td>
+                <td>Enter 'Y' to include, 'N' to exclude. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Selectors"></a>Selectors</td>
+                <td>Enter 'Y' to include the printing of the selectors as they appear on the terminal screen, 'N' to exclude. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Detail Selectors"></a>Detail Selectors</td>
+                <td>Enter 'Y' to include the printing of the selectors with the detailed information as entered in Selector Maintenance. Since this program is primarily used to print documentation to be used by customers as a brief summation and reference as to what a program does, the default is 'N'.</td>
+            </tr>
+            <tr>
+                <td><a name="Screen Formats"></a>Screen Formats</td>
+                <td>Enter 'Y' to include the printing of the screen format that is displayed when the program is actually run. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Documentation Text"></a>Documentation Text</td>
+                <td>Enter 'Y' to include the printing of the text which provides a brief explanation of the programs purpose and operator instructions. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Operator Instructions"></a>Operator Instructions</td>
+                <td>Enter 'Y' to include the printing of the general operating instructions for the operator. Topics covered include running programs from the menus, end system, backup procedures, etc. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Missing Text/VDT List"></a>Missing Text/VDT List</td>
+                <td>Enter 'Y' to include the printing of a list of all programs interfaced through the selector which do not have text and/or a VDT, when applicable. The default is 'N' since printing a missing text list is not the primary purpose of this program.</td>
+            </tr>
+            <tr>
+                <td><a name="Subselectors"></a>Subselectors</td>
+                <td>Enter 'Y' to include the printing of any subselectors found when processing a main selector. As an example, if the system code being printed is SOP Sales Order Processing and this flag is 'Y', then all of the information which has printed for SOP (screen formats, text, etc.) will print for SOU Sales Order Processing Utility Functions, a subselector of the main selector, SOP. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Program/File Names"></a>Program/File Names</td>
+                <td>Enter 'Y' to include the printing of the six character program or file name next to the program title on the Table of Contents. The operator is only prompted for a response if the Table of Contents is being printed with this text. The default is 'N'.</td>
+            </tr>
+            <tr>
+                <td><a name="Lower Case Option"></a>Lower Case Option</td>
+                <td>Enter 'Y' if your printer supports lower case printing. The default is 'Y'.</td>
+            </tr>
+            <tr>
+                <td><a name="Blank Lines in Text"></a>Blank Lines in Text</td>
+                <td>Enter the number of blank lines to print between each line of text. The default is '0', which means the text will print single-spaced.</td>
+            </tr>
+        </table>
+        <p>The setting of these flags depends on the purpose of printing the text. If the purpose is to fulfill a specific need of the operator, then most of the flags should be set to 'N'. As an example, if the operator needed to know which programs interfaced through the selector are missing text and/or a VDT, then all other flags should be set to 'N' to avoid printing unnecessary information and wasting paper. If the purpose is to provide a documentation manual for a new customer, then the flags should be set to the defaults as described above in order to keep the information about their system as concise and un-technical as possible.<br /><br />  &#160;</p>
+    </body>
+</html>

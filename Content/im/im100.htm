@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="10" MadCap:lastHeight="3724" MadCap:lastWidth="1182">
+    <head><title>Item Inquiry</title>
+    </head>
+    <body>
+        <p class="SectionName">Inquiry Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Item Inquiry</p>
+                </td>
+                <td align="right">Last Revised: 12/02/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Item Inquiry is used to display all related information on file for a particular item.</p>
+        <p>The operator will be asked to enter an item number or press ENTER for items to appear in numerical sequence. The screen will display the description, list price and pricing unit, and all additional prices if any, the primary warehouse code and quantity available for that warehouse.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>To view Item Search Options Invoked with F5, click here </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>
+                    <img src="im100-3.png" style="width: 725px;height: 424px;" />
+                </p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <td>Exclude Discontinued Items with No QOH</td>
+                            <td>Enable to exclude items that have no Quantity on Hand.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclude Items if Warehouse Qty Avail=0</td>
+                            <td>Enable to exclude items unavailable in the warehouse.</td>
+                        </tr>
+                        <tr>
+                            <td>Exclude Items if Company Qty Avail=0</td>
+                            <td>Enable to exclude items unavailable at the company.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <p>&#160;</p>
+        <p>
+            <img src="im100-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <p>
+            <img src="im100-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>The Item Inquiry Screen<br />  Note: Not all of the options may be available for a particular item. This can be determined by the asterisk that appears in the second column inside the window.</h6>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tr>
+                <th colspan="2">Item Inquiry</th>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Second Column Codes</b>
+                </td>
+            </tr>
+            <tr>
+                <td>Blank</td>
+                <td>A blank in the second column means that this option is not available for the item because there is no information to display.</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>The asterisk denotes that there is information available for the item in this option and may be selected.</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>This code means that there is no information to display for the item but the option is still available to enter information.</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>OPTIONS</b>
+                </td>
+            </tr>
+            <tr>
+                <td>Price Lookup</td>
+                <td>This option shows the current pricing date, when the price was made effective, the cost calculation, the list price, the list price GM%, the formula used to determine the price, the pricing product class, the sell calculation, whether or not an exception applies to this item, and the pricing. You can also view this information for past or future pricing dates when applicable. </td>
+            </tr>
+            <tr>
+                <td>Customer Pricing</td>
+                <td>The Customer Pricing option allows the operator to view any exceptions on pricing for a specific customer. The option shows any pricing other than standard. This could mean that you have given a discount to a particular customer for a certain item (I) or a certain product class (P); this information will display here as a list by customer.</td>
+            </tr>
+            <tr>
+                <td>Inventory &amp; Open Orders</td>
+                <td>
+                    <p>When selecting this option, a list of warehouses is displayed. Each one shows the following:</p>
+                    <ul>
+                        <li>quantity on hand</li>
+                        <li>quantity to ship</li>
+                        <li>quantity available</li>
+                        <li>quantity back ordered</li>
+                        <li>quantity on order</li>
+                        <li>stock status quantity</li>
+                        <li>the MIN and MAX stock levels</li>
+                        <li>the status</li>
+                    </ul>
+                    <p>&#160;</p>
+                    <p>The "S" column displays a minus sign if the item is below the stock minimum and a plus sign if it is above the stock maximum. </p>
+                    <p>&#160;</p>
+                    <p>If you select one of the warehouses, all open orders at that warehouse are displayed. Then you may select an order from that list. </p>
+                </td>
+            </tr>
+            <tr>
+                <td>On Hand Quantities &amp; Values</td>
+                <td>This option shows how many of this particular item are on hand in any warehouse, in transit, etc., and it shows the total monetary value of the items. The option also displays the average cost of the item. </td>
+            </tr>
+            <tr>
+                <td>Serialized Inventory</td>
+                <td>Serialized Inventory is only available if the item you have selected is a serialized item. This option displays any serial numbers associated with this item. It also displays when the item was acquired, its rental ID and when it went into rent if applicable, the cost of the item when it was purchased, any related sales numbers. The "S"&#160;column indicates whether each item is available or not available for sale or rental. </td>
+            </tr>
+            <tr>
+                <td>Inventory Receipts</td>
+                <td>
+                    <p>This option lists all of the inventory receipts that contain this particular item. It also displays the following:</p>
+                    <ul>
+                        <li>the warehouse</li>
+                        <li> the receipt's open and close dates</li>
+                        <li>the type of receipt&#160;(such as purchase order or transfer order)</li>
+                        <li>the receipt number</li>
+                        <li>the reference number (such as PO#&#160;or TO#)</li>
+                        <li>the quantity received on that receipt</li>
+                        <li>the quantity available now</li>
+                        <li>the cost of the item when it was received</li>
+                        <li>and the pricing unit</li>
+                    </ul>
+                    <p>&#160;</p>
+                    <p>If you select a receipt in this view, Dynamo will display all of the sales orders that consumed inventory from the PO&#160;reference on that receipt. </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Inventory Usage Before Receipt</td>
+                <td>Selecting this option shows the operator items that were sold before the purchase orders were received and posted to the system. </td>
+            </tr>
+            <tr>
+                <td>Average Cost History</td>
+                <td>
+                    <p>Average Cost History displays all of the transactions that have affected the average cost for the selected item. It displays the following information about these transactions:</p>
+                    <ul>
+                        <li>the calculation date</li>
+                        <li>the type of order or transaction (such as purchase order or transfer order) </li>
+                        <li>the date of the transaction</li>
+                        <li>the reference# (such as PO# or TO#)</li>
+                        <li>the transaction quantity (the quantity involved in the transaction)</li>
+                        <li>the transaction cost</li>
+                        <li>the unit of measure of the item</li>
+                        <li>the company QOH&#160;(quantity on hand at the company before the transaction)</li>
+                        <li>the new company average cost after the inventory transaction was posted</li>
+                    </ul>
+                    <p>&#160;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Monthly Usage by Warehouse</td>
+                <td>This option displays the usage of this item by warehouse, month, and year. This usage may be sales, but it can also be any other type of usage. </td>
+            </tr>
+            <tr>
+                <td><a name="10. Sales by Warehouse"></a>Sales by Warehouse</td>
+                <td>This option shows the amount of sales of this item by warehouse. It indicates the year, the units sold, the times the item was sold, the profit, the cost, the margin, and the GM%. </td>
+            </tr>
+            <tr>
+                <td><a name="11. Serial # Purchase History"></a>Serial # Purchase History</td>
+                <td>This option can only be selected if you are viewing a serialized item. When the Partially Serialized option is selected, each sale of this product will be listed, including: Invoice Date, Invoice Number, Order Number, Line number on the Order, the purchasing Customer Number and Name, the serial number, price paid and discount, if any.
+
+        <p>This function allows items to be tracked by what serial numbers a customer has purchased. Also see Serialized Purchase History Inquiry on the INQ menu.</p></td>
+            </tr>
+            <tr>
+                <td>Sales Orders/Invoices/Quotes</td>
+                <td>When the Sales&#160;Order option is selected, the sales order numbers for this item will be listed within the warehouse, the order date, ship date, the quantity ordered, the quantity shipped, the price, the cost, the GM%, and the name of the company who ordered the item. This option also allows the user to view invoices and quotes. To jump to the quotes in the list, type a Q. The user can view additional details about an order by highlighting it and pressing Enter to select it. </td>
+            </tr>
+            <tr>
+                <td>Sales Order Assortments</td>
+                <td>This option can only be selected if the item is a component of an assortment built on a sales order. In that case, it displays which sales orders where this item has been a component. </td>
+            </tr>
+            <tr>
+                <td>Purchase Orders</td>
+                <td>When this option is selected, the purchase order numbers related to this item are listed in line with the warehouse, the date ordered, the amount ordered, the amount received, the date received, the cost, and the discount&#160;(if any). </td>
+            </tr>
+            <tr>
+                <td><a name="14. Transfer Orders"></a>Transfer Orders</td>
+                <td>When this option is selected, the transfer order numbers related to this item are listed. The shipping warehouse and the receiving warehouse are also displayed for each time the item was transferred. </td>
+            </tr>
+            <tr>
+                <td><a name="15. Vendor Returns"></a>Vendor Returns</td>
+                <td>This option displays all information about when this particular item has been returned to a vendor. This includes the date of the return. </td>
+            </tr>
+            <tr>
+                <td><a name="16. Item Information"></a>Item Information</td>
+                <td>When selecting this option, the operator will be able to view information for this particular item, including the primary vendor, the product class, the report sequence# (which can be used to sort items into a specific order on reports), whether or not inventory is tracked for it, if the item is serialized, if it can be sold without price information, if it is taxable, if commission is earned from it, the quantities found in packages, the weight, the volume, and information about any alternate items. </td>
+            </tr>
+            <tr>
+                <td><a name="17. Warehouse Information"></a>Warehouse Information</td>
+                <td>
+                    <p>This option gives the operator information about the warehouse(s) in which this item can be found. It will list the warehouse, the ABC value, and any location information if specified in <a href="../xx/xxum21.htm">Warehouse Location Maintenance by Item</a>. <a href="im530.htm">ABC&#160;Values</a> are used to indicate how often an item is purchased. </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="18. General Ledger Information"></a>General Ledger Information</td>
+                <td>Selecting this option will list general ledger information to the operator. It will explain if the item was sold new, rented, or sold used. It will also specify whether inventory is tracked on the item, the product category, the product category type&#160;(costed or uncosted), the product class, and the G/L&#160;account# and account type for the Sales, Cost of Sales, and Inventory/Expense. </td>
+            </tr>
+            <tr>
+                <td><a name="19. Bar Codes"></a>Bar Codes</td>
+                <td>The Bar Codes option displays any bar codes that are associated with the item, including the 6-digit internal bar code, the UPC, or the EAN. </td>
+            </tr>
+            <tr>
+                <td><a name="20. Vendor Part Numbers"></a>Vendor Part Numbers</td>
+                <td>This option lists the item numbers the user's vendors use for this item. It displays the vendor number, the alpha name, the vendor part number, the cost, and the "as of"&#160;date, which is used to identify when vendor part numbers and pricing went into effect. </td>
+            </tr>
+            <tr>
+                <td><a name="21. Assortments"></a>Assortments</td>
+                <td>
+                    <p>The Assortments option displays whether or not this item is a parent of an assortment or a component of an assortment. </p>
+                    <p>&#160;</p>
+                    <p>If it is a component, it will display the parent for that particular item. </p>
+                    <p>&#160;</p>
+                    <p>If it is a parent, it will display:</p>
+                    <ul>
+                        <li>whether it was manually or automatically created</li>
+                        <li>whether or not it displays on Sales Orders, Receiving Documents, and Transfer Orders</li>
+                        <li>the cost of the assortment</li>
+                        <li>the amount of assortments that can be built from current inventory levels</li>
+                        <li>the constraining item disallowing another assortment from being built</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="22. Equivalent Items"></a>Equivalent Items</td>
+                <td>In a multiple warehouse system the operator can enter a warehouse code for equivalents in a selected warehouse or Enter to display the equivalent items.
+
+        <p>A single warehouse system will simply display the equivalent items. In either case the item description and quantity available will display.&#160; At this point the operator can choose the desired equivalent or F4 to return to the options menu. If an item does not have any equivalents on file a message will indicate this and prompt the operator to hit Enter to return to the options menu.</p></td>
+            </tr>
+            <tr>
+                <td><a name="23. Item Notepad"></a>Item Notepad</td>
+                <td>
+                    <p>Item Notepad is a window where the operator is able to write additional information about that item. It does not interfere while entering sales orders or purchase. </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="24. Print Product Label"></a>Print Product Label</td>
+                <td>This option will print a product label for this item if you have an  Eltron or Zebra type printer. The label may contain an item number, a description, pricing information, a bin location, and a UPC or bar code. </td>
+            </tr>
+            <tr>
+                <td>Inventory Adjustments</td>
+                <td>The Inventory Adjustments Option displays a list of all adjustments made to inventory for this item. The warehouse associated with the adjustment, the date/time of the adjustment, the type of adjustment, the amount affected by the adjustment, and a note about why inventory was adjusted are displayed here. Inventory adjustments are made through Inventory Transaction Entry on the I/C menu.</td>
+            </tr>
+        </table>
+        <h3>Video Documentation</h3>
+        <p>Part [<a href="https://www.youtube.com/watch?v=f3ulpCdHmiU">1</a>] [<a href="https://www.youtube.com/watch?v=iQGUEH2mQj8">2</a>] [<a href="https://www.youtube.com/watch?v=wguJ_b9d6zQ">3</a>] [<a href="https://www.youtube.com/watch?v=p_6isxG0mPc">4</a>]<br />  &#160;</p>
+    </body>
+</html>

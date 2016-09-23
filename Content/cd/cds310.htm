@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2837" MadCap:lastWidth="1332">
+    <head><title>Fax Modem Administration</title>
+    </head>
+    <body>
+        <p class="SectionName">Printer &amp; Fax Management</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Fax Modem Administration</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS310">Last Revised: 06/03/07</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used on systems that use the Dynamo Fax 
+	option using VSI*FAX software from Esker.</p>
+        <p>The application:</p>
+        <ul>
+            <li>Displays the current status of the fax server</li>
+            <li>Can stop, start, or restart the fax server</li>
+            <li>Displays status of each fax modem</li>
+            <li>Displays status of each fax class</li>
+            <li>Configures a fax modem to send, receive or both</li>
+            <li>Creates or deletes a fax class called 'outgoing' when multiple fax 
+		modems are configured for sending</li>
+            <li>Assigns the default destination to the fax modem configured for 
+		sending, or 'outgoing' fax class</li>
+        </ul>
+        <p>A sample initial display is shown below.</p>
+        <p>
+            <img border="0" src="cds3103.jpg" />
+        </p>
+        <p>If you select the Display Fax Modem Status, each fax modem and its 
+	current status will be displayed as in the example below.</p>
+        <p>
+            <img border="0" src="cds3101.jpg" />
+        </p>
+        <table>
+            <tr>
+                <th>Column Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>refers to the fax queue name, typically fax1, fax2, etc. or the 
+			fax class name, typically 'outgoing' when multiple modems are used 
+			for outgoing faxes.</td>
+            </tr>
+            <tr>
+                <td>Port</td>
+                <td>the serial port on the server where that the fax modem is 
+			attached to.</td>
+            </tr>
+            <tr>
+                <td>Acc</td>
+                <td>Indicates Accept/Reject status.&#160; Must be Y to send/receive 
+			faxes.</td>
+            </tr>
+            <tr>
+                <td>Ena</td>
+                <td>Indicates Enabled/Disabled status.&#160; Must be Y to 
+			send/receive faxes.</td>
+            </tr>
+            <tr>
+                <td>Snd</td>
+                <td>Indicates that this fax modem or class is used for sending faxes.</td>
+            </tr>
+            <tr>
+                <td>Rcv</td>
+                <td>Indicates that this fax modem is used for receiving faxes.&#160; 
+			A modem can be used both to Send and Receive.</td>
+            </tr>
+            <tr>
+                <td>Waiting</td>
+                <td>Indicates the number of faxes waiting to be sent.&#160; Note 
+			that when multiple fax modems are used for outgoing faxes, the 
+			number in the Waiting column will typically be zero.&#160; The total 
+			number of outgoing faxes waiting to be sent will appear on the line 
+			with 'outgoing' in the Name column.</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>Shows additional information about the current state of the fax 
+			modem.&#160; For classes such as 'outgoing', the Status will 
+			indicate which fax modems are used for outgoing faxing.</td>
+            </tr>
+        </table>
+        <p>The operator can then highlight the desired fax modem and touch enter to 
+	display the Fax Modem Properties as shown below.</p>
+        <p>
+            <img border="0" src="cds3105.jpg" />
+        </p>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <td>Description</td>
+                <td>Can be used for the phone# of this particular phone line or 
+			other descriptive information</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Port</td>
+                <td>The serial port device name that the fax modem is connected to</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>Fax Interface Module</td>
+                <td>There are different modules available depending on the 
+			particular fax modem being used</td>
+            </tr>
+            <tr>
+                <td align="center">4</td>
+                <td>Accept Requests</td>
+                <td>Must be Y to use this fax modem</td>
+            </tr>
+            <tr>
+                <td align="center">5</td>
+                <td>Reason</td>
+                <td>You may enter a reason why you may have set this fax modem not 
+			to accept faxing, such as the phone line requires service.</td>
+            </tr>
+            <tr>
+                <td align="center">6</td>
+                <td>Enabled</td>
+                <td>Must be Y to use this fax modem.&#160; Change from N to Y in an 
+			effort to re-enable a disabled fax.&#160; The date, time, and reason 
+			that this fax modem might be disabled are also shown.</td>
+            </tr>
+            <tr>
+                <td align="center">7</td>
+                <td>Reason</td>
+                <td>You may enter a reason why you may have set this fax modem to be 
+			disabled.</td>
+            </tr>
+            <tr>
+                <td align="center">8</td>
+                <td>Use for Sending</td>
+                <td>Set to Y if you want to use this fax modem for sending faxes.</td>
+            </tr>
+            <tr>
+                <td align="center">9</td>
+                <td>Reason</td>
+                <td>You may enter a reason why this fax modem is not used for 
+			sending, such as 'configured for receiving only'.</td>
+            </tr>
+            <tr>
+                <td align="center">10</td>
+                <td>Use for Receiving</td>
+                <td>Set to Y if you want to use this fax modem to receive faxes.&#160; 
+			A modem can be configured to send, receive, or both.</td>
+            </tr>
+            <tr>
+                <td align="center">11</td>
+                <td>Reason</td>
+                <td>You may enter a reason why this fax modem is not used for 
+			receiving, such as 'not used for incoming faxes'.</td>
+            </tr>
+            <tr>
+                <td align="center">12</td>
+                <td>Default Sending Device</td>
+                <td>If there are more than one fax modem used for sending faxes, 
+			then one fax modem should be configured as the default device which 
+			will be used first my outgoing faxes.&#160; Any other fax modem 
+			configured for sending will be used when the default device is busy 
+			with another fax.</td>
+            </tr>
+        </table>
+        <p>If using this option to Enable a fax modem, then return to the prior 
+	display to verify that the fax modem remains in an enabled state.&#160; If 
+	the modem cannot stay in an enabled state then power cycle the modem and try 
+	again.&#160; If you are still unable to keep a fax modem in an enabled 
+	state, <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> for assistance.</p>
+        <p>If more than one fax modem is configured to Send Faxes, then this 
+	application will create a fax class called 'outgoing' and assign each fax 
+	modem configured to Send Faxes as a member of this class.</p>
+        <p>If only one fax modem is configured to Send Faxes, then this application 
+	will remove the 'outgoing' fax class, if it exists.</p>
+        <p>This application will also set the default destination to either the 
+	'outgoing' fax class, or the fax queue name of the fax modem configured to 
+	Send Faxes.</p>
+        <hr />
+        <p>operators with an older version of the fax software may have a single screen 
+	display as shown below.</p>
+        <p>
+            <img border="0" src="cds310-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <h5>There are 3 basic states</h5>
+        <ul>
+            <li>
+      The port is configured for fax, disabled for all data communications.</li>
+            <li>
+      The port is configured for incoming data calls, disabled for fax and outgoing data calls.</li>
+            <li>
+      The port is configured for outgoing data calls, disabled for fax and incoming data calls.</li>
+        </ul>
+        <p>The current state is displayed, and the operator is prompted for the new state.&#160; If the new state would abort a job due to an incoming data call, the operator is warned and must confirm before aborting the dial-in task.</p>
+        <p>In addition, this program provides the capability to restart the fax server. The fax server is the task that runs in the background to schedule fax transmissions. In most cases it will run without any operator intervention.&#160; However, sometimes when a fax port cannot be properly configured, restarting the fax server may resolve the problem.</p>
+        <p>This program currently only supports one fax modem per system. If your system has more than one fax modem, the first one reported by the fxstat 
+	command will be used by this program.</p>
+    </body>
+</html>

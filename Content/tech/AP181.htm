@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>AP181 - Return Invoice Payments to Date</title>
+ 
+    </head>
+    <body>
+        
+        <p class="CalledName">AP181</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">AP181 - Return Invoice Payments</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=AP181">Last Revised: 01/03/10</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is used to compute payments and balance information for a specific invoice (AP12$).&#160;</p>
+        <p>This routine is used during payment processing to determine the balance due for any invoice, and by A/P Ageing routines, and A/P Trial Balance.</p>
+        <p><code>CALL "AP181", Y$, AP12$, AP181$ {, ASOF }</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3" nowrap="nowrap">AP181 Arguments</th>
+            </tr>
+            <tr>
+                <th nowrap="nowrap">Argument</th>
+                <th nowrap="nowrap">Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center" nowrap="nowrap">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code>AP12$</code>
+                </td>
+                <td align="center" nowrap="nowrap">To</td>
+                <td>A/P Invoice Record</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code>AP181$</code>
+                </td>
+                <td align="center" nowrap="nowrap">From</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><code>GROSS</code>
+                            </td>
+                            <td>Invoice Balance due as of <code>ASOF</code> date (includes any discount).&#160; Note that for prepaid invoices, where the GL Date of the payment is before the GL Date of the invoice, the <code>GROSS</code> amount will be negative if the payment GL Date is before the <code>ASOF</code> date, and the invoice GL Date is after the <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>DISCOUNT</code>
+                            </td>
+                            <td>Balance of any invoice discount not taken, but still eligible to be taken, as of <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>NET</code>
+                            </td>
+                            <td>Invoice Balance due as of <code>ASOF</code> date (reduced by eligible discount)</td>
+                        </tr>
+                        <tr>
+                            <td><code>PAYMENTS</code>
+                            </td>
+                            <td>Sum of all payments made against this invoice made on or before <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>DISCTAKEN</code>
+                            </td>
+                            <td>Sum of the discount amount taken for all payments made against this invoice made on or before <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>BAL</code>
+                            </td>
+                            <td>Invoice Balance due as of <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>BALPEND</code>
+                            </td>
+                            <td>Invoice Balance due after all payments of any date, even those not updated, are included.</td>
+                        </tr>
+                        <tr>
+                            <td><code>DUEDAYS</code>
+                            </td>
+                            <td>The number of days between Invoice Due Date and <code>ASOF</code> date.&#160; Zero if invoice was paid in full on <code>ASOF</code> date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>STAT$</code>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>Pend</td>
+                                        <td>Invoice has payment entered but not yet updated</td>
+                                    </tr>
+                                    <tr>
+                                        <td>New</td>
+                                        <td>Invoice has not yet been updated</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hold</td>
+                                        <td>Invoice is on Hold</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&#160;</td>
+                                        <td>Blank for all other cases</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>NEWDATE</code>
+                            </td>
+                            <td>The newest of invoice and payment dates.&#160; Used to set <code>AP12.DATEPAID</code>.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap"><code>ASOF</code>
+                </td>
+                <td align="center" nowrap="nowrap">To</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td align="center">-1</td>
+                            <td>Include all updated transactions regardless of GL Date</td>
+                        </tr>
+                        <tr>
+                            <td align="center">0</td>
+                            <td>Obtain <code>ASOF</code> date from <code>STBL("AP181")</code>.&#160; Used when AP181 is called from CDS037, CDS038, CDW038.</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Any Julian Date</td>
+                            <td>Exclude invoice and payment amounts if GL Date is after <code>ASOF</code> date.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

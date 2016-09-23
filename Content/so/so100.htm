@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="14" MadCap:lastHeight="9292" MadCap:lastWidth="1245">
+    <head><title>Sales Order Processing</title>
+    </head>
+    <body>
+        <p class="SectionName">Sales&#160;order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Sales Order Processing</p>
+                </td>
+                <td align="right">Last Revised: 02/03/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Sales Order Processing allows for the creation of new sales orders and for editing those previously entered. It also serves to create quotes, void previous orders, create a new sales order by duplicating a previous one, create an invoice, or initiate a customer return. When viewed in a list, orders are grouped by status code. Open sales orders (blank code) are displayed first, then closed orders (C), followed by Quotes (Q) and the voided orders (V). Within each status code grouping, orders are sorted chronologically by date, with the most recent appearing first. </p>
+        <p>&#160;</p>
+        <p>
+            <img src="so100-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p class="SectionDesc">This is main screen for the Sales Order Processing menu.</p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2"><span style="font-weight: bold;">Options</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td>(S) Start New Quick Sale </td>
+                    <td>
+                        <p style="font-weight: normal;">This option is appropriate for the vast majority of point-of-sale retail transactions where a customer pays for an item in person and then takes it with them when they leave. Since there is generally no need create an invoice, get a purchase order number, or collect personal information from a customer in these cases, the operator will quickly bypass being prompted to enter such information and go directly to entering the items to be sold. Dynamo will assign a sales order number and create an invoice indicating the payment method and amount tendered.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(N) Start&#160;New Special Order</td>
+                    <td>
+                        <p>This option is good for  transactions that do not involve a typical, in-person, retail sales transaction. Dynamo assigns a sales order number and, when the order is shipped an invoice will need to be created and sent to the customer. This option will prompt the operator for customer information since shipping products to a customer without prepayment generally requires the customer to have an account with a company.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(Q) Start New Quote</td>
+                    <td>
+                        <p>A quote is used to inform a customer of the price they would pay if they choose to purchase the items listed on the quote. Moreover, creating a quote (instead of a sales order) will not take items out of inventory while the customer is deciding. Once the customer makes a decision regarding the quote, it can either be converted to a sales order—in which case the normal order-fulfillment process can proceed—or it can be voided, requiring no further action by either party.  It is worth noting that a quote will not include sales tax, but can include estimated shipping if it is manually entered by the operator under the <i>Shipping</i> option. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(V) Start New Invoice</td>
+                    <td>
+                        <p>This option is similar to (N) Start New Special Order except that an invoice will be created immediately during the sales order process.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(O) Enter Existing Order#</td>
+                    <td>
+                        <p>Type in an existing sales order number or press <i>F2</i> to choose one from a list. In addition to being able to see important details of the sales order, the operator will be presented with an option to create a new sales order that is a duplicate of the one selected. This is also a starting point for generating an invoice for the customer and/or creating a return of merchandise from the sales order.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(I) Enter Existing Invoice#</td>
+                    <td>
+                        <p>Type in an existing customer invoice number or press <i>F2</i> to choose one from a list. In addition to being able to see important details of the sales order, the operator will be presented with an option to create a new sales order that is a duplicate of the one selected. This is also a starting point for generating an invoice for the customer and/or creating a return of merchandise from the sales order.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(R)&#160;Enter Existing Purchase Order#</td>
+                    <td>This option is used to search for sales orders or invoices on which a customer-provided purchase order number was entered. It does not search for purchase order numbers given to vendors for company purchases. To search for the latter, use the INQ or POP menu and select <i>Purchase Order Inquiry</i>.</td>
+                </tr>
+                <tr>
+                    <td>(C) Display Customer Orders</td>
+                    <td>This option will display a list of all past orders placed by a specific customer. Pressing <i>F2</i> will display a list of all customers in alphabetical order. Since searching this whole list can be cumbersome, Dynamo allow the operator to instead search for a customer using a number of unique identifiers. To narrow the search results, enter information related to the target customer such as customer number, company or contact name, email address, phone number, zip code. To search by a past invoice number, enter the invoice number preceded by the pound sign [<i>example: #12345678</i>].</td>
+                </tr>
+                <tr>
+                    <td>(P) Display Salesperson Orders</td>
+                    <td>
+                        <p style="font-weight: normal;">If you would like to view a list of sales orders entered by a specific salesperson, you can either enter in the salesperson number or you can use the <i>F2</i> hotkey to select the salesperson from a list. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(B) Display Branch Orders</td>
+                    <td>
+                        <p style="font-weight: normal;">Choose this option if you would like to view a list of sales orders by the branch. If you do not know the branch code, press the <i>F2</i> hotkey to select the branch from a list. Once a branch is selected, a list of all sales orders, ordered by date, will be presented. Note that quotes and voided orders always appear at the end of this list. If searching for one of these, type a capital Q or V to jump to quotes or voided orders, respectively.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(A) Display All Orders </td>
+                    <td>
+                        <p style="font-weight: normal;">Choosing this option displays a list of all sales orders that have ever been entered in Dynamo—assuming the records have been stored—with the list being sorted by the order's status code. Status codes are ordered, from first to last, with open orders (blank code) apearing first, followed by closed (C), quotes (Q), and finally voided orders (V). Within each status code, the orders will be sorted by date starting with the most recent first. Using the <i>Page Down</i> key will allow easy scrolling of multiple pages at a time. To jump to a specific status code, type a capital&#160;C, Q, or V to jump to the most recent closed order, quote, or voided order, respectively.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-weight: normal;">&#160;</p>
+        <p style="font-weight: normal;">
+            <img src="so100-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <p>Once a sales order has been selected or created, a list of options displays. Each of these options is marked with an asterisk '*', the letter 'A', 'D', 'S', or a blank:</p>
+        <ul>
+            <li>An asterisk '*' indicates there is data available to display for this option.</li>
+            <li>The letter 'A' indicates that no data is available, but you may select this option and enter information.</li>
+            <li>The letter 'D' indicates this option is disabled.</li>
+            <li>The letter 'S' indicates you do not have sufficient security clearance for this option.</li>
+            <li>A blank next to an option indicates there is no data to display.</li>
+        </ul>
+        <p style="font-weight: normal;">&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2"><span style="font-weight: bold;">Menu Options</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><a name="customerinfo">1. Customer Info</a>
+                    </td>
+                    <td>Edit the customer contact information. This does not need to match the shipping information, which is entered under option 2.</td>
+                </tr>
+                <tr>
+                    <td><a name="shippinginfo">2. Shipping Info</a>
+                    </td>
+                    <td>
+                        <p>Edit the shipment information, such as the address, the sales tax, the carrier, and the tracking number, etc. Once this information is entered into Dynamo, the <MadCap:xref href="#shipmenttracking">Shipment Tracking</MadCap:xref> option can be used. There are several ways which the carrier and tracking information can be entered into Dynamo. The most rudimentary way is to enter the information manually once it is known. If using a third-party software, such as UPS&#160;WorldShip, Dynamo can automatically populate this information when it becomes available. A hand-held scanner may also be employed to transmit the tracking information to  Dynamo.</p>
+                        <h6>Note: If Dynamo can't seem to validate the "Ship to" street address, please follow these guidelines:</h6>
+                        <ul>
+                            <li>If there is only one address line, enter it on Address Line 1. </li>
+                            <li>If you require a contact name or department, then enter it on Address Line 1, and the actual mailing address on Address Line 2.  </li>
+                            <li>Any suite or apartment number needs to be on the same line as the address.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="headinginfo">3. Heading Info</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Edit the heading information including the branch at which the order was entered, who took the order, order and shipping date, the invoice information. The internal notepad is useful to make notes or reminders that can only be seen within the company since they will not print on the invoice. The external notepad is used to enter information that will be printed at the top of the invoice. (Note there is also a notepad for printing addition information for the customer below each line item. This is described under option 4)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="lineitems">4. Line Items</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Add, delete, or change items to be sold to the customer. </p>
+                        <table style="width: 100%;">
+                            <col style="width: 213px;" />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>Item#</td>
+                                    <td>If you do not know the item number, you can try entering a few keywords that should be part of the item description such as brand name, product name, size, color, etc. This should sufficiently narrow down the list for the operator to easily select the correct item.</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>After an item# is entered above, this field will be filled automatically using the product description from the <i>Item Maintenance &amp;&#160;Listings (IML)</i> menu. It can not be edited here.</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>This column will denote whether the item's product class designates it for sale (S), rental (R), or as a used (U) item.</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>This is the quantity of the item to be sold. Attention should be paid to the item description to be sure the correct quantity is entered. For instance, a 12-pack of water would have a quantity of 1, whereas 12 individual bottles of water would have a quantity of 12.</td>
+                                </tr>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>If the price of the item has been entered in the <i>Item Maintenance &amp;&#160;Listings (IML)</i> menu, it will be displayed here automatically. Otherwise, it will need to be entered manually. In either event, the price will be able to be edited.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>U</p>
+                                    </td>
+                                    <td>
+                                        <p>This is the pricing, or costing, unit under which the item is sold. In other words it signifies whether the price is per each, per dozen, etc. This information is entered in the <i>Item Maintenance &amp;&#160;Listings (IML)</i> menu and can not be changed here.</p>
+                                        <table style="width: 100%;">
+                                            <col />
+                                            <col />
+                                            <tbody>
+                                                <tr>
+                                                    <td style="font-weight: bold;">Costing Unit</td>
+                                                    <td style="font-weight: bold;">
+                                                        <p>Quantity</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>blank</td>
+                                                    <td>1 (or each)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>p</td>
+                                                    <td>2 (or per pair)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>T</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>D</td>
+                                                    <td>12 (or per dozen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>C</td>
+                                                    <td>
+                                                        <p>100</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>G</td>
+                                                    <td>144 (or per gross)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>M</td>
+                                                    <td>1,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>D%</td>
+                                    <td>If the customer is entitled to any discount on the order, it can be entered here on a per-item basis. If the customer is entitled to a discount on their entire order, be sure to enter the discount for each item on the order. Note that discounts are entered as the numerical form of the percentage. For example, a discount of 10% would be entered as "10" rather than ".10" and a discount of 2.5% would be entered as "2.5" rather than ".025".<br /></td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>
+                                        <p style="font-weight: normal;">Touching P while the cursor is in this column takes the operator to the additional properties view for the item where they can indicate serial numbers, edit quantities ordered, shipped or back ordered, etc. This view also contains the notepad for the individual line item where the entered text will appear below the item on the sales order and invoice. </p>
+                                        <p style="font-weight: normal;">&#160;</p>
+                                        <p style="font-weight: normal;">Alternatively, pressing <i>I</i> on the keyboard acts as a shortcut to easily access the Item Inquiry view for the item without having to abandon the sales order. Press the <i>F4 hotkey</i> to return to the sales order from <i>Item Inquiry</i>.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-weight: normal;">&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="payments">5. Payments</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Choose the desired method of payment by typing the corresponding letter and pressing enter. For example <i>M</i> would select <i>MasterCard</i> while <i>C</i> would select <i>Cash</i>.</p>
+                        <p style="font-weight: normal;">
+                            <img src="so100-3.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <table>
+                            <col style="width: 127px;" />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>Credit/Debit Cards (D, M, V, and A)</td>
+                                    <td>
+                                        <p>After the appropriate billing information has been entered, the operator will be given the choice to <i>charge</i> the card immediately or to <i>authorize</i> the card for the entered payment amount. Choosing <i>Charge Card Now</i> will immediately charge the  card for the payment amount, which can not be changed after this option is chosen. Choosing <i>Authorize&#160;Only</i> will place a hold on the card for the payment amount. This can be useful when the exact total is not known at the time of sale, allowing the payment amount to be changed later to an amount up to—but not exceeding—the payment amount. When the exact total is known, the payment amount can be changed and the transaction will be finalized by choosing <i>Charge Card Now</i> for the new dollar amount. Any unused funds from the authorization will be released back to the card automatically; typically within a few business days.</p>
+                                        <p>&#160;</p>
+                                        <img src="so100-9.png" style="width: 725px;height: 424px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cash (C)</td>
+                                    <td>
+                                        <p>If  the software necessary for an <a href="so490.htm">Electronic Cash Drawer</a> has been installed, you can open the drawer when recording a cash payment. </p>
+                                        <p>&#160;</p>
+                                        <img src="so100-13.png" style="width: 725px;height: 424px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Check(K)/</p>
+                                        <p>Money Order(O)/</p>
+                                        <p>Traveler's Check(T)</p>
+                                    </td>
+                                    <td>
+                                        <img src="so100-14.png" style="width: 725px;height: 424px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gift Card (G)</td>
+                                    <td>
+                                        <p>The operator can either scan the gift card using a magnetic card reader or type in the number manually. Dynamo displays the remaining balance on the card and suggests a payment on the sales order based on the amount still owed by the customer and the available amount on the card. The operator can change this amount or simply press enter to apply the gift card amount to the order. Dynamo will display the new remaining balance.</p>
+                                        <p> <![CDATA[ ]]></p>
+                                        <p>If a customer wishes to load more funds to an existing gift card, then the operator follows a similar process. </p>
+                                        <p>&#160;</p>
+                                        <img src="so100-17.png" style="width: 725px;height: 424px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Another Sales&#160;Order (S)</td>
+                                    <td>A customer may decide to place multiple orders when, for example,  the orders are being shipped to different addresses. Once all the sales orders are entered, instead of charging a credit card multiple times, the total price for all the orders can be applied to just one of the orders by charging the card a single time. Next, the operator can open the other sales order(s) yet to be paid, select <i>Another Sales Order</i> as the payment method, and Dynamo will give the option to "pull" the extra funds from the paid sales order onto the current order.</td>
+                                </tr>
+                                <tr>
+                                    <td>PayPal (P)</td>
+                                    <td>
+                                        <img src="so100-19.png" style="width: 725px;height: 424px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Credit on Account (R)</td>
+                                    <td>Customers may have a credit on their account if, say, they returned merchandise and chose not to receive a cash refund. When placing a new order, the credit on account can be deducted from the sales order total. If the credit does not cover the entire amount,  the remaining balance can be paid for by choosing any other payment method and proceeding as outlined above. If the sales order total is less than the credit balance, the remainder of the credit will remain on the account.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="printfaxemail">6. Print/Fax/Email</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;"> Dynamo can produce a copy of a sales order or quote through a variety of media such as print, email, or fax. If fax or email is chosen, the <i>Cover Sheet Memo</i> field is where you can type any message to the customer—explaining additional details or just thank them for their business—and it will appear on the fax cover page or in the body of the email, respectively. Remember to include a salutation and a signature in your message as these are not automatically added by Dynamo. </p>
+                        <p style="font-weight: normal;">&#160;</p>
+                        <p style="font-weight: normal;">
+                            <img src="so100-4.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p class="SectionDesc">Document Selection for an order that has been converted into a quote. Option Q is only available on quotes, not sales orders.</p>
+                        <p style="font-weight: normal;">&#160;</p>
+                        <p style="font-weight: normal;">
+                            <img src="so100-5.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p class="SectionDesc">Document Selection for an order that has not yet been invoiced</p>
+                        <p>&#160;</p>
+                        <p style="font-weight: bold;">
+                            <img src="so100-6.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p class="SectionDesc">Document Selection when an order has been invoiced</p>
+                        <p>
+                            <img src="so100-10.png" style="width: 726px;height: 365px;" />
+                        </p>
+                        <p class="SectionDesc">This screen appears when choosing to send an email. Note the cover sheet memo field appears for both fax and email and is the primary message to the customer.</p>
+                        <p>&#160;</p>
+                        <p>Sample documents:</p>
+                        <ul>
+                            <li><a href="orderacknowledgment.pdf">Order Acknowledgment</a>
+                            </li>
+                            <li><a href="billingcopypackinglist.pdf">Packing List/Billing Copy</a>
+                            </li>
+                            <li><a href="notificationofshipment.pdf">Notification of Shipment</a>
+                            </li>
+                            <li><a href="proformainvoice.pdf">Proforma Invoice</a>
+                            </li>
+                            <li><a href="invoice.pdf">Invoice</a>
+                            </li>
+                            <li><a href="quote.pdf">Quotation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="releasetowarehouse">7. Release to&#160;Warehouse</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">This option can be used if warehouse employees have a hand-held scanning device with Dynascan installed on it. Dynascan directs employees to collect items on a sales order for shipping. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="invoicevoidreturnduplicate">8. Invoice/Void/Return/Duplicate</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">You can  invoice the sales order,  convert it to a quote, void it, or  duplicate it to create a new sales order or return. </p>
+                        <p style="font-weight: normal;">
+                            <img src="so100-7.png" style="width: 725px;height: 424px;" />
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;"><a name="shipmenttracking">9. Shipment Tracking</a></span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">This shortcut gets the tracking information from the sales order's Shipping option discussed above. Selecting the shipment to track opens the corresponding carrier's website automatically—with the tracking information prefilled—so that the shipment can be tracked quickly and easily. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="timestamps">10. Timestamps</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">This view gives an entire history of the sales order providing such information as the date/time the sales order was changed, who changed it, and what was changed. </p>
+                        <p style="font-weight: bold;">
+                            <img src="so100-8.png" style="width: 725px;height: 424px;" />
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="customerinquiry">11. Customer Inquiry</a>
+                    </td>
+                    <td>
+                        <p>This shortcut launches the <i>Customer&#160;Inquiry</i> application without having to exit the sales order. Once in <i>Customer Inquiry</i>, the operator can press the <i>F4</i> hotkey to quickly return to the sales order.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Video Documentation</h3>
+        <p>Part [<a href="https://www.youtube.com/watch?v=uyY7avZaNgc">1</a>] [<a href="https://www.youtube.com/watch?v=1PiK1KM-zok">2</a>]</p>
+    </body>
+</html>

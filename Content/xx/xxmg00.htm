@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="6" MadCap:lastHeight="5624" MadCap:lastWidth="1193">
+    <head><title>Magento Integration</title>
+    </head>
+    <body>
+        <p class="SectionName">Sales Order Processing Utilities</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Magento Integration</p>
+                </td>
+                <td align="right">Last Revised: 03/25/16</td>
+            </tr>
+            <tr>
+                <td>&#160;</td>
+                <td align="right">&#160;</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Magento is a leading eCommerce Software provider whose software helps companies manage an eCommerce web store. The Magento Integration application supports Magento's Community (open source) edition, which can be configured to interface with Dynamo to update prices and available inventory quantities and to import orders placed online into Dynamo.  Additional Magento extensions can be added to expand Magento's integration to additional web stores such as eBay or Amazon marketplaces. The following can be accessed in Dynamo through the SOU menu under option 9, <i>Magento Integration</i></p>
+        <p>&#160;</p>
+        <p>Table of Contents:</p>
+        <p><a href="#Parameters">Parameter Maintenance</a>
+        </p>
+        <p><a href="#Additional">Additional Magento Functions</a>
+        </p>
+        <p><a href="#Technica">Technical Information</a>
+        </p>
+        <ul>
+            <li><a href="#Exporting">Exporting Dynamo Products to Magento</a>
+            </li>
+            <li><a href="#Importing">Importing Sales Orders from Magento</a>
+            </li>
+            <li><a href="#Updating">Updating Magento With Dynamo Shipping Information</a>
+            </li>
+            <li><a href="#Prerequi">Prerequisites for Dynamo Integration with Magento</a>
+            </li>
+            <li><a href="#Field">Field Mapping Between Dynamo and Magento</a>
+            </li>
+            <li><a href="#Chron">Customizing Automated Dynamo Integration</a>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h2><a name="Parameters"></a>Parameters</h2>
+        <p>The  <i>Parameters</i> view is the first view to appear once entering the Magento Integration submenu and is pictured in the screenshot below. Here you can specify settings used when Dynamo interacts with Magento software.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="xxmg00-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Parameters View</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>Create an&#160;ID code that will represent the connection between Magento and Dynamo. This name is merely to distinguish it from other Magento connections if any exist. Once it has been created, you can select it to modify the parameters for that particular connection name, or ID. For example, you may wish to create  separate IDs&#160;for production and testing purposes.</td>
+                </tr>
+                <tr>
+                    <td>Enabled</td>
+                    <td>Specify whether this&#160;ID code should be enabled for automated tasks. Disabling it will prevent any automatic Dynamo connections to Magento using the parameters under this ID.</td>
+                </tr>
+                <tr>
+                    <td>Base URL</td>
+                    <td>The URL&#160;specified here will be used for the "Launch Site" command to directly open e-Commerce store in a browser. This is a quick way to launch the online store if, for example, you wanted to make sure it is currently functional.</td>
+                </tr>
+                <tr>
+                    <td>Admin Login</td>
+                    <td>Indicate the login name to be used for the "Launch Admin Panel"&#160;feature. Note that users visiting the Magento Admin Panel in a browser will have to log in manually using these credentials in order to access administrative tasks. As such, this field is simply a place to enter the Magento administrator login for safe keeping or easy reference. Whoever created the Magento account for your company will have been given the opportunity to create the login and a password.</td>
+                </tr>
+                <tr>
+                    <td>Admin&#160;Password</td>
+                    <td>Indicate the password to be used for the "Launch Admin Panel"&#160;feature. If unknown, contact the creator of your company's Magento account to obtain this password. As with the admin login, this field serves only as a place to store the information for safe-keeping or easy reference. See Admin Login above for additional details. </td>
+                </tr>
+                <tr>
+                    <td>API&#160;Login</td>
+                    <td>As opposed to the Admin Login, the API&#160;Login field is required for Dynamo and Magento to communicate. Magento's Application Program Interface (API) acts as the interface between Dynamo and Magento. If unknown, contact the creator of your company's Magento account to obtain this login.</td>
+                </tr>
+                <tr>
+                    <td>API&#160;Password</td>
+                    <td>This required field will indicate the password to be used in combination with the API Login when Dynamo accesses Magento API functions. If unknown, contact the creator of your company's Magento account to obtain this password.</td>
+                </tr>
+                <tr>
+                    <td>Use Product Class as Mag Category</td>
+                    <td>Here you can indicate whether you want to set Dynamo's Product Class—set in <a href="xxim01.htm">Item Maintenance</a>—as the Magento Category. If set to <i>No</i>(N), Dynamo will automatically use the product category assigned in Magento. Excellware recommends setting this option to Yes(Y).</td>
+                </tr>
+                <tr>
+                    <td>Warehouse Code(s)</td>
+                    <td>Warehouse codes are used to specify which company warehouse(s) the online item will ship from. The indicated warehouse will also be used to show quantity available for a product in the online store.</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>Specifies branch to which new online orders will automatically be assigned. </td>
+                </tr>
+                <tr>
+                    <td>Default Customer #</td>
+                    <td>When receiving a new order, Dynamo will attempt to find an existing customer based on the email address and zip code provided with the order. If there is a match, the existing customer number will be used for the order. If a match is not found, a new account number will not automatically be created by Dynamo. Instead, Dynamo will use the Default Customer # entered in this field. Note that the Default Customer # should be a single character—either a number or a letter.</td>
+                </tr>
+                <tr>
+                    <td>Credit Card Processing by</td>
+                    <td>Indicate which application, Dynamo or Magento, will process credit card information that is submitted with a order on Magento.</td>
+                </tr>
+                <tr>
+                    <td>Shipping Amount Set by</td>
+                    <td>Indicate which application, Dynamo or Magento, will calculate the shipping charges for the online order. </td>
+                </tr>
+                <tr>
+                    <td>Email Address for Log</td>
+                    <td>When Dynamo interacts with Magento to update information, a log file is created in Dynamo. Here the operator can specify an email address where the logs will be sent as an attachment.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="Additional"></a>Additional Magento Functions</h2>
+        <p>After pressing Enter to get past the Parameters submenu outlined above—or using the <i>F4</i> hotkey to exit the initial Parameter Maintenance view—the operator will be presented with additional options listed in yellow on the screenshot below.</p>
+        <h5>
+            <img src="xxmg00-1.png" style="width: 725px;height: 424px;" />
+        </h5>
+        <p>  </p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Launch&#160;Site</td>
+                    <td>
+                        <p>Selecting this feature will launch a web browser that opens to the page for the company eCommerce store. This destination URL is defined in the Base URL line of the Magento Parameters. This is useful as a shortcut to quickly open the online store to, for example, ensure it is working properly.</p>
+                        <p>Launch Admin&#160;Panel</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Launch Admin Panel</td>
+                    <td>Launch Admin Panel opens a web browser taking the operator to the Magento Administration Panel where they can perform administrative tasks. This URL&#160;does not need to be defined by the user in Dynamo as Dynamo will use the Base URL and automatically modify it to point to the Administration Panel login page. The Magento username and password are manually entered here when maintaining web store details in Magento's software.</td>
+                </tr>
+                <tr>
+                    <td>Test API&#160;Connection</td>
+                    <td>Test API&#160;Connection is used to verify a successful connection between Dynamo and the Application Program Interface (API), which is what Dynamo uses to communicate with Magento. If successful, it returns a Session ID as well as the version and edition of Magento software running on the web site. It may take a few moments to run. If the connection is not successful, please check for a stable internet connection and ensure the API login and password are correct.</td>
+                </tr>
+                <tr>
+                    <td>Update Dynamo Attribute Sets</td>
+                    <td>If used, attribute sets are created in Magento and imported to Dynamo. Use this option to manually bring Dynamo current on any attribute sets that may have been added or changed within Magento. For additional details on attribute sets, see <a href="xxmg03.htm">Magento Attribute Set Inquiry</a>. If <i>Use Product Class as Mag Category</i> (see previous section) is set to N (No), this option will also update Dynamo with a current list of Magento product categories.</td>
+                </tr>
+                <tr>
+                    <td>Update Magento Item Information</td>
+                    <td>This option will manually update Magento with changes to Dynamo product information set in Item Maintenance &amp; Listings. A PDF&#160;log of the updated items will appear in an internet browser once the update is finished. </td>
+                </tr>
+                <tr>
+                    <td>Update Magento Prices and Quantities</td>
+                    <td>Used to manually update Magento with changes to Dynamo items' prices or quantities on hand. A PDF&#160;log of the updated items will appear in an internet browser once the update is finished. Note that <i>Download &amp;&#160;Import Sales Orders</i> should be run before using this application so that  available inventory can be updated before uploading the quantities available to the web store.</td>
+                </tr>
+                <tr>
+                    <td>Download &amp;&#160;Import Sales</td>
+                    <td>Manually retrieves all pending orders from Magento for further processing by Dynamo without having to wait for an automatic update. After doing so, the "pending" status in Magento is changed to "processing."  This feature should be run prior to using <i>Update  Magento Prices and Quantities</i> so that  available inventory can be updated before uploading the quantities available to the web store.</td>
+                </tr>
+                <tr>
+                    <td>Display Log</td>
+                    <td>This feature displays a report of the interactions between Dynamo and the Magento software. It indicates details about recent updates between Magento and Dynamo, including date, time, number of items updated, item numbers, and details of the changes (e.g., Changed Item# X's price from 10.00 to 11.00, Changed Item# X's quantity on hand from 10 to 0). In addition to logging all processes that have run successfully, the log will also show any processes that have run with errors and so can be useful to consult in the event of problems.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h6>Note: The Magento site is automatically updated every 15 minutes between the hours of 7AM&#160;and 7PM with the current Dynamo selling price and quantity-on-hand. (These times are subject to change at a later date.) The operator can choose not to wait every 15 minutes by initiating a manual update of the item information. </h6>
+        <p>&#160;</p>
+        <h2><a name="Technica"></a>Technical Information</h2>
+        <p>The following is intended to provide insight to Dynamo/Magento integration for programmers and developers.</p>
+        <p>&#160;</p>
+        <p>There are three functions during the process of online purchases where Dynamo interacts with Magento:</p>
+        <ol>
+            <li>Exporting Dynamo Products to Magento</li>
+            <li>Importing Sales Orders from Magento</li>
+            <li>Updating Magento with Dynamo Shipping Information</li>
+        </ol>
+        <p>&#160;</p>
+        <p>In addition to providing more detail on these 3 distinct interactions, the following documentation also provides the <a href="#Prerequi">prerequisites for Dynamo integration with Magento</a>, <a href="#Field">field mappings</a> between the two programs, and <a href="#Chron">customizing automatic Dynamo integration with Magento</a>.</p>
+        <p>&#160;</p>
+        <h5><a name="Exporting"></a>Exporting Dynamo Products to Magento</h5>
+        <p>&#160;</p>
+        <p>Dynamo performs the following steps when exporting Dynamo products to Magento:</p>
+        <ol>
+            <li>Dynamo looks for the item in IM01, which is a table of all existing products entered into Dynamo</li>
+            <li>Dynamo checks to see whether the item has been designated as an eCommerce product.  All Dynamo products flagged with “Y” in the ECOOMMERCE field of table IM01 will be exported to Magento via SOAP.  If not an eCommerce product, the process loops back to the beginning and examines the next product in the queue</li>
+            <li>Dynamo checks whether the eCommerce product exists in Magento</li>
+            <li>If the product does not exist in Magento, Dynamo will check to see if the Magento Category Parameter (MAGENTOCTG) is defined.  <ol><li>If defined, Dynamo will use product category (PCT) and product class (PCL) as the category and subcategory for the product to be inserted.  </li><li>If not defined, the product category (PCT) and product class (PCL) will be designated by Dynamo as the root category and subcategory, respectively, in Magento.</li></ol></li>
+            <li>If the product does exist in Magento, Dynamo will check whether Magento Category Parameter (MAGENTOCTG) is defined.<ol><li>If defined, Dynamo will use MAGENTOCTG as a catch-all PCT for all products that will be inserted</li><li>If not defined, Dynamo will use the PCT and PCL of the item/product as references for the category and subcategory in Magento.</li></ol></li>
+            <li>Dynamo updates data in Magento and advances to the next item in queue</li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>
+            <img src="../Resources/Images/xxmg00-9.PNG" style="mc-thumbnail: hover;" /> <b>Fig. 1</b> (Mouse over to zoom)</p>
+        <p>&#160;</p>
+        <h5><a name="Importing"></a>Importing Sales Orders From Magento</h5>
+        <p>&#160;</p>
+        <p>Dynamo performs the following steps when importing sales order from Magento:</p>
+        <ol>
+            <li>Start of order processing</li>
+            <li>Dynamo retrieves all orders that are in the “pending” status from Magento</li>
+            <li>Dynamo retrieves the item details of the Magento order from IM01, which is a Dynamo table containing all existing items</li>
+            <li>Dynamo checks whether the customer exists in CM01, which is a Dynamo table containing all previously entered customers.  Matches are based on name, email address, mailing address, etc<ol><li>If the customer already exists, Dynamo will use the record in CM01 from a previously created account</li><li>If the customer does not exist, Dynamo will use a predefined default customer from the Magento Integration Menu.</li></ol></li>
+            <li>Dynamo combines information from steps 3 and 4 and imports to SO90/91.  SO90 contains the import order header for the sales order, while SO91 contains the import order details.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="../Resources/Images/xxmg00-10.PNG" style="mc-thumbnail: hover;" /> <b>Fig. 2</b> (mouse over to zoom)</p>
+        <p>&#160;</p>
+        <h5><a name="Updating"></a>Updating Magento with Dynamo Shipping Information (Fig. 3)</h5>
+        <p>&#160;</p>
+        <p>Dynamo performs the following steps when updating Magento with shipping information:</p>
+        <ol>
+            <li>Sales order information is exported to SO40/41.  SO40 contains the order headers for the sales order, while SO41 contains the order details</li>
+            <li>Dynamo checks the inventory level and makes sure it is greater than zero.<ol><li>If Dynamo determines there is insufficient quantity on hand, it will wait for inventory.</li><li>If there is sufficient inventory, Dynamo will proceed with processing the shipment</li></ol></li>
+            <li>An automatic process, scheduled at predetermined increments retrieves the tracking number</li>
+            <li>Dynamo schedules the invoice to be updated</li>
+            <li>The invoice is updated meaning it is ready to be sent to the customer</li>
+            <li>Dynamo updates Magento with a completed invoice and tracking number</li>
+        </ol>
+        <p>&#160;</p>
+        <p>
+            <img src="../Resources/Images/xxmg00-11.PNG" style="mc-thumbnail: hover;" /> <b>Fig. 3</b> (mouse over to zoom)</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h5><a name="Prerequi"></a>Prerequisites for Dynamo Integration with Magento:</h5>
+        <p>The following conditions must be met before fully integrating Magento with Dynamo:</p>
+        <ul>
+            <li>MG00 fields must be populated</li>
+            <li>Items in IM01 that need to be exported to Magento must have a “Y” flag in Dynamo’s ECOMMERCE field.</li>
+            <li>MG00.CATADMIN field should be flagged as “Y” or “N”.  If flagged as “N”, then MG00.ROOTCAT becomes required</li>
+            <li>Dynamo must be the only the source of items imported to Magento</li>
+            <li>WSI Compliance and Enable WSDL Cache must be enabled in the Magento Core API so that SOAP can be used by languages other than PHP.</li>
+            <li>In order to incorporate Minimum Advertised Pricing Policy (MAPP), Enable MAP must be set to “Yes” in Magento  admin under the System tab</li>
+            <li>
+                <p>The file app/code/core/Mage/Catalog/Model/Product/Api/V2.php  in Magento must be modified.  As background, SOAP v2 does not inherently allow you to modify or insert values in the custom product attributes. In the case of Dynamo/Magento integration, there are two custom attributes: UPC and VPN.<a href="http://blog.rastating.com/adding-additional-attributes-in-magento-v2-api-in-ws-i-compliance-mode/" target="_blank"> Click here</a> for more information on this slight modification.</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <h5><a name="Field"></a>Field Mapping Between Dynamo and Magento</h5>
+        <p>&#160;</p>
+        <table style="width: 720px;">
+            <col style="width: 69px;" />
+            <col style="width: 136px;" />
+            <col style="width: 166px;" />
+            <col style="width: 307px;" />
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold;text-decoration: underline;">Magento Description</td>
+                    <td style="font-weight: bold;text-decoration: underline;">Magento Field Name</td>
+                    <td style="font-weight: bold;text-decoration: underline;">Dynamo Description</td>
+                    <td style="font-weight: bold;text-decoration: underline;">Dynamo Field Name</td>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Name</td>
+                    <td>Description Line 1 + 2 + optional pricing unit indicator</td>
+                    <td>IM01.DESC1$ + IM01.DESC2$ + IM610-PU$</td>
+                </tr>
+                <tr>
+                    <td>Product Description</td>
+                    <td>Short Description</td>
+                    <td style="text-align: left;">Description Line 1</td>
+                    <td style="text-align: left;">
+                        <p>IM01.DESC1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product Description</td>
+                    <td>Long Description</td>
+                    <td style="text-align: left;">Description Line 2</td>
+                    <td style="text-align: left;">IM01.DESC1 + IM01.DESC2</td>
+                </tr>
+                <tr>
+                    <td>Root Category</td>
+                    <td>Category</td>
+                    <td>Product Category (PCT)</td>
+                    <td>IM26.DESC$</td>
+                </tr>
+                <tr>
+                    <td>Subcategory</td>
+                    <td>Subcategory</td>
+                    <td>
+                        <p>Product Class Description (PCL)</p>
+                    </td>
+                    <td>IM27.DESC$</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Root Category Meta Description</td>
+                    <td>Product Category</td>
+                    <td>IM26.PCT$</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Subcategory Meta Description</td>
+                    <td>Product Class</td>
+                    <td>IM27.PCL$</td>
+                </tr>
+                <tr>
+                    <td>SKU</td>
+                    <td>SKU</td>
+                    <td>Item Number</td>
+                    <td>IM01.ITEMNO$</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>Weight</td>
+                    <td>Weight</td>
+                    <td>IM01.WEIGHT</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Price</td>
+                    <td>Selling Price</td>
+                    <td>call "IM610",Y$,IM610$,IM01$
+dynamoprice=im610.NET[1]
+</td>
+                </tr>
+                <tr>
+                    <td>Inventory/Qty</td>
+                    <td>Qty</td>
+                    <td>Quantity Available</td>
+                    <td>call "IC033",y$,rec$,ic033$
+dynamoqoh=dynamoqoh+ic033.QOH
+</td>
+                </tr>
+                <tr>
+                    <td>Custom Field Added</td>
+                    <td>UPC</td>
+                    <td>UPC</td>
+                    <td>IM04.BARCODE (where qty=1)</td>
+                </tr>
+                <tr>
+                    <td>Custom Field Added</td>
+                    <td>VPN</td>
+                    <td>Vendor Part Number</td>
+                    <td>IM03.VENDPARTNO$</td>
+                </tr>
+                <tr>
+                    <td>Sales Order #</td>
+                    <td>Custom Field?</td>
+                    <td>Dynamo Sales Order #</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>Order#</td>
+                    <td style="text-align: center;">-</td>
+                    <td>DNSO40.SONO$</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Order Status</td>
+                    <td style="text-align: center;">-</td>
+                    <td>DNSO40.STATUS$</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Qty Ordered</td>
+                    <td style="text-align: center;">-</td>
+                    <td style="text-align: center;">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Qty Invoiced</td>
+                    <td style="text-align: center;">-</td>
+                    <td style="text-align: center;">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">-</td>
+                    <td>Qty Shipped</td>
+                    <td style="text-align: center;">-</td>
+                    <td style="text-align: center;">-</td>
+                </tr>
+                <tr>
+                    <td>Freight Charges</td>
+                    <td>Item Status</td>
+                    <td style="text-align: center;">-</td>
+                    <td style="text-align: center;">-</td>
+                </tr>
+                <tr>
+                    <td>#&#160;of Packages</td>
+                    <td>Shipping&amp;Handling Information</td>
+                    <td style="text-align: center;">-</td>
+                    <td>DNSO40.FREIGHT</td>
+                </tr>
+                <tr>
+                    <td>Tracking Number(s)</td>
+                    <td style="text-align: center;">-</td>
+                    <td style="text-align: center;">-</td>
+                    <td>DNSO40.PACKAGES</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h5><a name="Chron"></a>Customizing Automated Dynamo Integration</h5>
+        <p>&#160;</p>
+        <p>Dynamo has several tasks that will run in the background automatically at predefined intervals in order to "sync" information between itself and Magento. Known as chron jobs, these processes include ITEMINFO, GETORDERS, and ITEMQTY and time intervals can be customized according the following table.</p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 122px;" />
+            <col style="width: 750px;" />
+            <tbody>
+                <tr>
+                    <td>ITEMINFO</td>
+                    <td>If the product is flagged with a "Y" for ecommerce in Dyanmo, then Dynamo will push the product information to Magento at the set interval</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-style: italic;">In the following example, ITEMINFO&#160;will be run weekdays at 11pm:</p>
+        <p>*/15 7-19 * * * /u/CDI/bin/background MG013 XX eCommerce_Integration GETORDERS bbj</p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 122px;" />
+            <col style="width: 750px;" />
+            <tbody>
+                <tr>
+                    <td>ITEMQTY</td>
+                    <td>For items that are flagged with a "Y"&#160;for ecommerce Dynamo updates Magento with the current quantity-on-hand</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><i>In the following example, ITEMQTY will be run weekdays, between 7:10am and 7:10pm at hourly intervals occurring at 10 minutes past the hour:</i>
+        </p>
+        <p>10 7-19 * * 1-5 /u/CDI/bin/background MG013 XX eCommerce_Integration ITEMQTY bbj</p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 122px;" />
+            <col style="width: 750px;" />
+            <tbody>
+                <tr>
+                    <td>GETORDERS</td>
+                    <td>Dynamo retrieves all orders from Magento that have a "pending" status.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><i>In the following example, GETORDERS will be run every 15 minutes from 7am to 7pm, 7 days a week:</i>
+        </p>
+        <p>*/15 7-19 * * * /u/CDI/bin/background MG013 XX eCommerce_Integration GETORDERS bbj</p>
+        <p>&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 123px;" />
+            <col style="width: 750px;" />
+            <tbody>
+                <tr>
+                    <td>""</td>
+                    <td>Use consecutive quotes to include all of the above modes in your argument</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><i>In the following example, GETORDERS, then ITEMQTY, and finally ITEMINFO get run consecutively every 15 minutes from 7am to 7pm on weekdays only:</i>
+        </p>
+        <p>*/15 7-19 * * 1-5 /u/CDI/bin/background MG013 XX eCommerce_Integration "" bbj</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

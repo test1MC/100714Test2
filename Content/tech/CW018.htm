@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="2088" MadCap:lastWidth="1306">
+    <head><title>CW018 - Workday Calculator</title>
+    </head>
+    <body>
+        <p class="CalledName">CW018</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Workday Calculator</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;cc=DY&amp;pgm=CW018">Last Revised: 01/06/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This routine is used with the Workday Calendar.&#160; The Workday Calendar can be used to indicate dates that the business is closed.&#160; This called routine can be used to compute a work date, or the number of work days between two dates, or to return workday information.</p>
+        <p>The workday calendar is maintained using Workday Calendar Maintenance located on CWP menu.&#160; As some businesses are open Saturdays and even Sundays, all days not worked, including weekends, need to be marked as a non-working day using Workday Calendar Maintenance.</p>
+        <p>The workday calendar is stored in data file XXCW01.&#160; If the workday calendar is not defined for the current company, then the the operator will be informed and the called routine will EXIT.&#160; If a calendar for a year has not yet been defined, then CW018 will advise the operator to use Workday Calendar Maintenance (CWP) to setup the required year and offer the option to retry.</p>
+        <p>CW018 has three functions:</p>
+        <ol>
+            <li>To compute a julian date some number of days after or before a date specified.</li>
+            <li>To compute the number of workdays between two dates.</li>
+            <li>To return workday information about a particular year.&#160; This information can then be used to answer the question is today the first or last workday of the month.</li>
+        </ol>
+        <p>The calling arguments vary depending on the type of calculation.</p>
+        <p><code>CALL "CW018::CALCDATE", Y$, STARTDATE, WORKDAYS, CALCDATE</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">CW018 Arguments - Calculate a Workdate</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>STARTDATE</code>
+                </td>
+                <td align="center">To</td>
+                <td>Julian date of starting date.&#160; If passed as zero, today's date will be used.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>WORKDAYS</code>
+                </td>
+                <td align="center">To</td>
+                <td>Number of workdays which can be a positive or negative number</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CALCDATE</code>
+                </td>
+                <td align="center">From</td>
+                <td>Computed julian date</td>
+            </tr>
+        </table>
+        <p><code>CALL "CW018::CALCDAYS", Y$, FROMDATE, THRUDATE, CALCDAYS</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">CW018 Arguments - Calculate workdays between 2 dates</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="" height="27"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center" nowrap="" height="27">To</td>
+                <td height="27">Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>FROMDATE</code>
+                </td>
+                <td align="center">To</td>
+                <td>Julian date of starting date.&#160; If passed as zero, today's date will be used.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>THRUDATE</code>
+                </td>
+                <td align="center">To</td>
+                <td>Julian date of ending date.&#160; Must be greater than <code>FROMDATE</code>.</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CALCDAYS</code>
+                </td>
+                <td align="center">From</td>
+                <td>Computed number of workdays excluding <code>FROMDATE</code>, but including <code>TODATE</code>.</td>
+            </tr>
+        </table>
+        <p><code>CALL "CW018::INFO", Y$, YEAR$, CW018$</code>
+        </p>
+        <table>
+            <tr>
+                <th colspan="3">CW018 Arguments - Return workday information</th>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Passed To/From</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left"><code><a href="http://www.excellware.com/docs/tools/environment.htm#Y$">Y$</a></code>
+                </td>
+                <td align="center">To</td>
+                <td>Session Control Variable</td>
+            </tr>
+            <tr>
+                <td align="left"><code>YEAR$</code>
+                </td>
+                <td align="center">To</td>
+                <td>Four digit year</td>
+            </tr>
+            <tr>
+                <td align="left"><code>CW018$</code>
+                </td>
+                <td align="center">From</td>
+                <td>
+        Templated variable containing workday information about <code>YEAR$</code> provided
+
+        <table class="lev2"><tr><td><code>FIRSTWORKDAY[12]</code></td><td>Julian date of the first workday of each month</td></tr><tr><td><code>LASTWORKDAY[12]</code></td><td>Julian date of the last workday of each month</td></tr><tr><td><code>WORKDAYS[12]</code></td><td>Number of workdays in each month</td></tr></table></td>
+            </tr>
+        </table>
+        <table class="example">
+            <tr>
+                <td>In the examples below, Saturday and Sunday Jan 10 and 11 are marked as non-workdays using Workday Calendar Maintenance</td>
+            </tr>
+            <tr>
+                <td>Compute workdate examples</td>
+            </tr>
+            <tr>
+                <td><code>&gt;STARTDATE=JUL(2009,1,6)<br />        &gt;?DATE(STARTDATE:"%Ds %Mz/%Dz/%Yz")<br />        Tue 01/06/09<br /><br />        &gt;CALL "CW018::CALCDATE",Y$,STARTDATE,1,CALCDATE<br />        &gt;?DATE(CALCDATE:"%Ds %Mz/%Dz/%Yz")<br />        Wed 01/07/09</code>
+                    <p><code><br />        &gt;CALL "CW018::CALCDATE",Y$,STARTDATE,4,CALCDATE<br />        &gt;?DATE(CALCDATE:"%Ds %Mz/%Dz/%Yz")<br />        Mon 01/12/09</code>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Example: What workday is 4 days from today?</td>
+            </tr>
+            <tr>
+                <td><code>&gt;CALL "CW018::CALCDATE",Y$,0,4,CALCDATE<br />      &gt;?DATE(CALCDATE:"%Ds %Mz/%Dz/%Yz")<br />      Mon 01/12/09</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Compute number of workdays examples</td>
+            </tr>
+            <tr>
+                <td><code>&gt;FROMDATE=JUL(2009,1,6)<br />        &gt;THRUDATE=JUL(2009,1,7)<br />        &gt;CALL "CW018::CALCDAYS",Y$,FROMDATE,THRUDATE,CALCDAYS<br />        &gt;?CALCDAYS<br />        1</code>
+                    <p><code><br />        &gt;THRUDATE=JUL(2009,1,12)<br />        &gt;?DATE(THRUDATE:"%Ds %Mz/%Dz/%Yz")<br />        Mon 01/12/09<br />        &gt;CALL "CW018::CALCDAYS",Y$,FROMDATE,THRUDATE,CALCDAYS<br />        &gt;?CALCDAYS<br />        4</code>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Example: Using CW018 to return calendar year information</td>
+            </tr>
+            <tr>
+                <td>
+                    <img border="0" src="CW018.1.jpg" alt="" />
+                    <p>
+                        <img border="0" src="CW018.2.jpg" alt="" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

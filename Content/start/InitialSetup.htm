@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1576" MadCap:lastWidth="906" class="topic">
+    <head><title>New Company Setup</title>
+    </head>
+    <body>
+        <p class="SectionName">Dynamo</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Dynamo Initial Setup</p>
+                </td>
+                <td align="right">Last Revised 06/30/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo has the powerful ability to link many business processes to each other so that your business runs as a whole. As a few examples, Dynamo links purchase orders to inventory, inventory to sales orders, sales orders to customers and payments, and all of this to the general ledger. On top of that, the Dynamo experience is customizable. As such, there is a need to prime Dynamo with as much information about your company as possible in order to make all business components work together. The following set of procedures is meant to do just that. </p>
+        <p class="SectionDesc">If this is your first time using a character-based application, you may want to view Excellware's brief tutorials covering general navigation and data entry. These include <a href="DataEntry.htm">data entry conventions</a>, <a href="MenuOptions.htm">navigating menus</a>, <a href="DataEntryDates.htm">entering dates</a>, <a href="DataEntryLists.htm">selecting records from a list</a>, and <a href="DataEntryGrid.htm">selecting records from a grid</a>. </p>
+        <p class="SectionDesc">Note that each step below should be followed in order. For more detailed help, there is a link in each step to the Dynamo documentation page for that program.</p>
+        <p class="SectionDesc">&#160;</p>
+        <table style="width: 100%;">
+            <col style="width: 87px;" />
+            <col style="width: 263px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold;">Menu Code</td>
+                    <td style="font-weight: bold;">Program</td>
+                    <td style="font-weight: bold;">Brief Description of Step</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>SMC</p>
+                    </td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxdd00.htm" target="_blank">Company Information Maintenance</a>
+                    </td>
+                    <td>Enter essential company information such as company name, address, phone/fax numbers, etc.</td>
+                </tr>
+                <tr>
+                    <td>CWP<p>&#160;</p></td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcw00.htm" target="_blank">Dynamo Parameters Maintenance</a>
+                    </td>
+                    <td>
+                        <ol>
+                            <li rowspan="3">Under <i>Period Parameters</i>, define the fiscal year, current month, and current year.  </li>
+                            <li rowspan="3">Under <i>Dynamo Options</i>, enable or disable a series of attributes related to inventory. </li>
+                            <li rowspan="3">Under <i>Dynamo Settings</i>, set additional options related to inventory.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IML</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxim26.htm" target="_blank">Product Category Maintenance</a>
+                    </td>
+                    <td>Product category names should be generalized and brief. Examples might be Sales, Rentals, Parts, Service, etc.</td>
+                </tr>
+                <tr>
+                    <td>IML</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxim27.htm" target="_blank">Product Class Maintenance</a>
+                    </td>
+                    <td>Product classes are more specialized subsets of product classes. For example, under a "Sales" product category, product classes could be created for the types of products sold such as tools, apparel, fasteners, etc.</td>
+                </tr>
+                <tr>
+                    <td>GLU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/dynamo.htm#xx/xxgl00.htm" target="_blank">G/L&#160;Parameter Maintenance</a>
+                    </td>
+                    <td>Define the structure of general ledger account numbering and, if applicable, whether the account numbers will refer to multiple company locations for easy distinction during reporting. </td>
+                </tr>
+                <tr>
+                    <td>GLU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/gl/gl070.htm" target="_blank">G/L&#160;Account Group Maintenance</a>
+                    </td>
+                    <td>Define ranges for general ledger account groups. General ledger account numbers—defined in a later step—that fall in these ranges will inherit the same broad accounting category as the range defined here (e.g. Assets, Liabilities, Equity, etc.). You may wish to print a hard copy of this screen (F5) for reference when creating actual G/L accounts in the next step.</td>
+                </tr>
+                <tr>
+                    <td>G/L</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/gl/gl100.htm" target="_blank">G/L&#160;Account Maintenance</a>
+                    </td>
+                    <td>This is where the company chart of accounts is created. Define the specific account numbers that will be associated with each general ledger account such cost of goods, sales revenue, utility expenses, etc. Be sure that the account number falls in the appropriate range for the accounting category type (e.g. shipping expenses should be numbered in the "Expense" group as defined in the previous step).</td>
+                </tr>
+                <tr>
+                    <td>GLU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/gl/gl090.htm" target="_blank">G/L&#160;Period Ending Date Maintenance</a>
+                    </td>
+                    <td>If needed, change the closing dates for each general ledger posting period. Periods can also be opened or closed to allow or prevent further transactions being posted to the period.</td>
+                </tr>
+                <tr>
+                    <td>GLU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/gl/gl180.htm" target="_blank">G/L&#160;Beginning Balance Maintenance</a>
+                    </td>
+                    <td>
+                        <p>If beginning to use Dynamo in the middle of a fiscal year, some general ledger accounts presumably have balances that should be provided here. Specify the accounts and corresponding balances so that Dynamo can produce accurate financial data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VML</td>
+                    <td style="font-weight: normal;"><a href="http://www.excellware.com/docs/dynamo/xx/xxvm01.htm" target="_blank">Vendor Maintenance</a>
+                    </td>
+                    <td>Dynamo needs a vendor account for the appropriate sales tax authority. A "Miscellaneous" vendor can also be created for non-routine transactions and those that do not require a vendor to be on file. Other vendors can be set up later as needed.</td>
+                </tr>
+                <tr>
+                    <td>SOU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxso00.htm" target="_blank">SOP&#160;Parameter Maintenance</a>
+                    </td>
+                    <td>Set the default fields and values that Dynamo will use for new sales orders.</td>
+                </tr>
+                <tr>
+                    <td>CML</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcm01.htm" target="_blank">Customer Maintenance</a>
+                    </td>
+                    <td>Create customer accounts. A "Miscellaneous" or "Quick Sale" customer account should be created for customers who do not need to be (or wish to be) on file. Other customer accounts can be set up later as needed.</td>
+                </tr>
+                <tr>
+                    <td>CWP</td>
+                    <td style="font-weight: normal;"><a href="http://www.excellware.com/docs/dynamo/xx/xxcw11.htm" target="_blank">Branch Information Maintenance</a>
+                    </td>
+                    <td>If applicable, enter information about individual company branch locations.</td>
+                </tr>
+                <tr>
+                    <td>APU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxap01.htm" target="_blank">Bank Code Maintenance</a>
+                    </td>
+                    <td>Enter information for any bank account(s) that  Dynamo will interact with.</td>
+                </tr>
+                <tr>
+                    <td>ARU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxso53.htm" target="_blank">Cash Drawer Maintenance</a>
+                    </td>
+                    <td>Enter information related to any cash drawers used at points of sale including beginning balances and branch locations.</td>
+                </tr>
+                <tr>
+                    <td>CWP</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcw10.htm" target="_blank">Workstation Information Maintenance</a>
+                    </td>
+                    <td>Set default values for any workstation running Dynamo such as default branch location, cash drawers used, printers available, etc.</td>
+                </tr>
+                <tr>
+                    <td>CWP</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcw12.htm" target="_blank">Warehouse Information Maintenance</a>
+                    </td>
+                    <td>If applicable, enter information for each company warehouse.</td>
+                </tr>
+                <tr>
+                    <td>GLU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/gl/gl240.htm" target="_blank">G/L Interface Maintenance</a>
+                    </td>
+                    <td>Define how individual accounts in the chart of accounts will flow into the general ledger.</td>
+                </tr>
+                <tr>
+                    <td>SMC</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/cd/cds470.htm" target="_blank">Operator Information Maintenance</a>
+                    </td>
+                    <td>Create and edit Dynamo users. Also assign security levels, passwords, and other user-specific attributes.</td>
+                </tr>
+                <tr>
+                    <td>SOU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcm31.htm" target="_blank">Commission Code Maintenance</a>
+                    </td>
+                    <td>If employing a commission-based sales force, create commission parameters that can be assigned to salespersons.</td>
+                </tr>
+                <tr>
+                    <td>CML</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxcm30.htm" target="_blank">Salesman Maintenance</a>
+                    </td>
+                    <td>Create entries for individual salespersons and assign commission codes if applicable.</td>
+                </tr>
+                <tr>
+                    <td>SOU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxso14.htm" target="_blank">Sales Tax Control Maintenance</a>
+                    </td>
+                    <td>Enter information needed for Dynamo to automatically calculate sales tax on sales orders.</td>
+                </tr>
+                <tr>
+                    <td>VML</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxvm08.htm" target="_blank">Buyer Maintenance</a>
+                    </td>
+                    <td>Create entries for buyers within the company. These buyers can then be assigned to vendors and authorized to make purchase orders to that vendor on the company's behalf.</td>
+                </tr>
+                <tr>
+                    <td>ARU</td>
+                    <td><a href="http://www.excellware.com/docs/dynamo/xx/xxso55.htm" target="_blank">Payment Method Maintenance</a>
+                    </td>
+                    <td>Create and maintain payment methods that are available during the processing of a sales order.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><i>optional</i>
+                    </td>
+                    <td>Supply company logo or other artwork to be included on invoices or sales orders. Images can be JPEG or PNG formats, but the height should be limited to 100 pixels. Images can be emailed to officemgr@excellware.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

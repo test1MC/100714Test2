@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="MadCap HTML5 Target"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterPage="/Content/Resources/MasterPages/DynamoMasterPage.flmsp"
+  MasterStylesheet="/Content/Resources/Stylesheets/tools.css"
+  OutputFile="dynamo.htm"
+  MoveOutputContentToRoot="true"
+  GenerateWebSafeImages="true"
+  WebSafeFileExtension="png"
+  GenerateAllSkins="false">
+  <PrintedOutput
+    CollapseMargins="true" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/ExcellwareWebSite.fldes" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="Primary/CompanyName">Excellware, Inc.</Variable>
+    <Variable
+      Name="Primary/PhoneNumber">800 243 3901</Variable>
+  </Variables>
+</CatapultTarget>

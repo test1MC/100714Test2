@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="894" MadCap:lastWidth="1186">
+    <head><title>G/L Period Ending Date Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">General ledger Utility functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">G/L Period Ending Date Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 01/07/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The G/L Period Ending Date Maintenance program is used to set up the period ending date for each fiscal year and period.&#160; It is also used to open and close each accounting period. &#160;Dynamo 
+	prevents posting transactions to a closed period; however, closed periods can be reopened by simply selecting that period.</p>
+        <p>Typically, you will have 2 or 3 periods open at a time: the current period 
+	and perhaps 1 or 2 prior periods as closing entries are being completed.</p>
+        <h6>Note: Remember to close each period to prevent accidental postings to prior or 
+	future periods.</h6>
+        <p>In some cases, companies change from a non-calendar fiscal year to a 
+	calendar based year.&#160; This may require a short year with fewer than 12 
+	periods.&#160; If this occurs and the 4 digit year has already been used, 
+	then you may place an alpha character after the year such as 2002A.</p>
+        <p>
+            <img src="gl090-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2">G/L&#160;Period Ending Date Maintenance View</th>
+                </tr>
+                <tr>
+                    <td>Fiscal&#160;Year</td>
+                    <td>Enter the four digit year that the month of December falls in.&#160; 
+	For example, for the fiscal year starting October 1, 2001, specify 2001 as 
+	the Fiscal Year.&#160; For the fiscal year starting January 1, 2002, specify 
+	2002 as the fiscal year.</td>
+                </tr>
+                <tr>
+                    <td>Period</td>
+                    <td>Indicate the periods of the company's fiscal year (they may be 1-12, 1-4, etc.). </td>
+                </tr>
+                <tr>
+                    <td>Ending Date</td>
+                    <td>
+                        <p>To simplify the process of entering all the period ending dates, you are 
+	presented the options listed below:</p>
+                        <ol>
+                            <li>Standard 12 month calendar periods, ending with the last day of the month</li>
+                            <li>Twelve month period with early period ending date (if for example you 
+	close on the 25th of each month)</li>
+                            <li>4-5-4 weeks each quarter, typically used in retail establishments to ensure the same number of weekends fall in each accounting period.</li>
+                            <li>Thirteen 4-week periods</li>
+                            <li>Four periods, one per quarter</li>
+                            <li>Other - manually enter the period ending dates</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AP&#160;GL</td>
+                    <td>Indicate whether or not the period is open for Accounts Payable and General Ledger.</td>
+                </tr>
+                <tr>
+                    <td>SO&#160;IN </td>
+                    <td>Indicate whether or not the period is open for Sales Order Processing and Inventory. Typically, Sales Order Processing and inventory processing are closed earlier than Accounts Payable and General Ledger for any given period. </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

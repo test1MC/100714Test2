@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="2422" MadCap:lastWidth="1262">
+    <head><title>Display Terminal Status</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Display System Status</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS960">Last Revised: 03/02/16</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program displays information about all Dynamo and 
+	Dynaweb applications currently running.&#160; It can also be run using the T 
+	option at any menu or Hotkey.&#160; Several different sequences, or views, are 
+	available.&#160; This application can also be used to terminate (kill) a 
+	hung or otherwise inaccessible application.&#160; Supervisor level security 
+	is required to kill another process if not your own.&#160; If the Double 
+	Vision remote control software is installed, then Display System Status can 
+	also be used by authorized operators to view and manage another operators session. Note that users who did not exit their application properly may still show an active session running here and may still be occupying a software license.</p>
+        <p>
+            <img src="cds960-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <tr>
+                <th colspan="2">Display System Status Options</th>
+            </tr>
+            <tr>
+                <td>Terminal ID</td>
+                <td>Lists all active, non-background, sessions in order of their Terminal ID.</td>
+            </tr>
+            <tr>
+                <td>IP Address</td>
+                <td>Lists all active, non-background, sessions in IP Address sequence with 
+			the sessions that do not have an IP address appearing first.</td>
+            </tr>
+            <tr>
+                <td>Login ID</td>
+                <td>Lists all active, non-background, sessions in Login ID sequence. This view is useful 
+			when looking for sessions of a particular operator.</td>
+            </tr>
+            <tr>
+                <td>Company + Menu Code + Program</td>
+                <td>Lists all active, non-background, sessions in order of Company + Menu Code + 
+			Program sequence. This is useful when checking to see how many sessions are 
+			active for a specific company.</td>
+            </tr>
+            <tr>
+                <td>Job Start Date &amp; Time</td>
+                <td>Lists all non-background sessions in Job Start Date &amp; Time. This is
+			useful when trying to locate older sessions that may still be 
+			running and consuming a software license.</td>
+            </tr>
+            <tr>
+                <td>Elapsed CPU Time</td>
+                <td>Lists all processes running, including non-Dynamo processes, 
+			listing the processes that are currently consuming the most CPU 
+			first.&#160;The operation will observe CPU usage for 1 minute before returning an analysis. If a
+			system appears to be running more slowly than normal, this option can be useful for identifying a possible cause.</td>
+            </tr>
+            <tr>
+                <td>Dynaweb &amp; Background Tasks</td>
+                <td>Lists all background tasks including Dynaweb, BBj stored 
+			procedures, and BBj triggers.&#160; Dynaweb tasks are typically 
+			very brief, often only a few seconds, unless they are creating some 
+			lengthy report.</td>
+            </tr>
+            <tr>
+                <td>Sessions currently with an error</td>
+                <td>Lists all sessions that have recently encountered a program 
+			error and have not yet returned to the menu.&#160; Useful for 
+			software support personnel to quickly identify a problematic session. </td>
+            </tr>
+            <tr>
+                <td>Purge session records for inactive processes</td>
+                <td>Normally the entry for an active session is removed when the 
+			operator logs out of Dynamo.&#160; However, there are times when the 
+			application aborts and does not log out properly.&#160; In this 
+			case, the session record may still exist even though the application 
+			is no longer running.&#160; Selecting this option will purge any 
+			session records for inactive processes.</td>
+            </tr>
+            <tr>
+                <td>Remote location &amp; device status</td>
+                <td>This option is only available when there are Virtual Private 
+			Networks (VPN's) established between the server location and branch 
+			offices.&#160; This option will display VPN status information.&#160; 
+			If any VPN's have been configured are inactive, then this option may 
+			take a short while to verify the VPN status.&#160; The remote 
+			locations that appear on this option are maintained using 'Location 
+			&amp; Device Maintenance' on the SMC menu.&#160; See example below.</td>
+            </tr>
+        </table>
+        <p>Example of Remote location &amp; device status:</p>
+        <p>
+            <img border="0" src="cds9605.jpg" />
+        </p>
+        <table>
+            <tr>
+                <th width="100%" colspan="2">Display System Status Fields. Note pressing the right-arrow key will display off-screen fields if they are available.</th>
+            </tr>
+            <tr>
+                <td><a name="Term"></a>Term</td>
+                <td>Normalized terminal ID.&#160; Only significant when using serially 
+		connected terminals which are rarely still used.</td>
+            </tr>
+            <tr>
+                <td><a name="HK"></a>HK</td>
+                <td>Hotkey level.&#160; Blank indicates the main session. Using F1, users can explore up to 2 other menus while keeping the current task active. </td>
+            </tr>
+            <tr>
+                <td><a name="Login ID"></a>Login ID</td>
+                <td>Operator Login ID&#160;is the name assigned to the user for logging in to Dynamo</td>
+            </tr>
+            <tr>
+                <td><a name="Day"></a>Day</td>
+                <td>Day job was started by user</td>
+            </tr>
+            <tr>
+                <td><a name="Time"></a>Time</td>
+                <td>Time job was started by user</td>
+            </tr>
+            <tr>
+                <td><a name="CC"></a>CC</td>
+                <td>Company Code under which Dynamo is currently being run</td>
+            </tr>
+            <tr>
+                <td><a name="MNU"></a>MNU</td>
+                <td>Menu Code that the selected application is currently running under</td>
+            </tr>
+            <tr>
+                <td><a name="Description"></a>Description</td>
+                <td>Title of the specific application currently being run</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Name specified for the Login ID using Operator Info Maintenance</td>
+            </tr>
+            <tr>
+                <td>IP Address</td>
+                <td>The network IP address of the workstation running the application.&#160; 
+		Blank for serial terminals, sessions running on the server console, and 
+		background tasks</td>
+            </tr>
+            <tr>
+                <td>PC Name</td>
+                <td>The PC Name as specified in 'My Computer'.&#160; Typically only 
+		available when using the FacetWin terminal emulator on the PC.</td>
+            </tr>
+            <tr>
+                <td>Device</td>
+                <td>The device name of the connection.&#160; Typically only useful for 
+		serial terminals.</td>
+            </tr>
+            <tr>
+                <td>Location Name</td>
+                <td>The city or location of the branch office</td>
+            </tr>
+            <tr>
+                <td>VPN</td>
+                <td>'Up' indicates normal operation, 'Down' indicates the the VPN 
+		connection is not operational.&#160; This can be caused by an internet 
+		service being down, a mis-configured or failing router, a disconnected 
+		cable, etc.</td>
+            </tr>
+            <tr>
+                <td>Private IP Address</td>
+                <td>This typically represents the LAN IP address of the server or router.</td>
+            </tr>
+        </table>
+        <p>Highlighting an entry and touching the Enter key will display additional 
+	information about the session and offer additional options based on the 
+	security level and software installed.</p>
+        <p>&#160;</p>
+        <p>
+            <img border="0" src="cds9602.jpg" />
+        </p>
+        <p>The D=Double Vision option is used to view and optionally operate the 
+	selected session.&#160; This requires authorization and is typically used by 
+	technical support personnel for training and problem resolution purposes.</p>
+        <p>The K=Kill this process option should only be used when the job cannot be aborted from the terminal running the job.&#160; 
+	This option requires the operator to have "Supervisor" security status as specified in 
+	Operator Information Maintenance (SMS).&#160; In order to kill a BBj 
+ process (Java-based version of Dynamo), you must first used the Basis Enterprise Manager to define an operator 
+ named 'killBBj' with a password of 'killBBj123'.&#160; Check the permissions 
+ box named 'BBj Processes'.</p>
+    </body>
+</html>

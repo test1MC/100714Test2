@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="10" MadCap:lastHeight="2824" MadCap:lastWidth="1160">
+    <head><title>Sales Order/Invoice Inquiry</title>
+    </head>
+    <body>
+        <p class="SectionName">inquiry functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Sales Order/Invoice Inquiry</p>
+                </td>
+                <td align="right">Last Revised: 08/19/13</td>
+            </tr>
+        </table>
+        <p style="font-weight: normal;">This program allows the operator to view existing orders/invoices and edit them. </p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Sales Order/Invoice&#160;Inquiry </th>
+                </tr>
+                <tr>
+                    <td>(O) Enter Existing Order#</td>
+                    <td>If you know the order number to a particular sales order, you can enter it in using this option. Even if you don't, you can use the F2 hotkey to search for the sales order by order number. The rest of the information on the screen will then automatically fill in. </td>
+                </tr>
+                <tr>
+                    <td>(I) Enter Existing Invoice#</td>
+                    <td>If you know the invoice number to a particular sales order, you can enter it in using this option. Even if you don't, you can use the F2 hotkey to search for the sales order by invoice number. The rest of the information on the screen will then automatically fill in. </td>
+                </tr>
+                <tr>
+                    <td>(C) Display Customer Orders</td>
+                    <td>If you would like to view a sales order by customer, you can either enter in information you know about the order, or you can use the F2 hotkey to search for the sales order. Once the sales order has been found, you can choose it from a list. </td>
+                </tr>
+                <tr>
+                    <td>(P) Display Salesperson Orders</td>
+                    <td>
+                        <p style="font-weight: normal;">If you would like to view a sales order by salesman, you can either enter in the salesperson number, or you can use the F2 hotkey to search for the salesman. Once the salesman has been found, you can choose it from a list. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;">(B) Display Branch Orders</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">If you would like to view a sales order by the branch, choose this option. A list of orders organized by branch will display and you can choose from the list. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>(A) Display All Orders </td>
+                    <td>
+                        <p style="font-weight: normal;">Choosing this option displays all of the sales orders entered into Dynamo. You can choose the sales order you want from the list. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-weight: normal;">
+            <img src="so150-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>&#160;</p>
+        <p>Once a sales order has been selected, a list of options displays. Each of these options is marked with an asterisk '*', the letter 'A', 'D', 'S', or a blank:</p>
+        <ul>
+            <li>An asterisk '*' indicates there is data available to display for this option.</li>
+            <li>The letter 'A' indicates that no data is available, but you may select this option and enter information.</li>
+            <li>The letter 'D' indicates this option is disabled.</li>
+            <li>The letter 'S' indicates you do not have sufficient security clearance for this option.</li>
+            <li>A blank next to an option indicates there is no data to display.</li>
+        </ul>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Menu Options</th>
+                </tr>
+                <tr>
+                    <td><a name="customerinfo">1. Customer Info</a>
+                    </td>
+                    <td>Edit the customer contact information. </td>
+                </tr>
+                <tr>
+                    <td><a name="shippinginfo">2. Shipping Info</a>
+                    </td>
+                    <td>Edit the shipment information, such as the address, the sales tax, the carrier, and the tracking number, etc. </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: normal;"><a name="headinginfo">3. Heading Info</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Edit the heading information, including the branch, who took the order, the date ordered/shipped, the invoice information, and the gross margin percent, etc. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="lineitems">4. Line Items</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Add, change, or delete items to be sent to the customer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;"><a name="payments">5. Payments</a></span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Select the desired method of payment. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="printfaxemail">6. Print/Fax/Email</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Choose which type of document you would like sent to the customer. After you have chosen, Dynamo will ask if you'd like the document printed, emailed, or faxed. </p>
+                        <p style="font-weight: normal;">&#160;</p>
+                        <p style="font-weight: normal;">
+                            <img src="so150-2.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p style="font-weight: normal;">Document Selection for an order that has been converted into a quote</p>
+                        <p style="font-weight: normal;">&#160;</p>
+                        <p style="font-weight: normal;">
+                            <img src="so150-3.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p>Document Selection for an order that has not yet been invoiced</p>
+                        <p>&#160;</p>
+                        <p style="font-weight: bold;">
+                            <img src="so150-4.png" style="width: 725px;height: 424px;" />
+                        </p>
+                        <p>Document Selection when an order has been invoiced</p>
+                        <p>&#160;</p>
+                        <p>Sample documents:</p>
+                        <ul>
+                            <li><a href="orderacknowledgment.pdf">Order Acknowledgment</a>
+                            </li>
+                            <li><a href="billingcopypackinglist.pdf">Packing List/Billing Copy</a>
+                            </li>
+                            <li><a href="notificationofshipment.pdf">Notification of Shipment</a>
+                            </li>
+                            <li><a href="proformainvoice.pdf">Proforma Invoice</a>
+                            </li>
+                            <li><a href="invoice.pdf">Invoice</a>
+                            </li>
+                            <li><a href="quote.pdf">Quotation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="shipmenttracking">7. Shipment Tracking</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Track the shipping of the sales order. After viewing the information stored about the package in Dynamo, hitting enter will take you to the UPS website where you can track the package. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="timestamps">8. Timestamps</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">View when the sales order was changed, who changed it, and what was changed. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="inventorypostings">9. Inventory Postings</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">View which orders were posted to the inventory. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a name="glpostings">10. G/L Postings</a>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">This function shows a listing of the general ledger accounts that items have been posted to. This screen will display credited and debited accounts. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: bold;"><span style="font-weight: normal;"><a name="customerinquiry">11. Customer Inquiry</a></span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Displays contact information for the customer on this particular sales order. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="4449" MadCap:lastWidth="1035">
+    <head><title>Import Data</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Import Data</p>
+                </td>
+                <td align="right">Last Revised: 01/11/16</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This application is used to import data into BBx/BBj data files. &#160;The source data is typically a comma or tab delimited text file created using the Export Data option on this menu, or by another application, or by saving a spreadsheet in tab delimited format. The target data is a single data file, previously described in the Dynamo Tools Data Dictionary. Field validation is performed and an Exception Listing can be generated listing all validation exceptions.</p>
+        <p>Note that this application can add new records to a file, or replace the entire record. &#160;It does not support modifying existing records. When not using the Replace option, existing records will be reported on the Exception Listing.</p>
+        <p>
+            <img src="../Resources/Images/dd54-1.png" />
+        </p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Data Dictionary Name</td>
+                    <td>A single Data Dictionary Name previously defined in the current company. File types MKY, VKY, XKY, and JKY can be used.</td>
+                </tr>
+                <tr>
+                    <td>CSV&#160;File Path</td>
+                    <td>Enter the path to the Comma Separated Value (CSV) text file. Note that a CSV file can also be delimited using the tab character which is actually the preferred format, as it makes it easier to process quote characters contained within a field. These files typically have either a .csv or .txt extension, although not required for use with this application. CSV files that are exported by the Dynamo Tools Export Data Utility typically have a .xls extension, but they are just tab-delimited text files. The .xls extension is used so that the file can be more easily accessed using a spreadsheet program.</td>
+                </tr>
+                <tr>
+                    <td>File Date &amp;&#160;Time</td>
+                    <td>Displays the date/time of the CSV file specified</td>
+                </tr>
+                <tr>
+                    <td>Columns</td>
+                    <td>Displays the number of columns derived from the CSV file. Note that each row in the file must have the same number of columns.</td>
+                </tr>
+                <tr>
+                    <td>Rows</td>
+                    <td>Displays the number or rows (records) derived from the CSV file.</td>
+                </tr>
+                <tr>
+                    <td>Skipped Rows</td>
+                    <td>Set by this application to the number of rows that will not be, or were not imported due to a validation exception such as the number of columns is not the same as other rows, a key segment is blank or zero, the record already exists, etc.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p><b>Columns</b>
+        </p>
+        <p>This section is used to map the CSV file column to a specific field name.</p>
+        <p>
+            <img src="../Resources/Images/dd54-2.png" />
+        </p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Spreadsheet Column</td>
+                    <td>
+                        <p>Columns in a spreadsheet are typically assigned a letter with the first column as 'A', the 26th column as 'Z', the 27th column as 'AA', followed by 'AB', 'AC', etc. Note that all columns in the CSV/spreadsheet file do not need to be mapped. Unmapped columns will be ignored.</p>
+                        <p>Note that it is permitted to have multiple columns map to the same field name. In that case, the columns are processed from left to right. If a column is mapped to a field that already has a non-blank value, then the field will be appended with a single space character followed by the new column text. Leading and trailing spaces are typically excluded during the map process.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Heading Row</td>
+                    <td>Most CSV/Spreadsheet files include field names in the first row. &#160;The value of the specified column in the first row is displayed.</td>
+                </tr>
+                <tr>
+                    <td>Count</td>
+                    <td>The number of rows with non-blank values and the percentage of total is displayed.</td>
+                </tr>
+                <tr>
+                    <td>Min/Avg/Max Size</td>
+                    <td>The number of characters in the field, showing the minimum, average, and maximum sizes.</td>
+                </tr>
+                <tr>
+                    <td>Options</td>
+                    <td>
+                        <p>One or more of the following options may be specified</p>
+                        <table>
+                            <col />
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Alpha Sort</td>
+                                    <td>This field will be used to derive an all upper case ALPHA or ALPHASORT&#160;field contained within the record. &#160;Use this option on the company name or contact last name field to automatically set the ALPHA/ALPHASORT field within the record. Note that the import file does not need to contain a column mapped to the ALPHA/ALPHASORT field.</td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td>Before</td>
+                                    <td>When multiple columns are mapped to the same field, place text for this column before, not after, the existing field value.</td>
+                                </tr>
+                                <tr>
+                                    <td>D</td>
+                                    <td>Date</td>
+                                    <td>The text will be analyzed to determine if it contains a date, and converted to the appropriate format based on the mapped field type. Valid csv file date formats include m/d/y, mm/dd/yy, mm/dd/yyyy, yymmdd, yyyymmdd, and yyyy-mm-dd.</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td>Email</td>
+                                    <td>The field contains an email address. This application will perform normal email address validation rules. See CDS275 for more information.</td>
+                                </tr>
+                                <tr>
+                                    <td>N</td>
+                                    <td>New Record</td>
+                                    <td>
+                                        <p>In most cases, there is one bbx record created for each CSV file row. But in some cases, a single row contains information that must be stored in multiple bbx records. As the columns are processed from left to right, use the N option to indicate that a new bbx record should be created with this column. Key segments used for the initial record will be retained for subsequent records, although one or more key segments fields must be either mapped or sequentially assigned in order to insure each record has a unique key.</p>
+                                        <p>An example of this would be a row that contains multiple contacts or ship-to addresses.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>Proper Case</td>
+                                    <td>Convert the field to proper case, i.e., first letter capitalized, and the remaining lower case. Typically used for a company or contact name field, address, city, etc. Refer to CDS351 for additional details.</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>State/Country</td>
+                                    <td>This option should be used to indicate the column contains a U.S. State name, Canadian province name, or abbreviation. The names will be converted to the standard 2 character abbreviation.</td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>Telephone#</td>
+                                    <td>The column contains a US/Canadian telephone number. The import process will remove formatting characters such as hyphens, spaces, periods, and parenthesis, and store the telephone number in normalized form of nnn-nnn-nnnn.</td>
+                                </tr>
+                                <tr>
+                                    <td>Z</td>
+                                    <td>Zip Code</td>
+                                    <td>The column contains a US Zip Code, either 5 digit or zip+4 format, or a Canadian Postal Code. The data will be normalized in a format nnnnn, nnnnn-nnnn, or ana nan.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dynamo Field Name</td>
+                    <td>The field name the column is to be mapped to</td>
+                </tr>
+                <tr>
+                    <td>Dynamo Field Size</td>
+                    <td>The Dynamo field size is displayed</td>
+                </tr>
+                <tr>
+                    <td>Import Data</td>
+                    <td>The first few rows that contain data are displayed. A red vertical line indicates fields that are longer than the Dynamo field size.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-weight: bold;">Static Field Assignments</p>
+        <p style="font-weight: normal;">In addition to mapping columns from the spreadsheet to Dynamo fields, it is often necessary to assign other Dynamo fields to a default value.</p>
+        <p style="font-weight: normal;">Note that it is possible to have a Static Field Assignment as well as mapping the same column. In that case, the Static Field Assignment will </p>
+        <p style="font-weight: normal;">only be used when the spreadsheet data is blank or zero.</p>
+        <p style="font-weight: normal;">
+            <img src="../Resources/Images/dd54-3.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Mode</td>
+                    <td>
+                        <table>
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Assign the Same value for each record</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Increment the value for each record. The starting value can be specified in the Value field if it does not start at 1.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Start each import record with same value, increment if duplicate. This option is typically used when there are multiple bbx records per spreadsheet row. For example, a row that contains multiple contacts, would have the first contact sequence assigned 1, the next 2, etc.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>The static value to be assigned to each record (Mode=1), or the starting value (Mode=2 or 3).</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-weight: bold;">Lookup Table Maintenance</p>
+        <p style="font-weight: normal;">This option is still under construction. It will be used to maintain a user defined mapping of CSV file values to bbx field values.</p>
+        <p style="font-weight: bold;">Exception Listing</p>
+        <p style="font-weight: normal;">This option will analyze the data and produce a listing identifying rows and columns that contain invalid data. There are many reasons why a field may be invalid including that it is too long for the bbx data file, Non-numeric data mapped to a numeric field, field smaller than the minimum length or value as specified in the Data Dictionary, invalid State/Country Code, invalid email address, etc. </p>
+        <p style="font-weight: normal;">Rows can also be exceptions for reasons such as the record with that key already exists, there are blank or zero key segments, etc.</p>
+        <p style="font-weight: normal;">Note that T-Type routines can also perform field validation. Refer to CDX100 for more details.</p>
+        <p style="font-weight: bold;">Import</p>
+        <p style="font-weight: normal;">This option will process the CSV file and import (write) bbx records.</p>
+        <p style="font-weight: normal;">
+            <img src="../Resources/Images/dd54-4.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>Existing Records</td>
+                    <td>Displays the number of records that exist in the bbx data file.</td>
+                </tr>
+                <tr>
+                    <td>Delete Existing Records</td>
+                    <td>In some cases you want to delete ALL all existing records in the import to data file before importing. A copy of the import to data file is made for safety. The copy will be located in the same directory as the original file with a <code>.YYMMDDa</code> suffix.</td>
+                </tr>
+                <tr>
+                    <td>Replace Existing Records</td>
+                    <td>
+                        <p>Set to <code>"N"</code>&#160;to prevent the import process from over-writing any existing record. These records will appear as "Existing Record" in the log.</p>
+                        <p>Set to <code>"Y"</code> to replace any existing record in the file during the import process. &#160;Be careful when replacing records, in that no fields in the original record are retained. Only the fields mapped or statically assigned will be processed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Call T-Type Routines to Validate</td>
+                    <td>The Import Data process validates fields based on the Data Dictionary. External T-Type routines can also be used to perform validation. &#160;Refer to CDX100 for more details. In some cases, there are older T-Type routines that do not support the "V" validation action code. In that case you will need to set this option to N in which case the T-Type external routines will not be called to perform additional validation.</td>
+                </tr>
+                <tr>
+                    <td>Rows</td>
+                    <td>The number of rows in the CSV/spreadsheet file</td>
+                </tr>
+                <tr>
+                    <td>Skipped Rows</td>
+                    <td>The number of rows that were skipped and not written to the bbx data file due to validation exceptions. The Exception Listing is also generated after the import process.</td>
+                </tr>
+                <tr>
+                    <td>Processed Rows</td>
+                    <td>The number of rows that had valid data and were written to the bbx data file.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-weight: bold;">View Dynamo Data</p>
+        <p style="font-weight: normal;">This option can be used to view the bbx data, either before or after the import process.</p>
+    </body>
+</html>

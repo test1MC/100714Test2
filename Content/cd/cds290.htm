@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="cds290.htm" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1113" MadCap:lastWidth="1099">
+    <head><title>Printer Preference Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Printer Preference Maintenance</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS290">Last Revised: 02/23/16</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program can be used to limit the number, and control the order, that printers are presented during printer selection. This program can also be used to establish a default or preferred printer.&#160; 
+	Each operator can have their own preferences, including the default printer and 
+	the group of printers to appear in the initial list of printers.</p>
+        <p>Use the Printer Group Maintenance option to create a list of printers.&#160; This list is assigned a Group Code. During printer selection, the operator will be presented the list of printers in the same sequence as defined in this program. You may want to create a Printer Group for each department or group of operators that would typically print to the same printers. Once a Printer Groups has been defined, it can be share among multiple users.</p>
+        <p>Use the other options to assign a Printer Group to a Terminal ID&#160;(alias), an IP Address, a Login ID, or PC Name, or the first 3 octet's of the client IP&#160;Address.</p>
+        <p>The Printer Selection process uses the following hierarchy to determine the Default Printer and Printer Group.</p>
+        <ol>
+            <li>The client device full IP&#160;Address</li>
+            <li>The client PC&#160;Name or workstation hostname</li>
+            <li>The Terminal ID&#160;(alias)</li>
+            <li>The User's Login ID</li>
+            <li>The first 3 octet's of the client device IP address, with .000 as the last octet</li>
+            <li>A wildcard PC Name/workstation hostname, i.e., one <code>"*"</code>&#160;or all <code>"*"</code>s.</li>
+            <li>For Dynastart connections, if no preference has been identified, then the Printer Group will be set to <code>"DYNS"</code>.</li>
+        </ol>
+        <p>Note that the Terminal ID&#160;(alias) is typically assigned sequentially for networked devices. Use the Terminal ID option only for legacy hardwired terminals connected via serial cable.</p>
+        <p>
+            <img border="0" src="cds290-1.jpg" width="568" height="329" alt="" />
+        </p>
+        <p>You may also assign a default printer whether or not you assign an IP Address, Terminal, or Login ID to a Printer Group. Similarly, you can assign a Printer Group and not specify a default printer.</p>
+        <p>
+            <img border="0" src="cds290-2.jpg" width="568" height="329" alt="" />
+        </p>
+        <p>During printer selection, the operator may print to a printer not included in the Printer Group, by touching the F5 key to select from the complete list of all printers.</p>
+        <p>If there is no Printer Group established for a given terminal, then all printers will be listed in order based on the Printer ID established in Printer Control Maintenance.</p>
+    </body>
+</html>

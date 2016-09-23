@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="741" MadCap:lastWidth="1199">
+    <head><title>Purchase Order Generation</title>
+    </head>
+    <body>
+        <p class="SectionName">purchase order processing</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Purchase Order Generation</p>
+                </td>
+                <td align="right">Last Revised: 01/07/14</td>
+            </tr>
+        </table>
+        <p>The Purchase Order Generation application is used to refill inventory when an item in inventory reaches its minimum replenishment level. The program creates a purchase order with the recommended sales amount based on the current inventory. It compares the Stock Status Quantity with the minimum and maximum amounts for items in inventory to decide what to reorder. Package quantities and case quantities are taken into consideration when creating the recommendation. Therefore, if an item in stock comes in 100 cases to a package, and you're trying to order 99 cases to refill back to your maximum amount, the application will round up to 100 in order to make shipping and stocking easier.</p>
+        <p>
+            <img src="po170-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>After completing the initial fields (warehouse, requirements for warehouse, net warehouse requirements, sequence, range, listing, and purchase order), three options will appear:</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Options</th>
+                </tr>
+                <tr>
+                    <td>(N)&#160;Do not Generate PO</td>
+                    <td>
+                        <p style="font-weight: normal;">Use this option to cancel generation of the purchase order and just view a listing. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: normal;">(G)&#160;Generate PO</p>
+                    </td>
+                    <td>
+                        <p style="font-weight: normal;">Use this option to generate your purchase orders without printed copies.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-weight: normal;">(P) Generate and Print POs</p>
+                    </td>
+                    <td>
+                        <p>Use this option to generate your purchase orders and receive printed copies of them. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

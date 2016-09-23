@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="4821" MadCap:lastWidth="1186">
+    <head><title>Data Dictionary Maintenance - File Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">File Management Software</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Data Dictionary Maintenance - File Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 02/25/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This option is used to identify the views that comprise 
+	a file maintenance application.</p>
+        <p>File Maintenance applications provide the ability to add, change, and delete records from a file.&#160;</p>
+        <p>File Maintenance applications are an automatic by-product of the Dynamo Data Dictionary.&#160; Before using the File Maintenance Option, define fields, key structure, and at least one standard view.&#160; File Maintenance supports file types DIR, SKx, and MKx.</p>
+        <p>If the Data Dictionary File Name is 4 characters or less, then you can link a File Maintenance application directly to the menu by using Menu Maintenance (SMU) and specifying a selection type of F, the Program/File as the company code (typically XX) followed by the Data Dictionary File Name, and the VDT Suffix to match that specified in File Maintenance Configuration, typically A.&#160; If the Data Dictionary File Name is more than 4 characters, you cannot currently attach it directly to the menu, but can write a very short program with a program name of 6 characters or less, which will invoke File Maintenance.&#160; See example below.</p>
+        <table>
+            <tr>
+                <td>File Name</td>
+                <td>The file name as previously defined in the data dictionary</td>
+            </tr>
+            <tr>
+                <td>VDT</td>
+                <td>The VDT Suffix is used to enable multiple File Maintenance Configurations for the same data file.&#160; In most cases, only a single File Maintenance Configuration is needed per file, and the VDT is specified as A.&#160; Note the VDT must be specified in Menu Maintenance when connecting a File Maintenance application to the Dynamo menu.</td>
+            </tr>
+            <tr>
+                <td>KNUM</td>
+                <td>File Maintenance applications typically use the primary key (KNUM 0) and the operator enters the segments of the key for KNUM 0.&#160; But there are some situations where an alternate KNUM is preferred.&#160; Using a KNUM other than 0 requires that the key be unique.</td>
+            </tr>
+            <tr>
+                <td>Allow Record Adds</td>
+                <td>Normally Y, but can be set to N when operators should not be able to add new records to the file.</td>
+            </tr>
+            <tr>
+                <td>Allow Record Deletes</td>
+                <td>Specify as N to prevent operators from deleting records from the file.</td>
+            </tr>
+            <tr>
+                <td>Delete Files</td>
+                <td>
+                    <p>File Maintenance can prevent deletion of a record when there are records in another file with the same primary key as the file being maintained.&#160; File Maintenance can also remove records from related files that have a key whose starting characters match the key of the record being maintained.</p>
+                    <p>In the example below, File Maintenance will dis-allow deleting of the record, if there are existing records in the IM01, AP12, 
+		or AP22 files with a KNUM 2, or in AP32 file with KNUM 1, that starts with the same characters of the key for the record to be deleted.</p>
+                    <p>However, if there are no records in IM01, AP12, and AP22 that match, File Maintenance will delete the record being maintained, as well as all records in files VM03 and VM06 that have KNUM 0 keys that start with the same characters as the primary key of the record being maintained.</p>
+                    <p>&#160;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Display Fields</td>
+                <td>
+                    <p>When operators run a File Maintenance application, they can either enter the key segments to uniquely identify a record or select an existing record from a list.&#160; The fields that are displayed in this list are specified here.&#160; In this example, 
+		10 fields will be displayed.&#160; They happen to be all from the same file, although they can be from related files or programs that return a templated data structure.&#160; Refer to 
+		<a target="_blank" href="http://www.excellware.com/docs/tools/CDS037.htm">CDS037</a> for additional details.&#160; 
+		The Index column is only used when the Field is a repeating field.</p>
+                    <p>The first screen shot below shows the Display Fields as specified in File Maintenance Configuration.&#160; The second screen shot shows the display in the File Maintenance application.</p>
+                    <p>
+                        <img src="../cd/dd22-1.png" />
+                    </p>
+                    <p>&#160;</p>
+                    <p>
+                        <img src="../cd/dd22-3.png" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Add/Write/Delete Routine</td>
+                <td>
+                    <p>This optional program name will be called to perform additional 
+		processing required.&#160; The <code>ENTER</code> list on the called 
+		program should be <code>Y$,REC$,OLDREC$,MODE</code>.&#160; See example 
+		below.</p>
+                    <table>
+                        <tr>
+                            <td align="center">MODE</td>
+                            <td>Usage</td>
+                        </tr>
+                        <tr>
+                            <td align="center">0</td>
+                            <td>
+                                <p>Called when adding a new record to the file, after key segment entry, and after the operator responds to the prompt "Add new record (Y/N)", but before entering any 
+			of the fields in the view.&#160; It could be used to set the default 
+			values for any fields in the record. Assign these default 
+			values to <code>REC$.&#160; OLDREC$</code> is not really used in 
+			this mode, although passed the same as <code>REC$</code> for 
+			consistency.</p>
+                                <p>Another use of this routine would be to prohibit 
+			adding records based on some custom logic.&#160; For example, if 
+			record adds are normally allowed, but disallowed based on an operator's 
+			security level, time of day, day of week, etc., then the routine 
+			should prompt the operator indicating that the record cannot be added, 
+			and then <code>EXIT 99</code> to inform File Maintenance not to 
+			proceed with creating the new record.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">1</td>
+                            <td>
+                                <p>Called before writing the record.&#160; It could be used to 
+			record a log of fields changed, to update sort files, or to perform 
+			some additional validation.&#160; <code>REC$</code> contains the 
+			record as modified.&#160; <code>OLDREC$</code> contains the record 
+			before any changes were made.&#160; If the record is new, then <code>
+			OLDREC$</code> will contain the key segments but all other fields 
+			will be as initialized by the bbx <code>DIM</code> verb.&#160; The 
+			called routine may change fields in <code>REC$</code> if necessary, 
+			but should not change any field that is a KNUM 0 key segment.</p>
+                                <p>
+			The called routine should <code>EXIT 99</code> if the writing is 
+			disallowed returning the operator to the initial view to make any 
+			changes required.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">2</td>
+                            <td>
+                                <p>Called before deleting the record.&#160; Used when custom logic 
+			is required before deleting a record.&#160; This could be simply to 
+			log the record deletion, or to perform additional tests to determine 
+			if record deletion is permitted.</p>
+                                <p>If the called routine 
+			determines that the record should not be deleted, then it should
+			<code>EXIT 99</code> to cause File Maintenance to abort the 
+			deletion.</p>
+                                <p>Note that <code>REC$</code> represents the record as 
+			modified and <code>OLDREC$</code> is the value before any 
+			modifications have been made.&#160; Since File Maintenance does not 
+			write the record to the disc before calling this program, this 
+			program may need to use <code>OLDREC$</code> and not <code>REC$</code>, 
+			or <code>LET REC$=OLDREC$</code> (ignoring any changes made prior to 
+			the operator selecting the D option to delete the record).</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">3</td>
+                            <td>Called after writing the record.&#160; In most cases, you can 
+			use the MODE=1 call to perform special processing when a record is 
+			being written.&#160; There are some circumstances where the 
+			Add/Write/Delete routine needs to access the record on the disc.&#160; 
+			In that case MODE=1 cannot be used because the record has not yet 
+			been written to the disc.&#160; MODE=3 can be used to perform 
+			special processing after the record has been written and can be read 
+			by the Add/Write/Delete routine.&#160; Note that exiting with <code>
+			EXIT 99</code> has no effect when MODE=3.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Views</td>
+                <td>File Maintenance applications require the first view to be a Standard View.&#160; These views must be previously defined using 
+		<a href="xxdd20.htm">the Views Option of Data Dictionary Maintenance</a> (FMS).&#160; File Maintenance may however, include additional views.&#160; Additional Standard Views of the same file would be needed when there are more fields to be maintained than can be displayed in a single view.&#160; A Standard View can display up to 21 rows of data including key segments in a single column on a typical display with 25 rows.&#160; Group the fields that are related into another view when exceeding this limitation.&#160; The initial view will be displayed and maintained during File Maintenance.&#160; When the operator exits the initial view, they will be presented with a list of all views for this File Maintenance Configuration in the same sequence as specified.<table><col /><col /><tr><th colspan="2">View Type (T) column - displayed for convenience</th></tr><tr><td align="center">V</td><td>Standard View</td></tr><tr><td align="center">P</td><td>Called Program</td></tr><tr><td align="center">F</td><td>Subsidiary File Maintenance</td></tr></table><table><tr><th colspan="2">Options (Opt) column</th></tr><tr><td align="center">blank</td><td>View is enabled</td></tr><tr><td align="center">Y</td><td>View is omitted during File Maintenance (similar to deleting 
+				view, but easier to Un-omit later)</td></tr><tr><td align="center">A</td><td>Automatically select this view when adding new records. For standard views, the user will be prompted for each field in the view as done with the first view.</td></tr><tr><td align="center">R</td><td>After view is selected, upon return to list of views, 
+				primary view will be refreshed</td></tr></table></td>
+            </tr>
+        </table>
+        <p><b>Record Deletion</b>
+        </p>
+        <p>File Maintenance performs the following steps before deleting a record:</p>
+        <ol>
+            <li>Checks each 'Delete File' set to 'Do not delete'.&#160; If there are 
+		any records in these files where the key starts with the same characters 
+		as the primary key being 
+		deleted, then the delete will not be allowed. In the example above, 
+		files XXIM01, XXAP12, XXAP22 and XXAP32 will be checked.</li>
+            <li>Calls the Add/Write/Delete program if specified.&#160; If this 
+		program exits with EXIT 99, then the record will not be deleted.</li>
+            <li>Deletes any records from the related 'Delete Files' that are set to 
+		'Delete records'.&#160; In the example above, any records in files 
+		XXVM03 and XXVM06 will be removed where the starting characters of the 
+		key match the key of the record being deleted.</li>
+            <li>Deletes the record in the file being maintained.</li>
+        </ol>
+        <table>
+            <tr>
+                <td>Example of interfacing a File Maintenance application to the 
+			Dynamo Menu.<br />			Note the Type should be "F", the Program/File Name should be the 
+			company code and 4 character File Name, and the VDT suffix should 
+			match that entered using File Maintenance Configuration.</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="xxdd22-3.png" style="width: 725px;height: 424px;" />
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>If the Data Dictionary File Name is longer than 4 characters, 
+			then the following program can be used to call the File Maintenance 
+			Application.&#160; In this example, the company code used will be 
+			the active company (XX), the Data Dictionary File Name is CUSTOMERS, 
+			the VDT Suffix is A, and the data file name is "CUSTOMERS".</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "CUSTFM - Example of calling a File Maintenance 
+			Application<br />			0110 LET DDKEY$=PAD("CUSTOMERS",10)+"A",DATFIL$="CUSTOMERS"</code>
+                    <p><code>0120 CALL "CDS028",Y$,DDKEY$,DATFIL$; REM "Call File 
+			Maintenance<br />			0130 RUN "CDS001"; REM "Return to Dynamo Menu</code>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Example of an Add/Write/Delete Routine to display information 
+			when called</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "CDX110 - 05/18/07 Example of File Maintenance 
+			Add/Write/Delete Routine<br />			0110 SETESC 8000; SETERR 8000<br />			0120 ENTER Y$,REC$,OLDREC$,MODE<br />			0130 CALL "CDS279",REC$,OLDREC$," File Maintenance Add/Write/Delete 
+			Routine called with MODE="+STR(MODE)<br />			0140 GOTO EOJ<br /><br />			8000 REM "Call Error/Escape Routine<br />			8010 CALL "CDS063",STR(TCB(5)),Y$,PGM(-2)<br />			8020 ON Y.ERRSTS GOTO 8030,8040,8050,8060<br />			8030 SETERR 0<br />			8040 RETRY<br />			8050 RETURN<br />			8060 RETRY<br /><br />			9000 EOJ:<br />			9010 IF TCB(13) THEN EXIT<br />			9020 RUN "CDS001"</code>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Example of an Add/Write/Delete routine used in View Maintenance</td>
+            </tr>
+            <tr>
+                <td><code>0100 REM "CDF173 - 05/17/07 View Maintenance - 
+			Add/Write/Delete Routine<br />			0110 SETESC 8000; SETERR 8000<br />			0120 ENTER Y$,DD20$,DD20OLD$,MODE<br />			0130 ON MODE GOSUB ADD,WRITE,DEL,POSTWRITE<br />			0140 GOTO EOJ<br /><br />			1000 ADD:<br />			1010 CALL "CDS069",1,1,0,0,"+option, F4=create view manually","A{|,2,,,,Y}PPopulate 
+			view with all fields from data dictionary|CCopy existing 
+			view",0,OPT$</code>
+                    <p><code>1020 IF CTL&lt;&gt;4 THEN IF OPT$="C" THEN 
+			GOSUB COPY ELSE CALL 
+			"CDS181",ERR=1030,Y$,"XX",DD20.FILNAM$,PAR$,DD10$,TPL$,FLDCNT,FLDTPL$,FLD$[ALL],KNCNT,KNTPL$,KN$[ALL],DD12$,COTO$,FILNAMTO$; 
+			IF FLDCNT THEN GOSUB POPULATE<br />			1030 RETURN<br /><br />			1100 POPULATE:<br />			1110 CALL "CDS095",ERR=1280,DD21,"XXDD21","YUY",DD21$<br />			1120 LET DD21.FILNAM$=DD20.FILNAM$<br />			1130 LET DD21.VIEW$=DD20.VIEW$<br />			1140 LET IMIN=0<br />			1150 IF KNCNT THEN LET KNTPL$=KN$[1],IMIN=LEN(KNTPL.FLDS$)/4<br />			1160 IF IMIN&gt;=FLDCNT THEN RETURN<br />			1170 FOR I=IMIN+1 TO FLDCNT<br />			1180 LET FLDTPL$=FLD$[I]<br />			1190 IF (POS("FS_"=FLDTPL.FLDNAM$)=1 AND NUM(FLDTPL.FLDNAM$(4),ERR=1200)) 
+			OR (POS("FS"=FLDTPL.FLDNAM$)=1 AND NUM(FLDTPL.FLDNAM$(3),ERR=1200)) 
+			OR POS("UNUSED"=FLDTPL.FLDNAM$)=1 THEN CONTINUE<br />			1200 LET DD21.FLDNAM$=FLDTPL.FLDNAM$,DD21.INDEX=0<br />			1210 FOR J=1 TO FLDTPL.REPEAT<br />			1220 LET DD21.SEQ=DD21.SEQ+1<br />			1230 IF FLDTPL.REPEAT THEN LET DD21.INDEX=J<br />			1240 WRITE RECORD(DD21)DD21$<br />			1250 NEXT J<br />			1260 NEXT I<br />			1270 LET DD20.TYPE$="V"<br />			1280 RETURN<br /><br />			1300 COPY:<br />			1310 LET CO$=Y.COMPCODE$<br />			1320 CALL "CDS050",Z1,Z2,Z5,Z6,"+company code to copy view 
+			from+",Z7,CO$,Y,Z8$,FMT$[ALL]<br />			1330 IF CTL=4 THEN RETURN<br />			1340 LET FILNAM$=DD20.FILNAM$,VIEW$=DD20.VIEW$<br />			1350 CALL "CDS037",CO$+"DD20",0,"","FILNAM|VIEW|TITLE",WINX,WINY,WINROWS,WINCOLS,"Select 
+			existing view to copy",COLORS$,SELRTN$,WHERE$,SORTBY$,MODE$,LIMITVAL,DD20$<br />			1360 IF CTL&lt;&gt;4 THEN GOSUB DD21<br />			1370 RETURN<br /><br />			1400 DD21:<br />			1410 CALL "CDS095",ERR=1480,DD21,"XXDD21","YUY",DD21$<br />			1420 CALL "CDS095",ERR=1480,DD21A,CO$+"DD21","YPX"<br />			1430 READ (DD21A,KNUM=0,KEY=DD20.FILNAM$+DD20.VIEW$,DOM=1440)<br />			1440 READ RECORD(DD21A,END=1460)DD21$<br />			1450 IF DD21.FILNAM$=DD20.FILNAM$ AND DD21.VIEW$=DD20.VIEW$ THEN LET 
+			DD21.FILNAM$=FILNAM$,DD21.VIEW$=VIEW$;<br />			WRITE RECORD(DD21)DD21$; GOTO 1440<br />			1460 LET DD20.FILNAM$=FILNAM$,DD20.VIEW$=VIEW$<br />			1470 CLOSE (DD21A)<br />			1480 RETURN</code>
+                    </p>
+                    <p><code>1500 WRITE:<br />			1510 IF DD20.TYPE$&lt;&gt;"V" THEN CALL 
+			"CDS273",Y$,"XXDD21",0,DD20.FILNAM$+DD20.VIEW$<br />			1520 RETURN<br /><br />			1600 DEL:<br />			1610 RETURN</code>
+                    </p>
+                    <p><code>1700 POSTWRITE:<br />			1710 RETURN<br /><br />			8000 REM "Call Error/Escape Routine<br />			8010 CALL "CDS063",STR(TCB(5)),Y$,PGM(-2)<br />			8020 ON Y.ERRSTS GOTO 8030,8040,8050,8060<br />			8030 SETERR 0<br />			8040 RETRY<br />			8050 RETURN<br />			8060 RETRY<br /><br />			9000 EOJ:<br />			9010 IF TCB(13) THEN EXIT<br />			9020 RUN "CDS001"</code>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

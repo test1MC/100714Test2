@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <title>Stored Procedures</title>
+    </head>
+    <body>
+        
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Stored Procedures</p>
+                </td>
+                <td align="right">Last Revised: 07/20/10</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">Dynamo provides several SQL Stored Procedures that can be used by external applications to execute Dynamo business logic, and to update Dynamo data files.&#160; These stored procedures can be called from any application that can call standard SQL procedures.</p>
+        <table>
+            <tr>
+                <th colspan="2">Price Lookup</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_1">The Price Lookup stored procedure is designed to return the selling price for a specific customer, item, date, and quantity.&#160; Since it uses the same pricing engine as Dynamo, the pricing logic and rules used by the stored procedure are the same as when running Dynamo.&#160; It can also be used to return pricing for all items for a customer.</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_1">Calling Format: <code>CALL PRICE ('CC', 'ITEMNO', 'CUSTNO', 'DATE', QTY)</code></td>
+            </tr>
+            <tr>
+                <th nowrap="nowrap">Field</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">CC</td>
+                <td>Two character company code.&#160; Contact Excellware for your company code.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">ITEMNO</td>
+                <td>Item#.&#160; The maximum number of characters can vary by company code.&#160; If null, then pricing for all items is returned.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">CUSTNO</td>
+                <td>Customer#.&#160; Up to 6 characters can be specified.&#160; If null or blanks, then standard company pricing will be returned.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">DATE</td>
+                <td>Optional effective date.&#160; If passed as null, then today's date will be used.&#160; Can be in MM/DD/YY or MM/DD/YYYY or YYMMDD or bbx julian format.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">QTY</td>
+                <td>Optional quantity.&#160; If passed as zero, then the price will be based on a quantity of one.</td>
+            </tr>
+            <tr>
+                <th align="left" nowrap="nowrap">Returned Values</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">TIER</td>
+                <td>Indicates which pricing tier applies to QTY.&#160; It is a number from 1 to 6 that corresponds to the SELL, DISC, NET and GMP fields below</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">TIERS</td>
+                <td>The maximum tiers applicable for this item</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">LIST</td>
+                <td>List Price (if any)</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">PU</td>
+                <td>The Pricing Unit indicates that the price is per some quantity, blank=each, C=per hundred, M=per thousand.&#160; Other codes also available.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">LISTGMP</td>
+                <td>Gross Margin% for List Price</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">FML</td>
+                <td>Dynamo formula code used if any</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COST</td>
+                <td>Current Vendor Cost after reduction by cash discount and projected vendor rebates plus freight/duty</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">CU</td>
+                <td>Costing Unit - same options as PU</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">POCOST</td>
+                <td>Purchase Order Cost that would appear on purchase order if placed with primary vendor.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COSTCALC</td>
+                <td>Shows how COST is computed including cash discount, rebate, and freight/duty percentages used.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">EFFECTIVE</td>
+                <td>Starting date or range of dates for price</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">CUSTNO</td>
+                <td>Indicates the customer# used for pricing.&#160; When Pricing Customer field on Customer File is used, then the CUSTNO field will be the Pricing customer, and not the CUSTNO specified as an input parameter.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">CUSTPRICEDATE</td>
+                <td>Indicates the customer's Pricing Date when customer is entitled to prior pricing for some period of time after a price increase.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">IM65PCL</td>
+                <td>Product Class used for pricing when price is based on product class and not item.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">IM65TYPE</td>
+                <td>Pricing Type (N=Net, M=Multiplier times List, C=Multiplier times Cost, D=Discount% off List)</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">IM65FACTOR</td>
+                <td>Pricing Factor either Net Price, multiplier, or discount based on TYPE.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">QTYHEAD1 thru QTYHEAD6</td>
+                <td>Quantity break descriptions for each TIER</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">SELL1 thru SELL6</td>
+                <td>Selling price for each TIER</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">DISC1 thru DISC6</td>
+                <td>Discount% from List for each TIER when pricing is based on Disc%.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">NET1 thru NET6</td>
+                <td>Net price after Discount% for each TIER</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">GMP1 thru GMP6</td>
+                <td>Gross Margin% for each TIER</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COMTYPE</td>
+                <td>Commission Type (no longer used)</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COMPCT</td>
+                <td>Commission Percentage (no longer used)</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COAVGCOST</td>
+                <td>Average cost of this item company wide.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">COAVGCU</td>
+                <td>Costing Unit for average cost.</td>
+            </tr>
+            <tr>
+                <td align="left">COQOH</td>
+                <td>Total Quantity on Hand for Company</td>
+            </tr>
+            <tr>
+                <td align="left">CASHDISCPCT</td>
+                <td>Default Cash Discount percentage for this customer</td>
+            </tr>
+            <tr>
+                <td align="left">REBATEPCT</td>
+                <td>Maximum Rebate percentage for this customer and item</td>
+            </tr>
+            <tr>
+                <td align="left">ITEMNO</td>
+                <td>Item# for each row.&#160; Required when ITEMNO is passed in as null.</td>
+            </tr>
+            <tr>
+                <th align="left" colspan="2">Error Message</th>
+            </tr>
+            <tr>
+                <td align="left" colspan="2">Any error message is returned in the COSTCALC field and all other fields will be zero or null.</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">Price Update</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_1">The Price Update stored procedure is provided to enable external applications to add or delete Dynamo pricing records.</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_1">Calling Format: <code>CALL PRICEUPDATE ('CC', 'ITEMNO', 'CUSTNO', 'TYPE', FACTOR, 'DATEFROM', 'DATETO', 'PRODTEST')</code></td>
+            </tr>
+            <tr>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left">CC</td>
+                <td>Two character company code.&#160; Contact Excellware for your company code.</td>
+            </tr>
+            <tr>
+                <td align="left">ITEMNO</td>
+                <td>Item#.&#160; The maximum number of characters can vary by company code.</td>
+            </tr>
+            <tr>
+                <td align="left">CUSTNO</td>
+                <td>Customer#.&#160; Up to 6 characters can be specified.&#160; If null or blanks, then standard company pricing will be used.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">TYPE</td>
+                <td>Indicates type of price calculation
+<table><tr><td>N</td><td>Net Price</td></tr><tr><td>M</td><td>Multiplier times List Price</td></tr><tr><td>C</td><td>Multiplier times Cost</td></tr><tr><td>D</td><td>Discount% off list price</td></tr><tr><td>X</td><td>Delete Pricing Record (requires CC, ITEMNO, CUSTNO, and DATEFROM fields)</td></tr></table></td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">FACTOR</td>
+                <td>Contains the Net Price, Multiplier, or Discount%</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">DATEFROM</td>
+                <td>Optional effective date.&#160; If passed as null, then today's date will be used.&#160; Can be in MM/DD/YY or MM/DD/YYYY or YYMMDD or bbx julian format.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">DATETO</td>
+                <td>Optional promotion period ending date.&#160; If passed as null, then the price will not have an ending date and will continue until the next DATEFROM.</td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">PRODTEST</td>
+                <td>null or 'prod' indicates production (live) files are updated.
+<p>'test' indicates testing files are updated.</p></td>
+            </tr>
+            <tr>
+                <th align="left" nowrap="nowrap">Returned Values</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">EXITCODE</td>
+                <td>Exit Code
+<table><tr><td align="center">0</td><td>Success</td></tr><tr><td align="center">1</td><td>Unable to access price file, may be locked or company code is invalid</td></tr><tr><td align="center">2</td><td>Customer# invalid or not-on-file</td></tr><tr><td align="center">3</td><td>Item# invalid or not-on-file</td></tr><tr><td align="center">4</td><td>Type is invalid</td></tr><tr><td align="center">5</td><td>Invalid Net Price (zero or negative)</td></tr><tr><td align="center">6</td><td>Invalid List Price Multiplier (zero or negative)</td></tr><tr><td align="center">7</td><td>Invalid Cost Multiplier (zero or negative)</td></tr><tr><td align="center">8</td><td>Invalid Discount% (negative)</td></tr><tr><td align="center">9</td><td>Pricing record not on file, delete (TYPE=X)</td></tr><tr><td align="center">10</td><td>Invalid PRODTEST value</td></tr><tr><td align="center">99</td><td>Other error</td></tr></table></td>
+            </tr>
+            <tr>
+                <td align="left" nowrap="nowrap">EXITMSG</td>
+                <td>Descriptive Exit Message</td>
+            </tr>
+        </table>
+    </body>
+</html>

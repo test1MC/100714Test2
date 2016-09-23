@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="8" MadCap:lastHeight="1550" MadCap:lastWidth="1148">
+    <head><title>Product Class Maintenance</title>
+    </head>
+    <body>
+        <p class="SectionName">Item maintenance &amp; listings</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Product Class Maintenance</p>
+                </td>
+                <td align="right">Last Revised: 03/30/16</td>
+            </tr>
+        </table>
+        <p>This application allows the operator to create and edit product classes. Each product class must be assigned a three digit code and given a description. Classes can also be given product class rental descriptions and product class used sales descriptions. </p>
+        <p>
+            <img src="xxim27-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Product Class Maintenance Primary View</th>
+                </tr>
+                <tr>
+                    <td>Product Class</td>
+                    <td>The Product Class identifier needs to be three characters. It can be comprised of any combination of numbers, uppercase letters, lowercase letters, or special characters. The first character in the identifier should signify the Product Category. For example, if the Product Class is 802, the related Product Category should be 8. </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Enter a description of the product class. For example, in the product category of vehicles, possible product class descriptions might be cars, vans, SUVs, trucks, etc.</td>
+                </tr>
+                <tr>
+                    <td>Product Class - Rentals</td>
+                    <td>Specify the product class that is associated with the general ledger account used for rental items. This general ledger account can be specified on the GLU <a href="../gl/gl240.htm">G/L&#160;Interface Maintenance</a>. This field is not required.</td>
+                </tr>
+                <tr>
+                    <td>Product Class - Used Sales</td>
+                    <td>Specify the product class that is associated with the general ledger account used for used item sales. This general ledger account can be specified on the GLU <a href="../gl/gl240.htm">G/L&#160;Interface Maintenance</a>. This field is not required.</td>
+                </tr>
+                <tr>
+                    <td>Attribute Set</td>
+                    <td>Attribute sets are used when integrating Dynamo with Magento, an eCommerce software. Since attribute sets are created within the Magento software, no attribute sets will appear here if not already created in Magento and updated by Dynamo. If already created and updated, choose which attribute set will be associated with all items bearing the current product class.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="xxim27-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th colspan="2">Selling Prices by Product Class View</th>
+                </tr>
+                <tr>
+                    <td>Customer#</td>
+                    <td>Indicate if the pricing will apply to a specific customer. If it does not, you may leave this field blank. You can apply different special pricing for different customers. </td>
+                </tr>
+                <tr>
+                    <td>Pricing Start Date</td>
+                    <td>Indicate a start date for the pricing.</td>
+                </tr>
+                <tr>
+                    <td>Promo Pricing Ends</td>
+                    <td>Indicate an end date for the pricing or leave this field blank to extend the pricing indefinitely. </td>
+                </tr>
+                <tr>
+                    <td>Pricing Method</td>
+                    <td>
+                        <p>Indicate the pricing method:</p>
+                        <ul>
+                            <li>G Gross Margin%</li>
+                            <li>C&#160;Multiplier times Cost</li>
+                            <li>D&#160;Discount% off List Price</li>
+                            <li>M&#160;Multiplier times List Price</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Factor </td>
+                    <td>Enter the desired gross margin percent, the cost multiplier, the discount percent, or the list price multiplier. </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a href="https://www.youtube.com/watch?v=ieC0P1AhrAs">Video Documentation</a>
+        </h3>
+    </body>
+</html>

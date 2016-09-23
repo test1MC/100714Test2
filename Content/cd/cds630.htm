@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="7" MadCap:lastHeight="1177" MadCap:lastWidth="1306">
+    <head><title>Install/Update Software Package</title>
+    </head>
+    <body>
+        <p class="SectionName">System Management Configuration</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Install/Update Software Packages</p>
+                </td>
+                <td align="right"><a target="_blank" href="http://dynaweb.excellware.com/cgi-bin/tools.cgi?p=r&amp;pgm=CDS630">Last Revised: 05/11/09</a>
+                </td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This program is used to update Dynamo System Management 
+	or Application Software on Unix servers.</p>
+        <p>Use the "V" option at any Dynamo menu to display the version of software 
+	packages currently installed.</p>
+        <p>The following packages are distributed by Excellware.&#160; Other 
+	software providers may install their packages using this method.</p>
+        <table>
+            <tr>
+                <th>Package Code</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td align="center">SMS</td>
+                <td>System Management Software</td>
+                <td>The run-time component of Dynamo Tools, required on all servers</td>
+            </tr>
+            <tr>
+                <td align="center">FMS</td>
+                <td>File Management Software</td>
+                <td>The portion of Dynamo Tools used by Software Developers that 
+		includes Data Dictionary Maintenance that is not required to be 
+		installed on each server.&#160; It is often desirable not to install the 
+		FMS package on the live server when there is a separate development 
+		server used for software development and testing.&#160; This will 
+		prevent changes to the Data Dictionary on the live server so they will 
+		not be over-written when exporting Data Dictionary data from the 
+		development server to the live server.</td>
+            </tr>
+            <tr>
+                <td align="center">WMS</td>
+                <td>Dynaweb Management Software</td>
+                <td>The portion of Dynamo Tools required for Dynaweb applications.&#160; 
+		Dynaweb provides a browser based interface to Dynamo applications and 
+		data.</td>
+            </tr>
+            <tr>
+                <td align="center">ZIP</td>
+                <td>Zip Code Database</td>
+                <td>Includes the programs and data files that provides all valid 5 digit 
+		US Zip codes along with the city and state code.&#160; The programs and 
+		files included in this optional package are used when entering 
+		addresses.&#160; The operator can enter a US zip code, then select from the 
+		list of valid cities.</td>
+            </tr>
+            <tr>
+                <td align="center">DAP</td>
+                <td>Dynamo Accounts Payable</td>
+                <td>Programs and data files required to run the Dynamo Accounts Payable 
+		application</td>
+            </tr>
+            <tr>
+                <td align="center">DGL</td>
+                <td>Dynamo General Ledger</td>
+                <td>Programs and data files required to run the Dynamo General Ledger 
+		application</td>
+            </tr>
+        </table>
+        <p>This program requires all other operators to be logged off and requires the 
+	System Administrator (root) password.</p>
+        <p>Prior to executing this application, download the software image file as 
+	directed by Excellware or your software provider.&#160; Save this file in 
+	the <code>$SMSDIR/tmp</code> folder on the server.</p>
+        <p>The operator will be shown a list of the software packages to be updated 
+	before the update takes place.</p>
+        <h5>Technical Notes</h5>
+        <p>The installation procedure involves calling a pre-installation routine, installing, (i.e., copying the files of the package into the desired directories), then calling a post-installation routine.&#160; In order to use the same media for both BBx Progression 3, 4, 
+	and 5 target systems, the pre and post installation programs for P3 and P4+ are named differently.</p>
+        <p>The installation routines are called programs with six character program names. The first three characters of the program are the same as the package. The last three characters of the program name can be determined using the table below.&#160; 
+	The installation routines must be placed in the <code>$SMSDIR/pkg/</code> 
+	directory prior to building the software package.</p>
+        <table>
+            <tr>
+                <td align="center"><b>Last characters of conversion program&#160;&#160;</b>
+                </td>
+                <td align="center"><b>BBx Progression Level at update&#160;&#160;&#160;</b>
+                </td>
+                <td align="center"><b>Pre/Post installation&#160;&#160;&#160;&#160;</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">000</td>
+                <td align="center">P3</td>
+                <td align="center">Pre</td>
+            </tr>
+            <tr>
+                <td align="center">001</td>
+                <td align="center">P3</td>
+                <td align="center">Post</td>
+            </tr>
+            <tr>
+                <td align="center">002</td>
+                <td align="center">P4 or higher</td>
+                <td align="center">Pre</td>
+            </tr>
+            <tr>
+                <td align="center">003</td>
+                <td align="center">P4 or higher</td>
+                <td align="center">Post</td>
+            </tr>
+            <tr>
+                <td align="center">005</td>
+                <td align="center">P4 or higher</td>
+                <td align="center">Executed as non-root operator upon next login.</td>
+            </tr>
+        </table>
+        <p>Note that the programs PKG000 and PKG001 must be P3 programs.</p>
+        <p>The <code>ENTER</code> list for these installation routines includes:</p>
+        <table>
+            <tr>
+                <th colspan="2">CDS630 Enter List</th>
+            </tr>
+            <tr>
+                <td><code>Y$</code>
+                </td>
+                <td>standard terminal control variable</td>
+            </tr>
+            <tr>
+                <td><code>OLDVER$</code>
+                </td>
+                <td>
+        a template based string describing the previous version of the package. The template fields available include:&#160;
+
+        <table><tr><td><code>PKG</code></td><td>three character package code</td></tr><tr><td><code>NAM</code></td><td>package description</td></tr><tr><td><code>REV</code></td><td>existing revision</td></tr><tr><td><code>RELDAT</code></td><td>release date in julian format</td></tr></table></td>
+            </tr>
+            <tr>
+                <td><code>PKGREC$</code>
+                </td>
+                <td>a template based string describing the package being installed. It has the same template fields available as in 
+		<code>OLDVER$</code></td>
+            </tr>
+            <tr>
+                <td><code>PKGS$</code>
+                </td>
+                <td>this string variable describes information about all packages included on the media.&#160;
+		<code>PKGS$</code> includes 80 characters for each package.&#160; The structure of each 80 character slot is the same as in
+		<code>OLDVER$</code>.&#160; However, there is no template associated with
+		<code>PKGS$</code>, but you can associate the same template used with
+		<code>PKGREC$</code> with any 80 characters in <code>PKGS$</code>.</td>
+            </tr>
+            <tr>
+                <td><code>DIR$</code>
+                </td>
+                <td>the directory where the tar based package files are located. Currently 
+		<code>DIR$</code> is set to tmpins/.</td>
+            </tr>
+        </table>
+        <p>The conversion routines may signal CDS630 to abort the installation.&#160; This may be required when the conversion routine cannot locate necessary files or determines there is insufficient disc space, etc.&#160; To signal CDS630 to abort the installation of this package and not to install any other packages on the media, exit with an error value of 99.&#160; This is accomplished using a statement
+	<code>EXIT 99</code> as opposed to simply <code>EXIT</code>.</p>
+        <p>In some cases, you may want to bypass the installation of a package but continue installing other packages on the media.&#160; This might be done when the media contains many packages, but the installation routine determines which packages are to be installed.&#160; In that case use an
+	<code>EXIT 98</code>.&#160; The version record will not be written or replaced.</p>
+    </body>
+</html>

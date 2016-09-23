@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="1575" MadCap:lastWidth="1479">
+    <head><title>Bank Reconciliation</title>
+    </head>
+    <body>
+        <p class="SectionName">accounts payable Utility Functions</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Bank Reconciliation</p>
+                </td>
+                <td align="right">Last Revised: 02/11/06</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">The Bank Reconciliation program provides an easy means of verifying that transactions entered in Accounts Payable agree with your bank statement.</p>
+        <p>If you are a new Dynamo A/P operator, we recommend you begin using Bank Reconciliation as soon as you receive the first bank statement that contains Dynamo A/P checks. When you are using Bank Reconciliation for the first time, you must enter the Beginning Balance as listed on your bank statement. Every time you use Bank Reconciliation after the first time, you will be required to enter just the Ending Balance as listed on your bank statement.</p>
+        <p>Normally, bank reconciliation is done on a monthly basis when a bank statement is received.  However, it can take place at any time since the bank reported balance can be obtained online or by phone.</p>
+        <p>Check detail is transferred from Accounts Payable to Bank Reconciliation during Check Update.</p>
+        <p>
+            <h6>Note: &#160;Contact Excellware if you wish to establish a link between Cash Receipts and the Bank Reconciliation program so that Deposits will also transfer.</h6>
+        </p>
+        <p>The system retains this information until bank reconciliation is performed. At that time, cleared transactions can be removed.</p>
+        <p>The first screen displays a list of your bank accounts. After selecting a bank account, the previous account balance will display.</p>
+        <p><b>TO BEGIN THE RECONCILIATION PROCESS:</b>
+        </p>
+        <p>1. Enter the Ending Balance as reported by your financial institution. (This can be obtained from your bank statement, on-line, or verbally). </p>
+        <p>2. Enter the date of this balance.&#160; The variance or difference between the Bank Reported Balance and Reconciled Balance will display. At this point other Amounts will also be filled in. &#160; An explanation of each follows:</p>
+        <h5>Previous Balance:</h5>
+        <p>This balance is updated each time Bank Reconciliation is complete.</p>
+        <ul>
+            <li>Plus Deposits:<br />    Displays the dollar amount and number of deposits that have been entered in the system. &#160; This amount is changed from entries made through Option 2 "Enter/Maintain transactions." &#160;&#160;</li>
+            <li>Less Cleared Check/Debits:<br />    Displays the dollar amount and number of checks that have cleared the bank. &#160; This amount is changed from entries made through Option 3 "Mark Cleared Checks."</li>
+            <li>Plus Interest Earned:<br />    For interest-bearing accounts, this displays the dollar amount of interest earned. This amount is changed from entries made through Option 2 "Enter/Maintain transactions."</li>
+            <li>Less Bank Fees:<br />    Displays any bank fees charged against your account. &#160; This amount is changed from entries made through Option 2 "Enter/Maintain transactions."</li>
+        </ul>
+        <h5>Reconciled Balance:</h5>
+        <p>This amount is automatically calculated by the computer.  It is calculated by taking the Previous Balance and adding or subtracting all transactions entered in the system after the date of the Previous Balance.&#160; This amount must equal the Bank Reported Balance in order to get a zero variance.</p>
+        <h5>Bank Reported Balance:</h5>
+        <p>The Ending Balance shown on the bank statement and entered by the operator. &#160; This amount must equal the Reconciled Balance in order to get a zero variance.</p>
+        <ul>
+            <li>Variance:<br />    The difference between the Reconciled Balance and Bank Reported Balance. &#160; This Variance should be 0 when the bank reconciliation process is complete.</li>
+            <li>Plus Deposits in Transit:<br />    Deposits that are in the system as a result of Accounts Receivable Cash Receipts processing but do not show on the bank statement at this time.</li>
+            <li>Less Checks/Debits not Cleared:<br />    Checks automatically entered in the system that are still outstanding; they are not shown on the bank statement.</li>
+            <li>Less Other Uncleared Transactions:<br />    Other transactions entered in the system that are not on the bank statement.</li>
+        </ul>
+        <h5>Account Balance:</h5>
+        <p>This amount is automatically calculated by the computer by taking the Bank Reported Balance and adding or subtracting transactions in the system that have not yet cleared the bank. &#160; This includes Deposits in Transit, Outstanding Checks, and other Uncleared transactions. &#160; The difference between this amount and the General Ledger Account amount is shown as a variance.</p>
+        <h5>General Ledger Acct #xxxxx:</h5>
+        <p>The dollar amount reflected in the General Ledger's Cash Account as of the date of the Bank Reported Balance.</p>
+        <ul>
+            <li>Variance:<br />    The difference between the Account Balance and General Ledger Cash Account.</li>
+        </ul>
+        <p><b>TO CONTINUE THE RECONCILIATION PROCESS,</b> select one of the following options:</p>
+        <h5>1. &#160; Maintain Bank Reported Balance</h5>
+        <p>If the Ending Balance was entered correctly, bypass this option.</p>
+        <h5>2. &#160; Enter/Maintain transactions</h5>
+        <p>This option is primarily used to mark as cleared any transactions in the system that have cleared the bank. &#160; Refer to the transactions (deposits, fees, checks, etc.) on your bank statement. &#160; These transactions may already exist in the system (such as A/P checks) or they may not. &#160; By pressing the F2 key, transactions that already exist in the system will display. &#160; The column marked "Cleared" displays a Y (Yes; this transaction has cleared the bank) or N (No; this transaction has not yet cleared the bank). If a transaction marked "N" now shows on your bank statement, highlight and select it to clear. &#160; The messages at the bottom of the screen will guide you through this process.</p>
+        <p>You must also key in those transactions that are on your bank statement but are not in the system. &#160; Follow the messages that display at the bottom of the screen to guide you through this.</p>
+        <p>These entries change the amounts for "Plus Deposits," "Plus Interest Earned," and "Less Bank Fees" listed under Previous Balance on Bank Reconciliation screen.</p>
+        <h5>3. &#160; Mark cleared checks</h5>
+        <p>It is during the Check Update phase that A/P check information flows into the Bank Reconciliation program. &#160; These checks will display in order of check number. &#160; Clear any checks shown on the bank statement simply by select the record and pressing Enter.</p>
+        <p>Marking cleared checks changes the amount for "Less Cleared Check/Debits" listed under Previous Balance on Bank Reconciliation screen.</p>
+        <h6>Note: Disregard the "any keys to position" message at the bottom of the screen. &#160; It is not functional for this type of display.</h6>
+        <h5>4. &#160; Mark other cleared transactions</h5>
+        <p>Other types of transactions will display in date order, oldest first. &#160; These types of transactions may include Deposits (D), Bank Fees (F), and Interest (I).</p>
+        <p>
+            <h6>Note: Marking other transactions as cleared will change the "Plus Deposits, Plus Interest Earned, and Less Bank Fees" &#160; amounts listed under Previous Balance on the Bank Reconciliation screen.</h6>
+        </p>
+        <h5>5. &#160; Mark checks and other transactions</h5>
+        <p>This is a combination of option 3 and 4, but the transactions are listed in date order regardless of type.</p>
+        <h5>6. &#160; Print Transaction Detail Report</h5>
+        <p>Use this option to print the transaction detail including uncleared transactions such as checks and uncleared deposits (deposits in transit). Transactions are listed in chronological order regardless of type. &#160; A Type code prints for non-checks.  Payee/Reference for each transaction is listed as well as whether the transaction has cleared or not.&#160; The report totals the amount of transactions that have cleared as well as the amount that has not cleared.</p>
+        <h5>7. &#160; Purge cleared transactions &amp; update</h5>
+        <p>Purging cleared transactions from the Bank Reconciliation file is not allowed unless the Reconciled Balance equals the Bank Reported Balance; that is, the variance must be zero. &#160; The Previous Balance will be updated to reflect adjustments made.</p>
+        <p>Once you have accounted for all transactions on your bank statement, the Variance between the Reconciled Balance and Bank Reported Balance should be zero.</p>
+        <p>If the variance does not equal zero, compare the transaction detail to the &#160; bank statement detail for inaccuracies or entry errors.</p>
+    </body>
+</html>

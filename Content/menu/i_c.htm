@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1817" MadCap:lastWidth="1209">
+    <head><title>I/C Menu Overview</title>
+    </head>
+    <body>
+        <p class="SectionName">Inventory Control</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">Menu Overview</p>
+                </td>
+                <td align="right">Last Revised: 02/18/15</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">This menu contains applications that are used to help manage your inventory.</p>
+        <p>
+            <img src="i_c.png" />
+        </p>
+        <ol>
+            <li><b><a href="../ic/ic200.htm">Inventory Transaction Entry</a></b>
+            </li>
+            <li><b><a href="../ic/ic210.htm">Inventory Transaction Listing</a></b>
+            </li>
+            <li><b><a href="../ic/ic310.htm">Record Inventory Usage</a></b>
+            </li>
+            <li><b><a href="../ic/ic230.htm">Inventory Requirements Report</a></b>
+            </li>
+            <li><b><a href="../ic/ic300.htm">Change Average Cost</a></b>
+            </li>
+            <li><b><a href="../ic/ic250.htm">Stock Status Reports</a></b>
+            </li>
+            <li><b><a href="../ic/ic240.htm">Back Order Fill Report</a></b>
+            </li>
+            <li><b><a href="../ic/ic050.htm">Lead Time Maintenance &amp;&#160;Listing</a></b>
+            </li>
+            <li><b><a href="../ic/ic280.htm">Reorder Point Generation</a></b>
+            </li>
+            <li><b><a href="../im/im530.htm">Generate ABC&#160;Values</a></b>
+            </li>
+            <li><b><a href="../ic/ic500.htm">Physical Inventory</a></b>
+            </li>
+            <li><b><a href="icr.htm">Inventory Control Reports (ICR)</a></b>
+            </li>
+            <li><b><a href="icu.htm">Inventory Control Utility Functions&#160;(ICU)</a></b>
+            </li>
+            <li><b><a href="sis.htm">Serialized Inventory Subsystem&#160;(SIS)</a></b>&#160;</li>
+        </ol>
+        <p>Dynamo supports Last-In-First-Out (LIFO), First-In-First-Out (FIFO), and 
+Average costing methods.&#160; Dynamo is fully integrated with the General 
+Ledger, which means that any time a transaction affects inventory, the General 
+Ledger must change accordingly.&#160; For Sales Order Processing, inventory is 
+adjusted during invoice update.&#160; The quantity on hand and general ledger 
+are updated at the same time.&#160; For all other transactions that affect 
+inventory, including Purchase Order Receiving, Transfer Order Shipping and 
+Receiving, Inventory adjustments, Vendor Invoice Reconciliation, etc., the 
+quantity on hand is adjusted immediately as the transaction is processed, and 
+the general ledger posting is consolidated for an automated posting that takes 
+place at the end of the day.&#160; This reduces the number of postings that 
+affect the General Ledger.</p>
+        <p>The General Ledger period must be open for sales order and inventory 
+transactions in order to process a transaction for a specific date.&#160; Each 
+General Ledger period is opened and closed using G/L Period Ending Date 
+Maintenance on the GLU menu.</p>
+        <p>Dynamo tracks each receipt of inventory individually.&#160; This includes 
+each purchase order and transfer order receipt, as well as positive inventory 
+adjustments when there are no prior receipts.&#160; Dynamo tracks the usage of 
+inventory by receipt.&#160; This usage of each inventory receipt can be 
+displayed using Item Inquiry.</p>
+        <p>In order to insure the most accurate costing, Dynamo does not permit the 
+quantity on hand of an item at a warehouse to go below zero.&#160; Product must 
+be received before it can be sold.&#160; Sales orders can be entered, and even 
+invoices printed, when there is no inventory for an item, but the invoice will 
+not be updated until sufficient inventory exists for each item on the order.</p>
+        <table>
+            <tr>
+                <th>Menu</th>
+                <th>Transaction</th>
+                <th>Effect on Inventory</th>
+                <th>Avg Cost Recomputed</th>
+            </tr>
+            <tr>
+                <td align="center">POP</td>
+                <td>Receipt of Inventory</td>
+                <td>New receipt is created with inventory cost that is based on the 
+		purchase order cost, with the following optional adjustments.<ul><li>plus estimated freight (percentage by vendor)</li><li>less cash discount</li><li>less estimated vendor rebate (percentage by vendor)</li><li>less vendor rebate amount or percentage (by item and PO line 
+			item)</li><li>less third party (buying group) rebate amount or percentage (by 
+			item and PO line item)</li></ul></td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">POP</td>
+                <td>Re-opening and Updating of prior Inventory Receipt</td>
+                <td>Cost and/or Quantity of original receipt is adjusted.&#160; `</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">VIR</td>
+                <td>Vendor Invoice Reconciliation</td>
+                <td>Cost of original receipt is adjusted</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">VRP</td>
+                <td>Vendor Returns Processing</td>
+                <td>Inventory usage is recorded</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td align="center">VPP</td>
+                <td>Vendor Price Protection</td>
+                <td>Cost of receipt(s) are adjusted.</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">SOP</td>
+                <td>Sales Order Processing - sale</td>
+                <td>Inventory usage is recorded.&#160; One or more inventory receipt can 
+		be affected</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td align="center">SOP</td>
+                <td>Sales Order Processing - return</td>
+                <td>Receipts used for original sale are adjusted so that cost for return 
+		match that of original sale</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">TOP</td>
+                <td>Transfer Order - shipment</td>
+                <td>Inventory usage is recorded.</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td align="center">TOP</td>
+                <td>Transfer Order - receipt</td>
+                <td>One or more new receipts are created matching the cost of the 
+		shipment</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">I/C</td>
+                <td>Inventory Transaction Entry - ADJ &amp; G/L negative</td>
+                <td>Inventory usage is recorded</td>
+                <td align="center">N</td>
+            </tr>
+            <tr>
+                <td align="center">I/C</td>
+                <td>Inventory Transaction Entry - ADJ &amp; G/L positive</td>
+                <td>If there are any open receipts for the item and warehouse, then the 
+		increase will be reflected as a negative usage for the receipt.&#160; If 
+		there are no open receipts, but there are closed receipts, then a closed 
+		receipt will be re-opened, and a negative usage will be posted.&#160; If 
+		there are no closed receipts, then the operator will be prompted for the 
+		cost to use, and a new receipt will be created</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">I/C</td>
+                <td>Inventory Transaction Entry - AST Build (positive)</td>
+                <td>Inventory will be deducted for each assortment component, and the 
+		actual cost used for each component will be used to determine the cost 
+		of the assortment item#.&#160; A new inventory receipt is created for 
+		the assortment.</td>
+                <td align="center">Y</td>
+            </tr>
+            <tr>
+                <td align="center">I/C</td>
+                <td>Inventory Transaction Entry - AST Break (negative)</td>
+                <td>A usage is recorded for the assortment item#.&#160; The original 
+		inventory receipts used to build the assortment originally are adjusted 
+		with a negative usage, offsetting the original usage.</td>
+                <td align="center">N</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.In Progress" MadCap:lastBlockDepth="5" MadCap:lastHeight="484" MadCap:lastWidth="766" MadCap:ignoredWords="VML">
+    <head><title>A/P Invoice Data Entry</title>
+    </head>
+    <body>
+        <p class="SectionName">Accounts Payable</p>
+        <table class="revision">
+            <tr>
+                <td>
+                    <p class="SectionTitle">A/P Invoice Data Entry</p>
+                </td>
+                <td align="right">Last Revised: 06/18/14</td>
+            </tr>
+        </table>
+        <p class="SectionDesc">A/P Invoice Data Entry is used to enter information from vendor invoices that are eligible for payment.&#160; Invoice data may be entered for established vendors or for those with whom you do business on a one-time basis.</p>
+        <p>Invoice Data Entry is a batch-oriented process. A batch is a collection of invoices entered together. Normally, you will work in only one batch at a time. However, for those companies who process a large number of invoices, more than one operator can work in more than one batch simultaneously.</p>
+        <p>Since the G/L posting date is linked to the batch, multiple batches open at the same time can have different posting dates.</p>
+        <p>The first step in data entry is to either create a new batch for invoice entry or to continue data entry in an existing batch. When creating a new batch, you must also enter the G/L Posting Date which is the date on which all invoices in this batch post to the General Ledger.  The system will not allow a posting date beyond 30 days in the future or 3 months in the past.</p>
+        <p>If you select an existing batch, you will be given several options:</p>
+        <ul>
+            <li>
+                <p>To continue entering invoices</p>
+            </li>
+            <li>
+                <p>To delete all entries in the batch (if any recurring payables were included in this batch, refer to documentation for Recurring Invoice Maintenance to adjust Last Invoice Date, Payments to Date, and Paid to Date fields)</p>
+            </li>
+            <li>
+                <p>To change G/L posting date</p>
+            </li>
+            <li>
+                <p>To modify an existing entry in this batch by pressing F2 (<a href="#Completion%20of%20Invoice%20Entries">see Completion of Invoice Entries</a>)</p>
+            </li>
+        </ul>
+        <p>As a general rule, enter invoices for payment upon approval. However, manual approval may not be necessary if the invoice is a result of a purchase order when using the Dynamo Purchase Order program. If your Purchase Order program is linked to Payables, the approval process is computer-assisted as described under Purchase Order Number. In all other cases, invoices should be manually approved before entering data.</p>
+        <p>
+            <img src="ap100-1.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>A/P Invoice Entry Data Entry Screen:</h6>
+        <p><a href="#1%20PO%20Purchase%20Order%20Number">1 PO#</a>;&#160;<br /><a href="#2%20Vendor">2 Vendor</a>;&#160;<br /><a href="#3%20Location">3 Location</a>;&#160;<br /><a href="#4%20Terms">4 Terms</a>;&#160;<br /><a href="#5%20Invoice%20Number">5 Invoice#</a>;&#160;<br /><a href="#6%20Invoice%20Date">6 Invoice Date</a>;&#160;<br /><a href="#7%20Invoice%20Due%20Date">7 Invoice Due Date</a>;&#160;<br /><a href="#8%20Total">8 Total</a>;&#160;<br /><a href="#9%20Freight">9 Freight</a>;&#160;<br /><a href="#10%20Net">10 Net</a>;&#160;<br /><a href="#11%20Discount">11 Discount</a>;&#160;<br /><a href="#12%20Discount%20Due%20Date">12 Discount Due Date</a>;&#160;<br /><a href="#13%20Note">13 Note</a>;&#160;<br /><a href="#14%20Hold%20-%20Put%20a%20payment%20on%20Hold">14 Hold</a>;&#160;<br /><a href="#15%20Payment%20Method">15 Payment Method</a>;&#160;<br /><a href="#16%201099%20Form%20Box">16 1099 Form/Box</a>;&#160;<br /><a href="#17%20G/L%20Account%20Description">17 G/L Account Description</a></p>
+        <h6>NOTE:<br />  Line <b>3, "Locations",</b> will <b>NOT</b> appear on the A/P Invoice Data Entry menu screen if the 
+	<a href="../xx/xxgl00.htm">Location Segment</a> in General Ledger Parameter Maintenance is not set to 2 or above (multiple locations).&#160; In that case (i.e., your company operates from one, not multiple locations) only 16 menu items will appear on the A/P Invoice Data Entry Screen.</h6>
+        <h5><a name="1 PO Purchase Order Number"></a>1 PO#&#160; (Purchase Order Number)</h5>
+        <p>If an invoice reflects a product purchase for which a purchase order has been issued, then enter a purchase order number.&#160;This purchase order number will display as part of Invoice Detail when using Vendor Inquiry.</p>
+        <p>If the Purchase Order program is integrated with Accounts Payables, the vendor number/name and terms from that purchase order number will be displayed.</p>
+        <p>
+            <h6>Note: If these don't appear, <a href="http://www.excellware.com/index.php/about/contact-us/">contact Excellware</a> at (440) 866-6893 to request that a link between POP and A/P be created.</h6>
+        </p>
+        <p>If the Dynamo Purchase Order program and Accounts Payable are linked, the computer will assist in approval for payment. Computer-assisted approval eliminates the need for manual approval or to refer to filed documents. A box will display the following information about this purchase: the date the merchandise was received, the value of the merchandise received, the vouchered amount of merchandise (the amount of previous invoices against this receipt), and the balance (the amount for which the company has not yet been billed). &#160;</p>
+        <p>By comparing the invoice information to the displayed information, the computer assists in verifying that the invoice selected for payment accurately reflects the merchandise you have received. It also ensures that the company is being billed for the agreed-upon amount. If any discrepancies exist, the invoice should not be entered for payment. The invoice should be set aside until the differences have been reconciled and manual approval for payment has been given. Continue entering data at Invoice Number field.</p>
+        <p>If one purchase order on a single receipt was issued for two or more invoices, you must enter that many invoices in this application. For instance, purchase order #1234 was issued for invoices #1 and #2, but it was entered on a single receipt #3, you must first enter the amount for invoice #1 after selecting the PO. Be sure to indicate that amount in the G/L accounts on the bottom of the screen. Then, enter invoice #2 with the remaining balance from that receipt. </p>
+        <p>A purchase order number is not required if no purchase order was issued; bypass this field by hitting enter. </p>
+        <h5><a name="2 Vendor"></a>2 Vendor</h5>
+        <ol>
+            <li><a href="#Entering%20Invoices%20for%20a%20One-Time%20Vendor">Entering Invoices for a One-Time Vendor</a>
+            </li>
+            <li><a href="#Entering%20Invoices%20for%20an%20Established%20Vendor">Entering Invoices for an Established Vendor</a>
+            </li>
+        </ol>
+        <p><b><a name="Entering Invoices for a One-Time Vendor"></a>Entering Invoices for a One-Time Vendor</b>
+        </p>
+        <p>When an invoice requires payment for a one-time vendor, enter the letter "M" for "Miscellaneous vendor" in the "Vendor" field. </p>
+        <p>For example, this would be necessary if a company hired someone to wallpaper an office. If the company doesn't plan on doing business with this vendor in the future, there is no reason to set it up in the vendor file.</p>
+        <p>
+            <img src="ap100-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Entering a single character vendor number such as "M" will display a box in which you can enter the Name, Address, and Alpha Sort Name for the individual vendor. Both the name and address will print on the check.</p>
+        <p>
+            <img src="ap100-2.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-3.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h6>Note: Although it is unnecessary to set up the individual vendor (i.e. the wallpaper store) in Vendor Maintenance-Accounts Payable, the single-character vendor number (such as "M" for Miscellaneous) must be set up in 
+	<a href="../xx/xxvm01.htm">Vendor Maintenance</a> - Accounts Payable.</h6>
+        <p>During set up, the single-character vendor number chosen must be manually assigned using the F2 key. For example, the vendor number would be "M," the vendor name would be Miscellaneous, the alpha sort name would be MISC, and the A/P terms code would be 00 No Terms Established.&#160;Leave the address lines blank.</p>
+        <h6>Also Note: Miscellaneous Vendors are not eligible to receive 1099 forms. A regular vendor must be created if 1099 forms are required.</h6>
+        <p><b><a name="Entering Invoices for an Established Vendor"></a>Entering Invoices for an Established Vendor</b>
+        </p>
+        <p>Choose a vendor by using one of the following options set up in <a href="../xx/xxvm01.htm">Vendor Maintenance</a> on the VML menu: vendor number, alpha sort name, phone number, or zip code. The vendor name will display.</p>
+        <p>
+            <img src="ap100-4.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>If this vendor is not already set up in the Vendor Master File, you can set it up now. Use the F1 Hotkey (Y) or exit A/P Invoice Entry and switch to the VML menu to select <a href="../xx/xxvm01.htm">Vendor Maintenance</a>. You may use F2 to manually assign a new vendor number or press the spacebar to allow the computer to choose the next unused vendor number.</p>
+        <p>This screen displays fields in which you will enter  information about this vendor. Information relevant to A/P processing is set up in the <a href="../xx/xxvm01.htm">Vendor Maintenance</a>-Accounts Payable option.  The next time you receive an invoice from this vendor, you can choose it during Invoice Data Entry. The data entry fields will default to the information you previously set up in <a href="../xx/xxvm01.htm">Vendor Maintenance</a>. Return to Invoice Data Entry on the A/P menu, enter vendor, and continue data entry.</p>
+        <h5><a name="3 Location"></a>3 Location</h5>
+        <p>This entry is applicable only for those companies who have multiple locations. Location codes previously set up in G/L Location Maintenance on the GLU menu are valid entries. Default location codes for vendors are set up in <a href="../xx/xxvm01.htm">VML</a>-A/P.</p>
+        <p>When the invoice amount is distributed to the General Ledger (at the bottom of the invoice data entry screen), the account number picks up the location code entered in the location field. For example, if the location code entered is 010 Akron and the invoice amount is distributed to the inventory account 4500, the G/L distribution shows 4500-010.</p>
+        <h5><a name="4 Terms"></a>4 Terms</h5>
+        <p>Each vendor establishes a Terms Code indicating when an invoice is due for payment, if a discount is offered, and when the invoice must be paid to receive the discount.</p>
+        <p>A list of standard terms codes can be found in Terms Code Maintenance on the APU menu. When an operator enters an invoice with a terms code designating multiple payments (such as 3 monthly payments), the system will break that invoice into multiple invoices with different due dates and amounts during the Invoice Update phase.</p>
+        <p>If you entered a purchase order number and your Accounts Payable module is linked to Purchase Order Processing, this field defaults to the terms on the purchase order.</p>
+        <p>If a purchase order number was not entered, the field defaults to the terms code that was previously set up for this vendor in <a href="../xx/xxvm01.htm">Vendor Maintenance</a> - Accounts Payable on the VML menu. However, if special terms were granted for payments of this invoice, the default terms code can be overridden.</p>
+        <p>If this field does not default to a terms code, press F2 to display a list of terms codes from which to choose.</p>
+        <p>In order to minimize modifications to sales and purchase order processing, the A/P program will use the <a href="../cw/cw130.htm">Terms Code Maintenance</a> on the APU menu, whereas other Dynamo programs will use the Terms Code Maintenance on the FML menu.</p>
+        <h5><a name="5 Invoice Number"></a>5 Invoice#</h5>
+        <p>You may use up to 12 alphanumeric characters. If the Invoice Number is longer than this, abbreviate the invoice number in some form of a unique sequence (for example, eliminate any leading zeros) that will identify this invoice.</p>
+        <p>If this invoice does not have an assigned invoice number (a phone bill, for example) a common practice is to create one using a 6-digit year/month format. For example, a phone bill for the month of October 2013 may be assigned an invoice number such as 201310.</p>
+        <h5><a name="6 Invoice Date"></a>6 Invoice Date</h5>
+        <p>The Invoice Date will be used to determine the invoice due date and discount due date. These will be calculated automatically according to the terms code as specified above.</p>
+        <h6>Note: There are several ways to eliminate unnecessary keystrokes regarding a date adjustment. See below.</h6>
+        <p>Once a date has been entered and needs to be adjusted, position the cursor at the date field. By pressing a + or - you can change the date by daily increments.</p>
+        <p>A second option for adjusting a date is to again position the cursor at the displayed date.  By entering 2 digits, the day of the month will be changed to those digits. &#160;It assumes the current month and year. For example, if the displayed date is 03/10/13, entering a 22 at the field will change the date to 03/22/13.</p>
+        <p>
+            Another time-saver is to enter a T at any date field and today's date will display.
+</p>
+        <p>You can also press C and a calendar will pop up from which you can select a date. </p>
+        <p>
+            <img src="ap100-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="7 Invoice Due Date"></a>7 Invoice Due Date</h5>
+        <p>The Invoice Due Date is the date by which this bill should be paid when no cash discount is taken. This date is calculated for you.&#160;It is determined by the invoice date and terms code.</p>
+        <p>Invoice Due Date regarding Credit Memos: If you are entering a credit memo for a previous invoice, the invoice due date entered should match the due date of the original invoice. Doing so will ensure that the offsetting invoices (the original and the credit memo) are included in the same payment batch. You can find out the original due date by using Vendor Inquiry.</p>
+        <h6>Note: The system will not accept a due date that is prior to the invoice date. &#160;For example, the credit memo may have an invoice date of 12/22, but the due date of the original invoice was 12/4. In this case, enter 12/22 as the due date.</h6>
+        <h5><a name="8 Total"></a>8 Total</h5>
+        <p>The Total Invoice Amount is the amount that will be paid if no discount is taken. Dollar amounts may be entered with or without a decimal point. &#160;For example, $100 may be entered as 100. or 10000.</p>
+        <p>If the invoice shows a credit amount, use the minus sign (-) to enter the amount. The minus sign can be typed in before the dollar amount (-15.00) or after (15.00-). &#160; As in a calculator, using the minus sign after the dollar amount will act as an Enter key and will advance the cursor to the next field.</p>
+        <h5><a name="9 Freight"></a>9 Freight</h5>
+        <p>Freight is the amount charged for any handling, shipping, or duty.</p>
+        <p>Any freight charges entered in this field are automatically distributed to the freight general ledger account previously set up in Parameter Maintenance on the APU menu. Any discounts will be calculated on the total invoice amount minus the freight; in other words, it is calculated on the Net amount.</p>
+        <p>If freight charges will remain as part of cost of sales, leave this field blank. Any discount will be applied to the total invoice amount.</p>
+        <p>The freight general ledger account is maintained using 
+	<a href="../xx/xxap00.htm">A/P Parameter Maintenance</a> on the APU menu.</p>
+        <h5><a name="10 Net"></a>10 Net</h5>
+        <p>The Net Amount is that amount which is eligible for discount (total amount minus any freight charges, sales tax, or duty). This is automatically calculated.</p>
+        <p>You have the option of overriding the amount displayed.&#160;This is necessary if freight is to remain as part of cost of sale or if you do not want freight charges to be distributed to a freight general ledger account.</p>
+        <p>
+            <img src="ap100-3-5.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="11 Discount"></a>11 Discount</h5>
+        <p>The Discount Amount is the amount by which the total invoice amount will be reduced if paid by the discount due date. &#160;</p>
+        <p>Discount is determined by the terms code and is calculated on the net amount. This is automatically calculated, but you have the option of overriding the displayed amount if necessary.</p>
+        <h5><a name="12 Discount Due Date"></a>12 Discount Due Date</h5>
+        <p>The Discount Due Date is the date by which the invoice should be paid in order to take advantage of any discounts offered. &#160;</p>
+        <p>It is determined by the invoice date and terms code, but you have the option of overriding the date displayed if necessary.</p>
+        <h5><a name="13 Note"></a>13 Note</h5>
+        <p>A Note is a comment that will be printed on the check stub. It may contain up to 30 alphanumeric characters.</p>
+        <p>
+            <img src="ap100-6.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="14 Hold - Put a payment on Hold"></a>14 Hold</h5>
+        <ol>
+            <li>
+                <p>To Put A Payment On Hold</p>
+            </li>
+            <li>
+                <p><a href="#Release%20a%20payment%20from%20Hold">To Release A Payment From Hold</a>
+                </p>
+            </li>
+        </ol>
+        <p>If you want to exclude this invoice from being automatically selected for payment, enter Y (Yes). &#160; Situations in which Hold is useful include:&#160;a payment dispute with this vendor or damaged merchandise for which you are now being billed.  Payment can be withheld until the situation is resolved.</p>
+        <p>
+            <img src="ap100-7.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>If you wish to note the reason a payment was put on Hold, use the Vendor Notepad option in Vendor Inquiry. 
+				<h6> Note:&#160; It is not recommended to enter this reason in the Note field during Invoice Data Entry because any comment entered there will print on the check.</h6></p>
+        <ul>
+            <li>
+                <p>Any invoice put on Hold will display a "Hold" status in Vendor Inquiry. &#160;</p>
+            </li>
+            <li>
+                <p>Any invoice put on Hold will print on the Invoice Register with a Y (yes) under the "H" (Hold) column.</p>
+            </li>
+        </ul>
+        <p><b><a name="Release a payment from Hold"></a>Release A Payment From Hold</b>
+        </p>
+        <p>To Release a Payment from Hold, you have 2 options:</p>
+        <ul>
+            <li>
+                <p>Go to Payment Selection Maintenance on the Payment Processing menu (APP) and select the invoice for payment, <i>- or -</i></p>
+            </li>
+            <li>
+                <p>Go to Invoice Maintenance (which is used to adjust non-amount fields after updating) and clear the Hold field.&#160;In choosing this method, you will have to return to Payment Selection, choose the existing batch containing this invoice, clear this payment batch, and run payment selection again so that this invoice will be selected this time.</p>
+            </li>
+        </ul>
+        <h5><a name="15 Payment Method"></a>15&#160; Payment Method</h5>
+        <p>Normally, one check is issued to each vendor for one or multiple invoices.&#160;In this case, this field requires no entry.</p>
+        <p>However, circumstances may require a different Payment Method.  Your options are as follows:</p>
+        <table>
+            <tr>
+                <th>Option</th>
+                <th>Description</th>
+                <th>Explanation</th>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>Electronic Transfer of Funds</td>
+                <td>Electronic Transfer of Funds tells the computer not to print a check for this invoice.  Payment is made to the vendor by calling the bank and having your funds electronically transferred from your account to the vendor's account (or funds may be transferred on a website). When a list of your checks are printed on the Check Register, these payments coded as 'T' will be included but will have a blank check number.</td>
+            </tr>
+            <tr>
+                <td>W</td>
+                <td>Automated Withdrawal</td>
+                <td>Automated Withdrawal also eliminates the printing of a check for an invoice.&#160;Typically an invoice is coded with this Payment Method when an invoice is a recurring payment that is due on a regular basis (weekly/monthly).&#160;The funds for payment are automatically withdrawn from your account, eliminating the need to mail a check. When a list of your checks are printed on the Check Register, these payments coded as 'W' will also be listed but will have blank check number.</td>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>Separate Check</td>
+                <td>Normally one check is issued to a vendor for multiple invoices.&#160;However, circumstances may require that the vendor be issued a separate check for a particular invoice.&#160;These payments will be coded with an 'S' on the Check Register.</td>
+            </tr>
+        </table>
+        <h6>Note: Payment Method for invoices entered with a single-character vendor number (one-time vendors) will default to S. &#160;&#160;</h6>
+        <h5><a name="16 1099 Form Box"></a>16 1099 Form Box</h5>
+        <p>A 1099 Form is a government form that an employer is required to provide to individuals who are not employees but who are paid more than $600/yr. The 1099 Form and Box field defaults to those set up in Vendor Maintenance-Accounts Payable (on the VML menu) unless overridden.&#160;&#160;</p>
+        <p>The valid form codes are:</p>
+        <ul>
+            <li>D&#160; = Dividend</li>
+            <li>I = Interest</li>
+            <li>M&#160; = Miscellaneous</li>
+        </ul>
+        <p>After entering a form code, press F2 to display the valid choices for the Box and Description. Vendors must be set up in <a href="../xx/xxvm01.htm">Vendor Maintenance</a>-A/P in order to be eligible for 1099 forms. Miscellaneous vendors are not eligible.&#160;&#160;</p>
+        <p>
+            <img src="ap100-8.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-9.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-10.png" style="width: 725px;height: 424px;" />
+        </p>
+        <h5><a name="17 G/L Account Description"></a>17 G/L Account Description</h5>
+        <p>The amount of the invoice must be distributed to one or more General Ledger Accounts, which should have been set up in 
+	<a href="..\gl\gl100.htm">Account Maintenance</a> on the G/L menu.&#160;&#160;</p>
+        <p>These accounts can be entered in two ways:</p>
+        <p>
+            <img src="ap100-11.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Data entry can be expedited by setting up default general ledger accounts in 
+	<a href="..\xx\xxvm01.htm#APView">Vendor Maintenance-Accounts Payable</a>. &#160; These can be overridden if necessary.</p>
+        <p>The account number can also be entered manually.&#160; It is not necessary to memorize the account numbers; with the cursor at this field, delete any account number previously entered and press F2 to display a list of accounts OR enter the first three of four letters of the account name (Inv for Inventory). A pop-up box will display all accounts beginning with that alpha sort, from which you can select.</p>
+        <p>
+            <img src="ap100-12.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-13.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-14.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>If multiple locations are applicable to your company, the general ledger account number picks up the location code entered in the location field above. The system will accept several account numbers with different locations if necessary.</p>
+        <p>You may revise a general ledger line by using the up and down arrow keys. An asterisk (*) will move from line to line, indicating the line you've selected. By pressing F4 and following the prompts at the bottom of the screen, you may Insert, Delete, or edit (Enter) that line. An underlined command refers to the keys themselves.</p>
+        <p>The amounts distributed will be posted as either debits or credits to the respective General Ledger accounts. In order to proceed to the next invoice entry, the General Ledger Distribution must equal the total invoice amount. The General Ledger Balance will show zero when the entire invoice amount has been distributed.</p>
+        <p><b><a name="Completion of Invoice Entries"></a>Completion of Invoice Entries</b>
+        </p>
+        <ol>
+            <li>Completion of Entries</li>
+            <li><a href="#Correcting%20Invoice%20Entries%20That%20Have%20Not%20Been%20Updated">Correcting Invoices Entries that Have Not Been Updated</a>
+            </li>
+            <li><a href="#Correcting%20Invoice%20Entries%20That%20Have%20Been%20Updated">Correcting Invoice Entries that Have Been Updated</a>
+            </li>
+        </ol>
+        <p>Upon completion of entering each invoice, press F4 once in order to correct a field or to delete an invoice entry.</p>
+        <p>Press F4 again to proceed with the next invoice entry. Processing will continue at the purchase order field.</p>
+        <p>At this point you are given the option to modify an existing entry in this batch by pressing F2.</p>
+        <p>If you have completed entering all invoices, press F4 a third time to display the batch number, the number of invoices in the batch, and the total batch amount. Press Enter or F4 to return to the A/P main menu.</p>
+        <p>Prior to updating this batch, you may return to Invoice Data Entry, select this existing batch, change the general ledger posting date, delete all entries in the batch, or modify an existing entry.</p>
+        <p>
+            <img src="ap100-15.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p><b><a name="Correcting Invoice Entries That Have Not Been Updated"></a>Correcting Invoice Entries That Have Not Been Updated</b>
+        </p>
+        <p>It is important to correct invoice entries before updating to the permanent files because once the entries have been updated, the batch has been closed.</p>
+        <p>You may return to any invoice in a batch by positioning the cursor at the Purchase Order Number field; press F2 in order to display a list of invoices that have been entered thus far. &#160; Upon selecting an invoice, the invoice detail will display. Enter the field number to be revised and type in the correct data.</p>
+        <p>If you have already exited Invoice Data Entry, return and select an existing batch. Batches that have not been updated will display. Choose the batch that contains the invoice to be adjusted.</p>
+        <p>Press F4 to proceed to the main menu.</p>
+        <p><b><a name="Correcting Invoice Entries That Have Been Updated"></a>Correcting Invoice Entries That Have Been Updated</b>
+        </p>
+        <p style="font-style: normal;">Once the entries are updated, the batch is closed.&#160;To change any entry <i>other than the invoice amount or G/L account</i>, go to <a href="ap280.htm">Invoice Maintenance</a> to make corrections.</p>
+        <p>To adjust the INVOICE AMOUNT after updating, you must use Invoice Data Entry and create a new batch as follows:</p>
+        <p>Enter the vendor and invoice number. At this point, a pop-up box displays existing invoices for this vendor. Upon selecting an invoice, you are given 3 options:</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <tr>
+                <th>Option</th>
+                <th>Description</th>
+                <th>Explanation</th>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>Reverse this invoice completely</td>
+                <td>
+        This reverses the original entry by offsetting positive amounts previously entered. The Total and Net Invoice amount will display as a negative number. The G/L accounts will also be reversed.
+
+        <p>Proceed to print an Invoice Register and Update. The invoice register will reflect the offsetting A/P postings which will post to the General Ledger during Invoice Update. Vendor Inquiry will show the original invoice entry as well as the offsetting (negative) entry.</p><p>Note: &#160; Reversing an invoice for a Miscellaneous vendor requires that the offsetting (negative) invoice be selected for a payment batch through Payment Selection Maintenance. (See Payment Selection Maintenance for further details).</p></td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>Duplicate original transactions</td>
+                <td>This option is used primarily for recurring invoices. For example, if your rent payment is due each month, enter the same invoice number and the invoice is duplicated. Vendor Inquiry will show two identical invoice entries. Proceed to print an Invoice Register and Update.</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>Make adjusting entry</td>
+                <td>
+        This clears the original numeric entries.  The Total and Net invoice amounts will display zero.&#160; Enter the adjusted amounts.&#160; For example, if the original invoice amount was $125 and should have been $135, enter $10 in the invoice amount. You do not need to enter $135 as the amount, as that will increase the invoice by $135 rather than by $10. Proceed to print an Invoice Register and Update. An &#160; increase or credit to the Accounts Payable General Ledger account takes place during the Update.
+
+        <p>&#160;</p><p>If the adjustment entered is a negative amount (-$10), then during the Update, the General Ledger posting will reduce or debit Accounts Payable.</p></td>
+            </tr>
+        </table>
+        <p>
+            <img src="ap100-17.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>Once the invoice is adjusted, print the <a href="ap130.htm">Invoice Register</a>, check for accuracy, and run the <a href="ap140.htm">Invoice Update</a>.</p>
+        <p>Remember: Changes to updated invoices should be made before running Payment Selection. &#160; However, if this updated invoice has already been selected for payment (indicated by "Pending" status in 
+	<a href="..\vm\vm100.htm">Vendor Inquiry</a> or as seen on a Payment Selection Register), you will need to either return to Payment Selection, select the existing batch containing this invoice, clear the batch, and run payment selection again OR you will need to go to 
+	<a href="ap190.htm">Payment Selection Maintenance</a> and adjust (maintain) the payment so that it reflects the changes made to the invoice.</p>
+        <p><b>Correcting a General Ledger Account after Updating</b>
+        </p>
+        <p>Follow the same procedure, selecting M (Make adjusting entry). Since no adjustment is being made to the invoice amount, it will remain at zero.  Move to the G/L field, enter the original account number and a negative invoice amount. Then enter the correct account number and the offsetting positive invoice amount.</p>
+        <p>
+            <img src="ap100-18.png" style="width: 725px;height: 424px;" />
+        </p>
+        <p>
+            <img src="ap100-19.png" style="width: 725px;height: 424px;" />
+        </p>
+    </body>
+</html>
